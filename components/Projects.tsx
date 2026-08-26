@@ -1,41 +1,123 @@
+"use client";
+
+import { useCallback, useEffect, useState } from "react";
 import { projects } from "@/content/site";
 
+const GRADIENTS = [
+  "from-indigo-500/40 to-purple-500/40",
+  "from-amber-500/40 to-rose-500/40",
+  "from-emerald-500/40 to-teal-500/40",
+  "from-sky-500/40 to-blue-500/40",
+  "from-fuchsia-500/40 to-pink-500/40",
+  "from-orange-500/40 to-red-500/40",
+];
+
+const AUTO_ADVANCE_MS = 6000;
+
+function shortLabel(title: string) {
+  return title.split(" — ")[0];
+}
+
 export default function Projects() {
+  const [index, setIndex] = useState(0);
+
+  const goTo = useCallback((i: number) => {
+    setIndex(((i % projects.length) + projects.length) % projects.length);
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((i) => (i + 1) % projects.length);
+    }, AUTO_ADVANCE_MS);
+    return () => clearInterval(timer);
+  }, [index]);
+
+  const project = projects[index];
+
   return (
     <section id="projects" className="mx-auto max-w-5xl px-6 py-16">
       <h2 className="text-2xl font-semibold tracking-tight">Projects</h2>
-      <div className="mt-6 grid gap-6 sm:grid-cols-2">
-        {projects.map((project) => (
-          <article
-            key={project.title}
-            className="flex flex-col gap-3 rounded-2xl border border-black/10 p-6 dark:border-white/10"
+
+      <div className="mt-6 flex gap-2 overflow-x-auto pb-2">
+        {projects.map((p, i) => (
+          <button
+            key={p.title}
+            onClick={() => goTo(i)}
+            className={`shrink-0 whitespace-nowrap rounded-full border px-4 py-2 text-sm transition-colors ${
+              i === index
+                ? "border-black bg-black text-white dark:border-white dark:bg-white dark:text-black"
+                : "border-black/15 text-black/60 hover:border-black/30 dark:border-white/15 dark:text-white/60 dark:hover:border-white/30"
+            }`}
           >
-            <h3 className="font-medium">{project.title}</h3>
-            <p className="text-sm text-black/70 dark:text-white/70">
-              {project.description}
-            </p>
-            <div className="flex flex-wrap gap-2 pt-1">
-              {project.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full bg-black/5 px-3 py-1 text-xs text-black/60 dark:bg-white/10 dark:text-white/60"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-            {project.link && (
-              <div className="pt-1 text-sm font-medium">
-                <a
-                  href={project.link}
-                  className="underline underline-offset-4 hover:opacity-70"
-                >
-                  View project
-                </a>
-              </div>
-            )}
-          </article>
+            {shortLabel(p.title)}
+          </button>
         ))}
+      </div>
+
+      <div className="relative mt-8">
+        <div
+          className={`flex aspect-video w-full items-center justify-center rounded-2xl border border-black/10 bg-gradient-to-br dark:border-white/10 ${GRADIENTS[index % GRADIENTS.length]}`}
+        >
+          <span className="text-sm font-medium uppercase tracking-widest text-black/40 dark:text-white/50">
+            [Project image placeholder]
+          </span>
+        </div>
+
+        <div className="mt-6 flex flex-col gap-3">
+          <h3 className="text-xl font-medium">{project.title}</h3>
+          <p className="text-black/70 dark:text-white/70">
+            {project.description}
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {project.tags.map((tag) => (
+              <span
+                key={tag}
+                className="rounded-full bg-black/5 px-3 py-1 text-xs text-black/60 dark:bg-white/10 dark:text-white/60"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+          {project.link && (
+            <a
+              href={project.link}
+              className="w-fit text-sm font-medium underline underline-offset-4 hover:opacity-70"
+            >
+              View project
+            </a>
+          )}
+        </div>
+
+        <div className="mt-6 flex items-center justify-between">
+          <button
+            onClick={() => goTo(index - 1)}
+            aria-label="Previous project"
+            className="rounded-full border border-black/20 px-3 py-2 text-sm hover:border-black/40 dark:border-white/20 dark:hover:border-white/40"
+          >
+            ← Prev
+          </button>
+          <div className="flex gap-2">
+            {projects.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => goTo(i)}
+                aria-label={`Go to project ${i + 1}`}
+                className={`h-2 w-2 rounded-full transition-colors ${
+                  i === index
+                    ? "bg-black dark:bg-white"
+                    : "bg-black/20 dark:bg-white/20"
+                }`}
+              />
+            ))}
+          </div>
+          <button
+            onClick={() => goTo(index + 1)}
+            aria-label="Next project"
+            className="rounded-full border border-black/20 px-3 py-2 text-sm hover:border-black/40 dark:border-white/20 dark:hover:border-white/40"
+          >
+            Next →
+          </button>
+        </div>
       </div>
     </section>
   );
