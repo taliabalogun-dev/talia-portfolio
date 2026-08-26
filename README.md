@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio
 
-## Getting Started
+Personal/hiring portfolio site built with Next.js, Tailwind CSS, and TypeScript.
 
-First, run the development server:
+## Editing content
+
+All text content lives in [content/site.ts](content/site.ts) — edit that file to replace
+the `[bracketed placeholders]` with your real name, bio, projects, skills, and experience.
+No need to touch component code for content changes.
+
+Add your résumé PDF at `public/resume/resume.pdf` (see `public/resume/PLACE_RESUME_HERE.txt`).
+
+## Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deploying to Railway
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Push this repo to GitHub.
+2. In Railway, create a new project → **Deploy from GitHub repo** → select this repo.
+3. Railway auto-detects Next.js via Nixpacks and runs `npm run build` / `npm start` — no
+   extra config needed.
+4. Once deployed, add a custom domain under the service's **Settings → Networking**.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Every push to the connected branch triggers a new deploy automatically.

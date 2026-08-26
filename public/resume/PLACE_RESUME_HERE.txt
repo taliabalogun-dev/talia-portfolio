@@ -1,0 +1,2 @@
+Add your résumé PDF here as resume.pdf
+(referenced by content/site.ts -> resumeUrl: "/resume/resume.pdf")
