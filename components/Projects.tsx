@@ -55,37 +55,34 @@ export default function Projects() {
       </div>
 
       <div className="relative mt-8">
-        <div
-          className={`flex aspect-video w-full items-center justify-center rounded-2xl border border-black/10 bg-gradient-to-br dark:border-white/10 ${GRADIENTS[index % GRADIENTS.length]}`}
-        >
-          <span className="text-sm font-medium uppercase tracking-widest text-black/40 dark:text-white/50">
-            [Project image placeholder]
-          </span>
-        </div>
+        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-black/10 sm:aspect-video dark:border-white/10">
+          <div
+            className={`absolute inset-0 bg-gradient-to-br ${GRADIENTS[index % GRADIENTS.length]}`}
+          />
+          <div className="absolute inset-0 bg-black/[6%]" />
 
-        <div className="mt-6 flex flex-col gap-3">
-          <h3 className="text-xl font-medium">{project.title}</h3>
-          <p className="text-black/70 dark:text-white/70">
-            {project.description}
-          </p>
-          <div className="flex flex-wrap gap-2">
-            {project.tags.map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full bg-black/5 px-3 py-1 text-xs text-black/60 dark:bg-white/10 dark:text-white/60"
+          <div className="relative flex h-full flex-col justify-end gap-3 p-6 text-white sm:p-8">
+            <h3 className="text-xl font-medium">{project.title}</h3>
+            <p className="text-white/85">{project.description}</p>
+            <div className="flex flex-wrap gap-2">
+              {project.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full bg-white/15 px-3 py-1 text-xs text-white backdrop-blur-sm"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+            {project.link && (
+              <a
+                href={project.link}
+                className="w-fit text-sm font-medium text-white underline underline-offset-4 hover:opacity-70"
               >
-                {tag}
-              </span>
-            ))}
+                View project
+              </a>
+            )}
           </div>
-          {project.link && (
-            <a
-              href={project.link}
-              className="w-fit text-sm font-medium underline underline-offset-4 hover:opacity-70"
-            >
-              View project
-            </a>
-          )}
         </div>
 
         <div className="mt-6 flex items-center justify-between">
