@@ -15,45 +15,62 @@ const GRADIENTS = [
 
 const AUTO_ADVANCE_MS = 6000;
 
+const featuredProjects = projects.filter((p) => p.featured);
+
 const START_INDEX = Math.max(
   0,
-  projects.findIndex((p) => p.slug === "kugali-iwaju"),
+  featuredProjects.findIndex((p) => p.slug === "kugali-iwaju"),
 );
 
 export default function Projects() {
   const [index, setIndex] = useState(START_INDEX);
 
   const goTo = useCallback((i: number) => {
-    setIndex(((i % projects.length) + projects.length) % projects.length);
+    setIndex(
+      ((i % featuredProjects.length) + featuredProjects.length) %
+        featuredProjects.length,
+    );
   }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setIndex((i) => (i + 1) % projects.length);
+      setIndex((i) => (i + 1) % featuredProjects.length);
     }, AUTO_ADVANCE_MS);
     return () => clearInterval(timer);
   }, [index]);
 
-  const project = projects[index];
+  const project = featuredProjects[index];
 
   return (
     <section id="projects" className="mx-auto max-w-5xl px-6 py-16">
       <h2 className="text-2xl font-semibold tracking-tight">Projects</h2>
 
       <div className="mt-6 flex gap-2 overflow-x-auto pb-2">
-        {projects.map((p, i) => (
-          <button
-            key={p.slug}
-            onClick={() => goTo(i)}
-            className={`shrink-0 whitespace-nowrap rounded-full border px-4 py-2 text-sm transition-colors ${
-              i === index
-                ? "border-black bg-black text-white dark:border-white dark:bg-white dark:text-black"
-                : "border-black/15 text-black/60 hover:border-black/30 dark:border-white/15 dark:text-white/60 dark:hover:border-white/30"
-            }`}
-          >
-            {p.navLabel}
-          </button>
-        ))}
+        {projects.map((p) =>
+          p.featured ? (
+            <button
+              key={p.slug}
+              onClick={() =>
+                goTo(featuredProjects.findIndex((fp) => fp.slug === p.slug))
+              }
+              className={`shrink-0 whitespace-nowrap rounded-full border px-4 py-2 text-sm transition-colors ${
+                p.slug === project.slug
+                  ? "border-black bg-black text-white dark:border-white dark:bg-white dark:text-black"
+                  : "border-black/15 text-black/60 hover:border-black/30 dark:border-white/15 dark:text-white/60 dark:hover:border-white/30"
+              }`}
+            >
+              {p.navLabel}
+            </button>
+          ) : (
+            <Link
+              key={p.slug}
+              href={`/projects/${p.slug}`}
+              className="shrink-0 whitespace-nowrap rounded-full border border-black/15 px-4 py-2 text-sm text-black/60 transition-colors hover:border-black/30 dark:border-white/15 dark:text-white/60 dark:hover:border-white/30"
+            >
+              {p.navLabel}
+            </Link>
+          ),
+        )}
       </div>
 
       <div className="relative mt-8">
@@ -94,7 +111,7 @@ export default function Projects() {
             ← Prev
           </button>
           <div className="flex gap-2">
-            {projects.map((_, i) => (
+            {featuredProjects.map((_, i) => (
               <button
                 key={i}
                 onClick={() => goTo(i)}

@@ -42,6 +42,8 @@ export type Project = {
   role: string;
   period: string;
   location: string;
+  /** Whether this appears as a large slide in the rotating showcase. Non-featured projects still appear in the nav bar, linking straight to their subpage. */
+  featured: boolean;
   /** Pinterest-style campaign cards shown on the subpage. */
   campaigns?: Campaign[];
   /** Legacy flat media gallery — only CTRL 4C still uses this. */
@@ -49,6 +51,32 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    slug: "kugali-iwaju",
+    navLabel: "Kugali Media",
+    title: "Marketing & Story Intern — Kugali Media",
+    description:
+      "Developed creative concepts and pitch materials for a global animation studio, researching audiences, competitors, and cultural trends across 50+ scripts and comics weekly.",
+    extendedDescription:
+      "Tracked campaign performance for team and partner reporting, and coordinated asset requests, approvals, and publishing timelines with internal teams and external partners.",
+    tags: ["Creative Strategy", "Audience Research", "Pitch Development"],
+    role: "Marketing & Story Intern",
+    period: "June 2024 — June 2025",
+    location: "UK / Hybrid",
+    featured: true,
+    campaigns: [
+      {
+        name: "Disney's Iwájú — Pitch & Concept Development",
+        description:
+          "Contributed to creative concept and pitch development for Disney's Iwájú, translating research into producer-facing recommendations.",
+      },
+      {
+        name: "Emmys & NAACP Image Awards Support",
+        description:
+          "Supported marketing initiatives and event coordination around the Emmys and NAACP Image Awards.",
+      },
+    ],
+  },
   {
     slug: "live-nation-mutha",
     navLabel: "Live Nation",
@@ -61,6 +89,7 @@ export const projects: Project[] = [
     role: "Contracted Creative Marketing Director",
     period: "March 2025 — June 2025",
     location: "NYC / Hybrid",
+    featured: true,
     campaigns: [
       {
         name: "‘This Is MUTHA’ — Promo Film",
@@ -75,27 +104,54 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "kugali-iwaju",
-    navLabel: "Kugali Media",
-    title: "Marketing & Story Intern — Kugali Media",
+    slug: "fast-ucla-fashion-show",
+    navLabel: "FAST@UCLA",
+    title: "Editorial Director & Creative Director — FAST@UCLA",
     description:
-      "Developed creative concepts and pitch materials for a global animation studio, researching audiences, competitors, and cultural trends across 50+ scripts and comics weekly.",
+      "Directed creative concepts and briefs across print, digital, and live events for a student-led fashion organization, presenting directly to brand partners.",
     extendedDescription:
-      "Tracked campaign performance for team and partner reporting, and coordinated asset requests, approvals, and publishing timelines with internal teams and external partners.",
-    tags: ["Creative Strategy", "Audience Research", "Pitch Development"],
-    role: "Marketing & Story Intern",
-    period: "June 2024 — June 2025",
-    location: "UK / Hybrid",
+      "Acted as project manager across editorial, digital, and live-event workstreams, coordinating with photographers, designers, writers, and media contributors to keep teams aligned on approvals.",
+    tags: ["Brand Partnerships", "Event Marketing", "Creative Direction"],
+    role: "Editorial Director & Creative Director",
+    period: "Oct 2024 — June 2026",
+    location: "Los Angeles, CA",
+    featured: true,
     campaigns: [
       {
-        name: "Disney's Iwájú — Pitch & Concept Development",
+        name: "Nike × Icona Club × Demonia Fashion Drop",
         description:
-          "Contributed to creative concept and pitch development for Disney's Iwájú, translating research into producer-facing recommendations.",
+          "Coordinated brand partnerships and vendor logistics supporting a sold-out fashion drop through student-led promotion.",
       },
       {
-        name: "Emmys & NAACP Image Awards Support",
+        name: "Annual Fashion Show Production",
         description:
-          "Supported marketing initiatives and event coordination around the Emmys and NAACP Image Awards.",
+          "Ran production meetings — scheduling, agendas, and follow-ups — for FAST's annual fashion show.",
+      },
+    ],
+  },
+  {
+    slug: "ucla-campus-campaigns",
+    navLabel: "UCLA Student Affairs",
+    title: "Multi-Platform Campus Campaigns — UCLA Student Affairs",
+    description:
+      "Produced social-first campaigns across Instagram, TikTok, Facebook, and X for UCLA's primary institutional accounts, reaching an audience of 2M+ and serving a student body of 45,000+.",
+    extendedDescription:
+      "Collaborated with campus partners across Student Affairs — including the Center for Accessible Education, the Dean's Office, Housing & Hospitality, and UCLA Athletics.",
+    tags: ["TikTok", "Instagram", "Social Strategy"],
+    role: "Marketing & Media Coordinator",
+    period: "June 2023 — Sept 2025",
+    location: "Los Angeles, CA",
+    featured: false,
+    campaigns: [
+      {
+        name: "Commencement & Campus Event Coverage",
+        description:
+          "Covered large-scale campus events — including commencements and university-wide programs — attended by tens of thousands.",
+      },
+      {
+        name: "@uclahousing Social Campaign",
+        description:
+          "Produced social-first content and campaign concepts for UCLA Housing's Instagram and TikTok presence.",
       },
     ],
   },
@@ -111,6 +167,7 @@ export const projects: Project[] = [
     role: "Marketing Coordinator",
     period: "Sept 2023 — June 2025",
     location: "Los Angeles, CA",
+    featured: false,
     campaigns: [
       {
         name: "‘What Does LA Mean To You’ Zine",
@@ -130,56 +187,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "ucla-campus-campaigns",
-    navLabel: "UCLA Student Affairs",
-    title: "Multi-Platform Campus Campaigns — UCLA Student Affairs",
-    description:
-      "Produced social-first campaigns across Instagram, TikTok, Facebook, and X for UCLA's primary institutional accounts, reaching an audience of 2M+ and serving a student body of 45,000+.",
-    extendedDescription:
-      "Collaborated with campus partners across Student Affairs — including the Center for Accessible Education, the Dean's Office, Housing & Hospitality, and UCLA Athletics.",
-    tags: ["TikTok", "Instagram", "Social Strategy"],
-    role: "Marketing & Media Coordinator",
-    period: "June 2023 — Sept 2025",
-    location: "Los Angeles, CA",
-    campaigns: [
-      {
-        name: "Commencement & Campus Event Coverage",
-        description:
-          "Covered large-scale campus events — including commencements and university-wide programs — attended by tens of thousands.",
-      },
-      {
-        name: "@uclahousing Social Campaign",
-        description:
-          "Produced social-first content and campaign concepts for UCLA Housing's Instagram and TikTok presence.",
-      },
-    ],
-  },
-  {
-    slug: "fast-ucla-fashion-show",
-    navLabel: "FAST@UCLA",
-    title: "Editorial Director & Creative Director — FAST@UCLA",
-    description:
-      "Directed creative concepts and briefs across print, digital, and live events for a student-led fashion organization, presenting directly to brand partners.",
-    extendedDescription:
-      "Acted as project manager across editorial, digital, and live-event workstreams, coordinating with photographers, designers, writers, and media contributors to keep teams aligned on approvals.",
-    tags: ["Brand Partnerships", "Event Marketing", "Creative Direction"],
-    role: "Editorial Director & Creative Director",
-    period: "Oct 2024 — June 2026",
-    location: "Los Angeles, CA",
-    campaigns: [
-      {
-        name: "Nike × Icona Club × Demonia Fashion Drop",
-        description:
-          "Coordinated brand partnerships and vendor logistics supporting a sold-out fashion drop through student-led promotion.",
-      },
-      {
-        name: "Annual Fashion Show Production",
-        description:
-          "Ran production meetings — scheduling, agendas, and follow-ups — for FAST's annual fashion show.",
-      },
-    ],
-  },
-  {
     slug: "ctrl-4c-campaign",
     navLabel: "CTRL 4C",
     title: "CTRL 4C — Animated Short Film Marketing Campaign",
@@ -191,6 +198,7 @@ export const projects: Project[] = [
     role: "Creator & Campaign Lead",
     period: "2026",
     location: "Los Angeles, CA",
+    featured: true,
     media: [
       { date: "2026", caption: "Key art & campaign concept boards" },
       { date: "2026", caption: "Character design — Teni & Imole" },
