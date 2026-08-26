@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import Link from "next/link";
 import { projects } from "@/content/site";
 
 const GRADIENTS = [
@@ -14,12 +15,17 @@ const GRADIENTS = [
 
 const AUTO_ADVANCE_MS = 6000;
 
+const START_INDEX = Math.max(
+  0,
+  projects.findIndex((p) => p.slug === "kugali-iwaju"),
+);
+
 function shortLabel(title: string) {
   return title.split(" — ")[0];
 }
 
 export default function Projects() {
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(START_INDEX);
 
   const goTo = useCallback((i: number) => {
     setIndex(((i % projects.length) + projects.length) % projects.length);
@@ -41,7 +47,7 @@ export default function Projects() {
       <div className="mt-6 flex gap-2 overflow-x-auto pb-2">
         {projects.map((p, i) => (
           <button
-            key={p.title}
+            key={p.slug}
             onClick={() => goTo(i)}
             className={`shrink-0 whitespace-nowrap rounded-full border px-4 py-2 text-sm transition-colors ${
               i === index
@@ -55,7 +61,10 @@ export default function Projects() {
       </div>
 
       <div className="relative mt-8">
-        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-black/10 sm:aspect-video dark:border-white/10">
+        <Link
+          href={`/projects/${project.slug}`}
+          className="relative block aspect-[4/3] w-full overflow-hidden rounded-2xl border border-black/10 sm:aspect-video dark:border-white/10"
+        >
           <div
             className={`absolute inset-0 bg-gradient-to-br ${GRADIENTS[index % GRADIENTS.length]}`}
           />
@@ -74,16 +83,11 @@ export default function Projects() {
                 </span>
               ))}
             </div>
-            {project.link && (
-              <a
-                href={project.link}
-                className="w-fit text-sm font-medium text-white underline underline-offset-4 hover:opacity-70"
-              >
-                View project
-              </a>
-            )}
+            <span className="w-fit text-sm font-medium text-white underline underline-offset-4">
+              View project
+            </span>
           </div>
-        </div>
+        </Link>
 
         <div className="mt-6 flex items-center justify-between">
           <button
