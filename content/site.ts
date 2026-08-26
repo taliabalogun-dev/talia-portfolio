@@ -2,7 +2,7 @@
 // Sections below map 1:1 to the components in /components.
 
 export const site = {
-  name: "[Your Name]",
+  name: "Talia Balogun",
   role: "[Your Role — e.g. Product Designer, Full-Stack Engineer]",
   tagline:
     "[One sentence on what you do and who you help. Keep it concrete, not generic.]",
