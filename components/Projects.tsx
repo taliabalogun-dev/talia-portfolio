@@ -45,32 +45,51 @@ export default function Projects() {
     <section id="projects" className="mx-auto max-w-5xl px-6 py-16">
       <h2 className="text-2xl font-semibold tracking-tight">Projects</h2>
 
-      <div className="mt-6 flex gap-2 overflow-x-auto pb-2">
-        {projects.map((p) =>
-          p.featured ? (
+      <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
+        {projects.map((p) => {
+          const isActive = p.featured && p.slug === project.slug;
+          const keywords = p.tags.slice(0, 2);
+          const tileClasses = `flex flex-col gap-2 rounded-2xl border p-4 text-left transition-colors ${
+            isActive
+              ? "border-black bg-black dark:border-white dark:bg-white"
+              : "border-black/15 hover:border-black/30 dark:border-white/15 dark:hover:border-white/30"
+          }`;
+          const titleClasses = isActive
+            ? "font-medium text-white dark:text-black"
+            : "font-medium";
+          const badgeClasses = isActive
+            ? "rounded-full bg-white/15 px-2 py-0.5 text-xs text-white dark:bg-black/10 dark:text-black"
+            : "rounded-full bg-black/5 px-2 py-0.5 text-xs text-black/60 dark:bg-white/10 dark:text-white/60";
+
+          const content = (
+            <>
+              <span className={titleClasses}>{p.navLabel}</span>
+              <span className="flex flex-wrap gap-1.5">
+                {keywords.map((kw) => (
+                  <span key={kw} className={badgeClasses}>
+                    {kw}
+                  </span>
+                ))}
+              </span>
+            </>
+          );
+
+          return p.featured ? (
             <button
               key={p.slug}
               onClick={() =>
                 goTo(featuredProjects.findIndex((fp) => fp.slug === p.slug))
               }
-              className={`shrink-0 whitespace-nowrap rounded-full border px-4 py-2 text-sm transition-colors ${
-                p.slug === project.slug
-                  ? "border-black bg-black text-white dark:border-white dark:bg-white dark:text-black"
-                  : "border-black/15 text-black/60 hover:border-black/30 dark:border-white/15 dark:text-white/60 dark:hover:border-white/30"
-              }`}
+              className={tileClasses}
             >
-              {p.navLabel}
+              {content}
             </button>
           ) : (
-            <Link
-              key={p.slug}
-              href={`/projects/${p.slug}`}
-              className="shrink-0 whitespace-nowrap rounded-full border border-black/15 px-4 py-2 text-sm text-black/60 transition-colors hover:border-black/30 dark:border-white/15 dark:text-white/60 dark:hover:border-white/30"
-            >
-              {p.navLabel}
+            <Link key={p.slug} href={`/projects/${p.slug}`} className={tileClasses}>
+              {content}
             </Link>
-          ),
-        )}
+          );
+        })}
       </div>
 
       <div className="relative mt-8">
