@@ -5,7 +5,7 @@ export default function Contact() {
     <section id="contact" className="mx-auto max-w-5xl px-6 py-16">
       <h2 className="text-2xl font-semibold tracking-tight">Contact</h2>
       <p className="mt-4 max-w-xl text-black/70 dark:text-white/70">
-        {"[Short line inviting people to reach out — e.g. open to new roles / freelance work / collaborations.]"}
+        Open to creative strategy and marketing roles — reach out to talk campaigns, collaborations, or opportunities.
       </p>
       <div className="mt-6 flex flex-wrap gap-4">
         <a

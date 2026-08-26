@@ -24,24 +24,14 @@ export default function Projects() {
                 </span>
               ))}
             </div>
-            {(project.link || project.repo) && (
-              <div className="flex gap-4 pt-1 text-sm font-medium">
-                {project.link && (
-                  <a
-                    href={project.link}
-                    className="underline underline-offset-4 hover:opacity-70"
-                  >
-                    Live
-                  </a>
-                )}
-                {project.repo && (
-                  <a
-                    href={project.repo}
-                    className="underline underline-offset-4 hover:opacity-70"
-                  >
-                    Code
-                  </a>
-                )}
+            {project.link && (
+              <div className="pt-1 text-sm font-medium">
+                <a
+                  href={project.link}
+                  className="underline underline-offset-4 hover:opacity-70"
+                >
+                  View project
+                </a>
               </div>
             )}
           </article>
