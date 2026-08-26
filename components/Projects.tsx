@@ -20,10 +20,6 @@ const START_INDEX = Math.max(
   projects.findIndex((p) => p.slug === "kugali-iwaju"),
 );
 
-function shortLabel(title: string) {
-  return title.split(" — ")[0];
-}
-
 export default function Projects() {
   const [index, setIndex] = useState(START_INDEX);
 
@@ -55,7 +51,7 @@ export default function Projects() {
                 : "border-black/15 text-black/60 hover:border-black/30 dark:border-white/15 dark:text-white/60 dark:hover:border-white/30"
             }`}
           >
-            {shortLabel(p.title)}
+            {p.navLabel}
           </button>
         ))}
       </div>

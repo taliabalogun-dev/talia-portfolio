@@ -27,8 +27,14 @@ export type MediaItem = {
   credit?: string;
 };
 
+export type Campaign = {
+  name: string;
+  description: string;
+};
+
 export type Project = {
   slug: string;
+  navLabel: string;
   title: string;
   description: string;
   extendedDescription?: string;
@@ -36,119 +42,146 @@ export type Project = {
   role: string;
   period: string;
   location: string;
-  media: MediaItem[];
+  /** Pinterest-style campaign cards shown on the subpage. */
+  campaigns?: Campaign[];
+  /** Legacy flat media gallery — only CTRL 4C still uses this. */
+  media?: MediaItem[];
 };
 
 export const projects: Project[] = [
   {
     slug: "live-nation-mutha",
-    title: "‘This Is MUTHA’ Festival Campaign — Live Nation",
+    navLabel: "Live Nation",
+    title: "Contracted Creative Director — Live Nation",
     description:
-      "Directed and produced the official promo film and live concert projection visuals for MUTHA Festival, a Brooklyn event celebrating queer, Black, and femme artists. Managed asset delivery and brand consistency across digital and live touchpoints under tight deadlines.",
+      "Directed creative content and live event visuals for Live Nation as a contracted creative marketing director, managing brand consistency across digital and live touchpoints under tight deadlines.",
     extendedDescription:
       "Served as the central point of coordination between creative, production, and promotional teams from planning through same-day execution, tracking feedback and revisions through final delivery.",
     tags: ["Campaign Direction", "Brand Partnerships", "Video"],
     role: "Contracted Creative Marketing Director",
     period: "March 2025 — June 2025",
     location: "NYC / Hybrid",
-    media: [
-      { date: "May 2025", caption: "‘MUTHA’ concert promo video" },
-      { date: "Apr 2025", caption: "‘MUTHA’ concert asset production" },
+    campaigns: [
+      {
+        name: "‘This Is MUTHA’ — Promo Film",
+        description:
+          "Directed and produced the official promo film for MUTHA Festival, a Brooklyn event celebrating queer, Black, and femme artists.",
+      },
+      {
+        name: "‘This Is MUTHA’ — Live Concert Visuals",
+        description:
+          "Produced live concert projection visuals, maintaining brand and creative consistency across the festival's digital and live touchpoints.",
+      },
     ],
   },
   {
     slug: "kugali-iwaju",
-    title: "Kugali Media × Disney's Iwájú — Pitch & Market Research",
+    navLabel: "Kugali Media",
+    title: "Marketing & Story Intern — Kugali Media",
     description:
-      "Built marketing materials and pitch presentations for a global animation studio, researching audiences, competitors, and cultural trends across 50+ scripts and comics weekly to inform producer-facing recommendations.",
+      "Developed creative concepts and pitch materials for a global animation studio, researching audiences, competitors, and cultural trends across 50+ scripts and comics weekly.",
     extendedDescription:
-      "Supported marketing initiatives and event coordination around the Emmys and NAACP Image Awards, and tracked campaign performance for team and partner reporting.",
+      "Tracked campaign performance for team and partner reporting, and coordinated asset requests, approvals, and publishing timelines with internal teams and external partners.",
     tags: ["Creative Strategy", "Audience Research", "Pitch Development"],
     role: "Marketing & Story Intern",
     period: "June 2024 — June 2025",
     location: "UK / Hybrid",
-    media: [
-      { date: "2024", caption: "Iwájú pitch deck & concept boards" },
+    campaigns: [
       {
-        date: "2025",
-        caption: "Emmys & NAACP Image Awards campaign support",
+        name: "Disney's Iwájú — Pitch & Concept Development",
+        description:
+          "Contributed to creative concept and pitch development for Disney's Iwájú, translating research into producer-facing recommendations.",
+      },
+      {
+        name: "Emmys & NAACP Image Awards Support",
+        description:
+          "Supported marketing initiatives and event coordination around the Emmys and NAACP Image Awards.",
       },
     ],
   },
   {
     slug: "refine-la-zine",
-    title: "‘What Does LA Mean To You’ Zine Campaign — Refine LA",
+    navLabel: "Refine LA",
+    title: "Multi-Platform Product Campaigns — Refine LA",
     description:
-      "Directed and shot the promo video and cover shoot for a zine campaign, plus event graphics and coverage for sustainability-focused fashion shows sponsored by Poshmark and Evewear.",
+      "Coordinated campaign promotion and content across events for a sustainability-focused fashion and circular retail organization, including initiatives sponsored by Poshmark and Evewear.",
     extendedDescription:
       "Coordinated on-site coverage for fashion shows, flea markets, and community activations — handling photography, video capture, and post-event content rollout to extend each event's reach.",
     tags: ["Content Direction", "Photography", "Video"],
     role: "Marketing Coordinator",
     period: "Sept 2023 — June 2025",
     location: "Los Angeles, CA",
-    media: [
+    campaigns: [
       {
-        date: "Feb 2025",
-        caption: "‘What does LA mean to you’ zine promo video",
-        credit: "Directed and shot by Talia",
+        name: "‘What Does LA Mean To You’ Zine",
+        description:
+          "Directed and shot the promo video and cover shoot for a zine campaign exploring identity and place.",
       },
       {
-        date: "Feb 2025",
-        caption: "‘What does LA mean to you’ zine cover shoot",
-        credit: "Directed and shot by Talia",
+        name: "‘Decomposition’ Fashion Show",
+        description:
+          "Edited and animated an abstract promotional video for the ‘Decomposition’ fashion show.",
       },
       {
-        date: "March 2025",
-        caption: "‘Decomposition’ fashion show promo video",
-        credit: "Edited & animated by Talia",
-      },
-      {
-        date: "March 2024",
-        caption: "‘Lost and Found’ fashion show event graphics & coverage",
-        credit: "Designed and shot by Talia",
+        name: "‘Lost and Found’ Fashion Show",
+        description:
+          "Designed and shot event graphics and media coverage for the ‘Lost and Found’ fashion show.",
       },
     ],
   },
   {
     slug: "ucla-campus-campaigns",
+    navLabel: "UCLA Student Affairs",
     title: "Multi-Platform Campus Campaigns — UCLA Student Affairs",
     description:
       "Produced social-first campaigns across Instagram, TikTok, Facebook, and X for UCLA's primary institutional accounts, reaching an audience of 2M+ and serving a student body of 45,000+.",
     extendedDescription:
-      "Collaborated with campus partners across Student Affairs — including the Center for Accessible Education, the Dean's Office, Housing & Hospitality, and UCLA Athletics — and covered large-scale campus events attended by tens of thousands.",
+      "Collaborated with campus partners across Student Affairs — including the Center for Accessible Education, the Dean's Office, Housing & Hospitality, and UCLA Athletics.",
     tags: ["TikTok", "Instagram", "Social Strategy"],
     role: "Marketing & Media Coordinator",
     period: "June 2023 — Sept 2025",
     location: "Los Angeles, CA",
-    media: [
+    campaigns: [
       {
-        date: "2024",
-        caption: "Campus event coverage — commencement & university-wide programs",
+        name: "Commencement & Campus Event Coverage",
+        description:
+          "Covered large-scale campus events — including commencements and university-wide programs — attended by tens of thousands.",
       },
-      { date: "2024", caption: "@uclahousing social campaign assets" },
+      {
+        name: "@uclahousing Social Campaign",
+        description:
+          "Produced social-first content and campaign concepts for UCLA Housing's Instagram and TikTok presence.",
+      },
     ],
   },
   {
     slug: "fast-ucla-fashion-show",
-    title: "Nike × Icona Club × Demonia Fashion Show — FAST@UCLA",
+    navLabel: "FAST@UCLA",
+    title: "Editorial Director & Creative Director — FAST@UCLA",
     description:
-      "Coordinated brand partnerships and vendor logistics supporting a sold-out fashion drop through student-led promotion, and ran production meetings for the organization's annual fashion show.",
+      "Directed creative concepts and briefs across print, digital, and live events for a student-led fashion organization, presenting directly to brand partners.",
     extendedDescription:
       "Acted as project manager across editorial, digital, and live-event workstreams, coordinating with photographers, designers, writers, and media contributors to keep teams aligned on approvals.",
     tags: ["Brand Partnerships", "Event Marketing", "Creative Direction"],
     role: "Editorial Director & Creative Director",
     period: "Oct 2024 — June 2026",
     location: "Los Angeles, CA",
-    media: [
+    campaigns: [
       {
-        date: "2025",
-        caption: "Annual fashion show — brand partner concepts (Nike, Icona Club, Demonia)",
+        name: "Nike × Icona Club × Demonia Fashion Drop",
+        description:
+          "Coordinated brand partnerships and vendor logistics supporting a sold-out fashion drop through student-led promotion.",
       },
-      { date: "2025", caption: "Editorial & digital campaign briefs" },
+      {
+        name: "Annual Fashion Show Production",
+        description:
+          "Ran production meetings — scheduling, agendas, and follow-ups — for FAST's annual fashion show.",
+      },
     ],
   },
   {
     slug: "ctrl-4c-campaign",
+    navLabel: "CTRL 4C",
     title: "CTRL 4C — Animated Short Film Marketing Campaign",
     description:
       "Led concept-to-launch marketing for an original animated short, building the campaign, key art, and promotional strategy alongside the film itself.",
