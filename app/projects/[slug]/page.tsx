@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Nav from "@/components/Nav";
@@ -35,10 +36,21 @@ export default async function ProjectPage(
           ← Back to projects
         </Link>
 
-        <div className="mt-6 flex aspect-video w-full items-center justify-center rounded-2xl border border-black/10 bg-black/5 dark:border-white/10 dark:bg-white/5">
-          <span className="text-sm uppercase tracking-widest text-black/40 dark:text-white/40">
-            [Project image placeholder]
-          </span>
+        <div className="relative mt-6 flex aspect-video w-full items-center justify-center overflow-hidden rounded-2xl border border-black/10 bg-black/5 dark:border-white/10 dark:bg-white/5">
+          {project.image ? (
+            <Image
+              src={project.image}
+              alt=""
+              fill
+              className="object-cover"
+              sizes="(min-width: 1024px) 896px, 100vw"
+              priority
+            />
+          ) : (
+            <span className="text-sm uppercase tracking-widest text-black/40 dark:text-white/40">
+              [Project image placeholder]
+            </span>
+          )}
         </div>
 
         <h1 className="mt-8 text-3xl font-semibold tracking-tight sm:text-4xl">
@@ -82,11 +94,21 @@ export default async function ProjectPage(
                   className="mb-6 break-inside-avoid overflow-hidden rounded-2xl border border-black/10 dark:border-white/10"
                 >
                   <div
-                    className={`flex items-center justify-center bg-black/5 dark:bg-white/5 ${MASONRY_ASPECTS[i % MASONRY_ASPECTS.length]}`}
+                    className={`relative flex items-center justify-center bg-black/5 dark:bg-white/5 ${MASONRY_ASPECTS[i % MASONRY_ASPECTS.length]}`}
                   >
-                    <span className="text-xs uppercase tracking-widest text-black/40 dark:text-white/40">
-                      [Image placeholder]
-                    </span>
+                    {campaign.image ? (
+                      <Image
+                        src={campaign.image}
+                        alt=""
+                        fill
+                        className="object-cover"
+                        sizes="(min-width: 640px) 448px, 100vw"
+                      />
+                    ) : (
+                      <span className="text-xs uppercase tracking-widest text-black/40 dark:text-white/40">
+                        [Image placeholder]
+                      </span>
+                    )}
                   </div>
                   <div className="p-4">
                     <h3 className="font-medium">{campaign.name}</h3>
@@ -108,10 +130,20 @@ export default async function ProjectPage(
             <div className="mt-6 grid gap-6 sm:grid-cols-2">
               {project.media.map((item) => (
                 <div key={item.caption} className="flex flex-col gap-2">
-                  <div className="flex aspect-video w-full items-center justify-center rounded-xl border border-black/10 bg-black/5 dark:border-white/10 dark:bg-white/5">
-                    <span className="text-xs uppercase tracking-widest text-black/40 dark:text-white/40">
-                      [Image placeholder]
-                    </span>
+                  <div className="relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-xl border border-black/10 bg-black/5 dark:border-white/10 dark:bg-white/5">
+                    {item.image ? (
+                      <Image
+                        src={item.image}
+                        alt=""
+                        fill
+                        className="object-cover"
+                        sizes="(min-width: 640px) 448px, 100vw"
+                      />
+                    ) : (
+                      <span className="text-xs uppercase tracking-widest text-black/40 dark:text-white/40">
+                        [Image placeholder]
+                      </span>
+                    )}
                   </div>
                   <p className="text-sm text-black/70 dark:text-white/70">
                     <span className="text-black/50 dark:text-white/50">

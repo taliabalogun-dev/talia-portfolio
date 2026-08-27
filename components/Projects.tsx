@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { projects } from "@/content/site";
 
@@ -50,9 +51,19 @@ export default function Projects() {
           href={`/projects/${project.slug}`}
           className="relative block aspect-[4/3] w-full overflow-hidden rounded-2xl border border-black/10 sm:aspect-video dark:border-white/10"
         >
-          <div
-            className={`absolute inset-0 bg-gradient-to-br ${GRADIENTS[index % GRADIENTS.length]}`}
-          />
+          {project.image ? (
+            <Image
+              src={project.image}
+              alt=""
+              fill
+              className="object-cover"
+              sizes="(min-width: 640px) 768px, 100vw"
+            />
+          ) : (
+            <div
+              className={`absolute inset-0 bg-gradient-to-br ${GRADIENTS[index % GRADIENTS.length]}`}
+            />
+          )}
           <div className="absolute inset-0 bg-black/[6%]" />
 
           <div className="relative flex h-full flex-col justify-end gap-3 p-6 text-white sm:p-8">

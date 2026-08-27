@@ -25,11 +25,13 @@ export type MediaItem = {
   date: string;
   caption: string;
   credit?: string;
+  image?: string;
 };
 
 export type Campaign = {
   name: string;
   description: string;
+  image?: string;
 };
 
 export type Project = {
@@ -44,6 +46,8 @@ export type Project = {
   location: string;
   /** Whether this appears as a large slide in the rotating showcase. Non-featured projects still appear in the nav bar, linking straight to their subpage. */
   featured: boolean;
+  /** Hero image for the carousel slide and subpage header. */
+  image?: string;
   /** Pinterest-style campaign cards shown on the subpage. */
   campaigns?: Campaign[];
   /** Legacy flat media gallery — only CTRL 4C still uses this. */
@@ -64,6 +68,7 @@ export const projects: Project[] = [
     period: "June 2024 — June 2025",
     location: "UK / Hybrid",
     featured: true,
+    image: "/images/campaigns/kugali-anthology.jpg",
     campaigns: [
       {
         name: "Disney's Iwájú — Pitch & Concept Development",
@@ -74,6 +79,7 @@ export const projects: Project[] = [
         name: "Emmys & NAACP Image Awards Support",
         description:
           "Supported marketing initiatives and event coordination around the Emmys and NAACP Image Awards.",
+        image: "/images/campaigns/kugali-emmys.jpg",
       },
     ],
   },
@@ -90,16 +96,19 @@ export const projects: Project[] = [
     period: "March 2025 — June 2025",
     location: "NYC / Hybrid",
     featured: true,
+    image: "/images/campaigns/live-nation-promo.jpg",
     campaigns: [
       {
         name: "‘This Is MUTHA’ — Promo Film",
         description:
           "Directed and produced the official promo film for MUTHA Festival, a Brooklyn event celebrating queer, Black, and femme artists.",
+        image: "/images/campaigns/live-nation-promo.jpg",
       },
       {
         name: "‘This Is MUTHA’ — Live Concert Visuals",
         description:
           "Produced live concert projection visuals, maintaining brand and creative consistency across the festival's digital and live touchpoints.",
+        image: "/images/campaigns/live-nation-visuals-process.jpg",
       },
     ],
   },
@@ -116,16 +125,19 @@ export const projects: Project[] = [
     period: "Oct 2024 — June 2026",
     location: "Los Angeles, CA",
     featured: true,
+    image: "/images/campaigns/fast-runway.jpg",
     campaigns: [
       {
         name: "Nike × Icona Club × Demonia Fashion Drop",
         description:
           "Coordinated brand partnerships and vendor logistics supporting a sold-out fashion drop through student-led promotion.",
+        image: "/images/campaigns/fast-iconaclub-car.jpg",
       },
       {
         name: "Annual Fashion Show Production",
         description:
           "Ran production meetings — scheduling, agendas, and follow-ups — for FAST's annual fashion show.",
+        image: "/images/campaigns/fast-runway-2.jpg",
       },
     ],
   },
@@ -142,6 +154,7 @@ export const projects: Project[] = [
     period: "June 2023 — Sept 2025",
     location: "Los Angeles, CA",
     featured: false,
+    image: "/images/campaigns/ucla-pinoy-halohalo.jpg",
     campaigns: [
       {
         name: "Commencement & Campus Event Coverage",
@@ -152,6 +165,7 @@ export const projects: Project[] = [
         name: "@uclahousing Social Campaign",
         description:
           "Produced social-first content and campaign concepts for UCLA Housing's Instagram and TikTok presence.",
+        image: "/images/campaigns/ucla-pinoy-flyer.jpg",
       },
     ],
   },
@@ -168,11 +182,13 @@ export const projects: Project[] = [
     period: "Sept 2023 — June 2025",
     location: "Los Angeles, CA",
     featured: false,
+    image: "/images/campaigns/refine-subway.jpg",
     campaigns: [
       {
         name: "‘What Does LA Mean To You’ Zine",
         description:
           "Directed and shot the promo video and cover shoot for a zine campaign exploring identity and place.",
+        image: "/images/campaigns/refine-zine-promo-still.jpg",
       },
       {
         name: "‘Decomposition’ Fashion Show",
@@ -199,9 +215,18 @@ export const projects: Project[] = [
     period: "2026",
     location: "Los Angeles, CA",
     featured: true,
+    image: "/images/campaigns/ctrl4c-keyart.jpg",
     media: [
-      { date: "2026", caption: "Key art & campaign concept boards" },
-      { date: "2026", caption: "Character design — Teni & Imole" },
+      {
+        date: "2026",
+        caption: "Key art & campaign concept boards",
+        image: "/images/campaigns/ctrl4c-keyart.jpg",
+      },
+      {
+        date: "2026",
+        caption: "Character design — Teni & Imole",
+        image: "/images/campaigns/ctrl4c-characters.jpg",
+      },
     ],
   },
 ];
