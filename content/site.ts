@@ -227,6 +227,11 @@ export const projects: Project[] = [
         caption: "Character design — Teni & Imole",
         image: "/images/campaigns/ctrl4c-characters.jpg",
       },
+      {
+        date: "2026",
+        caption: "Premiere screening",
+        image: "/images/campaigns/ctrl4c-screening.jpg",
+      },
     ],
   },
 ];
