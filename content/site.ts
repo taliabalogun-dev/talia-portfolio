@@ -215,12 +215,12 @@ export const projects: Project[] = [
     period: "2026",
     location: "Los Angeles, CA",
     featured: true,
-    image: "/images/campaigns/ctrl4c-keyart.jpg",
+    image: "/images/campaigns/ctrl4c-crown.jpg",
     media: [
       {
         date: "2026",
         caption: "Key art & campaign concept boards",
-        image: "/images/campaigns/ctrl4c-keyart.jpg",
+        image: "/images/campaigns/ctrl4c-crown.jpg",
       },
       {
         date: "2026",
