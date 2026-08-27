@@ -2,7 +2,7 @@ export const site = {
   name: "Talia Balogun",
   role: "Creative Marketing & Campaign Strategy",
   tagline:
-    "I direct creative strategy and campaign output for entertainment, fashion, and institutional brands — from audience research and pitch positioning to hands-on direction of photo, video, and campaign content.",
+    "I direct creative strategy and campaign output for entertainment, fashion, and institutional brands.",
   email: "talia.balogun@gmail.com",
   location: "Los Angeles, CA",
   social: {
@@ -11,6 +11,7 @@ export const site = {
     twitter: "",
   },
   resumeUrl: "/resume/resume.pdf",
+  aboutImage: "/images/about-profile.jpg",
 };
 
 export const about = {
@@ -18,6 +19,16 @@ export const about = {
   paragraphs: [
     "Creative marketing and campaign strategist with 3+ years directing creative decisions inside entertainment, fashion, and institutional campaigns across the US, UK, and Nigeria — from audience research and pitch positioning through hands-on creative direction of photo, video, and campaign output.",
     "Direct experience spans pitch strategy work on Disney's Iwájú, brand partnership management with Nike and other major partners, and directing full creative teams across print, photography, and video for live campaigns. Based in Los Angeles, working toward moving from campaign-level creative direction into entertainment marketing strategy and development.",
+  ],
+};
+
+export const bio = {
+  heading: "More About Me",
+  paragraphs: [
+    "I'm a creative marketing and campaign strategist based in Los Angeles, working at the intersection of entertainment, fashion, and culture. My path started in Lagos — early production and PR roles at Golden Effects Pictures, Bap Production, and alongside fashion designer Lisa Folawiyo — before secondary school at Cheltenham Ladies' College in the UK and a B.A. in Film & Television at UCLA, with an Animation concentration and a minor in Entrepreneurship.",
+    "That mix shows up in how I work: I move comfortably between big-picture positioning and on-the-ground execution. At Kugali Media, the studio behind Disney's Iwájú, I supported pitch strategy and awards-season promotion across the slate. At FAST@UCLA I directed all creative media output — print, photography, video — for a student-run fashion brand with real paid partnerships, including Nike, Icona Club, and Demonia. Live Nation brought me on to direct the promotional film and live visuals for Mutha Festival in Brooklyn, and at UCLA Student Affairs I ran multi-platform campaign strategy for an audience of 2M+.",
+    "Alongside client work, I'm writing, directing, and producing CTRL 4C, an original animated short set in a Lagos salon, with a festival strategy targeting Sundance, GLAS Animation, and AFRIFF. I also founded Co Curate, an independent creative studio built around a managed curator roster, with an initial go-to-market focus on entertainment and animation-adjacent marketing.",
+    "Long term, I'm working toward moving from campaign-level creative direction into entertainment marketing strategy and development — staying close to the creative work while shaping the positioning and business decisions around it.",
   ],
 };
 
