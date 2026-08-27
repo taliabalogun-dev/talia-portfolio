@@ -74,6 +74,7 @@ export const projects: Project[] = [
         name: "Disney's Iwájú — Pitch & Concept Development",
         description:
           "Contributed to creative concept and pitch development for Disney's Iwájú, translating research into producer-facing recommendations.",
+        image: "/images/campaigns/kugali-iwaju-poster.jpg",
       },
       {
         name: "Emmys & NAACP Image Awards Support",
