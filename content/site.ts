@@ -96,7 +96,7 @@ export const projects: Project[] = [
     period: "March 2025 — June 2025",
     location: "NYC / Hybrid",
     featured: true,
-    image: "/images/campaigns/live-nation-promo.jpg",
+    image: "/images/campaigns/live-nation-concert-photo.jpg",
     campaigns: [
       {
         name: "‘This Is MUTHA’ — Promo Film",
@@ -125,7 +125,7 @@ export const projects: Project[] = [
     period: "Oct 2024 — June 2026",
     location: "Los Angeles, CA",
     featured: true,
-    image: "/images/campaigns/fast-runway.jpg",
+    image: "/images/campaigns/fast-silver-screen.jpg",
     campaigns: [
       {
         name: "Nike × Icona Club × Demonia Fashion Drop",
@@ -182,7 +182,7 @@ export const projects: Project[] = [
     period: "Sept 2023 — June 2025",
     location: "Los Angeles, CA",
     featured: false,
-    image: "/images/campaigns/refine-subway.jpg",
+    image: "/images/campaigns/refine-amphitheater.jpg",
     campaigns: [
       {
         name: "‘What Does LA Mean To You’ Zine",
