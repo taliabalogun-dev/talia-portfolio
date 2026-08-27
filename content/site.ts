@@ -1,8 +1,8 @@
 export const site = {
   name: "Talia Balogun",
-  role: "Creative Strategist — Paid Social & Creator Content",
+  role: "Creative Marketing & Campaign Strategy",
   tagline:
-    "I turn audience insight and cultural research into creator-facing campaigns and hooks for animation, entertainment, fashion, and live-event brands across the US, UK, and Nigeria.",
+    "I direct creative strategy and campaign output for entertainment, fashion, and institutional brands — from audience research and pitch positioning to hands-on direction of photo, video, and campaign content.",
   email: "talia.balogun@gmail.com",
   location: "Los Angeles, CA",
   social: {
@@ -16,8 +16,8 @@ export const site = {
 export const about = {
   heading: "About",
   paragraphs: [
-    "Creative marketer specialising in storytelling, art direction, and content production. I develop campaigns across film, fashion, and culture — combining design, photography, motion, and community-led strategy to turn audience insight into creator-facing briefs, hooks, and concepts.",
-    "UK citizen with hands-on marketing experience across US and UK teams — from Disney's Iwájú at Kugali Media to Live Nation's MUTHA Festival and campaigns reaching 2M+ across UCLA's institutional accounts. Based in Los Angeles, currently open to creative strategy and marketing roles.",
+    "Creative marketing and campaign strategist with 3+ years directing creative decisions inside entertainment, fashion, and institutional campaigns across the US, UK, and Nigeria — from audience research and pitch positioning through hands-on creative direction of photo, video, and campaign output.",
+    "Direct experience spans pitch strategy work on Disney's Iwájú, brand partnership management with Nike and other major partners, and directing full creative teams across print, photography, and video for live campaigns. Based in Los Angeles, working toward moving from campaign-level creative direction into entertainment marketing strategy and development.",
   ],
 };
 
@@ -58,28 +58,28 @@ export const projects: Project[] = [
   {
     slug: "kugali-iwaju",
     navLabel: "Kugali Media",
-    title: "Marketing & Story Intern — Kugali Media",
+    title: "Marketing & Strategy Intern — Kugali Media",
     description:
-      "Developed creative concepts and pitch materials for a global animation studio, researching audiences, competitors, and cultural trends across 50+ scripts and comics weekly.",
+      "Supported marketing and pitch strategy for a global animation studio behind Disney's Iwájú, building producer-facing pitch decks and leading positioning research across the studio's slate.",
     extendedDescription:
-      "Tracked campaign performance for team and partner reporting, and coordinated asset requests, approvals, and publishing timelines with internal teams and external partners.",
-    tags: ["Creative Strategy", "Audience Research", "Pitch Development"],
-    role: "Marketing & Story Intern",
-    period: "June 2024 — June 2025",
+      "Reviewed 50+ scripts and comics weekly and managed marketing operations through HubSpot, providing research-backed notes that informed brand positioning across the release pipeline.",
+    tags: ["Pitch Strategy", "Audience Research", "Brand Positioning"],
+    role: "Marketing & Strategy Intern",
+    period: "Sept 2024 — June 2025",
     location: "UK / Hybrid",
     featured: true,
     image: "/images/campaigns/kugali-iwaju-poster.jpg",
     campaigns: [
       {
-        name: "Disney's Iwájú — Pitch & Concept Development",
+        name: "Iwájú, Jollof Wars & Razorman — Pitch Strategy",
         description:
-          "Contributed to creative concept and pitch development for Disney's Iwájú, translating research into producer-facing recommendations.",
+          "Built producer-facing pitch decks and led streaming and studio partnership research for Jollof Wars (Next Narrative Africa Fund) and Razorman (in development with Newmation and Alta Global Media), alongside pitch strategy work on Disney's Iwájú.",
         image: "/images/campaigns/kugali-iwaju-poster.jpg",
       },
       {
         name: "Emmys & NAACP Image Awards Support",
         description:
-          "Supported marketing initiatives and event coordination around the Emmys and NAACP Image Awards.",
+          "Supported festival and awards-season promotion and on-the-ground coverage for Disney's Iwájú, including the Emmys and NAACP Image Awards, gathering industry intelligence to inform brand positioning.",
         image: "/images/campaigns/kugali-emmys.jpg",
       },
     ],
@@ -87,13 +87,13 @@ export const projects: Project[] = [
   {
     slug: "live-nation-mutha",
     navLabel: "Live Nation",
-    title: "Contracted Creative Director — Live Nation",
+    title: "Creative Director (Contract) — Live Nation",
     description:
-      "Directed creative content and live event visuals for Live Nation as a contracted creative marketing director, managing brand consistency across digital and live touchpoints under tight deadlines.",
+      "Commissioned to direct and produce the official promotional film and live concert projection content for Mutha Festival, translating brand vision and cultural positioning into a cohesive visual direction.",
     extendedDescription:
-      "Served as the central point of coordination between creative, production, and promotional teams from planning through same-day execution, tracking feedback and revisions through final delivery.",
+      "Served as the central point of coordination between creative, production, and promotional teams from planning through same-day execution, managing asset delivery and approvals across tight event deadlines.",
     tags: ["Campaign Direction", "Brand Partnerships", "Video"],
-    role: "Contracted Creative Marketing Director",
+    role: "Creative Director (Contract)",
     period: "March 2025 — June 2025",
     location: "NYC / Hybrid",
     featured: true,
@@ -102,13 +102,13 @@ export const projects: Project[] = [
       {
         name: "‘This Is MUTHA’ — Promo Film",
         description:
-          "Directed and produced the official promo film for MUTHA Festival, a Brooklyn event celebrating queer, Black, and femme artists.",
+          "Directed and produced the official promotional film for Mutha Festival, translating brand vision and cultural positioning into a cohesive visual direction across digital and live touchpoints.",
         image: "/images/campaigns/live-nation-promo.jpg",
       },
       {
         name: "‘This Is MUTHA’ — Live Concert Visuals",
         description:
-          "Produced live concert projection visuals, maintaining brand and creative consistency across the festival's digital and live touchpoints.",
+          "Produced live concert projection content, maintaining brand and creative consistency across the festival's digital and live touchpoints through final delivery.",
         image: "/images/campaigns/live-nation-visuals-process.jpg",
       },
     ],
@@ -116,13 +116,13 @@ export const projects: Project[] = [
   {
     slug: "fast-ucla-fashion-show",
     navLabel: "FAST@UCLA",
-    title: "Editorial Director & Creative Director — FAST@UCLA",
+    title: "Director of Creative Media — FAST@UCLA",
     description:
-      "Directed creative concepts and briefs across print, digital, and live events for a student-led fashion organization, presenting directly to brand partners.",
+      "Directed all creative media production — print, photography, video, and media releases — across editorial, digital, and live-event initiatives for FAST, a UCLA student-run fashion and culture brand.",
     extendedDescription:
-      "Acted as project manager across editorial, digital, and live-event workstreams, coordinating with photographers, designers, writers, and media contributors to keep teams aligned on approvals.",
+      "Oversaw a full team of photographers, videographers, and designers on every shoot and release, setting creative direction and final sign-off on all visual output for FAST's annual fashion show and publication.",
     tags: ["Brand Partnerships", "Event Marketing", "Creative Direction"],
-    role: "Editorial Director & Creative Director",
+    role: "Director of Creative Media",
     period: "Oct 2024 — June 2026",
     location: "Los Angeles, CA",
     featured: true,
@@ -131,13 +131,13 @@ export const projects: Project[] = [
       {
         name: "Nike × Icona Club × Demonia Fashion Drop",
         description:
-          "Coordinated brand partnerships and vendor logistics supporting a sold-out fashion drop through student-led promotion.",
+          "Served as key creative point of contact for brand partners including Nike, Icona Club, and Demonia, developing creative briefs and directing partner-facing photo and video content.",
         image: "/images/campaigns/fast-iconaclub-car.jpg",
       },
       {
         name: "Annual Fashion Show Production",
         description:
-          "Ran production meetings — scheduling, agendas, and follow-ups — for FAST's annual fashion show.",
+          "Co-led planning and creative execution of FAST's annual fashion show, overseeing all on-site photo and video coverage from concept through final delivery.",
         image: "/images/campaigns/fast-runway-2.jpg",
       },
     ],
@@ -147,11 +147,11 @@ export const projects: Project[] = [
     navLabel: "UCLA Student Affairs",
     title: "Multi-Platform Campus Campaigns — UCLA Student Affairs",
     description:
-      "Produced social-first campaigns across Instagram, TikTok, Facebook, and X for UCLA's primary institutional accounts, reaching an audience of 2M+ and serving a student body of 45,000+.",
+      "Directed creative and campaign strategy for multi-platform institutional content across Instagram, TikTok, Facebook, and X, translating campus priorities into brand-consistent direction for an audience of 2M+.",
     extendedDescription:
-      "Collaborated with campus partners across Student Affairs — including the Center for Accessible Education, the Dean's Office, Housing & Hospitality, and UCLA Athletics.",
+      "Built and maintained campaign trackers and performance reporting, using engagement data to inform creative decisions, and coordinated cross-departmental campaigns for large-scale institutional events including commencement.",
     tags: ["TikTok", "Instagram", "Social Strategy"],
-    role: "Marketing & Media Coordinator",
+    role: "Media Marketing Coordinator",
     period: "June 2023 — Sept 2025",
     location: "Los Angeles, CA",
     featured: false,
@@ -160,7 +160,7 @@ export const projects: Project[] = [
       {
         name: "Commencement & Campus Event Coverage",
         description:
-          "Covered large-scale campus events — including commencements and university-wide programs — attended by tens of thousands.",
+          "Coordinated cross-departmental campaigns and stakeholder communication for large-scale institutional events, including commencement, capturing and editing on-site content in real time.",
       },
       {
         name: "@uclahousing Social Campaign",
@@ -175,11 +175,11 @@ export const projects: Project[] = [
     navLabel: "Refine LA",
     title: "Multi-Platform Product Campaigns — Refine LA",
     description:
-      "Coordinated campaign promotion and content across events for a sustainability-focused fashion and circular retail organization, including initiatives sponsored by Poshmark and Evewear.",
+      "Directed editorial cover shoots and magazine promotion videos as creative lead for a sustainability-focused fashion and circular retail organization, managing concept through execution.",
     extendedDescription:
-      "Coordinated on-site coverage for fashion shows, flea markets, and community activations — handling photography, video capture, and post-event content rollout to extend each event's reach.",
+      "Coordinated multi-platform marketing campaigns and event promotion — including initiatives sponsored by Poshmark and Eyewear — and defined the visual language keeping creative output consistent across live events, digital promotion, and editorial materials.",
     tags: ["Content Direction", "Photography", "Video"],
-    role: "Marketing Coordinator",
+    role: "Marketing Coordinator, Creative & Strategy",
     period: "Sept 2023 — June 2025",
     location: "Los Angeles, CA",
     featured: false,
@@ -206,14 +206,14 @@ export const projects: Project[] = [
   {
     slug: "ctrl-4c-campaign",
     navLabel: "CTRL 4C",
-    title: "CTRL 4C — Animated Short Film Marketing Campaign",
+    title: "Writer, Producer & Director — CTRL 4C",
     description:
-      "Led concept-to-launch marketing for an original animated short, building the campaign, key art, and promotional strategy alongside the film itself.",
+      "Writing, directing, and producing an original animated short — a sci-fi comedy set in a Lagos salon — following a character who accidentally time-travels through a hair-tech invention into a frozen '90s sitcom world.",
     extendedDescription:
-      "The film follows a rushed Lagos woman who tests a revolutionary hair-styling machine and is accidentally launched through time to the origin of her hairstyle.",
-    tags: ["Campaign Development", "Film Marketing", "Concept to Launch"],
-    role: "Creator & Campaign Lead",
-    period: "2026",
+      "Managing the project end-to-end — production timeline, budget, and a festival distribution strategy targeting Sundance, GLAS Animation, Manchester Animation Festival, Carmel International, Film Africa London, and AFRIFF — and designed the poster and key art for festival submission materials.",
+    tags: ["Festival Strategy", "Key Art & Campaign", "Production Direction"],
+    role: "Writer, Producer & Director",
+    period: "2025 — Present",
     location: "Los Angeles, CA",
     featured: true,
     image: "/images/campaigns/ctrl4c-crown.jpg",
@@ -275,38 +275,90 @@ export type ExperienceItem = {
 
 export const experience: ExperienceItem[] = [
   {
-    role: "Editorial Director & Creative Director",
+    role: "Director of Creative Media",
     company: "FAST@UCLA",
     period: "Oct 2024 — June 2026",
     summary:
-      "Directed creative concepts and briefs across print, digital, and live events for a student-led fashion organization, presenting directly to brand partners including Nike, Icona Club, and Demonia.",
+      "Directed all creative media production — print, photography, video, and media releases — across editorial, digital, and live-event initiatives, serving as key creative contact for brand partners including Nike, Icona Club, and Demonia.",
   },
   {
-    role: "Creative Director",
+    role: "Creative Director (Contract)",
     company: "Live Nation",
     period: "Mar 2025 — June 2025",
     summary:
-      "Directed the promo film and campaign for MUTHA Festival in Brooklyn, adapting brand voice across digital and live formats under tight turnarounds.",
+      "Directed creative strategy and produced the official promotional film and live concert projection content for Mutha Festival, translating brand vision into a cohesive visual direction across digital and live touchpoints.",
   },
   {
-    role: "Marketing Coordinator",
+    role: "Marketing & Strategy Intern",
     company: "Kugali Media",
     period: "Sept 2024 — June 2025",
     summary:
-      "Developed creative concepts and pitch materials for a global animation studio, including work on Disney's Iwájú, and researched audiences and market trends weekly.",
+      "Supported marketing and pitch strategy on Disney's Iwájú, built producer-facing pitch decks for Jollof Wars and Razorman, and reviewed 50+ scripts weekly to inform brand positioning.",
   },
   {
-    role: "Marketing Coordinator",
+    role: "Media Marketing Coordinator",
     company: "UCLA Student Affairs",
     period: "June 2023 — Sept 2025",
     summary:
-      "Created social-first campaigns across Instagram, TikTok, Facebook, and X reaching an audience of 2M+ for UCLA's institutional accounts.",
+      "Directed creative and campaign strategy for multi-platform institutional content across Instagram, TikTok, Facebook, and X, translating campus priorities into brand-consistent direction for an audience of 2M+.",
   },
+];
+
+export const additionalExperience: ExperienceItem[] = [
   {
-    role: "Marketing Coordinator",
+    role: "Marketing Coordinator, Creative & Strategy",
     company: "Refine LA",
     period: "Sept 2023 — June 2025",
     summary:
-      "Directed editorial shoots and creative concepts as creative lead, aligning visual output with brand strategy across live events and digital promotion.",
+      "Directed editorial cover shoots and magazine promotion videos as creative lead for a sustainability-focused fashion and circular retail organization.",
+  },
+  {
+    role: "Marketing Strategy Intern",
+    company: "FCMB Group",
+    period: "Apr 2026 — June 2026",
+    summary:
+      "Led campaign research and a three-part growth strategy for Flexx, FCMB's youth banking product, spanning gamification, campus creator funding, and a phased KPI roadmap.",
+  },
+  {
+    role: "Founder",
+    company: "Co Curate",
+    period: "July 2026 — Present",
+    summary:
+      "Building an independent creative studio with a managed curator roster, an IP origination model, and an initial go-to-market focus on entertainment and animation-adjacent marketing.",
+  },
+  {
+    role: "Writer, Producer & Director",
+    company: "CTRL 4C",
+    period: "2025 — Present",
+    summary:
+      "Writing, directing, and producing an original animated short end-to-end, including a festival distribution and positioning strategy targeting Sundance and GLAS Animation.",
+  },
+  {
+    role: "Marketing Director",
+    company: "Black Film and Theatre Initiative",
+    period: "Sept 2025 — June 2026",
+    summary:
+      "Directed promotional strategy and creative materials for the organization's festivals, workshops, and short-film fundraising initiatives.",
+  },
+  {
+    role: "Writers Room Coordinator",
+    company: "Bap Production",
+    period: "Jun — Sept 2023",
+    summary:
+      "Reviewed scripts and treatments supporting story development for Netflix-commissioned and in-house film/TV projects, including sequel development for Bling Lagosians 2.",
+  },
+  {
+    role: "Production Assistant",
+    company: "Golden Effects Pictures Ltd",
+    period: "Apr 2020 — May 2021",
+    summary:
+      "Provided administrative and production support during pre-production at a Lagos-based production company.",
+  },
+  {
+    role: "PR Event Coordinator",
+    company: "Jewel by Lisa",
+    period: "Oct — Nov 2020",
+    summary:
+      "Supported fashion designer Lisa Folawiyo ahead of Lagos and London Fashion Week, managing models and runway shows.",
   },
 ];

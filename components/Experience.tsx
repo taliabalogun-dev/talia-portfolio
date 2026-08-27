@@ -1,4 +1,4 @@
-import { experience } from "@/content/site";
+import { additionalExperience, experience } from "@/content/site";
 
 export default function Experience() {
   return (
@@ -19,6 +19,30 @@ export default function Experience() {
               </span>
             </div>
             <p className="text-sm text-black/70 dark:text-white/70">
+              {item.summary}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <h3 className="mt-12 text-sm font-medium uppercase tracking-wide text-black/50 dark:text-white/50">
+        Additional Experience
+      </h3>
+      <div className="mt-6 flex flex-col gap-4">
+        {additionalExperience.map((item) => (
+          <div
+            key={`${item.company}-${item.role}`}
+            className="flex flex-col gap-0.5 border-l-2 border-black/10 pl-4 dark:border-white/10"
+          >
+            <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+              <p className="text-sm font-medium">
+                {item.role} · {item.company}
+              </p>
+              <span className="text-xs text-black/50 dark:text-white/50">
+                {item.period}
+              </span>
+            </div>
+            <p className="text-xs text-black/60 dark:text-white/60">
               {item.summary}
             </p>
           </div>
