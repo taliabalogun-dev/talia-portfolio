@@ -68,7 +68,7 @@ export const projects: Project[] = [
     period: "June 2024 — June 2025",
     location: "UK / Hybrid",
     featured: true,
-    image: "/images/campaigns/kugali-anthology.jpg",
+    image: "/images/campaigns/kugali-iwaju-poster.jpg",
     campaigns: [
       {
         name: "Disney's Iwájú — Pitch & Concept Development",
