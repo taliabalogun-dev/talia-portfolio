@@ -93,22 +93,18 @@ export default async function ProjectPage(
                 {slide.subtitle && (
                   <p className="mt-1 text-brown/60">{slide.subtitle}</p>
                 )}
-                <div
-                  className={
-                    slide.images && slide.images.length > 0
-                      ? "mt-6 grid gap-8 sm:grid-cols-2"
-                      : "mt-6"
-                  }
-                >
-                  {slide.images && slide.images.length > 0 && (
+                {(() => {
+                  const hasImages = !!slide.images && slide.images.length > 0;
+                  const hasSections = slide.sections.length > 0;
+                  const gallery = hasImages && (
                     <div
                       className={
-                        slide.images.length > 1
-                          ? "grid grid-cols-2 gap-3"
+                        slide.images!.length > 1
+                          ? "grid grid-cols-2 gap-3 sm:grid-cols-3"
                           : "grid grid-cols-1"
                       }
                     >
-                      {slide.images.map((img) => (
+                      {slide.images!.map((img) => (
                         <figure
                           key={img.src}
                           className="overflow-hidden rounded-xl border border-brown/15"
@@ -130,35 +126,47 @@ export default async function ProjectPage(
                         </figure>
                       ))}
                     </div>
-                  )}
-                  <div className="flex flex-col gap-5">
-                    {slide.sections.map((section) => (
-                      <div key={section.heading}>
-                        <h3 className="text-sm font-medium uppercase tracking-wide text-brown/50">
-                          {section.heading}
-                        </h3>
-                        {section.style === "pills" ? (
-                          <div className="mt-2 flex flex-wrap gap-2">
-                            {section.items.map((item) => (
-                              <span
-                                key={item}
-                                className="rounded-full bg-brown/10 px-3 py-1 text-xs text-brown/70"
-                              >
-                                {item}
-                              </span>
-                            ))}
-                          </div>
-                        ) : (
-                          <div className="mt-2 flex flex-col gap-2 text-sm text-brown/70">
-                            {section.items.map((item) => (
-                              <p key={item}>{item}</p>
-                            ))}
-                          </div>
-                        )}
+                  );
+                  const sectionsBlock = hasSections && (
+                    <div className="flex flex-col gap-5">
+                      {slide.sections.map((section) => (
+                        <div key={section.heading}>
+                          <h3 className="text-sm font-medium uppercase tracking-wide text-brown/50">
+                            {section.heading}
+                          </h3>
+                          {section.style === "pills" ? (
+                            <div className="mt-2 flex flex-wrap gap-2">
+                              {section.items.map((item) => (
+                                <span
+                                  key={item}
+                                  className="rounded-full bg-brown/10 px-3 py-1 text-xs text-brown/70"
+                                >
+                                  {item}
+                                </span>
+                              ))}
+                            </div>
+                          ) : (
+                            <div className="mt-2 flex flex-col gap-2 text-sm text-brown/70">
+                              {section.items.map((item) => (
+                                <p key={item}>{item}</p>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  );
+
+                  if (hasImages && hasSections) {
+                    return (
+                      <div className="mt-6 grid gap-8 sm:grid-cols-2">
+                        {gallery}
+                        {sectionsBlock}
                       </div>
-                    ))}
-                  </div>
-                </div>
+                    );
+                  }
+                  return <div className="mt-6">{gallery || sectionsBlock}</div>;
+                })()}
               </section>
             ))}
           </div>

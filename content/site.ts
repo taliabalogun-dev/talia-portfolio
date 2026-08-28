@@ -149,19 +149,189 @@ export const projects: Project[] = [
     period: "Oct 2024 — June 2026",
     location: "Los Angeles, CA",
     featured: true,
-    image: "/images/campaigns/fast-silver-screen.jpg",
-    campaigns: [
+    image: "/images/campaigns/fast-slide-cover.jpg",
+    slides: [
       {
-        name: "Nike × Icona Club × Demonia Fashion Drop",
-        description:
-          "Served as key creative point of contact for brand partners including Nike, Icona Club, and Demonia, developing creative briefs and directing partner-facing photo and video content.",
-        image: "/images/campaigns/fast-iconaclub-car.jpg",
+        title: "Iconaclub",
+        subtitle:
+          "Associate Creative Director (via FAST) for brand drop — June 2025",
+        images: [{ src: "/images/campaigns/fast-slide-cover.jpg" }],
+        sections: [
+          {
+            heading: "Role",
+            style: "pills",
+            items: ["Producer", "Editor", "Campaign Strategy"],
+          },
+        ],
       },
       {
-        name: "Annual Fashion Show Production",
-        description:
-          "Co-led planning and creative execution of FAST's annual fashion show, overseeing all on-site photo and video coverage from concept through final delivery.",
-        image: "/images/campaigns/fast-runway-2.jpg",
+        title: "Iconaclub Streetwear Collection Drop",
+        images: [{ src: "/images/campaigns/fast-slide-overview.jpg" }],
+        sections: [
+          {
+            heading: "Objective",
+            style: "list",
+            items: [
+              "Build awareness within UCLA's student community, generate pre-launch interest, and convert engagement into sales.",
+            ],
+          },
+          {
+            heading: "Process",
+            style: "list",
+            items: [
+              "Proposed a strategic student collaboration. Developed the campaign's visual direction and coordinated production across photography and short-form video, alongside a student-led social and promotional-code strategy.",
+            ],
+          },
+          {
+            heading: "Outcome",
+            style: "list",
+            items: [
+              "Delivered a cohesive suite of campaign photography, social assets, promotional video, and behind-the-scenes content across Iconaclub and FAST channels.",
+            ],
+          },
+          {
+            heading: "Result",
+            style: "pills",
+            items: [
+              "100% collection sell-through",
+              "80% of sales via student promo codes",
+            ],
+          },
+        ],
+      },
+      {
+        title: "The Post",
+        images: [{ src: "/images/campaigns/fast-slide-post.jpg" }],
+        sections: [
+          {
+            heading: "Concept",
+            style: "list",
+            items: [
+              "Created an editorial visual language combining streetwear, motorsport, and youth culture, using the car to frame and reinforce the collection.",
+            ],
+          },
+          {
+            heading: "Execution",
+            style: "list",
+            items: [
+              "Directed posing, composition, and product visibility, then selected and edited the final campaign imagery.",
+            ],
+          },
+          {
+            heading: "Performance",
+            style: "pills",
+            items: ["1.6K+ likes", "141 shares", "25 comments"],
+          },
+        ],
+      },
+      {
+        title: "Posting / Marketing Strategy",
+        subtitle: "Marketing → Sales",
+        sections: [
+          {
+            heading: "Strategy",
+            style: "list",
+            items: [
+              "1. Build awareness — launched collaborative Iconaclub × FAST photography and video content to reach both brand and student audiences.",
+              "2. Activate students — mobilised FAST's student network through ambassador promotion and trackable student discount codes.",
+              "3. Drive conversion — connected social engagement directly to purchase through promotional codes and drop-focused calls to action.",
+            ],
+          },
+          {
+            heading: "Result",
+            style: "pills",
+            items: [
+              "80% of sales via student promo codes",
+              "100% collection sell-through — sold out",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Teaser / Promo Video",
+        subtitle: "Creative Director",
+        images: [{ src: "/images/campaigns/fast-slide-teaser.jpg" }],
+        sections: [
+          {
+            heading: "Concept",
+            style: "list",
+            items: [
+              "Created a short-form teaser that translated the campaign's automotive, streetwear-led visual identity into motion and built anticipation around the collection drop.",
+            ],
+          },
+          {
+            heading: "Execution",
+            style: "pills",
+            items: [
+              "Directed talent blocking and movement",
+              "Developed shot progression around the hero car",
+              "Produced and coordinated the shoot",
+              "Edited short-form vertical content",
+              "Optimised pacing and framing for social",
+            ],
+          },
+          {
+            heading: "Performance",
+            style: "pills",
+            items: ["3.1K+ likes", "130+ shares"],
+          },
+        ],
+      },
+      {
+        title: "Creative Direction & Production",
+        images: [{ src: "/images/campaigns/fast-slide-roles.jpg" }],
+        sections: [
+          {
+            heading: "Creative Direction",
+            style: "pills",
+            items: [
+              "Campaign concept + visual research",
+              "Creative treatment / moodboard",
+              "Stakeholder presentation deck",
+              "Styling direction",
+              "Talent posing + blocking",
+              "Photography direction",
+              "Image selection + editing",
+              "Brand consistency",
+            ],
+          },
+          {
+            heading: "Production",
+            style: "pills",
+            items: [
+              "Stakeholder communication",
+              "Shoot planning + scheduling",
+              "Budget distribution",
+              "Location scouting",
+              "Location permissions",
+              "Equipment + prop coordination",
+              "Talent + crew casting",
+              "Production logistics",
+              "On-set coordination",
+            ],
+          },
+        ],
+      },
+      {
+        title: "My Edited Selects",
+        images: [
+          { src: "/images/campaigns/fast-slide-edited-1.jpg" },
+          { src: "/images/campaigns/fast-slide-edited-2.jpg" },
+          { src: "/images/campaigns/fast-slide-edited-3.jpg" },
+        ],
+        sections: [],
+      },
+      {
+        title: "Annual Fashion Show Production",
+        sections: [
+          {
+            heading: "Overview",
+            style: "list",
+            items: [
+              "Co-led planning and creative execution of FAST's annual fashion show, overseeing all on-site photo and video coverage from concept through final delivery.",
+            ],
+          },
+        ],
       },
     ],
   },
