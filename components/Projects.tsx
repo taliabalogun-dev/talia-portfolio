@@ -64,7 +64,7 @@ export default function Projects() {
               className={`absolute inset-0 bg-gradient-to-br ${GRADIENTS[index % GRADIENTS.length]}`}
             />
           )}
-          <div className="absolute inset-x-0 bottom-0 flex flex-col gap-3 bg-brown p-6 sm:p-8">
+          <div className="absolute inset-x-0 bottom-0 flex flex-col gap-3 bg-brown/90 p-6 sm:p-8">
             <h3 className="text-xl font-medium text-beige">{project.title}</h3>
             <div className="flex flex-wrap gap-2">
               {project.tags.map((tag) => (
