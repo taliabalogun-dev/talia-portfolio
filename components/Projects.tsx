@@ -64,21 +64,19 @@ export default function Projects() {
               className={`absolute inset-0 bg-gradient-to-br ${GRADIENTS[index % GRADIENTS.length]}`}
             />
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
-
-          <div className="relative flex h-full flex-col justify-end gap-3 p-6 text-white sm:p-8">
-            <h3 className="text-xl font-medium">{project.title}</h3>
+          <div className="absolute inset-x-0 bottom-0 flex flex-col gap-3 bg-brown p-6 sm:p-8">
+            <h3 className="text-xl font-medium text-beige">{project.title}</h3>
             <div className="flex flex-wrap gap-2">
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full bg-white/15 px-3 py-1 text-xs text-white backdrop-blur-sm"
+                  className="rounded-full bg-beige/15 px-3 py-1 text-xs text-beige"
                 >
                   {tag}
                 </span>
               ))}
             </div>
-            <span className="w-fit text-sm font-medium text-white underline underline-offset-4">
+            <span className="w-fit text-sm font-medium text-beige underline underline-offset-4">
               View project
             </span>
           </div>

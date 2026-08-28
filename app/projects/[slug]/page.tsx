@@ -119,42 +119,6 @@ export default async function ProjectPage(
             </div>
           </>
         )}
-
-        {project.media && (
-          <>
-            <h2 className="mt-12 text-xl font-semibold tracking-tight">
-              Featured creative media
-            </h2>
-            <div className="mt-6 grid gap-6 sm:grid-cols-2">
-              {project.media.map((item) => (
-                <div key={item.caption} className="flex flex-col gap-2">
-                  <div className="relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-xl border border-brown/15 bg-beige-card">
-                    {item.image ? (
-                      <Image
-                        src={item.image}
-                        alt=""
-                        fill
-                        className="object-cover"
-                        sizes="(min-width: 640px) 448px, 100vw"
-                      />
-                    ) : (
-                      <span className="text-xs uppercase tracking-widest text-brown/40">
-                        [Image placeholder]
-                      </span>
-                    )}
-                  </div>
-                  <p className="text-sm text-brown/70">
-                    <span className="text-brown/50">{item.date} — </span>
-                    {item.caption}
-                  </p>
-                  {item.credit && (
-                    <p className="text-xs text-brown/50">{item.credit}</p>
-                  )}
-                </div>
-              ))}
-            </div>
-          </>
-        )}
       </main>
     </>
   );

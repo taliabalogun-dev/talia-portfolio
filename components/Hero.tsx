@@ -10,7 +10,7 @@ export default function Hero() {
         alt=""
         fill
         priority
-        className="object-cover"
+        className="object-cover object-top"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-beige/85 via-beige/35 to-transparent" />
 

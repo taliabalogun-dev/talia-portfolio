@@ -32,13 +32,6 @@ export const bio = {
   ],
 };
 
-export type MediaItem = {
-  date: string;
-  caption: string;
-  credit?: string;
-  image?: string;
-};
-
 export type Campaign = {
   name: string;
   description: string;
@@ -61,8 +54,6 @@ export type Project = {
   image?: string;
   /** Pinterest-style campaign cards shown on the subpage. */
   campaigns?: Campaign[];
-  /** Legacy flat media gallery — only CTRL 4C still uses this. */
-  media?: MediaItem[];
 };
 
 export const projects: Project[] = [
@@ -221,27 +212,78 @@ export const projects: Project[] = [
     description:
       "Writing, directing, and producing an original animated short — a sci-fi comedy set in a Lagos salon — following a character who accidentally time-travels through a hair-tech invention into a frozen '90s sitcom world.",
     extendedDescription:
-      "Managing the project end-to-end — production timeline, budget, and a festival distribution strategy targeting Sundance, GLAS Animation, Manchester Animation Festival, Carmel International, Film Africa London, and AFRIFF — and designed the poster and key art for festival submission materials.",
+      "Ran a multi-stage social campaign repositioning my account from freelance illustration to an animation-focused platform — process videos, character reveals, cast spotlights, teasers, and screening promotion — while managing the film's production timeline, budget, and festival strategy targeting Sundance, GLAS Animation, Manchester Animation Festival, Carmel International, Film Africa London, and AFRIFF. Result: +400 followers, 20K+ views, 2 industry interview invitations, and AFRIFF networking recognition.",
     tags: ["Festival Strategy", "Key Art & Campaign", "Production Direction"],
     role: "Writer, Producer & Director",
     period: "2025 — Present",
     location: "Los Angeles, CA",
     featured: true,
     image: "/images/campaigns/ctrl4c-crown.jpg",
-    media: [
+    campaigns: [
       {
-        date: "2026",
-        caption: "Key art & campaign concept boards",
+        name: "Key Art & Campaign Concept",
+        description:
+          "Designed the film's key art and campaign concept boards, establishing the visual identity used across every touchpoint.",
         image: "/images/campaigns/ctrl4c-crown.jpg",
       },
       {
-        date: "2026",
-        caption: "Character design — Teni & Imole",
+        name: "Character Design — Teni & Imole",
+        description:
+          "Designed the film's lead characters, developing the visual language later reused across casting and world-building posts.",
         image: "/images/campaigns/ctrl4c-characters.jpg",
       },
       {
-        date: "2026",
-        caption: "Premiere screening",
+        name: "Casting Call",
+        description:
+          "Recruited seven voice actors through a public casting call post, sparking early community participation.",
+        image: "/images/campaigns/ctrl4c-casting-call.jpg",
+      },
+      {
+        name: "Character Lineup Reveal",
+        description:
+          "Revealed the film's character lineup to build world-building anticipation ahead of release.",
+        image: "/images/campaigns/ctrl4c-character-lineup.jpg",
+      },
+      {
+        name: "Intro / Teaser",
+        description:
+          "Released an introductory teaser to build brand recognition ahead of the premiere.",
+        image: "/images/campaigns/ctrl4c-intro-teaser.jpg",
+      },
+      {
+        name: "Keyframe Transitions",
+        description:
+          "Shared keyframe transition clips to showcase animation quality and process craft.",
+        image: "/images/campaigns/ctrl4c-keyframe.jpg",
+      },
+      {
+        name: "Pre-Screening Teaser Slideshow",
+        description:
+          "A 13-slide carousel introducing characters and visual motifs without spoiling the story — 2.4K+ views with strong audience retention.",
+        image: "/images/campaigns/ctrl4c-prescreening-slideshow.jpg",
+      },
+      {
+        name: "Cast & Talent Highlight",
+        description:
+          "Spotlighted the voice cast and crew to expand the film's story beyond the screen, driving 100+ post interactions.",
+        image: "/images/campaigns/ctrl4c-cast-talent.jpg",
+      },
+      {
+        name: "Video Content for Engagement",
+        description:
+          "Turned behind-the-scenes animation process work into short-form video, generating 20K+ cumulative views across three high-performing posts.",
+        image: "/images/campaigns/ctrl4c-video-content.jpg",
+      },
+      {
+        name: "Screening Post",
+        description:
+          "Converted online engagement into in-person attendance for the UCLA TFT premiere — 9.5K+ impressions and 3.1K+ accounts reached.",
+        image: "/images/campaigns/ctrl4c-screening-post.jpg",
+      },
+      {
+        name: "Premiere Screening",
+        description:
+          "The film's premiere screening, converting a year of campaign work into a full house.",
         image: "/images/campaigns/ctrl4c-screening.jpg",
       },
     ],
