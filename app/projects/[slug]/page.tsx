@@ -100,7 +100,7 @@ export default async function ProjectPage(
                     <div
                       className={
                         slide.images!.length > 1
-                          ? "grid grid-cols-2 gap-3 sm:grid-cols-3"
+                          ? "grid grid-cols-2 items-start gap-3 sm:grid-cols-3"
                           : "grid grid-cols-1"
                       }
                     >
@@ -109,7 +109,9 @@ export default async function ProjectPage(
                           key={img.src}
                           className="overflow-hidden rounded-xl border border-brown/15"
                         >
-                          <div className="relative aspect-[9/16] w-full">
+                          <div
+                            className={`relative w-full ${img.aspect === "video" ? "aspect-video" : "aspect-[9/16]"}`}
+                          >
                             <Image
                               src={img.src}
                               alt=""

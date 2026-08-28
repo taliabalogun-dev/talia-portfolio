@@ -41,6 +41,8 @@ export type Campaign = {
 export type SlideImage = {
   src: string;
   caption?: string;
+  /** Defaults to "portrait" (phone-screenshot shaped). Use "video" for landscape stills. */
+  aspect?: "portrait" | "video";
 };
 
 export type SlideSection = {
@@ -120,19 +122,47 @@ export const projects: Project[] = [
     period: "March 2025 — June 2025",
     location: "NYC / Hybrid",
     featured: true,
-    image: "/images/campaigns/live-nation-concert-photo.jpg",
-    campaigns: [
+    image: "/images/campaigns/live-nation-slide-poster.jpg",
+    slides: [
       {
-        name: "‘This Is MUTHA’ — Promo Film",
-        description:
-          "Directed and produced the official promotional film for Mutha Festival, translating brand vision and cultural positioning into a cohesive visual direction across digital and live touchpoints.",
-        image: "/images/campaigns/live-nation-promo.jpg",
-      },
-      {
-        name: "‘This Is MUTHA’ — Live Concert Visuals",
-        description:
-          "Produced live concert projection content, maintaining brand and creative consistency across the festival's digital and live touchpoints through final delivery.",
-        image: "/images/campaigns/live-nation-visuals-process.jpg",
+        title: "‘This Is MUTHA’ Festival Promotion Video",
+        subtitle: "Contracted Media Marketing Director — March–August 2025",
+        images: [
+          { src: "/images/campaigns/live-nation-slide-poster.jpg" },
+          {
+            src: "/images/campaigns/live-nation-slide-city.jpg",
+            aspect: "video",
+          },
+          {
+            src: "/images/campaigns/live-nation-slide-storefront.jpg",
+            aspect: "video",
+          },
+          {
+            src: "/images/campaigns/live-nation-slide-stage.jpg",
+            aspect: "video",
+          },
+        ],
+        sections: [
+          {
+            heading: "Project Overview",
+            style: "list",
+            items: [
+              "Commissioned by Live Nation and MUTHA Festival to create the official promotional film for a Brooklyn-based music and arts festival celebrating queer, Black, and femme artists.",
+            ],
+          },
+          {
+            heading: "Responsibilities",
+            style: "pills",
+            items: [
+              "Video concept & narrative development",
+              "Visual language design",
+              "Photography & copyrighted asset design",
+              "Animation, photography & motion design",
+              "Social-first & projection-ready visuals",
+              "Authentic, community-led storytelling",
+            ],
+          },
+        ],
       },
     ],
   },
