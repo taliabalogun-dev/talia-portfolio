@@ -8,43 +8,35 @@ export default function Experience() {
         {experience.map((item) => (
           <div
             key={`${item.company}-${item.role}`}
-            className="flex flex-col gap-1 border-l-2 border-black/10 pl-4 dark:border-white/10"
+            className="flex flex-col gap-1 border-l-2 border-brown/15 pl-4"
           >
             <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
               <h3 className="font-medium">
                 {item.role} · {item.company}
               </h3>
-              <span className="text-sm text-black/50 dark:text-white/50">
-                {item.period}
-              </span>
+              <span className="text-sm text-brown/50">{item.period}</span>
             </div>
-            <p className="text-sm text-black/70 dark:text-white/70">
-              {item.summary}
-            </p>
+            <p className="text-sm text-brown/70">{item.summary}</p>
           </div>
         ))}
       </div>
 
-      <h3 className="mt-12 text-sm font-medium uppercase tracking-wide text-black/50 dark:text-white/50">
+      <h3 className="mt-12 text-sm font-medium uppercase tracking-wide text-brown/50">
         Additional Experience
       </h3>
       <div className="mt-6 flex flex-col gap-4">
         {additionalExperience.map((item) => (
           <div
             key={`${item.company}-${item.role}`}
-            className="flex flex-col gap-0.5 border-l-2 border-black/10 pl-4 dark:border-white/10"
+            className="flex flex-col gap-0.5 border-l-2 border-brown/15 pl-4"
           >
             <div className="flex flex-wrap items-baseline justify-between gap-x-4">
               <p className="text-sm font-medium">
                 {item.role} · {item.company}
               </p>
-              <span className="text-xs text-black/50 dark:text-white/50">
-                {item.period}
-              </span>
+              <span className="text-xs text-brown/50">{item.period}</span>
             </div>
-            <p className="text-xs text-black/60 dark:text-white/60">
-              {item.summary}
-            </p>
+            <p className="text-xs text-brown/60">{item.summary}</p>
           </div>
         ))}
       </div>

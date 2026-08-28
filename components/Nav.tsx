@@ -11,9 +11,9 @@ const links = [
 
 export default function Nav() {
   return (
-    <header className="sticky top-0 z-50 border-b border-black/10 bg-white/80 backdrop-blur dark:border-white/10 dark:bg-black/60">
+    <header className="sticky top-0 z-50 border-b border-brown/15 bg-beige/90 backdrop-blur">
       <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        <Link href="#top" className="font-semibold tracking-tight">
+        <Link href="#top" className="font-semibold tracking-tight text-brown">
           {site.name}
         </Link>
         <ul className="hidden gap-6 text-sm sm:flex">
@@ -21,7 +21,7 @@ export default function Nav() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="text-black/70 transition-colors hover:text-black dark:text-white/70 dark:hover:text-white"
+                className="text-brown/70 transition-colors hover:text-brown"
               >
                 {link.label}
               </Link>

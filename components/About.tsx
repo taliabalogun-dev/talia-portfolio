@@ -9,7 +9,7 @@ export default function About() {
       <h2 className="text-2xl font-semibold tracking-tight">
         {about.heading}
       </h2>
-      <div className="mt-6 flex flex-col gap-4 text-black/70 dark:text-white/70">
+      <div className="mt-6 flex flex-col gap-4 text-brown/70">
         {about.paragraphs.map((paragraph, i) => (
           <p key={i}>{paragraph}</p>
         ))}

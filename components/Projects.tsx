@@ -49,7 +49,7 @@ export default function Projects() {
       <div className="relative mt-8">
         <Link
           href={`/projects/${project.slug}`}
-          className="relative block aspect-[4/3] w-full overflow-hidden rounded-2xl border border-black/10 sm:aspect-video dark:border-white/10"
+          className="relative block aspect-[4/3] w-full overflow-hidden rounded-2xl border border-brown/15 sm:aspect-video"
         >
           {project.image ? (
             <Image
@@ -88,7 +88,7 @@ export default function Projects() {
           <button
             onClick={() => goTo(index - 1)}
             aria-label="Previous project"
-            className="rounded-full border border-black/20 px-3 py-2 text-sm hover:border-black/40 dark:border-white/20 dark:hover:border-white/40"
+            className="rounded-full border border-brown/30 px-3 py-2 text-sm text-brown hover:border-brown/60"
           >
             ← Prev
           </button>
@@ -99,9 +99,7 @@ export default function Projects() {
                 onClick={() => goTo(i)}
                 aria-label={`Go to project ${i + 1}`}
                 className={`h-2 w-2 rounded-full transition-colors ${
-                  i === index
-                    ? "bg-black dark:bg-white"
-                    : "bg-black/20 dark:bg-white/20"
+                  i === index ? "bg-brown" : "bg-brown/25"
                 }`}
               />
             ))}
@@ -109,7 +107,7 @@ export default function Projects() {
           <button
             onClick={() => goTo(index + 1)}
             aria-label="Next project"
-            className="rounded-full border border-black/20 px-3 py-2 text-sm hover:border-black/40 dark:border-white/20 dark:hover:border-white/40"
+            className="rounded-full border border-brown/30 px-3 py-2 text-sm text-brown hover:border-brown/60"
           >
             Next →
           </button>
@@ -122,15 +120,13 @@ export default function Projects() {
           const keywords = p.tags.slice(0, 2);
           const tileClasses = `flex flex-col gap-2 rounded-2xl border p-4 text-left transition-colors ${
             isActive
-              ? "border-black bg-black dark:border-white dark:bg-white"
-              : "border-black/15 hover:border-black/30 dark:border-white/15 dark:hover:border-white/30"
+              ? "border-brown bg-brown"
+              : "border-brown/20 hover:border-brown/40"
           }`;
-          const titleClasses = isActive
-            ? "font-medium text-white dark:text-black"
-            : "font-medium";
+          const titleClasses = isActive ? "font-medium text-beige" : "font-medium";
           const badgeClasses = isActive
-            ? "rounded-full bg-white/15 px-2 py-0.5 text-xs text-white dark:bg-black/10 dark:text-black"
-            : "rounded-full bg-black/5 px-2 py-0.5 text-xs text-black/60 dark:bg-white/10 dark:text-white/60";
+            ? "rounded-full bg-beige/20 px-2 py-0.5 text-xs text-beige"
+            : "rounded-full bg-brown/10 px-2 py-0.5 text-xs text-brown/60";
 
           const content = (
             <>
