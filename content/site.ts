@@ -206,23 +206,224 @@ export const projects: Project[] = [
     period: "Sept 2023 — June 2025",
     location: "Los Angeles, CA",
     featured: false,
-    image: "/images/campaigns/refine-amphitheater.jpg",
-    campaigns: [
+    image: "/images/campaigns/refine-slide-promo.jpg",
+    slides: [
       {
-        name: "‘What Does LA Mean To You’ Zine",
-        description:
-          "Directed and shot the promo video and cover shoot for a zine campaign exploring identity and place.",
-        image: "/images/campaigns/refine-zine-promo-still.jpg",
+        title: "Refine LA",
+        subtitle:
+          "Project Lead & Creative Director for multi-channel zine launch campaign — March 2025",
+        images: [{ src: "/images/campaigns/refine-slide-cover.jpg" }],
+        sections: [
+          {
+            heading: "Campaign Sections",
+            style: "pills",
+            items: ["Promo Film", "Cover Campaign", "Community Interviews"],
+          },
+        ],
       },
       {
-        name: "‘Decomposition’ Fashion Show",
-        description:
-          "Edited and animated an abstract promotional video for the ‘Decomposition’ fashion show.",
+        title: "Refine LA Zine — “What Does LA Mean To You?”",
+        images: [{ src: "/images/campaigns/refine-slide-overview.jpg" }],
+        sections: [
+          {
+            heading: "Product",
+            style: "list",
+            items: [
+              "A fashion and culture zine exploring Los Angeles through its communities.",
+            ],
+          },
+          {
+            heading: "Objective",
+            style: "list",
+            items: [
+              "Build awareness within target communities (POC & Gen Z), generate pre-launch interest, and convert engagement into sales.",
+            ],
+          },
+          {
+            heading: "Strategy",
+            style: "list",
+            items: [
+              "Led an integrated launch campaign spanning video, photography, community interviews, social content, and on-campus activation.",
+            ],
+          },
+          {
+            heading: "Result",
+            style: "pills",
+            items: [
+              "170 pre-orders",
+              "80 launch-day purchases",
+              "110 attendees",
+              "80% of stock sold",
+            ],
+          },
+        ],
       },
       {
-        name: "‘Lost and Found’ Fashion Show",
-        description:
-          "Designed and shot event graphics and media coverage for the ‘Lost and Found’ fashion show.",
+        title: "Promo Film",
+        images: [{ src: "/images/campaigns/refine-slide-promo.jpg" }],
+        sections: [
+          {
+            heading: "Role",
+            style: "pills",
+            items: [
+              "Creative Direction",
+              "Production",
+              "Finance",
+              "Co-Directing",
+              "Cinematography",
+              "Casting",
+              "Editing & Colour",
+            ],
+          },
+          {
+            heading: "Concept",
+            style: "list",
+            items: [
+              "Narrative launch film following three characters on their journey through LA before connecting on the metro — discovering Refine LA.",
+            ],
+          },
+          {
+            heading: "KPI Tracking",
+            style: "pills",
+            items: ["6K+ views", "+50% vs. account average", "+10% like performance"],
+          },
+        ],
+      },
+      {
+        title: "Zine Cover Shoot",
+        images: [{ src: "/images/campaigns/refine-slide-coveshoot.jpg" }],
+        sections: [
+          {
+            heading: "Role",
+            style: "pills",
+            items: [
+              "Creative Director",
+              "Photographer",
+              "Production",
+              "Graphic Editor",
+            ],
+          },
+          {
+            heading: "Approach",
+            style: "list",
+            items: [
+              "Developed the visual identity and produced the editorial cover shoot from concept through final assets.",
+            ],
+          },
+          {
+            heading: "Campaign Output",
+            style: "pills",
+            items: [
+              "Front + back cover",
+              "Editorial photography",
+              "Social launch assets",
+            ],
+          },
+          {
+            heading: "KPI Tracking",
+            style: "pills",
+            items: ["2K+ cumulative likes", "3K profile views"],
+          },
+        ],
+      },
+      {
+        title: "Cover Shoot — Edited Selects",
+        images: [{ src: "/images/campaigns/refine-slide-edited.jpg" }],
+        sections: [
+          {
+            heading: "Role",
+            style: "pills",
+            items: ["Creative Director", "Photographer", "Editor", "Producer"],
+          },
+          {
+            heading: "KPI Tracking",
+            style: "pills",
+            items: [
+              "2K+ cumulative likes",
+              "3K+ profile visits",
+              "~30% traffic from Explore page",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Community Interviews",
+        images: [{ src: "/images/campaigns/refine-slide-interviews.jpg" }],
+        sections: [
+          {
+            heading: "Role",
+            style: "pills",
+            items: ["Creative Director", "Production", "Graphic Editing"],
+          },
+          {
+            heading: "Approach",
+            style: "list",
+            items: [
+              "Interviewed LA communities around the question “What does LA mean to you?”, turning their responses into social content and printed campaign material.",
+              "Combined digital storytelling with QR-enabled campus promotion to move audiences from conversation → content → purchase.",
+            ],
+          },
+          {
+            heading: "KPI Tracking",
+            style: "pills",
+            items: [
+              "20K+ interview views",
+              "2K+ engagement",
+              "140 QR scans",
+              "110 launch attendees",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Posting / Marketing Strategy",
+        subtitle: "Marketing → Sales",
+        sections: [
+          {
+            heading: "Strategy",
+            style: "list",
+            items: [
+              "1. Build a story — introduced Refine LA through narrative video and editorial photography, establishing a distinct visual identity around LA culture.",
+              "2. Activate community — turned “What does LA mean to you?” into community-led interviews, social content, and QR-enabled campus promotion.",
+              "3. Convert interest — connected digital content to pre-orders and launch-day purchasing through direct calls-to-action and physical activation.",
+            ],
+          },
+          {
+            heading: "Result",
+            style: "pills",
+            items: [
+              "20K+ interview views",
+              "140 QR scans",
+              "170 pre-orders",
+              "110 launch attendees",
+              "80% of stock sold",
+            ],
+          },
+        ],
+      },
+      {
+        title: "‘Decomposition’ Fashion Show",
+        sections: [
+          {
+            heading: "Overview",
+            style: "list",
+            items: [
+              "Edited and animated an abstract promotional video for the ‘Decomposition’ fashion show.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "‘Lost and Found’ Fashion Show",
+        sections: [
+          {
+            heading: "Overview",
+            style: "list",
+            items: [
+              "Designed and shot event graphics and media coverage for the ‘Lost and Found’ fashion show.",
+            ],
+          },
+        ],
       },
     ],
   },
