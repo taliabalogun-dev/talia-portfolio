@@ -36,48 +36,48 @@ export default async function ProjectPage(
           ← Back to projects
         </Link>
 
-        <div className="relative mt-6 flex aspect-video w-full items-center justify-center overflow-hidden rounded-2xl border border-brown/15 bg-beige-card">
-          {project.image ? (
-            <Image
-              src={project.image}
-              alt=""
-              fill
-              className="object-cover"
-              sizes="(min-width: 1024px) 896px, 100vw"
-              priority
-            />
-          ) : (
-            <span className="text-sm uppercase tracking-widest text-brown/40">
-              [Project image placeholder]
-            </span>
+        <div className="mt-8 flex flex-col gap-8 sm:flex-row sm:items-start">
+          <div className="flex-1">
+            <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+              {project.title}
+            </h1>
+            <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-sm text-brown/60">
+              <span>{project.role}</span>
+              <span>{project.period}</span>
+              <span>{project.location}</span>
+            </div>
+
+            <p className="mt-6 text-brown/70">{project.description}</p>
+            {project.extendedDescription && (
+              <p className="mt-4 text-brown/70">
+                {project.extendedDescription}
+              </p>
+            )}
+
+            <div className="mt-6 flex flex-wrap gap-2">
+              {project.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full bg-brown/10 px-3 py-1 text-xs text-brown/60"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {project.image && (
+            <div className="relative aspect-[3/4] w-full shrink-0 overflow-hidden rounded-2xl border border-brown/15 sm:w-80">
+              <Image
+                src={project.image}
+                alt=""
+                fill
+                className="object-cover"
+                sizes="(min-width: 640px) 320px, 100vw"
+                priority
+              />
+            </div>
           )}
-        </div>
-
-        <h1 className="mt-8 text-3xl font-semibold tracking-tight sm:text-4xl">
-          {project.title}
-        </h1>
-        <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-sm text-brown/60">
-          <span>{project.role}</span>
-          <span>{project.period}</span>
-          <span>{project.location}</span>
-        </div>
-
-        <p className="mt-6 max-w-2xl text-brown/70">{project.description}</p>
-        {project.extendedDescription && (
-          <p className="mt-4 max-w-2xl text-brown/70">
-            {project.extendedDescription}
-          </p>
-        )}
-
-        <div className="mt-6 flex flex-wrap gap-2">
-          {project.tags.map((tag) => (
-            <span
-              key={tag}
-              className="rounded-full bg-brown/10 px-3 py-1 text-xs text-brown/60"
-            >
-              {tag}
-            </span>
-          ))}
         </div>
 
         {project.slides ? (
