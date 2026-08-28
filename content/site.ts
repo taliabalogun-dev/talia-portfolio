@@ -150,7 +150,6 @@ export const projects: Project[] = [
       {
         title: "‘This Is MUTHA’ Festival Promotion",
         subtitle: "Contracted Creative Marketing Director — NYC/Hybrid",
-        images: [{ src: "/images/campaigns/livenation-logo.png" }],
         sections: [],
       },
       {
@@ -277,7 +276,6 @@ export const projects: Project[] = [
         title: "UCLA Student Affairs",
         subtitle: "Marketing & Media Coordinator — Los Angeles, CA",
         images: [
-          { src: "/images/campaigns/ucla-logo.png" },
           { src: "/images/campaigns/ucla-dining-graphic.jpg", aspect: "video" },
         ],
         sections: [
@@ -347,7 +345,6 @@ export const projects: Project[] = [
         title: "Refine LA",
         subtitle: "Marketing Coordinator — Sept 2023 – June 2025",
         images: [
-          { src: "/images/campaigns/refine-logo.png" },
           { src: "/images/campaigns/refine-wordmark.jpg" },
         ],
         sections: [
@@ -443,7 +440,6 @@ export const projects: Project[] = [
         title: "Bap Productions",
         subtitle: "Writers Room & Story Development Intern — Lagos, Nigeria",
         images: [
-          { src: "/images/campaigns/bap-logo.png" },
           { src: "/images/campaigns/bap-man-of-god-poster.jpg" },
           { src: "/images/campaigns/bap-house-of-gaa-poster.jpg" },
           { src: "/images/campaigns/bap-bling-lagosians-poster.jpg" },
@@ -485,7 +481,6 @@ export const projects: Project[] = [
         title: "Golden Effects Pictures",
         subtitle: "Production / Creative Intern — Lagos, Nigeria",
         images: [
-          { src: "/images/campaigns/golden-effects-logo.png" },
           { src: "/images/campaigns/golden-effects-swallow-poster.jpg" },
         ],
         sections: [],
