@@ -32,14 +32,24 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="relative aspect-[3/4] w-full shrink-0 overflow-hidden rounded-2xl sm:w-72">
-            <Image
-              src={site.aboutImage}
-              alt={site.name}
-              fill
-              className="object-cover"
-              priority
-            />
+          <div className="flex w-full shrink-0 flex-col gap-4 sm:w-72">
+            <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl">
+              <Image
+                src={site.aboutImage}
+                alt={site.name}
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+            <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl">
+              <Image
+                src="/images/about-emmys.jpg"
+                alt=""
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
       </main>
