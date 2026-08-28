@@ -9,6 +9,7 @@ README is tracked so the mapping survives even if the local copies are lost.
 | `ctrl4c-pitch-deck.pptx` | `ctrl-4c-campaign` (CTRL 4C) | Full slide-by-slide content on `/projects/ctrl-4c-campaign` — text and images extracted via `python-pptx`, pulling images out of grouped/masked shapes. |
 | `refine-la-pitch-deck.key` | `refine-la-zine` (Refine LA) | "What Does LA Mean To You" zine campaign detail — text extracted via `keynote-parser` (unpacks Keynote's IWA format to YAML), images from the bundle's `Data/` folder. |
 | `fast-ucla-pitch-deck.pptx` | `fast-ucla-fashion-show` (FAST@UCLA) | Iconaclub × FAST streetwear drop campaign detail — same `python-pptx` extraction approach as the CTRL 4C deck. |
+| `live-nation-pitch-deck.pptx` | `live-nation-mutha` (Live Nation) | "This Is MUTHA" festival promo video — a single overview slide with a landscape (`aspect: "video"`) image gallery, unlike the portrait phone-screenshot galleries in the other decks. |
 
 ## Re-extracting content
 
