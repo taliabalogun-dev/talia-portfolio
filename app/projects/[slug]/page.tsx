@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Nav from "@/components/Nav";
+import SlideGallery from "@/components/SlideGallery";
 import { projects } from "@/content/site";
 
 export function generateStaticParams() {
@@ -97,6 +98,9 @@ export default async function ProjectPage(
                   const hasImages = !!slide.images && slide.images.length > 0;
                   const hasSections = slide.sections.length > 0;
                   const gallery = hasImages && (
+                    slide.layout === "slideshow" ? (
+                      <SlideGallery images={slide.images!} />
+                    ) : (
                     <div
                       className={
                         slide.images!.length > 1
@@ -112,13 +116,27 @@ export default async function ProjectPage(
                           <div
                             className={`relative w-full ${img.aspect === "video" ? "aspect-video" : "aspect-[9/16]"}`}
                           >
-                            <Image
-                              src={img.src}
-                              alt=""
-                              fill
-                              className="object-cover"
-                              sizes="(min-width: 640px) 340px, 45vw"
-                            />
+                            {img.kind === "video" ? (
+                              <video
+                                src={img.src}
+                                poster={img.poster}
+                                controls
+                                playsInline
+                                autoPlay={img.autoplay}
+                                muted={img.autoplay}
+                                loop={img.autoplay}
+                                preload={img.autoplay ? "auto" : "metadata"}
+                                className="absolute inset-0 h-full w-full object-cover"
+                              />
+                            ) : (
+                              <Image
+                                src={img.src}
+                                alt=""
+                                fill
+                                className="object-cover"
+                                sizes="(min-width: 640px) 340px, 45vw"
+                              />
+                            )}
                           </div>
                           {img.caption && (
                             <figcaption className="p-2 text-xs text-brown/60">
@@ -128,6 +146,7 @@ export default async function ProjectPage(
                         </figure>
                       ))}
                     </div>
+                    )
                   );
                   const sectionsBlock = hasSections && (
                     <div className="flex flex-col gap-5">
@@ -213,6 +232,23 @@ export default async function ProjectPage(
             </>
           )
         )}
+
+        {project.viewFullProject &&
+          (project.viewFullProject.href ? (
+            <a
+              href={project.viewFullProject.href}
+              className="mt-12 inline-block rounded-full bg-brown px-6 py-3 text-sm font-medium text-beige transition-opacity hover:opacity-85"
+            >
+              View full project
+            </a>
+          ) : (
+            <span
+              aria-disabled="true"
+              className="mt-12 inline-block cursor-not-allowed rounded-full bg-brown/30 px-6 py-3 text-sm font-medium text-beige/70"
+            >
+              View full project
+            </span>
+          ))}
       </main>
     </>
   );

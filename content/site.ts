@@ -43,6 +43,12 @@ export type SlideImage = {
   caption?: string;
   /** Defaults to "portrait" (phone-screenshot shaped). Use "video" for landscape stills. */
   aspect?: "portrait" | "video";
+  /** Defaults to "image". Set to "video" to render an HTML5 <video> — src should point at an mp4. */
+  kind?: "image" | "video";
+  /** Poster frame for video items. */
+  poster?: string;
+  /** Video only: autoplay muted + loop, hero-style. */
+  autoplay?: boolean;
 };
 
 export type SlideSection = {
@@ -57,6 +63,8 @@ export type Slide = {
   subtitle?: string;
   images?: SlideImage[];
   sections: SlideSection[];
+  /** Defaults to "grid". Use "slideshow" for a large, uncaptioned photo/video dump — renders as a single-image carousel instead of a static grid. */
+  layout?: "grid" | "slideshow";
 };
 
 export type Project = {
@@ -77,553 +85,415 @@ export type Project = {
   campaigns?: Campaign[];
   /** Slide-by-slide case study breakdown shown instead of the campaigns grid. */
   slides?: Slide[];
+  /** Shows a "View full project" button at the end of the page. Leave the href unset to render it disabled (no link yet). */
+  viewFullProject?: { href?: string };
 };
 
 export const projects: Project[] = [
   {
     slug: "kugali-iwaju",
     navLabel: "Kugali Media",
-    title: "Marketing & Strategy Intern — Kugali Media",
+    title: "Marketing & Story Intern — Kugali Media",
     description:
-      "Supported marketing and pitch strategy for a global animation studio behind Disney's Iwájú, building producer-facing pitch decks and leading positioning research across the studio's slate.",
+      "Reviewed storyboards/scripts and comics against production deadlines, tracking status and flagging gaps across the release pipeline. Coordinated asset requests, approvals, and publishing timelines with internal teams and external partners via HubSpot.",
     extendedDescription:
-      "Reviewed 50+ scripts and comics weekly and managed marketing operations through HubSpot, providing research-backed notes that informed brand positioning across the release pipeline.",
+      "Built marketing materials and pitch presentations, researching audiences, competitors, and entertainment markets to inform campaign strategy. Supported marketing initiatives and event coordination around the Emmys and NAACP Image Awards, and tracked campaign performance for team and partner reporting.",
     tags: ["Pitch Strategy", "Audience Research", "Brand Positioning"],
-    role: "Marketing & Strategy Intern",
-    period: "Sept 2024 — June 2025",
+    role: "Marketing & Story Intern",
+    period: "June 2024 — June 2025",
     location: "UK / Hybrid",
     featured: true,
     image: "/images/campaigns/kugali-iwaju-poster.jpg",
-    campaigns: [
+    slides: [
       {
-        name: "Iwájú, Jollof Wars & Razorman — Pitch Strategy",
-        description:
-          "Built producer-facing pitch decks and led streaming and studio partnership research for Jollof Wars (Next Narrative Africa Fund) and Razorman (in development with Newmation and Alta Global Media), alongside pitch strategy work on Disney's Iwájú.",
-        image: "/images/campaigns/kugali-iwaju-poster.jpg",
+        title: "Kugali Media",
+        subtitle: "Marketing & Story Intern — UK/Hybrid",
+        images: [
+          { src: "/images/campaigns/kugali-logo.png" },
+          { src: "/images/campaigns/kugali-iwaju-poster.jpg" },
+        ],
+        sections: [
+          {
+            heading: "Focus",
+            style: "pills",
+            items: [
+              "Story & Script Review",
+              "Pitch Presentations",
+              "Audience Research",
+              "Campaign Reporting",
+            ],
+          },
+        ],
       },
       {
-        name: "Emmys & NAACP Image Awards Support",
-        description:
-          "Supported festival and awards-season promotion and on-the-ground coverage for Disney's Iwájú, including the Emmys and NAACP Image Awards, gathering industry intelligence to inform brand positioning.",
-        image: "/images/campaigns/kugali-emmys.jpg",
+        title: "Gallery",
+        images: [{ src: "/images/campaigns/kugali-emmys.jpg" }],
+        sections: [],
       },
     ],
   },
   {
     slug: "live-nation-mutha",
     navLabel: "Live Nation",
-    title: "Creative Director (Contract) — Live Nation",
+    title: "‘This Is MUTHA’ Festival Promotion — Live Nation",
     description:
-      "Commissioned to direct and produce the official promotional film and live concert projection content for Mutha Festival, translating brand vision and cultural positioning into a cohesive visual direction.",
+      "Commissioned to direct and produce the official promotional film and live concert projection visuals for MUTHA Festival, a Brooklyn-based event celebrating queer, Black, and femme artists through music and performance.",
     extendedDescription:
-      "Served as the central point of coordination between creative, production, and promotional teams from planning through same-day execution, managing asset delivery and approvals across tight event deadlines.",
+      "Managed creative asset delivery, versions, and approvals across teams and vendors, coordinating production schedules to meet tight event deadlines. Maintained brand and creative consistency across the festival's digital and live touchpoints, tracking feedback and revisions through final delivery. Served as the central point of coordination between creative, production, and promotional teams from planning through same-day execution.",
     tags: ["Campaign Direction", "Brand Partnerships", "Video"],
-    role: "Creative Director (Contract)",
+    role: "Contracted Creative Marketing Director",
     period: "March 2025 — June 2025",
     location: "NYC / Hybrid",
     featured: true,
-    image: "/images/campaigns/live-nation-slide-poster.jpg",
+    image: "/images/campaigns/livenation-logo.png",
     slides: [
       {
-        title: "‘This Is MUTHA’ Festival Promotion Video",
-        subtitle: "Contracted Media Marketing Director — March–August 2025",
+        title: "‘This Is MUTHA’ Festival Promotion",
+        subtitle: "Contracted Creative Marketing Director — NYC/Hybrid",
+        images: [{ src: "/images/campaigns/livenation-logo.png" }],
+        sections: [],
+      },
+      {
+        title: "Featured Creative Media",
         images: [
-          { src: "/images/campaigns/live-nation-slide-poster.jpg" },
           {
-            src: "/images/campaigns/live-nation-slide-city.jpg",
+            src: "/videos/livenation-mutha-promo-film.mp4",
+            kind: "video",
             aspect: "video",
-          },
-          {
-            src: "/images/campaigns/live-nation-slide-storefront.jpg",
-            aspect: "video",
-          },
-          {
-            src: "/images/campaigns/live-nation-slide-stage.jpg",
-            aspect: "video",
+            autoplay: true,
+            caption: "‘MUTHA’ concert promo video — May 2025",
           },
         ],
-        sections: [
-          {
-            heading: "Project Overview",
-            style: "list",
-            items: [
-              "Commissioned by Live Nation and MUTHA Festival to create the official promotional film for a Brooklyn-based music and arts festival celebrating queer, Black, and femme artists.",
-            ],
-          },
-          {
-            heading: "Responsibilities",
-            style: "pills",
-            items: [
-              "Video concept & narrative development",
-              "Visual language design",
-              "Photography & copyrighted asset design",
-              "Animation, photography & motion design",
-              "Social-first & projection-ready visuals",
-              "Authentic, community-led storytelling",
-            ],
-          },
+        sections: [],
+      },
+      {
+        title: "Featured Campaign",
+        images: [
+          { src: "/images/campaigns/livenation-featured-campaign.jpg", aspect: "video" },
         ],
+        sections: [],
       },
     ],
   },
   {
     slug: "fast-ucla-fashion-show",
     navLabel: "FAST@UCLA",
-    title: "Director of Creative Media — FAST@UCLA",
+    title: "Editorial Executive Director — FAST@UCLA",
     description:
-      "Directed all creative media production — print, photography, video, and media releases — across editorial, digital, and live-event initiatives for FAST, a UCLA student-run fashion and culture brand.",
+      "Acted as project manager across editorial, digital, and live-event workstreams, maintaining campaign timelines and deadlines across concurrent initiatives. Coordinated with photographers, designers, writers, and media contributors to track deliverables and keep teams aligned on approvals.",
     extendedDescription:
-      "Oversaw a full team of photographers, videographers, and designers on every shoot and release, setting creative direction and final sign-off on all visual output for FAST's annual fashion show and publication.",
+      "Coordinated brand partnerships and vendor logistics with Nike, Icona Club, and Demonia, supporting a sold-out fashion drop through student-led promotion. Organized and ran production meetings — scheduling, agendas, and follow-ups — for FAST's annual fashion show, and reviewed results after each initiative to close gaps for future planning.",
     tags: ["Brand Partnerships", "Event Marketing", "Creative Direction"],
-    role: "Director of Creative Media",
+    role: "Editorial Executive Director",
     period: "Oct 2024 — June 2026",
     location: "Los Angeles, CA",
     featured: true,
-    image: "/images/campaigns/fast-slide-cover.jpg",
+    image: "/images/campaigns/fast-magazine-cover.jpg",
     slides: [
       {
-        title: "Iconaclub",
-        subtitle:
-          "Associate Creative Director (via FAST) for brand drop — June 2025",
-        images: [{ src: "/images/campaigns/fast-slide-cover.jpg" }],
-        sections: [
-          {
-            heading: "Role",
-            style: "pills",
-            items: ["Producer", "Editor", "Campaign Strategy"],
-          },
-        ],
-      },
-      {
-        title: "Iconaclub Streetwear Collection Drop",
-        images: [{ src: "/images/campaigns/fast-slide-overview.jpg" }],
-        sections: [
-          {
-            heading: "Objective",
-            style: "list",
-            items: [
-              "Build awareness within UCLA's student community, generate pre-launch interest, and convert engagement into sales.",
-            ],
-          },
-          {
-            heading: "Process",
-            style: "list",
-            items: [
-              "Proposed a strategic student collaboration. Developed the campaign's visual direction and coordinated production across photography and short-form video, alongside a student-led social and promotional-code strategy.",
-            ],
-          },
-          {
-            heading: "Outcome",
-            style: "list",
-            items: [
-              "Delivered a cohesive suite of campaign photography, social assets, promotional video, and behind-the-scenes content across Iconaclub and FAST channels.",
-            ],
-          },
-          {
-            heading: "Result",
-            style: "pills",
-            items: [
-              "100% collection sell-through",
-              "80% of sales via student promo codes",
-            ],
-          },
-        ],
-      },
-      {
-        title: "The Post",
-        images: [{ src: "/images/campaigns/fast-slide-post.jpg" }],
-        sections: [
-          {
-            heading: "Concept",
-            style: "list",
-            items: [
-              "Created an editorial visual language combining streetwear, motorsport, and youth culture, using the car to frame and reinforce the collection.",
-            ],
-          },
-          {
-            heading: "Execution",
-            style: "list",
-            items: [
-              "Directed posing, composition, and product visibility, then selected and edited the final campaign imagery.",
-            ],
-          },
-          {
-            heading: "Performance",
-            style: "pills",
-            items: ["1.6K+ likes", "141 shares", "25 comments"],
-          },
-        ],
-      },
-      {
-        title: "Posting / Marketing Strategy",
-        subtitle: "Marketing → Sales",
-        sections: [
-          {
-            heading: "Strategy",
-            style: "list",
-            items: [
-              "1. Build awareness — launched collaborative Iconaclub × FAST photography and video content to reach both brand and student audiences.",
-              "2. Activate students — mobilised FAST's student network through ambassador promotion and trackable student discount codes.",
-              "3. Drive conversion — connected social engagement directly to purchase through promotional codes and drop-focused calls to action.",
-            ],
-          },
-          {
-            heading: "Result",
-            style: "pills",
-            items: [
-              "80% of sales via student promo codes",
-              "100% collection sell-through — sold out",
-            ],
-          },
-        ],
-      },
-      {
-        title: "Teaser / Promo Video",
-        subtitle: "Creative Director",
-        images: [{ src: "/images/campaigns/fast-slide-teaser.jpg" }],
-        sections: [
-          {
-            heading: "Concept",
-            style: "list",
-            items: [
-              "Created a short-form teaser that translated the campaign's automotive, streetwear-led visual identity into motion and built anticipation around the collection drop.",
-            ],
-          },
-          {
-            heading: "Execution",
-            style: "pills",
-            items: [
-              "Directed talent blocking and movement",
-              "Developed shot progression around the hero car",
-              "Produced and coordinated the shoot",
-              "Edited short-form vertical content",
-              "Optimised pacing and framing for social",
-            ],
-          },
-          {
-            heading: "Performance",
-            style: "pills",
-            items: ["3.1K+ likes", "130+ shares"],
-          },
-        ],
-      },
-      {
-        title: "Creative Direction & Production",
-        images: [{ src: "/images/campaigns/fast-slide-roles.jpg" }],
-        sections: [
-          {
-            heading: "Creative Direction",
-            style: "pills",
-            items: [
-              "Campaign concept + visual research",
-              "Creative treatment / moodboard",
-              "Stakeholder presentation deck",
-              "Styling direction",
-              "Talent posing + blocking",
-              "Photography direction",
-              "Image selection + editing",
-              "Brand consistency",
-            ],
-          },
-          {
-            heading: "Production",
-            style: "pills",
-            items: [
-              "Stakeholder communication",
-              "Shoot planning + scheduling",
-              "Budget distribution",
-              "Location scouting",
-              "Location permissions",
-              "Equipment + prop coordination",
-              "Talent + crew casting",
-              "Production logistics",
-              "On-set coordination",
-            ],
-          },
-        ],
-      },
-      {
-        title: "My Edited Selects",
+        title: "FAST @ UCLA",
+        subtitle: "Editorial Executive Director — Los Angeles, CA",
         images: [
-          { src: "/images/campaigns/fast-slide-edited-1.jpg" },
-          { src: "/images/campaigns/fast-slide-edited-2.jpg" },
-          { src: "/images/campaigns/fast-slide-edited-3.jpg" },
+          { src: "/images/campaigns/fast-magazine-cover.jpg" },
+          { src: "/images/campaigns/fast-iconaclub-website.jpg", aspect: "video" },
+        ],
+        sections: [
+          {
+            heading: "Focus",
+            style: "pills",
+            items: [
+              "Editorial Project Management",
+              "Brand Partnerships",
+              "Live-Event Production",
+              "Vendor & Team Coordination",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Featured Campaign",
+        sections: [],
+      },
+      {
+        title: "Featured Creative Media",
+        layout: "slideshow",
+        images: [
+          { src: "/images/campaigns/fast-campaign-title.jpg" },
+          { src: "/images/campaigns/fast-campaign-overview.jpg" },
+          { src: "/images/campaigns/fast-campaign-the-post.jpg" },
+          { src: "/images/campaigns/fast-campaign-teaser-video.jpg" },
+          { src: "/images/campaigns/fast-campaign-creative-production.jpg" },
+          { src: "/images/campaigns/fast-campaign-edited-selects.jpg" },
+          { src: "/images/campaigns/fast-campaign-marketing-strategy.jpg" },
         ],
         sections: [],
       },
       {
-        title: "Annual Fashion Show Production",
-        sections: [
-          {
-            heading: "Overview",
-            style: "list",
-            items: [
-              "Co-led planning and creative execution of FAST's annual fashion show, overseeing all on-site photo and video coverage from concept through final delivery.",
-            ],
-          },
+        title: "Gallery",
+        layout: "slideshow",
+        images: [
+          { src: "/images/campaigns/fast-editorial-poster-homage.jpg" },
+          { src: "/images/campaigns/fast-editorial-car-01.jpg" },
+          { src: "/images/campaigns/fast-editorial-car-02.jpg" },
+          { src: "/images/campaigns/fast-editorial-car-03.jpg" },
+          { src: "/images/campaigns/fast-storefront-billboard.jpg", aspect: "video" },
+          { src: "/images/campaigns/fast-auditorium.jpg", aspect: "video" },
+          { src: "/images/campaigns/fast-runway-01.jpg" },
+          { src: "/images/campaigns/fast-group-01.jpg" },
+          { src: "/images/campaigns/fast-editorial-night-01.jpg" },
+          { src: "/images/campaigns/fast-editorial-couch-01.jpg" },
+          { src: "/images/campaigns/fast-editorial-movement-01.jpg" },
+          { src: "/images/campaigns/fast-editorial-movement-02.jpg" },
+          { src: "/images/campaigns/fast-editorial-street-01.jpg" },
+          { src: "/images/campaigns/fast-editorial-lace-01.jpg" },
+          { src: "/images/campaigns/fast-editorial-rooftop-01.jpg" },
+          { src: "/images/campaigns/fast-editorial-garden-01.jpg" },
+          { src: "/images/campaigns/fast-editorial-forest-01.jpg" },
+          { src: "/images/campaigns/fast-bts-loft-01.jpg" },
+          { src: "/images/campaigns/fast-bts-studio-01.jpg" },
+          { src: "/images/campaigns/fast-editorial-negatives.jpg" },
+          { src: "/images/campaigns/fast-magazine-cover.jpg" },
         ],
+        sections: [],
       },
     ],
   },
   {
     slug: "ucla-campus-campaigns",
     navLabel: "UCLA Student Affairs",
-    title: "Multi-Platform Campus Campaigns — UCLA Student Affairs",
+    title: "Marketing & Media Coordinator — UCLA Student Affairs",
     description:
-      "Directed creative and campaign strategy for multi-platform institutional content across Instagram, TikTok, Facebook, and X, translating campus priorities into brand-consistent direction for an audience of 2M+.",
+      "Produced and supported multi-platform media campaigns across Instagram, TikTok, Facebook, and Twitter for UCLA's primary institutional accounts, including @ucla, @uclahousing, and @lamabruin, collectively reaching millions of followers and serving a student body of 45,000+ undergraduate and graduate students.",
     extendedDescription:
-      "Built and maintained campaign trackers and performance reporting, using engagement data to inform creative decisions, and coordinated cross-departmental campaigns for large-scale institutional events including commencement.",
+      "Focused on photography, graphic design, and content planning to communicate the UCLA student experience at scale, regularly covering large-scale campus events — including commencements and university-wide programs — attended by tens of thousands of students, families, and community members. Collaborated with multiple campus partners across Student Affairs, including the Center for Accessible Education, the Dean's Office, Housing & Hospitality, and UCLA Athletics, helping coordinate consistent, accessible, and brand-aligned communications across departments.",
     tags: ["TikTok", "Instagram", "Social Strategy"],
-    role: "Media Marketing Coordinator",
-    period: "June 2023 — Sept 2025",
+    role: "Marketing & Media Coordinator",
+    period: "Aug 2023 — June 2025",
     location: "Los Angeles, CA",
     featured: false,
-    image: "/images/campaigns/ucla-pinoy-halohalo.jpg",
-    campaigns: [
+    image: "/images/campaigns/ucla-logo.png",
+    slides: [
       {
-        name: "Commencement & Campus Event Coverage",
-        description:
-          "Coordinated cross-departmental campaigns and stakeholder communication for large-scale institutional events, including commencement, capturing and editing on-site content in real time.",
+        title: "UCLA Student Affairs",
+        subtitle: "Marketing & Media Coordinator — Los Angeles, CA",
+        images: [
+          { src: "/images/campaigns/ucla-logo.png" },
+          { src: "/images/campaigns/ucla-dining-graphic.jpg", aspect: "video" },
+        ],
+        sections: [
+          {
+            heading: "Campus Partners",
+            style: "pills",
+            items: [
+              "Center for Accessible Education",
+              "Dean's Office",
+              "Housing & Hospitality",
+              "UCLA Athletics",
+            ],
+          },
+        ],
       },
       {
-        name: "@uclahousing Social Campaign",
-        description:
-          "Produced social-first content and campaign concepts for UCLA Housing's Instagram and TikTok presence.",
-        image: "/images/campaigns/ucla-pinoy-flyer.jpg",
+        title: "Featured Campaign",
+        layout: "slideshow",
+        images: [
+          { src: "/images/campaigns/ucla-campaign-title.jpg" },
+          { src: "/images/campaigns/ucla-campaign-event.jpg" },
+          { src: "/images/campaigns/ucla-campaign-the-post.jpg" },
+          { src: "/images/campaigns/ucla-campaign-edited-selects.jpg" },
+          { src: "/images/campaigns/ucla-campaign-marketing-strategy.jpg" },
+        ],
+        sections: [],
+      },
+      {
+        title: "Gallery",
+        layout: "slideshow",
+        images: [
+          { src: "/images/campaigns/ucla-zombie-poster.jpg" },
+          { src: "/images/campaigns/ucla-frankenstein-poster.jpg" },
+          { src: "/images/campaigns/ucla-dracula-poster.jpg" },
+          { src: "/images/campaigns/ucla-bike-night.jpg" },
+          { src: "/images/campaigns/ucla-dasani-tent.jpg" },
+          { src: "/images/campaigns/ucla-group-lawn.jpg" },
+          { src: "/images/campaigns/ucla-group-hangout.jpg" },
+          { src: "/images/campaigns/ucla-group-selfie.jpg" },
+          { src: "/images/campaigns/ucla-event-room.jpg" },
+          { src: "/images/campaigns/ucla-speaker-mic.jpg" },
+          { src: "/images/campaigns/ucla-flower-stand.jpg" },
+          { src: "/images/campaigns/ucla-community-member.jpg" },
+          { src: "/images/campaigns/ucla-bts-office.jpg" },
+          { src: "/images/campaigns/ucla-edited-selects.jpg" },
+        ],
+        sections: [],
       },
     ],
   },
   {
     slug: "refine-la-zine",
     navLabel: "Refine LA",
-    title: "Multi-Platform Product Campaigns — Refine LA",
+    title: "Marketing Coordinator — Refine LA",
     description:
-      "Directed editorial cover shoots and magazine promotion videos as creative lead for a sustainability-focused fashion and circular retail organization, managing concept through execution.",
+      "Worked as a marketing coordinator supporting event documentation, campaign promotion, and content coordination for a sustainability-focused fashion and circular retail organization.",
     extendedDescription:
-      "Coordinated multi-platform marketing campaigns and event promotion — including initiatives sponsored by Poshmark and Eyewear — and defined the visual language keeping creative output consistent across live events, digital promotion, and editorial materials.",
-    tags: ["Content Direction", "Photography", "Video"],
-    role: "Marketing Coordinator, Creative & Strategy",
+      "Coordinated on-site coverage for fashion shows, flea markets, and community activations, including initiatives sponsored by Poshmark and Evewear — handling photography, video capture, and post-event content rollout to extend each event's reach.",
+    tags: ["Event Coverage", "Photography", "Video"],
+    role: "Marketing Coordinator",
     period: "Sept 2023 — June 2025",
     location: "Los Angeles, CA",
     featured: false,
-    image: "/images/campaigns/refine-slide-promo.jpg",
+    image: "/images/campaigns/refine-logo.png",
     slides: [
       {
         title: "Refine LA",
-        subtitle:
-          "Project Lead & Creative Director for multi-channel zine launch campaign — March 2025",
-        images: [{ src: "/images/campaigns/refine-slide-cover.jpg" }],
-        sections: [
-          {
-            heading: "Campaign Sections",
-            style: "pills",
-            items: ["Promo Film", "Cover Campaign", "Community Interviews"],
-          },
+        subtitle: "Marketing Coordinator — Sept 2023 – June 2025",
+        images: [
+          { src: "/images/campaigns/refine-logo.png" },
+          { src: "/images/campaigns/refine-wordmark.jpg" },
         ],
-      },
-      {
-        title: "Refine LA Zine — “What Does LA Mean To You?”",
-        images: [{ src: "/images/campaigns/refine-slide-overview.jpg" }],
         sections: [
           {
-            heading: "Product",
-            style: "list",
-            items: [
-              "A fashion and culture zine exploring Los Angeles through its communities.",
-            ],
-          },
-          {
-            heading: "Objective",
-            style: "list",
-            items: [
-              "Build awareness within target communities (POC & Gen Z), generate pre-launch interest, and convert engagement into sales.",
-            ],
-          },
-          {
-            heading: "Strategy",
-            style: "list",
-            items: [
-              "Led an integrated launch campaign spanning video, photography, community interviews, social content, and on-campus activation.",
-            ],
-          },
-          {
-            heading: "Result",
+            heading: "Focus",
             style: "pills",
             items: [
-              "170 pre-orders",
-              "80 launch-day purchases",
-              "110 attendees",
-              "80% of stock sold",
+              "Event Documentation",
+              "Campaign Promotion",
+              "Content Coordination",
             ],
           },
         ],
       },
       {
-        title: "Promo Film",
-        images: [{ src: "/images/campaigns/refine-slide-promo.jpg" }],
-        sections: [
-          {
-            heading: "Role",
-            style: "pills",
-            items: [
-              "Creative Direction",
-              "Production",
-              "Finance",
-              "Co-Directing",
-              "Cinematography",
-              "Casting",
-              "Editing & Colour",
-            ],
-          },
-          {
-            heading: "Concept",
-            style: "list",
-            items: [
-              "Narrative launch film following three characters on their journey through LA before connecting on the metro — discovering Refine LA.",
-            ],
-          },
-          {
-            heading: "KPI Tracking",
-            style: "pills",
-            items: ["6K+ views", "+50% vs. account average", "+10% like performance"],
-          },
+        title: "Featured Campaign",
+        layout: "slideshow",
+        images: [
+          { src: "/images/campaigns/refine-campaign-title.jpg" },
+          { src: "/images/campaigns/refine-cover-shoot-collage.jpg" },
+          { src: "/images/campaigns/refine-campaign-posting-strategy.jpg" },
+          { src: "/images/campaigns/refine-campaign-promo-video.jpg" },
+          { src: "/images/campaigns/refine-campaign-zinecover-covershoot.jpg" },
+          { src: "/images/campaigns/refine-campaign-interviews.jpg" },
+          { src: "/images/campaigns/refine-campaign-overview.jpg" },
         ],
+        sections: [],
       },
       {
-        title: "Zine Cover Shoot",
-        images: [{ src: "/images/campaigns/refine-slide-coveshoot.jpg" }],
-        sections: [
+        title: "Featured Creative Media",
+        images: [
           {
-            heading: "Role",
-            style: "pills",
-            items: [
-              "Creative Director",
-              "Photographer",
-              "Production",
-              "Graphic Editor",
-            ],
+            src: "/videos/refine-promo-film.mp4",
+            kind: "video",
+            aspect: "video",
+            caption:
+              "‘What does LA mean to you’ zine promotion video — Directed and shot by me — Feb 2025",
           },
           {
-            heading: "Approach",
-            style: "list",
-            items: [
-              "Developed the visual identity and produced the editorial cover shoot from concept through final assets.",
-            ],
+            src: "/images/campaigns/refine-cover-shoot-collage.jpg",
+            aspect: "video",
+            caption:
+              "‘What does LA mean to you’ zine cover shoot — Directed and shot by me — Feb 2025",
           },
           {
-            heading: "Campaign Output",
-            style: "pills",
-            items: [
-              "Front + back cover",
-              "Editorial photography",
-              "Social launch assets",
-            ],
+            src: "/videos/refine-decomposition-promo.mp4",
+            kind: "video",
+            aspect: "video",
+            caption:
+              "‘Decomposition’ fashion show abstract promotion video — Edited & animated by me — March 2025",
           },
           {
-            heading: "KPI Tracking",
-            style: "pills",
-            items: ["2K+ cumulative likes", "3K profile views"],
+            src: "/images/campaigns/refine-zine-cover.jpg",
+            caption:
+              "‘Lost and found’ fashion show event graphic & media coverage — Designed and shot by me — March 2024",
           },
         ],
+        sections: [],
       },
       {
-        title: "Cover Shoot — Edited Selects",
-        images: [{ src: "/images/campaigns/refine-slide-edited.jpg" }],
-        sections: [
-          {
-            heading: "Role",
-            style: "pills",
-            items: ["Creative Director", "Photographer", "Editor", "Producer"],
-          },
-          {
-            heading: "KPI Tracking",
-            style: "pills",
-            items: [
-              "2K+ cumulative likes",
-              "3K+ profile visits",
-              "~30% traffic from Explore page",
-            ],
-          },
+        title: "‘Lost and Found’ Fashion Show — Event Coverage",
+        layout: "slideshow",
+        images: [
+          { src: "/images/campaigns/refine-group-subway.jpg" },
+          { src: "/images/campaigns/refine-portrait-patterned.jpg" },
+          { src: "/images/campaigns/refine-bts-hands.jpg" },
+          { src: "/images/campaigns/refine-picnic-group.jpg" },
+          { src: "/images/campaigns/refine-night-walk.jpg" },
+          { src: "/images/campaigns/refine-indoor-group.jpg" },
+          { src: "/images/campaigns/refine-portrait-glasses.jpg" },
+          { src: "/images/campaigns/refine-night-lights.jpg" },
         ],
+        sections: [],
+      },
+    ],
+  },
+  {
+    slug: "bap-productions",
+    navLabel: "BAP Productions",
+    title: "Writers Room & Story Development Intern — BAP Productions",
+    description:
+      "Contributed to story development and concept creation for Netflix-commissioned and BAP-produced projects. Wrote treatments and assisted in developing sequel narratives, including Bling Lagosians 2.",
+    extendedDescription:
+      "Participated in the writers' room, supporting script development, story structure, and creative ideation, and served as Script Supervisor / Writers' Room Lead, overseeing narrative continuity and development workflows. Collaborated across writing, casting, costume, and budgeting teams for upcoming releases including Man of God and Island Spice, gaining hands-on experience in pre-production, creative pitching, and cross-department collaboration within a professional production environment.",
+    tags: ["Story Development", "Writers Room", "Pre-Production"],
+    role: "Writers Room & Story Development Intern",
+    period: "June 2023 — Sept 2023",
+    location: "Lagos, Nigeria",
+    featured: false,
+    image: "/images/campaigns/bap-logo.png",
+    slides: [
+      {
+        title: "Bap Productions",
+        subtitle: "Writers Room & Story Development Intern — Lagos, Nigeria",
+        images: [
+          { src: "/images/campaigns/bap-logo.png" },
+          { src: "/images/campaigns/bap-man-of-god-poster.jpg" },
+          { src: "/images/campaigns/bap-house-of-gaa-poster.jpg" },
+          { src: "/images/campaigns/bap-bling-lagosians-poster.jpg" },
+        ],
+        sections: [],
       },
       {
-        title: "Community Interviews",
-        images: [{ src: "/images/campaigns/refine-slide-interviews.jpg" }],
-        sections: [
-          {
-            heading: "Role",
-            style: "pills",
-            items: ["Creative Director", "Production", "Graphic Editing"],
-          },
-          {
-            heading: "Approach",
-            style: "list",
-            items: [
-              "Interviewed LA communities around the question “What does LA mean to you?”, turning their responses into social content and printed campaign material.",
-              "Combined digital storytelling with QR-enabled campus promotion to move audiences from conversation → content → purchase.",
-            ],
-          },
-          {
-            heading: "KPI Tracking",
-            style: "pills",
-            items: [
-              "20K+ interview views",
-              "2K+ engagement",
-              "140 QR scans",
-              "110 launch attendees",
-            ],
-          },
+        title: "Gallery",
+        layout: "slideshow",
+        images: [
+          { src: "/images/campaigns/bap-writers-room.jpg" },
+          { src: "/images/campaigns/bap-office-meeting.jpg" },
+          { src: "/images/campaigns/bap-office-photo.jpg" },
+          { src: "/images/campaigns/bap-terra-kulture.jpg" },
+          { src: "/images/campaigns/bap-onset-night.jpg" },
+          { src: "/images/campaigns/bap-onset-lighting.jpg" },
+          { src: "/images/campaigns/bap-bts-monitor.jpg" },
         ],
+        sections: [],
+      },
+    ],
+  },
+  {
+    slug: "golden-effects-pictures",
+    navLabel: "Golden Effects Pictures",
+    title: "Production / Creative Intern — Golden Effects Pictures",
+    description:
+      "Supported story development and pre-production across film and media projects. Assisted with production coordination, including on-set support and creative problem-solving.",
+    extendedDescription:
+      "Contributed to visual and narrative development, working closely with directors and production teams, and gained hands-on experience in professional Nigerian film production workflows, from planning through execution — building skills in creative development, production logistics, and team coordination within a collaborative, fast-paced environment.",
+    tags: ["Pre-Production", "On-Set Support", "Creative Development"],
+    role: "Production / Creative Intern",
+    period: "Apr 2020 — May 2020",
+    location: "Lagos, Nigeria",
+    featured: false,
+    image: "/images/campaigns/golden-effects-logo.png",
+    slides: [
+      {
+        title: "Golden Effects Pictures",
+        subtitle: "Production / Creative Intern — Lagos, Nigeria",
+        images: [
+          { src: "/images/campaigns/golden-effects-logo.png" },
+          { src: "/images/campaigns/golden-effects-swallow-poster.jpg" },
+        ],
+        sections: [],
       },
       {
-        title: "Posting / Marketing Strategy",
-        subtitle: "Marketing → Sales",
-        sections: [
-          {
-            heading: "Strategy",
-            style: "list",
-            items: [
-              "1. Build a story — introduced Refine LA through narrative video and editorial photography, establishing a distinct visual identity around LA culture.",
-              "2. Activate community — turned “What does LA mean to you?” into community-led interviews, social content, and QR-enabled campus promotion.",
-              "3. Convert interest — connected digital content to pre-orders and launch-day purchasing through direct calls-to-action and physical activation.",
-            ],
-          },
-          {
-            heading: "Result",
-            style: "pills",
-            items: [
-              "20K+ interview views",
-              "140 QR scans",
-              "170 pre-orders",
-              "110 launch attendees",
-              "80% of stock sold",
-            ],
-          },
-        ],
-      },
-      {
-        title: "‘Decomposition’ Fashion Show",
-        sections: [
-          {
-            heading: "Overview",
-            style: "list",
-            items: [
-              "Edited and animated an abstract promotional video for the ‘Decomposition’ fashion show.",
-            ],
-          },
-        ],
-      },
-      {
-        title: "‘Lost and Found’ Fashion Show",
-        sections: [
-          {
-            heading: "Overview",
-            style: "list",
-            items: [
-              "Designed and shot event graphics and media coverage for the ‘Lost and Found’ fashion show.",
-            ],
-          },
-        ],
+        title: "Gallery",
+        images: [{ src: "/images/campaigns/golden-effects-interior.jpg" }],
+        sections: [],
       },
     ],
   },
@@ -643,7 +513,7 @@ export const projects: Project[] = [
     image: "/images/campaigns/ctrl4c-slide-cover.jpg",
     slides: [
       {
-        title: "Animated IP Launch Campaign",
+        title: "CTRL 4C",
         images: [{ src: "/images/campaigns/ctrl4c-slide-cover.jpg" }],
         sections: [
           {
@@ -659,259 +529,22 @@ export const projects: Project[] = [
         ],
       },
       {
-        title: "Ctrl 4C Film Release Campaign",
-        images: [{ src: "/images/campaigns/ctrl4c-slide-profile.jpg" }],
-        sections: [
-          {
-            heading: "Objective",
-            style: "list",
-            items: [
-              "Reposition my account from freelance illustration to an animation-focused platform while building an audience for future films.",
-            ],
-          },
-          {
-            heading: "Process",
-            style: "list",
-            items: [
-              "Developed a multi-stage campaign using process videos, character reveals, cast spotlights, teasers, and screening promotion.",
-            ],
-          },
-          {
-            heading: "Outcome",
-            style: "list",
-            items: [
-              "Expanded audience reach while establishing a recognizable identity for the film and my animation brand.",
-            ],
-          },
-          {
-            heading: "Result",
-            style: "pills",
-            items: [
-              "+400 followers",
-              "20K+ views",
-              "2 interview invitations",
-              "AFRIFF recognition",
-            ],
-          },
-        ],
-      },
-      {
-        title: "Video Content for Engagement",
-        subtitle: "The process creates curiosity about the product.",
+        title: "Featured Campaign",
+        layout: "slideshow",
         images: [
-          { src: "/images/campaigns/ctrl4c-slide-video-1.jpg" },
-          { src: "/images/campaigns/ctrl4c-slide-video-2.jpg" },
-          { src: "/images/campaigns/ctrl4c-slide-video-3.jpg" },
+          { src: "/images/campaigns/ctrl4c-campaign-title.jpg" },
+          { src: "/images/campaigns/ctrl4c-campaign-overview.jpg" },
+          { src: "/images/campaigns/ctrl4c-campaign-video-content.jpg" },
+          { src: "/images/campaigns/ctrl4c-campaign-cast-talent.jpg" },
+          { src: "/images/campaigns/ctrl4c-campaign-screening-post.jpg" },
+          { src: "/images/campaigns/ctrl4c-campaign-teaser-slideshow.jpg" },
+          { src: "/images/campaigns/ctrl4c-campaign-other-posts.jpg" },
+          { src: "/images/campaigns/ctrl4c-campaign-marketing-strategy.jpg" },
         ],
-        sections: [
-          {
-            heading: "Premise",
-            style: "list",
-            items: [
-              "Behind-the-scenes videos transformed the animation process into short-form content that encouraged curiosity and repeat engagement.",
-            ],
-          },
-          {
-            heading: "Responsibilities",
-            style: "pills",
-            items: [
-              "Creative direction",
-              "Caption strategy",
-              "Content production",
-              "Video editing",
-              "Publishing schedule",
-            ],
-          },
-          {
-            heading: "KPI Tracking / Results",
-            style: "pills",
-            items: [
-              "20K+ cumulative video views",
-              "3 high-performing process videos",
-              "Consistent audience growth",
-              "Increased profile discovery",
-            ],
-          },
-        ],
-      },
-      {
-        title: "Cast & Talent Highlight",
-        subtitle: "The process creates curiosity about the product.",
-        images: [{ src: "/images/campaigns/ctrl4c-slide-cast.jpg" }],
-        sections: [
-          {
-            heading: "Role",
-            style: "pills",
-            items: [
-              "Designer & illustrator",
-              "Campaign strategist",
-              "Content creator",
-              "Copywriter",
-            ],
-          },
-          {
-            heading: "Strategy",
-            style: "list",
-            items: [
-              "Turn character design, voice acting, and production roles into shareable content that expands the film's narrative beyond the screen.",
-            ],
-          },
-          {
-            heading: "KPI Tracking / Results",
-            style: "pills",
-            items: [
-              "100+ post interactions",
-              "Strong comment engagement",
-              "Higher content shares and saves",
-              "Expanded community participation",
-            ],
-          },
-        ],
-      },
-      {
-        title: "Screening Post",
-        subtitle: "Converting online engagement into in-person attendance.",
-        images: [
-          { src: "/images/campaigns/ctrl4c-slide-flyer.jpg" },
-          { src: "/images/campaigns/ctrl4c-slide-analytics.jpg" },
-        ],
-        sections: [
-          {
-            heading: "Role",
-            style: "pills",
-            items: [
-              "Graphic designer x illustrator",
-              "Caption & concept ideation",
-              "Campaign strategist",
-            ],
-          },
-          {
-            heading: "Responsibilities",
-            style: "pills",
-            items: [
-              "Promotional design",
-              "Strategic partnerships with UCLA TFT",
-              "Cross-posting with lifestyle account",
-              "Event-based content scheduling",
-            ],
-          },
-          {
-            heading: "KPI Tracking / Results",
-            style: "pills",
-            items: [
-              "9.5K+ impressions",
-              "3.1K+ accounts reached",
-              "52 profile visits",
-              "40%+ discovery through feed recommendations",
-            ],
-          },
-        ],
-      },
-      {
-        title: "Pre-Screening Teaser Slideshow",
-        subtitle:
-          "Character reveals for generated anticipation without revealing key story moments.",
-        images: [{ src: "/images/campaigns/ctrl4c-slide-slideshow.jpg" }],
-        sections: [
-          {
-            heading: "Role",
-            style: "pills",
-            items: [
-              "Video creator",
-              "Post creator",
-              "Captioning & concept ideation",
-              "Campaign strategy",
-            ],
-          },
-          {
-            heading: "Responsibilities",
-            style: "list",
-            items: [
-              "Introduce characters, themes, and visual motifs while preserving the narrative experience.",
-            ],
-          },
-          {
-            heading: "KPI Tracking / Results",
-            style: "pills",
-            items: [
-              "2.4K+ views",
-              "Strong audience retention",
-              "Increased comment activity",
-              "Improved engagement with future posts",
-            ],
-          },
-        ],
-      },
-      {
-        title: "Other Posts",
-        images: [
-          {
-            src: "/images/campaigns/ctrl4c-slide-casting.jpg",
-            caption: "Casting Call",
-          },
-          {
-            src: "/images/campaigns/ctrl4c-slide-lineup.jpg",
-            caption: "Character Lineup",
-          },
-          {
-            src: "/images/campaigns/ctrl4c-intro-teaser.jpg",
-            caption: "Intro / Teaser",
-          },
-          {
-            src: "/images/campaigns/ctrl4c-slide-keyframe.jpg",
-            caption: "Keyframe Transitions",
-          },
-        ],
-        sections: [
-          {
-            heading: "Role",
-            style: "pills",
-            items: [
-              "Graphic designer x illustrator",
-              "Caption & concept ideation",
-              "Campaign strategist",
-            ],
-          },
-          {
-            heading: "Effect",
-            style: "list",
-            items: [
-              "Casting Call → Community participation",
-              "Character Lineup → World-building",
-              "Intro/Teaser → Brand recognition",
-              "Keyframe Transitions → Showcase animation quality",
-            ],
-          },
-        ],
-      },
-      {
-        title: "Posting / Marketing Strategy",
-        subtitle: "Art account → Animation Studio",
-        sections: [
-          {
-            heading: "Strategy",
-            style: "list",
-            items: [
-              "1. Rebrand the platform — transitioned from freelance illustration commissions to an account centered on original animated storytelling.",
-              "2. Build an audience — used process videos, interviews, character reveals, and event promotion to create an engaged community around the film.",
-              "3. Establish industry visibility — leveraged social media as a professional networking tool rather than simply a distribution platform.",
-            ],
-          },
-          {
-            heading: "Results",
-            style: "pills",
-            items: [
-              "+400 followers",
-              "20K+ video views",
-              "2 industry interviews",
-              "AFRIFF networking opportunity",
-              "Multiple festival submissions",
-              "Foundation for future IP launches",
-            ],
-          },
-        ],
+        sections: [],
       },
     ],
+    viewFullProject: {},
   },
 ];
 
@@ -1019,16 +652,16 @@ export const additionalExperience: ExperienceItem[] = [
       "Directed promotional strategy and creative materials for the organization's festivals, workshops, and short-film fundraising initiatives.",
   },
   {
-    role: "Writers Room Coordinator",
-    company: "Bap Production",
+    role: "Writers Room & Story Development Intern",
+    company: "Bap Productions",
     period: "Jun — Sept 2023",
     summary:
       "Reviewed scripts and treatments supporting story development for Netflix-commissioned and in-house film/TV projects, including sequel development for Bling Lagosians 2.",
   },
   {
-    role: "Production Assistant",
-    company: "Golden Effects Pictures Ltd",
-    period: "Apr 2020 — May 2021",
+    role: "Production / Creative Intern",
+    company: "Golden Effects Pictures",
+    period: "Apr — May 2020",
     summary:
       "Provided administrative and production support during pre-production at a Lagos-based production company.",
   },
