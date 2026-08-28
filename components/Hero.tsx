@@ -19,7 +19,7 @@ export default function Hero() {
           <p className="text-sm font-medium uppercase tracking-widest text-brown/60">
             {site.role}
           </p>
-          <h1 className="mt-2 text-4xl font-bold tracking-tight text-brown sm:text-6xl">
+          <h1 className="font-display mt-2 text-6xl tracking-tight text-brown sm:text-8xl">
             {site.name}
           </h1>
           <p className="mt-4 text-lg text-brown/75">{site.tagline}</p>

@@ -11,12 +11,12 @@
   --color-brown: #4b3621;
   --color-beige: #f6efe3;
   --color-beige-card: #ece1cc;
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-jakarta);
+  --font-display: var(--font-anton);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-jakarta), Arial, Helvetica, sans-serif;
 }

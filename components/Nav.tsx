@@ -13,7 +13,10 @@ export default function Nav() {
   return (
     <header className="sticky top-0 z-50 border-b border-brown/15 bg-beige/90 backdrop-blur">
       <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        <Link href="/#top" className="font-semibold tracking-tight text-brown">
+        <Link
+          href="/#top"
+          className="font-display text-2xl tracking-tight text-brown"
+        >
           {site.name}
         </Link>
         <ul className="hidden gap-6 text-sm sm:flex">
