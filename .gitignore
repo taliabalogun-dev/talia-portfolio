@@ -42,3 +42,9 @@ next-env.d.ts
 
 # local dev tooling (machine-specific paths)
 .claude/
+
+# source pitch decks (large binary originals, not for deployment — see source-decks/README.md)
+source-decks/*.pptx
+source-decks/*.key
+source-decks/*.ppt
+source-decks/*.pdf
