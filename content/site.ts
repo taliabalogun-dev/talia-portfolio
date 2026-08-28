@@ -192,10 +192,6 @@ export const projects: Project[] = [
       {
         title: "FAST @ UCLA",
         subtitle: "Editorial Executive Director — Los Angeles, CA",
-        images: [
-          { src: "/images/campaigns/fast-magazine-cover.jpg" },
-          { src: "/images/campaigns/fast-iconaclub-website.jpg", aspect: "video" },
-        ],
         sections: [
           {
             heading: "Focus",
@@ -211,10 +207,6 @@ export const projects: Project[] = [
       },
       {
         title: "Featured Campaign",
-        sections: [],
-      },
-      {
-        title: "Featured Creative Media",
         layout: "slideshow",
         images: [
           { src: "/images/campaigns/fast-campaign-title.jpg" },
@@ -228,7 +220,7 @@ export const projects: Project[] = [
         sections: [],
       },
       {
-        title: "Gallery",
+        title: "Featured Creative Media",
         layout: "slideshow",
         images: [
           { src: "/images/campaigns/fast-editorial-poster-homage.jpg" },
