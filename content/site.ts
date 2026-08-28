@@ -38,6 +38,25 @@ export type Campaign = {
   image?: string;
 };
 
+export type SlideImage = {
+  src: string;
+  caption?: string;
+};
+
+export type SlideSection = {
+  heading: string;
+  items: string[];
+  /** "pills" for short badge-style items (roles, results); "list" for full-sentence items. */
+  style: "pills" | "list";
+};
+
+export type Slide = {
+  title: string;
+  subtitle?: string;
+  images?: SlideImage[];
+  sections: SlideSection[];
+};
+
 export type Project = {
   slug: string;
   navLabel: string;
@@ -54,6 +73,8 @@ export type Project = {
   image?: string;
   /** Pinterest-style campaign cards shown on the subpage. */
   campaigns?: Campaign[];
+  /** Slide-by-slide case study breakdown shown instead of the campaigns grid. */
+  slides?: Slide[];
 };
 
 export const projects: Project[] = [
@@ -218,73 +239,276 @@ export const projects: Project[] = [
     period: "2025 — Present",
     location: "Los Angeles, CA",
     featured: true,
-    image: "/images/campaigns/ctrl4c-crown.jpg",
-    campaigns: [
+    image: "/images/campaigns/ctrl4c-slide-cover.jpg",
+    slides: [
       {
-        name: "Key Art & Campaign Concept",
-        description:
-          "Designed the film's key art and campaign concept boards, establishing the visual identity used across every touchpoint.",
-        image: "/images/campaigns/ctrl4c-crown.jpg",
+        title: "Animated IP Launch Campaign",
+        images: [{ src: "/images/campaigns/ctrl4c-slide-cover.jpg" }],
+        sections: [
+          {
+            heading: "Role",
+            style: "pills",
+            items: [
+              "Creative Director",
+              "Campaign Strategist",
+              "Social Media Manager",
+              "Designer",
+            ],
+          },
+        ],
       },
       {
-        name: "Character Design — Teni & Imole",
-        description:
-          "Designed the film's lead characters, developing the visual language later reused across casting and world-building posts.",
-        image: "/images/campaigns/ctrl4c-characters.jpg",
+        title: "Ctrl 4C Film Release Campaign",
+        images: [{ src: "/images/campaigns/ctrl4c-slide-profile.jpg" }],
+        sections: [
+          {
+            heading: "Objective",
+            style: "list",
+            items: [
+              "Reposition my account from freelance illustration to an animation-focused platform while building an audience for future films.",
+            ],
+          },
+          {
+            heading: "Process",
+            style: "list",
+            items: [
+              "Developed a multi-stage campaign using process videos, character reveals, cast spotlights, teasers, and screening promotion.",
+            ],
+          },
+          {
+            heading: "Outcome",
+            style: "list",
+            items: [
+              "Expanded audience reach while establishing a recognizable identity for the film and my animation brand.",
+            ],
+          },
+          {
+            heading: "Result",
+            style: "pills",
+            items: [
+              "+400 followers",
+              "20K+ views",
+              "2 interview invitations",
+              "AFRIFF recognition",
+            ],
+          },
+        ],
       },
       {
-        name: "Casting Call",
-        description:
-          "Recruited seven voice actors through a public casting call post, sparking early community participation.",
-        image: "/images/campaigns/ctrl4c-casting-call.jpg",
+        title: "Video Content for Engagement",
+        subtitle: "The process creates curiosity about the product.",
+        images: [
+          { src: "/images/campaigns/ctrl4c-slide-video-1.jpg" },
+          { src: "/images/campaigns/ctrl4c-slide-video-2.jpg" },
+          { src: "/images/campaigns/ctrl4c-slide-video-3.jpg" },
+        ],
+        sections: [
+          {
+            heading: "Premise",
+            style: "list",
+            items: [
+              "Behind-the-scenes videos transformed the animation process into short-form content that encouraged curiosity and repeat engagement.",
+            ],
+          },
+          {
+            heading: "Responsibilities",
+            style: "pills",
+            items: [
+              "Creative direction",
+              "Caption strategy",
+              "Content production",
+              "Video editing",
+              "Publishing schedule",
+            ],
+          },
+          {
+            heading: "KPI Tracking / Results",
+            style: "pills",
+            items: [
+              "20K+ cumulative video views",
+              "3 high-performing process videos",
+              "Consistent audience growth",
+              "Increased profile discovery",
+            ],
+          },
+        ],
       },
       {
-        name: "Character Lineup Reveal",
-        description:
-          "Revealed the film's character lineup to build world-building anticipation ahead of release.",
-        image: "/images/campaigns/ctrl4c-character-lineup.jpg",
+        title: "Cast & Talent Highlight",
+        subtitle: "The process creates curiosity about the product.",
+        images: [{ src: "/images/campaigns/ctrl4c-slide-cast.jpg" }],
+        sections: [
+          {
+            heading: "Role",
+            style: "pills",
+            items: [
+              "Designer & illustrator",
+              "Campaign strategist",
+              "Content creator",
+              "Copywriter",
+            ],
+          },
+          {
+            heading: "Strategy",
+            style: "list",
+            items: [
+              "Turn character design, voice acting, and production roles into shareable content that expands the film's narrative beyond the screen.",
+            ],
+          },
+          {
+            heading: "KPI Tracking / Results",
+            style: "pills",
+            items: [
+              "100+ post interactions",
+              "Strong comment engagement",
+              "Higher content shares and saves",
+              "Expanded community participation",
+            ],
+          },
+        ],
       },
       {
-        name: "Intro / Teaser",
-        description:
-          "Released an introductory teaser to build brand recognition ahead of the premiere.",
-        image: "/images/campaigns/ctrl4c-intro-teaser.jpg",
+        title: "Screening Post",
+        subtitle: "Converting online engagement into in-person attendance.",
+        images: [
+          { src: "/images/campaigns/ctrl4c-slide-flyer.jpg" },
+          { src: "/images/campaigns/ctrl4c-slide-analytics.jpg" },
+        ],
+        sections: [
+          {
+            heading: "Role",
+            style: "pills",
+            items: [
+              "Graphic designer x illustrator",
+              "Caption & concept ideation",
+              "Campaign strategist",
+            ],
+          },
+          {
+            heading: "Responsibilities",
+            style: "pills",
+            items: [
+              "Promotional design",
+              "Strategic partnerships with UCLA TFT",
+              "Cross-posting with lifestyle account",
+              "Event-based content scheduling",
+            ],
+          },
+          {
+            heading: "KPI Tracking / Results",
+            style: "pills",
+            items: [
+              "9.5K+ impressions",
+              "3.1K+ accounts reached",
+              "52 profile visits",
+              "40%+ discovery through feed recommendations",
+            ],
+          },
+        ],
       },
       {
-        name: "Keyframe Transitions",
-        description:
-          "Shared keyframe transition clips to showcase animation quality and process craft.",
-        image: "/images/campaigns/ctrl4c-keyframe.jpg",
+        title: "Pre-Screening Teaser Slideshow",
+        subtitle:
+          "Character reveals for generated anticipation without revealing key story moments.",
+        images: [{ src: "/images/campaigns/ctrl4c-slide-slideshow.jpg" }],
+        sections: [
+          {
+            heading: "Role",
+            style: "pills",
+            items: [
+              "Video creator",
+              "Post creator",
+              "Captioning & concept ideation",
+              "Campaign strategy",
+            ],
+          },
+          {
+            heading: "Responsibilities",
+            style: "list",
+            items: [
+              "Introduce characters, themes, and visual motifs while preserving the narrative experience.",
+            ],
+          },
+          {
+            heading: "KPI Tracking / Results",
+            style: "pills",
+            items: [
+              "2.4K+ views",
+              "Strong audience retention",
+              "Increased comment activity",
+              "Improved engagement with future posts",
+            ],
+          },
+        ],
       },
       {
-        name: "Pre-Screening Teaser Slideshow",
-        description:
-          "A 13-slide carousel introducing characters and visual motifs without spoiling the story — 2.4K+ views with strong audience retention.",
-        image: "/images/campaigns/ctrl4c-prescreening-slideshow.jpg",
+        title: "Other Posts",
+        images: [
+          {
+            src: "/images/campaigns/ctrl4c-slide-casting.jpg",
+            caption: "Casting Call",
+          },
+          {
+            src: "/images/campaigns/ctrl4c-slide-lineup.jpg",
+            caption: "Character Lineup",
+          },
+          {
+            src: "/images/campaigns/ctrl4c-intro-teaser.jpg",
+            caption: "Intro / Teaser",
+          },
+          {
+            src: "/images/campaigns/ctrl4c-slide-keyframe.jpg",
+            caption: "Keyframe Transitions",
+          },
+        ],
+        sections: [
+          {
+            heading: "Role",
+            style: "pills",
+            items: [
+              "Graphic designer x illustrator",
+              "Caption & concept ideation",
+              "Campaign strategist",
+            ],
+          },
+          {
+            heading: "Effect",
+            style: "list",
+            items: [
+              "Casting Call → Community participation",
+              "Character Lineup → World-building",
+              "Intro/Teaser → Brand recognition",
+              "Keyframe Transitions → Showcase animation quality",
+            ],
+          },
+        ],
       },
       {
-        name: "Cast & Talent Highlight",
-        description:
-          "Spotlighted the voice cast and crew to expand the film's story beyond the screen, driving 100+ post interactions.",
-        image: "/images/campaigns/ctrl4c-cast-talent.jpg",
-      },
-      {
-        name: "Video Content for Engagement",
-        description:
-          "Turned behind-the-scenes animation process work into short-form video, generating 20K+ cumulative views across three high-performing posts.",
-        image: "/images/campaigns/ctrl4c-video-content.jpg",
-      },
-      {
-        name: "Screening Post",
-        description:
-          "Converted online engagement into in-person attendance for the UCLA TFT premiere — 9.5K+ impressions and 3.1K+ accounts reached.",
-        image: "/images/campaigns/ctrl4c-screening-post.jpg",
-      },
-      {
-        name: "Premiere Screening",
-        description:
-          "The film's premiere screening, converting a year of campaign work into a full house.",
-        image: "/images/campaigns/ctrl4c-screening.jpg",
+        title: "Posting / Marketing Strategy",
+        subtitle: "Art account → Animation Studio",
+        sections: [
+          {
+            heading: "Strategy",
+            style: "list",
+            items: [
+              "1. Rebrand the platform — transitioned from freelance illustration commissions to an account centered on original animated storytelling.",
+              "2. Build an audience — used process videos, interviews, character reveals, and event promotion to create an engaged community around the film.",
+              "3. Establish industry visibility — leveraged social media as a professional networking tool rather than simply a distribution platform.",
+            ],
+          },
+          {
+            heading: "Results",
+            style: "pills",
+            items: [
+              "+400 followers",
+              "20K+ video views",
+              "2 industry interviews",
+              "AFRIFF networking opportunity",
+              "Multiple festival submissions",
+              "Foundation for future IP launches",
+            ],
+          },
+        ],
       },
     ],
   },
