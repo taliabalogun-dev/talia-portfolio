@@ -296,12 +296,20 @@ export const projects: Project[] = [
         sections: [],
       },
       {
-        title: "Gallery",
+        title: "Featured Creative Media",
         layout: "slideshow",
         images: [
           { src: "/images/campaigns/ucla-zombie-poster.jpg" },
           { src: "/images/campaigns/ucla-frankenstein-poster.jpg" },
           { src: "/images/campaigns/ucla-dracula-poster.jpg" },
+          { src: "/images/campaigns/ucla-edited-selects.jpg" },
+        ],
+        sections: [],
+      },
+      {
+        title: "Gallery",
+        layout: "slideshow",
+        images: [
           { src: "/images/campaigns/ucla-bike-night.jpg" },
           { src: "/images/campaigns/ucla-dasani-tent.jpg" },
           { src: "/images/campaigns/ucla-group-lawn.jpg" },
@@ -312,7 +320,6 @@ export const projects: Project[] = [
           { src: "/images/campaigns/ucla-flower-stand.jpg" },
           { src: "/images/campaigns/ucla-community-member.jpg" },
           { src: "/images/campaigns/ucla-bts-office.jpg" },
-          { src: "/images/campaigns/ucla-edited-selects.jpg" },
         ],
         sections: [],
       },
