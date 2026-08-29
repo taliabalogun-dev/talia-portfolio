@@ -136,11 +136,11 @@ export const projects: Project[] = [
           },
           {
             src: "/images/campaigns/kugali-emmys-stage.jpg",
-            caption: "Outstanding Younger Voice Performer, presented on the night",
+            caption: "Iwájú on screen during the ceremony",
           },
           {
             src: "/images/campaigns/kugali-emmys-carpet.jpg",
-            caption: "The Kugali team on the NATAS carpet",
+            caption: "Ticket in hand, arriving for the red carpet",
           },
         ],
         sections: [],

@@ -16,9 +16,9 @@ const GRADIENTS = [
 
 const AUTO_ADVANCE_MS = 6000;
 
-// All polaroid paper is white; the role line is a dedicated orange-brown so
-// it reads as a warm accent without pulling in the site's pale yellow.
-const CARD_STYLE = { card: "bg-white border-white", role: "text-[#a8562a]" };
+// Black paper frame; the role line is a dedicated orange-brown so it reads
+// as a warm accent without pulling in the site's pale yellow.
+const CARD_STYLE = { card: "bg-black border-black", role: "text-[#a8562a]" };
 
 const featuredProjects = projects.filter((p) => p.featured);
 
@@ -118,7 +118,7 @@ export default function Projects() {
                 <p className={`mt-0.5 text-sm font-bold uppercase tracking-wide ${CARD_STYLE.role}`}>
                   {project.role}
                 </p>
-                <span className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-full bg-hero-ink px-4 py-2 text-xs font-bold uppercase tracking-wide text-hero">
+                <span className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-full bg-hero-ink px-4 py-2 text-xs font-bold uppercase tracking-wide text-[#f7ecc4]">
                   View Role →
                 </span>
               </Link>
