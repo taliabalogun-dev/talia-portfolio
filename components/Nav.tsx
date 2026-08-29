@@ -6,31 +6,36 @@ const links = [
   { href: "/#projects", label: "Projects" },
   { href: "/#skills", label: "Skills" },
   { href: "/#experience", label: "Experience" },
-  { href: "/#contact", label: "Contact" },
 ];
 
 export default function Nav() {
   return (
-    <header className="sticky top-0 z-50 border-b border-brown/15 bg-beige/90 backdrop-blur">
-      <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+    <header className="sticky top-0 z-50 border-b-[3px] border-ink bg-beige">
+      <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
         <Link
           href="/#top"
-          className="font-display text-2xl tracking-tight text-brown"
+          className="font-display relative pb-1 text-2xl uppercase tracking-tight text-ink after:absolute after:bottom-0 after:left-0 after:h-1.5 after:w-11 after:bg-accent"
         >
           {site.name}
         </Link>
-        <ul className="hidden gap-6 text-sm sm:flex">
+        <ul className="hidden gap-8 text-sm font-semibold uppercase tracking-wide sm:flex">
           {links.map((link) => (
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="text-brown/70 transition-colors hover:text-brown"
+                className="text-brown transition-colors hover:text-ink"
               >
                 {link.label}
               </Link>
             </li>
           ))}
         </ul>
+        <Link
+          href="/#contact"
+          className="rounded-full bg-ink px-5 py-2.5 text-xs font-bold uppercase tracking-wide text-beige transition-opacity hover:opacity-85"
+        >
+          Contact
+        </Link>
       </nav>
     </header>
   );

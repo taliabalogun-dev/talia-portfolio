@@ -11,6 +11,9 @@
   --color-brown: #4b3621;
   --color-beige: #f6efe3;
   --color-beige-card: #ece1cc;
+  --color-ink: #241708;
+  --color-accent: #e3a62f;
+  --color-accent-ink: #241708;
   --font-sans: var(--font-jakarta);
   --font-display: var(--font-anton);
 }
