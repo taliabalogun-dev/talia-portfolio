@@ -16,14 +16,9 @@ const GRADIENTS = [
 
 const AUTO_ADVANCE_MS = 6000;
 
-// Polaroid paper alternates white / ivory / pale yellow. The yellow card's
-// role text can't use the brown accent — brown is the same pale yellow, so
-// it would vanish against its own card.
-const CARD_STYLES = [
-  { card: "bg-white border-white", role: "text-brown" },
-  { card: "bg-paper border-paper", role: "text-brown" },
-  { card: "bg-hero border-hero", role: "text-paper-ink" },
-];
+// All polaroid paper is white; the role line is a dedicated orange-brown so
+// it reads as a warm accent without pulling in the site's pale yellow.
+const CARD_STYLE = { card: "bg-white border-white", role: "text-[#a8562a]" };
 
 const featuredProjects = projects.filter((p) => p.featured);
 
@@ -64,7 +59,6 @@ export default function Projects() {
         <div className="relative mx-auto mt-16 h-[560px] max-w-xl sm:h-[620px]">
           {featuredProjects.map((project, i) => {
             const offset = ((i - index) % n + n) % n;
-            const style = CARD_STYLES[i % CARD_STYLES.length];
             let transform = "";
             let zIndex = 1;
             let opacity = "1";
@@ -90,7 +84,7 @@ export default function Projects() {
               <Link
                 key={project.slug}
                 href={`/projects/${project.slug}`}
-                className={`absolute left-1/2 top-0 w-96 rounded-sm border-4 p-3 pb-7 shadow-2xl transition-transform duration-500 ease-out ${style.card}`}
+                className={`absolute left-1/2 top-0 w-96 rounded-sm border-4 p-3 pb-7 shadow-2xl transition-transform duration-500 ease-out ${CARD_STYLE.card}`}
                 style={{
                   transform: `${transform} scale(${scale})`,
                   zIndex,
@@ -121,7 +115,7 @@ export default function Projects() {
                 <h3 className="font-display mt-3 text-2xl uppercase tracking-tight text-paper-ink">
                   {project.title}
                 </h3>
-                <p className={`mt-0.5 text-sm uppercase tracking-wide ${style.role}`}>
+                <p className={`mt-0.5 text-sm uppercase tracking-wide ${CARD_STYLE.role}`}>
                   {project.role}
                 </p>
               </Link>
