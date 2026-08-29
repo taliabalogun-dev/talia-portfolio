@@ -22,6 +22,8 @@ export default function Hero() {
           smear across the photograph. Fading to white/0 interpolates toward
           white instead, so the fade brightens rather than muddies. */}
       <div className="absolute inset-0 bg-gradient-to-r from-hero from-30% via-hero/70 via-48% to-white/0 to-70%" />
+      {/* Eases the hard cut from the pale hero into the dark section below. */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-beige sm:h-40" />
 
       <div className="relative mx-auto flex min-h-[70vh] max-w-5xl items-center px-4 sm:min-h-[85vh] sm:px-6">
         <div className="max-w-md sm:max-w-xl">
