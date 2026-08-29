@@ -277,7 +277,7 @@ export const projects: Project[] = [
       },
       {
         title: "Featured Campaign",
-        layout: "filmstrip",
+        layout: "slideshow",
         images: [
           { src: "/images/campaigns/ucla-campaign-title.jpg" },
           { src: "/images/campaigns/ucla-campaign-event.jpg" },
@@ -291,6 +291,12 @@ export const projects: Project[] = [
         title: "Featured Creative Media",
         layout: "filmstrip",
         images: [
+          { src: "/images/campaigns/ucla-bike-night.jpg" },
+          { src: "/images/campaigns/ucla-dasani-tent.jpg" },
+          { src: "/images/campaigns/ucla-event-room.jpg" },
+          { src: "/images/campaigns/ucla-speaker-mic.jpg" },
+          { src: "/images/campaigns/ucla-flower-stand.jpg" },
+          { src: "/images/campaigns/ucla-community-member.jpg" },
           { src: "/images/campaigns/ucla-zombie-poster.jpg" },
           { src: "/images/campaigns/ucla-frankenstein-poster.jpg" },
           { src: "/images/campaigns/ucla-dracula-poster.jpg" },
@@ -301,15 +307,9 @@ export const projects: Project[] = [
         title: "Gallery",
         layout: "filmstrip",
         images: [
-          { src: "/images/campaigns/ucla-bike-night.jpg" },
-          { src: "/images/campaigns/ucla-dasani-tent.jpg" },
           { src: "/images/campaigns/ucla-group-lawn.jpg" },
           { src: "/images/campaigns/ucla-group-hangout.jpg" },
           { src: "/images/campaigns/ucla-group-selfie.jpg" },
-          { src: "/images/campaigns/ucla-event-room.jpg" },
-          { src: "/images/campaigns/ucla-speaker-mic.jpg" },
-          { src: "/images/campaigns/ucla-flower-stand.jpg" },
-          { src: "/images/campaigns/ucla-community-member.jpg" },
           { src: "/images/campaigns/ucla-bts-office.jpg" },
         ],
         sections: [],
