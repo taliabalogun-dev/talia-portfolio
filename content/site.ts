@@ -243,17 +243,15 @@ export const projects: Project[] = [
         sections: [],
       },
       {
+        /* The finished work: editorial frames and the magazine they ran in. */
         title: "Featured Creative Media",
-        layout: "slideshow",
+        layout: "contact",
         images: [
           { src: "/images/campaigns/fast-editorial-poster-homage.jpg" },
           { src: "/images/campaigns/fast-editorial-car-01.jpg" },
-          { src: "/images/campaigns/fast-editorial-car-02.jpg" },
           { src: "/images/campaigns/fast-editorial-car-03.jpg" },
           { src: "/images/campaigns/fast-storefront-billboard.jpg", aspect: "video" },
-          { src: "/images/campaigns/fast-auditorium.jpg", aspect: "video" },
           { src: "/images/campaigns/fast-runway-01.jpg" },
-          { src: "/images/campaigns/fast-group-01.jpg" },
           { src: "/images/campaigns/fast-editorial-night-01.jpg" },
           { src: "/images/campaigns/fast-editorial-couch-01.jpg" },
           { src: "/images/campaigns/fast-editorial-movement-01.jpg" },
@@ -264,9 +262,21 @@ export const projects: Project[] = [
           { src: "/images/campaigns/fast-editorial-garden-01.jpg" },
           { src: "/images/campaigns/fast-editorial-forest-01.jpg" },
           { src: "/images/campaigns/fast-bts-loft-01.jpg" },
-          { src: "/images/campaigns/fast-bts-studio-01.jpg" },
           { src: "/images/campaigns/fast-editorial-negatives.jpg" },
           { src: "/images/campaigns/fast-magazine-cover.jpg" },
+        ],
+        sections: [],
+      },
+      {
+        /* The room rather than the result: the shoots being made and the
+         * people who turned up for them. */
+        title: "Gallery",
+        layout: "contact",
+        images: [
+          { src: "/images/campaigns/fast-editorial-car-02.jpg" },
+          { src: "/images/campaigns/fast-auditorium.jpg", aspect: "video" },
+          { src: "/images/campaigns/fast-group-01.jpg" },
+          { src: "/images/campaigns/fast-bts-studio-01.jpg" },
         ],
         sections: [],
       },
