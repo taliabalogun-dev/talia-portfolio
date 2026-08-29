@@ -17,16 +17,16 @@ export default function Hero() {
           by two-thirds. A gradient still at 85% in the middle of the frame
           washes the subject out and turns the picture into a texture.
 
-          It fades to hero/0, not to transparent: `transparent` is rgba(0,0,0,0),
-          so fading to it interpolates through black and lays a grey smear
-          across the middle of the photograph. */}
-      <div className="absolute inset-0 bg-gradient-to-r from-hero from-30% via-hero/70 via-48% to-hero/0 to-70%" />
+          It fades to white/0, not hero/0 or transparent: fading to hero/0
+          interpolates the yellow toward black as alpha drops, laying a grey
+          smear across the photograph. Fading to white/0 interpolates toward
+          white instead, so the fade brightens rather than muddies. */}
+      <div className="absolute inset-0 bg-gradient-to-r from-hero from-30% via-hero/70 via-48% to-white/0 to-70%" />
 
       <div className="relative mx-auto flex min-h-[70vh] max-w-5xl items-center px-4 sm:min-h-[85vh] sm:px-6">
         <div className="max-w-md sm:max-w-xl">
-          {/* The badge inverts: on a pale ground a pale chip disappears. */}
           <p className="text-xs font-bold uppercase tracking-[0.16em]">
-            <span className="rounded-sm bg-hero-ink px-2 py-1 text-hero">{site.role}</span>
+            <span className="rounded-sm bg-paper px-2 py-1 text-hero-ink">{site.role}</span>
           </p>
           <h1 className="font-display mt-4 text-balance text-5xl uppercase leading-[0.88] tracking-tighter text-hero-ink sm:text-7xl">
             {site.name}

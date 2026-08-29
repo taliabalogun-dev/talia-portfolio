@@ -71,12 +71,14 @@ export default async function ProjectPage(
             </div>
 
             {project.image && (
-              <div className="relative aspect-[3/4] w-full shrink-0 overflow-hidden rounded-2xl border border-brown/15 sm:w-80">
+              <div
+                className={`relative aspect-[3/4] w-full shrink-0 overflow-hidden rounded-2xl border border-brown/15 sm:w-80 ${project.imageFit === "contain" ? "bg-beige-card" : ""}`}
+              >
                 <Image
                   src={project.image}
                   alt=""
                   fill
-                  className="object-cover"
+                  className={project.imageFit === "contain" ? "object-contain p-10" : "object-cover"}
                   sizes="(min-width: 640px) 320px, 100vw"
                   priority
                 />

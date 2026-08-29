@@ -82,6 +82,8 @@ export type Project = {
   featured: boolean;
   /** Hero image for the carousel slide and subpage header. */
   image?: string;
+  /** Defaults to "cover". Use "contain" for circular logo marks so the full circle stays visible in the portrait hero box instead of being cropped. */
+  imageFit?: "cover" | "contain";
   /** Pinterest-style campaign cards shown on the subpage. */
   campaigns?: Campaign[];
   /** Slide-by-slide case study breakdown shown instead of the campaigns grid. */
@@ -159,6 +161,7 @@ export const projects: Project[] = [
     location: "NYC / Hybrid",
     featured: true,
     image: "/images/campaigns/livenation-logo.png",
+    imageFit: "contain",
     slides: [
       {
         title: "‘This Is MUTHA’ Festival Promotion",
@@ -299,6 +302,7 @@ export const projects: Project[] = [
     location: "Los Angeles, CA",
     featured: false,
     image: "/images/campaigns/ucla-logo.png",
+    imageFit: "contain",
     slides: [
       {
         title: "UCLA Student Affairs",
@@ -374,6 +378,7 @@ export const projects: Project[] = [
     location: "Los Angeles, CA",
     featured: false,
     image: "/images/campaigns/refine-logo.png",
+    imageFit: "contain",
     slides: [
       {
         title: "Refine LA",
@@ -475,6 +480,7 @@ export const projects: Project[] = [
     location: "Lagos, Nigeria",
     featured: false,
     image: "/images/campaigns/bap-logo.png",
+    imageFit: "contain",
     slides: [
       {
         title: "Bap Productions",
@@ -516,6 +522,7 @@ export const projects: Project[] = [
     location: "Lagos, Nigeria",
     featured: false,
     image: "/images/campaigns/golden-effects-logo.png",
+    imageFit: "contain",
     slides: [
       {
         title: "Golden Effects Pictures",

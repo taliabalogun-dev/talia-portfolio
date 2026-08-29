@@ -52,7 +52,7 @@ export default function Projects() {
         <h2 className="font-display text-balance text-6xl uppercase leading-[0.9] tracking-tight text-beige sm:text-8xl">
           My Work
         </h2>
-        <p className="mt-3 max-w-md text-xl font-bold text-brown">
+        <p className="mt-3 max-w-md text-xl font-bold text-[#a8562a]">
           Eight roles across entertainment, fashion, and campus culture — creative direction that ships.
         </p>
 
@@ -115,9 +115,12 @@ export default function Projects() {
                 <h3 className="font-display mt-3 text-2xl uppercase tracking-tight text-paper-ink">
                   {project.title}
                 </h3>
-                <p className={`mt-0.5 text-sm uppercase tracking-wide ${CARD_STYLE.role}`}>
+                <p className={`mt-0.5 text-sm font-bold uppercase tracking-wide ${CARD_STYLE.role}`}>
                   {project.role}
                 </p>
+                <span className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-full bg-hero-ink px-4 py-2 text-xs font-bold uppercase tracking-wide text-hero">
+                  View Role →
+                </span>
               </Link>
             );
           })}
@@ -136,14 +139,14 @@ export default function Projects() {
           ))}
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-3 sm:grid-cols-2">
+        <div className="mt-14 grid grid-cols-1 gap-3 rounded-3xl bg-[#faf3d9] p-4 sm:grid-cols-2 sm:p-6">
           {projects.map((p) => {
             const isActive = p.featured && p.slug === featuredProjects[index].slug;
             const keywords = p.tags.slice(0, 2);
             const tileClasses = `flex flex-col gap-3 rounded-2xl p-6 text-left transition-colors ${
               isActive
                 ? "border-4 border-accent bg-beige"
-                : "border-2 border-beige/20 hover:border-beige/40"
+                : "border-2 border-beige/20 bg-white hover:border-beige/40"
             }`;
             const badgeClasses = isActive
               ? "rounded-full bg-ink/10 px-3 py-1 text-sm uppercase tracking-wide text-ink/90"
