@@ -3,21 +3,21 @@ import { site } from "@/content/site";
 export default function Contact() {
   return (
     <section id="contact" className="mx-auto max-w-5xl px-6 py-16">
-      <h2 className="text-2xl font-semibold tracking-tight">Contact</h2>
-      <p className="mt-4 max-w-xl text-brown/70">
+      <h2 className="text-3xl font-semibold tracking-tight">Contact</h2>
+      <p className="mt-4 max-w-xl text-lg text-muted">
         Open to creative strategy and marketing roles — reach out to talk campaigns, collaborations, or opportunities.
       </p>
       <div className="mt-6 flex flex-wrap gap-4">
         <a
           href={`mailto:${site.email}`}
-          className="rounded-full bg-brown px-6 py-3 text-sm font-medium text-beige transition-opacity hover:opacity-85"
+          className="rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-ink transition-opacity hover:opacity-85"
         >
           {site.email}
         </a>
         {site.social.github && (
           <a
             href={site.social.github}
-            className="rounded-full border border-brown/30 px-6 py-3 text-sm font-medium text-brown transition-colors hover:border-brown/60"
+            className="rounded-full border-2 border-accent px-6 py-3 text-sm font-medium text-accent transition-colors hover:bg-accent hover:text-accent-ink"
           >
             GitHub
           </a>
@@ -25,7 +25,7 @@ export default function Contact() {
         {site.social.linkedin && (
           <a
             href={site.social.linkedin}
-            className="rounded-full border border-brown/30 px-6 py-3 text-sm font-medium text-brown transition-colors hover:border-brown/60"
+            className="rounded-full border-2 border-accent px-6 py-3 text-sm font-medium text-accent transition-colors hover:bg-accent hover:text-accent-ink"
           >
             LinkedIn
           </a>

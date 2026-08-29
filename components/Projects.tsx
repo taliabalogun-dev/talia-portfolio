@@ -48,11 +48,11 @@ export default function Projects() {
         <h2 className="font-display text-balance text-6xl uppercase leading-[0.9] tracking-tight text-beige sm:text-8xl">
           My Work
         </h2>
-        <p className="mt-3 max-w-md text-sm text-beige/60">
+        <p className="mt-3 max-w-md text-base text-beige/70">
           Six roles, one throughline — creative direction that ships.
         </p>
 
-        <div className="relative mx-auto mt-16 h-[420px] max-w-xl sm:h-[460px]">
+        <div className="relative mx-auto mt-16 h-[500px] max-w-xl sm:h-[560px]">
           {featuredProjects.map((project, i) => {
             const offset = ((i - index) % n + n) % n;
             let transform = "";
@@ -63,11 +63,11 @@ export default function Projects() {
               transform = "translate(-50%, 20px) rotate(0deg)";
               zIndex = 10;
             } else if (offset === 1) {
-              transform = "translate(calc(-50% + 130px), 60px) rotate(8deg)";
+              transform = "translate(calc(-50% + 150px), 60px) rotate(8deg)";
               zIndex = 5;
               scale = 0.88;
             } else if (offset === n - 1) {
-              transform = "translate(calc(-50% - 130px), 60px) rotate(-8deg)";
+              transform = "translate(calc(-50% - 150px), 60px) rotate(-8deg)";
               zIndex = 5;
               scale = 0.88;
             } else {
@@ -80,7 +80,7 @@ export default function Projects() {
               <Link
                 key={project.slug}
                 href={`/projects/${project.slug}`}
-                className="absolute left-1/2 top-0 w-72 rounded-sm border-4 border-beige bg-beige p-2.5 pb-6 shadow-2xl transition-transform duration-500 ease-out"
+                className="absolute left-1/2 top-0 w-80 rounded-sm border-4 border-paper bg-paper p-2.5 pb-6 shadow-2xl transition-transform duration-500 ease-out"
                 style={{
                   transform: `${transform} scale(${scale})`,
                   zIndex,
@@ -100,7 +100,7 @@ export default function Projects() {
                       alt=""
                       fill
                       className="object-cover"
-                      sizes="288px"
+                      sizes="320px"
                     />
                   ) : (
                     <div
@@ -108,10 +108,10 @@ export default function Projects() {
                     />
                   )}
                 </div>
-                <h3 className="font-display mt-3 text-lg uppercase tracking-tight text-ink">
+                <h3 className="font-display mt-3 text-xl uppercase tracking-tight text-paper-ink">
                   {project.title}
                 </h3>
-                <p className="mt-0.5 text-xs uppercase tracking-wide text-brown">
+                <p className="mt-0.5 text-sm uppercase tracking-wide text-brown">
                   {project.role}
                 </p>
               </Link>
@@ -126,7 +126,7 @@ export default function Projects() {
               onClick={() => goTo(i)}
               aria-label={`Go to project ${i + 1}`}
               className={`h-2 w-2 rounded-full transition-colors ${
-                i === index ? "bg-accent" : "bg-beige/25"
+                i === index ? "bg-brown" : "bg-beige/25"
               }`}
             />
           ))}
@@ -137,13 +137,13 @@ export default function Projects() {
             const isActive = p.featured && p.slug === featuredProjects[index].slug;
             const keywords = p.tags.slice(0, 2);
             const tileClasses = `flex flex-col gap-3 rounded-2xl border-2 p-6 text-left transition-colors ${
-              isActive ? "border-accent" : "border-beige/20 hover:border-beige/40"
+              isActive ? "border-brown" : "border-beige/20 hover:border-beige/40"
             }`;
-            const badgeClasses = "rounded-full bg-beige/10 px-3 py-1 text-xs uppercase tracking-wide text-beige/80";
+            const badgeClasses = "rounded-full bg-beige/10 px-3 py-1 text-sm uppercase tracking-wide text-beige/90";
 
             const content = (
               <>
-                <span className="font-display text-lg uppercase tracking-tight text-beige">
+                <span className="font-display text-xl uppercase tracking-tight text-beige">
                   {p.navLabel}
                 </span>
                 <span className="flex flex-wrap gap-2">

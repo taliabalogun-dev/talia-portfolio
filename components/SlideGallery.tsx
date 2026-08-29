@@ -40,25 +40,25 @@ export default function SlideGallery({ images }: { images: SlideImage[] }) {
         )}
       </div>
       {current.caption && (
-        <p className="mt-2 text-xs text-beige/60">{current.caption}</p>
+        <p className="mt-2 text-sm text-beige/70">{current.caption}</p>
       )}
       <div className="mt-3 flex items-center justify-between">
         <button
           type="button"
           onClick={() => goTo(index - 1)}
           aria-label="Previous"
-          className="rounded-full border border-beige/30 px-3 py-1.5 text-xs text-beige transition-colors hover:border-beige/60"
+          className="rounded-full border border-beige/30 px-3 py-1.5 text-sm text-beige transition-colors hover:border-beige/60"
         >
           ← Prev
         </button>
-        <span className="text-xs text-beige/50">
+        <span className="text-sm text-beige/60">
           {index + 1} / {images.length}
         </span>
         <button
           type="button"
           onClick={() => goTo(index + 1)}
           aria-label="Next"
-          className="rounded-full border border-beige/30 px-3 py-1.5 text-xs text-beige transition-colors hover:border-beige/60"
+          className="rounded-full border border-beige/30 px-3 py-1.5 text-sm text-beige transition-colors hover:border-beige/60"
         >
           Next →
         </button>

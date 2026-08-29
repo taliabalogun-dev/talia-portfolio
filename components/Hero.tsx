@@ -17,7 +17,7 @@ export default function Hero() {
       <div className="relative mx-auto flex min-h-[70vh] max-w-5xl items-center px-4 sm:min-h-[85vh] sm:px-6">
         <div className="max-w-md sm:max-w-xl">
           <p className="text-xs font-bold uppercase tracking-[0.16em] text-accent-ink">
-            <span className="rounded-sm bg-accent px-2 py-1">{site.role}</span>
+            <span className="rounded-sm bg-brown px-2 py-1">{site.role}</span>
           </p>
           <h1 className="font-display mt-4 text-balance text-5xl uppercase leading-[0.88] tracking-tighter text-ink sm:text-7xl">
             {site.name}
@@ -25,25 +25,25 @@ export default function Hero() {
           <p className="font-display mt-4 text-balance text-xl uppercase leading-tight tracking-tight text-ink sm:text-2xl">
             {site.heroStatement}
           </p>
-          <p className="mt-4 text-lg text-brown">{site.tagline}</p>
+          <p className="mt-4 text-xl text-muted">{site.tagline}</p>
           <div className="mt-6 flex flex-wrap items-center gap-4">
             <a
               href="#projects"
-              className="rounded-full bg-ink px-6 py-3 text-sm font-bold uppercase tracking-wide text-beige transition-opacity hover:opacity-85"
+              className="rounded-full bg-accent px-6 py-3 text-sm font-bold uppercase tracking-wide text-accent-ink transition-opacity hover:opacity-85"
             >
               View my work
             </a>
             <a
               href={site.resumeUrl}
               download
-              className="rounded-full border-2 border-ink px-6 py-3 text-sm font-bold uppercase tracking-wide text-ink transition-colors hover:bg-ink hover:text-beige"
+              className="rounded-full border-2 border-accent px-6 py-3 text-sm font-bold uppercase tracking-wide text-accent transition-colors hover:bg-accent hover:text-accent-ink"
             >
               Download résumé
             </a>
           </div>
           <Link
             href="/about"
-            className="mt-4 inline-block text-sm font-semibold text-brown underline underline-offset-4 hover:text-ink"
+            className="mt-4 inline-block text-base font-semibold text-muted underline underline-offset-4 hover:text-ink"
           >
             More about me →
           </Link>

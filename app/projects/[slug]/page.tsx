@@ -34,7 +34,7 @@ export default async function ProjectPage(
         <main className="mx-auto max-w-5xl px-6 py-16">
           <Link
             href="/#projects"
-            className="text-sm text-brown/60 transition-colors hover:text-brown"
+            className="text-base text-muted transition-colors hover:text-ink"
           >
             ← Back to projects
           </Link>
@@ -44,15 +44,15 @@ export default async function ProjectPage(
               <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
                 {project.title}
               </h1>
-              <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-sm text-brown/60">
+              <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-base text-muted">
                 <span>{project.role}</span>
                 <span>{project.period}</span>
                 <span>{project.location}</span>
               </div>
 
-              <p className="mt-6 text-brown/70">{project.description}</p>
+              <p className="mt-6 text-lg text-muted">{project.description}</p>
               {project.extendedDescription && (
-                <p className="mt-4 text-brown/70">
+                <p className="mt-4 text-lg text-muted">
                   {project.extendedDescription}
                 </p>
               )}
@@ -61,7 +61,7 @@ export default async function ProjectPage(
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-full bg-brown/10 px-3 py-1 text-xs text-brown/60"
+                    className="rounded-full bg-brown/15 px-3 py-1 text-sm text-brown"
                   >
                     {tag}
                   </span>
@@ -94,11 +94,11 @@ export default async function ProjectPage(
                   key={slide.title}
                   className="border-t border-beige/15 pt-10 first:border-t-0 first:pt-0"
                 >
-                  <h2 className="text-xl font-semibold tracking-tight">
+                  <h2 className="text-2xl font-semibold tracking-tight">
                     {slide.title}
                   </h2>
                   {slide.subtitle && (
-                    <p className="mt-1 text-beige/60">{slide.subtitle}</p>
+                    <p className="mt-1 text-base text-beige/70">{slide.subtitle}</p>
                   )}
                   {(() => {
                     const hasImages = !!slide.images && slide.images.length > 0;
@@ -147,7 +147,7 @@ export default async function ProjectPage(
                               )}
                             </div>
                             {img.caption && (
-                              <figcaption className="p-2 text-xs text-beige/60">
+                              <figcaption className="p-2 text-sm text-beige/70">
                                 {img.caption}
                               </figcaption>
                             )}
@@ -160,7 +160,7 @@ export default async function ProjectPage(
                       <div className="flex flex-col gap-5">
                         {slide.sections.map((section) => (
                           <div key={section.heading}>
-                            <h3 className="text-sm font-medium uppercase tracking-wide text-beige/50">
+                            <h3 className="text-sm font-medium uppercase tracking-wide text-beige/60">
                               {section.heading}
                             </h3>
                             {section.style === "pills" ? (
@@ -168,14 +168,14 @@ export default async function ProjectPage(
                                 {section.items.map((item) => (
                                   <span
                                     key={item}
-                                    className="rounded-full bg-beige/10 px-3 py-1 text-xs text-beige/80"
+                                    className="rounded-full bg-beige/10 px-3 py-1 text-sm text-beige/90"
                                   >
                                     {item}
                                   </span>
                                 ))}
                               </div>
                             ) : (
-                              <div className="mt-2 flex flex-col gap-2 text-sm text-beige/80">
+                              <div className="mt-2 flex flex-col gap-2 text-base text-beige/90">
                                 {section.items.map((item) => (
                                   <p key={item}>{item}</p>
                                 ))}
@@ -202,7 +202,7 @@ export default async function ProjectPage(
           ) : (
             project.campaigns && (
               <>
-                <h2 className="text-xl font-semibold tracking-tight">
+                <h2 className="text-2xl font-semibold tracking-tight">
                   Campaigns
                 </h2>
                 <div className="mt-6 columns-1 gap-6 sm:columns-2">
@@ -230,7 +230,7 @@ export default async function ProjectPage(
                       </div>
                       <div className="p-4">
                         <h3 className="font-medium">{campaign.name}</h3>
-                        <p className="mt-1 text-sm text-beige/80">
+                        <p className="mt-1 text-base text-beige/90">
                           {campaign.description}
                         </p>
                       </div>

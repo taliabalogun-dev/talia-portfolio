@@ -15,7 +15,7 @@ export default function AboutPage() {
       <main className="mx-auto max-w-5xl px-6 py-16">
         <Link
           href="/#top"
-          className="text-sm text-brown/60 transition-colors hover:text-brown"
+          className="text-base text-muted transition-colors hover:text-ink"
         >
           ← Back to home
         </Link>
@@ -25,7 +25,7 @@ export default function AboutPage() {
             <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
               {bio.heading}
             </h1>
-            <div className="mt-6 flex flex-col gap-4 text-brown/70">
+            <div className="mt-6 flex flex-col gap-4 text-lg text-muted">
               {bio.paragraphs.map((paragraph, i) => (
                 <p key={i}>{paragraph}</p>
               ))}
