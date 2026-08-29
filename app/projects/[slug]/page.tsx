@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Nav from "@/components/Nav";
 import SlideGallery from "@/components/SlideGallery";
+import FilmstripGallery from "@/components/FilmstripGallery";
 import { projects } from "@/content/site";
 
 export function generateStaticParams() {
@@ -100,6 +101,8 @@ export default async function ProjectPage(
                   const gallery = hasImages && (
                     slide.layout === "slideshow" ? (
                       <SlideGallery images={slide.images!} />
+                    ) : slide.layout === "filmstrip" ? (
+                      <FilmstripGallery images={slide.images!} />
                     ) : (
                     <div
                       className={

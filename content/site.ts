@@ -63,8 +63,8 @@ export type Slide = {
   subtitle?: string;
   images?: SlideImage[];
   sections: SlideSection[];
-  /** Defaults to "grid". Use "slideshow" for a large, uncaptioned photo/video dump — renders as a single-image carousel instead of a static grid. */
-  layout?: "grid" | "slideshow";
+  /** Defaults to "grid". "slideshow" renders a single-image carousel with Prev/Next. "filmstrip" shows every image at once, edge-to-edge, in a horizontally scrollable strip. */
+  layout?: "grid" | "slideshow" | "filmstrip";
 };
 
 export type Project = {
@@ -108,10 +108,7 @@ export const projects: Project[] = [
       {
         title: "Kugali Media",
         subtitle: "Marketing & Story Intern — UK/Hybrid",
-        images: [
-          { src: "/images/campaigns/kugali-logo.png" },
-          { src: "/images/campaigns/kugali-iwaju-poster.jpg" },
-        ],
+        images: [{ src: "/images/campaigns/kugali-iwaju-poster.jpg" }],
         sections: [
           {
             heading: "Focus",
@@ -124,11 +121,6 @@ export const projects: Project[] = [
             ],
           },
         ],
-      },
-      {
-        title: "Gallery",
-        images: [{ src: "/images/campaigns/kugali-emmys.jpg" }],
-        sections: [],
       },
     ],
   },
@@ -285,7 +277,7 @@ export const projects: Project[] = [
       },
       {
         title: "Featured Campaign",
-        layout: "slideshow",
+        layout: "filmstrip",
         images: [
           { src: "/images/campaigns/ucla-campaign-title.jpg" },
           { src: "/images/campaigns/ucla-campaign-event.jpg" },
@@ -297,18 +289,17 @@ export const projects: Project[] = [
       },
       {
         title: "Featured Creative Media",
-        layout: "slideshow",
+        layout: "filmstrip",
         images: [
           { src: "/images/campaigns/ucla-zombie-poster.jpg" },
           { src: "/images/campaigns/ucla-frankenstein-poster.jpg" },
           { src: "/images/campaigns/ucla-dracula-poster.jpg" },
-          { src: "/images/campaigns/ucla-edited-selects.jpg" },
         ],
         sections: [],
       },
       {
         title: "Gallery",
-        layout: "slideshow",
+        layout: "filmstrip",
         images: [
           { src: "/images/campaigns/ucla-bike-night.jpg" },
           { src: "/images/campaigns/ucla-dasani-tent.jpg" },
@@ -410,11 +401,17 @@ export const projects: Project[] = [
           { src: "/images/campaigns/refine-group-subway.jpg" },
           { src: "/images/campaigns/refine-portrait-patterned.jpg" },
           { src: "/images/campaigns/refine-bts-hands.jpg" },
-          { src: "/images/campaigns/refine-picnic-group.jpg" },
           { src: "/images/campaigns/refine-night-walk.jpg" },
-          { src: "/images/campaigns/refine-indoor-group.jpg" },
-          { src: "/images/campaigns/refine-portrait-glasses.jpg" },
           { src: "/images/campaigns/refine-night-lights.jpg" },
+        ],
+        sections: [],
+      },
+      {
+        title: "Zine Launch — Event Coverage",
+        layout: "slideshow",
+        images: [
+          { src: "/images/campaigns/refine-picnic-group.jpg" },
+          { src: "/images/campaigns/refine-indoor-group.jpg" },
         ],
         sections: [],
       },
