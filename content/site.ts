@@ -165,6 +165,16 @@ export const projects: Project[] = [
         ],
         sections: [],
       },
+      {
+        title: "Production Stills",
+        layout: "filmstrip",
+        images: [
+          { src: "/images/campaigns/livenation-production-still-01.jpg" },
+          { src: "/images/campaigns/livenation-production-still-02.jpg" },
+          { src: "/images/campaigns/livenation-production-still-03.jpg" },
+        ],
+        sections: [],
+      },
     ],
   },
   {

@@ -16,6 +16,15 @@ const GRADIENTS = [
 
 const AUTO_ADVANCE_MS = 6000;
 
+// Polaroid paper alternates white / ivory / pale yellow. The yellow card's
+// role text can't use the brown accent — brown is the same pale yellow, so
+// it would vanish against its own card.
+const CARD_STYLES = [
+  { card: "bg-white border-white", role: "text-brown" },
+  { card: "bg-paper border-paper", role: "text-brown" },
+  { card: "bg-hero border-hero", role: "text-paper-ink" },
+];
+
 const featuredProjects = projects.filter((p) => p.featured);
 
 const START_INDEX = Math.max(
@@ -48,13 +57,14 @@ export default function Projects() {
         <h2 className="font-display text-balance text-6xl uppercase leading-[0.9] tracking-tight text-beige sm:text-8xl">
           My Work
         </h2>
-        <p className="mt-3 max-w-md text-base text-beige/70">
-          Six roles, one throughline — creative direction that ships.
+        <p className="mt-3 max-w-md text-xl font-bold text-brown">
+          Eight roles across entertainment, fashion, and campus culture — creative direction that ships.
         </p>
 
-        <div className="relative mx-auto mt-16 h-[500px] max-w-xl sm:h-[560px]">
+        <div className="relative mx-auto mt-16 h-[560px] max-w-xl sm:h-[620px]">
           {featuredProjects.map((project, i) => {
             const offset = ((i - index) % n + n) % n;
+            const style = CARD_STYLES[i % CARD_STYLES.length];
             let transform = "";
             let zIndex = 1;
             let opacity = "1";
@@ -63,11 +73,11 @@ export default function Projects() {
               transform = "translate(-50%, 20px) rotate(0deg)";
               zIndex = 10;
             } else if (offset === 1) {
-              transform = "translate(calc(-50% + 150px), 60px) rotate(8deg)";
+              transform = "translate(calc(-50% + 170px), 60px) rotate(8deg)";
               zIndex = 5;
               scale = 0.88;
             } else if (offset === n - 1) {
-              transform = "translate(calc(-50% - 150px), 60px) rotate(-8deg)";
+              transform = "translate(calc(-50% - 170px), 60px) rotate(-8deg)";
               zIndex = 5;
               scale = 0.88;
             } else {
@@ -80,7 +90,7 @@ export default function Projects() {
               <Link
                 key={project.slug}
                 href={`/projects/${project.slug}`}
-                className="absolute left-1/2 top-0 w-80 rounded-sm border-4 border-paper bg-paper p-2.5 pb-6 shadow-2xl transition-transform duration-500 ease-out"
+                className={`absolute left-1/2 top-0 w-96 rounded-sm border-4 p-3 pb-7 shadow-2xl transition-transform duration-500 ease-out ${style.card}`}
                 style={{
                   transform: `${transform} scale(${scale})`,
                   zIndex,
@@ -100,7 +110,7 @@ export default function Projects() {
                       alt=""
                       fill
                       className="object-cover"
-                      sizes="320px"
+                      sizes="384px"
                     />
                   ) : (
                     <div
@@ -108,10 +118,10 @@ export default function Projects() {
                     />
                   )}
                 </div>
-                <h3 className="font-display mt-3 text-xl uppercase tracking-tight text-paper-ink">
+                <h3 className="font-display mt-3 text-2xl uppercase tracking-tight text-paper-ink">
                   {project.title}
                 </h3>
-                <p className="mt-0.5 text-sm uppercase tracking-wide text-brown">
+                <p className={`mt-0.5 text-sm uppercase tracking-wide ${style.role}`}>
                   {project.role}
                 </p>
               </Link>
@@ -136,14 +146,20 @@ export default function Projects() {
           {projects.map((p) => {
             const isActive = p.featured && p.slug === featuredProjects[index].slug;
             const keywords = p.tags.slice(0, 2);
-            const tileClasses = `flex flex-col gap-3 rounded-2xl border-2 p-6 text-left transition-colors ${
-              isActive ? "border-brown" : "border-beige/20 hover:border-beige/40"
+            const tileClasses = `flex flex-col gap-3 rounded-2xl p-6 text-left transition-colors ${
+              isActive
+                ? "border-4 border-accent bg-beige"
+                : "border-2 border-beige/20 hover:border-beige/40"
             }`;
-            const badgeClasses = "rounded-full bg-beige/10 px-3 py-1 text-sm uppercase tracking-wide text-beige/90";
+            const badgeClasses = isActive
+              ? "rounded-full bg-ink/10 px-3 py-1 text-sm uppercase tracking-wide text-ink/90"
+              : "rounded-full bg-beige/10 px-3 py-1 text-sm uppercase tracking-wide text-beige/90";
 
             const content = (
               <>
-                <span className="font-display text-xl uppercase tracking-tight text-beige">
+                <span
+                  className={`font-display text-xl uppercase tracking-tight ${isActive ? "text-ink" : "text-beige"}`}
+                >
                   {p.navLabel}
                 </span>
                 <span className="flex flex-wrap gap-2">
