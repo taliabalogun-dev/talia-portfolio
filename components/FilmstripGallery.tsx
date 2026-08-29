@@ -3,7 +3,7 @@ import type { SlideImage } from "@/content/site";
 
 export default function FilmstripGallery({ images }: { images: SlideImage[] }) {
   return (
-    <div className="flex w-full gap-0 overflow-x-auto rounded-xl border border-brown/15">
+    <div className="flex w-full gap-0 overflow-x-auto rounded-xl border border-beige/15">
       {images.map((img) => (
         <div
           key={img.src}

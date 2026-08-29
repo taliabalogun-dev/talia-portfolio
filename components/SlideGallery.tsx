@@ -15,7 +15,7 @@ export default function SlideGallery({ images }: { images: SlideImage[] }) {
 
   return (
     <div>
-      <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-brown/15 bg-beige-card">
+      <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-beige/15 bg-beige/5">
         {current.kind === "video" ? (
           <video
             key={current.src}
@@ -40,25 +40,25 @@ export default function SlideGallery({ images }: { images: SlideImage[] }) {
         )}
       </div>
       {current.caption && (
-        <p className="mt-2 text-xs text-brown/60">{current.caption}</p>
+        <p className="mt-2 text-xs text-beige/60">{current.caption}</p>
       )}
       <div className="mt-3 flex items-center justify-between">
         <button
           type="button"
           onClick={() => goTo(index - 1)}
           aria-label="Previous"
-          className="rounded-full border border-brown/30 px-3 py-1.5 text-xs text-brown transition-colors hover:border-brown/60"
+          className="rounded-full border border-beige/30 px-3 py-1.5 text-xs text-beige transition-colors hover:border-beige/60"
         >
           ← Prev
         </button>
-        <span className="text-xs text-brown/50">
+        <span className="text-xs text-beige/50">
           {index + 1} / {images.length}
         </span>
         <button
           type="button"
           onClick={() => goTo(index + 1)}
           aria-label="Next"
-          className="rounded-full border border-brown/30 px-3 py-1.5 text-xs text-brown transition-colors hover:border-brown/60"
+          className="rounded-full border border-beige/30 px-3 py-1.5 text-xs text-beige transition-colors hover:border-beige/60"
         >
           Next →
         </button>
