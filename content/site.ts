@@ -65,7 +65,7 @@ export type Slide = {
   images?: SlideImage[];
   sections: SlideSection[];
   /** Defaults to "grid". "slideshow" renders a single-image carousel with Prev/Next. "filmstrip" shows every image at once, edge-to-edge, in a horizontally scrollable strip. */
-  layout?: "grid" | "slideshow" | "filmstrip";
+  layout?: "grid" | "slideshow" | "filmstrip" | "contact";
 };
 
 export type Project = {
@@ -122,6 +122,26 @@ export const projects: Project[] = [
             ],
           },
         ],
+      },
+      {
+        title: "The Emmys",
+        subtitle: "Daytime Emmy Awards — Iwájú, Disney × Kugali",
+        layout: "contact",
+        images: [
+          {
+            src: "/images/campaigns/kugali-emmys-statuette.jpg",
+            caption: "The statuette, stage left before the ceremony",
+          },
+          {
+            src: "/images/campaigns/kugali-emmys-stage.jpg",
+            caption: "Outstanding Younger Voice Performer, presented on the night",
+          },
+          {
+            src: "/images/campaigns/kugali-emmys-carpet.jpg",
+            caption: "The Kugali team on the NATAS carpet",
+          },
+        ],
+        sections: [],
       },
     ],
   },
@@ -455,7 +475,7 @@ export const projects: Project[] = [
       },
       {
         title: "Gallery",
-        layout: "slideshow",
+        layout: "contact",
         images: [
           { src: "/images/campaigns/bap-writers-room.jpg" },
           { src: "/images/campaigns/bap-office-meeting.jpg" },
@@ -490,11 +510,6 @@ export const projects: Project[] = [
         images: [
           { src: "/images/campaigns/golden-effects-swallow-poster.jpg" },
         ],
-        sections: [],
-      },
-      {
-        title: "Gallery",
-        images: [{ src: "/images/campaigns/golden-effects-interior.jpg" }],
         sections: [],
       },
     ],

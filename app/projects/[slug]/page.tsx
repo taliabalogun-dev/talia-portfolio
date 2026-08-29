@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Nav from "@/components/Nav";
 import SlideGallery from "@/components/SlideGallery";
 import FilmstripGallery from "@/components/FilmstripGallery";
+import ContactSheet from "@/components/ContactSheet";
 import { projects } from "@/content/site";
 
 export function generateStaticParams() {
@@ -108,6 +109,8 @@ export default async function ProjectPage(
                         <SlideGallery images={slide.images!} />
                       ) : slide.layout === "filmstrip" ? (
                         <FilmstripGallery images={slide.images!} />
+                      ) : slide.layout === "contact" ? (
+                        <ContactSheet images={slide.images!} />
                       ) : (
                       <div
                         className={
