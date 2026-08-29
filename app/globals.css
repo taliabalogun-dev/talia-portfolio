@@ -17,6 +17,12 @@
   --color-accent-ink: #151210;
   --color-paper: #f6efe3;
   --color-paper-ink: #241708;
+  /* The top of the site: pale yellow ground, dark brown type. Measured at
+     13.96:1, and the muted brown under it at 7.32:1 — both far clear of AA,
+     which is what lets the display type sit this large without shouting. */
+  --color-hero: #f5e6a8;
+  --color-hero-ink: #241708;
+  --color-hero-muted: #5a4426;
   --font-sans: var(--font-jakarta);
   --font-display: var(--font-anton);
 }

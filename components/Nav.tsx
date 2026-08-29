@@ -9,12 +9,13 @@ const links = [
 ];
 
 export default function Nav() {
+  // The bar sits on the hero, so it takes the hero's ground.
   return (
-    <header className="sticky top-0 z-50 border-b-[3px] border-ink bg-beige">
+    <header className="sticky top-0 z-50 border-b-[3px] border-hero-ink bg-hero">
       <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
         <Link
           href="/#top"
-          className="font-display relative pb-1 text-2xl uppercase tracking-tight text-ink after:absolute after:bottom-0 after:left-0 after:h-1.5 after:w-11 after:bg-brown"
+          className="font-display relative pb-1 text-2xl uppercase tracking-tight text-hero-ink after:absolute after:bottom-0 after:left-0 after:h-1.5 after:w-11 after:bg-hero-ink"
         >
           {site.name}
         </Link>
@@ -23,7 +24,7 @@ export default function Nav() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="text-brown transition-colors hover:text-ink"
+                className="text-hero-muted transition-colors hover:text-hero-ink"
               >
                 {link.label}
               </Link>
@@ -32,7 +33,7 @@ export default function Nav() {
         </ul>
         <Link
           href="/#contact"
-          className="rounded-full bg-accent px-5 py-2.5 text-xs font-bold uppercase tracking-wide text-accent-ink transition-opacity hover:opacity-85"
+          className="rounded-full bg-hero-ink px-5 py-2.5 text-xs font-bold uppercase tracking-wide text-hero transition-opacity hover:opacity-85"
         >
           Contact
         </Link>
