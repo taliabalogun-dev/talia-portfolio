@@ -165,8 +165,7 @@ export const projects: Project[] = [
     period: "March 2025 — June 2025",
     location: "NYC / Hybrid",
     featured: true,
-    image: "/images/campaigns/livenation-logo.png",
-    imageFit: "contain",
+    image: "/images/campaigns/livenation-mutha-poster.jpg",
     slides: [
       {
         title: "‘This Is MUTHA’ Festival Promotion",
