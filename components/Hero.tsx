@@ -4,7 +4,7 @@ import { site } from "@/content/site";
 
 export default function Hero() {
   return (
-    <section id="top" className="relative min-h-[70vh] overflow-hidden sm:min-h-[85vh]">
+    <section id="top" className="relative min-h-[60vh] overflow-hidden sm:min-h-[65vh]">
       <Image
         src="/images/hero.jpg"
         alt=""
@@ -19,7 +19,7 @@ export default function Hero() {
       {/* Eases the hard cut into the dark section below. */}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-beige sm:h-40" />
 
-      <div className="relative mx-auto flex min-h-[70vh] max-w-5xl items-center px-4 sm:min-h-[85vh] sm:px-6">
+      <div className="relative mx-auto flex min-h-[60vh] max-w-5xl items-center px-4 sm:min-h-[65vh] sm:px-6">
         <div className="max-w-md sm:max-w-xl">
           <p className="text-xs font-bold uppercase tracking-[0.16em]">
             <span className="rounded-sm bg-paper px-2 py-1 text-hero-ink">{site.role}</span>
