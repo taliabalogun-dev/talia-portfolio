@@ -51,6 +51,24 @@ export default async function ProjectPage(
                 <span>{project.location}</span>
               </div>
 
+              {project.focus && (
+                <div className="mt-6">
+                  <h2 className="text-sm font-medium uppercase tracking-wide text-muted">
+                    {project.focus.heading}
+                  </h2>
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    {project.focus.items.map((item) => (
+                      <span
+                        key={item}
+                        className="rounded-full bg-brown/15 px-3 py-1 text-sm text-brown"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               <p className="mt-6 text-lg text-muted">{project.description}</p>
               {project.extendedDescription && (
                 <p className="mt-4 text-lg text-muted">

@@ -82,6 +82,8 @@ export type Project = {
   role: string;
   period: string;
   location: string;
+  /** Short pill list of focus areas or partners, shown right under the role/date line on the subpage. */
+  focus?: { heading: string; items: string[] };
   /** Whether this appears as a large slide in the rotating showcase. Non-featured projects still appear in the nav bar, linking straight to their subpage. */
   featured: boolean;
   /** Hero image for the carousel slide and subpage header. */
@@ -111,27 +113,19 @@ export const projects: Project[] = [
     role: "Marketing & Story Intern",
     period: "June 2024 — June 2025",
     location: "UK / Hybrid",
+    focus: {
+      heading: "Focus",
+      items: [
+        "Story & Script Review",
+        "Pitch Presentations",
+        "Audience Research",
+        "Campaign Reporting",
+      ],
+    },
     featured: true,
     image: "/images/campaigns/kugali-iwaju-poster.jpg",
     imagePosition: "top",
     slides: [
-      {
-        title: "Kugali Media",
-        subtitle: "Marketing & Story Intern — UK/Hybrid",
-        images: [{ src: "/images/campaigns/kugali-iwaju-poster.jpg", position: "top" }],
-        sections: [
-          {
-            heading: "Focus",
-            style: "pills",
-            items: [
-              "Story & Script Review",
-              "Pitch Presentations",
-              "Audience Research",
-              "Campaign Reporting",
-            ],
-          },
-        ],
-      },
       {
         title: "The Emmys",
         subtitle: "Daytime Emmy Awards — Iwájú, Disney × Kugali",
@@ -169,11 +163,6 @@ export const projects: Project[] = [
     featured: true,
     image: "/images/campaigns/livenation-mutha-poster.jpg",
     slides: [
-      {
-        title: "‘This Is MUTHA’ Festival Promotion",
-        subtitle: "Contracted Creative Marketing Director — NYC/Hybrid",
-        sections: [],
-      },
       {
         title: "Featured Creative Media",
         subtitle: "Contracted Creative Marketing Director — March 2025 – June 2025",
@@ -221,6 +210,15 @@ export const projects: Project[] = [
     role: "Editorial Executive Director",
     period: "Oct 2024 — June 2026",
     location: "Los Angeles, CA",
+    focus: {
+      heading: "Focus",
+      items: [
+        "Editorial Project Management",
+        "Brand Partnerships",
+        "Live-Event Production",
+        "Vendor & Team Coordination",
+      ],
+    },
     featured: true,
     image: "/images/campaigns/fast-billboard-hero.jpg",
     slides: [
@@ -257,22 +255,6 @@ export const projects: Project[] = [
             heading: "Other FAST Brand Partners",
             style: "pills",
             items: ["Icona Club", "Demonia"],
-          },
-        ],
-      },
-      {
-        title: "FAST @ UCLA",
-        subtitle: "Editorial Executive Director — Los Angeles, CA",
-        sections: [
-          {
-            heading: "Focus",
-            style: "pills",
-            items: [
-              "Editorial Project Management",
-              "Brand Partnerships",
-              "Live-Event Production",
-              "Vendor & Team Coordination",
-            ],
           },
         ],
       },
@@ -339,29 +321,19 @@ export const projects: Project[] = [
     role: "Marketing & Media Coordinator",
     period: "Aug 2023 — June 2025",
     location: "Los Angeles, CA",
+    focus: {
+      heading: "Campus Partners",
+      items: [
+        "Center for Accessible Education",
+        "Dean's Office",
+        "Housing & Hospitality",
+        "UCLA Athletics",
+      ],
+    },
     featured: false,
     image: "/images/campaigns/ucla-logo.png",
     imageFit: "contain",
     slides: [
-      {
-        title: "UCLA Student Affairs",
-        subtitle: "Marketing & Media Coordinator — Los Angeles, CA",
-        images: [
-          { src: "/images/campaigns/ucla-dining-graphic.jpg", aspect: "video" },
-        ],
-        sections: [
-          {
-            heading: "Campus Partners",
-            style: "pills",
-            items: [
-              "Center for Accessible Education",
-              "Dean's Office",
-              "Housing & Hospitality",
-              "UCLA Athletics",
-            ],
-          },
-        ],
-      },
       {
         title: "Featured Campaign",
         layout: "slideshow",
@@ -416,28 +388,14 @@ export const projects: Project[] = [
     role: "Marketing Coordinator",
     period: "Sept 2023 — June 2025",
     location: "Los Angeles, CA",
+    focus: {
+      heading: "Focus",
+      items: ["Event Documentation", "Campaign Promotion", "Content Coordination"],
+    },
     featured: false,
     image: "/images/campaigns/refine-logo.png",
     imageFit: "contain",
     slides: [
-      {
-        title: "Refine LA",
-        subtitle: "Marketing Coordinator — Sept 2023 – June 2025",
-        images: [
-          { src: "/images/campaigns/refine-wordmark.jpg" },
-        ],
-        sections: [
-          {
-            heading: "Focus",
-            style: "pills",
-            items: [
-              "Event Documentation",
-              "Campaign Promotion",
-              "Content Coordination",
-            ],
-          },
-        ],
-      },
       {
         title: "Featured Campaign",
         layout: "slideshow",
@@ -520,16 +478,6 @@ export const projects: Project[] = [
     imageFit: "contain",
     slides: [
       {
-        title: "Bap Productions",
-        subtitle: "Writers Room & Story Development Intern — Lagos, Nigeria",
-        images: [
-          { src: "/images/campaigns/bap-man-of-god-poster.jpg" },
-          { src: "/images/campaigns/bap-house-of-gaa-poster.jpg" },
-          { src: "/images/campaigns/bap-bling-lagosians-poster.jpg" },
-        ],
-        sections: [],
-      },
-      {
         title: "Gallery",
         layout: "filmstrip",
         images: [
@@ -583,25 +531,18 @@ export const projects: Project[] = [
     role: "Writer, Producer & Director",
     period: "2025 — Present",
     location: "Los Angeles, CA",
+    focus: {
+      heading: "Role",
+      items: [
+        "Creative Director",
+        "Campaign Strategist",
+        "Social Media Manager",
+        "Designer",
+      ],
+    },
     featured: false,
     image: "/images/campaigns/ctrl4c-slide-cover.jpg",
     slides: [
-      {
-        title: "CTRL 4C",
-        images: [{ src: "/images/campaigns/ctrl4c-slide-cover.jpg" }],
-        sections: [
-          {
-            heading: "Role",
-            style: "pills",
-            items: [
-              "Creative Director",
-              "Campaign Strategist",
-              "Social Media Manager",
-              "Designer",
-            ],
-          },
-        ],
-      },
       {
         title: "Featured Campaign",
         layout: "slideshow",
