@@ -18,7 +18,7 @@ export const site = {
 export const about = {
   heading: "About",
   paragraphs: [
-    "Creative marketing and campaign strategist with 3+ years directing creative decisions inside entertainment, fashion, and institutional campaigns across the US, UK, and Nigeria — from audience research and pitch positioning through hands-on creative direction of photo, video, and campaign output.",
+    "Creative marketing and campaign strategist with 3+ years directing creative decisions.",
     "Direct experience spans pitch strategy work on Disney's Iwájú, brand partnership management with Nike and other major partners, and directing full creative teams across print, photography, and video for live campaigns. Based in Los Angeles, working toward moving from campaign-level creative direction into entertainment marketing strategy and development.",
   ],
 };
