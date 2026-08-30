@@ -88,12 +88,12 @@ export default function Projects() {
             </p>
             <p className="mt-5 max-w-sm text-lg text-ink/85">{site.tagline}</p>
             <div className="mt-6 flex flex-wrap items-center gap-4">
-              <a
-                href="#roles"
+              <Link
+                href="/work"
                 className="-rotate-2 rounded-full bg-accent px-6 py-3 text-sm font-bold uppercase tracking-wide text-hero-ink transition-opacity hover:opacity-85"
               >
                 View my work
-              </a>
+              </Link>
               <a
                 href={site.resumeUrl}
                 download
