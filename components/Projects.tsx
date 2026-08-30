@@ -59,8 +59,8 @@ export default function Projects() {
             </p>
           </div>
           <p className="max-w-sm text-lg text-muted sm:text-right">
-            From pitch strategy on Disney's Iwájú to brand partnerships with
-            Nike, I've directed full creative teams across print,
+            From pitch strategy on Disney&apos;s Iwájú to brand partnerships with
+            Nike, I&apos;ve directed full creative teams across print,
             photography, and video for live campaigns.
           </p>
         </div>
