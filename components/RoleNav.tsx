@@ -9,35 +9,14 @@ export default function RoleNav({
   onFeaturedClick?: (slug: string) => void;
 }) {
   return (
-    <div className="grid grid-cols-1 gap-3 rounded-3xl bg-[#faf3d9] p-4 sm:grid-cols-2 sm:p-6">
+    <div className="flex flex-wrap gap-2 rounded-3xl bg-[#faf3d9] p-4 sm:p-5">
       {projects.map((p) => {
         const isActive = p.slug === activeSlug;
-        const keywords = p.tags.slice(0, 2);
-        const tileClasses = `flex flex-col gap-3 rounded-2xl p-6 text-left transition-colors ${
+        const tileClasses = `font-display rounded-full px-4 py-2 text-sm uppercase tracking-tight transition-colors ${
           isActive
-            ? "border-4 border-accent bg-beige"
-            : "border-2 border-beige/20 bg-white hover:border-beige/40"
+            ? "border-2 border-accent bg-beige text-ink"
+            : "border-2 border-beige/20 bg-white text-beige hover:border-beige/40"
         }`;
-        const badgeClasses = isActive
-          ? "rounded-full bg-ink/10 px-3 py-1 text-sm uppercase tracking-wide text-ink/90"
-          : "rounded-full bg-beige/10 px-3 py-1 text-sm uppercase tracking-wide text-beige/90";
-
-        const content = (
-          <>
-            <span
-              className={`font-display text-xl uppercase tracking-tight ${isActive ? "text-ink" : "text-beige"}`}
-            >
-              {p.navLabel}
-            </span>
-            <span className="flex flex-wrap gap-2">
-              {keywords.map((kw) => (
-                <span key={kw} className={badgeClasses}>
-                  {kw}
-                </span>
-              ))}
-            </span>
-          </>
-        );
 
         if (onFeaturedClick && p.featured) {
           return (
@@ -46,14 +25,14 @@ export default function RoleNav({
               onClick={() => onFeaturedClick(p.slug)}
               className={tileClasses}
             >
-              {content}
+              {p.navLabel}
             </button>
           );
         }
 
         return (
           <Link key={p.slug} href={`/projects/${p.slug}`} className={tileClasses}>
-            {content}
+            {p.navLabel}
           </Link>
         );
       })}
