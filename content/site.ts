@@ -318,7 +318,6 @@ export const projects: Project[] = [
         title: "Gallery",
         layout: "filmstrip",
         images: [
-          { src: "/images/campaigns/fast-editorial-night-01.jpg" },
           { src: "/images/campaigns/fast-editorial-car-02.jpg" },
           { src: "/images/campaigns/fast-auditorium.jpg", aspect: "video" },
           { src: "/images/campaigns/fast-group-01.jpg" },
