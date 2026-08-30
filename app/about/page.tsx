@@ -42,14 +42,6 @@ export default function AboutPage() {
                 priority
               />
             </div>
-            <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl">
-              <Image
-                src="/images/about-emmys.jpg"
-                alt=""
-                fill
-                className="object-cover"
-              />
-            </div>
           </div>
         </div>
       </main>

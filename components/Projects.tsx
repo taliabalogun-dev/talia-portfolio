@@ -16,9 +16,8 @@ const GRADIENTS = [
 
 const AUTO_ADVANCE_MS = 6000;
 
-// Black paper frame; the role line is a dedicated orange-brown so it reads
-// as a warm accent without pulling in the site's pale yellow.
-const CARD_STYLE = { card: "bg-black border-black", role: "text-[#a8562a]" };
+// White paper frame with a dark yellow role line, staged on a black backdrop.
+const CARD_STYLE = { card: "bg-white border-white", role: "text-[#8a7015]" };
 
 const featuredProjects = projects.filter((p) => p.featured);
 
@@ -49,14 +48,14 @@ export default function Projects() {
   return (
     <section id="projects" className="bg-ink py-16 text-beige sm:py-20">
       <div className="mx-auto max-w-5xl px-6">
-        <h2 className="font-display text-balance text-6xl uppercase leading-[0.9] tracking-tight text-beige sm:text-8xl">
+        <h2 className="font-display text-balance text-7xl uppercase leading-[0.9] tracking-tight text-beige sm:text-9xl">
           My Work
         </h2>
         <p className="mt-3 max-w-md text-xl font-bold text-[#a8562a]">
-          Eight roles across entertainment, fashion, and campus culture — creative direction that ships.
+          Eight roles, one creative throughline.
         </p>
 
-        <div className="relative mx-auto mt-16 h-[560px] max-w-xl sm:h-[620px]">
+        <div className="relative mx-auto mt-16 h-[560px] max-w-xl rounded-3xl bg-black p-8 sm:h-[620px]">
           {featuredProjects.map((project, i) => {
             const offset = ((i - index) % n + n) % n;
             let transform = "";
@@ -112,7 +111,7 @@ export default function Projects() {
                     />
                   )}
                 </div>
-                <h3 className="font-display mt-3 text-2xl uppercase tracking-tight text-paper-ink">
+                <h3 className="font-display mt-3 text-2xl uppercase tracking-tight text-black">
                   {project.title}
                 </h3>
                 <p className={`mt-0.5 text-sm font-bold uppercase tracking-wide ${CARD_STYLE.role}`}>

@@ -140,7 +140,7 @@ export const projects: Project[] = [
           },
           {
             src: "/images/campaigns/kugali-emmys-carpet.jpg",
-            caption: "Ticket in hand, arriving for the red carpet",
+            caption: "The Kugali team on the NATAS carpet",
           },
         ],
         sections: [],
@@ -176,6 +176,7 @@ export const projects: Project[] = [
             kind: "video",
             aspect: "video",
             autoplay: true,
+            poster: "/images/campaigns/livenation-mutha-promo-poster.jpg",
             caption: "‘MUTHA’ concert promo video — May 2025",
           },
         ],
@@ -419,19 +420,15 @@ export const projects: Project[] = [
             src: "/videos/refine-promo-film.mp4",
             kind: "video",
             aspect: "video",
+            poster: "/images/campaigns/refine-promo-film-poster.jpg",
             caption:
               "‘What does LA mean to you’ zine promotion video — Directed and shot by me — Feb 2025",
-          },
-          {
-            src: "/images/campaigns/refine-cover-shoot-collage.jpg",
-            aspect: "video",
-            caption:
-              "‘What does LA mean to you’ zine cover shoot — Directed and shot by me — Feb 2025",
           },
           {
             src: "/videos/refine-decomposition-promo.mp4",
             kind: "video",
             aspect: "video",
+            poster: "/images/campaigns/refine-decomposition-promo-poster.jpg",
             caption:
               "‘Decomposition’ fashion show abstract promotion video — Edited & animated by me — March 2025",
           },
@@ -445,7 +442,7 @@ export const projects: Project[] = [
       },
       {
         title: "‘Lost and Found’ Fashion Show — Event Coverage",
-        layout: "slideshow",
+        layout: "filmstrip",
         images: [
           { src: "/images/campaigns/refine-group-subway.jpg" },
           { src: "/images/campaigns/refine-portrait-patterned.jpg" },
@@ -457,7 +454,7 @@ export const projects: Project[] = [
       },
       {
         title: "Zine Launch — Event Coverage",
-        layout: "slideshow",
+        layout: "filmstrip",
         images: [
           { src: "/images/campaigns/refine-picnic-group.jpg" },
           { src: "/images/campaigns/refine-indoor-group.jpg" },
@@ -494,7 +491,7 @@ export const projects: Project[] = [
       },
       {
         title: "Gallery",
-        layout: "contact",
+        layout: "filmstrip",
         images: [
           { src: "/images/campaigns/bap-writers-room.jpg" },
           { src: "/images/campaigns/bap-office-meeting.jpg" },
