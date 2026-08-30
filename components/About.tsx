@@ -7,7 +7,7 @@ export default function About() {
         <h2 className="font-display text-4xl uppercase tracking-tight text-paper-ink">
           {about.heading}
         </h2>
-        <div className="mt-6 flex flex-col gap-4 text-lg text-paper-ink/75">
+        <div className="mt-6 flex flex-col gap-4 text-xl text-paper-ink/75">
           {about.paragraphs.map((paragraph, i) => (
             <p key={i}>{paragraph}</p>
           ))}
