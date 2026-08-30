@@ -414,6 +414,27 @@ export const projects: Project[] = [
         sections: [],
       },
       {
+        title: "‘Lost and Found’ Fashion Show — Event Coverage",
+        layout: "filmstrip",
+        images: [
+          { src: "/images/campaigns/refine-group-subway.jpg" },
+          { src: "/images/campaigns/refine-portrait-patterned.jpg" },
+          { src: "/images/campaigns/refine-bts-hands.jpg" },
+          { src: "/images/campaigns/refine-night-walk.jpg" },
+          { src: "/images/campaigns/refine-night-lights.jpg" },
+        ],
+        sections: [],
+      },
+      {
+        title: "Zine Launch — Event Coverage",
+        layout: "filmstrip",
+        images: [
+          { src: "/images/campaigns/refine-picnic-group.jpg" },
+          { src: "/images/campaigns/refine-indoor-group.jpg" },
+        ],
+        sections: [],
+      },
+      {
         title: "Featured Creative Media",
         images: [
           {
@@ -437,27 +458,6 @@ export const projects: Project[] = [
             caption:
               "‘Lost and found’ fashion show event graphic & media coverage — Designed and shot by me — March 2024",
           },
-        ],
-        sections: [],
-      },
-      {
-        title: "‘Lost and Found’ Fashion Show — Event Coverage",
-        layout: "filmstrip",
-        images: [
-          { src: "/images/campaigns/refine-group-subway.jpg" },
-          { src: "/images/campaigns/refine-portrait-patterned.jpg" },
-          { src: "/images/campaigns/refine-bts-hands.jpg" },
-          { src: "/images/campaigns/refine-night-walk.jpg" },
-          { src: "/images/campaigns/refine-night-lights.jpg" },
-        ],
-        sections: [],
-      },
-      {
-        title: "Zine Launch — Event Coverage",
-        layout: "filmstrip",
-        images: [
-          { src: "/images/campaigns/refine-picnic-group.jpg" },
-          { src: "/images/campaigns/refine-indoor-group.jpg" },
         ],
         sections: [],
       },
