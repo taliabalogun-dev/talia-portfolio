@@ -50,6 +50,8 @@ export type SlideImage = {
   poster?: string;
   /** Video only: autoplay muted + loop, hero-style. */
   autoplay?: boolean;
+  /** Defaults to "center". Use "top" to keep the top of the image visible when object-cover crops it. */
+  position?: "center" | "top";
 };
 
 export type SlideSection = {
@@ -84,6 +86,8 @@ export type Project = {
   image?: string;
   /** Defaults to "cover". Use "contain" for circular logo marks so the full circle stays visible in the portrait hero box instead of being cropped. */
   imageFit?: "cover" | "contain";
+  /** Defaults to "center". Use "top" to keep the top of the image (e.g. a poster's logo/title) visible when object-cover crops it. */
+  imagePosition?: "center" | "top";
   /** Pinterest-style campaign cards shown on the subpage. */
   campaigns?: Campaign[];
   /** Slide-by-slide case study breakdown shown instead of the campaigns grid. */
@@ -107,11 +111,12 @@ export const projects: Project[] = [
     location: "UK / Hybrid",
     featured: true,
     image: "/images/campaigns/kugali-iwaju-poster.jpg",
+    imagePosition: "top",
     slides: [
       {
         title: "Kugali Media",
         subtitle: "Marketing & Story Intern — UK/Hybrid",
-        images: [{ src: "/images/campaigns/kugali-iwaju-poster.jpg" }],
+        images: [{ src: "/images/campaigns/kugali-iwaju-poster.jpg", position: "top" }],
         sections: [
           {
             heading: "Focus",

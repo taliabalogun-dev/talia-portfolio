@@ -57,6 +57,7 @@ export default function Projects() {
         </p>
 
         <div className="relative mx-auto mt-16 h-[560px] max-w-xl p-8 sm:h-[620px]">
+          <div className="pointer-events-none absolute left-1/2 top-0 z-0 h-40 w-96 -translate-x-1/2 -translate-y-1/3 rounded-full bg-white/25 blur-3xl" />
           {featuredProjects.map((project, i) => {
             const offset = ((i - index) % n + n) % n;
             let transform = "";
@@ -103,7 +104,7 @@ export default function Projects() {
                       src={project.image}
                       alt=""
                       fill
-                      className="object-cover"
+                      className={project.imagePosition === "top" ? "object-cover object-top" : "object-cover"}
                       sizes="384px"
                     />
                   ) : (

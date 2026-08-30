@@ -78,7 +78,13 @@ export default async function ProjectPage(
                   src={project.image}
                   alt=""
                   fill
-                  className={project.imageFit === "contain" ? "object-contain p-6" : "object-cover"}
+                  className={
+                    project.imageFit === "contain"
+                      ? "object-contain p-6"
+                      : project.imagePosition === "top"
+                        ? "object-cover object-top"
+                        : "object-cover"
+                  }
                   sizes="(min-width: 640px) 320px, 100vw"
                   priority
                 />
@@ -144,7 +150,7 @@ export default async function ProjectPage(
                                   src={img.src}
                                   alt=""
                                   fill
-                                  className="object-cover"
+                                  className={img.position === "top" ? "object-cover object-top" : "object-cover"}
                                   sizes="(min-width: 640px) 340px, 45vw"
                                 />
                               )}
