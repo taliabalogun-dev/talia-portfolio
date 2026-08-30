@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { projects } from "@/content/site";
+import { projects, site } from "@/content/site";
 import RoleNav from "@/components/RoleNav";
 
 const GRADIENTS = [
@@ -17,7 +17,7 @@ const GRADIENTS = [
 
 const AUTO_ADVANCE_MS = 6000;
 
-// White paper frame with a dark yellow role line, staged on a black backdrop.
+// White paper frame with a dark yellow role line, staged on a teal backdrop.
 const CARD_STYLE = { card: "bg-white border-white", role: "text-[#8a7015]" };
 
 const featuredProjects = projects.filter((p) => p.featured);
@@ -47,109 +47,150 @@ export default function Projects() {
   const n = featuredProjects.length;
 
   return (
-    <section id="projects" className="bg-beige py-16 text-beige sm:py-20">
-      <div className="mx-auto max-w-5xl px-6">
-        <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <h2 className="font-display text-balance text-7xl uppercase leading-[0.9] tracking-tight text-white sm:text-9xl">
-              My Work
+    <section id="projects" className="relative overflow-hidden bg-teal py-16 sm:py-20">
+      {/* Halftone texture, faded toward the carousel side. */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, rgba(245,218,110,0.22) 1.4px, transparent 1.6px)",
+          backgroundSize: "15px 15px",
+          WebkitMaskImage:
+            "radial-gradient(ellipse 70% 60% at 78% 30%, #000 0%, transparent 72%)",
+          maskImage:
+            "radial-gradient(ellipse 70% 60% at 78% 30%, #000 0%, transparent 72%)",
+        }}
+      />
+      <svg
+        className="pointer-events-none absolute right-[6vw] top-16 hidden w-14 opacity-90 sm:block"
+        viewBox="0 0 40 90"
+        fill="none"
+      >
+        <path
+          d="M20 5 C32 5 32 20 32 26 L32 68 C32 78 24 84 16 84 C8 84 2 78 2 68 L2 30 C2 24 6 20 11 20 C16 20 19 24 19 30 L19 62"
+          stroke="#d8d2c6"
+          strokeWidth="4.5"
+          strokeLinecap="round"
+        />
+      </svg>
+
+      <div className="relative mx-auto max-w-7xl px-6">
+        <div className="flex flex-col gap-12 lg:flex-row lg:items-center lg:justify-between">
+          <div className="max-w-md shrink-0">
+            <span className="inline-block -rotate-2 rounded-sm bg-accent px-4 py-2 text-xs font-bold uppercase tracking-wide text-hero-ink shadow-lg">
+              {site.role}
+            </span>
+            <h2 className="font-display -rotate-1 mt-5 inline-block border-4 border-hero-ink bg-paper px-4 py-3 text-6xl uppercase leading-[0.86] tracking-tight text-hero-ink shadow-xl">
+              My<br />Work
             </h2>
-            <p className="mt-3 max-w-md text-xl font-bold text-white">
-              Eight roles, one creative throughline.
+            <p className="font-hand mt-6 -rotate-1 text-2xl text-accent">
+              {site.heroStatement}
             </p>
-          </div>
-          <p className="max-w-sm text-lg text-muted sm:text-right">
-            From pitch strategy on Disney&apos;s Iwájú to brand partnerships with
-            Nike, I&apos;ve directed full creative teams across print,
-            photography, and video for live campaigns.
-          </p>
-        </div>
-
-        <div className="relative mx-auto mt-16 h-[560px] max-w-xl p-8 sm:h-[620px]">
-          <div className="pointer-events-none absolute left-1/2 top-0 z-0 h-40 w-96 -translate-x-1/2 -translate-y-1/3 rounded-full bg-white/25 blur-3xl" />
-          {featuredProjects.map((project, i) => {
-            const offset = ((i - index) % n + n) % n;
-            let transform = "";
-            let zIndex = 1;
-            let opacity = "1";
-            let scale = 1;
-            if (offset === 0) {
-              transform = "translate(-50%, 20px) rotate(0deg)";
-              zIndex = 10;
-            } else if (offset === 1) {
-              transform = "translate(calc(-50% + 170px), 60px) rotate(8deg)";
-              zIndex = 5;
-              scale = 0.88;
-            } else if (offset === n - 1) {
-              transform = "translate(calc(-50% - 170px), 60px) rotate(-8deg)";
-              zIndex = 5;
-              scale = 0.88;
-            } else {
-              transform = "translate(-50%, 90px) rotate(0deg)";
-              zIndex = 1;
-              scale = 0.7;
-              opacity = "0";
-            }
-            return (
-              <Link
-                key={project.slug}
-                href={`/projects/${project.slug}`}
-                className={`absolute left-1/2 top-0 w-96 rounded-sm border-4 p-3 pb-7 shadow-2xl transition-transform duration-500 ease-out ${CARD_STYLE.card}`}
-                style={{
-                  transform: `${transform} scale(${scale})`,
-                  zIndex,
-                  opacity,
-                }}
-                onClick={(e) => {
-                  if (offset !== 0) {
-                    e.preventDefault();
-                    goTo(i);
-                  }
-                }}
+            <p className="mt-5 max-w-sm text-lg text-ink/85">{site.tagline}</p>
+            <div className="mt-6 flex flex-wrap items-center gap-4">
+              <a
+                href="#roles"
+                className="-rotate-2 rounded-full bg-accent px-6 py-3 text-sm font-bold uppercase tracking-wide text-hero-ink transition-opacity hover:opacity-85"
               >
-                <div className="relative aspect-[4/5] overflow-hidden">
-                  {project.image ? (
-                    <Image
-                      src={project.image}
-                      alt=""
-                      fill
-                      className={project.imagePosition === "top" ? "object-cover object-top" : "object-cover"}
-                      sizes="384px"
-                    />
-                  ) : (
-                    <div
-                      className={`absolute inset-0 bg-gradient-to-br ${GRADIENTS[i % GRADIENTS.length]}`}
-                    />
-                  )}
-                </div>
-                <h3 className="font-display mt-3 text-2xl uppercase tracking-tight text-black">
-                  {project.cardTitle ?? project.title}
-                </h3>
-                <p className={`mt-0.5 text-sm font-bold uppercase tracking-wide ${CARD_STYLE.role}`}>
-                  {project.role}
-                </p>
-                <span className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-full bg-hero-ink px-4 py-2 text-xs font-bold uppercase tracking-wide text-[#f7ecc4]">
-                  View Role →
-                </span>
-              </Link>
-            );
-          })}
+                View my work
+              </a>
+              <a
+                href={site.resumeUrl}
+                download
+                className="rotate-1 rounded-full border-2 border-ink px-6 py-3 text-sm font-bold uppercase tracking-wide text-ink transition-colors hover:bg-ink hover:text-hero-ink"
+              >
+                Download résumé
+              </a>
+            </div>
+          </div>
+
+          <div className="relative w-full lg:flex-1">
+            <div className="relative mx-auto h-[560px] max-w-xl sm:h-[620px]">
+              {featuredProjects.map((project, i) => {
+                const offset = ((i - index) % n + n) % n;
+                let transform = "";
+                let zIndex = 1;
+                let opacity = "1";
+                let scale = 1;
+                if (offset === 0) {
+                  transform = "translate(-50%, 20px) rotate(0deg)";
+                  zIndex = 10;
+                } else if (offset === 1) {
+                  transform = "translate(calc(-50% + 170px), 60px) rotate(8deg)";
+                  zIndex = 5;
+                  scale = 0.88;
+                } else if (offset === n - 1) {
+                  transform = "translate(calc(-50% - 170px), 60px) rotate(-8deg)";
+                  zIndex = 5;
+                  scale = 0.88;
+                } else {
+                  transform = "translate(-50%, 90px) rotate(0deg)";
+                  zIndex = 1;
+                  scale = 0.7;
+                  opacity = "0";
+                }
+                return (
+                  <Link
+                    key={project.slug}
+                    href={`/projects/${project.slug}`}
+                    className={`absolute left-1/2 top-0 w-96 rounded-sm border-4 p-3 pb-7 shadow-2xl transition-transform duration-500 ease-out ${CARD_STYLE.card}`}
+                    style={{
+                      transform: `${transform} scale(${scale})`,
+                      zIndex,
+                      opacity,
+                    }}
+                    onClick={(e) => {
+                      if (offset !== 0) {
+                        e.preventDefault();
+                        goTo(i);
+                      }
+                    }}
+                  >
+                    <div className="relative aspect-[4/5] overflow-hidden">
+                      {project.image ? (
+                        <Image
+                          src={project.image}
+                          alt=""
+                          fill
+                          className={project.imagePosition === "top" ? "object-cover object-top" : "object-cover"}
+                          sizes="384px"
+                        />
+                      ) : (
+                        <div
+                          className={`absolute inset-0 bg-gradient-to-br ${GRADIENTS[i % GRADIENTS.length]}`}
+                        />
+                      )}
+                    </div>
+                    <h3 className="font-display mt-3 text-2xl uppercase tracking-tight text-black">
+                      {project.cardTitle ?? project.title}
+                    </h3>
+                    <p className={`mt-0.5 text-sm font-bold uppercase tracking-wide ${CARD_STYLE.role}`}>
+                      {project.role}
+                    </p>
+                    <span className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-full bg-hero-ink px-4 py-2 text-xs font-bold uppercase tracking-wide text-[#f7ecc4]">
+                      View Role →
+                    </span>
+                  </Link>
+                );
+              })}
+            </div>
+
+            <div className="mt-6 flex justify-center gap-2">
+              {featuredProjects.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => goTo(i)}
+                  aria-label={`Go to project ${i + 1}`}
+                  className={`h-2 w-2 rounded-full transition-colors ${
+                    i === index ? "bg-accent" : "bg-ink/25"
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
         </div>
 
-        <div className="mt-6 flex justify-center gap-2">
-          {featuredProjects.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => goTo(i)}
-              aria-label={`Go to project ${i + 1}`}
-              className={`h-2 w-2 rounded-full transition-colors ${
-                i === index ? "bg-accent" : "bg-white/25"
-              }`}
-            />
-          ))}
-        </div>
-
-        <div className="mt-14">
+        <div id="roles" className="mt-14 scroll-mt-24">
           <RoleNav
             activeSlug={featuredProjects[index].slug}
             onFeaturedClick={(slug) =>

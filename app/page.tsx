@@ -1,21 +1,19 @@
 import Nav from "@/components/Nav";
-import Hero from "@/components/Hero";
-import About from "@/components/About";
+import AboutBanner from "@/components/AboutBanner";
 import Projects from "@/components/Projects";
-import Skills from "@/components/Skills";
-import Experience from "@/components/Experience";
+import SkillsExperience from "@/components/SkillsExperience";
+import AdditionalExperience from "@/components/AdditionalExperience";
 import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
     <>
       <Nav />
-      <main>
-        <Hero />
+      <main id="top">
+        <AboutBanner />
         <Projects />
-        <About />
-        <Skills />
-        <Experience />
+        <SkillsExperience />
+        <AdditionalExperience />
         <Contact />
       </main>
     </>

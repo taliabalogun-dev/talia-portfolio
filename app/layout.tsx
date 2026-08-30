@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Anton, Plus_Jakarta_Sans } from "next/font/google";
+import { Anton, Caveat, Plus_Jakarta_Sans } from "next/font/google";
 import Footer from "@/components/Footer";
 import { site } from "@/content/site";
 import "./globals.css";
@@ -15,6 +15,12 @@ const sansFont = Plus_Jakarta_Sans({
   subsets: ["latin"],
 });
 
+const handFont = Caveat({
+  variable: "--font-caveat",
+  weight: ["600", "700"],
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   title: `${site.name} — ${site.role}`,
   description: site.tagline,
@@ -24,7 +30,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${displayFont.variable} ${sansFont.variable} h-full antialiased`}
+      className={`${displayFont.variable} ${sansFont.variable} ${handFont.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         {children}
