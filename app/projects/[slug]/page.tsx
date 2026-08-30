@@ -45,6 +45,16 @@ export default async function ProjectPage(
               <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
                 {project.title}
               </h1>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full bg-brown/15 px-3 py-1 text-sm text-brown"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
               <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-base text-muted">
                 <span>{project.role}</span>
                 <span>{project.period}</span>
@@ -75,17 +85,6 @@ export default async function ProjectPage(
                   {project.extendedDescription}
                 </p>
               )}
-
-              <div className="mt-6 flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full bg-brown/15 px-3 py-1 text-sm text-brown"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
             </div>
 
             {project.image && (
