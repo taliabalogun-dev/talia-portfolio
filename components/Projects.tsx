@@ -47,7 +47,7 @@ export default function Projects() {
   const n = featuredProjects.length;
 
   return (
-    <section id="projects" className="bg-black py-16 text-beige sm:py-20">
+    <section id="projects" className="bg-beige py-16 text-beige sm:py-20">
       <div className="mx-auto max-w-5xl px-6">
         <h2 className="font-display text-balance text-7xl uppercase leading-[0.9] tracking-tight text-white sm:text-9xl">
           My Work
