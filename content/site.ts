@@ -74,6 +74,8 @@ export type Project = {
   slug: string;
   navLabel: string;
   title: string;
+  /** Overrides `title` on the homepage carousel card only; subpage and nav still use `title`. */
+  cardTitle?: string;
   description: string;
   extendedDescription?: string;
   tags: string[];
@@ -174,6 +176,7 @@ export const projects: Project[] = [
       },
       {
         title: "Featured Creative Media",
+        subtitle: "Contracted Creative Marketing Director — March 2025 – June 2025",
         images: [
           {
             src: "/videos/livenation-mutha-promo-film.mp4",
@@ -209,6 +212,7 @@ export const projects: Project[] = [
     slug: "fast-ucla-fashion-show",
     navLabel: "FAST@UCLA",
     title: "Editorial Executive Director — FAST@UCLA",
+    cardTitle: "Editorial Executive Director — FAST (Nike Student Partner)",
     description:
       "Acted as project manager across editorial, digital, and live-event workstreams, maintaining campaign timelines and deadlines across concurrent initiatives. Coordinated with photographers, designers, writers, and media contributors to track deliverables and keep teams aligned on approvals.",
     extendedDescription:
@@ -220,6 +224,42 @@ export const projects: Project[] = [
     featured: true,
     image: "/images/campaigns/fast-billboard-hero.jpg",
     slides: [
+      {
+        title: "Nike Collab",
+        subtitle:
+          "Nike partners with FAST's media teams each term to brief and produce targeted student campaigns.",
+        layout: "slideshow",
+        images: [
+          { src: "/images/campaigns/fast-nike-powered-by.jpg" },
+          { src: "/images/campaigns/fast-nike-better-to-be-fast.jpg" },
+          { src: "/images/campaigns/fast-nike-editorial-kick.jpg" },
+          { src: "/images/campaigns/fast-nike-group-sneakers.jpg" },
+          { src: "/images/campaigns/fast-nike-shoe-closeup.jpg" },
+        ],
+        sections: [
+          {
+            heading: "My Role — Editorial Coordinator",
+            style: "list",
+            items: [
+              "Facilitated team creative coordination across the collab's three deliverables.",
+            ],
+          },
+          {
+            heading: "Deliverables",
+            style: "pills",
+            items: [
+              "'Running Back' Member-Acquisition Campaign",
+              "'It's Better to Be Fast' Editorial Photoshoot",
+              "'It's Better to Be Fast' Promo Video Shoot",
+            ],
+          },
+          {
+            heading: "Other FAST Brand Partners",
+            style: "pills",
+            items: ["Icona Club", "Demonia"],
+          },
+        ],
+      },
       {
         title: "FAST @ UCLA",
         subtitle: "Editorial Executive Director — Los Angeles, CA",
@@ -253,6 +293,7 @@ export const projects: Project[] = [
       {
         /* The finished work: editorial frames and the magazine they ran in. */
         title: "Featured Creative Media",
+        subtitle: "Editorial Executive Director — Oct 2024 – June 2026",
         layout: "filmstrip",
         images: [
           // The six that lead it.
@@ -336,6 +377,7 @@ export const projects: Project[] = [
       },
       {
         title: "Featured Creative Media",
+        subtitle: "Marketing & Media Coordinator — Aug 2023 – June 2025",
         layout: "filmstrip",
         images: [
           { src: "/images/campaigns/ucla-bike-night.jpg" },
@@ -434,6 +476,7 @@ export const projects: Project[] = [
       },
       {
         title: "Featured Creative Media",
+        subtitle: "Marketing Coordinator — Sept 2023 – June 2025",
         images: [
           {
             src: "/videos/refine-promo-film.mp4",
@@ -541,7 +584,7 @@ export const projects: Project[] = [
     role: "Writer, Producer & Director",
     period: "2025 — Present",
     location: "Los Angeles, CA",
-    featured: true,
+    featured: false,
     image: "/images/campaigns/ctrl4c-slide-cover.jpg",
     slides: [
       {

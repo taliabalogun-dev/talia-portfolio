@@ -114,7 +114,7 @@ export default function Projects() {
                   )}
                 </div>
                 <h3 className="font-display mt-3 text-2xl uppercase tracking-tight text-black">
-                  {project.title}
+                  {project.cardTitle ?? project.title}
                 </h3>
                 <p className={`mt-0.5 text-sm font-bold uppercase tracking-wide ${CARD_STYLE.role}`}>
                   {project.role}
