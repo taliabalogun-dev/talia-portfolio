@@ -128,7 +128,7 @@ export const projects: Project[] = [
       {
         title: "The Emmys",
         subtitle: "Daytime Emmy Awards — Iwájú, Disney × Kugali",
-        layout: "contact",
+        layout: "slideshow",
         images: [
           {
             src: "/images/campaigns/kugali-emmys-statuette.jpg",
