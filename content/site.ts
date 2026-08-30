@@ -65,7 +65,7 @@ export type Slide = {
   images?: SlideImage[];
   sections: SlideSection[];
   /** Defaults to "grid". "slideshow" renders a single-image carousel with Prev/Next. "filmstrip" shows every image at once, edge-to-edge, in a horizontally scrollable strip. */
-  layout?: "grid" | "slideshow" | "filmstrip" | "contact";
+  layout?: "grid" | "slideshow" | "filmstrip";
 };
 
 export type Project = {
@@ -128,7 +128,7 @@ export const projects: Project[] = [
       {
         title: "The Emmys",
         subtitle: "Daytime Emmy Awards — Iwájú, Disney × Kugali",
-        layout: "slideshow",
+        layout: "filmstrip",
         images: [
           {
             src: "/images/campaigns/kugali-emmys-statuette.jpg",
@@ -249,7 +249,7 @@ export const projects: Project[] = [
       {
         /* The finished work: editorial frames and the magazine they ran in. */
         title: "Featured Creative Media",
-        layout: "slideshow",
+        layout: "filmstrip",
         images: [
           // The six that lead it.
           { src: "/images/campaigns/fast-runway-01.jpg" },
@@ -271,7 +271,7 @@ export const projects: Project[] = [
         /* The room rather than the result: the shoots being made and the
          * people who turned up for them. */
         title: "Gallery",
-        layout: "slideshow",
+        layout: "filmstrip",
         images: [
           { src: "/images/campaigns/fast-editorial-night-01.jpg" },
           { src: "/images/campaigns/fast-editorial-car-02.jpg" },
