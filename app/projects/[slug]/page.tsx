@@ -5,6 +5,7 @@ import Nav from "@/components/Nav";
 import SlideGallery from "@/components/SlideGallery";
 import FilmstripGallery from "@/components/FilmstripGallery";
 import ContactSheet from "@/components/ContactSheet";
+import RoleNav from "@/components/RoleNav";
 import { projects } from "@/content/site";
 
 export function generateStaticParams() {
@@ -262,6 +263,15 @@ export default async function ProjectPage(
                 View full project
               </span>
             ))}
+
+          <div className="mt-16 border-t border-beige/15 pt-10">
+            <h2 className="text-xl font-semibold tracking-tight">
+              More Roles
+            </h2>
+            <div className="mt-6">
+              <RoleNav activeSlug={project.slug} />
+            </div>
+          </div>
         </div>
       </div>
     </>

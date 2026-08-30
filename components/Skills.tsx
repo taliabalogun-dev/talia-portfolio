@@ -10,7 +10,7 @@ export default function Skills() {
       <div className="mt-6 grid gap-6 sm:grid-cols-3">
         {skills.map((group) => (
           <div key={group.category}>
-            <h3 className="text-sm font-medium uppercase tracking-wide text-brown">
+            <h3 className="text-sm font-bold uppercase tracking-wide text-brown">
               {group.category}
             </h3>
             <ul className="mt-3 flex flex-col gap-2 text-base text-muted">

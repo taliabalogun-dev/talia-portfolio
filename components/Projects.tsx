@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { projects } from "@/content/site";
+import RoleNav from "@/components/RoleNav";
 
 const GRADIENTS = [
   "from-indigo-500/40 to-purple-500/40",
@@ -46,16 +47,16 @@ export default function Projects() {
   const n = featuredProjects.length;
 
   return (
-    <section id="projects" className="bg-ink py-16 text-beige sm:py-20">
+    <section id="projects" className="bg-black py-16 text-beige sm:py-20">
       <div className="mx-auto max-w-5xl px-6">
-        <h2 className="font-display text-balance text-7xl uppercase leading-[0.9] tracking-tight text-beige sm:text-9xl">
+        <h2 className="font-display text-balance text-7xl uppercase leading-[0.9] tracking-tight text-white sm:text-9xl">
           My Work
         </h2>
-        <p className="mt-3 max-w-md text-xl font-bold text-[#a8562a]">
+        <p className="mt-3 max-w-md text-xl font-bold text-white">
           Eight roles, one creative throughline.
         </p>
 
-        <div className="relative mx-auto mt-16 h-[560px] max-w-xl rounded-3xl bg-black p-8 sm:h-[620px]">
+        <div className="relative mx-auto mt-16 h-[560px] max-w-xl p-8 sm:h-[620px]">
           {featuredProjects.map((project, i) => {
             const offset = ((i - index) % n + n) % n;
             let transform = "";
@@ -132,58 +133,19 @@ export default function Projects() {
               onClick={() => goTo(i)}
               aria-label={`Go to project ${i + 1}`}
               className={`h-2 w-2 rounded-full transition-colors ${
-                i === index ? "bg-brown" : "bg-beige/25"
+                i === index ? "bg-accent" : "bg-white/25"
               }`}
             />
           ))}
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-3 rounded-3xl bg-[#faf3d9] p-4 sm:grid-cols-2 sm:p-6">
-          {projects.map((p) => {
-            const isActive = p.featured && p.slug === featuredProjects[index].slug;
-            const keywords = p.tags.slice(0, 2);
-            const tileClasses = `flex flex-col gap-3 rounded-2xl p-6 text-left transition-colors ${
-              isActive
-                ? "border-4 border-accent bg-beige"
-                : "border-2 border-beige/20 bg-white hover:border-beige/40"
-            }`;
-            const badgeClasses = isActive
-              ? "rounded-full bg-ink/10 px-3 py-1 text-sm uppercase tracking-wide text-ink/90"
-              : "rounded-full bg-beige/10 px-3 py-1 text-sm uppercase tracking-wide text-beige/90";
-
-            const content = (
-              <>
-                <span
-                  className={`font-display text-xl uppercase tracking-tight ${isActive ? "text-ink" : "text-beige"}`}
-                >
-                  {p.navLabel}
-                </span>
-                <span className="flex flex-wrap gap-2">
-                  {keywords.map((kw) => (
-                    <span key={kw} className={badgeClasses}>
-                      {kw}
-                    </span>
-                  ))}
-                </span>
-              </>
-            );
-
-            return p.featured ? (
-              <button
-                key={p.slug}
-                onClick={() =>
-                  goTo(featuredProjects.findIndex((fp) => fp.slug === p.slug))
-                }
-                className={tileClasses}
-              >
-                {content}
-              </button>
-            ) : (
-              <Link key={p.slug} href={`/projects/${p.slug}`} className={tileClasses}>
-                {content}
-              </Link>
-            );
-          })}
+        <div className="mt-14">
+          <RoleNav
+            activeSlug={featuredProjects[index].slug}
+            onFeaturedClick={(slug) =>
+              goTo(featuredProjects.findIndex((fp) => fp.slug === slug))
+            }
+          />
         </div>
       </div>
     </section>
