@@ -77,12 +77,16 @@ export default function Projects() {
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="flex flex-col gap-12 lg:flex-row lg:items-center lg:justify-between">
           <div className="max-w-md shrink-0 lg:-mt-16 lg:self-start">
-            <span className="inline-block -rotate-2 rounded-sm bg-accent px-4 py-2 text-xs font-bold uppercase tracking-wide text-hero-ink shadow-lg">
-              {site.role}
+            <span className="inline-block -rotate-2">
+              <span className="inline-block rounded-sm bg-accent px-4 py-2 text-xs font-bold uppercase tracking-wide text-hero-ink shadow-lg">
+                {site.role}
+              </span>
             </span>
-            <h2 className="font-display -rotate-1 mt-5 inline-block whitespace-nowrap border-4 border-hero-ink bg-paper px-6 py-4 text-4xl uppercase leading-[0.86] tracking-tight text-hero-ink shadow-xl sm:text-8xl">
-              My<br className="hidden sm:block" /> Work
-            </h2>
+            <div className="mt-5 inline-block -rotate-1">
+              <h2 className="font-display inline-block whitespace-nowrap border-4 border-hero-ink bg-paper px-6 py-4 text-4xl uppercase leading-tight tracking-tight text-hero-ink shadow-xl sm:text-8xl">
+                My<br className="hidden sm:block" /> Work
+              </h2>
+            </div>
             <p className="font-hand mt-6 -rotate-1 text-2xl text-accent">
               {site.heroStatement}
             </p>
@@ -92,7 +96,7 @@ export default function Projects() {
                 href="/work"
                 className="-rotate-2 rounded-full bg-accent px-6 py-3 text-sm font-bold uppercase tracking-wide text-hero-ink transition-opacity hover:opacity-85"
               >
-                View my work
+                View all roles
               </Link>
               <a
                 href={site.resumeUrl}
