@@ -49,12 +49,21 @@ export default function Projects() {
   return (
     <section id="projects" className="bg-beige py-16 text-beige sm:py-20">
       <div className="mx-auto max-w-5xl px-6">
-        <h2 className="font-display text-balance text-7xl uppercase leading-[0.9] tracking-tight text-white sm:text-9xl">
-          My Work
-        </h2>
-        <p className="mt-3 max-w-md text-xl font-bold text-white">
-          Eight roles, one creative throughline.
-        </p>
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h2 className="font-display text-balance text-7xl uppercase leading-[0.9] tracking-tight text-white sm:text-9xl">
+              My Work
+            </h2>
+            <p className="mt-3 max-w-md text-xl font-bold text-white">
+              Eight roles, one creative throughline.
+            </p>
+          </div>
+          <p className="max-w-sm text-lg text-muted sm:text-right">
+            From pitch strategy on Disney's Iwájú to brand partnerships with
+            Nike, I've directed full creative teams across print,
+            photography, and video for live campaigns.
+          </p>
+        </div>
 
         <div className="relative mx-auto mt-16 h-[560px] max-w-xl p-8 sm:h-[620px]">
           <div className="pointer-events-none absolute left-1/2 top-0 z-0 h-40 w-96 -translate-x-1/2 -translate-y-1/3 rounded-full bg-white/25 blur-3xl" />
