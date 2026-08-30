@@ -76,12 +76,12 @@ export default function Projects() {
 
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="flex flex-col gap-12 lg:flex-row lg:items-center lg:justify-between">
-          <div className="max-w-md shrink-0">
+          <div className="max-w-md shrink-0 lg:-mt-16 lg:self-start">
             <span className="inline-block -rotate-2 rounded-sm bg-accent px-4 py-2 text-xs font-bold uppercase tracking-wide text-hero-ink shadow-lg">
               {site.role}
             </span>
-            <h2 className="font-display -rotate-1 mt-5 inline-block border-4 border-hero-ink bg-paper px-4 py-3 text-6xl uppercase leading-[0.86] tracking-tight text-hero-ink shadow-xl">
-              My<br />Work
+            <h2 className="font-display -rotate-1 mt-5 inline-block whitespace-nowrap border-4 border-hero-ink bg-paper px-6 py-4 text-4xl uppercase leading-[0.86] tracking-tight text-hero-ink shadow-xl sm:text-8xl">
+              My<br className="hidden sm:block" /> Work
             </h2>
             <p className="font-hand mt-6 -rotate-1 text-2xl text-accent">
               {site.heroStatement}
