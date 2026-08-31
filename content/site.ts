@@ -22,16 +22,26 @@ export const about = {
   ],
 };
 
-export const education: { school: string; detail: string; location: string }[] = [
+export const education: {
+  school: string;
+  detail: string;
+  location: string;
+  image: string;
+  caption: string;
+}[] = [
   {
     school: "UCLA",
     detail: "B.A. Film & Television — Animation concentration, Entrepreneurship minor",
     location: "Los Angeles, CA",
+    image: "/images/about-graduation.png",
+    caption: "UCLA - USA",
   },
   {
     school: "Cheltenham Ladies' College",
     detail: "Secondary education",
     location: "Cheltenham, UK",
+    image: "/images/about-graduation.png",
+    caption: "Cheltenham - UK",
   },
 ];
 
