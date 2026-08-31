@@ -343,8 +343,7 @@ export const projects: Project[] = [
       ],
     },
     featured: false,
-    image: "/images/campaigns/ucla-logo.png",
-    imageFit: "contain",
+    image: "/images/campaigns/ucla-were-hiring-overhead.jpg",
     slides: [
       {
         title: "Featured Campaign",
@@ -405,8 +404,7 @@ export const projects: Project[] = [
       items: ["Event Documentation", "Campaign Promotion", "Content Coordination"],
     },
     featured: false,
-    image: "/images/campaigns/refine-logo.png",
-    imageFit: "contain",
+    image: "/images/campaigns/refine-fashion-show-runway.jpg",
     slides: [
       {
         title: "Featured Campaign",
@@ -486,8 +484,7 @@ export const projects: Project[] = [
     period: "June 2023 — Sept 2023",
     location: "Lagos, Nigeria",
     featured: false,
-    image: "/images/campaigns/bap-logo.png",
-    imageFit: "contain",
+    image: "/images/campaigns/bap-house-of-gaa-poster.jpg",
     slides: [
       {
         title: "Gallery",
@@ -518,18 +515,7 @@ export const projects: Project[] = [
     period: "Apr 2020 — May 2020",
     location: "Lagos, Nigeria",
     featured: false,
-    image: "/images/campaigns/golden-effects-logo.png",
-    imageFit: "contain",
-    slides: [
-      {
-        title: "Golden Effects Pictures",
-        subtitle: "Production / Creative Intern — Lagos, Nigeria",
-        images: [
-          { src: "/images/campaigns/golden-effects-swallow-poster.jpg" },
-        ],
-        sections: [],
-      },
-    ],
+    image: "/images/campaigns/golden-effects-swallow-poster.jpg",
   },
   {
     slug: "ctrl-4c-campaign",
