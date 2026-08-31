@@ -5,7 +5,7 @@ export default function SkillsExperience() {
   return (
     <section id="skills" className="overflow-x-hidden bg-beige pt-12 pb-16 sm:pt-16 sm:pb-20">
       <div className="mx-auto max-w-5xl px-6">
-        <span className="font-hand block text-xl text-brown">about —</span>
+        <span className="font-hand block text-xl text-brown lg:text-3xl">about —</span>
         <p className="mt-1 mb-8 max-w-[60ch] text-sm text-muted">
           Working across industries has made me a creative worldbuilder — my goal is to bring that into entertainment creative strategy.
         </p>

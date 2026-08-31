@@ -215,13 +215,13 @@ export const projects: Project[] = [
     slug: "fast-ucla-fashion-show",
     navLabel: "FAST@UCLA",
     title: "Editorial Executive Director — FAST@UCLA",
-    cardTitle: "Editorial Executive Director — FAST (Nike Student Partner)",
+    cardTitle: "Nike x FAST Campaigns",
     description:
       "Acted as project manager across editorial, digital, and live-event workstreams, maintaining campaign timelines and deadlines across concurrent initiatives. Coordinated with photographers, designers, writers, and media contributors to track deliverables and keep teams aligned on approvals.",
     extendedDescription:
       "Coordinated brand partnerships and vendor logistics with Nike, Icona Club, and Demonia, supporting a sold-out fashion drop through student-led promotion. Organized and ran production meetings — scheduling, agendas, and follow-ups — for FAST's annual fashion show, and reviewed results after each initiative to close gaps for future planning.",
     tags: ["Brand Partnerships", "Event Marketing", "Creative Direction"],
-    role: "Editorial Executive Director",
+    role: "Creative Media Director",
     period: "Oct 2024 — June 2026",
     location: "Los Angeles, CA",
     focus: {
