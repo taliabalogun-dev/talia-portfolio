@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { experience, site, skills } from "@/content/site";
 
 export default function SkillsExperience() {
@@ -33,6 +34,14 @@ export default function SkillsExperience() {
                       <p className="mt-2 max-w-[60ch] text-sm leading-relaxed text-muted">
                         {item.summary}
                       </p>
+                      {item.slug && (
+                        <Link
+                          href={`/projects/${item.slug}`}
+                          className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-full bg-accent px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-hero-ink transition-opacity hover:opacity-85"
+                        >
+                          View Role →
+                        </Link>
+                      )}
                     </div>
                   ))}
                 </div>

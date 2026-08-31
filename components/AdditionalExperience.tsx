@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { additionalExperience } from "@/content/site";
 
 export default function AdditionalExperience() {
@@ -19,6 +20,14 @@ export default function AdditionalExperience() {
               <span className="text-sm text-muted">{item.period}</span>
             </div>
             <p className="text-sm text-muted">{item.summary}</p>
+            {item.slug && (
+              <Link
+                href={`/projects/${item.slug}`}
+                className="mt-2 inline-flex w-fit items-center gap-1.5 rounded-full bg-accent px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-accent-ink transition-opacity hover:opacity-85"
+              >
+                View Role →
+              </Link>
+            )}
           </div>
         ))}
       </div>

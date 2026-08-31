@@ -18,8 +18,7 @@ export const site = {
 export const about = {
   heading: "About",
   paragraphs: [
-    "Creative marketing and campaign strategist with 3+ years directing creative decisions.",
-    "Direct experience spans pitch strategy work on Disney's Iwájú, brand partnership management with Nike and other major partners, and directing full creative teams across print, photography, and video for live campaigns. Based in Los Angeles, working toward moving from campaign-level creative direction into entertainment marketing strategy and development.",
+    "Creative marketing and campaign strategist with 3+ years directing creative decisions — from pitch strategy on Disney's Iwájú to brand partnerships with Nike, directing full creative teams across print, photography, and video. Based in Los Angeles, moving toward entertainment marketing strategy and development.",
   ],
 };
 
@@ -597,6 +596,8 @@ export type ExperienceItem = {
   company: string;
   period: string;
   summary: string;
+  /** Slug of the matching project subpage, when one exists. */
+  slug?: string;
 };
 
 export const experience: ExperienceItem[] = [
@@ -606,6 +607,7 @@ export const experience: ExperienceItem[] = [
     period: "Oct 2024 — June 2026",
     summary:
       "Directed all creative media production — print, photography, video, and media releases — across editorial, digital, and live-event initiatives, serving as key creative contact for brand partners including Nike, Icona Club, and Demonia.",
+    slug: "fast-ucla-fashion-show",
   },
   {
     role: "Creative Director (Contract)",
@@ -613,6 +615,7 @@ export const experience: ExperienceItem[] = [
     period: "Mar 2025 — June 2025",
     summary:
       "Directed creative strategy and produced the official promotional film and live concert projection content for Mutha Festival, translating brand vision into a cohesive visual direction across digital and live touchpoints.",
+    slug: "live-nation-mutha",
   },
   {
     role: "Marketing & Strategy Intern",
@@ -620,6 +623,7 @@ export const experience: ExperienceItem[] = [
     period: "Sept 2024 — June 2025",
     summary:
       "Supported marketing and pitch strategy on Disney's Iwájú, built producer-facing pitch decks for Jollof Wars and Razorman, and reviewed 50+ scripts weekly to inform brand positioning.",
+    slug: "kugali-iwaju",
   },
   {
     role: "Media Marketing Coordinator",
@@ -627,6 +631,7 @@ export const experience: ExperienceItem[] = [
     period: "June 2023 — Sept 2025",
     summary:
       "Directed creative and campaign strategy for multi-platform institutional content across Instagram, TikTok, Facebook, and X, translating campus priorities into brand-consistent direction for an audience of 2M+.",
+    slug: "ucla-campus-campaigns",
   },
 ];
 
@@ -637,6 +642,7 @@ export const additionalExperience: ExperienceItem[] = [
     period: "Sept 2023 — June 2025",
     summary:
       "Directed editorial cover shoots and magazine promotion videos as creative lead for a sustainability-focused fashion and circular retail organization.",
+    slug: "refine-la-zine",
   },
   {
     role: "Marketing Strategy Intern",
@@ -658,6 +664,7 @@ export const additionalExperience: ExperienceItem[] = [
     period: "2025 — Present",
     summary:
       "Writing, directing, and producing an original animated short end-to-end, including a festival distribution and positioning strategy targeting Sundance and GLAS Animation.",
+    slug: "ctrl-4c-campaign",
   },
   {
     role: "Marketing Director",
@@ -672,6 +679,7 @@ export const additionalExperience: ExperienceItem[] = [
     period: "Jun — Sept 2023",
     summary:
       "Reviewed scripts and treatments supporting story development for Netflix-commissioned and in-house film/TV projects, including sequel development for Bling Lagosians 2.",
+    slug: "bap-productions",
   },
   {
     role: "Production / Creative Intern",
@@ -679,6 +687,7 @@ export const additionalExperience: ExperienceItem[] = [
     period: "Apr — May 2020",
     summary:
       "Provided administrative and production support during pre-production at a Lagos-based production company.",
+    slug: "golden-effects-pictures",
   },
   {
     role: "PR Event Coordinator",
