@@ -9,7 +9,7 @@ export const metadata = {
   description: bio.paragraphs[0],
 };
 
-const carouselSlugs = ["kugali-iwaju", "ucla-campus-campaigns", "fast-ucla-fashion-show"];
+const carouselSlugs = ["kugali-iwaju", "fast-ucla-fashion-show", "ucla-campus-campaigns"];
 const carouselProjects = carouselSlugs
   .map((slug) => projects.find((p) => p.slug === slug))
   .filter((p): p is NonNullable<typeof p> => Boolean(p));

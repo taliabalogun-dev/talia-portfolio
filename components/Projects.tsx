@@ -8,6 +8,11 @@ import ProjectCarousel from "@/components/ProjectCarousel";
 
 const featuredProjects = projects.filter((p) => p.featured);
 
+const mobilePreviewSlugs = ["kugali-iwaju", "fast-ucla-fashion-show", "live-nation-mutha"];
+const mobilePreviewProjects = mobilePreviewSlugs
+  .map((slug) => projects.find((p) => p.slug === slug))
+  .filter((p): p is NonNullable<typeof p> => Boolean(p));
+
 export default function Projects() {
   const [activeSlug, setActiveSlug] = useState("kugali-iwaju");
 
@@ -55,12 +60,21 @@ export default function Projects() {
             </div>
           </div>
 
-          <div className="lg:flex-1">
+          <div className="hidden lg:block lg:flex-1">
             <ProjectCarousel
               projects={featuredProjects}
               startSlug="kugali-iwaju"
               activeSlug={activeSlug}
               onIndexChange={setActiveSlug}
+            />
+          </div>
+
+          {/* PREVIEW ONLY — smaller mobile-only carousel, not wired to RoleNav. */}
+          <div className="lg:hidden">
+            <ProjectCarousel
+              projects={mobilePreviewProjects}
+              startSlug="kugali-iwaju"
+              size="medium"
             />
           </div>
 
