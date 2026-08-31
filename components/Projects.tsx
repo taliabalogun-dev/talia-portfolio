@@ -83,7 +83,7 @@ export default function Projects() {
         <div className="flex flex-col gap-12 lg:flex-row lg:items-center lg:justify-between">
           <div className="max-w-md shrink-0 lg:mt-8 lg:self-start">
             <div className="inline-block -rotate-1">
-              <h2 className="font-display inline-block whitespace-nowrap border-4 border-hero-ink bg-paper px-6 py-4 text-4xl uppercase leading-[0.95] tracking-tight text-hero-ink shadow-xl sm:text-6xl">
+              <h2 className="font-display inline-block whitespace-nowrap border-4 border-hero-ink bg-paper px-8 py-6 text-5xl uppercase leading-[0.95] tracking-tight text-hero-ink shadow-xl sm:text-7xl">
                 My Work
               </h2>
             </div>
