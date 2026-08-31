@@ -114,8 +114,8 @@ export type Project = {
   viewFullProject?: { href?: string };
   /** Extra outbound link buttons shown next to "View full project" (e.g. a portfolio site, a film link). */
   extraLinks?: { label: string; href: string }[];
-  /** Download buttons shown under the hero photo, and a small link on the /work polaroid. Leave href unset to render disabled until the file is ready. */
-  recommendationLetters?: { label: string; href?: string }[];
+  /** Pull-quote(s) shown under the hero description on the subpage. */
+  quotes?: { text: string; attribution: string }[];
 };
 
 export const projects: Project[] = [
@@ -143,7 +143,12 @@ export const projects: Project[] = [
     featured: true,
     image: "/images/campaigns/kugali-iwaju-poster.jpg",
     imagePosition: "top",
-    recommendationLetters: [{ label: "Download Letter of Recommendation" }],
+    quotes: [
+      {
+        text: "A quick-to-learn, passionate worker, with a knack for keen observation and attention to detail, as well as creative thinking.",
+        attribution: "Matthew Corry, Chief Marketing Officer, Kugali Media",
+      },
+    ],
     slides: [
       {
         title: "The Emmys",
@@ -203,7 +208,13 @@ export const projects: Project[] = [
     location: "NYC / Hybrid",
     featured: true,
     image: "/images/campaigns/livenation-mutha-poster.jpg",
-    recommendationLetters: [{ label: "Download Letter of Recommendation" }],
+    quotes: [
+      {
+        text: "She has an incredible eye for detail and a sharp instinct for storytelling, which allowed her to translate complex ideas into something visually compelling and emotionally resonant.",
+        attribution:
+          "Soukee Van Orden, Director of Strategic Partnerships and Operations, CURATED by Live Nation",
+      },
+    ],
     slides: [
       {
         title: "Featured Creative Media",
@@ -374,7 +385,12 @@ export const projects: Project[] = [
     },
     featured: false,
     image: "/images/campaigns/ucla-were-hiring-overhead.jpg",
-    recommendationLetters: [{ label: "Download Letter of Recommendation" }],
+    quotes: [
+      {
+        text: "Talia crafted media that powerfully reflected and amplified the UCLA student experience better than we could have done without her.",
+        attribution: "Ricky Horne Jr., Assistant Director of Communications, UCLA Student Affairs",
+      },
+    ],
     slides: [
       {
         title: "Featured Campaign",
@@ -438,7 +454,12 @@ export const projects: Project[] = [
     image: "/images/campaigns/refine-logo.png",
     imageFit: "contain",
     cardImage: "/images/campaigns/refine-fashion-show-runway.jpg",
-    recommendationLetters: [{ label: "Download Letter of Recommendation" }],
+    quotes: [
+      {
+        text: "It was Talia who proposed creating an animated video depicting the life cycle of a garment, completing it a full week ahead of schedule.",
+        attribution: "Yuuki Hayashi, Marketing Team, Refine LA",
+      },
+    ],
     slides: [
       {
         title: "Featured Campaign",
@@ -626,9 +647,16 @@ export const projects: Project[] = [
       { label: "View Animation Portfolio", href: "https://animationbytalia.univer.se" },
       { label: "Watch Film", href: "https://vimeo.com/1209134453" },
     ],
-    recommendationLetters: [
-      { label: "Dept Chair Letter of Recommendation" },
-      { label: "Professor Letter of Recommendation" },
+    quotes: [
+      {
+        text: "She tackled underrepresented cultural perspectives and subject matter in a way that was humorous, accessible, entertaining, and unifying for diverse audiences.",
+        attribution: "Lynn Okimura, Lecturer in Animation, UCLA Film, Television and Digital Media",
+      },
+      {
+        text: "I rate her as one of the top undergraduate students I have ever taught. She is an accomplished artist, filmmaker, and animator.",
+        attribution:
+          "Chuck Sheetz, Area Head, Animation, UCLA Film, Television and Digital Media (director, The Simpsons and Recess)",
+      },
     ],
   },
 ];

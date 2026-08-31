@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import AdditionalExperience from "@/components/AdditionalExperience";
-import RecommendationLetterButton from "@/components/RecommendationLetterButton";
 import { projects } from "@/content/site";
 
 export default function WorkPage() {
@@ -31,57 +30,54 @@ export default function WorkPage() {
               const cardSrc = project.cardImage ?? project.image;
               const useContain = !project.cardImage && project.imageFit === "contain";
               return (
-              <div
+              <Link
                 key={project.slug}
+                href={`/projects/${project.slug}`}
                 className="block rounded-sm border-4 border-white bg-white p-3 pb-6 shadow-2xl transition-transform hover:-translate-y-1"
               >
-                <Link href={`/projects/${project.slug}`}>
-                  <div
-                    className={`relative aspect-[4/5] overflow-hidden ${
-                      useContain ? "bg-beige" : ""
-                    }`}
-                  >
-                    {cardSrc && (
-                      <Image
-                        src={cardSrc}
-                        alt=""
-                        fill
-                        className={
-                          useContain
-                            ? "object-contain p-6"
-                            : project.imagePosition === "top"
-                              ? "object-cover object-top"
-                              : "object-cover"
-                        }
-                        sizes="(min-width: 1024px) 23vw, (min-width: 640px) 46vw, 90vw"
-                      />
-                    )}
-                  </div>
-                  <h3 className="font-display mt-3 text-xl uppercase leading-tight tracking-tight text-black">
-                    {project.cardTitle ?? project.title}
-                  </h3>
-                  <p className="mt-0.5 text-xs font-bold uppercase tracking-wide text-[#8a7015]">
-                    {project.role}
-                  </p>
-                </Link>
-                <div className="mt-3 flex flex-wrap items-center gap-2">
-                  <Link
-                    href={`/projects/${project.slug}`}
-                    className="inline-flex w-fit items-center gap-1.5 rounded-full bg-hero-ink px-4 py-2 text-xs font-bold uppercase tracking-wide text-[#f7ecc4]"
-                  >
-                    View Role →
-                  </Link>
-                  {project.recommendationLetters && (
-                    <RecommendationLetterButton
-                      label="Letter of Recommendation"
-                      href={project.recommendationLetters[0].href}
+                <div
+                  className={`relative aspect-[4/5] overflow-hidden ${
+                    useContain ? "bg-beige" : ""
+                  }`}
+                >
+                  {cardSrc && (
+                    <Image
+                      src={cardSrc}
+                      alt=""
+                      fill
+                      className={
+                        useContain
+                          ? "object-contain p-6"
+                          : project.imagePosition === "top"
+                            ? "object-cover object-top"
+                            : "object-cover"
+                      }
+                      sizes="(min-width: 1024px) 23vw, (min-width: 640px) 46vw, 90vw"
                     />
                   )}
                 </div>
-              </div>
+                <h3 className="font-display mt-3 text-xl uppercase leading-tight tracking-tight text-black">
+                  {project.cardTitle ?? project.title}
+                </h3>
+                <p className="mt-0.5 text-xs font-bold uppercase tracking-wide text-[#8a7015]">
+                  {project.role}
+                </p>
+                <span className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-full bg-hero-ink px-4 py-2 text-xs font-bold uppercase tracking-wide text-[#f7ecc4]">
+                  View Role →
+                </span>
+              </Link>
               );
             })}
           </div>
+
+          <blockquote className="mx-auto mt-16 max-w-xl border-l-4 border-accent/60 pl-5">
+            <p className="text-lg italic text-ink">
+              &ldquo;I&apos;d gladly hire her again if you don&apos;t beat me to it.&rdquo;
+            </p>
+            <footer className="mt-2 text-sm text-ink/70">
+              — Ricky Horne Jr., UCLA Student Affairs
+            </footer>
+          </blockquote>
         </div>
       </section>
       <AdditionalExperience />
