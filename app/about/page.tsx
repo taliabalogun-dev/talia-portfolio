@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import EnlargeableImage from "@/components/EnlargeableImage";
-import { bio, site } from "@/content/site";
+import { bio, site, skills } from "@/content/site";
 
 export const metadata = {
   title: `${bio.heading} — ${site.name}`,
@@ -72,6 +72,40 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
+          </div>
+
+          <div className="mt-14 rounded-md bg-sky-deep p-8 shadow-xl sm:p-10">
+            <h2 className="font-display text-2xl uppercase tracking-tight text-navy">
+              Skills
+            </h2>
+            <div className="mt-6 flex flex-col gap-6 sm:flex-row sm:flex-wrap sm:gap-x-12">
+              {skills.map((group) => (
+                <div key={group.category}>
+                  <span className="font-hand -rotate-1 inline-block text-lg text-navy/80">
+                    {group.category}
+                  </span>
+                  <div className="mt-1.5 flex flex-wrap gap-1.5">
+                    {group.items.map((item) => (
+                      <span
+                        key={item}
+                        className="rounded-full border border-navy/20 bg-sky-darker/30 px-3 py-1 text-xs font-semibold text-navy"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-10 flex justify-center">
+            <Link
+              href="/work"
+              className="-rotate-2 rounded-full bg-accent px-6 py-3 text-sm font-bold uppercase tracking-wide text-hero-ink transition-opacity hover:opacity-85"
+            >
+              View all roles
+            </Link>
           </div>
         </main>
       </div>
