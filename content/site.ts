@@ -1,7 +1,7 @@
 export const site = {
   name: "Talia Balogun",
   role: "Creative Marketing & Campaign Strategy",
-  heroStatement: "Creative direction that gets the numbers, too.",
+  heroStatement: "Creative products need creative strategy.",
   tagline:
     "I direct creative strategy and campaign output for entertainment, fashion, and institutional brands.",
   email: "talia.balogun@gmail.com",
