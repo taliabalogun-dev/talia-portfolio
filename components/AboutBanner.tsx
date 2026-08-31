@@ -5,8 +5,7 @@ export default function AboutBanner() {
   return (
     <section id="about" className="border-b border-ink/10 bg-beige px-6 py-8">
       <div className="mx-auto max-w-5xl">
-        <span className="font-hand text-xl text-accent">about —</span>
-        <h2 className="font-display mt-1 text-4xl uppercase tracking-tight text-ink sm:text-5xl">
+        <h2 className="font-display text-4xl uppercase tracking-tight text-ink sm:text-5xl">
           {site.name}
         </h2>
         <span className="mt-3 inline-block -rotate-2">

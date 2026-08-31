@@ -14,6 +14,10 @@ export default function SkillsExperience() {
             </span>
             <div className="grid gap-10 px-8 py-12 sm:px-10 sm:py-14 lg:grid-cols-[1.4fr_1fr]">
               <div id="experience" className="scroll-mt-24">
+                <span className="font-hand block text-xl text-accent">about —</span>
+                <p className="mt-1 mb-5 max-w-[60ch] text-sm text-muted">
+                  Working across industries has made me a creative worldbuilder — my goal is to bring that into entertainment creative strategy.
+                </p>
                 <h3 className="font-display border-b-2 border-dashed border-ink/15 pb-2.5 text-2xl uppercase tracking-wide text-ink">
                   Experience
                 </h3>
