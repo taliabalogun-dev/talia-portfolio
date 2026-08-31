@@ -1,9 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Nav from "@/components/Nav";
 import SlideGallery from "@/components/SlideGallery";
 import FilmstripGallery from "@/components/FilmstripGallery";
+import EnlargeableImage from "@/components/EnlargeableImage";
 import RoleNav from "@/components/RoleNav";
 import { projects } from "@/content/site";
 
@@ -91,10 +91,8 @@ export default async function ProjectPage(
               <div
                 className={`relative aspect-[3/4] w-full shrink-0 overflow-hidden rounded-2xl border border-brown/15 sm:w-80 ${project.imageFit === "contain" ? "bg-beige" : ""}`}
               >
-                <Image
+                <EnlargeableImage
                   src={project.image}
-                  alt=""
-                  fill
                   className={
                     project.imageFit === "contain"
                       ? "object-contain p-6"
@@ -163,10 +161,8 @@ export default async function ProjectPage(
                                   className="absolute inset-0 h-full w-full object-cover"
                                 />
                               ) : (
-                                <Image
+                                <EnlargeableImage
                                   src={img.src}
-                                  alt=""
-                                  fill
                                   className={img.position === "top" ? "object-cover object-top" : "object-cover"}
                                   sizes="(min-width: 640px) 340px, 45vw"
                                 />
@@ -241,10 +237,8 @@ export default async function ProjectPage(
                         className={`relative flex items-center justify-center bg-beige/10 ${MASONRY_ASPECTS[i % MASONRY_ASPECTS.length]}`}
                       >
                         {campaign.image ? (
-                          <Image
+                          <EnlargeableImage
                             src={campaign.image}
-                            alt=""
-                            fill
                             className="object-cover"
                             sizes="(min-width: 640px) 448px, 100vw"
                           />

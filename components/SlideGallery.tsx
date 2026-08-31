@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import EnlargeableImage from "@/components/EnlargeableImage";
 import type { SlideImage } from "@/content/site";
 
 export default function SlideGallery({ images }: { images: SlideImage[] }) {
@@ -30,10 +30,9 @@ export default function SlideGallery({ images }: { images: SlideImage[] }) {
             className="h-full w-full object-contain"
           />
         ) : (
-          <Image
+          <EnlargeableImage
             src={current.src}
             alt={current.caption ?? ""}
-            fill
             className="object-contain"
             sizes="(min-width: 640px) 640px, 100vw"
           />

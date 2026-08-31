@@ -100,6 +100,8 @@ export type Project = {
   featured: boolean;
   /** Hero image for the carousel slide and subpage header. */
   image?: string;
+  /** Overrides `image` on the My Work carousel and the /work polaroid grid only; the subpage header still uses `image`. */
+  cardImage?: string;
   /** Defaults to "cover". Use "contain" for circular logo marks so the full circle stays visible in the portrait hero box instead of being cropped. */
   imageFit?: "cover" | "contain";
   /** Defaults to "center". Use "top" to keep the top of the image (e.g. a poster's logo/title) visible when object-cover crops it. */
@@ -343,7 +345,9 @@ export const projects: Project[] = [
       ],
     },
     featured: false,
-    image: "/images/campaigns/ucla-were-hiring-overhead.jpg",
+    image: "/images/campaigns/ucla-logo.png",
+    imageFit: "contain",
+    cardImage: "/images/campaigns/ucla-were-hiring-overhead.jpg",
     slides: [
       {
         title: "Featured Campaign",
@@ -404,7 +408,9 @@ export const projects: Project[] = [
       items: ["Event Documentation", "Campaign Promotion", "Content Coordination"],
     },
     featured: false,
-    image: "/images/campaigns/refine-fashion-show-runway.jpg",
+    image: "/images/campaigns/refine-logo.png",
+    imageFit: "contain",
+    cardImage: "/images/campaigns/refine-fashion-show-runway.jpg",
     slides: [
       {
         title: "Featured Campaign",
@@ -484,7 +490,8 @@ export const projects: Project[] = [
     period: "June 2023 — Sept 2023",
     location: "Lagos, Nigeria",
     featured: false,
-    image: "/images/campaigns/bap-house-of-gaa-poster.jpg",
+    image: "/images/campaigns/bap-logo.png",
+    imageFit: "contain",
     slides: [
       {
         title: "Gallery",
@@ -515,7 +522,19 @@ export const projects: Project[] = [
     period: "Apr 2020 — May 2020",
     location: "Lagos, Nigeria",
     featured: false,
-    image: "/images/campaigns/golden-effects-swallow-poster.jpg",
+    image: "/images/campaigns/golden-effects-logo.png",
+    imageFit: "contain",
+    cardImage: "/images/campaigns/golden-effects-swallow-poster.jpg",
+    slides: [
+      {
+        title: "Golden Effects Pictures",
+        subtitle: "Production / Creative Intern — Lagos, Nigeria",
+        images: [
+          { src: "/images/campaigns/golden-effects-swallow-poster.jpg" },
+        ],
+        sections: [],
+      },
+    ],
   },
   {
     slug: "ctrl-4c-campaign",

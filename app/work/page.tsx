@@ -26,7 +26,10 @@ export default function WorkPage() {
           </p>
 
           <div className="mt-14 grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
-            {projects.map((project) => (
+            {projects.map((project) => {
+              const cardSrc = project.cardImage ?? project.image;
+              const useContain = !project.cardImage && project.imageFit === "contain";
+              return (
               <Link
                 key={project.slug}
                 href={`/projects/${project.slug}`}
@@ -34,16 +37,16 @@ export default function WorkPage() {
               >
                 <div
                   className={`relative aspect-[4/5] overflow-hidden ${
-                    project.imageFit === "contain" ? "bg-beige" : ""
+                    useContain ? "bg-beige" : ""
                   }`}
                 >
-                  {project.image && (
+                  {cardSrc && (
                     <Image
-                      src={project.image}
+                      src={cardSrc}
                       alt=""
                       fill
                       className={
-                        project.imageFit === "contain"
+                        useContain
                           ? "object-contain p-6"
                           : project.imagePosition === "top"
                             ? "object-cover object-top"
@@ -63,7 +66,8 @@ export default function WorkPage() {
                   View Role →
                 </span>
               </Link>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import Nav from "@/components/Nav";
+import EnlargeableImage from "@/components/EnlargeableImage";
 import { bio, site } from "@/content/site";
 
 export const metadata = {
@@ -34,10 +34,9 @@ export default function AboutPage() {
 
           <div className="flex w-full shrink-0 flex-col gap-4 sm:w-72">
             <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl">
-              <Image
+              <EnlargeableImage
                 src={site.aboutImage}
                 alt={site.name}
-                fill
                 className="object-cover"
                 priority
               />
