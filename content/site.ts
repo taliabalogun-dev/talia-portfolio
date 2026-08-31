@@ -34,14 +34,14 @@ export const education: {
     detail: "B.A. Film & Television — Animation concentration, Entrepreneurship minor",
     location: "Los Angeles, CA",
     image: "/images/about-graduation.png",
-    caption: "UCLA - USA",
+    caption: "UCLA - CA, USA",
   },
   {
     school: "Cheltenham Ladies' College",
     detail: "Secondary education",
     location: "Cheltenham, UK",
     image: "/images/about-graduation.png",
-    caption: "Cheltenham - UK",
+    caption: "CLC - Cheltenham, UK",
   },
 ];
 
