@@ -11,8 +11,8 @@ export default function SkillsExperience() {
         </p>
         <div className="-rotate-[0.4deg]">
           <div className="relative rounded-md bg-teal-deep shadow-2xl">
-            <span className="absolute -top-4 left-8 -rotate-3">
-              <span className="font-hand inline-block rounded-sm bg-accent px-4 py-1.5 text-lg text-hero-ink shadow-lg">
+            <span className="absolute -top-6 left-8 -rotate-3">
+              <span className="font-hand inline-block rounded-sm bg-accent px-6 py-2.5 text-3xl text-hero-ink shadow-lg">
                 the résumé, at a glance
               </span>
             </span>
@@ -52,7 +52,7 @@ export default function SkillsExperience() {
               </div>
 
               <div>
-                <div className="mb-5 rounded-2xl border border-accent/15 bg-[#2a2418] p-5">
+                <div className="mb-5 rounded-2xl border border-accent/15 bg-beige p-5">
                   <h4 className="text-xs font-semibold uppercase tracking-widest text-muted">
                     Contact
                   </h4>
@@ -64,7 +64,7 @@ export default function SkillsExperience() {
                   </div>
                 </div>
 
-                <div className="rounded-2xl border border-accent/15 bg-[#2a2418] p-5">
+                <div className="rounded-2xl border border-accent/15 bg-beige p-5">
                   <h4 className="text-xs font-semibold uppercase tracking-widest text-muted">
                     Skills
                   </h4>

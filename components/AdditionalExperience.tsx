@@ -14,7 +14,7 @@ export default function AdditionalExperience() {
             className="flex flex-col gap-0.5 border-l-2 border-brown/30 pl-4"
           >
             <div className="flex flex-wrap items-baseline justify-between gap-x-4">
-              <p className="text-base font-medium">
+              <p className="text-base font-medium text-accent">
                 {item.role} · {item.company}
               </p>
               <span className="text-sm text-muted">{item.period}</span>
