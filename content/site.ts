@@ -112,6 +112,8 @@ export type Project = {
   slides?: Slide[];
   /** Shows a "View full project" button at the end of the page. Leave the href unset to render it disabled (no link yet). */
   viewFullProject?: { href?: string };
+  /** Extra outbound link buttons shown next to "View full project" (e.g. a portfolio site, a film link). */
+  extraLinks?: { label: string; href: string }[];
 };
 
 export const projects: Project[] = [
@@ -592,6 +594,10 @@ export const projects: Project[] = [
       },
     ],
     viewFullProject: { href: "https://animationbytalia.univer.se/home-lwdxt/home-lwdxt-xbjny-vjeiz" },
+    extraLinks: [
+      { label: "View Animation Portfolio", href: "https://animationbytalia.univer.se" },
+      { label: "Watch Film", href: "https://vimeo.com/1209134453" },
+    ],
   },
 ];
 

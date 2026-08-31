@@ -262,22 +262,35 @@ export default async function ProjectPage(
             )
           )}
 
-          {project.viewFullProject &&
-            (project.viewFullProject.href ? (
-              <a
-                href={project.viewFullProject.href}
-                className="mt-12 inline-block rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-ink transition-opacity hover:opacity-85"
-              >
-                View full project
-              </a>
-            ) : (
-              <span
-                aria-disabled="true"
-                className="mt-12 inline-block cursor-not-allowed rounded-full bg-beige/15 px-6 py-3 text-sm font-medium text-beige/50"
-              >
-                View full project
-              </span>
-            ))}
+          {(project.viewFullProject || project.extraLinks) && (
+            <div className="mt-12 flex flex-wrap items-center gap-4">
+              {project.viewFullProject &&
+                (project.viewFullProject.href ? (
+                  <a
+                    href={project.viewFullProject.href}
+                    className="inline-block rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-ink transition-opacity hover:opacity-85"
+                  >
+                    View full project
+                  </a>
+                ) : (
+                  <span
+                    aria-disabled="true"
+                    className="inline-block cursor-not-allowed rounded-full bg-beige/15 px-6 py-3 text-sm font-medium text-beige/50"
+                  >
+                    View full project
+                  </span>
+                ))}
+              {project.extraLinks?.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="inline-block rounded-full border-2 border-accent px-6 py-3 text-sm font-medium text-accent transition-colors hover:bg-accent hover:text-accent-ink"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          )}
 
           <div className="mt-16 border-t border-beige/15 pt-10">
             <h2 className="text-xl font-semibold tracking-tight">
