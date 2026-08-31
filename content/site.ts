@@ -114,6 +114,8 @@ export type Project = {
   viewFullProject?: { href?: string };
   /** Extra outbound link buttons shown next to "View full project" (e.g. a portfolio site, a film link). */
   extraLinks?: { label: string; href: string }[];
+  /** Download buttons shown under the hero photo, and a small link on the /work polaroid. Leave href unset to render disabled until the file is ready. */
+  recommendationLetters?: { label: string; href?: string }[];
 };
 
 export const projects: Project[] = [
@@ -141,6 +143,7 @@ export const projects: Project[] = [
     featured: true,
     image: "/images/campaigns/kugali-iwaju-poster.jpg",
     imagePosition: "top",
+    recommendationLetters: [{ label: "Download Letter of Recommendation" }],
     slides: [
       {
         title: "The Emmys",
@@ -200,6 +203,7 @@ export const projects: Project[] = [
     location: "NYC / Hybrid",
     featured: true,
     image: "/images/campaigns/livenation-mutha-poster.jpg",
+    recommendationLetters: [{ label: "Download Letter of Recommendation" }],
     slides: [
       {
         title: "Featured Creative Media",
@@ -370,6 +374,7 @@ export const projects: Project[] = [
     },
     featured: false,
     image: "/images/campaigns/ucla-were-hiring-overhead.jpg",
+    recommendationLetters: [{ label: "Download Letter of Recommendation" }],
     slides: [
       {
         title: "Featured Campaign",
@@ -433,6 +438,7 @@ export const projects: Project[] = [
     image: "/images/campaigns/refine-logo.png",
     imageFit: "contain",
     cardImage: "/images/campaigns/refine-fashion-show-runway.jpg",
+    recommendationLetters: [{ label: "Download Letter of Recommendation" }],
     slides: [
       {
         title: "Featured Campaign",
@@ -619,6 +625,10 @@ export const projects: Project[] = [
     extraLinks: [
       { label: "View Animation Portfolio", href: "https://animationbytalia.univer.se" },
       { label: "Watch Film", href: "https://vimeo.com/1209134453" },
+    ],
+    recommendationLetters: [
+      { label: "Dept Chair Letter of Recommendation" },
+      { label: "Professor Letter of Recommendation" },
     ],
   },
 ];

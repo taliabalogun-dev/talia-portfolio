@@ -5,6 +5,7 @@ import SlideGallery from "@/components/SlideGallery";
 import FilmstripGallery from "@/components/FilmstripGallery";
 import EnlargeableImage from "@/components/EnlargeableImage";
 import RoleNav from "@/components/RoleNav";
+import RecommendationLetterButton from "@/components/RecommendationLetterButton";
 import { projects } from "@/content/site";
 
 export function generateStaticParams() {
@@ -88,21 +89,35 @@ export default async function ProjectPage(
             </div>
 
             {project.image && (
-              <div
-                className={`relative aspect-[3/4] w-full shrink-0 overflow-hidden rounded-2xl border border-brown/15 sm:w-80 ${project.imageFit === "contain" ? "bg-beige" : ""}`}
-              >
-                <EnlargeableImage
-                  src={project.image}
-                  className={
-                    project.imageFit === "contain"
-                      ? "object-contain p-6"
-                      : project.imagePosition === "top"
-                        ? "object-cover object-top"
-                        : "object-cover"
-                  }
-                  sizes="(min-width: 640px) 320px, 100vw"
-                  priority
-                />
+              <div className="flex w-full shrink-0 flex-col gap-3 sm:w-80">
+                <div
+                  className={`relative aspect-[3/4] w-full overflow-hidden rounded-2xl border border-brown/15 ${project.imageFit === "contain" ? "bg-beige" : ""}`}
+                >
+                  <EnlargeableImage
+                    src={project.image}
+                    className={
+                      project.imageFit === "contain"
+                        ? "object-contain p-6"
+                        : project.imagePosition === "top"
+                          ? "object-cover object-top"
+                          : "object-cover"
+                    }
+                    sizes="(min-width: 640px) 320px, 100vw"
+                    priority
+                  />
+                </div>
+                {project.recommendationLetters && (
+                  <div className="flex flex-wrap gap-2">
+                    {project.recommendationLetters.map((letter) => (
+                      <RecommendationLetterButton
+                        key={letter.label}
+                        label={letter.label}
+                        href={letter.href}
+                        className="flex-1"
+                      />
+                    ))}
+                  </div>
+                )}
               </div>
             )}
           </div>

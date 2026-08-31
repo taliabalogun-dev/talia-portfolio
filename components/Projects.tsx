@@ -57,6 +57,12 @@ export default function Projects() {
               >
                 Download résumé
               </a>
+              <Link
+                href="/letters"
+                className="rounded-full border-2 border-ink px-6 py-3 text-sm font-bold uppercase tracking-wide text-ink transition-colors hover:bg-ink hover:text-hero-ink"
+              >
+                View Letters of Recommendation
+              </Link>
             </div>
           </div>
 
@@ -69,7 +75,7 @@ export default function Projects() {
             />
           </div>
 
-          {/* PREVIEW ONLY — smaller mobile-only carousel, not wired to RoleNav. */}
+          {/* Smaller mobile-only carousel, not wired to RoleNav. */}
           <div className="lg:hidden">
             <ProjectCarousel
               projects={mobilePreviewProjects}
