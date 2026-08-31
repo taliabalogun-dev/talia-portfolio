@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { about, site } from "@/content/site";
 
@@ -5,9 +6,22 @@ export default function AboutBanner() {
   return (
     <section id="about" className="border-b border-ink/10 bg-beige px-6 py-8">
       <div className="mx-auto max-w-5xl">
-        <h2 className="font-display text-5xl uppercase tracking-tight text-ink sm:text-6xl">
-          {site.name}
-        </h2>
+        <div className="flex items-center gap-4">
+          {site.aboutImage && (
+            <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full border-2 border-accent sm:h-16 sm:w-16">
+              <Image
+                src={site.aboutImage}
+                alt=""
+                fill
+                className="object-cover"
+                sizes="64px"
+              />
+            </div>
+          )}
+          <h2 className="font-display text-5xl uppercase tracking-tight text-ink sm:text-6xl">
+            {site.name}
+          </h2>
+        </div>
         <span className="mt-3 inline-block -rotate-2">
           <span className="inline-block rounded-sm bg-accent px-4 py-2 text-xs font-bold uppercase tracking-wide text-hero-ink shadow-lg">
             {site.role}
