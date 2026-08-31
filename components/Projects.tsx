@@ -65,7 +65,7 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="relative overflow-hidden bg-teal py-16 sm:py-20">
+    <section id="projects" className="relative overflow-hidden bg-teal pt-8 pb-16 sm:py-20">
       {/* Halftone texture, faded toward the carousel side. */}
       <div
         className="pointer-events-none absolute inset-0"
@@ -91,7 +91,7 @@ export default function Projects() {
               {site.heroStatement}
             </p>
             <p className="mx-auto mt-2 max-w-sm text-lg text-ink/85 sm:mt-5 lg:mx-0">{site.tagline}</p>
-            <div className="mt-3 flex flex-wrap items-center justify-center gap-4 sm:mt-6 lg:justify-start">
+            <div className="mt-3 hidden flex-wrap items-center justify-center gap-4 sm:mt-6 lg:flex lg:justify-start">
               <Link
                 href="/work"
                 className="-rotate-2 rounded-full bg-accent px-6 py-3 text-sm font-bold uppercase tracking-wide text-hero-ink transition-opacity hover:opacity-85"
@@ -195,6 +195,22 @@ export default function Projects() {
                 />
               ))}
             </div>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-center gap-4 lg:hidden">
+            <Link
+              href="/work"
+              className="-rotate-2 rounded-full bg-accent px-6 py-3 text-sm font-bold uppercase tracking-wide text-hero-ink transition-opacity hover:opacity-85"
+            >
+              View all roles
+            </Link>
+            <a
+              href={site.resumeUrl}
+              download
+              className="rotate-1 rounded-full border-2 border-ink px-6 py-3 text-sm font-bold uppercase tracking-wide text-ink transition-colors hover:bg-ink hover:text-hero-ink"
+            >
+              Download résumé
+            </a>
           </div>
         </div>
 

@@ -5,7 +5,7 @@ export default function SkillsExperience() {
   return (
     <section id="skills" className="overflow-x-hidden bg-beige pt-12 pb-16 sm:pt-16 sm:pb-20">
       <div className="mx-auto max-w-5xl px-6">
-        <span className="font-hand block text-xl text-accent">about —</span>
+        <span className="font-hand block text-xl text-brown">about —</span>
         <p className="mt-1 mb-8 max-w-[60ch] text-sm text-muted">
           Working across industries has made me a creative worldbuilder — my goal is to bring that into entertainment creative strategy.
         </p>
@@ -41,7 +41,7 @@ export default function SkillsExperience() {
                     >
                       <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                         <span className="text-base font-bold text-ink">
-                          {item.role} <span className="font-semibold text-accent">— {item.company}</span>
+                          {item.role} <span className="font-semibold text-brown">— {item.company}</span>
                         </span>
                         <span className="whitespace-nowrap text-xs uppercase tracking-wide text-muted">
                           {item.period}
@@ -53,7 +53,7 @@ export default function SkillsExperience() {
                       {item.slug && (
                         <Link
                           href={`/projects/${item.slug}`}
-                          className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-full bg-teal-darker px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-accent transition-opacity hover:opacity-80"
+                          className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-full bg-teal-darker px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-ink transition-opacity hover:opacity-80"
                         >
                           View Role →
                         </Link>
@@ -79,7 +79,7 @@ export default function SkillsExperience() {
                         <span className="flex items-baseline justify-between gap-x-4">
                           <span className="min-w-0 truncate text-sm text-ink/90">
                             {item.role}
-                            <span className="text-accent"> — {item.company}</span>
+                            <span className="text-brown"> — {item.company}</span>
                           </span>
                           <span className="shrink-0 whitespace-nowrap text-xs uppercase tracking-wide text-muted">
                             {item.period}
@@ -104,7 +104,7 @@ export default function SkillsExperience() {
                   </ul>
                   <Link
                     href="/work"
-                    className="mt-3 inline-block text-xs text-muted underline underline-offset-4 hover:text-accent"
+                    className="mt-3 inline-block text-xs text-muted underline underline-offset-4 hover:text-brown"
                   >
                     See all roles →
                   </Link>
@@ -117,7 +117,7 @@ export default function SkillsExperience() {
                     Contact
                   </h4>
                   <div className="mt-3 flex flex-col gap-2 text-sm text-ink">
-                    <a href={`mailto:${site.email}`} className="hover:text-accent">
+                    <a href={`mailto:${site.email}`} className="hover:text-brown">
                       {site.email}
                     </a>
                     <span>{site.location}</span>
@@ -131,14 +131,14 @@ export default function SkillsExperience() {
                   <div className="mt-3 flex flex-col gap-4">
                     {skills.map((group) => (
                       <div key={group.category}>
-                        <span className="font-hand -rotate-1 inline-block text-lg text-accent">
+                        <span className="font-hand -rotate-1 inline-block text-lg text-brown">
                           {group.category}
                         </span>
                         <div className="mt-1.5 flex flex-wrap gap-1.5">
                           {group.items.map((item) => (
                             <span
                               key={item}
-                              className="rounded-full border border-accent/30 bg-accent/15 px-3 py-1 text-xs font-semibold text-accent"
+                              className="rounded-full border border-accent/30 bg-accent/15 px-3 py-1 text-xs font-semibold text-brown"
                             >
                               {item}
                             </span>

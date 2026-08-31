@@ -12,9 +12,9 @@ export default function ProfilePhoto({ src }: { src: string }) {
         type="button"
         onClick={() => setOpen(true)}
         aria-label="Enlarge profile photo"
-        className="relative h-14 w-14 shrink-0 cursor-zoom-in overflow-hidden rounded-full border-2 border-accent lg:h-24 lg:w-24"
+        className="relative h-14 w-14 shrink-0 cursor-zoom-in overflow-hidden rounded-full border-2 border-accent lg:h-40 lg:w-40"
       >
-        <Image src={src} alt="" fill className="object-cover" sizes="96px" />
+        <Image src={src} alt="" fill className="object-cover" sizes="160px" />
       </button>
 
       {open && (

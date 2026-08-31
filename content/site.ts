@@ -383,9 +383,10 @@ export const projects: Project[] = [
         title: "Gallery",
         layout: "filmstrip",
         images: [
-          { src: "/images/campaigns/ucla-group-lawn.jpg" },
+          { src: "/images/campaigns/ucla-were-hiring-overhead.jpg" },
           { src: "/images/campaigns/ucla-group-selfie.jpg" },
           { src: "/images/campaigns/ucla-bts-office.jpg" },
+          { src: "/images/campaigns/ucla-group-lawn.jpg" },
         ],
         sections: [],
       },
