@@ -5,8 +5,12 @@ export default function SkillsExperience() {
   return (
     <section id="skills" className="bg-beige py-16 sm:py-20">
       <div className="mx-auto max-w-5xl px-6">
+        <span className="font-hand block text-xl text-accent">about —</span>
+        <p className="mt-1 mb-8 max-w-[60ch] text-sm text-muted">
+          Working across industries has made me a creative worldbuilder — my goal is to bring that into entertainment creative strategy.
+        </p>
         <div className="-rotate-[0.4deg]">
-          <div className="relative rounded-md bg-[#1c1815] shadow-2xl">
+          <div className="relative rounded-md bg-teal-deep shadow-2xl">
             <span className="absolute -top-4 left-8 -rotate-3">
               <span className="font-hand inline-block rounded-sm bg-accent px-4 py-1.5 text-lg text-hero-ink shadow-lg">
                 the résumé, at a glance
@@ -14,10 +18,6 @@ export default function SkillsExperience() {
             </span>
             <div className="grid gap-10 px-8 py-12 sm:px-10 sm:py-14 lg:grid-cols-[1.4fr_1fr]">
               <div id="experience" className="scroll-mt-24">
-                <span className="font-hand block text-xl text-accent">about —</span>
-                <p className="mt-1 mb-5 max-w-[60ch] text-sm text-muted">
-                  Working across industries has made me a creative worldbuilder — my goal is to bring that into entertainment creative strategy.
-                </p>
                 <h3 className="font-display border-b-2 border-dashed border-ink/15 pb-2.5 text-2xl uppercase tracking-wide text-ink">
                   Experience
                 </h3>
@@ -52,7 +52,7 @@ export default function SkillsExperience() {
               </div>
 
               <div>
-                <div className="mb-5 rounded-2xl border border-ink/10 bg-ink/[0.04] p-5">
+                <div className="mb-5 rounded-2xl border border-accent/15 bg-[#2a2418] p-5">
                   <h4 className="text-xs font-semibold uppercase tracking-widest text-muted">
                     Contact
                   </h4>
@@ -64,7 +64,7 @@ export default function SkillsExperience() {
                   </div>
                 </div>
 
-                <div className="rounded-2xl border border-ink/10 bg-ink/[0.04] p-5">
+                <div className="rounded-2xl border border-accent/15 bg-[#2a2418] p-5">
                   <h4 className="text-xs font-semibold uppercase tracking-widest text-muted">
                     Skills
                   </h4>

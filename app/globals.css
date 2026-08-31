@@ -20,6 +20,7 @@
   --color-hero-ink: #241708;
   /* My Work's dedicated backdrop — the one teal surface on the site. */
   --color-teal: #2c6672;
+  --color-teal-deep: #16333a;
   --font-sans: var(--font-jakarta);
   --font-display: var(--font-anton);
   --font-hand: var(--font-caveat);
