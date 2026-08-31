@@ -496,6 +496,20 @@ export const projects: Project[] = [
     cardImage: "/images/campaigns/bap-house-of-gaa-poster.jpg",
     slides: [
       {
+        title: "Featured Creative Media",
+        images: [
+          {
+            src: "/images/campaigns/bap-house-of-gaa-poster.jpg",
+            caption: "'House of Ga'a' (Netflix) — Production Assistant — 2023",
+          },
+          {
+            src: "/images/campaigns/bap-bling-lagosians-2-poster.jpg",
+            caption: "'The Bling Lagosians 2' — Contributing Writer — 2027",
+          },
+        ],
+        sections: [],
+      },
+      {
         title: "Gallery",
         layout: "filmstrip",
         images: [
@@ -529,10 +543,12 @@ export const projects: Project[] = [
     cardImage: "/images/campaigns/golden-effects-swallow-poster.jpg",
     slides: [
       {
-        title: "Golden Effects Pictures",
-        subtitle: "Production / Creative Intern — Lagos, Nigeria",
+        title: "Featured Creative Media",
         images: [
-          { src: "/images/campaigns/golden-effects-swallow-poster.jpg" },
+          {
+            src: "/images/campaigns/golden-effects-swallow-poster.jpg",
+            caption: "'Swallow' (Netflix) — Production Assistant — Oct 2026",
+          },
         ],
         sections: [],
       },

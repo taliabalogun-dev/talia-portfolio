@@ -81,7 +81,7 @@ export default function Projects() {
       />
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="flex flex-col gap-12 lg:flex-row lg:items-center lg:justify-between">
-          <div className="max-w-md shrink-0 text-center lg:mt-8 lg:self-start lg:text-left">
+          <div className="max-w-md shrink-0 text-center lg:mt-[calc(2rem+1cm)] lg:self-start lg:text-left">
             <div className="inline-block -rotate-1">
               <h2 className="font-display inline-block whitespace-nowrap border-4 border-hero-ink bg-paper px-8 py-6 text-5xl uppercase leading-[0.95] tracking-tight text-hero-ink shadow-xl sm:text-7xl">
                 My Work
