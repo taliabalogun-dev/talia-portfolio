@@ -101,7 +101,7 @@ export default function Projects() {
               </span>
             </span>
             <div className="mt-5 inline-block -rotate-1">
-              <h2 className="font-display inline-block whitespace-nowrap border-4 border-hero-ink bg-paper px-6 py-4 text-4xl uppercase leading-tight tracking-tight text-hero-ink shadow-xl sm:text-8xl">
+              <h2 className="font-display inline-block whitespace-nowrap border-4 border-hero-ink bg-paper px-6 py-4 text-4xl uppercase leading-[0.95] tracking-tight text-hero-ink shadow-xl sm:text-8xl">
                 My<br className="hidden sm:block" /> Work
               </h2>
             </div>
