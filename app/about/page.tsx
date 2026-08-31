@@ -76,7 +76,7 @@ export default function AboutPage() {
                     </p>
                   </div>
 
-                  <div className="rounded-md bg-sky-darker/40 p-5">
+                  <div className="hidden rounded-md bg-sky-darker/40 p-5 sm:block">
                     <h2 className="font-display text-lg uppercase tracking-tight text-navy">
                       Skills
                     </h2>
