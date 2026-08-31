@@ -492,6 +492,7 @@ export const projects: Project[] = [
     featured: false,
     image: "/images/campaigns/bap-logo.png",
     imageFit: "contain",
+    cardImage: "/images/campaigns/bap-house-of-gaa-poster.jpg",
     slides: [
       {
         title: "Gallery",
