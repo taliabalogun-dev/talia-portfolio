@@ -81,17 +81,17 @@ export default function Projects() {
       />
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="flex flex-col gap-12 lg:flex-row lg:items-center lg:justify-between">
-          <div className="max-w-md shrink-0 lg:mt-8 lg:self-start">
+          <div className="max-w-md shrink-0 text-center lg:mt-8 lg:self-start lg:text-left">
             <div className="inline-block -rotate-1">
               <h2 className="font-display inline-block whitespace-nowrap border-4 border-hero-ink bg-paper px-8 py-6 text-5xl uppercase leading-[0.95] tracking-tight text-hero-ink shadow-xl sm:text-7xl">
                 My Work
               </h2>
             </div>
-            <p className="font-hand mt-6 -rotate-1 text-2xl text-accent">
+            <p className="font-hand mt-3 -rotate-1 text-2xl text-accent sm:mt-6">
               {site.heroStatement}
             </p>
-            <p className="mt-5 max-w-sm text-lg text-ink/85">{site.tagline}</p>
-            <div className="mt-6 flex flex-wrap items-center gap-4">
+            <p className="mx-auto mt-2 max-w-sm text-lg text-ink/85 sm:mt-5 lg:mx-0">{site.tagline}</p>
+            <div className="mt-3 flex flex-wrap items-center justify-center gap-4 sm:mt-6 lg:justify-start">
               <Link
                 href="/work"
                 className="-rotate-2 rounded-full bg-accent px-6 py-3 text-sm font-bold uppercase tracking-wide text-hero-ink transition-opacity hover:opacity-85"

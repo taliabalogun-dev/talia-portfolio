@@ -3,7 +3,7 @@ import { additionalExperience, experience, site, skills } from "@/content/site";
 
 export default function SkillsExperience() {
   return (
-    <section id="skills" className="bg-beige pt-12 pb-16 sm:pt-16 sm:pb-20">
+    <section id="skills" className="overflow-x-hidden bg-beige pt-12 pb-16 sm:pt-16 sm:pb-20">
       <div className="mx-auto max-w-5xl px-6">
         <span className="font-hand block text-xl text-accent">about —</span>
         <p className="mt-1 mb-8 max-w-[60ch] text-sm text-muted">
@@ -29,7 +29,7 @@ export default function SkillsExperience() {
               />
             </svg>
             <div className="grid gap-10 px-8 py-12 sm:px-10 sm:py-14 lg:grid-cols-[1.4fr_1fr]">
-              <div id="experience" className="scroll-mt-24">
+              <div id="experience" className="min-w-0 scroll-mt-24">
                 <h3 className="font-display border-b-2 border-dashed border-ink/15 pb-2.5 text-2xl uppercase tracking-wide text-ink">
                   Experience
                 </h3>
@@ -53,7 +53,7 @@ export default function SkillsExperience() {
                       {item.slug && (
                         <Link
                           href={`/projects/${item.slug}`}
-                          className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-full bg-accent px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-hero-ink transition-opacity hover:opacity-85"
+                          className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-full bg-teal-darker px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-accent transition-opacity hover:opacity-80"
                         >
                           View Role →
                         </Link>
@@ -77,7 +77,7 @@ export default function SkillsExperience() {
                     {additionalExperience.map((item) => {
                       const line = (
                         <span className="flex items-baseline justify-between gap-x-4">
-                          <span className="truncate text-sm text-ink/90">
+                          <span className="min-w-0 truncate text-sm text-ink/90">
                             {item.role}
                             <span className="text-accent"> — {item.company}</span>
                           </span>
@@ -111,7 +111,7 @@ export default function SkillsExperience() {
                 </div>
               </div>
 
-              <div>
+              <div className="min-w-0">
                 <div className="mb-5 rounded-2xl border border-accent/15 bg-teal-darker p-5">
                   <h4 className="text-xs font-semibold uppercase tracking-widest text-muted">
                     Contact
