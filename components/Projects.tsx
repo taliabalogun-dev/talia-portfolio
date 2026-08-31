@@ -84,6 +84,17 @@ export default function Projects() {
           <RoleNav activeSlug={activeSlug} onFeaturedClick={setActiveSlug} />
         </div>
 
+        <blockquote className="mt-10 hidden max-w-2xl border-l-4 border-accent/60 pl-5 lg:block">
+          <p className="font-hand text-2xl text-accent">
+            &ldquo;She has an incredible eye for detail and a sharp instinct for storytelling,
+            which allowed her to translate complex ideas into something visually compelling and
+            emotionally resonant.&rdquo;
+          </p>
+          <footer className="mt-2 text-sm text-ink/70">
+            — Soukee Van Orden, Director of Strategic Partnerships and Operations, CURATED by Live Nation
+          </footer>
+        </blockquote>
+
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4 lg:hidden">
           <Link
             href="/work"

@@ -4,6 +4,14 @@ import Nav from "@/components/Nav";
 import AdditionalExperience from "@/components/AdditionalExperience";
 import { projects } from "@/content/site";
 
+const allQuotes = [
+  ...projects.flatMap((p) => p.quotes ?? []),
+  {
+    text: "I'd gladly hire her again if you don't beat me to it.",
+    attribution: "Ricky Horne Jr., UCLA Student Affairs",
+  },
+];
+
 export default function WorkPage() {
   return (
     <>
@@ -25,7 +33,16 @@ export default function WorkPage() {
             8 roles, 16 experiences, 1 creative storytelling throughline.
           </span>
 
-          <div className="mt-14 grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+            {allQuotes.map((quote) => (
+              <blockquote key={quote.attribution} className="border-l-4 border-accent/60 pl-5">
+                <p className="text-base italic text-ink">&ldquo;{quote.text}&rdquo;</p>
+                <footer className="mt-2 text-xs text-ink/70">— {quote.attribution}</footer>
+              </blockquote>
+            ))}
+          </div>
+
+          <div className="mt-14 grid grid-cols-2 gap-x-8 gap-y-14 lg:grid-cols-4">
             {projects.map((project) => {
               const cardSrc = project.cardImage ?? project.image;
               const useContain = !project.cardImage && project.imageFit === "contain";
@@ -69,15 +86,6 @@ export default function WorkPage() {
               );
             })}
           </div>
-
-          <blockquote className="mx-auto mt-16 max-w-xl border-l-4 border-accent/60 pl-5">
-            <p className="text-lg italic text-ink">
-              &ldquo;I&apos;d gladly hire her again if you don&apos;t beat me to it.&rdquo;
-            </p>
-            <footer className="mt-2 text-sm text-ink/70">
-              — Ricky Horne Jr., UCLA Student Affairs
-            </footer>
-          </blockquote>
         </div>
       </section>
       <AdditionalExperience />

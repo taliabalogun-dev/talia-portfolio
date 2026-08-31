@@ -78,8 +78,8 @@ export type Slide = {
   subtitle?: string;
   images?: SlideImage[];
   sections: SlideSection[];
-  /** Defaults to "grid". "slideshow" renders a single-image carousel with Prev/Next. "filmstrip" shows every image at once, edge-to-edge, in a horizontally scrollable strip. */
-  layout?: "grid" | "slideshow" | "filmstrip";
+  /** Defaults to "grid". "slideshow" renders a single-image carousel with Prev/Next. "filmstrip" shows every image at once, edge-to-edge, in a horizontally scrollable strip. "cards" shows small uncropped thumbnails with a caption underneath (desktop only) - wraps to a 2-column grid on mobile, scrolls horizontally on desktop. */
+  layout?: "grid" | "slideshow" | "filmstrip" | "cards";
 };
 
 export type Project = {
@@ -171,12 +171,25 @@ export const projects: Project[] = [
         sections: [],
       },
       {
-        title: "Featured Campaign",
+        title: "Featured Campaigns",
+        layout: "cards",
         images: [
-          { src: "/images/campaigns/kugali-campaign-competitor-analysis.png" },
-          { src: "/images/campaigns/kugali-campaign-jollof-wars-pitch.png" },
-          { src: "/images/campaigns/kugali-campaign-razorman-pitch.png" },
-          { src: "/images/campaigns/kugali-campaign-emmys-social-strategy.png" },
+          {
+            src: "/images/campaigns/kugali-campaign-competitor-analysis.png",
+          },
+          {
+            src: "/images/campaigns/kugali-campaign-jollof-wars-pitch.png",
+            caption: "Internal marketing strategy and positioning slides",
+          },
+          {
+            src: "/images/campaigns/kugali-campaign-razorman-pitch.png",
+            caption: "Producer-facing pitch research & slides",
+          },
+          {
+            src: "/images/campaigns/kugali-campaign-emmys-social-strategy.png",
+            caption:
+              "IP & festival releases research & strategy, as well as live day-of social media campaign - active posting",
+          },
         ],
         sections: [],
       },
@@ -186,9 +199,9 @@ export const projects: Project[] = [
         layout: "slideshow",
         images: [
           { src: "/images/campaigns/kugali-design-strategy-shirts.png" },
+          { src: "/images/campaigns/kugali-design-strategy-guide.jpg" },
           { src: "/images/campaigns/kugali-design-strategy-card-mockup.png" },
           { src: "/images/campaigns/kugali-design-strategy-title-art.jpg" },
-          { src: "/images/campaigns/kugali-design-strategy-guide.jpg" },
         ],
         sections: [],
       },

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Nav from "@/components/Nav";
 import SlideGallery from "@/components/SlideGallery";
 import FilmstripGallery from "@/components/FilmstripGallery";
+import CampaignCardsGallery from "@/components/CampaignCardsGallery";
 import EnlargeableImage from "@/components/EnlargeableImage";
 import RoleNav from "@/components/RoleNav";
 import { projects } from "@/content/site";
@@ -144,6 +145,8 @@ export default async function ProjectPage(
                         <SlideGallery images={slide.images!} />
                       ) : slide.layout === "filmstrip" ? (
                         <FilmstripGallery images={slide.images!} />
+                      ) : slide.layout === "cards" ? (
+                        <CampaignCardsGallery images={slide.images!} />
                       ) : (
                       <div
                         className={
