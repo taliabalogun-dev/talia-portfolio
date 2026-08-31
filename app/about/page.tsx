@@ -1,12 +1,18 @@
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import EnlargeableImage from "@/components/EnlargeableImage";
-import { bio, site, skills } from "@/content/site";
+import ProjectCarousel from "@/components/ProjectCarousel";
+import { bio, projects, site, skills } from "@/content/site";
 
 export const metadata = {
   title: `${bio.heading} — ${site.name}`,
   description: bio.paragraphs[0],
 };
+
+const carouselSlugs = ["kugali-iwaju", "ucla-campus-campaigns", "fast-ucla-fashion-show"];
+const carouselProjects = carouselSlugs
+  .map((slug) => projects.find((p) => p.slug === slug))
+  .filter((p): p is NonNullable<typeof p> => Boolean(p));
 
 export default function AboutPage() {
   return (
@@ -40,7 +46,7 @@ export default function AboutPage() {
                   </div>
                 </div>
 
-                <div className="relative flex w-full shrink-0 flex-col gap-4 sm:w-72">
+                <div className="relative flex w-full shrink-0 flex-col gap-6 sm:w-72">
                   <svg
                     className="pointer-events-none absolute -top-7 right-6 z-10 hidden w-12 opacity-90 sm:block"
                     viewBox="0 0 40 90"
@@ -69,43 +75,58 @@ export default function AboutPage() {
                       <span className="block">Cheltenham Ladies&apos;, Cheltenham, UK</span>
                     </p>
                   </div>
+
+                  <div className="rounded-md bg-sky-darker/40 p-5">
+                    <h2 className="font-display text-lg uppercase tracking-tight text-navy">
+                      Skills
+                    </h2>
+                    <div className="mt-4 flex flex-col gap-4">
+                      {skills.map((group) => (
+                        <div key={group.category}>
+                          <span className="font-hand -rotate-1 inline-block text-base text-navy/80">
+                            {group.category}
+                          </span>
+                          <div className="mt-1.5 flex flex-wrap gap-1.5">
+                            {group.items.map((item) => (
+                              <span
+                                key={item}
+                                className="rounded-full border border-navy/20 bg-sky-deep/70 px-2.5 py-1 text-[11px] font-semibold text-navy"
+                              >
+                                {item}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="mt-14 rounded-md bg-sky-deep p-8 shadow-xl sm:p-10">
-            <h2 className="font-display text-2xl uppercase tracking-tight text-navy">
-              Skills
-            </h2>
-            <div className="mt-6 flex flex-col gap-6 sm:flex-row sm:flex-wrap sm:gap-x-12">
-              {skills.map((group) => (
-                <div key={group.category}>
-                  <span className="font-hand -rotate-1 inline-block text-lg text-navy/80">
-                    {group.category}
-                  </span>
-                  <div className="mt-1.5 flex flex-wrap gap-1.5">
-                    {group.items.map((item) => (
-                      <span
-                        key={item}
-                        className="rounded-full border border-navy/20 bg-sky-darker/30 px-3 py-1 text-xs font-semibold text-navy"
-                      >
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div className="mt-14">
+            <ProjectCarousel
+              projects={carouselProjects}
+              startSlug="kugali-iwaju"
+              size="small"
+            />
           </div>
 
-          <div className="mt-10 flex justify-center">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/work"
               className="-rotate-2 rounded-full bg-accent px-6 py-3 text-sm font-bold uppercase tracking-wide text-hero-ink transition-opacity hover:opacity-85"
             >
               View all roles
             </Link>
+            <a
+              href={site.resumeUrl}
+              download
+              className="rotate-1 rounded-full border-2 border-navy px-6 py-3 text-sm font-bold uppercase tracking-wide text-navy transition-colors hover:bg-navy hover:text-sky"
+            >
+              Download résumé
+            </a>
           </div>
         </main>
       </div>

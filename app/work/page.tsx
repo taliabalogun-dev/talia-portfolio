@@ -22,7 +22,7 @@ export default function WorkPage() {
             My Work
           </h1>
           <p className="mt-3 max-w-xl text-lg text-ink/85">
-            Eight roles, one creative throughline. Pick one to see the work.
+            8 roles, 16 experiences, 1 creative storytelling throughline. Pick one to see the work.
           </p>
 
           <div className="mt-14 grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">

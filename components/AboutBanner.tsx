@@ -24,7 +24,7 @@ export default function AboutBanner() {
               {site.role}
             </span>
           </span>
-          <div className="mt-4 flex max-w-3xl flex-col gap-2 text-base text-muted">
+          <div className="mt-4 flex max-w-3xl flex-col gap-2 text-base text-muted lg:text-sm">
             {about.paragraphs.map((paragraph, i) => (
               <p key={i}>{paragraph}</p>
             ))}
