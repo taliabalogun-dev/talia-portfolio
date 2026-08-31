@@ -3,7 +3,7 @@ export const site = {
   role: "Creative Marketing & Campaign Strategy",
   heroStatement: "Creative products need creative strategy.",
   tagline:
-    "I direct creative strategy and campaign output for entertainment, fashion, and institutional brands.",
+    "Campaign strategy & outputs for entertainment, fashion and institutional brands.",
   email: "talia.balogun@gmail.com",
   location: "Los Angeles, CA",
   social: {
@@ -21,6 +21,19 @@ export const about = {
     "Creative marketing and campaign strategist with 3+ years directing creative decisions — from pitch strategy on Disney's Iwájú to brand partnerships with Nike, directing full creative teams across print, photography, and video. Based in Los Angeles, moving toward entertainment marketing strategy and development.",
   ],
 };
+
+export const education: { school: string; detail: string; location: string }[] = [
+  {
+    school: "UCLA",
+    detail: "B.A. Film & Television — Animation concentration, Entrepreneurship minor",
+    location: "Los Angeles, CA",
+  },
+  {
+    school: "Cheltenham Ladies' College",
+    detail: "Secondary education",
+    location: "Cheltenham, UK",
+  },
+];
 
 export const bio = {
   heading: "More About Me",
@@ -359,6 +372,7 @@ export const projects: Project[] = [
           { src: "/images/campaigns/ucla-zombie-poster.jpg" },
           { src: "/images/campaigns/ucla-frankenstein-poster.jpg" },
           { src: "/images/campaigns/ucla-dracula-poster.jpg" },
+          { src: "/images/campaigns/ucla-group-hangout.jpg" },
         ],
         sections: [],
       },
@@ -367,7 +381,6 @@ export const projects: Project[] = [
         layout: "filmstrip",
         images: [
           { src: "/images/campaigns/ucla-group-lawn.jpg" },
-          { src: "/images/campaigns/ucla-group-hangout.jpg" },
           { src: "/images/campaigns/ucla-group-selfie.jpg" },
           { src: "/images/campaigns/ucla-bts-office.jpg" },
         ],
