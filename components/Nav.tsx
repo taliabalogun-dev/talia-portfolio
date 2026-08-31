@@ -3,7 +3,7 @@ import { site } from "@/content/site";
 
 const links = [
   { href: "/#about", label: "About" },
-  { href: "/#projects", label: "Projects" },
+  { href: "/#projects", label: "My Roles" },
   { href: "/#skills", label: "Skills" },
   { href: "/#experience", label: "Experience" },
 ];

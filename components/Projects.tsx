@@ -79,25 +79,12 @@ export default function Projects() {
             "radial-gradient(ellipse 70% 60% at 78% 30%, #000 0%, transparent 72%)",
         }}
       />
-      <svg
-        className="pointer-events-none absolute right-[6vw] top-16 hidden w-14 opacity-90 sm:block"
-        viewBox="0 0 40 90"
-        fill="none"
-      >
-        <path
-          d="M20 5 C32 5 32 20 32 26 L32 68 C32 78 24 84 16 84 C8 84 2 78 2 68 L2 30 C2 24 6 20 11 20 C16 20 19 24 19 30 L19 62"
-          stroke="#d8d2c6"
-          strokeWidth="4.5"
-          strokeLinecap="round"
-        />
-      </svg>
-
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="flex flex-col gap-12 lg:flex-row lg:items-center lg:justify-between">
-          <div className="max-w-md shrink-0 lg:-mt-16 lg:self-start">
+          <div className="max-w-md shrink-0 lg:mt-8 lg:self-start">
             <div className="inline-block -rotate-1">
-              <h2 className="font-display inline-block whitespace-nowrap border-4 border-hero-ink bg-paper px-6 py-4 text-4xl uppercase leading-[0.95] tracking-tight text-hero-ink shadow-xl sm:text-8xl">
-                My<br className="hidden sm:block" /> Work
+              <h2 className="font-display inline-block whitespace-nowrap border-4 border-hero-ink bg-paper px-6 py-4 text-4xl uppercase leading-[0.95] tracking-tight text-hero-ink shadow-xl sm:text-6xl">
+                My Work
               </h2>
             </div>
             <p className="font-hand mt-6 -rotate-1 text-2xl text-accent">
