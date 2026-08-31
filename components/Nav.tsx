@@ -2,7 +2,7 @@ import Link from "next/link";
 import { site } from "@/content/site";
 
 const links = [
-  { href: "/#about", label: "About" },
+  { href: "/about", label: "About" },
   { href: "/work", label: "My Roles" },
   { href: "/#skills", label: "Skills" },
   { href: "/#experience", label: "Experience" },

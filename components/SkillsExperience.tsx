@@ -3,7 +3,7 @@ import { additionalExperience, experience, site, skills } from "@/content/site";
 
 export default function SkillsExperience() {
   return (
-    <section id="skills" className="overflow-x-hidden bg-beige pt-12 pb-16 sm:pt-16 sm:pb-20">
+    <section className="overflow-x-hidden bg-beige pt-12 pb-16 sm:pt-16 sm:pb-20">
       <div className="mx-auto max-w-5xl px-6">
         <span className="font-hand block text-xl text-brown lg:text-3xl">about —</span>
         <p className="mt-1 mb-8 max-w-[60ch] text-sm text-muted">
@@ -124,7 +124,7 @@ export default function SkillsExperience() {
                   </div>
                 </div>
 
-                <div className="rounded-2xl border border-accent/15 bg-teal-darker p-5">
+                <div id="skills" className="scroll-mt-24 rounded-2xl border border-accent/15 bg-teal-darker p-5">
                   <h4 className="text-xs font-semibold uppercase tracking-widest text-muted">
                     Skills
                   </h4>
