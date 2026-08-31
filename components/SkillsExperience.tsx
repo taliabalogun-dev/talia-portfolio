@@ -52,7 +52,7 @@ export default function SkillsExperience() {
               </div>
 
               <div>
-                <div className="mb-5 rounded-2xl border border-accent/15 bg-beige p-5">
+                <div className="mb-5 rounded-2xl border border-accent/15 bg-teal-darker p-5">
                   <h4 className="text-xs font-semibold uppercase tracking-widest text-muted">
                     Contact
                   </h4>
@@ -64,7 +64,7 @@ export default function SkillsExperience() {
                   </div>
                 </div>
 
-                <div className="rounded-2xl border border-accent/15 bg-beige p-5">
+                <div className="rounded-2xl border border-accent/15 bg-teal-darker p-5">
                   <h4 className="text-xs font-semibold uppercase tracking-widest text-muted">
                     Skills
                   </h4>
