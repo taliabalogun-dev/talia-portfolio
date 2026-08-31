@@ -12,7 +12,7 @@ export const site = {
     twitter: "",
   },
   resumeUrl: "/resume/resume.pdf",
-  aboutImage: "/images/about-profile.jpg",
+  aboutImage: "/images/about-graduation-v2.png",
 };
 
 export const about = {
