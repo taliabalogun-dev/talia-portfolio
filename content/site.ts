@@ -591,7 +591,7 @@ export const projects: Project[] = [
         sections: [],
       },
     ],
-    viewFullProject: {},
+    viewFullProject: { href: "https://animationbytalia.univer.se/home-lwdxt/home-lwdxt-xbjny-vjeiz" },
   },
 ];
 
