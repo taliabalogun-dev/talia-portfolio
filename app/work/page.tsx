@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Nav from "@/components/Nav";
+import AdditionalExperience from "@/components/AdditionalExperience";
 import { projects } from "@/content/site";
 
 export default function WorkPage() {
@@ -66,6 +67,7 @@ export default function WorkPage() {
           </div>
         </div>
       </section>
+      <AdditionalExperience />
     </>
   );
 }
