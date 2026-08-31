@@ -80,7 +80,7 @@ export default function Projects() {
         }}
       />
       <div className="relative mx-auto max-w-7xl px-6">
-        <div className="flex flex-col gap-12 lg:flex-row lg:items-center lg:justify-between">
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between lg:gap-12">
           <div className="max-w-md shrink-0 text-center lg:mt-[calc(2rem+1cm)] lg:self-start lg:text-left">
             <div className="inline-block -rotate-1">
               <h2 className="font-display inline-block whitespace-nowrap border-4 border-hero-ink bg-paper px-8 py-6 text-5xl uppercase leading-[0.95] tracking-tight text-hero-ink shadow-xl sm:text-7xl">
@@ -90,7 +90,7 @@ export default function Projects() {
             <p className="font-hand mt-3 -rotate-1 text-2xl text-accent sm:mt-6 lg:text-4xl">
               {site.heroStatement}
             </p>
-            <p className="mx-auto mt-2 max-w-sm text-lg text-ink/85 sm:mt-5 lg:mx-0 lg:max-w-md lg:text-2xl">{site.tagline}</p>
+            <p className="mx-auto mt-2 hidden max-w-sm text-lg text-ink/85 sm:mt-5 lg:mx-0 lg:block lg:max-w-md lg:text-2xl">{site.tagline}</p>
             <div className="mt-3 hidden flex-wrap items-center justify-center gap-4 sm:mt-6 lg:flex lg:justify-start">
               <Link
                 href="/work"

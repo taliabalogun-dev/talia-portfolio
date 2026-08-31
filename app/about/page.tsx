@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import EnlargeableImage from "@/components/EnlargeableImage";
-import { bio, education, site } from "@/content/site";
+import { bio, site } from "@/content/site";
 
 export const metadata = {
   title: `${bio.heading} — ${site.name}`,
@@ -53,41 +53,24 @@ export default function AboutPage() {
                       strokeLinecap="round"
                     />
                   </svg>
-                  <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl border-4 border-sky-darker/50">
-                    <EnlargeableImage
-                      src={site.aboutImage}
-                      alt={site.name}
-                      className="object-cover"
-                      priority
-                    />
+                  <div className="rounded-sm border-4 border-white bg-white p-3 pb-5 shadow-xl">
+                    <div className="relative aspect-[3/4] w-full overflow-hidden">
+                      <EnlargeableImage
+                        src={site.aboutImage}
+                        alt={site.name}
+                        className="object-cover"
+                        priority
+                      />
+                    </div>
+                    <p className="mt-3 text-center text-sm leading-snug text-hero-ink">
+                      <span className="block font-bold">
+                        University of California, Los Angeles, USA
+                      </span>
+                      <span className="block">Cheltenham Ladies&apos;, Cheltenham, UK</span>
+                    </p>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-
-          <div className="mt-14">
-            <h2 className="font-display text-2xl uppercase tracking-tight text-navy">
-              Education
-            </h2>
-            <div className="mt-6 grid max-w-md grid-cols-2 gap-6">
-              {education.map((item) => (
-                <div
-                  key={item.school}
-                  className="rounded-sm border-4 border-white bg-white p-3 pb-5 shadow-xl"
-                >
-                  <div className="relative aspect-[4/5] overflow-hidden">
-                    <EnlargeableImage
-                      src={item.image}
-                      alt={item.school}
-                      className="object-cover"
-                    />
-                  </div>
-                  <p className="mt-3 text-center text-xs font-bold uppercase tracking-wide text-navy">
-                    {item.caption}
-                  </p>
-                </div>
-              ))}
             </div>
           </div>
         </main>
