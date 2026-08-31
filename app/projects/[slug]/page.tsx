@@ -284,7 +284,7 @@ export default async function ProjectPage(
                 <a
                   key={link.href}
                   href={link.href}
-                  className="inline-block rounded-full border-2 border-accent px-6 py-3 text-sm font-medium text-accent transition-colors hover:bg-accent hover:text-accent-ink"
+                  className="inline-block rounded-full border-2 border-beige px-6 py-3 text-sm font-medium text-beige transition-colors hover:bg-beige hover:text-ink"
                 >
                   {link.label}
                 </a>
