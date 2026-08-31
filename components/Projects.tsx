@@ -197,21 +197,6 @@ export default function Projects() {
             </div>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 lg:hidden">
-            <Link
-              href="/work"
-              className="-rotate-2 rounded-full bg-accent px-6 py-3 text-sm font-bold uppercase tracking-wide text-hero-ink transition-opacity hover:opacity-85"
-            >
-              View all roles
-            </Link>
-            <a
-              href={site.resumeUrl}
-              download
-              className="rotate-1 rounded-full border-2 border-ink px-6 py-3 text-sm font-bold uppercase tracking-wide text-ink transition-colors hover:bg-ink hover:text-hero-ink"
-            >
-              Download résumé
-            </a>
-          </div>
         </div>
 
         <div id="roles" className="mt-14 scroll-mt-24">
@@ -221,6 +206,22 @@ export default function Projects() {
               goTo(featuredProjects.findIndex((fp) => fp.slug === slug))
             }
           />
+        </div>
+
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-4 lg:hidden">
+          <Link
+            href="/work"
+            className="-rotate-2 rounded-full bg-accent px-6 py-3 text-sm font-bold uppercase tracking-wide text-hero-ink transition-opacity hover:opacity-85"
+          >
+            View all roles
+          </Link>
+          <a
+            href={site.resumeUrl}
+            download
+            className="rotate-1 rounded-full border-2 border-ink px-6 py-3 text-sm font-bold uppercase tracking-wide text-ink transition-colors hover:bg-ink hover:text-hero-ink"
+          >
+            Download résumé
+          </a>
         </div>
       </div>
     </section>
