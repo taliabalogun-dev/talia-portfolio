@@ -21,9 +21,9 @@ export default function WorkPage() {
           <h1 className="font-display text-balance text-6xl uppercase leading-[0.9] tracking-tight text-ink sm:text-8xl">
             My Work
           </h1>
-          <p className="mt-3 max-w-xl text-lg text-ink/85">
-            8 roles, 16 experiences, 1 creative storytelling throughline. Pick one to see the work.
-          </p>
+          <span className="font-hand mt-4 inline-block max-w-xl -rotate-1 rounded-sm bg-accent px-6 py-4 text-2xl text-hero-ink shadow-lg sm:text-3xl">
+            8 roles, 16 experiences, 1 creative storytelling throughline.
+          </span>
 
           <div className="mt-14 grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
             {projects.map((project) => {
