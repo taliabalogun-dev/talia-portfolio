@@ -345,9 +345,7 @@ export const projects: Project[] = [
       ],
     },
     featured: false,
-    image: "/images/campaigns/ucla-logo.png",
-    imageFit: "contain",
-    cardImage: "/images/campaigns/ucla-were-hiring-overhead.jpg",
+    image: "/images/campaigns/ucla-were-hiring-overhead.jpg",
     slides: [
       {
         title: "Featured Campaign",
@@ -383,7 +381,6 @@ export const projects: Project[] = [
         title: "Gallery",
         layout: "filmstrip",
         images: [
-          { src: "/images/campaigns/ucla-were-hiring-overhead.jpg" },
           { src: "/images/campaigns/ucla-group-selfie.jpg" },
           { src: "/images/campaigns/ucla-bts-office.jpg" },
           { src: "/images/campaigns/ucla-group-lawn.jpg" },

@@ -138,7 +138,7 @@ export default function SkillsExperience() {
                           {group.items.map((item) => (
                             <span
                               key={item}
-                              className="rounded-full border border-accent/30 bg-accent/15 px-3 py-1 text-xs font-semibold text-brown"
+                              className="rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs font-semibold text-ink"
                             >
                               {item}
                             </span>

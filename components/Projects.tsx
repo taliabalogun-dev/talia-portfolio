@@ -87,10 +87,10 @@ export default function Projects() {
                 My Work
               </h2>
             </div>
-            <p className="font-hand mt-3 -rotate-1 text-2xl text-accent sm:mt-6">
+            <p className="font-hand mt-3 -rotate-1 text-2xl text-accent sm:mt-6 lg:text-4xl">
               {site.heroStatement}
             </p>
-            <p className="mx-auto mt-2 max-w-sm text-lg text-ink/85 sm:mt-5 lg:mx-0">{site.tagline}</p>
+            <p className="mx-auto mt-2 max-w-sm text-lg text-ink/85 sm:mt-5 lg:mx-0 lg:max-w-md lg:text-2xl">{site.tagline}</p>
             <div className="mt-3 hidden flex-wrap items-center justify-center gap-4 sm:mt-6 lg:flex lg:justify-start">
               <Link
                 href="/work"

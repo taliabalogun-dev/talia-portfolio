@@ -3,7 +3,7 @@ import { site } from "@/content/site";
 export default function Contact() {
   return (
     <section id="contact" className="mx-auto max-w-5xl px-6 py-16">
-      <h2 className="text-3xl font-semibold tracking-tight">Contact</h2>
+      <h2 className="font-display text-4xl uppercase tracking-tight sm:text-5xl">Contact</h2>
       <p className="mt-4 max-w-xl text-lg text-muted">
         Open to creative strategy and marketing roles — reach out to talk campaigns, collaborations, or opportunities.
       </p>

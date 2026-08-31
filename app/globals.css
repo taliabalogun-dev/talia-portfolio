@@ -22,6 +22,11 @@
   --color-teal: #2c6672;
   --color-teal-deep: #16333a;
   --color-teal-darker: #0d2226;
+  /* About page's lighter counterpart to the teal palette. */
+  --color-sky: #cfe4ea;
+  --color-sky-deep: #a9cbd6;
+  --color-sky-darker: #86b0bf;
+  --color-navy: #0d2436;
   --font-sans: var(--font-jakarta);
   --font-display: var(--font-anton);
   --font-hand: var(--font-caveat);

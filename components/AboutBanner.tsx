@@ -11,7 +11,7 @@ export default function AboutBanner() {
             src="/images/about-collage-cutout-diamond.png"
             alt=""
             fill
-            className="object-cover lg:object-contain lg:object-bottom"
+            className="scale-[1.45] origin-[35%_25%] object-cover lg:scale-100 lg:origin-center lg:object-contain lg:object-bottom"
             sizes="(min-width: 1024px) 320px, 56px"
           />
         </div>
