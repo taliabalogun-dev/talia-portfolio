@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { projects, site } from "@/content/site";
@@ -45,6 +45,24 @@ export default function Projects() {
   }, [index]);
 
   const n = featuredProjects.length;
+
+  const touchStartX = useRef<number | null>(null);
+  const SWIPE_THRESHOLD = 40;
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const deltaX = e.changedTouches[0].clientX - touchStartX.current;
+    if (deltaX > SWIPE_THRESHOLD) {
+      setIndex((i) => ((i - 1) % n + n) % n);
+    } else if (deltaX < -SWIPE_THRESHOLD) {
+      setIndex((i) => (i + 1) % n);
+    }
+    touchStartX.current = null;
+  };
 
   return (
     <section id="projects" className="relative overflow-hidden bg-teal py-16 sm:py-20">
@@ -109,7 +127,11 @@ export default function Projects() {
           </div>
 
           <div className="relative w-full lg:flex-1">
-            <div className="relative mx-auto h-[560px] max-w-xl sm:h-[620px]">
+            <div
+              className="relative mx-auto h-[560px] max-w-xl touch-pan-y sm:h-[620px]"
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+            >
               {featuredProjects.map((project, i) => {
                 const offset = ((i - index) % n + n) % n;
                 let transform = "";
