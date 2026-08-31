@@ -39,9 +39,9 @@ export const bio = {
   heading: "More About Me",
   paragraphs: [
     "I'm a creative marketing and campaign strategist based in Los Angeles, working at the intersection of entertainment, fashion, and culture. My path started in Lagos - early production and PR roles at Golden Effects Pictures, Bap Production, and alongside fashion designer Lisa Folawiyo - before secondary school at Cheltenham Ladies' College in the UK and a B.A. in Film & Television at UCLA, with an Animation concentration and a minor in Entrepreneurship.",
-    "That mix shows up in how I work: I move comfortably between big-picture positioning and on-the-ground execution. At Kugali Media, the studio behind Disney's Iwájú, I supported pitch strategy and awards-season promotion across the slate. At FAST@UCLA I directed all creative media output - print, photography, video - for a student-run fashion brand with real paid partnerships, including Nike, Icona Club, and Demonia. Live Nation brought me on to direct the promotional film and live visuals for Mutha Festival in Brooklyn, and at UCLA Student Affairs I ran multi-platform campaign strategy for an audience of 2M+.",
-    "Alongside client work, I'm writing, directing, and producing CTRL 4C, an original animated short set in a Lagos salon, with a festival strategy targeting Sundance, GLAS Animation, and AFRIFF. I also founded Co Curate, an independent creative studio built around a managed curator roster, with an initial go-to-market focus on entertainment and animation-adjacent marketing.",
-    "Long term, I'm working toward moving from campaign-level creative direction into entertainment marketing strategy and development - staying close to the creative work while shaping the positioning and business decisions around it.",
+    "At FAST@UCLA I directed all creative media output, print, photography, and video, for a student-run fashion brand with real paid partnerships including Nike, Icona Club, and Demonia. At Refine LA I led editorial cover shoots and campaign work for a sustainability-focused fashion organization. Both are a direct homage to Jewel by Lisa. Working with Lisa Folawiyo through Lagos and London Fashion Week was the first space where I learned to adapt film production skills to fashion and brand creative media.",
+    "Alongside client work, I'm writing, directing, and producing CTRL 4C, an original animated short set in a Lagos salon, with a festival strategy targeting Sundance, GLAS Animation, and AFRIFF. I also founded Co Curate, an independent creative studio built around a managed curator roster, starting in entertainment and animation-adjacent marketing.",
+    "Long term, I'm moving from campaign-level creative direction into entertainment marketing strategy and development. Staying close to the work while shaping the positioning and business decisions around it.",
   ],
 };
 
@@ -159,6 +159,28 @@ export const projects: Project[] = [
             src: "/images/campaigns/kugali-emmys-carpet.jpg",
             caption: "The Kugali team on the NATAS carpet",
           },
+        ],
+        sections: [],
+      },
+      {
+        title: "Featured Campaign",
+        images: [
+          { src: "/images/campaigns/kugali-campaign-competitor-analysis.png" },
+          { src: "/images/campaigns/kugali-campaign-jollof-wars-pitch.png" },
+          { src: "/images/campaigns/kugali-campaign-razorman-pitch.png" },
+          { src: "/images/campaigns/kugali-campaign-emmys-social-strategy.png" },
+        ],
+        sections: [],
+      },
+      {
+        title: "Featured Creative Media",
+        subtitle: "Design Strategy",
+        layout: "slideshow",
+        images: [
+          { src: "/images/campaigns/kugali-design-strategy-shirts.png" },
+          { src: "/images/campaigns/kugali-design-strategy-card-mockup.png" },
+          { src: "/images/campaigns/kugali-design-strategy-title-art.jpg" },
+          { src: "/images/campaigns/kugali-design-strategy-guide.jpg" },
         ],
         sections: [],
       },
