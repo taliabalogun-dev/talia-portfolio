@@ -114,8 +114,8 @@ export type Project = {
   viewFullProject?: { href?: string };
   /** Extra outbound link buttons shown next to "View full project" (e.g. a portfolio site, a film link). */
   extraLinks?: { label: string; href: string }[];
-  /** Pull-quote(s) shown under the hero description on the subpage. */
-  quotes?: { text: string; attribution: string }[];
+  /** Pull-quote(s) shown under the hero description on the subpage. Name and role render in accent color, org in muted. */
+  quotes?: { text: string; name: string; role?: string; org: string }[];
 };
 
 export const projects: Project[] = [
@@ -146,7 +146,9 @@ export const projects: Project[] = [
     quotes: [
       {
         text: "A quick-to-learn, passionate worker, with a knack for keen observation and attention to detail, as well as creative thinking.",
-        attribution: "Matthew Corry, Chief Marketing Officer, Kugali Media",
+        name: "Matthew Corry",
+        role: "Chief Marketing Officer",
+        org: "Kugali Media",
       },
     ],
     slides: [
@@ -176,6 +178,7 @@ export const projects: Project[] = [
         images: [
           {
             src: "/images/campaigns/kugali-campaign-competitor-analysis.png",
+            caption: "Comparing international animation studios' GTM strategies",
           },
           {
             src: "/images/campaigns/kugali-campaign-jollof-wars-pitch.png",
@@ -224,8 +227,9 @@ export const projects: Project[] = [
     quotes: [
       {
         text: "She has an incredible eye for detail and a sharp instinct for storytelling, which allowed her to translate complex ideas into something visually compelling and emotionally resonant.",
-        attribution:
-          "Soukee Van Orden, Director of Strategic Partnerships and Operations, CURATED by Live Nation",
+        name: "Soukee Van Orden",
+        role: "Director of Strategic Partnerships and Operations",
+        org: "CURATED by Live Nation",
       },
     ],
     slides: [
@@ -401,7 +405,9 @@ export const projects: Project[] = [
     quotes: [
       {
         text: "Talia crafted media that powerfully reflected and amplified the UCLA student experience better than we could have done without her.",
-        attribution: "Ricky Horne Jr., Assistant Director of Communications, UCLA Student Affairs",
+        name: "Ricky Horne Jr.",
+        role: "Assistant Director of Communications",
+        org: "UCLA Student Affairs",
       },
     ],
     slides: [
@@ -470,7 +476,9 @@ export const projects: Project[] = [
     quotes: [
       {
         text: "It was Talia who proposed creating an animated video depicting the life cycle of a garment, completing it a full week ahead of schedule.",
-        attribution: "Yuuki Hayashi, Marketing Team, Refine LA",
+        name: "Yuuki Hayashi",
+        role: "Marketing Team",
+        org: "Refine LA",
       },
     ],
     slides: [
@@ -663,12 +671,15 @@ export const projects: Project[] = [
     quotes: [
       {
         text: "She tackled underrepresented cultural perspectives and subject matter in a way that was humorous, accessible, entertaining, and unifying for diverse audiences.",
-        attribution: "Lynn Okimura, Lecturer in Animation, UCLA Film, Television and Digital Media",
+        name: "Lynn Okimura",
+        role: "Lecturer in Animation",
+        org: "UCLA Film, Television and Digital Media",
       },
       {
         text: "I rate her as one of the top undergraduate students I have ever taught. She is an accomplished artist, filmmaker, and animator.",
-        attribution:
-          "Chuck Sheetz, Area Head, Animation, UCLA Film, Television and Digital Media (director, The Simpsons and Recess)",
+        name: "Chuck Sheetz",
+        role: "Area Head, Animation",
+        org: "UCLA Film, Television and Digital Media (director, The Simpsons and Recess)",
       },
     ],
   },

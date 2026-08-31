@@ -44,8 +44,7 @@ export default async function ProjectPage(
           <div className="mt-8 flex flex-col gap-8 sm:flex-row sm:items-start">
             <div className="flex-1">
               <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-                <span className="text-accent">{project.title.split(" - ")[0]}</span>
-                {project.title.includes(" - ") && ` - ${project.title.split(" - ").slice(1).join(" - ")}`}
+                {project.title}
               </h1>
               <div className="mt-3 flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
@@ -65,12 +64,13 @@ export default async function ProjectPage(
 
               {project.quotes?.map((quote) => (
                 <blockquote
-                  key={quote.attribution}
+                  key={quote.name}
                   className="mt-6 border-l-4 border-accent/60 pl-5"
                 >
                   <p className="text-lg italic text-ink">&ldquo;{quote.text}&rdquo;</p>
                   <footer className="mt-2 text-sm text-muted">
-                    — {quote.attribution}
+                    — <span className="text-accent">{quote.name}</span>
+                    {quote.role && <span className="text-accent">, {quote.role}</span>}, {quote.org}
                   </footer>
                 </blockquote>
               ))}

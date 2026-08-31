@@ -8,7 +8,8 @@ const allQuotes = [
   ...projects.flatMap((p) => p.quotes ?? []),
   {
     text: "I'd gladly hire her again if you don't beat me to it.",
-    attribution: "Ricky Horne Jr., UCLA Student Affairs",
+    name: "Ricky Horne Jr.",
+    org: "UCLA Student Affairs",
   },
 ];
 
@@ -35,9 +36,12 @@ export default function WorkPage() {
 
           <div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
             {allQuotes.map((quote) => (
-              <blockquote key={quote.attribution} className="border-l-4 border-accent/60 pl-5">
+              <blockquote key={quote.name} className="border-l-4 border-accent/60 pl-5">
                 <p className="text-base italic text-ink">&ldquo;{quote.text}&rdquo;</p>
-                <footer className="mt-2 text-xs text-ink/70">— {quote.attribution}</footer>
+                <footer className="mt-2 text-xs text-ink/70">
+                  — <span className="text-accent">{quote.name}</span>
+                  {quote.role && <span className="text-accent">, {quote.role}</span>}, {quote.org}
+                </footer>
               </blockquote>
             ))}
           </div>

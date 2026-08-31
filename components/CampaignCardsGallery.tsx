@@ -28,7 +28,7 @@ export default function CampaignCardsGallery({ images }: { images: SlideImage[] 
               />
             </button>
             {img.caption && (
-              <p className="mt-2 hidden text-xs leading-snug text-beige/70 sm:block">
+              <p className="mt-2 hidden text-xs font-bold leading-snug text-beige/70 sm:block">
                 {img.caption}
               </p>
             )}

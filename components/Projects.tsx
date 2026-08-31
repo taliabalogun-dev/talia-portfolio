@@ -42,7 +42,21 @@ export default function Projects() {
             <p className="font-hand mt-3 -rotate-1 text-2xl text-accent sm:mt-6 lg:text-4xl">
               {site.heroStatement}
             </p>
-            <p className="mx-auto mt-2 hidden max-w-sm text-lg text-ink/85 sm:mt-5 lg:mx-0 lg:block lg:max-w-md lg:text-2xl">{site.tagline}</p>
+            <p className="mx-auto mt-2 hidden max-w-sm text-lg text-ink/85 sm:mt-5 lg:mx-0 lg:block lg:max-w-md lg:text-xl">{site.tagline}</p>
+
+            <blockquote className="mt-6 hidden border-l-4 border-accent/60 pl-5 text-left lg:block">
+              <p className="font-hand text-2xl text-accent">
+                &ldquo;She has an incredible eye for detail and a sharp instinct for storytelling,
+                which allowed her to translate complex ideas into something visually compelling and
+                emotionally resonant.&rdquo;
+              </p>
+              <footer className="mt-2 text-sm text-ink/70">
+                — <span className="text-accent">Soukee Van Orden</span>,{" "}
+                <span className="text-accent">Director of Strategic Partnerships and Operations</span>,
+                CURATED by Live Nation
+              </footer>
+            </blockquote>
+
             <div className="mt-3 hidden flex-wrap items-center justify-center gap-4 sm:mt-6 lg:flex lg:justify-start">
               <Link
                 href="/work"
@@ -83,17 +97,6 @@ export default function Projects() {
         <div id="roles" className="mt-14 scroll-mt-24">
           <RoleNav activeSlug={activeSlug} onFeaturedClick={setActiveSlug} />
         </div>
-
-        <blockquote className="mt-10 hidden max-w-2xl border-l-4 border-accent/60 pl-5 lg:block">
-          <p className="font-hand text-2xl text-accent">
-            &ldquo;She has an incredible eye for detail and a sharp instinct for storytelling,
-            which allowed her to translate complex ideas into something visually compelling and
-            emotionally resonant.&rdquo;
-          </p>
-          <footer className="mt-2 text-sm text-ink/70">
-            — Soukee Van Orden, Director of Strategic Partnerships and Operations, CURATED by Live Nation
-          </footer>
-        </blockquote>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4 lg:hidden">
           <Link
