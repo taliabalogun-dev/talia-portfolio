@@ -5,9 +5,9 @@ export default function SkillsExperience() {
   return (
     <section className="overflow-x-hidden bg-beige pt-12 pb-16 sm:pt-16 sm:pb-20">
       <div className="mx-auto max-w-5xl px-6">
-        <span className="font-hand block text-xl text-brown lg:text-3xl">about —</span>
+        <span className="font-hand block text-xl text-brown lg:text-3xl">about -</span>
         <p className="mt-1 mb-8 max-w-[60ch] text-sm text-muted">
-          Working across industries has made me a creative worldbuilder — my goal is to bring that into entertainment creative strategy.
+          Working across industries has made me a creative worldbuilder - my goal is to bring that into entertainment creative strategy.
         </p>
         <div className="-rotate-[0.4deg]">
           <div className="relative rounded-md bg-teal-deep shadow-2xl">
@@ -41,7 +41,7 @@ export default function SkillsExperience() {
                     >
                       <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                         <span className="text-base font-bold text-ink">
-                          {item.role} <span className="font-semibold text-brown">— {item.company}</span>
+                          {item.role} <span className="font-semibold text-brown">- {item.company}</span>
                         </span>
                         <span className="whitespace-nowrap text-xs uppercase tracking-wide text-muted">
                           {item.period}
@@ -79,7 +79,7 @@ export default function SkillsExperience() {
                         <span className="flex items-baseline justify-between gap-x-4">
                           <span className="min-w-0 truncate text-sm text-ink/90">
                             {item.role}
-                            <span className="text-brown"> — {item.company}</span>
+                            <span className="text-brown"> - {item.company}</span>
                           </span>
                           <span className="shrink-0 whitespace-nowrap text-xs uppercase tracking-wide text-muted">
                             {item.period}

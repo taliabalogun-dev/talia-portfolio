@@ -22,7 +22,7 @@ const handFont = Caveat({
 });
 
 export const metadata: Metadata = {
-  title: `${site.name} — ${site.role}`,
+  title: `${site.name} - ${site.role}`,
   description: site.tagline,
 };
 

@@ -5,7 +5,7 @@ import ProjectCarousel from "@/components/ProjectCarousel";
 import { bio, projects, site, skills } from "@/content/site";
 
 export const metadata = {
-  title: `${bio.heading} — ${site.name}`,
+  title: `${bio.heading} - ${site.name}`,
   description: bio.paragraphs[0],
 };
 
