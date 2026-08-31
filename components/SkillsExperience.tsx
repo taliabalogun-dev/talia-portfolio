@@ -69,38 +69,46 @@ export default function SkillsExperience() {
                     everything rather than a list of the work. It stays in full
                     on My Work. Where a role has a page behind it the line is
                     the way in, so nothing is lost to the shortening. */}
-                <h4 className="font-display mt-8 border-t-2 border-dashed border-ink/15 pt-4 text-base uppercase tracking-wide text-ink/80">
-                  Additional Experience
-                </h4>
-                <ul className="mt-2 flex flex-col">
-                  {additionalExperience.map((item) => {
-                    const line = (
-                      <span className="flex flex-wrap items-baseline justify-between gap-x-4">
-                        <span className="text-sm text-ink/90">
-                          {item.role}
-                          <span className="text-accent"> — {item.company}</span>
+                <div className="mt-8 rounded-2xl border border-accent/15 bg-teal-darker p-5">
+                  <h4 className="font-display text-base uppercase tracking-wide text-ink/80">
+                    Additional Experience
+                  </h4>
+                  <ul className="mt-2 flex flex-col">
+                    {additionalExperience.map((item) => {
+                      const line = (
+                        <span className="flex items-baseline justify-between gap-x-4">
+                          <span className="truncate text-sm text-ink/90">
+                            {item.role}
+                            <span className="text-accent"> — {item.company}</span>
+                          </span>
+                          <span className="shrink-0 whitespace-nowrap text-xs uppercase tracking-wide text-muted">
+                            {item.period}
+                          </span>
                         </span>
-                        <span className="whitespace-nowrap text-xs uppercase tracking-wide text-muted">
-                          {item.period}
-                        </span>
-                      </span>
-                    );
-                    return (
-                      <li key={`${item.company}-${item.role}`} className="py-1.5">
-                        {item.slug ? (
-                          <Link
-                            href={`/projects/${item.slug}`}
-                            className="block transition-opacity hover:opacity-70"
-                          >
-                            {line}
-                          </Link>
-                        ) : (
-                          line
-                        )}
-                      </li>
-                    );
-                  })}
-                </ul>
+                      );
+                      return (
+                        <li key={`${item.company}-${item.role}`} className="py-1.5">
+                          {item.slug ? (
+                            <Link
+                              href={`/projects/${item.slug}`}
+                              className="block transition-opacity hover:opacity-70"
+                            >
+                              {line}
+                            </Link>
+                          ) : (
+                            line
+                          )}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                  <Link
+                    href="/work"
+                    className="mt-3 inline-block text-xs text-muted underline underline-offset-4 hover:text-accent"
+                  >
+                    See all roles →
+                  </Link>
+                </div>
               </div>
 
               <div>
