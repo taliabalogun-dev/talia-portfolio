@@ -24,26 +24,26 @@ export default function AboutBanner() {
         />
       </div>
 
-      <div className="relative z-10 mx-auto flex max-w-5xl items-start gap-6">
-        <div className="relative hidden shrink-0 lg:block">
+      <div className="relative z-10 mx-auto flex max-w-5xl items-start gap-6 lg:items-stretch">
+        <div className="relative hidden shrink-0 lg:block lg:w-80">
           <Image
             src="/images/about-header-v3.png"
             alt=""
-            width={320}
-            height={365}
-            className="h-auto w-80"
+            fill
+            className="object-cover object-top"
+            sizes="320px"
           />
         </div>
         <div className="pl-[42%] lg:pl-0">
-          <h2 className="font-display text-5xl uppercase tracking-tight text-ink sm:text-6xl">
+          <h2 className="font-display text-5xl uppercase tracking-tight text-ink sm:text-6xl lg:text-7xl">
             {site.name}
           </h2>
           <span className="mt-3 inline-block -rotate-2">
-            <span className="inline-block rounded-sm bg-accent px-4 py-2 text-xs font-bold uppercase tracking-wide text-hero-ink shadow-lg">
+            <span className="inline-block rounded-sm bg-accent px-4 py-2 text-xs font-bold uppercase tracking-wide text-hero-ink shadow-lg lg:px-5 lg:py-2.5 lg:text-sm">
               {site.role}
             </span>
           </span>
-          <div className="mt-4 flex max-w-3xl flex-col gap-2 text-base text-muted lg:text-sm">
+          <div className="mt-4 flex max-w-3xl flex-col gap-2 text-base text-muted lg:text-base">
             <p className="lg:hidden">{about.shortParagraph}</p>
             {about.paragraphs.map((paragraph, i) => (
               <p key={i} className="hidden lg:block">
@@ -53,7 +53,7 @@ export default function AboutBanner() {
           </div>
           <Link
             href="/about"
-            className="font-hand -rotate-1 mt-3 inline-block text-2xl text-accent hover:text-ink"
+            className="font-hand -rotate-1 mt-3 inline-block text-2xl text-accent hover:text-ink lg:text-3xl"
           >
             More about me →
           </Link>
