@@ -17,35 +17,36 @@ export default function AboutBanner() {
           src="/images/about-header-mobile.png"
           alt=""
           fill
-          className="object-cover"
+          className="object-cover object-left"
           sizes="55vw"
         />
       </div>
 
-      <div className="relative z-10 mx-auto flex max-w-5xl gap-6">
-        <div className="relative hidden shrink-0 overflow-visible lg:-mb-8 lg:block lg:h-96 lg:w-80">
+      <div className="relative z-10 mx-auto flex max-w-5xl items-start gap-6">
+        <div className="relative hidden shrink-0 lg:-mb-8 lg:block">
           <Image
             src="/images/about-header-desktop.png"
             alt=""
-            fill
-            className="object-contain object-bottom"
-            sizes="320px"
+            width={320}
+            height={367}
+            className="h-auto w-80"
           />
         </div>
-        <div>
-          <div className="pl-16 lg:pl-0">
-            <h2 className="font-display text-5xl uppercase tracking-tight text-ink sm:text-6xl">
-              {site.name}
-            </h2>
-            <span className="mt-3 inline-block -rotate-2">
-              <span className="inline-block rounded-sm bg-accent px-4 py-2 text-xs font-bold uppercase tracking-wide text-hero-ink shadow-lg">
-                {site.role}
-              </span>
+        <div className="pl-[42%] lg:pl-0">
+          <h2 className="font-display text-5xl uppercase tracking-tight text-ink sm:text-6xl">
+            {site.name}
+          </h2>
+          <span className="mt-3 inline-block -rotate-2">
+            <span className="inline-block rounded-sm bg-accent px-4 py-2 text-xs font-bold uppercase tracking-wide text-hero-ink shadow-lg">
+              {site.role}
             </span>
-          </div>
+          </span>
           <div className="mt-4 flex max-w-3xl flex-col gap-2 text-base text-muted lg:text-sm">
+            <p className="lg:hidden">{about.shortParagraph}</p>
             {about.paragraphs.map((paragraph, i) => (
-              <p key={i}>{paragraph}</p>
+              <p key={i} className="hidden lg:block">
+                {paragraph}
+              </p>
             ))}
           </div>
           <Link

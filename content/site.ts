@@ -20,6 +20,9 @@ export const about = {
   paragraphs: [
     "Creative marketing and campaign strategist with 3+ years directing creative decisions - from pitch strategy on Disney's Iwájú to brand partnerships with Nike, directing full creative teams across print, photography, and video. Based in Los Angeles, moving toward entertainment marketing strategy and development.",
   ],
+  /** Trimmed version shown on the phone-view home banner, where space is tight. */
+  shortParagraph:
+    "Creative marketing and campaign strategist with 3+ years directing creative decisions - from Disney's Iwájú to Nike. Based in LA, moving toward entertainment marketing strategy.",
 };
 
 export const education: { school: string; detail: string; location: string }[] = [
@@ -312,7 +315,7 @@ export const projects: Project[] = [
         ],
         sections: [
           {
-            heading: "My Role - Editorial Coordinator",
+            heading: "My Role - Director of Creative Media",
             style: "list",
             items: [
               "Facilitated team creative coordination across the collab's three deliverables.",
@@ -351,7 +354,7 @@ export const projects: Project[] = [
       {
         /* The finished work: editorial frames and the magazine they ran in. */
         title: "Featured Creative Media",
-        subtitle: "Editorial Executive Director - Oct 2024 - June 2026",
+        subtitle: "Director of Creative Media - Oct 2024 - June 2026",
         layout: "filmstrip",
         images: [
           // The six that lead it.
@@ -739,7 +742,7 @@ export const experience: ExperienceItem[] = [
     slug: "fast-ucla-fashion-show",
   },
   {
-    role: "Creative Director (Contract)",
+    role: "Contracted Creative Marketing Director",
     company: "Live Nation",
     period: "Mar 2025 - June 2025",
     summary:
@@ -747,7 +750,7 @@ export const experience: ExperienceItem[] = [
     slug: "live-nation-mutha",
   },
   {
-    role: "Marketing & Strategy Intern",
+    role: "Marketing & Story Intern",
     company: "Kugali Media",
     period: "Sept 2024 - June 2025",
     summary:
@@ -755,7 +758,7 @@ export const experience: ExperienceItem[] = [
     slug: "kugali-iwaju",
   },
   {
-    role: "Media Marketing Coordinator",
+    role: "Marketing & Media Coordinator",
     company: "UCLA Student Affairs",
     period: "June 2023 - Sept 2025",
     summary:
@@ -766,7 +769,7 @@ export const experience: ExperienceItem[] = [
 
 export const additionalExperience: ExperienceItem[] = [
   {
-    role: "Marketing Coordinator, Creative & Strategy",
+    role: "Marketing Coordinator",
     company: "Refine LA",
     period: "Sept 2023 - June 2025",
     summary:
@@ -804,7 +807,7 @@ export const additionalExperience: ExperienceItem[] = [
   },
   {
     role: "Writers Room & Story Development Intern",
-    company: "Bap Productions",
+    company: "BAP Productions",
     period: "Jun - Sept 2023",
     summary:
       "Reviewed scripts and treatments supporting story development for Netflix-commissioned and in-house film/TV projects, including sequel development for Bling Lagosians 2.",
