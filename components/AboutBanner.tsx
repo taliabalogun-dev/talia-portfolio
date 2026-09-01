@@ -9,8 +9,10 @@ export default function AboutBanner() {
       <div
         className="pointer-events-none absolute inset-y-0 left-0 w-[55%] opacity-40 lg:hidden"
         style={{
-          WebkitMaskImage: "linear-gradient(to right, #000 5%, transparent 60%)",
-          maskImage: "linear-gradient(to right, #000 5%, transparent 60%)",
+          WebkitMaskImage:
+            "linear-gradient(to right, #000 5%, #000 50%, rgba(0,0,0,0.5) 75%, transparent 95%)",
+          maskImage:
+            "linear-gradient(to right, #000 5%, #000 50%, rgba(0,0,0,0.5) 75%, transparent 95%)",
         }}
       >
         <Image
