@@ -16,18 +16,18 @@ export default function AboutBanner() {
         }}
       >
         <Image
-          src="/images/about-header-v2.png"
+          src="/images/about-header-v3.png"
           alt=""
           fill
-          className="object-cover object-left"
+          className="object-cover"
           sizes="55vw"
         />
       </div>
 
       <div className="relative z-10 mx-auto flex max-w-5xl items-start gap-6">
-        <div className="relative hidden shrink-0 overflow-visible lg:-mb-8 lg:block">
+        <div className="relative hidden shrink-0 lg:block">
           <Image
-            src="/images/about-header-v2.png"
+            src="/images/about-header-v3.png"
             alt=""
             width={320}
             height={365}

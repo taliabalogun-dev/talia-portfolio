@@ -182,8 +182,14 @@ export const projects: Project[] = [
         layout: "cards",
         images: [
           {
-            src: "/images/campaigns/kugali-campaign-competitor-analysis.png",
-            title: "Competing IP / International IP Research",
+            src: "/images/campaigns/kugali-campaign-emmys-strategy-v2.png",
+            title: "Emmys Social Strategy",
+            caption:
+              "IP & festival releases research & strategy, as well as live day-of social media campaign - active posting",
+          },
+          {
+            src: "/images/campaigns/kugali-campaign-competing-ip-strategy.png",
+            title: "Competing IP Strategy",
             caption: "Comparing international animation studios' GTM strategies",
           },
           {
@@ -195,12 +201,6 @@ export const projects: Project[] = [
             src: "/images/campaigns/kugali-campaign-razorman-pitch.png",
             title: "Pitch Strategy for Razorman",
             caption: "Producer-facing pitch research & slides",
-          },
-          {
-            src: "/images/campaigns/kugali-campaign-emmys-social-strategy.png",
-            title: "Emmys Social Media Strategy",
-            caption:
-              "IP & festival releases research & strategy, as well as live day-of social media campaign - active posting",
           },
         ],
         sections: [],
