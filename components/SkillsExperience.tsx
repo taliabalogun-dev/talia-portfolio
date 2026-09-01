@@ -3,10 +3,10 @@ import { additionalExperience, experience, site, skills } from "@/content/site";
 
 export default function SkillsExperience() {
   return (
-    <section className="overflow-x-hidden bg-beige pt-12 pb-16 sm:pt-16 sm:pb-20">
+    <section className="overflow-x-hidden bg-beige pt-6 pb-16 sm:pt-8 sm:pb-20 lg:pt-6">
       <div className="mx-auto max-w-5xl px-6">
-        <span className="font-hand block text-xl text-brown lg:text-3xl">about -</span>
-        <p className="mt-1 mb-8 max-w-[60ch] text-sm text-muted">
+        <span className="font-hand block text-xl text-brown lg:text-4xl">about -</span>
+        <p className="mt-1 mb-8 max-w-[60ch] text-sm text-muted lg:text-lg">
           Working across industries has made me a creative worldbuilder - my goal is to bring that into entertainment creative strategy.
         </p>
         <div className="-rotate-[0.4deg]">
