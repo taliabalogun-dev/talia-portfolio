@@ -10,9 +10,9 @@ export default function CampaignCardsGallery({ images }: { images: SlideImage[] 
 
   return (
     <>
-      <div className="grid grid-cols-2 gap-4 sm:flex sm:gap-3 sm:overflow-x-auto sm:pb-2">
+      <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-6">
         {images.map((img, i) => (
-          <div key={img.src} className="flex flex-col sm:w-40 sm:flex-none">
+          <div key={img.src} className="flex flex-col">
             <button
               type="button"
               onClick={() => setOpenIndex(i)}
@@ -24,11 +24,16 @@ export default function CampaignCardsGallery({ images }: { images: SlideImage[] 
                 alt={img.caption ?? ""}
                 fill
                 className="object-contain p-1.5"
-                sizes="(min-width: 640px) 160px, 45vw"
+                sizes="(min-width: 640px) 23vw, 45vw"
               />
             </button>
+            {img.title && (
+              <p className="mt-2 hidden text-sm font-bold leading-snug text-beige sm:block">
+                {img.title}
+              </p>
+            )}
             {img.caption && (
-              <p className="mt-2 hidden text-xs font-bold leading-snug text-beige/70 sm:block">
+              <p className="hidden text-xs leading-snug text-beige/70 sm:block">
                 {img.caption}
               </p>
             )}

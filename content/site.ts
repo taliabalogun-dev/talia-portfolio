@@ -54,6 +54,8 @@ export type Campaign = {
 export type SlideImage = {
   src: string;
   caption?: string;
+  /** Bold title shown above the caption. Only used by "cards" layout slides. */
+  title?: string;
   /** Defaults to "portrait" (phone-screenshot shaped). Use "video" for landscape stills. */
   aspect?: "portrait" | "video";
   /** Defaults to "image". Set to "video" to render an HTML5 <video> - src should point at an mp4. */
@@ -154,7 +156,7 @@ export const projects: Project[] = [
     slides: [
       {
         title: "The Emmys",
-        subtitle: "Daytime Emmy Awards - Iwájú, Disney × Kugali",
+        subtitle: "Daytime Emmy Awards - Iwájú, Disney × Kugali - IP Strategy & Field Marketing",
         layout: "filmstrip",
         images: [
           {
@@ -178,18 +180,22 @@ export const projects: Project[] = [
         images: [
           {
             src: "/images/campaigns/kugali-campaign-competitor-analysis.png",
+            title: "Competing IP / International IP Research",
             caption: "Comparing international animation studios' GTM strategies",
           },
           {
             src: "/images/campaigns/kugali-campaign-jollof-wars-pitch.png",
+            title: "IP / Pitch Strategy for Jollof Wars",
             caption: "Internal marketing strategy and positioning slides",
           },
           {
             src: "/images/campaigns/kugali-campaign-razorman-pitch.png",
+            title: "Pitch Strategy for Razorman",
             caption: "Producer-facing pitch research & slides",
           },
           {
             src: "/images/campaigns/kugali-campaign-emmys-social-strategy.png",
+            title: "Emmys Social Media Strategy",
             caption:
               "IP & festival releases research & strategy, as well as live day-of social media campaign - active posting",
           },

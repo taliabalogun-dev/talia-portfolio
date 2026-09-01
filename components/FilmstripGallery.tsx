@@ -35,7 +35,7 @@ export default function FilmstripGallery({ images }: { images: SlideImage[] }) {
             type="button"
             onClick={() => setOpenIndex(i)}
             aria-label={img.caption ? `Enlarge: ${img.caption}` : "Enlarge image"}
-            className="relative h-64 w-40 flex-none cursor-zoom-in sm:h-80 sm:w-56"
+            className="relative h-64 flex-1 shrink-0 basis-40 cursor-zoom-in sm:h-80 sm:basis-56"
           >
             {img.kind === "video" ? (
               <video

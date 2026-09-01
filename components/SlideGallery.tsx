@@ -33,7 +33,7 @@ export default function SlideGallery({ images }: { images: SlideImage[] }) {
           <EnlargeableImage
             src={current.src}
             alt={current.caption ?? ""}
-            className="object-contain"
+            className="object-cover"
             sizes="(min-width: 640px) 640px, 100vw"
           />
         )}

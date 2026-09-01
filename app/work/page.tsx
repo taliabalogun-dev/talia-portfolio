@@ -30,21 +30,9 @@ export default function WorkPage() {
           <h1 className="font-display text-balance text-6xl uppercase leading-[0.9] tracking-tight text-ink sm:text-8xl">
             My Work
           </h1>
-          <span className="font-hand mt-4 inline-block max-w-xl -rotate-1 rounded-sm bg-accent px-6 py-4 text-2xl text-hero-ink shadow-lg sm:text-3xl">
+          <span className="font-hand mt-4 inline-block max-w-full -rotate-1 whitespace-nowrap rounded-sm bg-accent px-4 py-2.5 text-sm text-hero-ink shadow-lg sm:px-5 sm:py-3 sm:text-lg">
             8 roles, 16 experiences, 1 creative storytelling throughline.
           </span>
-
-          <div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-            {allQuotes.map((quote) => (
-              <blockquote key={quote.name} className="border-l-4 border-accent/60 pl-5">
-                <p className="text-base italic text-ink">&ldquo;{quote.text}&rdquo;</p>
-                <footer className="mt-2 text-xs text-ink/70">
-                  — <span className="text-accent">{quote.name}</span>
-                  {quote.role && <span className="text-accent">, {quote.role}</span>}, {quote.org}
-                </footer>
-              </blockquote>
-            ))}
-          </div>
 
           <div className="mt-14 grid grid-cols-2 gap-x-8 gap-y-14 lg:grid-cols-4">
             {projects.map((project) => {
@@ -89,6 +77,18 @@ export default function WorkPage() {
               </Link>
               );
             })}
+          </div>
+
+          <div className="mt-14 grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
+            {allQuotes.map((quote) => (
+              <blockquote key={quote.name} className="border-l-4 border-accent/60 pl-4">
+                <p className="text-sm italic text-ink">&ldquo;{quote.text}&rdquo;</p>
+                <footer className="mt-1.5 text-xs text-ink/70">
+                  — <span className="text-accent">{quote.name}</span>
+                  {quote.role && <span className="text-accent">, {quote.role}</span>}, {quote.org}
+                </footer>
+              </blockquote>
+            ))}
           </div>
         </div>
       </section>
