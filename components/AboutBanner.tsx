@@ -33,8 +33,8 @@ export default function AboutBanner() {
           />
         </div>
         <div>
-          <div className="ml-[42%] lg:ml-0">
-            <h2 className="font-display text-4xl uppercase tracking-tight text-ink sm:text-6xl">
+          <div className="pl-16 lg:pl-0">
+            <h2 className="font-display text-5xl uppercase tracking-tight text-ink sm:text-6xl">
               {site.name}
             </h2>
             <span className="mt-3 inline-block -rotate-2">
