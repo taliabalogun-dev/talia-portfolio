@@ -24,14 +24,14 @@ export default function AboutBanner() {
         />
       </div>
 
-      <div className="relative z-10 mx-auto flex max-w-5xl items-start gap-6 lg:items-stretch">
-        <div className="relative hidden shrink-0 lg:block lg:w-80">
+      <div className="relative z-10 mx-auto flex max-w-5xl items-start gap-6">
+        <div className="relative hidden shrink-0 lg:-mb-8 lg:block">
           <Image
             src="/images/about-header-v3.png"
             alt=""
-            fill
-            className="object-cover object-top"
-            sizes="320px"
+            width={320}
+            height={365}
+            className="h-auto w-80"
           />
         </div>
         <div className="pl-[42%] lg:pl-0">
