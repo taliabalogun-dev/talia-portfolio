@@ -4,15 +4,32 @@ import { about, site } from "@/content/site";
 
 export default function AboutBanner() {
   return (
-    <section id="about" className="border-b border-ink/10 bg-beige px-6 py-8">
-      <div className="mx-auto flex max-w-5xl gap-6">
-        <div className="relative h-14 w-14 shrink-0 self-start overflow-hidden rounded-full border-2 border-accent lg:-mb-8 lg:h-auto lg:w-80 lg:self-stretch lg:overflow-visible lg:rounded-none lg:border-0">
+    <section id="about" className="relative overflow-hidden border-b border-ink/10 bg-beige px-6 py-8">
+      {/* PREVIEW ONLY — mobile-only left-edge fade background. */}
+      <div
+        className="pointer-events-none absolute inset-y-0 left-0 w-[55%] opacity-40 lg:hidden"
+        style={{
+          WebkitMaskImage: "linear-gradient(to right, #000 5%, transparent 60%)",
+          maskImage: "linear-gradient(to right, #000 5%, transparent 60%)",
+        }}
+      >
+        <Image
+          src="/images/about-banner-mobile-fade-preview.png"
+          alt=""
+          fill
+          className="object-cover"
+          sizes="55vw"
+        />
+      </div>
+
+      <div className="relative z-10 mx-auto flex max-w-5xl gap-6">
+        <div className="relative hidden shrink-0 self-stretch overflow-visible lg:-mb-8 lg:block lg:h-auto lg:w-80">
           <Image
             src="/images/about-collage-cutout-diamond.png"
             alt=""
             fill
-            className="scale-[1.45] origin-[35%_25%] object-cover lg:scale-100 lg:origin-center lg:object-contain lg:object-bottom"
-            sizes="(min-width: 1024px) 320px, 56px"
+            className="object-contain object-bottom"
+            sizes="320px"
           />
         </div>
         <div>
