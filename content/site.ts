@@ -73,6 +73,8 @@ export type SlideImage = {
   autoplay?: boolean;
   /** Defaults to "center". Use "top" to keep the top of the image visible when object-cover crops it. */
   position?: "center" | "top";
+  /** Role tags shown only in the enlarged/lightbox view, not inline in the grid. */
+  roles?: string[];
 };
 
 export type SlideSection = {
@@ -89,6 +91,8 @@ export type Slide = {
   sections: SlideSection[];
   /** Defaults to "grid". "slideshow" renders a single-image carousel with Prev/Next. "filmstrip" shows every image at once, edge-to-edge, in a horizontally scrollable strip. "cards" shows small uncropped thumbnails with a caption underneath (desktop only) - wraps to a 2-column grid on mobile, scrolls horizontally on desktop. */
   layout?: "grid" | "slideshow" | "filmstrip" | "cards";
+  /** Pull-quote shown right after this slide's gallery, instead of at the top of the page. */
+  quote?: { text: string; name: string; role?: string; org: string };
 };
 
 export type Project = {
@@ -131,13 +135,13 @@ export const projects: Project[] = [
   {
     slug: "kugali-iwaju",
     navLabel: "Kugali Media",
-    title: "Marketing & Story Intern - Kugali Media",
+    title: "Marketing & IP Intern - Kugali Media",
     description:
       "Reviewed storyboards/scripts and comics against production deadlines, tracking status and flagging gaps across the release pipeline. Coordinated asset requests, approvals, and publishing timelines with internal teams and external partners via HubSpot.",
     extendedDescription:
       "Built marketing materials and pitch presentations, researching audiences, competitors, and entertainment markets to inform campaign strategy. Supported marketing initiatives and event coordination around the Emmys and NAACP Image Awards, and tracked campaign performance for team and partner reporting.",
     tags: ["Pitch Strategy", "Audience Research", "Brand Positioning"],
-    role: "Marketing & Story Intern",
+    role: "Marketing & IP Intern",
     period: "June 2024 - June 2025",
     location: "UK / Hybrid",
     focus: {
@@ -219,7 +223,13 @@ export const projects: Project[] = [
           { src: "/images/campaigns/kugali-design-strategy-card-mockup.png" },
           { src: "/images/campaigns/kugali-design-strategy-title-art.jpg" },
         ],
-        sections: [],
+        sections: [
+          {
+            heading: "My Role",
+            style: "pills",
+            items: ["Art Production Strategy", "Guidelines & Graphic Design"],
+          },
+        ],
       },
     ],
   },
@@ -319,11 +329,9 @@ export const projects: Project[] = [
         ],
         sections: [
           {
-            heading: "My Role - Director of Creative Media",
+            heading: "My Role",
             style: "list",
-            items: [
-              "Facilitated team creative coordination across the collab's three deliverables.",
-            ],
+            items: ["Facilitated coordination between creative teams."],
           },
           {
             heading: "Deliverables",
@@ -375,7 +383,13 @@ export const projects: Project[] = [
           { src: "/images/campaigns/fast-editorial-garden-01.jpg" },
           { src: "/images/campaigns/fast-magazine-cover.jpg" },
         ],
-        sections: [],
+        sections: [
+          {
+            heading: "My Role",
+            style: "pills",
+            items: ["Creative Director", "Media Coordinator", "Event Coordinator"],
+          },
+        ],
       },
       {
         /* The room rather than the result: the shoots being made and the
@@ -452,7 +466,13 @@ export const projects: Project[] = [
           { src: "/images/campaigns/ucla-dracula-poster.jpg" },
           { src: "/images/campaigns/ucla-group-hangout.jpg" },
         ],
-        sections: [],
+        sections: [
+          {
+            heading: "My Role",
+            style: "pills",
+            items: ["Event Coordinator", "Media Coordinator", "Design & Art Direction"],
+          },
+        ],
       },
       {
         title: "Gallery",
@@ -519,7 +539,13 @@ export const projects: Project[] = [
           { src: "/images/campaigns/refine-night-walk.jpg" },
           { src: "/images/campaigns/refine-night-lights.jpg" },
         ],
-        sections: [],
+        sections: [
+          {
+            heading: "My Role",
+            style: "pills",
+            items: ["Event Coordinator", "Media Coordinator", "Talent Coordinator"],
+          },
+        ],
       },
       {
         title: "Zine Launch - Event Coverage",
@@ -528,7 +554,13 @@ export const projects: Project[] = [
           { src: "/images/campaigns/refine-picnic-group.jpg" },
           { src: "/images/campaigns/refine-indoor-group.jpg" },
         ],
-        sections: [],
+        sections: [
+          {
+            heading: "My Role",
+            style: "pills",
+            items: ["Event Coordinator", "Media Coordinator", "Social Media Strategy"],
+          },
+        ],
       },
       {
         title: "Featured Creative Media",
@@ -541,6 +573,7 @@ export const projects: Project[] = [
             poster: "/images/campaigns/refine-promo-film-poster.jpg",
             caption:
               "‘What does LA mean to you’ zine promotion video - Directed and shot by me - Feb 2025",
+            roles: ["Producer", "Partner Comms", "Director", "Director of Photography"],
           },
           {
             src: "/videos/refine-decomposition-promo.mp4",
@@ -549,11 +582,13 @@ export const projects: Project[] = [
             poster: "/images/campaigns/refine-decomposition-promo-poster.jpg",
             caption:
               "‘Decomposition’ fashion show abstract promotion video - Edited & animated by me - March 2025",
+            roles: ["Producer", "Partner Comms", "Animator", "Director"],
           },
           {
             src: "/images/campaigns/refine-zine-cover.jpg",
             caption:
               "‘Lost and found’ fashion show event graphic & media coverage - Designed and shot by me - March 2024",
+            roles: ["Designer", "Social Strategy"],
           },
         ],
         sections: [],
@@ -582,11 +617,11 @@ export const projects: Project[] = [
         images: [
           {
             src: "/images/campaigns/bap-house-of-gaa-poster.jpg",
-            caption: "'House of Ga'a' (Netflix) - Production Assistant - 2023",
+            caption: "Production Coordinator, Talent Coordinator",
           },
           {
             src: "/images/campaigns/bap-bling-lagosians-2-poster.jpg",
-            caption: "'The Bling Lagosians 2' - Contributing Writer - 2027",
+            caption: "Writers Room Intern, Pitch & IP Strategy",
           },
         ],
         sections: [],
@@ -674,6 +709,12 @@ export const projects: Project[] = [
           { src: "/images/campaigns/ctrl4c-campaign-marketing-strategy.jpg" },
         ],
         sections: [],
+        quote: {
+          text: "She tackled underrepresented cultural perspectives and subject matter in a way that was humorous, accessible, entertaining, and unifying for diverse audiences.",
+          name: "Lynn Okimura",
+          role: "Lecturer in Animation",
+          org: "UCLA Film, Television and Digital Media",
+        },
       },
     ],
     viewFullProject: { href: "https://animationbytalia.univer.se/home-lwdxt/home-lwdxt-xbjny-vjeiz" },
@@ -682,12 +723,6 @@ export const projects: Project[] = [
       { label: "Watch Film", href: "https://vimeo.com/1209134453" },
     ],
     quotes: [
-      {
-        text: "She tackled underrepresented cultural perspectives and subject matter in a way that was humorous, accessible, entertaining, and unifying for diverse audiences.",
-        name: "Lynn Okimura",
-        role: "Lecturer in Animation",
-        org: "UCLA Film, Television and Digital Media",
-      },
       {
         text: "I rate her as one of the top undergraduate students I have ever taught. She is an accomplished artist, filmmaker, and animator.",
         name: "Chuck Sheetz",
@@ -754,7 +789,7 @@ export const experience: ExperienceItem[] = [
     slug: "live-nation-mutha",
   },
   {
-    role: "Marketing & Story Intern",
+    role: "Marketing & IP Intern",
     company: "Kugali Media",
     period: "Sept 2024 - June 2025",
     summary:

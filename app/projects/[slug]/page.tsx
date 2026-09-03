@@ -5,6 +5,7 @@ import SlideGallery from "@/components/SlideGallery";
 import FilmstripGallery from "@/components/FilmstripGallery";
 import CampaignCardsGallery from "@/components/CampaignCardsGallery";
 import EnlargeableImage from "@/components/EnlargeableImage";
+import EnlargeableVideo from "@/components/EnlargeableVideo";
 import RoleNav from "@/components/RoleNav";
 import { projects } from "@/content/site";
 
@@ -166,15 +167,11 @@ export default async function ProjectPage(
                               className={`relative w-full ${img.aspect === "video" ? "aspect-video" : "aspect-[9/16]"}`}
                             >
                               {img.kind === "video" ? (
-                                <video
+                                <EnlargeableVideo
                                   src={img.src}
                                   poster={img.poster}
-                                  controls
-                                  playsInline
-                                  autoPlay={img.autoplay}
-                                  muted={img.autoplay}
-                                  loop={img.autoplay}
-                                  preload={img.autoplay ? "auto" : "metadata"}
+                                  autoplay={img.autoplay}
+                                  roles={img.roles}
                                   className="absolute inset-0 h-full w-full object-cover"
                                 />
                               ) : (
@@ -182,6 +179,7 @@ export default async function ProjectPage(
                                   src={img.src}
                                   className={img.position === "top" ? "object-cover object-top" : "object-cover"}
                                   sizes="(min-width: 640px) 340px, 45vw"
+                                  roles={img.roles}
                                 />
                               )}
                             </div>
@@ -235,6 +233,20 @@ export default async function ProjectPage(
                     }
                     return <div className="mt-6">{gallery || sectionsBlock}</div>;
                   })()}
+                  {slide.quote && (
+                    <blockquote className="mt-6 border-l-4 border-accent/60 pl-5">
+                      <p className="text-lg italic text-beige">
+                        &ldquo;{slide.quote.text}&rdquo;
+                      </p>
+                      <footer className="mt-2 text-sm text-beige/70">
+                        — <span className="text-accent">{slide.quote.name}</span>
+                        {slide.quote.role && (
+                          <span className="text-accent">, {slide.quote.role}</span>
+                        )}
+                        , {slide.quote.org}
+                      </footer>
+                    </blockquote>
+                  )}
                 </section>
               ))}
             </div>

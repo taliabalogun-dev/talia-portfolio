@@ -1,35 +1,46 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 
-export default function EnlargeableImage({
+export default function EnlargeableVideo({
   src,
-  alt = "",
+  poster,
+  autoplay,
   className = "",
-  sizes,
-  priority,
   roles,
 }: {
   src: string;
-  alt?: string;
+  poster?: string;
+  autoplay?: boolean;
   className?: string;
-  sizes?: string;
-  priority?: boolean;
-  /** Role tags shown only in the enlarged lightbox, below the image. */
+  /** Role tags shown only in the enlarged lightbox, below the video. */
   roles?: string[];
 }) {
   const [open, setOpen] = useState(false);
 
   return (
     <>
-      <Image src={src} alt={alt} fill className={className} sizes={sizes} priority={priority} />
-      <button
-        type="button"
-        onClick={() => setOpen(true)}
-        aria-label={alt ? `Enlarge: ${alt}` : "Enlarge image"}
-        className="absolute inset-0 cursor-zoom-in"
+      <video
+        src={src}
+        poster={poster}
+        controls
+        playsInline
+        autoPlay={autoplay}
+        muted={autoplay}
+        loop={autoplay}
+        preload={autoplay ? "auto" : "metadata"}
+        className={className}
       />
+      {roles && roles.length > 0 && (
+        <button
+          type="button"
+          onClick={() => setOpen(true)}
+          aria-label="View role details"
+          className="absolute right-2 top-2 z-10 rounded-full bg-black/60 px-3 py-1 text-xs font-semibold text-white hover:bg-black/80"
+        >
+          Expand ⤢
+        </button>
+      )}
 
       {open && (
         <div
@@ -44,13 +55,16 @@ export default function EnlargeableImage({
           >
             ×
           </button>
-          <div
-            className="relative h-[75vh] w-full max-w-4xl"
+          <video
+            src={src}
+            poster={poster}
+            controls
+            autoPlay
+            playsInline
+            className="max-h-[75vh] w-auto max-w-full"
             onClick={(e) => e.stopPropagation()}
-          >
-            <Image src={src} alt={alt} fill className="object-contain" sizes="90vw" />
-          </div>
-          {roles && roles.length > 0 && (
+          />
+          {roles && (
             <div
               className="flex flex-wrap justify-center gap-2"
               onClick={(e) => e.stopPropagation()}

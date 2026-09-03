@@ -6,6 +6,7 @@ import { projects } from "@/content/site";
 
 const allQuotes = [
   ...projects.flatMap((p) => p.quotes ?? []),
+  ...projects.flatMap((p) => p.slides?.flatMap((s) => (s.quote ? [s.quote] : [])) ?? []),
   {
     text: "I'd gladly hire her again if you don't beat me to it.",
     name: "Ricky Horne Jr.",
