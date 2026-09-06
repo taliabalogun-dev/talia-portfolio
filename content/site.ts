@@ -1,9 +1,9 @@
 export const site = {
   name: "Talia Balogun",
-  role: "Creative Marketing & Campaign Strategy",
-  heroStatement: "Creative products need creative strategy.",
+  role: "Media Production & Marketing Coordination",
+  heroStatement: "Great stories need great production.",
   tagline:
-    "Campaign strategy & outputs for entertainment, fashion and institutional brands.",
+    "Production coordination and marketing support for entertainment, fashion and institutional brands.",
   email: "talia.balogun@gmail.com",
   location: "Los Angeles, CA",
   social: {
@@ -18,11 +18,11 @@ export const site = {
 export const about = {
   heading: "About",
   paragraphs: [
-    "Creative marketing and campaign strategist with 3+ years directing creative decisions - from pitch strategy on Disney's Iwájú to brand partnerships with Nike, directing full creative teams across print, photography, and video. Based in Los Angeles, moving toward entertainment marketing strategy and development.",
+    "Media production and marketing coordinator with 3+ years supporting creative workflows and campaigns - from pitch materials on Disney's Iwájú to brand partnerships with Nike, coordinating creative teams across print, photography, and video. Based in Los Angeles, moving toward entertainment production and marketing strategy.",
   ],
   /** Trimmed version shown on the phone-view home banner, where space is tight. */
   shortParagraph:
-    "Creative marketing and campaign strategist with 3+ years directing creative decisions - from Disney's Iwájú to Nike. Based in LA, moving toward entertainment marketing strategy.",
+    "Media production and marketing coordinator with 3+ years supporting creative workflows and campaigns - from Disney's Iwájú to Nike. Based in LA, moving toward entertainment production and marketing.",
 };
 
 export const education: { school: string; detail: string; location: string }[] = [
@@ -139,7 +139,7 @@ export const projects: Project[] = [
     description:
       "Reviewed storyboards/scripts and comics against production deadlines, tracking status and flagging gaps across the release pipeline. Coordinated asset requests, approvals, and publishing timelines with internal teams and external partners via HubSpot.",
     extendedDescription:
-      "Built marketing materials and pitch presentations, researching audiences, competitors, and entertainment markets to inform campaign strategy. Supported marketing initiatives and event coordination around the Emmys and NAACP Image Awards, and tracked campaign performance for team and partner reporting.",
+      "Built pitch materials and research decks, researching audiences, competitors, and entertainment markets to support development and positioning. Supported marketing initiatives, event coordination, and production logistics around the Emmys and NAACP Image Awards, and helped track reporting for team and partner updates.",
     tags: ["Pitch Strategy", "Audience Research", "Brand Positioning"],
     role: "Marketing & IP Intern",
     period: "June 2024 - June 2025",
@@ -296,7 +296,7 @@ export const projects: Project[] = [
     title: "Director of Creative Media - FAST@UCLA",
     cardTitle: "Nike x FAST Campaigns",
     description:
-      "Acted as project manager across editorial, digital, and live-event workstreams, maintaining campaign timelines and deadlines across concurrent initiatives. Coordinated with photographers, designers, writers, and media contributors to track deliverables and keep teams aligned on approvals.",
+      "Acted as project coordinator across editorial, digital, and live-event workstreams, maintaining production timelines and deadlines across concurrent initiatives. Coordinated with photographers, designers, writers, and media contributors to track deliverables and keep teams aligned on approvals.",
     extendedDescription:
       "Coordinated brand partnerships and vendor logistics with Nike, Icona Club, and Demonia, supporting a sold-out fashion drop through student-led promotion. Organized and ran production meetings - scheduling, agendas, and follow-ups - for FAST's annual fashion show, and reviewed results after each initiative to close gaps for future planning.",
     tags: ["Brand Partnerships", "Event Marketing", "Creative Direction"],
@@ -416,7 +416,7 @@ export const projects: Project[] = [
     navLabel: "UCLA Student Affairs",
     title: "Marketing & Media Coordinator - UCLA Student Affairs",
     description:
-      "Produced and supported multi-platform media campaigns across Instagram, TikTok, Facebook, and Twitter for UCLA's primary institutional accounts, including @ucla, @uclahousing, and @lamabruin, collectively reaching millions of followers and serving a student body of 45,000+ undergraduate and graduate students.",
+      "Produced and supported multi-platform media campaigns and content across Instagram, TikTok, Facebook, and Twitter for UCLA's primary institutional accounts, including @ucla, @uclahousing, and @lamabruin, collectively reaching millions of followers and serving a student body of 45,000+ undergraduate and graduate students.",
     extendedDescription:
       "Focused on photography, graphic design, and content planning to communicate the UCLA student experience at scale, regularly covering large-scale campus events - including commencements and university-wide programs - attended by tens of thousands of students, families, and community members. Collaborated with multiple campus partners across Student Affairs, including the Center for Accessible Education, the Dean's Office, Housing & Hospitality, and UCLA Athletics, helping coordinate consistent, accessible, and brand-aligned communications across departments.",
     tags: ["TikTok", "Instagram", "Social Strategy"],
@@ -501,7 +501,7 @@ export const projects: Project[] = [
     navLabel: "Refine LA",
     title: "Marketing Coordinator - Refine LA",
     description:
-      "Worked as a marketing coordinator supporting event documentation, campaign promotion, and content coordination for a sustainability-focused fashion and circular retail organization.",
+      "Worked as a marketing and production coordinator supporting event documentation, on-site media production, and content coordination for a sustainability-focused fashion and circular retail organization.",
     extendedDescription:
       "Coordinated on-site coverage for fashion shows, flea markets, and community activations, including initiatives sponsored by Poshmark and Evewear - handling photography, video capture, and post-event content rollout to extend each event's reach.",
     tags: ["Event Coverage", "Photography", "Video"],
@@ -688,7 +688,7 @@ export const projects: Project[] = [
     description:
       "Writing, directing, and producing an original animated short - a sci-fi comedy set in a Lagos salon - following a character who accidentally time-travels through a hair-tech invention into a frozen '90s sitcom world.",
     extendedDescription:
-      "Ran a multi-stage social campaign repositioning my account from freelance illustration to an animation-focused platform - process videos, character reveals, cast spotlights, teasers, and screening promotion - while managing the film's production timeline, budget, and festival strategy targeting Sundance, GLAS Animation, Manchester Animation Festival, Carmel International, Film Africa London, and AFRIFF. Result: +400 followers, 20K+ views, 2 industry interview invitations, and AFRIFF networking recognition.",
+      "Managed the film's production timeline, budget, and festival strategy targeting Sundance, GLAS Animation, Manchester Animation Festival, Carmel International, Film Africa London, and AFRIFF, alongside a multi-stage content rollout - process videos, character reveals, cast spotlights, teasers, and screening promotion - repositioning my platform from freelance illustration to animation. Result: +400 followers, 20K+ views, 2 industry interview invitations, and AFRIFF networking recognition.",
     tags: ["Festival Strategy", "Key Art & Campaign", "Production Direction"],
     role: "Writer, Producer & Director",
     period: "2025 - Present",
@@ -787,7 +787,7 @@ export const experience: ExperienceItem[] = [
     company: "FAST@UCLA",
     period: "Oct 2024 - June 2026",
     summary:
-      "Directed all creative media production - print, photography, video, and media releases - across editorial, digital, and live-event initiatives, serving as key creative contact for brand partners including Nike, Icona Club, and Demonia.",
+      "Coordinated creative media production - print, photography, video, and media releases - across editorial, digital, and live-event initiatives, serving as a key production and marketing contact for brand partners including Nike, Icona Club, and Demonia.",
     slug: "fast-ucla-fashion-show",
   },
   {
@@ -795,7 +795,7 @@ export const experience: ExperienceItem[] = [
     company: "Live Nation",
     period: "Mar 2025 - June 2025",
     summary:
-      "Directed creative strategy and produced the official promotional film and live concert projection content for Mutha Festival, translating brand vision into a cohesive visual direction across digital and live touchpoints.",
+      "Coordinated production of the official promotional film and live concert projection content for Mutha Festival, translating creative vision into a cohesive visual direction across digital and live touchpoints.",
     slug: "live-nation-mutha",
   },
   {
@@ -803,7 +803,7 @@ export const experience: ExperienceItem[] = [
     company: "Kugali Media",
     period: "Sept 2024 - June 2025",
     summary:
-      "Supported marketing and pitch strategy on Disney's Iwájú, built producer-facing pitch decks for Jollof Wars and Razorman, and reviewed 50+ scripts weekly to inform brand positioning.",
+      "Supported pitch strategy, marketing research, and production coordination on Disney's Iwájú, built producer-facing pitch decks for Jollof Wars and Razorman, and reviewed 50+ scripts weekly to track production status.",
     slug: "kugali-iwaju",
   },
   {
@@ -811,7 +811,7 @@ export const experience: ExperienceItem[] = [
     company: "UCLA Student Affairs",
     period: "June 2023 - Sept 2025",
     summary:
-      "Directed creative and campaign strategy for multi-platform institutional content across Instagram, TikTok, Facebook, and X, translating campus priorities into brand-consistent direction for an audience of 2M+.",
+      "Coordinated multi-platform institutional marketing content across Instagram, TikTok, Facebook, and X, translating campus priorities into consistent creative direction for an audience of 2M+.",
     slug: "ucla-campus-campaigns",
   },
 ];
@@ -822,7 +822,7 @@ export const additionalExperience: ExperienceItem[] = [
     company: "Refine LA",
     period: "Sept 2023 - June 2025",
     summary:
-      "Directed editorial cover shoots and magazine promotion videos as creative lead for a sustainability-focused fashion and circular retail organization.",
+      "Coordinated editorial cover shoots and magazine promotion videos as marketing and production support for a sustainability-focused fashion and circular retail organization.",
     slug: "refine-la-zine",
   },
   {
@@ -837,7 +837,7 @@ export const additionalExperience: ExperienceItem[] = [
     company: "Co Curate",
     period: "July 2026 - Present",
     summary:
-      "Building an independent creative studio with a managed curator roster, an IP origination model, and an initial go-to-market focus on entertainment and animation-adjacent marketing.",
+      "Building an independent creative studio with a managed curator roster, an IP origination model, and an initial go-to-market focus on entertainment and animation-adjacent marketing and production.",
   },
   {
     role: "Writer, Producer & Director",
@@ -852,7 +852,7 @@ export const additionalExperience: ExperienceItem[] = [
     company: "Black Film and Theatre Initiative",
     period: "Sept 2025 - June 2026",
     summary:
-      "Directed promotional strategy and creative materials for the organization's festivals, workshops, and short-film fundraising initiatives.",
+      "Coordinated promotional materials and creative production for the organization's festivals, workshops, and short-film fundraising initiatives.",
   },
   {
     role: "Writers Room & Story Development Intern",
