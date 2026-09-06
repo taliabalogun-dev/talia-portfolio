@@ -334,6 +334,11 @@ export const projects: Project[] = [
             items: ["Facilitated coordination between creative teams."],
           },
           {
+            heading: "Results",
+            style: "pills",
+            items: ["Sold-Out Fashion Drop"],
+          },
+          {
             heading: "Deliverables",
             style: "pills",
             items: [
@@ -471,6 +476,11 @@ export const projects: Project[] = [
             heading: "My Role",
             style: "pills",
             items: ["Event Coordinator", "Media Coordinator", "Design & Art Direction"],
+          },
+          {
+            heading: "Results",
+            style: "pills",
+            items: ["2M+ Audience Reached"],
           },
         ],
       },
