@@ -372,19 +372,7 @@ export const projects: Project[] = [
           { src: "/images/campaigns/fast-campaign-edited-selects.jpg" },
           { src: "/images/campaigns/fast-campaign-marketing-strategy.jpg" },
         ],
-        sections: [
-          {
-            heading: "Results",
-            style: "pills",
-            items: [
-              "Sold-Out Fashion Drop",
-              "500K+ Impressions Across Posts",
-              "Increased Sponsorship",
-              "Requests for Follow-Up Campaigns",
-              "Increased Student Ambassadors",
-            ],
-          },
-        ],
+        sections: [],
       },
       {
         /* The finished work: editorial frames and the magazine they ran in. */
