@@ -5,7 +5,7 @@ export default function Contact() {
     <section id="contact" className="mx-auto max-w-5xl px-6 py-16">
       <h2 className="font-display text-4xl uppercase tracking-tight sm:text-5xl">Contact</h2>
       <p className="mt-4 max-w-xl text-lg text-muted">
-        Open to creative production, marketing, and creative strategy roles - reach out to talk projects, collaborations, or opportunities.
+        Open to creative production roles across marketing, entertainment, and fashion - reach out to talk projects, collaborations, or opportunities.
       </p>
       <div className="mt-6 flex flex-wrap gap-4">
         <a

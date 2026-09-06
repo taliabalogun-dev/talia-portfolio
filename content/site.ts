@@ -1,9 +1,9 @@
 export const site = {
   name: "Talia Balogun",
-  role: "Media Production & Marketing Coordination",
+  role: "Creative Production Coordinator",
   heroStatement: "Great stories need great production.",
   tagline:
-    "Production coordination and marketing support for entertainment, fashion and institutional brands.",
+    "Creative production workflows for marketing campaigns, film sets, fashion shows, and entertainment launches.",
   email: "talia.balogun@gmail.com",
   location: "Los Angeles, CA",
   social: {
@@ -18,11 +18,11 @@ export const site = {
 export const about = {
   heading: "About",
   paragraphs: [
-    "Media production and marketing coordinator with 3+ years supporting creative workflows and campaigns - from pitch materials on Disney's Iwájú to brand partnerships with Nike, coordinating creative teams across print, photography, and video. Based in Los Angeles, moving toward entertainment production and marketing strategy.",
+    "Creative production coordinator with 3+ years running creative workflows across entertainment, fashion, and marketing - from pitch materials on Disney's Iwájú to brand partnerships with Nike, coordinating creative teams across print, photography, and video. Based in Los Angeles, moving toward entertainment production.",
   ],
   /** Trimmed version shown on the phone-view home banner, where space is tight. */
   shortParagraph:
-    "Media production and marketing coordinator with 3+ years supporting creative workflows and campaigns - from Disney's Iwájú to Nike. Based in LA, moving toward entertainment production and marketing.",
+    "Creative production coordinator with 3+ years running creative workflows across entertainment, fashion, and marketing - from Disney's Iwájú to Nike. Based in LA, moving toward entertainment production.",
 };
 
 export const education: { school: string; detail: string; location: string }[] = [
@@ -41,7 +41,7 @@ export const education: { school: string; detail: string; location: string }[] =
 export const bio = {
   heading: "More About Me",
   paragraphs: [
-    "I'm a creative marketing and campaign strategist based in Los Angeles, working at the intersection of entertainment, fashion, and culture.",
+    "I'm a creative production coordinator based in Los Angeles, working at the intersection of entertainment, fashion, marketing, and culture.",
     "My path started between Lagos and the UK. Fine art came first, years of life drawing and portraiture at Cheltenham Ladies' College, but the material I kept reaching for was Lagos: the streets, the salons, the visual language of Africans in diaspora making work far from home. Film could carry what a single image couldn't, and that's where I went.",
     "Once I got into production and onto a set, I never got off. Golden Effects Pictures first, then a writers' room at Bap Production supporting Netflix-commissioned development, where I got my first real look at how streaming and IP strategy shape a story long before anyone shoots it. That was the shift. I stopped thinking about images and started thinking about how a story gets made, sold, and positioned.",
     "Animation came last, through working for myself. Freelance illustration commissions taught me I could originate a world and run the business around it at the same time. I brought all of it into UCLA: a B.A. in Film & Television with an Animation concentration and an Entrepreneurship minor, alongside four years of creative marketing for creative products.",
@@ -139,7 +139,7 @@ export const projects: Project[] = [
     description:
       "Reviewed storyboards/scripts and comics against production deadlines, tracking status and flagging gaps across the release pipeline. Coordinated asset requests, approvals, and publishing timelines with internal teams and external partners via HubSpot.",
     extendedDescription:
-      "Built pitch materials and research decks, researching audiences, competitors, and entertainment markets to support development and positioning. Supported marketing initiatives, event coordination, and production logistics around the Emmys and NAACP Image Awards, and helped track reporting for team and partner updates.",
+      "Built pitch materials and research decks, researching audiences, competitors, and entertainment markets to support development and positioning. Supported event coordination and production logistics for marketing initiatives around the Emmys and NAACP Image Awards, and helped track reporting for team and partner updates.",
     tags: ["Pitch Strategy", "Audience Research", "Brand Positioning"],
     role: "Marketing & IP Intern",
     period: "June 2024 - June 2025",
@@ -336,7 +336,13 @@ export const projects: Project[] = [
           {
             heading: "Results",
             style: "pills",
-            items: ["Sold-Out Fashion Drop"],
+            items: [
+              "Sold-Out Fashion Drop",
+              "500K+ Impressions Across Posts",
+              "Increased Sponsorship",
+              "Requests for Follow-Up Campaigns",
+              "Increased Student Ambassadors",
+            ],
           },
           {
             heading: "Deliverables",
@@ -366,12 +372,24 @@ export const projects: Project[] = [
           { src: "/images/campaigns/fast-campaign-edited-selects.jpg" },
           { src: "/images/campaigns/fast-campaign-marketing-strategy.jpg" },
         ],
-        sections: [],
+        sections: [
+          {
+            heading: "Results",
+            style: "pills",
+            items: [
+              "Sold-Out Fashion Drop",
+              "500K+ Impressions Across Posts",
+              "Increased Sponsorship",
+              "Requests for Follow-Up Campaigns",
+              "Increased Student Ambassadors",
+            ],
+          },
+        ],
       },
       {
         /* The finished work: editorial frames and the magazine they ran in. */
         title: "Featured Creative Media",
-        subtitle: "Director of Creative Media - Oct 2024 - June 2026",
+        subtitle: "Instagram Targeted Photography Campaigns",
         layout: "filmstrip",
         images: [
           // The six that lead it.
@@ -501,7 +519,7 @@ export const projects: Project[] = [
     navLabel: "Refine LA",
     title: "Marketing Coordinator - Refine LA",
     description:
-      "Worked as a marketing and production coordinator supporting event documentation, on-site media production, and content coordination for a sustainability-focused fashion and circular retail organization.",
+      "Worked as a production coordinator supporting event documentation, on-site media production, and content coordination for a sustainability-focused fashion and circular retail organization's marketing team.",
     extendedDescription:
       "Coordinated on-site coverage for fashion shows, flea markets, and community activations, including initiatives sponsored by Poshmark and Evewear - handling photography, video capture, and post-event content rollout to extend each event's reach.",
     tags: ["Event Coverage", "Photography", "Video"],
@@ -787,7 +805,7 @@ export const experience: ExperienceItem[] = [
     company: "FAST@UCLA",
     period: "Oct 2024 - June 2026",
     summary:
-      "Coordinated creative media production - print, photography, video, and media releases - across editorial, digital, and live-event initiatives, serving as a key production and marketing contact for brand partners including Nike, Icona Club, and Demonia.",
+      "Coordinated creative media production - print, photography, video, and media releases - across editorial, digital, and live-event initiatives, serving as a key creative production contact for brand partners including Nike, Icona Club, and Demonia.",
     slug: "fast-ucla-fashion-show",
   },
   {
@@ -803,7 +821,7 @@ export const experience: ExperienceItem[] = [
     company: "Kugali Media",
     period: "Sept 2024 - June 2025",
     summary:
-      "Supported pitch strategy, marketing research, and production coordination on Disney's Iwájú, built producer-facing pitch decks for Jollof Wars and Razorman, and reviewed 50+ scripts weekly to track production status.",
+      "Supported pitch strategy and production coordination on Disney's Iwájú, built producer-facing pitch decks for Jollof Wars and Razorman, and reviewed 50+ scripts weekly to inform marketing positioning.",
     slug: "kugali-iwaju",
   },
   {
@@ -822,7 +840,7 @@ export const additionalExperience: ExperienceItem[] = [
     company: "Refine LA",
     period: "Sept 2023 - June 2025",
     summary:
-      "Coordinated editorial cover shoots and magazine promotion videos as marketing and production support for a sustainability-focused fashion and circular retail organization.",
+      "Coordinated editorial cover shoots and magazine promotion videos as creative production support for a sustainability-focused fashion and circular retail organization.",
     slug: "refine-la-zine",
   },
   {
@@ -837,7 +855,7 @@ export const additionalExperience: ExperienceItem[] = [
     company: "Co Curate",
     period: "July 2026 - Present",
     summary:
-      "Building an independent creative studio with a managed curator roster, an IP origination model, and an initial go-to-market focus on entertainment and animation-adjacent marketing and production.",
+      "Building an independent creative studio with a managed curator roster, an IP origination model, and an initial go-to-market focus on entertainment and animation-adjacent creative production.",
   },
   {
     role: "Writer, Producer & Director",
