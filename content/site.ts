@@ -1,6 +1,6 @@
 export const site = {
   name: "Talia Balogun",
-  role: "Creative Production Coordinator",
+  role: "Production Coordinator, Creative Marketing",
   heroStatement: "Great products need great storytelling.",
   tagline:
     "Creative production workflows for marketing campaigns, film sets, fashion shows, and entertainment launches.",
