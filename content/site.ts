@@ -770,7 +770,7 @@ export const projects: Project[] = [
       ],
     },
     featured: false,
-    image: "/images/campaigns/cocurate-card.jpg",
+    image: "/images/campaigns/cocurate-card-v2.jpg",
     slides: [
       {
         title: "The Product",
