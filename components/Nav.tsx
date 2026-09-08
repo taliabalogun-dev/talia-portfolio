@@ -1,5 +1,4 @@
 import Link from "next/link";
-import BackNav from "@/components/BackNav";
 import { site } from "@/content/site";
 
 const links = [
@@ -15,15 +14,12 @@ export default function Nav() {
   return (
     <header className="sticky top-0 z-50 border-b-[3px] border-accent bg-beige">
       <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
-        <div className="flex min-w-0 items-center gap-2 sm:gap-3">
-          <BackNav />
-          <Link
-            href="/#top"
-            className="font-display relative pb-1 text-2xl uppercase tracking-tight text-ink after:absolute after:bottom-0 after:left-0 after:h-1.5 after:w-11 after:bg-accent"
-          >
-            {site.name}
-          </Link>
-        </div>
+        <Link
+          href="/#top"
+          className="font-display relative pb-1 text-2xl uppercase tracking-tight text-ink after:absolute after:bottom-0 after:left-0 after:h-1.5 after:w-11 after:bg-accent"
+        >
+          {site.name}
+        </Link>
         <ul className="hidden gap-8 text-base font-semibold uppercase tracking-wide sm:flex">
           {links.map((link) => (
             <li key={link.href}>

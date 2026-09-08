@@ -28,7 +28,14 @@ export default function WorkPage() {
           }}
         />
         <div className="relative mx-auto max-w-6xl px-6">
-          <h1 className="font-display text-balance text-6xl uppercase leading-[0.9] tracking-tight text-ink sm:text-8xl">
+          <Link
+            href="/"
+            className="text-base text-ink/70 transition-colors hover:text-ink"
+          >
+            ← Back to home
+          </Link>
+
+          <h1 className="font-display mt-8 text-balance text-6xl uppercase leading-[0.9] tracking-tight text-ink sm:text-8xl">
             My Work
           </h1>
           <span className="font-hand mt-4 inline-block max-w-full -rotate-1 whitespace-nowrap rounded-sm bg-accent px-4 py-2.5 text-sm text-hero-ink shadow-lg sm:px-5 sm:py-3 sm:text-lg">

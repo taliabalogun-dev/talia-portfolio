@@ -36,10 +36,10 @@ export default async function ProjectPage(
       <div className="bg-beige">
         <main className="mx-auto max-w-5xl px-6 py-16">
           <Link
-            href="/#projects"
+            href="/work"
             className="text-base text-muted transition-colors hover:text-ink"
           >
-            ← Back to projects
+            ← Back to all roles
           </Link>
 
           <div className="mt-8 flex flex-col gap-8 sm:flex-row sm:items-start">
