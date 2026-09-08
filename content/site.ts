@@ -709,7 +709,7 @@ export const projects: Project[] = [
       ],
     },
     featured: false,
-    image: "/images/campaigns/ctrl4c-slide-cover.jpg",
+    image: "/images/campaigns/ctrl4c-slide-cover-v2.jpg",
     slides: [
       {
         title: "Featured Campaign",
