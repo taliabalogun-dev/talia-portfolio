@@ -747,6 +747,87 @@ export const projects: Project[] = [
       },
     ],
   },
+  {
+    slug: "co-curate",
+    navLabel: "Co Curate",
+    title: "Founder & Chief Executive - Co Curate",
+    description:
+      "A marketplace platform that staffs full production teams to a brief - commissioners describe the work, co-curators (creative directors, photographers, editors, designers) get matched automatically, and the fee split runs 80/20 in the makers' favor.",
+    extendedDescription:
+      "Concept prototype, live since August 2026. Designed the brand and product end to end, built the front end solo, and modeled the pricing structure: a 5% first-project fee, an 80/20 commission split, and a 30% direction fee on team briefs. Currently running a small beta with real commissioners and co-curators.",
+    tags: ["Product Design", "Brand Identity", "Marketplace Mechanics"],
+    role: "Founder & Chief Executive",
+    period: "July 2026 - Present",
+    location: "Los Angeles, CA / Remote",
+    focus: {
+      heading: "Role",
+      items: [
+        "Product & UX Design",
+        "Brand & Visual Identity",
+        "Pricing & Marketplace Mechanics",
+        "Front-End Build",
+        "Go-to-Market Strategy",
+      ],
+    },
+    featured: false,
+    image: "/images/campaigns/cocurate-card.jpg",
+    slides: [
+      {
+        title: "The Product",
+        subtitle: "Six screens from the live prototype",
+        layout: "cards",
+        images: [
+          {
+            src: "/images/campaigns/cocurate-development-feed.jpg",
+            title: "In Development",
+            caption: "Pipeline productions shown by client type before a deliverable exists",
+          },
+          {
+            src: "/images/campaigns/cocurate-corporate-feed.jpg",
+            title: "Production Feed",
+            caption: "Launched work browsable by category, corporate commissions included",
+          },
+          {
+            src: "/images/campaigns/cocurate-dashboard-split.jpg",
+            title: "Two Sides, One Platform",
+            caption: "Commissioners write briefs; co-curators take them - each gets its own entry point",
+          },
+          {
+            src: "/images/campaigns/cocurate-timeline.jpg",
+            title: "Project Timeline",
+            caption: "Past briefs tracked chronologically with delivery status",
+          },
+          {
+            src: "/images/campaigns/cocurate-add-curator.jpg",
+            title: "Building the Roster",
+            caption: "Co-curators build a verified profile before joining the invite-only roster",
+          },
+          {
+            src: "/images/campaigns/cocurate-match-process.jpg",
+            title: "Matching",
+            caption: "Co-curators surfaced against a brief's shape, budget, and specialty",
+          },
+        ],
+        sections: [],
+      },
+      {
+        title: "Where It Stands",
+        sections: [
+          {
+            heading: "Results",
+            style: "pills",
+            items: [
+              "2 Active Commissioner Beta Testers",
+              "3 Active Creator Testers",
+              "6-Step Brief-to-Match Flow Shipped",
+              "9 Real Productions Seeded from Client Work",
+            ],
+          },
+        ],
+      },
+    ],
+    viewFullProject: { href: "https://co-curate-production.up.railway.app" },
+  },
 ];
 
 export const skills: { category: string; items: string[] }[] = [
@@ -839,11 +920,12 @@ export const additionalExperience: ExperienceItem[] = [
       "Led campaign research and a three-part growth strategy for Flexx, FCMB's youth banking product, spanning gamification, campus creator funding, and a phased KPI roadmap.",
   },
   {
-    role: "Founder",
+    role: "Founder & Chief Executive",
     company: "Co Curate",
     period: "July 2026 - Present",
     summary:
-      "Building an independent creative studio with a managed curator roster, an IP origination model, and an initial go-to-market focus on entertainment and animation-adjacent creative production.",
+      "Designed and built a marketplace platform that staffs full production teams to a brief, from brand and product design through pricing structure and front-end build.",
+    slug: "co-curate",
   },
   {
     role: "Writer, Producer & Director",
