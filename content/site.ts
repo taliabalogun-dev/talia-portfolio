@@ -1,7 +1,7 @@
 export const site = {
   name: "Talia Balogun",
   role: "Creative Production Coordinator",
-  heroStatement: "Great stories need great production.",
+  heroStatement: "Great products need great storytelling.",
   tagline:
     "Creative production workflows for marketing campaigns, film sets, fashion shows, and entertainment launches.",
   email: "talia.balogun@gmail.com",
@@ -18,11 +18,11 @@ export const site = {
 export const about = {
   heading: "About",
   paragraphs: [
-    "Creative production coordinator with 3+ years running creative workflows across entertainment, fashion, and marketing - from pitch materials on Disney's Iwájú to brand partnerships with Nike, coordinating creative teams across print, photography, and video. Based in Los Angeles, moving toward entertainment production.",
+    "Creative production coordinator with 3+ years running creative workflows across entertainment, fashion, and marketing - from pitch materials on Disney's Iwájú to brand partnerships with Nike, coordinating creative teams across print, photography, and video. Based in Los Angeles, moving toward creative strategy.",
   ],
   /** Trimmed version shown on the phone-view home banner, where space is tight. */
   shortParagraph:
-    "Creative production coordinator with 3+ years running creative workflows across entertainment, fashion, and marketing - from Disney's Iwájú to Nike. Based in LA, moving toward entertainment production.",
+    "Creative production coordinator with 3+ years running creative workflows across entertainment, fashion, and marketing - from Disney's Iwájú to Nike. Based in LA, moving toward creative strategy.",
 };
 
 export const education: { school: string; detail: string; location: string }[] = [
