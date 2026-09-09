@@ -75,6 +75,8 @@ export type SlideImage = {
   position?: "center" | "top";
   /** Role tags shown only in the enlarged/lightbox view, not inline in the grid. */
   roles?: string[];
+  /** Result pills shown only in the enlarged/lightbox view. Only used by "cards" layout slides. */
+  results?: string[];
 };
 
 export type SlideSection = {
@@ -194,21 +196,44 @@ export const projects: Project[] = [
             title: "Emmys Social Strategy",
             caption:
               "IP & festival releases research & strategy, as well as live day-of social media campaign - active posting",
+            results: [
+              "3 Emmy Nominations (and Other Nominations)",
+              "2 IPs in Production Post-Festival",
+              "5,373 Likes & 62 Comments on Emmy Nomination Post",
+              "Live Day-of Social Media Updates",
+              "Media Collection for Recap Assets",
+            ],
           },
           {
             src: "/images/campaigns/kugali-campaign-competing-ip-strategy.png",
             title: "Competing IP Strategy",
             caption: "Comparing international animation studios' GTM strategies",
+            results: [
+              "9 Critical Reports on Competing IP Strategies",
+              "Gephi Network Map of Strategy Efficiencies",
+            ],
           },
           {
             src: "/images/campaigns/kugali-campaign-jollof-wars-pitch.png",
             title: "IP / Pitch Strategy for Jollof Wars",
             caption: "Internal marketing strategy and positioning slides",
+            results: [
+              "1 Pitch Deck",
+              "1 Positioning Deck",
+              "30 Shortlisted Production Avenues",
+              "Successfully in Production",
+            ],
           },
           {
             src: "/images/campaigns/kugali-campaign-razorman-pitch.png",
             title: "Pitch Strategy for Razorman",
             caption: "Producer-facing pitch research & slides",
+            results: [
+              "1 Pitch Deck",
+              "Attended Producer-Facing Pitches",
+              "10 Shortlisted Production Avenues",
+              "Successfully in Production",
+            ],
           },
         ],
         sections: [],
@@ -276,7 +301,17 @@ export const projects: Project[] = [
         images: [
           { src: "/images/campaigns/livenation-featured-campaign.jpg", aspect: "video" },
         ],
-        sections: [],
+        sections: [
+          {
+            heading: "Results",
+            style: "pills",
+            items: [
+              "Production of 2 Large-Scale Projections",
+              "Video Asset Spanning 6 Multimedia Skills",
+              "Directed Initial Photoshoot of Ballroom Movement Performers",
+            ],
+          },
+        ],
       },
       {
         title: "Production Stills",

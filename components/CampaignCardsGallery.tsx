@@ -69,6 +69,21 @@ export default function CampaignCardsGallery({ images }: { images: SlideImage[] 
             {current.caption && (
               <p className="mt-3 text-center text-sm text-white/70">{current.caption}</p>
             )}
+            {current.results && current.results.length > 0 && (
+              <div
+                className="mt-4 flex flex-wrap justify-center gap-2"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {current.results.map((result) => (
+                  <span
+                    key={result}
+                    className="rounded-full bg-white/10 px-3 py-1 text-sm text-white"
+                  >
+                    {result}
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       )}
