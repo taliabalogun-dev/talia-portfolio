@@ -77,6 +77,8 @@ export type SlideImage = {
   roles?: string[];
   /** Result pills shown only in the enlarged/lightbox view. Only used by "cards" layout slides. */
   results?: string[];
+  /** Video only: gates playback behind a client-side password prompt (not real security - a polite viewing gate). */
+  password?: string;
 };
 
 export type SlideSection = {
@@ -776,9 +778,11 @@ export const projects: Project[] = [
     slides: [
       {
         title: "Featured Creative Media",
+        layout: "cards",
         images: [
           {
             src: "/images/campaigns/bap-house-of-gaa-poster.jpg",
+            title: "'House of Gaa' (Netflix)",
             caption: "Production Coordinator, Talent Coordinator",
             results: [
               "Set Design Assistance for 2 Netflix Sets",
@@ -787,6 +791,7 @@ export const projects: Project[] = [
           },
           {
             src: "/images/campaigns/bap-bling-lagosians-2-poster.jpg",
+            title: "'The Bling Lagosians 2' (Netflix)",
             caption: "Writers Room Intern, Pitch & IP Strategy",
             results: [
               "Dictated & Supervised Entire Draft Film Treatment",
@@ -831,10 +836,12 @@ export const projects: Project[] = [
     slides: [
       {
         title: "Featured Creative Media",
+        layout: "cards",
         images: [
           {
             src: "/images/campaigns/golden-effects-swallow-poster.jpg",
-            caption: "'Swallow' (Netflix) - Production Assistant - Oct 2026",
+            title: "'Swallow' (Netflix)",
+            caption: "Production Assistant - Oct 2026",
             results: [
               "#1 on Nigerian Netflix",
               "Screened 10+ Talent Profiles for the Lead Role",
@@ -934,6 +941,7 @@ export const projects: Project[] = [
             aspect: "video",
             poster: "/images/campaigns/ctrl4c-full-film-poster-v2.jpg",
             caption: "CTRL 4C - Full Film",
+            password: "screeningroom4c",
             results: [
               "Screened at Undergraduate Showcase",
               "Screened in Animation Extravaganza",

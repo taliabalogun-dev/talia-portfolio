@@ -162,7 +162,11 @@ export default async function ProjectPage(
                             : "grid grid-cols-1"
                         }
                       >
-                        {slide.images!.map((img) => (
+                        {(() => {
+                          const isFullWidth =
+                            slide.images!.length === 1 &&
+                            slide.images![0]?.aspect === "video";
+                          return slide.images!.map((img) => (
                           <figure
                             key={img.src}
                             className="overflow-hidden rounded-xl border border-beige/15"
@@ -177,6 +181,7 @@ export default async function ProjectPage(
                                   autoplay={img.autoplay}
                                   roles={img.roles}
                                   results={img.results}
+                                  password={img.password}
                                   theme={pillTheme}
                                   className="absolute inset-0 h-full w-full object-cover"
                                 />
@@ -198,24 +203,27 @@ export default async function ProjectPage(
                                 )}
                                 {img.results && img.results.length > 0 && (
                                   <span className="flex flex-wrap gap-1.5">
-                                    {img.results.slice(0, 2).map((result) => (
-                                      <span
-                                        key={result}
-                                        className="rounded-full px-2 py-0.5 text-[11px] font-medium leading-snug"
-                                        style={{
-                                          background: pillTheme.resultBg,
-                                          color: pillTheme.resultText,
-                                        }}
-                                      >
-                                        {result}
-                                      </span>
-                                    ))}
+                                    {(isFullWidth ? img.results : img.results.slice(0, 2)).map(
+                                      (result) => (
+                                        <span
+                                          key={result}
+                                          className="rounded-full px-2 py-0.5 text-[11px] font-medium leading-snug"
+                                          style={{
+                                            background: pillTheme.resultBg,
+                                            color: pillTheme.resultText,
+                                          }}
+                                        >
+                                          {result}
+                                        </span>
+                                      ),
+                                    )}
                                   </span>
                                 )}
                               </figcaption>
                             )}
                           </figure>
-                        ))}
+                          ));
+                        })()}
                       </div>
                       )
                     );

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { PillTheme } from "@/content/pillTheme";
 
 export default function EnlargeableVideo({
@@ -10,6 +10,7 @@ export default function EnlargeableVideo({
   className = "",
   roles,
   results,
+  password,
   theme,
 }: {
   src: string;
@@ -20,10 +21,89 @@ export default function EnlargeableVideo({
   roles?: string[];
   /** Result pills shown only in the enlarged lightbox, below the video. */
   results?: string[];
+  /** Gates playback behind a client-side password prompt (not real security - a polite viewing gate). */
+  password?: string;
   theme?: PillTheme;
 }) {
   const [open, setOpen] = useState(false);
+  const [unlocked, setUnlocked] = useState(!password);
+  const [attempt, setAttempt] = useState("");
+  const [wrongAttempt, setWrongAttempt] = useState(false);
   const hasExtras = (roles && roles.length > 0) || (results && results.length > 0);
+  const storageKey = `video-unlocked:${src}`;
+
+  useEffect(() => {
+    if (!password) return;
+    let alreadyUnlocked = false;
+    try {
+      alreadyUnlocked = sessionStorage.getItem(storageKey) === "true";
+    } catch {
+      // sessionStorage unavailable - fall through, prompt stays.
+    }
+    if (alreadyUnlocked) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- syncing with sessionStorage, an external system, on mount.
+      setUnlocked(true);
+    }
+  }, [password, storageKey]);
+
+  function submitPassword(e: React.FormEvent) {
+    e.preventDefault();
+    if (attempt === password) {
+      setUnlocked(true);
+      setWrongAttempt(false);
+      try {
+        sessionStorage.setItem(storageKey, "true");
+      } catch {
+        // ignore
+      }
+    } else {
+      setWrongAttempt(true);
+    }
+  }
+
+  if (password && !unlocked) {
+    return (
+      <div
+        className={`relative flex items-center justify-center ${className}`}
+        style={{
+          backgroundImage: poster ? `url(${poster})` : undefined,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="absolute inset-0 bg-black/70" />
+        <form
+          onSubmit={submitPassword}
+          className="relative flex w-full max-w-[220px] flex-col items-center gap-2 px-4 text-center"
+        >
+          <span className="text-2xl">🔒</span>
+          <p className="text-xs font-semibold uppercase tracking-wide text-white">
+            Password Protected
+          </p>
+          <input
+            type="password"
+            value={attempt}
+            onChange={(e) => {
+              setAttempt(e.target.value);
+              setWrongAttempt(false);
+            }}
+            placeholder="Enter password"
+            aria-label="Video password"
+            className="w-full rounded-full border border-white/30 bg-white/10 px-3 py-1.5 text-sm text-white placeholder:text-white/50 focus:outline-none focus:ring-1 focus:ring-white/60"
+          />
+          <button
+            type="submit"
+            className="rounded-full bg-white px-4 py-1.5 text-xs font-semibold text-black transition-opacity hover:opacity-85"
+          >
+            Unlock
+          </button>
+          {wrongAttempt && (
+            <p className="text-xs text-red-300">Incorrect password</p>
+          )}
+        </form>
+      </div>
+    );
+  }
 
   return (
     <>
