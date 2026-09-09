@@ -2,7 +2,7 @@ import Link from "next/link";
 import Nav from "@/components/Nav";
 import EnlargeableImage from "@/components/EnlargeableImage";
 import ProjectCarousel from "@/components/ProjectCarousel";
-import { bio, projects, site, skills } from "@/content/site";
+import { bio, projects, site, skills, topResults } from "@/content/site";
 
 export const metadata = {
   title: `${bio.heading} - ${site.name}`,
@@ -72,7 +72,15 @@ export default function AboutPage() {
                       <span className="block font-bold">
                         University of California, Los Angeles, USA
                       </span>
-                      <span className="block">Cheltenham Ladies&apos;, Cheltenham, UK</span>
+                      <span className="block text-[11px] text-hero-ink/60">
+                        B.A. Film &amp; Television, Animation Concentration
+                      </span>
+                      <span className="mt-1.5 block">
+                        Cheltenham Ladies&apos;, Cheltenham, UK
+                      </span>
+                      <span className="block text-[11px] text-hero-ink/60">
+                        GCSE &amp; A-Level: English, Economics, Fine Art
+                      </span>
                     </p>
                   </div>
 
@@ -97,6 +105,22 @@ export default function AboutPage() {
                             ))}
                           </div>
                         </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="hidden rounded-md bg-sky-darker/40 p-5 sm:block">
+                    <h2 className="font-display text-lg uppercase tracking-tight text-navy">
+                      Top Results
+                    </h2>
+                    <div className="mt-3 flex flex-wrap gap-1.5">
+                      {topResults.map((result) => (
+                        <span
+                          key={result}
+                          className="rounded-full bg-accent px-2.5 py-1 text-[11px] font-semibold text-accent-ink"
+                        >
+                          {result}
+                        </span>
                       ))}
                     </div>
                   </div>

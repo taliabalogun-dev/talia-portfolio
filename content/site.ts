@@ -893,30 +893,32 @@ export const projects: Project[] = [
             items: ["Creative Director", "Campaign Strategist", "Social Media Manager", "Designer"],
           },
           {
-            heading: "Results",
+            heading: "Audience Growth",
+            style: "pills",
+            items: ["+400 Followers", "20K+ Total Views", "Consistent Audience Growth"],
+          },
+          {
+            heading: "Engagement",
             style: "pills",
             items: [
-              "+400 Followers",
-              "20K+ Views",
-              "2 Interview Invitations",
-              "AFRIFF Recognition",
-              "20K+ Cumulative Video Views",
-              "3 High-Performing Process Videos",
-              "Consistent Audience Growth",
-              "Increased Profile Discovery",
               "100+ Post Interactions",
-              "Strong Comment Engagement",
-              "Higher Content Shares & Saves",
-              "Expanded Community Participation",
+              "Strong Comment & Share Engagement",
+              "Increased Profile Discovery",
+            ],
+          },
+          {
+            heading: "Reach",
+            style: "pills",
+            items: [
               "9.5K+ Impressions",
               "3.1K+ Accounts Reached",
-              "52 Profile Visits",
               "40%+ Discovery Through Feed Recommendations",
-              "2.4K+ Views",
-              "Strong Audience Retention",
-              "Increased Comment Activity",
-              "Improved Engagement with Future Posts",
             ],
+          },
+          {
+            heading: "Recognition",
+            style: "pills",
+            items: ["AFRIFF Recognition", "2 Industry Interview Invitations"],
           },
         ],
       },
@@ -1111,6 +1113,16 @@ export const skills: { category: string; items: string[] }[] = [
       "Google Workspace & Microsoft Office",
     ],
   },
+];
+
+/** Curated highlight reel pulled from Results across the portfolio's project pages. */
+export const topResults: string[] = [
+  "3 Emmy Nominations",
+  "#1 on Nigerian Netflix",
+  "2M+ Audience Reached",
+  "500K+ Impressions Across Posts",
+  "Sold-Out Fashion Drop",
+  "AFRIFF Recognition",
 ];
 
 export type ExperienceItem = {

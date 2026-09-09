@@ -241,7 +241,13 @@ export default async function ProjectPage(
                             {section.style === "pills" ? (
                               <div className="mt-2 flex flex-wrap gap-2">
                                 {section.items.map((item) => {
-                                  const isResult = section.heading === "Results";
+                                  const roleHeadings = [
+                                    "My Role",
+                                    "Focus",
+                                    "Deliverables",
+                                    "Other FAST Brand Partners",
+                                  ];
+                                  const isResult = !roleHeadings.includes(section.heading);
                                   return (
                                     <span
                                       key={item}
