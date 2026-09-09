@@ -417,11 +417,10 @@ export const projects: Project[] = [
             heading: "Results",
             style: "pills",
             items: [
-              "Sold-Out Fashion Drop",
+              "100% Collection Sell-Through",
               "Increased Student Customer Engagement",
               "3,101 Likes & 21 Comments",
               "131 Shares & 13 Reposts",
-              "100% Collection Sell-Through",
             ],
           },
         ],
@@ -617,13 +616,13 @@ export const projects: Project[] = [
         title: "Featured Campaign",
         layout: "slideshow",
         images: [
-          { src: "/images/campaigns/refine-cover-shoot-collage.jpg" },
-          { src: "/images/campaigns/refine-campaign-posting-strategy.jpg" },
-          { src: "/images/campaigns/refine-campaign-promo-video.jpg" },
-          { src: "/images/campaigns/refine-campaign-zinecover-covershoot.jpg" },
-          { src: "/images/campaigns/refine-campaign-interviews.jpg" },
-          { src: "/images/campaigns/refine-campaign-overview.jpg" },
           { src: "/images/campaigns/refine-campaign-title.jpg" },
+          { src: "/images/campaigns/refine-campaign-overview.jpg" },
+          { src: "/images/campaigns/refine-campaign-promo-video.jpg" },
+          { src: "/images/campaigns/refine-campaign-interviews.jpg" },
+          { src: "/images/campaigns/refine-campaign-zinecover-covershoot.jpg" },
+          { src: "/images/campaigns/refine-campaign-posting-strategy.jpg" },
+          { src: "/images/campaigns/refine-cover-shoot-collage.jpg" },
         ],
         sections: [
           {
@@ -809,7 +808,7 @@ export const projects: Project[] = [
             caption: "'Swallow' (Netflix) - Production Assistant - Oct 2026",
             results: [
               "#1 on Nigerian Netflix",
-              "Screened Talent Profiles for the Lead Role",
+              "Screened 10+ Talent Profiles for the Lead Role",
             ],
           },
         ],
