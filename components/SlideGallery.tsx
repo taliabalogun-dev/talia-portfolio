@@ -41,6 +41,18 @@ export default function SlideGallery({ images }: { images: SlideImage[] }) {
       {current.caption && (
         <p className="mt-2 text-sm text-beige/70">{current.caption}</p>
       )}
+      {current.results && current.results.length > 0 && (
+        <div className="mt-2 flex flex-wrap gap-1.5">
+          {current.results.map((result) => (
+            <span
+              key={result}
+              className="rounded-full bg-beige/10 px-2.5 py-1 text-xs font-medium leading-snug text-beige/90"
+            >
+              {result}
+            </span>
+          ))}
+        </div>
+      )}
       <div className="mt-3 flex items-center justify-between">
         <button
           type="button"

@@ -845,11 +845,51 @@ export const projects: Project[] = [
         layout: "slideshow",
         images: [
           { src: "/images/campaigns/ctrl4c-campaign-title.jpg" },
-          { src: "/images/campaigns/ctrl4c-campaign-overview.jpg" },
-          { src: "/images/campaigns/ctrl4c-campaign-video-content.jpg" },
-          { src: "/images/campaigns/ctrl4c-campaign-cast-talent.jpg" },
-          { src: "/images/campaigns/ctrl4c-campaign-screening-post.jpg" },
-          { src: "/images/campaigns/ctrl4c-campaign-teaser-slideshow.jpg" },
+          {
+            src: "/images/campaigns/ctrl4c-campaign-overview.jpg",
+            results: [
+              "+400 Followers",
+              "20K+ Views",
+              "2 Interview Invitations",
+              "AFRIFF Recognition",
+            ],
+          },
+          {
+            src: "/images/campaigns/ctrl4c-campaign-video-content.jpg",
+            results: [
+              "20K+ Cumulative Video Views",
+              "3 High-Performing Process Videos",
+              "Consistent Audience Growth",
+              "Increased Profile Discovery",
+            ],
+          },
+          {
+            src: "/images/campaigns/ctrl4c-campaign-cast-talent.jpg",
+            results: [
+              "100+ Post Interactions",
+              "Strong Comment Engagement",
+              "Higher Content Shares & Saves",
+              "Expanded Community Participation",
+            ],
+          },
+          {
+            src: "/images/campaigns/ctrl4c-campaign-screening-post.jpg",
+            results: [
+              "9.5K+ Impressions",
+              "3.1K+ Accounts Reached",
+              "52 Profile Visits",
+              "40%+ Discovery Through Feed Recommendations",
+            ],
+          },
+          {
+            src: "/images/campaigns/ctrl4c-campaign-teaser-slideshow.jpg",
+            results: [
+              "2.4K+ Views",
+              "Strong Audience Retention",
+              "Increased Comment Activity",
+              "Improved Engagement with Future Posts",
+            ],
+          },
           { src: "/images/campaigns/ctrl4c-campaign-other-posts.jpg" },
           { src: "/images/campaigns/ctrl4c-campaign-marketing-strategy.jpg" },
         ],
@@ -860,6 +900,26 @@ export const projects: Project[] = [
           role: "Lecturer in Animation",
           org: "UCLA Film, Television and Digital Media",
         },
+      },
+      {
+        title: "Featured Creative Media",
+        subtitle: "The Full Film",
+        images: [
+          {
+            src: "/videos/ctrl4c-full-film.mp4",
+            kind: "video",
+            aspect: "video",
+            poster: "/images/campaigns/ctrl4c-full-film-poster.jpg",
+            caption: "CTRL 4C - Full Film",
+            results: [
+              "Screened at Undergraduate Showcase",
+              "Screened in Animation Extravaganza",
+              "A+ on Final Grade",
+              "Ranked as One of Top Filmmakers Ever Taught by Area Head",
+            ],
+          },
+        ],
+        sections: [],
       },
     ],
     viewFullProject: { href: "https://animationbytalia.univer.se/home-lwdxt/home-lwdxt-xbjny-vjeiz" },
