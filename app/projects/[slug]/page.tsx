@@ -6,6 +6,7 @@ import FilmstripGallery from "@/components/FilmstripGallery";
 import CampaignCardsGallery from "@/components/CampaignCardsGallery";
 import EnlargeableImage from "@/components/EnlargeableImage";
 import EnlargeableVideo from "@/components/EnlargeableVideo";
+import OtherFeaturedAnimation from "@/components/OtherFeaturedAnimation";
 import RoleNav from "@/components/RoleNav";
 import { projects } from "@/content/site";
 
@@ -334,6 +335,10 @@ export default async function ProjectPage(
                 </a>
               ))}
             </div>
+          )}
+
+          {project.otherFeaturedAnimation && project.otherFeaturedAnimation.length > 0 && (
+            <OtherFeaturedAnimation items={project.otherFeaturedAnimation} />
           )}
 
           <div className="mt-16 border-t border-beige/15 pt-10">

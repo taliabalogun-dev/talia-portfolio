@@ -97,6 +97,18 @@ export type Slide = {
   quote?: { text: string; name: string; role?: string; org: string };
 };
 
+export type FeaturedAnimation = {
+  title: string;
+  description: string;
+  date: string;
+  category: string;
+  skills: string[];
+  src: string;
+  poster?: string;
+  kind?: "video" | "image";
+  href?: string;
+};
+
 export type Project = {
   slug: string;
   navLabel: string;
@@ -131,6 +143,8 @@ export type Project = {
   extraLinks?: { label: string; href: string }[];
   /** Pull-quote(s) shown under the hero description on the subpage. Name and role render in accent color, org in muted. */
   quotes?: { text: string; name: string; role?: string; org: string }[];
+  /** "Other Featured Animation" card grid shown after the view-full-project buttons, styled after the Co Curate explore page. */
+  otherFeaturedAnimation?: FeaturedAnimation[];
 };
 
 export const projects: Project[] = [
@@ -257,7 +271,7 @@ export const projects: Project[] = [
           {
             heading: "Results",
             style: "pills",
-            items: ["Increased Engagement by 30% During Instagram Brand Guideline Implementation"],
+            items: ["Increased Engagement During Instagram Brand Guideline Implementation"],
           },
         ],
       },
@@ -327,6 +341,20 @@ export const projects: Project[] = [
           { src: "/images/campaigns/livenation-production-still-03.jpg" },
         ],
         sections: [],
+      },
+    ],
+    otherFeaturedAnimation: [
+      {
+        title: "Decomposition",
+        description:
+          "Abstract fashion show promotion video, commissioned by Refine LA - a girl's getting-ready ritual dissolves into a dream that never completes.",
+        date: "May '25",
+        category: "Motion",
+        skills: ["Producer", "Partner Comms", "Animator", "Director"],
+        src: "/videos/refine-decomposition-promo.mp4",
+        poster: "/images/campaigns/refine-decomposition-promo-poster.jpg",
+        kind: "video",
+        href: "/projects/refine-la-zine",
       },
     ],
   },
@@ -894,12 +922,6 @@ export const projects: Project[] = [
           { src: "/images/campaigns/ctrl4c-campaign-marketing-strategy.jpg" },
         ],
         sections: [],
-        quote: {
-          text: "She tackled underrepresented cultural perspectives and subject matter in a way that was humorous, accessible, entertaining, and unifying for diverse audiences.",
-          name: "Lynn Okimura",
-          role: "Lecturer in Animation",
-          org: "UCLA Film, Television and Digital Media",
-        },
       },
       {
         title: "Featured Creative Media",
@@ -909,7 +931,7 @@ export const projects: Project[] = [
             src: "/videos/ctrl4c-full-film.mp4",
             kind: "video",
             aspect: "video",
-            poster: "/images/campaigns/ctrl4c-full-film-poster.jpg",
+            poster: "/images/campaigns/ctrl4c-full-film-poster-v2.jpg",
             caption: "CTRL 4C - Full Film",
             results: [
               "Screened at Undergraduate Showcase",
@@ -920,6 +942,12 @@ export const projects: Project[] = [
           },
         ],
         sections: [],
+        quote: {
+          text: "She tackled underrepresented cultural perspectives and subject matter in a way that was humorous, accessible, entertaining, and unifying for diverse audiences.",
+          name: "Lynn Okimura",
+          role: "Lecturer in Animation",
+          org: "UCLA Film, Television and Digital Media",
+        },
       },
     ],
     viewFullProject: { href: "https://animationbytalia.univer.se/home-lwdxt/home-lwdxt-xbjny-vjeiz" },
@@ -933,6 +961,20 @@ export const projects: Project[] = [
         name: "Chuck Sheetz",
         role: "Area Head, Animation",
         org: "UCLA Film, Television and Digital Media (director, The Simpsons and Recess)",
+      },
+    ],
+    otherFeaturedAnimation: [
+      {
+        title: "Decomposition",
+        description:
+          "Abstract fashion show promotion video, commissioned by Refine LA - a girl's getting-ready ritual dissolves into a dream that never completes.",
+        date: "May '25",
+        category: "Motion",
+        skills: ["Producer", "Partner Comms", "Animator", "Director"],
+        src: "/videos/refine-decomposition-promo.mp4",
+        poster: "/images/campaigns/refine-decomposition-promo-poster.jpg",
+        kind: "video",
+        href: "/projects/refine-la-zine",
       },
     ],
   },
