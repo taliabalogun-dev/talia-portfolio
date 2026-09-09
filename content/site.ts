@@ -563,7 +563,12 @@ export const projects: Project[] = [
           {
             heading: "Results",
             style: "pills",
-            items: ["2M+ Audience Reached"],
+            items: [
+              "2M+ Audience Reached",
+              "4 Campus Partners Served",
+              "15,000 Likes",
+              "100,000+ Impressions on Posts Led by Me",
+            ],
           },
         ],
       },
@@ -612,15 +617,30 @@ export const projects: Project[] = [
         title: "Featured Campaign",
         layout: "slideshow",
         images: [
-          { src: "/images/campaigns/refine-campaign-title.jpg" },
           { src: "/images/campaigns/refine-cover-shoot-collage.jpg" },
           { src: "/images/campaigns/refine-campaign-posting-strategy.jpg" },
           { src: "/images/campaigns/refine-campaign-promo-video.jpg" },
           { src: "/images/campaigns/refine-campaign-zinecover-covershoot.jpg" },
           { src: "/images/campaigns/refine-campaign-interviews.jpg" },
           { src: "/images/campaigns/refine-campaign-overview.jpg" },
+          { src: "/images/campaigns/refine-campaign-title.jpg" },
         ],
-        sections: [],
+        sections: [
+          {
+            heading: "Photoshoot Results",
+            style: "pills",
+            items: [
+              "2K+ Cumulative Likes",
+              "3K+ Profile Visits",
+              "~30% of Traffic from the Explore Page",
+            ],
+          },
+          {
+            heading: "Video Results",
+            style: "pills",
+            items: ["6K+ Views", "+50% vs. Account Average", "+10% Like Performance"],
+          },
+        ],
       },
       {
         title: "‘Lost and Found’ Fashion Show - Event Coverage",
