@@ -7,7 +7,7 @@ export default function SkillsExperience() {
       <div className="mx-auto max-w-5xl px-6">
         <span className="font-hand block text-xl text-brown lg:text-4xl">about -</span>
         <p className="mt-1 mb-8 max-w-[60ch] text-sm text-muted lg:text-lg">
-          Working across industries has taught me how creative production actually gets made - my goal is to bring that process into marketing, film, and fashion.
+          Every industry calls it something different, but the job underneath is the same - turn an idea into something real. That&apos;s the throughline I carry into marketing, film, and fashion.
         </p>
         <div className="-rotate-[0.4deg]">
           <div className="relative rounded-md bg-teal-deep shadow-2xl">
