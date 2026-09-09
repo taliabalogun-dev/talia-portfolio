@@ -192,10 +192,10 @@ export default async function ProjectPage(
                                 )}
                                 {img.results && img.results.length > 0 && (
                                   <span className="flex flex-wrap gap-1.5">
-                                    {img.results.map((result) => (
+                                    {img.results.slice(0, 2).map((result) => (
                                       <span
                                         key={result}
-                                        className="rounded-full bg-accent/15 px-2 py-0.5 text-[11px] font-medium leading-snug text-accent"
+                                        className="rounded-full bg-beige/10 px-2 py-0.5 text-[11px] font-medium leading-snug text-beige/90"
                                       >
                                         {result}
                                       </span>

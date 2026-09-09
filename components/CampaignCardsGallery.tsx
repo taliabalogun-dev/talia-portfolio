@@ -4,6 +4,9 @@ import { useState } from "react";
 import Image from "next/image";
 import type { SlideImage } from "@/content/site";
 
+const RESULT_PILL_CLASS =
+  "rounded-full bg-beige/10 px-2 py-0.5 text-[11px] font-medium leading-snug text-beige/90";
+
 export default function CampaignCardsGallery({ images }: { images: SlideImage[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const current = openIndex !== null ? images[openIndex] : null;
@@ -34,11 +37,8 @@ export default function CampaignCardsGallery({ images }: { images: SlideImage[] 
             )}
             {img.results && img.results.length > 0 && (
               <div className="mt-1.5 flex flex-wrap gap-1.5">
-                {img.results.map((result) => (
-                  <span
-                    key={result}
-                    className="rounded-full bg-accent/15 px-2 py-0.5 text-[11px] font-medium leading-snug text-accent"
-                  >
+                {img.results.slice(0, 2).map((result) => (
+                  <span key={result} className={RESULT_PILL_CLASS}>
                     {result}
                   </span>
                 ))}

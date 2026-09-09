@@ -76,7 +76,7 @@ export default function EnlargeableImage({
               {results.map((result) => (
                 <span
                   key={result}
-                  className="rounded-full bg-accent/20 px-3 py-1 text-sm text-accent"
+                  className="rounded-full bg-white/10 px-3 py-1 text-sm text-white"
                 >
                   {result}
                 </span>

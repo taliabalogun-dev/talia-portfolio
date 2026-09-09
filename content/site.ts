@@ -218,10 +218,10 @@ export const projects: Project[] = [
             title: "IP / Pitch Strategy for Jollof Wars",
             caption: "Internal marketing strategy and positioning slides",
             results: [
+              "Successfully in Production",
+              "30 Shortlisted Production Avenues",
               "1 Pitch Deck",
               "1 Positioning Deck",
-              "30 Shortlisted Production Avenues",
-              "Successfully in Production",
             ],
           },
           {
@@ -229,10 +229,10 @@ export const projects: Project[] = [
             title: "Pitch Strategy for Razorman",
             caption: "Producer-facing pitch research & slides",
             results: [
+              "Successfully in Production",
+              "10 Shortlisted Production Avenues",
               "1 Pitch Deck",
               "Attended Producer-Facing Pitches",
-              "10 Shortlisted Production Avenues",
-              "Successfully in Production",
             ],
           },
         ],
