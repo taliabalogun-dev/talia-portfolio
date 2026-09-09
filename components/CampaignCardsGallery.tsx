@@ -3,12 +3,19 @@
 import { useState } from "react";
 import Image from "next/image";
 import type { SlideImage } from "@/content/site";
+import type { PillTheme } from "@/content/pillTheme";
 
-const RESULT_PILL_CLASS =
-  "rounded-full bg-beige/10 px-2 py-0.5 text-[11px] font-medium leading-snug text-beige/90";
-
-export default function CampaignCardsGallery({ images }: { images: SlideImage[] }) {
+export default function CampaignCardsGallery({
+  images,
+  theme,
+}: {
+  images: SlideImage[];
+  theme?: PillTheme;
+}) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const pillStyle = theme
+    ? { background: theme.resultBg, color: theme.resultText }
+    : undefined;
   const current = openIndex !== null ? images[openIndex] : null;
 
   return (
@@ -38,7 +45,11 @@ export default function CampaignCardsGallery({ images }: { images: SlideImage[] 
             {img.results && img.results.length > 0 && (
               <div className="mt-1.5 flex flex-wrap gap-1.5">
                 {img.results.slice(0, 2).map((result) => (
-                  <span key={result} className={RESULT_PILL_CLASS}>
+                  <span
+                    key={result}
+                    className="rounded-full px-2 py-0.5 text-[11px] font-medium leading-snug"
+                    style={pillStyle}
+                  >
                     {result}
                   </span>
                 ))}
@@ -84,7 +95,8 @@ export default function CampaignCardsGallery({ images }: { images: SlideImage[] 
                 {current.results.map((result) => (
                   <span
                     key={result}
-                    className="rounded-full bg-white/10 px-3 py-1 text-sm text-white"
+                    className="rounded-full px-3 py-1 text-sm"
+                    style={pillStyle}
                   >
                     {result}
                   </span>

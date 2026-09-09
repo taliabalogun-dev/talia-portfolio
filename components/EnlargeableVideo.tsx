@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import type { PillTheme } from "@/content/pillTheme";
 
 export default function EnlargeableVideo({
   src,
@@ -9,6 +10,7 @@ export default function EnlargeableVideo({
   className = "",
   roles,
   results,
+  theme,
 }: {
   src: string;
   poster?: string;
@@ -18,6 +20,7 @@ export default function EnlargeableVideo({
   roles?: string[];
   /** Result pills shown only in the enlarged lightbox, below the video. */
   results?: string[];
+  theme?: PillTheme;
 }) {
   const [open, setOpen] = useState(false);
   const hasExtras = (roles && roles.length > 0) || (results && results.length > 0);
@@ -76,7 +79,12 @@ export default function EnlargeableVideo({
               {roles.map((role) => (
                 <span
                   key={role}
-                  className="rounded-full bg-white/10 px-3 py-1 text-sm text-white"
+                  className="rounded-full px-3 py-1 text-sm"
+                  style={
+                    theme
+                      ? { background: theme.roleBg, color: theme.roleText }
+                      : undefined
+                  }
                 >
                   {role}
                 </span>
@@ -91,7 +99,12 @@ export default function EnlargeableVideo({
               {results.map((result) => (
                 <span
                   key={result}
-                  className="rounded-full bg-white/10 px-3 py-1 text-sm text-white"
+                  className="rounded-full px-3 py-1 text-sm"
+                  style={
+                    theme
+                      ? { background: theme.resultBg, color: theme.resultText }
+                      : undefined
+                  }
                 >
                   {result}
                 </span>

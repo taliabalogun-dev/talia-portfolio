@@ -9,6 +9,7 @@ import EnlargeableVideo from "@/components/EnlargeableVideo";
 import OtherFeaturedAnimation from "@/components/OtherFeaturedAnimation";
 import RoleNav from "@/components/RoleNav";
 import { projects } from "@/content/site";
+import { getPillTheme } from "@/content/pillTheme";
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
@@ -30,6 +31,8 @@ export default async function ProjectPage(
   if (!project) {
     notFound();
   }
+
+  const pillTheme = getPillTheme(project.slug);
 
   return (
     <>
@@ -145,11 +148,11 @@ export default async function ProjectPage(
                     const hasSections = slide.sections.length > 0;
                     const gallery = hasImages && (
                       slide.layout === "slideshow" ? (
-                        <SlideGallery images={slide.images!} />
+                        <SlideGallery images={slide.images!} theme={pillTheme} />
                       ) : slide.layout === "filmstrip" ? (
                         <FilmstripGallery images={slide.images!} />
                       ) : slide.layout === "cards" ? (
-                        <CampaignCardsGallery images={slide.images!} />
+                        <CampaignCardsGallery images={slide.images!} theme={pillTheme} />
                       ) : (
                       <div
                         className={
@@ -174,6 +177,7 @@ export default async function ProjectPage(
                                   autoplay={img.autoplay}
                                   roles={img.roles}
                                   results={img.results}
+                                  theme={pillTheme}
                                   className="absolute inset-0 h-full w-full object-cover"
                                 />
                               ) : (
@@ -183,6 +187,7 @@ export default async function ProjectPage(
                                   sizes="(min-width: 640px) 340px, 45vw"
                                   roles={img.roles}
                                   results={img.results}
+                                  theme={pillTheme}
                                 />
                               )}
                             </div>
@@ -196,7 +201,11 @@ export default async function ProjectPage(
                                     {img.results.slice(0, 2).map((result) => (
                                       <span
                                         key={result}
-                                        className="rounded-full bg-beige/10 px-2 py-0.5 text-[11px] font-medium leading-snug text-beige/90"
+                                        className="rounded-full px-2 py-0.5 text-[11px] font-medium leading-snug"
+                                        style={{
+                                          background: pillTheme.resultBg,
+                                          color: pillTheme.resultText,
+                                        }}
                                       >
                                         {result}
                                       </span>
@@ -219,14 +228,25 @@ export default async function ProjectPage(
                             </h3>
                             {section.style === "pills" ? (
                               <div className="mt-2 flex flex-wrap gap-2">
-                                {section.items.map((item) => (
-                                  <span
-                                    key={item}
-                                    className="rounded-full bg-beige/10 px-3 py-1 text-sm text-beige/90"
-                                  >
-                                    {item}
-                                  </span>
-                                ))}
+                                {section.items.map((item) => {
+                                  const isResult = section.heading === "Results";
+                                  return (
+                                    <span
+                                      key={item}
+                                      className="rounded-full px-3 py-1 text-sm"
+                                      style={{
+                                        background: isResult
+                                          ? pillTheme.resultBg
+                                          : pillTheme.roleBg,
+                                        color: isResult
+                                          ? pillTheme.resultText
+                                          : pillTheme.roleText,
+                                      }}
+                                    >
+                                      {item}
+                                    </span>
+                                  );
+                                })}
                               </div>
                             ) : (
                               <div className="mt-2 flex flex-col gap-2 text-base text-beige/90">

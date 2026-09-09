@@ -3,8 +3,15 @@
 import { useState } from "react";
 import EnlargeableImage from "@/components/EnlargeableImage";
 import type { SlideImage } from "@/content/site";
+import type { PillTheme } from "@/content/pillTheme";
 
-export default function SlideGallery({ images }: { images: SlideImage[] }) {
+export default function SlideGallery({
+  images,
+  theme,
+}: {
+  images: SlideImage[];
+  theme?: PillTheme;
+}) {
   const [index, setIndex] = useState(0);
 
   const goTo = (i: number) => {
@@ -67,7 +74,12 @@ export default function SlideGallery({ images }: { images: SlideImage[] }) {
           {current.results.map((result) => (
             <span
               key={result}
-              className="rounded-full bg-beige/10 px-2.5 py-1 text-xs font-medium leading-snug text-beige/90"
+              className="rounded-full px-2.5 py-1 text-xs font-medium leading-snug"
+              style={
+                theme
+                  ? { background: theme.resultBg, color: theme.resultText }
+                  : undefined
+              }
             >
               {result}
             </span>
