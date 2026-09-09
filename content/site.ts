@@ -1,7 +1,7 @@
 export const site = {
   name: "Talia Balogun",
   role: "Production Coordinator, Creative Marketing",
-  heroStatement: "Great ideas are easy. Getting them made is the job.",
+  heroStatement: "Great products don't sell themselves. Great stories do.",
   tagline:
     "Creative production workflows for marketing campaigns, film sets, fashion shows, and entertainment launches.",
   email: "talia.balogun@gmail.com",
