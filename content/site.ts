@@ -838,6 +838,9 @@ export const skills: { category: string; items: string[] }[] = [
       "Hooks, Angles & Script Writing",
       "Audience & Cultural Insight",
       "Cross-Market Brand Voice Adaptation",
+      "Brand & Campaign Positioning",
+      "Competitive & Market Research",
+      "Marketing & Go-to-Market Strategy",
     ],
   },
   {
@@ -849,12 +852,24 @@ export const skills: { category: string; items: string[] }[] = [
     ],
   },
   {
+    category: "Production & Logistics",
+    items: [
+      "On-Set & Live Event Production",
+      "Production Scheduling & Logistics",
+      "Vendor, Crew & Talent Coordination",
+      "Budget Tracking & Resource Allocation",
+    ],
+  },
+  {
     category: "Tools",
     items: [
       "Adobe Creative Suite",
       "Canva",
       "Social Media Publishing & Analytics",
       "Notion & Asana",
+      "Airtable",
+      "HubSpot CRM",
+      "Google Workspace & Microsoft Office",
     ],
   },
 ];
