@@ -452,6 +452,15 @@ export const projects: Project[] = [
             style: "pills",
             items: ["Creative Director", "Media Coordinator", "Event Coordinator"],
           },
+          {
+            heading: "Results",
+            style: "pills",
+            items: [
+              "Print - 500+ Magazines Sold",
+              "20,000 Likes",
+              "90,000 Impressions Across Posts Led by Me",
+            ],
+          },
         ],
       },
       {
@@ -511,7 +520,23 @@ export const projects: Project[] = [
           { src: "/images/campaigns/ucla-campaign-edited-selects.jpg" },
           { src: "/images/campaigns/ucla-campaign-marketing-strategy.jpg" },
         ],
-        sections: [],
+        sections: [
+          {
+            heading: "Results",
+            style: "pills",
+            items: [
+              "8.5K+ Impressions",
+              "4.2K+ Accounts Reached",
+              "35% Non-Follower Reach",
+              "1,000+ Post Interactions",
+              "400+ Profile Visits",
+              "20+ Outreach Messages",
+              "4 Student Organization Partnerships",
+              "900+ Event Attendees",
+              "600+ Event Attendees (30% Above Average Service)",
+            ],
+          },
+        ],
       },
       {
         title: "Featured Creative Media",
