@@ -254,6 +254,11 @@ export const projects: Project[] = [
             style: "pills",
             items: ["Art Production Strategy", "Guidelines & Graphic Design"],
           },
+          {
+            heading: "Results",
+            style: "pills",
+            items: ["Increased Engagement by 30% During Instagram Brand Guideline Implementation"],
+          },
         ],
       },
     ],
@@ -407,7 +412,19 @@ export const projects: Project[] = [
           { src: "/images/campaigns/fast-campaign-edited-selects.jpg" },
           { src: "/images/campaigns/fast-campaign-marketing-strategy.jpg" },
         ],
-        sections: [],
+        sections: [
+          {
+            heading: "Results",
+            style: "pills",
+            items: [
+              "Sold-Out Fashion Drop",
+              "Increased Student Customer Engagement",
+              "3,101 Likes & 21 Comments",
+              "131 Shares & 13 Reposts",
+              "100% Collection Sell-Through",
+            ],
+          },
+        ],
       },
       {
         /* The finished work: editorial frames and the magazine they ran in. */
