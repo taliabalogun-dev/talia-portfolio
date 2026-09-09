@@ -21,9 +21,9 @@ const themes = {
     resultText: "#5C1F14",
   },
   pink: {
-    roleBg: "#F9DEEC",
+    roleBg: "#FBEBF4",
     roleText: "#5A1638",
-    resultBg: "#FDF0F7",
+    resultBg: "#FEF6FA",
     resultText: "#5A1638",
   },
   blue: {

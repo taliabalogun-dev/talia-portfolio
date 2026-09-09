@@ -552,6 +552,11 @@ export const projects: Project[] = [
         ],
         sections: [
           {
+            heading: "My Role",
+            style: "pills",
+            items: ["Visual Identity", "Art Direction", "Photography", "Content Production", "Editing"],
+          },
+          {
             heading: "Results",
             style: "pills",
             items: [
@@ -778,12 +783,9 @@ export const projects: Project[] = [
     slides: [
       {
         title: "Featured Creative Media",
-        layout: "cards",
         images: [
           {
             src: "/images/campaigns/bap-house-of-gaa-poster.jpg",
-            title: "'House of Gaa' (Netflix)",
-            caption: "Production Coordinator, Talent Coordinator",
             results: [
               "Set Design Assistance for 2 Netflix Sets",
               "Costume Assistant Responsible for 4 Cast Members",
@@ -791,8 +793,6 @@ export const projects: Project[] = [
           },
           {
             src: "/images/campaigns/bap-bling-lagosians-2-poster.jpg",
-            title: "'The Bling Lagosians 2' (Netflix)",
-            caption: "Writers Room Intern, Pitch & IP Strategy",
             results: [
               "Dictated & Supervised Entire Draft Film Treatment",
               "Collaborated with 10+ Industry Professionals in Writers Room",
@@ -836,12 +836,9 @@ export const projects: Project[] = [
     slides: [
       {
         title: "Featured Creative Media",
-        layout: "cards",
         images: [
           {
             src: "/images/campaigns/golden-effects-swallow-poster.jpg",
-            title: "'Swallow' (Netflix)",
-            caption: "Production Assistant - Oct 2026",
             results: [
               "#1 on Nigerian Netflix",
               "Screened 10+ Talent Profiles for the Lead Role",
@@ -881,55 +878,47 @@ export const projects: Project[] = [
         layout: "slideshow",
         images: [
           { src: "/images/campaigns/ctrl4c-campaign-title.jpg" },
+          { src: "/images/campaigns/ctrl4c-campaign-overview.jpg" },
+          { src: "/images/campaigns/ctrl4c-campaign-video-content.jpg" },
+          { src: "/images/campaigns/ctrl4c-campaign-cast-talent.jpg" },
+          { src: "/images/campaigns/ctrl4c-campaign-screening-post.jpg" },
+          { src: "/images/campaigns/ctrl4c-campaign-teaser-slideshow.jpg" },
+          { src: "/images/campaigns/ctrl4c-campaign-other-posts.jpg" },
+          { src: "/images/campaigns/ctrl4c-campaign-marketing-strategy.jpg" },
+        ],
+        sections: [
           {
-            src: "/images/campaigns/ctrl4c-campaign-overview.jpg",
-            results: [
+            heading: "My Role",
+            style: "pills",
+            items: ["Creative Director", "Campaign Strategist", "Social Media Manager", "Designer"],
+          },
+          {
+            heading: "Results",
+            style: "pills",
+            items: [
               "+400 Followers",
               "20K+ Views",
               "2 Interview Invitations",
               "AFRIFF Recognition",
-            ],
-          },
-          {
-            src: "/images/campaigns/ctrl4c-campaign-video-content.jpg",
-            results: [
               "20K+ Cumulative Video Views",
               "3 High-Performing Process Videos",
               "Consistent Audience Growth",
               "Increased Profile Discovery",
-            ],
-          },
-          {
-            src: "/images/campaigns/ctrl4c-campaign-cast-talent.jpg",
-            results: [
               "100+ Post Interactions",
               "Strong Comment Engagement",
               "Higher Content Shares & Saves",
               "Expanded Community Participation",
-            ],
-          },
-          {
-            src: "/images/campaigns/ctrl4c-campaign-screening-post.jpg",
-            results: [
               "9.5K+ Impressions",
               "3.1K+ Accounts Reached",
               "52 Profile Visits",
               "40%+ Discovery Through Feed Recommendations",
-            ],
-          },
-          {
-            src: "/images/campaigns/ctrl4c-campaign-teaser-slideshow.jpg",
-            results: [
               "2.4K+ Views",
               "Strong Audience Retention",
               "Increased Comment Activity",
               "Improved Engagement with Future Posts",
             ],
           },
-          { src: "/images/campaigns/ctrl4c-campaign-other-posts.jpg" },
-          { src: "/images/campaigns/ctrl4c-campaign-marketing-strategy.jpg" },
         ],
-        sections: [],
       },
       {
         title: "Featured Creative Media",
@@ -942,7 +931,18 @@ export const projects: Project[] = [
             poster: "/images/campaigns/ctrl4c-full-film-poster-v2.jpg",
             caption: "CTRL 4C - Full Film",
             password: "screeningroom4c",
-            results: [
+          },
+        ],
+        sections: [
+          {
+            heading: "My Role",
+            style: "pills",
+            items: ["Writer", "Director", "Producer", "Animator", "Editor"],
+          },
+          {
+            heading: "Results",
+            style: "pills",
+            items: [
               "Screened at Undergraduate Showcase",
               "Screened in Animation Extravaganza",
               "A+ on Final Grade",
@@ -950,7 +950,6 @@ export const projects: Project[] = [
             ],
           },
         ],
-        sections: [],
         quote: {
           text: "She tackled underrepresented cultural perspectives and subject matter in a way that was humorous, accessible, entertaining, and unifying for diverse audiences.",
           name: "Lynn Okimura",

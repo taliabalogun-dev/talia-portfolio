@@ -73,9 +73,13 @@ export default async function ProjectPage(
                   className="mt-6 border-l-4 border-accent/60 pl-5"
                 >
                   <p className="text-lg italic text-ink">&ldquo;{quote.text}&rdquo;</p>
-                  <footer className="mt-2 text-sm text-muted">
-                    — <span className="text-accent">{quote.name}</span>
-                    {quote.role && <span className="text-accent">, {quote.role}</span>}, {quote.org}
+                  <footer className="mt-2 flex flex-wrap items-center gap-1.5 text-sm text-muted">
+                    <span>—</span>
+                    <span className="rounded-full bg-accent px-2.5 py-0.5 font-medium text-accent-ink">
+                      {quote.name}
+                      {quote.role && `, ${quote.role}`}
+                    </span>
+                    <span>, {quote.org}</span>
                   </footer>
                 </blockquote>
               ))}
@@ -283,12 +287,13 @@ export default async function ProjectPage(
                       <p className="text-lg italic text-beige">
                         &ldquo;{slide.quote.text}&rdquo;
                       </p>
-                      <footer className="mt-2 text-sm text-beige/70">
-                        — <span className="text-accent">{slide.quote.name}</span>
-                        {slide.quote.role && (
-                          <span className="text-accent">, {slide.quote.role}</span>
-                        )}
-                        , {slide.quote.org}
+                      <footer className="mt-2 flex flex-wrap items-center gap-1.5 text-sm text-beige/70">
+                        <span>—</span>
+                        <span className="rounded-full bg-accent px-2.5 py-0.5 font-medium text-accent-ink">
+                          {slide.quote.name}
+                          {slide.quote.role && `, ${slide.quote.role}`}
+                        </span>
+                        <span>, {slide.quote.org}</span>
                       </footer>
                     </blockquote>
                   )}
