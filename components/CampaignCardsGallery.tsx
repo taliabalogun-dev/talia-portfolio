@@ -28,14 +28,21 @@ export default function CampaignCardsGallery({ images }: { images: SlideImage[] 
               />
             </button>
             {img.title && (
-              <p className="mt-2 hidden text-sm font-bold leading-snug text-beige sm:block">
+              <p className="mt-2 text-sm font-bold leading-snug text-beige">
                 {img.title}
               </p>
             )}
-            {img.caption && (
-              <p className="hidden text-xs leading-snug text-beige/70 sm:block">
-                {img.caption}
-              </p>
+            {img.results && img.results.length > 0 && (
+              <div className="mt-1.5 flex flex-wrap gap-1.5">
+                {img.results.map((result) => (
+                  <span
+                    key={result}
+                    className="rounded-full bg-accent/15 px-2 py-0.5 text-[11px] font-medium leading-snug text-accent"
+                  >
+                    {result}
+                  </span>
+                ))}
+              </div>
             )}
           </div>
         ))}

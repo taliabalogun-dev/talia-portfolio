@@ -185,9 +185,23 @@ export default async function ProjectPage(
                                 />
                               )}
                             </div>
-                            {img.caption && (
-                              <figcaption className="p-2 text-sm text-beige/70">
-                                {img.caption}
+                            {(img.caption || (img.results && img.results.length > 0)) && (
+                              <figcaption className="flex flex-col gap-1.5 p-2">
+                                {img.caption && (
+                                  <span className="text-sm text-beige/70">{img.caption}</span>
+                                )}
+                                {img.results && img.results.length > 0 && (
+                                  <span className="flex flex-wrap gap-1.5">
+                                    {img.results.map((result) => (
+                                      <span
+                                        key={result}
+                                        className="rounded-full bg-accent/15 px-2 py-0.5 text-[11px] font-medium leading-snug text-accent"
+                                      >
+                                        {result}
+                                      </span>
+                                    ))}
+                                  </span>
+                                )}
                               </figcaption>
                             )}
                           </figure>
