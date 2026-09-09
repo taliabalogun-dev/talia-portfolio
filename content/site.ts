@@ -211,7 +211,8 @@ export const projects: Project[] = [
             caption:
               "IP & festival releases research & strategy, as well as live day-of social media campaign - active posting",
             results: [
-              "3 Emmy Nominations (and Other Nominations)",
+              "3 Emmy Nominations",
+              "NAACP Image Award Nomination",
               "2 IPs in Production Post-Festival",
               "5,373 Likes & 62 Comments on Emmy Nomination Post",
               "Live Day-of Social Media Updates",
