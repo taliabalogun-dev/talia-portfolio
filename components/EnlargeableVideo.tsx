@@ -8,6 +8,7 @@ export default function EnlargeableVideo({
   autoplay,
   className = "",
   roles,
+  results,
 }: {
   src: string;
   poster?: string;
@@ -15,8 +16,11 @@ export default function EnlargeableVideo({
   className?: string;
   /** Role tags shown only in the enlarged lightbox, below the video. */
   roles?: string[];
+  /** Result pills shown only in the enlarged lightbox, below the video. */
+  results?: string[];
 }) {
   const [open, setOpen] = useState(false);
+  const hasExtras = (roles && roles.length > 0) || (results && results.length > 0);
 
   return (
     <>
@@ -31,11 +35,11 @@ export default function EnlargeableVideo({
         preload={autoplay ? "auto" : "metadata"}
         className={className}
       />
-      {roles && roles.length > 0 && (
+      {hasExtras && (
         <button
           type="button"
           onClick={() => setOpen(true)}
-          aria-label="View role details"
+          aria-label="View role and result details"
           className="absolute right-2 top-2 z-10 rounded-full bg-black/60 px-3 py-1 text-xs font-semibold text-white hover:bg-black/80"
         >
           Expand ⤢
@@ -64,7 +68,7 @@ export default function EnlargeableVideo({
             className="max-h-[75vh] w-auto max-w-full"
             onClick={(e) => e.stopPropagation()}
           />
-          {roles && (
+          {roles && roles.length > 0 && (
             <div
               className="flex flex-wrap justify-center gap-2"
               onClick={(e) => e.stopPropagation()}
@@ -75,6 +79,21 @@ export default function EnlargeableVideo({
                   className="rounded-full bg-white/10 px-3 py-1 text-sm text-white"
                 >
                   {role}
+                </span>
+              ))}
+            </div>
+          )}
+          {results && results.length > 0 && (
+            <div
+              className="flex flex-wrap justify-center gap-2"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {results.map((result) => (
+                <span
+                  key={result}
+                  className="rounded-full bg-accent/20 px-3 py-1 text-sm text-accent"
+                >
+                  {result}
                 </span>
               ))}
             </div>

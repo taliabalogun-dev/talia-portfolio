@@ -172,6 +172,7 @@ export default async function ProjectPage(
                                   poster={img.poster}
                                   autoplay={img.autoplay}
                                   roles={img.roles}
+                                  results={img.results}
                                   className="absolute inset-0 h-full w-full object-cover"
                                 />
                               ) : (
@@ -180,6 +181,7 @@ export default async function ProjectPage(
                                   className={img.position === "top" ? "object-cover object-top" : "object-cover"}
                                   sizes="(min-width: 640px) 340px, 45vw"
                                   roles={img.roles}
+                                  results={img.results}
                                 />
                               )}
                             </div>

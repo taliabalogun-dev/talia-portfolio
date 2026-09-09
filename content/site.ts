@@ -658,6 +658,16 @@ export const projects: Project[] = [
             style: "pills",
             items: ["Event Coordinator", "Media Coordinator", "Talent Coordinator"],
           },
+          {
+            heading: "Results",
+            style: "pills",
+            items: [
+              "Led 20-Camera Team for Sold-Out Fashion Show",
+              "Posting Strategy Across Interviews, Livestream, Video & Photo Coverage",
+              "1,700 Likes & 6,000 Impressions",
+              "Personally Captured 70% of Campaign Media",
+            ],
+          },
         ],
       },
       {
@@ -673,6 +683,14 @@ export const projects: Project[] = [
             style: "pills",
             items: ["Event Coordinator", "Media Coordinator", "Social Media Strategy"],
           },
+          {
+            heading: "Results",
+            style: "pills",
+            items: [
+              "Sold-Out Zine Launch",
+              "Carousel Gained 400 Likes & 900 Impressions",
+            ],
+          },
         ],
       },
       {
@@ -687,6 +705,7 @@ export const projects: Project[] = [
             caption:
               "‘What does LA mean to you’ zine promotion video - Directed and shot by me - Feb 2025",
             roles: ["Producer", "Partner Comms", "Director", "Director of Photography"],
+            results: ["1,000+ Impressions"],
           },
           {
             src: "/videos/refine-decomposition-promo.mp4",
@@ -696,12 +715,14 @@ export const projects: Project[] = [
             caption:
               "‘Decomposition’ fashion show abstract promotion video - Edited & animated by me - March 2025",
             roles: ["Producer", "Partner Comms", "Animator", "Director"],
+            results: ["Highest-Grossing Video on This Page", "2,000 Impressions"],
           },
           {
             src: "/images/campaigns/refine-zine-cover.jpg",
             caption:
               "‘Lost and found’ fashion show event graphic & media coverage - Designed and shot by me - March 2024",
             roles: ["Designer", "Social Strategy"],
+            results: ["700 Impressions"],
           },
         ],
         sections: [],

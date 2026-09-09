@@ -10,6 +10,7 @@ export default function EnlargeableImage({
   sizes,
   priority,
   roles,
+  results,
 }: {
   src: string;
   alt?: string;
@@ -18,6 +19,8 @@ export default function EnlargeableImage({
   priority?: boolean;
   /** Role tags shown only in the enlarged lightbox, below the image. */
   roles?: string[];
+  /** Result pills shown only in the enlarged lightbox, below the image. */
+  results?: string[];
 }) {
   const [open, setOpen] = useState(false);
 
@@ -61,6 +64,21 @@ export default function EnlargeableImage({
                   className="rounded-full bg-white/10 px-3 py-1 text-sm text-white"
                 >
                   {role}
+                </span>
+              ))}
+            </div>
+          )}
+          {results && results.length > 0 && (
+            <div
+              className="flex flex-wrap justify-center gap-2"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {results.map((result) => (
+                <span
+                  key={result}
+                  className="rounded-full bg-accent/20 px-3 py-1 text-sm text-accent"
+                >
+                  {result}
                 </span>
               ))}
             </div>
