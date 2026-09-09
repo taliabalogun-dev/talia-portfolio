@@ -898,27 +898,15 @@ export const projects: Project[] = [
             items: ["+400 Followers", "20K+ Total Views", "Consistent Audience Growth"],
           },
           {
-            heading: "Engagement",
-            style: "pills",
-            items: [
-              "100+ Post Interactions",
-              "Strong Comment & Share Engagement",
-              "Increased Profile Discovery",
-            ],
-          },
-          {
-            heading: "Reach",
+            heading: "Reach & Recognition",
             style: "pills",
             items: [
               "9.5K+ Impressions",
               "3.1K+ Accounts Reached",
               "40%+ Discovery Through Feed Recommendations",
+              "AFRIFF Recognition",
+              "2 Industry Interview Invitations",
             ],
-          },
-          {
-            heading: "Recognition",
-            style: "pills",
-            items: ["AFRIFF Recognition", "2 Industry Interview Invitations"],
           },
         ],
       },

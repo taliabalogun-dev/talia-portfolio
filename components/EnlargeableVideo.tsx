@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import type { PillTheme } from "@/content/pillTheme";
 
 export default function EnlargeableVideo({
@@ -30,32 +30,12 @@ export default function EnlargeableVideo({
   const [attempt, setAttempt] = useState("");
   const [wrongAttempt, setWrongAttempt] = useState(false);
   const hasExtras = (roles && roles.length > 0) || (results && results.length > 0);
-  const storageKey = `video-unlocked:${src}`;
-
-  useEffect(() => {
-    if (!password) return;
-    let alreadyUnlocked = false;
-    try {
-      alreadyUnlocked = sessionStorage.getItem(storageKey) === "true";
-    } catch {
-      // sessionStorage unavailable - fall through, prompt stays.
-    }
-    if (alreadyUnlocked) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect -- syncing with sessionStorage, an external system, on mount.
-      setUnlocked(true);
-    }
-  }, [password, storageKey]);
 
   function submitPassword(e: React.FormEvent) {
     e.preventDefault();
     if (attempt === password) {
       setUnlocked(true);
       setWrongAttempt(false);
-      try {
-        sessionStorage.setItem(storageKey, "true");
-      } catch {
-        // ignore
-      }
     } else {
       setWrongAttempt(true);
     }
