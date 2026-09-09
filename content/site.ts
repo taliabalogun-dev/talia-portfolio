@@ -786,6 +786,8 @@ export const projects: Project[] = [
         images: [
           {
             src: "/images/campaigns/bap-house-of-gaa-poster.jpg",
+            title: "'House of Gaa' (Netflix)",
+            caption: "Production Coordinator, Talent Coordinator",
             results: [
               "Set Design Assistance for 2 Netflix Sets",
               "Costume Assistant Responsible for 4 Cast Members",
@@ -793,6 +795,8 @@ export const projects: Project[] = [
           },
           {
             src: "/images/campaigns/bap-bling-lagosians-2-poster.jpg",
+            title: "'The Bling Lagosians 2' (Netflix)",
+            caption: "Writers Room Intern, Pitch & IP Strategy",
             results: [
               "Dictated & Supervised Entire Draft Film Treatment",
               "Collaborated with 10+ Industry Professionals in Writers Room",
@@ -839,6 +843,8 @@ export const projects: Project[] = [
         images: [
           {
             src: "/images/campaigns/golden-effects-swallow-poster.jpg",
+            title: "'Swallow' (Netflix)",
+            caption: "Production Assistant - Oct 2026",
             results: [
               "#1 on Nigerian Netflix",
               "Screened 10+ Talent Profiles for the Lead Role",

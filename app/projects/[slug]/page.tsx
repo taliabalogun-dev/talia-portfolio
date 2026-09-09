@@ -171,61 +171,73 @@ export default async function ProjectPage(
                             slide.images!.length === 1 &&
                             slide.images![0]?.aspect === "video";
                           return slide.images!.map((img) => (
-                          <figure
-                            key={img.src}
-                            className="overflow-hidden rounded-xl border border-beige/15"
-                          >
-                            <div
-                              className={`relative w-full ${img.aspect === "video" ? "aspect-video" : "aspect-[9/16]"}`}
-                            >
-                              {img.kind === "video" ? (
-                                <EnlargeableVideo
-                                  src={img.src}
-                                  poster={img.poster}
-                                  autoplay={img.autoplay}
-                                  roles={img.roles}
-                                  results={img.results}
-                                  password={img.password}
-                                  theme={pillTheme}
-                                  className="absolute inset-0 h-full w-full object-cover"
-                                />
-                              ) : (
-                                <EnlargeableImage
-                                  src={img.src}
-                                  className={img.position === "top" ? "object-cover object-top" : "object-cover"}
-                                  sizes="(min-width: 640px) 340px, 45vw"
-                                  roles={img.roles}
-                                  results={img.results}
-                                  theme={pillTheme}
-                                />
+                          <div key={img.src} className="flex flex-col">
+                            <figure className="relative overflow-hidden rounded-xl border border-beige/15">
+                              <div
+                                className={`relative w-full ${img.aspect === "video" ? "aspect-video" : "aspect-[9/16]"}`}
+                              >
+                                {img.kind === "video" ? (
+                                  <EnlargeableVideo
+                                    src={img.src}
+                                    poster={img.poster}
+                                    autoplay={img.autoplay}
+                                    roles={img.roles}
+                                    results={img.results}
+                                    password={img.password}
+                                    theme={pillTheme}
+                                    className="absolute inset-0 h-full w-full object-cover"
+                                  />
+                                ) : (
+                                  <EnlargeableImage
+                                    src={img.src}
+                                    className={img.position === "top" ? "object-cover object-top" : "object-cover"}
+                                    sizes="(min-width: 640px) 340px, 45vw"
+                                    roles={img.roles}
+                                    results={img.results}
+                                    theme={pillTheme}
+                                  />
+                                )}
+                              </div>
+                              {img.title && (
+                                <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-3 pt-8">
+                                  <p className="text-sm font-bold leading-snug text-white">
+                                    {img.title}
+                                  </p>
+                                  {img.caption && (
+                                    <p className="text-xs leading-snug text-white/80">
+                                      {img.caption}
+                                    </p>
+                                  )}
+                                </div>
                               )}
-                            </div>
-                            {(img.caption || (img.results && img.results.length > 0)) && (
-                              <figcaption className="flex flex-col gap-1.5 p-2">
-                                {img.caption && (
-                                  <span className="text-sm text-beige/70">{img.caption}</span>
-                                )}
-                                {img.results && img.results.length > 0 && (
-                                  <span className="flex flex-wrap gap-1.5">
-                                    {(isFullWidth ? img.results : img.results.slice(0, 2)).map(
-                                      (result) => (
-                                        <span
-                                          key={result}
-                                          className="rounded-full px-2 py-0.5 text-[11px] font-medium leading-snug"
-                                          style={{
-                                            background: pillTheme.resultBg,
-                                            color: pillTheme.resultText,
-                                          }}
-                                        >
-                                          {result}
-                                        </span>
-                                      ),
-                                    )}
-                                  </span>
-                                )}
-                              </figcaption>
+                            </figure>
+                            {!img.title && img.caption && (
+                              <p className="mt-1.5 text-sm text-beige/70">{img.caption}</p>
                             )}
-                          </figure>
+                            {img.results && img.results.length > 0 && (
+                              <div className="mt-2">
+                                <span className="text-[11px] font-medium uppercase tracking-wide text-beige/60">
+                                  Results
+                                </span>
+                                <div className="mt-1.5 flex flex-wrap gap-1.5">
+                                  {(isFullWidth ? img.results : img.results.slice(0, 2)).map(
+                                    (result) => (
+                                      <span
+                                        key={result}
+                                        className="rounded-full px-2 py-0.5 text-[11px] font-medium leading-snug"
+                                        style={{
+                                          background: pillTheme.resultBg,
+                                          color: pillTheme.resultText,
+                                        }}
+                                      >
+                                        {result}
+                                      </span>
+                                    ),
+                                  )}
+                                </div>
+                              </div>
+                            )}
+                          </div>
                           ));
                         })()}
                       </div>
