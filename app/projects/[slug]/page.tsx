@@ -199,12 +199,12 @@ export default async function ProjectPage(
                                 )}
                               </div>
                               {img.title && (
-                                <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-3 pt-8">
-                                  <p className="text-sm font-bold leading-snug text-white">
+                                <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-white p-3">
+                                  <p className="text-sm font-bold leading-snug text-black">
                                     {img.title}
                                   </p>
                                   {img.caption && (
-                                    <p className="text-xs leading-snug text-white/80">
+                                    <p className="text-xs leading-snug text-black/70">
                                       {img.caption}
                                     </p>
                                   )}

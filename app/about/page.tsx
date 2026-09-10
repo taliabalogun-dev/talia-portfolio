@@ -70,7 +70,7 @@ export default function AboutPage() {
                     </div>
                     <p className="mt-3 text-center text-sm leading-snug text-hero-ink">
                       <span className="block font-bold">
-                        University of California, Los Angeles, USA
+                        University of California, Los Angeles
                       </span>
                       <span className="block text-[11px] text-hero-ink/60">
                         B.A. Film &amp; Television, Animation Concentration
