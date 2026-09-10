@@ -401,8 +401,8 @@ export const projects: Project[] = [
         sections: [
           {
             heading: "My Role",
-            style: "list",
-            items: ["Facilitated coordination between creative teams."],
+            style: "pills",
+            items: ["Facilitated Coordination Between Creative Teams"],
           },
           {
             heading: "Results",
