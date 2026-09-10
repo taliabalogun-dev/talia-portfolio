@@ -75,7 +75,7 @@ export default function AboutPage() {
                       <span className="block text-[11px] text-hero-ink/60">
                         B.A. Film &amp; Television, Animation Concentration
                       </span>
-                      <span className="mt-1.5 block">
+                      <span className="mt-1.5 block font-bold">
                         Cheltenham Ladies&apos;, Cheltenham, UK
                       </span>
                       <span className="block text-[11px] text-hero-ink/60">
