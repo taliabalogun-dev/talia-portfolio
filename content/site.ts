@@ -214,7 +214,7 @@ export const projects: Project[] = [
             title: "Emmys Social Strategy",
             caption:
               "IP & festival releases research & strategy, as well as live day-of social media campaign - active posting",
-            roles: ["Social Strategist", "IP Researcher"],
+            roles: ["On Site Social Operations", "IP Researcher"],
             enlargedRoles: ["Social Strategist", "On-site Social"],
             results: [
               "3 Emmy Nominations",
@@ -251,7 +251,7 @@ export const projects: Project[] = [
             src: "/images/campaigns/kugali-campaign-razorman-pitch.png",
             title: "Pitch Strategy for Razorman",
             caption: "Producer-facing pitch research & slides",
-            roles: ["Pitch Strategist", "Deck Designer"],
+            roles: ["Pitch Strategist", "Admin Support"],
             enlargedRoles: ["Pitch Strategist", "Administrative Support"],
             results: [
               "Successfully in Production",
