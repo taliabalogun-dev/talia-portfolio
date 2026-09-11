@@ -282,7 +282,7 @@ export const projects: Project[] = [
           {
             heading: "Results",
             style: "pills",
-            items: ["Increased Engagement During Instagram Brand Guideline Implementation"],
+            items: ["Increased Engagement During Initial Brand Guideline Implementation"],
           },
         ],
       },
