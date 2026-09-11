@@ -1158,7 +1158,7 @@ export const experience: ExperienceItem[] = [
     company: "Kugali Media",
     period: "Sept 2024 - June 2025",
     summary:
-      "Supported pitch strategy and production coordination on Disney's Iwájú, built producer-facing pitch decks for Jollof Wars and Razorman, and reviewed 50+ scripts weekly to inform marketing positioning.",
+      "Supported pitch strategy and production coordination on Disney's Iwájú, built producer-facing pitch decks for Jollof Wars and Razorman, and reviewed scripts weekly to inform marketing positioning.",
     slug: "kugali-iwaju",
   },
   {
