@@ -75,6 +75,8 @@ export type SlideImage = {
   position?: "center" | "top";
   /** Role tags shown only in the enlarged/lightbox view, not inline in the grid. */
   roles?: string[];
+  /** Overrides `roles` only in the enlarged/lightbox view (e.g. "cards" layout resting tiles). */
+  enlargedRoles?: string[];
   /** Result pills shown only in the enlarged/lightbox view. Only used by "cards" layout slides. */
   results?: string[];
   /** Video only: gates playback behind a client-side password prompt (not real security - a polite viewing gate). */
@@ -212,6 +214,8 @@ export const projects: Project[] = [
             title: "Emmys Social Strategy",
             caption:
               "IP & festival releases research & strategy, as well as live day-of social media campaign - active posting",
+            roles: ["Social Strategist", "IP Researcher"],
+            enlargedRoles: ["Social Strategist", "On-site Social"],
             results: [
               "3 Emmy Nominations",
               "NAACP Image Award Nomination",
@@ -225,8 +229,9 @@ export const projects: Project[] = [
             src: "/images/campaigns/kugali-campaign-competing-ip-strategy.png",
             title: "Competing IP Strategy",
             caption: "Comparing international animation studios' GTM strategies",
+            roles: ["Competitive Analyst", "Data Visualization"],
             results: [
-              "9 Critical Reports on Competing IP Strategies",
+              "Critical Reports on Competing IP Strategies",
               "Gephi Network Map of Strategy Efficiencies",
             ],
           },
@@ -234,6 +239,7 @@ export const projects: Project[] = [
             src: "/images/campaigns/kugali-campaign-jollof-wars-pitch.png",
             title: "IP / Pitch Strategy for Jollof Wars",
             caption: "Internal marketing strategy and positioning slides",
+            roles: ["Pitch Strategist", "Deck Designer"],
             results: [
               "Successfully in Production",
               "30 Shortlisted Production Avenues",
@@ -245,6 +251,8 @@ export const projects: Project[] = [
             src: "/images/campaigns/kugali-campaign-razorman-pitch.png",
             title: "Pitch Strategy for Razorman",
             caption: "Producer-facing pitch research & slides",
+            roles: ["Pitch Strategist", "Deck Designer"],
+            enlargedRoles: ["Pitch Strategist", "Administrative Support"],
             results: [
               "Successfully in Production",
               "10 Shortlisted Production Avenues",
@@ -883,14 +891,14 @@ export const projects: Project[] = [
         title: "Featured Campaign",
         layout: "slideshow",
         images: [
-          { src: "/images/campaigns/ctrl4c-campaign-title.jpg" },
-          { src: "/images/campaigns/ctrl4c-campaign-overview.jpg" },
-          { src: "/images/campaigns/ctrl4c-campaign-video-content.jpg" },
-          { src: "/images/campaigns/ctrl4c-campaign-cast-talent.jpg" },
-          { src: "/images/campaigns/ctrl4c-campaign-screening-post.jpg" },
-          { src: "/images/campaigns/ctrl4c-campaign-teaser-slideshow.jpg" },
-          { src: "/images/campaigns/ctrl4c-campaign-other-posts.jpg" },
-          { src: "/images/campaigns/ctrl4c-campaign-marketing-strategy.jpg" },
+          { src: "/images/campaigns/ctrl4c-campaign-title-v2.jpg" },
+          { src: "/images/campaigns/ctrl4c-campaign-overview-v2.jpg" },
+          { src: "/images/campaigns/ctrl4c-campaign-video-content-v2.jpg" },
+          { src: "/images/campaigns/ctrl4c-campaign-cast-talent-v2.jpg" },
+          { src: "/images/campaigns/ctrl4c-campaign-screening-post-v2.jpg" },
+          { src: "/images/campaigns/ctrl4c-campaign-teaser-slideshow-v2.jpg" },
+          { src: "/images/campaigns/ctrl4c-campaign-other-posts-v2.jpg" },
+          { src: "/images/campaigns/ctrl4c-campaign-marketing-strategy-v2.jpg" },
         ],
         sections: [
           {

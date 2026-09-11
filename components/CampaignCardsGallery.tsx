@@ -13,6 +13,9 @@ export default function CampaignCardsGallery({
   theme?: PillTheme;
 }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const rolePillStyle = theme
+    ? { background: theme.roleBg, color: theme.roleText }
+    : undefined;
   const pillStyle = theme
     ? { background: theme.resultBg, color: theme.resultText }
     : undefined;
@@ -41,6 +44,19 @@ export default function CampaignCardsGallery({
               <p className="mt-2 text-sm font-bold leading-snug text-beige">
                 {img.title}
               </p>
+            )}
+            {img.roles && img.roles.length > 0 && (
+              <div className="mt-1.5 flex flex-wrap gap-1.5">
+                {img.roles.map((role) => (
+                  <span
+                    key={role}
+                    className="rounded-full px-2 py-0.5 text-[11px] font-medium leading-snug"
+                    style={rolePillStyle}
+                  >
+                    {role}
+                  </span>
+                ))}
+              </div>
             )}
             {img.results && img.results.length > 0 && (
               <div className="mt-1.5 flex flex-wrap gap-1.5">
@@ -86,6 +102,23 @@ export default function CampaignCardsGallery({
             />
             {current.caption && (
               <p className="mt-3 text-center text-sm text-white/70">{current.caption}</p>
+            )}
+            {(current.enlargedRoles ?? current.roles) &&
+              (current.enlargedRoles ?? current.roles)!.length > 0 && (
+              <div
+                className="mt-4 flex flex-wrap justify-center gap-2"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {(current.enlargedRoles ?? current.roles)!.map((role) => (
+                  <span
+                    key={role}
+                    className="rounded-full px-3 py-1 text-sm"
+                    style={rolePillStyle}
+                  >
+                    {role}
+                  </span>
+                ))}
+              </div>
             )}
             {current.results && current.results.length > 0 && (
               <div
