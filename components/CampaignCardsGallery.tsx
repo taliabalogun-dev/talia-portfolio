@@ -59,16 +59,21 @@ export default function CampaignCardsGallery({
               </div>
             )}
             {img.results && img.results.length > 0 && (
-              <div className="mt-1.5 flex flex-wrap gap-1.5">
-                {img.results.slice(0, 2).map((result) => (
-                  <span
-                    key={result}
-                    className="rounded-full px-2 py-0.5 text-[11px] font-medium leading-snug"
-                    style={pillStyle}
-                  >
-                    {result}
-                  </span>
-                ))}
+              <div className="mt-2">
+                <span className="text-[11px] font-medium uppercase tracking-wide text-beige/60">
+                  Results
+                </span>
+                <div className="mt-1.5 flex flex-wrap gap-1.5">
+                  {img.results.slice(0, 2).map((result) => (
+                    <span
+                      key={result}
+                      className="rounded-full px-2 py-0.5 text-[11px] font-medium leading-snug"
+                      style={pillStyle}
+                    >
+                      {result}
+                    </span>
+                  ))}
+                </div>
               </div>
             )}
           </div>

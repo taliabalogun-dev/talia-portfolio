@@ -216,15 +216,15 @@ export default async function ProjectPage(
                             )}
                             {img.results && img.results.length > 0 && (
                               <div className="mt-2">
-                                <span className="text-[11px] font-medium uppercase tracking-wide text-beige/60">
+                                <span className="text-sm font-medium uppercase tracking-wide text-beige/60">
                                   Results
                                 </span>
-                                <div className="mt-1.5 flex flex-wrap gap-1.5">
+                                <div className="mt-2 flex flex-wrap gap-2">
                                   {(isFullWidth ? img.results : img.results.slice(0, 2)).map(
                                     (result) => (
                                       <span
                                         key={result}
-                                        className="rounded-full px-2 py-0.5 text-[11px] font-medium leading-snug"
+                                        className="rounded-full px-3 py-1 text-sm font-medium leading-snug"
                                         style={{
                                           background: pillTheme.resultBg,
                                           color: pillTheme.resultText,
