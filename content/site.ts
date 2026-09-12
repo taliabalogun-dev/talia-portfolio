@@ -998,7 +998,7 @@ export const projects: Project[] = [
       "A marketplace platform that staffs full production teams to a brief - commissioners describe the work, co-curators (creative directors, photographers, editors, designers) get matched automatically, and the fee split runs 80/20 in the makers' favor.",
     extendedDescription:
       "Concept prototype, live since August 2026. Designed the brand and product end to end, built the front end solo, and modeled the pricing structure: a 5% first-project fee, an 80/20 commission split, and a 30% direction fee on team briefs. Currently running a small beta with real commissioners and co-curators.",
-    tags: ["Product Design", "Brand Identity", "Marketplace Mechanics"],
+    tags: ["Product Design", "Brand Identity", "Marketplace Mechanics", "Talent Management and Coordination"],
     role: "Founder & Chief Executive",
     period: "July 2026 - Present",
     location: "Los Angeles, CA / Remote",
