@@ -1,4 +1,11 @@
-import { auth, signIn, signOut } from "@/auth";
+import { redirect } from "next/navigation";
+import {
+  isAdminAuthenticated,
+  verifyPassword,
+  createAdminSession,
+  clearAdminSession,
+  adminPasswordConfigured,
+} from "@/lib/adminSession";
 import { getAnalytics, analyticsConfigured } from "@/lib/analytics";
 
 export const metadata = {
@@ -6,15 +13,26 @@ export const metadata = {
   robots: { index: false, follow: false },
 };
 
-export default async function AnalyticsPage() {
-  const session = await auth();
+export default async function AnalyticsPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ error?: string }>;
+}) {
+  const authed = await isAdminAuthenticated();
 
-  if (!session) {
-    return <SignInGate />;
+  if (!authed) {
+    const { error } = await searchParams;
+    return <SignInGate showError={error === "1"} />;
   }
 
   const data = await getAnalytics();
   const maxDaily = Math.max(1, ...data.daily.map((d) => d.count));
+
+  async function logout() {
+    "use server";
+    await clearAdminSession();
+    redirect("/admin/analytics");
+  }
 
   return (
     <main className="mx-auto max-w-3xl px-6 py-16 text-ink">
@@ -22,20 +40,12 @@ export default async function AnalyticsPage() {
         <h1 className="font-display text-3xl uppercase tracking-tight">
           Site Analytics
         </h1>
-        <form
-          action={async () => {
-            "use server";
-            await signOut({ redirectTo: "/admin/analytics" });
-          }}
-        >
+        <form action={logout}>
           <button className="rounded-full border border-beige/30 px-4 py-2 text-xs font-semibold uppercase tracking-wide transition-colors hover:border-accent">
             Sign out
           </button>
         </form>
       </div>
-      <p className="mt-1 text-sm text-muted">
-        Signed in as {session.user?.email}
-      </p>
 
       {!analyticsConfigured && (
         <p className="mt-6 rounded-lg border border-accent/40 bg-accent/10 px-4 py-3 text-sm text-accent">
@@ -103,7 +113,17 @@ export default async function AnalyticsPage() {
   );
 }
 
-function SignInGate() {
+function SignInGate({ showError }: { showError: boolean }) {
+  async function login(formData: FormData) {
+    "use server";
+    const password = String(formData.get("password") ?? "");
+    if (await verifyPassword(password)) {
+      await createAdminSession();
+      redirect("/admin/analytics");
+    }
+    redirect("/admin/analytics?error=1");
+  }
+
   return (
     <main className="mx-auto flex min-h-[70vh] max-w-md flex-col items-center justify-center px-6 text-center">
       <span className="text-3xl">🔒</span>
@@ -116,15 +136,31 @@ function SignInGate() {
         or just visiting - there&apos;s nothing behind here for you. Feel
         free to head back and explore the rest of the site.
       </p>
-      <form
-        action={async () => {
-          "use server";
-          await signIn("google", { redirectTo: "/admin/analytics" });
-        }}
-        className="mt-6"
-      >
-        <button className="rounded-full bg-accent px-6 py-3 text-sm font-bold uppercase tracking-wide text-accent-ink transition-opacity hover:opacity-85">
-          Sign in with Google
+
+      {!adminPasswordConfigured && (
+        <p className="mt-4 rounded-lg border border-accent/40 bg-accent/10 px-4 py-3 text-xs text-accent">
+          ADMIN_PASSWORD isn&apos;t set yet, so sign-in is disabled. Add it to
+          your environment to enable this page.
+        </p>
+      )}
+
+      <form action={login} className="mt-6 flex w-full flex-col gap-3">
+        <input
+          type="password"
+          name="password"
+          required
+          placeholder="Password"
+          autoFocus
+          className="w-full rounded-full border border-beige/30 bg-transparent px-5 py-3 text-center text-sm text-ink placeholder:text-muted focus:outline-none focus:ring-1 focus:ring-accent"
+        />
+        {showError && (
+          <p className="text-sm text-red-400">Incorrect password</p>
+        )}
+        <button
+          type="submit"
+          className="rounded-full bg-accent px-6 py-3 text-sm font-bold uppercase tracking-wide text-accent-ink transition-opacity hover:opacity-85"
+        >
+          Unlock
         </button>
       </form>
     </main>
