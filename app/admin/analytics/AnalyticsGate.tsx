@@ -4,7 +4,11 @@ import { useState, type FormEvent } from "react";
 import { unlockAnalytics } from "./actions";
 import type { AnalyticsSnapshot } from "@/lib/analytics";
 
-export default function AnalyticsGate() {
+export default function AnalyticsGate({
+  passwordConfigured,
+}: {
+  passwordConfigured: boolean;
+}) {
   const [unlocked, setUnlocked] = useState<{
     data: AnalyticsSnapshot;
     storageConfigured: boolean;
@@ -49,6 +53,13 @@ export default function AnalyticsGate() {
         or just visiting - there&apos;s nothing behind here for you. Feel
         free to head back and explore the rest of the site.
       </p>
+
+      {!passwordConfigured && (
+        <p className="mt-4 rounded-lg border border-accent/40 bg-accent/10 px-4 py-3 text-xs text-accent">
+          ADMIN_PASSWORD isn&apos;t set on the server yet, so no password
+          will work until it is.
+        </p>
+      )}
 
       <form onSubmit={handleSubmit} className="mt-6 flex w-full flex-col gap-3">
         <input
