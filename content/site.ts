@@ -1016,6 +1016,19 @@ export const projects: Project[] = [
     image: "/images/campaigns/cocurate-card-v2.jpg",
     slides: [
       {
+        title: "What is Co Curate",
+        images: [
+          {
+            src: "/videos/cocurate-thesis-film.mp4",
+            kind: "video",
+            aspect: "video",
+            poster: "/images/campaigns/cocurate-thesis-film-poster.jpg",
+            caption: "Co Curate - Thesis Film",
+          },
+        ],
+        sections: [],
+      },
+      {
         title: "The Product",
         subtitle: "Six screens from the live prototype",
         layout: "cards",
