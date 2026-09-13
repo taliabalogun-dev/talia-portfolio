@@ -97,6 +97,8 @@ export type Slide = {
   sections: SlideSection[];
   /** Defaults to "grid". "slideshow" renders a single-image carousel with Prev/Next. "filmstrip" shows every image at once, edge-to-edge, in a horizontally scrollable strip. "cards" shows small uncropped thumbnails with a caption underneath (desktop only) - wraps to a 2-column grid on mobile, scrolls horizontally on desktop. */
   layout?: "grid" | "slideshow" | "filmstrip" | "cards";
+  /** "grid" layout only. Forces a fixed column count (e.g. to keep specific images paired on the same row) instead of the default responsive 2/3-column split. */
+  columns?: 2 | 3;
   /** Pull-quote shown right after this slide's gallery, instead of at the top of the page. */
   quote?: { text: string; name: string; role?: string; org: string };
 };
@@ -1017,6 +1019,7 @@ export const projects: Project[] = [
     slides: [
       {
         title: "What is Co Curate",
+        columns: 2,
         images: [
           {
             src: "/videos/cocurate-thesis-film.mp4",
@@ -1024,6 +1027,31 @@ export const projects: Project[] = [
             aspect: "video",
             poster: "/images/campaigns/cocurate-thesis-film-poster.jpg",
             caption: "Co Curate - Thesis Film",
+          },
+          {
+            src: "/images/campaigns/cocurate-deck-1-what-it-is.jpg",
+            aspect: "video",
+            caption: "What Co Curate Is, and Why It Exists",
+          },
+          {
+            src: "/images/campaigns/cocurate-deck-2-how-creators.jpg",
+            aspect: "video",
+            caption: "How Creators Use Co Curate",
+          },
+          {
+            src: "/images/campaigns/cocurate-deck-3-how-commissioners.jpg",
+            aspect: "video",
+            caption: "How Commissioners Use Co Curate",
+          },
+          {
+            src: "/images/campaigns/cocurate-deck-4-creator-features.jpg",
+            aspect: "video",
+            caption: "Creator Platform Features",
+          },
+          {
+            src: "/images/campaigns/cocurate-deck-5-commissioner-features.jpg",
+            aspect: "video",
+            caption: "Commissioner Platform Features",
           },
         ],
         sections: [],

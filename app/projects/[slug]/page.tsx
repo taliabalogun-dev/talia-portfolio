@@ -160,10 +160,14 @@ export default async function ProjectPage(
                       ) : (
                       <div
                         className={
-                          slide.images!.length > 1 ||
-                          slide.images![0]?.aspect !== "video"
-                            ? "grid grid-cols-2 items-start gap-3 sm:grid-cols-3"
-                            : "grid grid-cols-1"
+                          slide.columns === 2
+                            ? "grid grid-cols-2 items-start gap-3"
+                            : slide.columns === 3
+                              ? "grid grid-cols-3 items-start gap-3"
+                              : slide.images!.length > 1 ||
+                                  slide.images![0]?.aspect !== "video"
+                                ? "grid grid-cols-2 items-start gap-3 sm:grid-cols-3"
+                                : "grid grid-cols-1"
                         }
                       >
                         {(() => {
