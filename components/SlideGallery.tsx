@@ -1,9 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import EnlargeableImage from "@/components/EnlargeableImage";
 import type { SlideImage } from "@/content/site";
 import type { PillTheme } from "@/content/pillTheme";
+
+const SWIPE_THRESHOLD = 40;
 
 export default function SlideGallery({
   images,
@@ -13,6 +15,7 @@ export default function SlideGallery({
   theme?: PillTheme;
 }) {
   const [index, setIndex] = useState(0);
+  const touchStartX = useRef<number | null>(null);
 
   const goTo = (i: number) => {
     setIndex(((i % images.length) + images.length) % images.length);
@@ -20,9 +23,25 @@ export default function SlideGallery({
 
   const current = images[index];
 
+  function handleTouchStart(e: React.TouchEvent) {
+    touchStartX.current = e.touches[0].clientX;
+  }
+
+  function handleTouchEnd(e: React.TouchEvent) {
+    if (touchStartX.current === null) return;
+    const delta = e.changedTouches[0].clientX - touchStartX.current;
+    touchStartX.current = null;
+    if (delta > SWIPE_THRESHOLD) goTo(index - 1);
+    else if (delta < -SWIPE_THRESHOLD) goTo(index + 1);
+  }
+
   return (
     <div>
-      <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-beige/15 bg-beige/5">
+      <div
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+        className="relative aspect-video w-full touch-pan-y select-none overflow-hidden rounded-xl border border-beige/15 bg-beige/5"
+      >
         {current.kind === "video" ? (
           <video
             key={current.src}
