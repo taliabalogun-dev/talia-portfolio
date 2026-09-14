@@ -147,7 +147,21 @@ export default async function ProjectPage(
                   {slide.subtitle && (
                     <p className="mt-1 text-base text-beige/70">{slide.subtitle}</p>
                   )}
-                  {(() => {
+                  {slide.columns && (
+                    <div className="mt-6 grid grid-cols-2 gap-4 sm:gap-6">
+                      {slide.columns.map((column) => (
+                        <div key={column.title ?? column.images[0]?.src}>
+                          {column.title && (
+                            <h3 className="mb-2 text-sm font-medium text-beige/70">
+                              {column.title}
+                            </h3>
+                          )}
+                          <SlideGallery images={column.images} theme={pillTheme} />
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  {!slide.columns && (() => {
                     const hasImages = !!slide.images && slide.images.length > 0;
                     const hasSections = slide.sections.length > 0;
                     const gallery = hasImages && (
