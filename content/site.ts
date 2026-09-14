@@ -1020,10 +1020,10 @@ export const projects: Project[] = [
         layout: "slideshow",
         images: [
           {
-            src: "/videos/cocurate-thesis-film.mp4",
+            src: "/videos/cocurate-intro-v2.mp4",
             kind: "video",
-            poster: "/images/campaigns/cocurate-thesis-film-poster.jpg",
-            caption: "Co Curate - Thesis Film",
+            poster: "/images/campaigns/cocurate-intro-poster-v2.jpg",
+            caption: "Co Curate - Introduction",
           },
           { src: "/images/campaigns/cocurate-deck1-01.jpg" },
           { src: "/images/campaigns/cocurate-deck1-02.jpg" },
