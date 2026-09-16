@@ -76,7 +76,7 @@ export default function AboutPage() {
                         B.A. Film &amp; Television, Animation Concentration
                       </span>
                       <span className="mt-1.5 block font-bold">
-                        Cheltenham Ladies&apos;, Cheltenham, UK
+                        Cheltenham Ladies&apos;, UK
                       </span>
                       <span className="block text-[11px] text-hero-ink/60">
                         GCSE &amp; A-Level: English, Economics, Fine Art
