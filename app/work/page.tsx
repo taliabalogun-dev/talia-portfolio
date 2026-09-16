@@ -2,7 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import AdditionalExperience from "@/components/AdditionalExperience";
-import { projects } from "@/content/site";
+import { projects, type Project } from "@/content/site";
+
+const experienceSlugs = [
+  "kugali-iwaju",
+  "live-nation-mutha",
+  "ucla-campus-campaigns",
+  "fast-ucla-fashion-show",
+];
 
 const allQuotes = [
   ...projects.flatMap((p) => p.quotes ?? []),
@@ -42,49 +49,26 @@ export default function WorkPage() {
             8 roles, 16 experiences, 1 creative storytelling throughline.
           </span>
 
-          <div className="mt-14 grid grid-cols-2 gap-x-8 gap-y-14 lg:grid-cols-4">
-            {projects.map((project) => {
-              const cardSrc = project.cardImage ?? project.image;
-              const useContain = !project.cardImage && project.imageFit === "contain";
-              return (
-              <Link
-                key={project.slug}
-                href={`/projects/${project.slug}`}
-                className="block rounded-sm border-4 border-white bg-white p-3 pb-6 shadow-2xl transition-transform hover:-translate-y-1"
-              >
-                <div
-                  className={`relative aspect-[4/5] overflow-hidden ${
-                    useContain ? "bg-beige" : ""
-                  }`}
-                >
-                  {cardSrc && (
-                    <Image
-                      src={cardSrc}
-                      alt=""
-                      fill
-                      className={
-                        useContain
-                          ? "object-contain p-6"
-                          : project.imagePosition === "top"
-                            ? "object-cover object-top"
-                            : "object-cover"
-                      }
-                      sizes="(min-width: 1024px) 23vw, (min-width: 640px) 46vw, 90vw"
-                    />
-                  )}
-                </div>
-                <h3 className="font-display mt-3 text-xl uppercase leading-tight tracking-tight text-black">
-                  {project.cardTitle ?? project.title}
-                </h3>
-                <p className="mt-0.5 text-xs font-bold uppercase tracking-wide text-[#8a7015]">
-                  {project.role}
-                </p>
-                <span className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-full bg-hero-ink px-4 py-2 text-xs font-bold uppercase tracking-wide text-[#f7ecc4]">
-                  View Role →
-                </span>
-              </Link>
-              );
-            })}
+          <h2 className="font-display mt-14 text-2xl uppercase tracking-tight text-ink">
+            Experiences
+          </h2>
+          <div className="mt-6 grid grid-cols-2 gap-x-8 gap-y-14 lg:grid-cols-4">
+            {projects
+              .filter((project) => experienceSlugs.includes(project.slug))
+              .map((project) => (
+                <ProjectPolaroid key={project.slug} project={project} />
+              ))}
+          </div>
+
+          <h2 className="font-display mt-16 text-2xl uppercase tracking-tight text-ink">
+            Additional Experiences
+          </h2>
+          <div className="mt-6 grid grid-cols-2 gap-x-8 gap-y-14 lg:grid-cols-4">
+            {projects
+              .filter((project) => !experienceSlugs.includes(project.slug))
+              .map((project) => (
+                <ProjectPolaroid key={project.slug} project={project} />
+              ))}
           </div>
 
           <div className="mt-14 grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
@@ -102,5 +86,52 @@ export default function WorkPage() {
       </section>
       <AdditionalExperience />
     </>
+  );
+}
+
+function ProjectPolaroid({ project }: { project: Project }) {
+  const cardSrc = project.cardImage ?? project.image;
+  const useContain = !project.cardImage && project.imageFit === "contain";
+  return (
+    <Link
+      href={`/projects/${project.slug}`}
+      className="block rounded-sm border-4 border-white bg-white p-3 pb-6 shadow-2xl transition-transform hover:-translate-y-1"
+    >
+      <div
+        className={`relative aspect-[4/5] overflow-hidden ${
+          useContain ? "bg-beige" : ""
+        }`}
+      >
+        {cardSrc && (
+          <Image
+            src={cardSrc}
+            alt=""
+            fill
+            className={
+              useContain
+                ? "object-contain p-6"
+                : project.imagePosition === "top"
+                  ? "object-cover object-top"
+                  : "object-cover"
+            }
+            sizes="(min-width: 1024px) 23vw, (min-width: 640px) 46vw, 90vw"
+          />
+        )}
+      </div>
+      <h3 className="font-display mt-3 text-xl uppercase leading-tight tracking-tight text-black">
+        {project.cardTitle ?? project.title}
+      </h3>
+      <p className="mt-0.5 text-xs font-bold uppercase tracking-wide text-[#8a7015]">
+        {project.role}
+      </p>
+      {project.cardRoleNote && (
+        <p className="mt-0.5 text-xs font-medium text-[#8a7015]/80">
+          {project.cardRoleNote}
+        </p>
+      )}
+      <span className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-full bg-hero-ink px-4 py-2 text-xs font-bold uppercase tracking-wide text-[#f7ecc4]">
+        View Role →
+      </span>
+    </Link>
   );
 }

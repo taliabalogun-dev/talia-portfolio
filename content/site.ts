@@ -125,6 +125,8 @@ export type Project = {
   extendedDescription?: string;
   tags: string[];
   role: string;
+  /** Small parenthetical shown under the role on the /work polaroid card only, e.g. "(Student Leadership)". */
+  cardRoleNote?: string;
   period: string;
   location: string;
   /** Short pill list of focus areas or partners, shown right under the role/date line on the subpage. */
@@ -382,6 +384,7 @@ export const projects: Project[] = [
       "Coordinated brand partnerships and vendor logistics with Nike, Icona Club, and Demonia, supporting a sold-out fashion drop through student-led promotion. Organized and ran production meetings - scheduling, agendas, and follow-ups - for FAST's annual fashion show, and reviewed results after each initiative to close gaps for future planning.",
     tags: ["Brand Partnerships", "Event Marketing", "Creative Direction"],
     role: "Director of Creative Media",
+    cardRoleNote: "(Student Leadership)",
     period: "Oct 2024 - June 2026",
     location: "Los Angeles, CA",
     focus: {
@@ -995,13 +998,13 @@ export const projects: Project[] = [
   {
     slug: "co-curate",
     navLabel: "Co Curate",
-    title: "Founder & Chief Executive - Co Curate",
+    title: "Founder - Co Curate",
     description:
       "A marketplace platform that staffs full production teams to a brief - commissioners describe the work, co-curators (creative directors, photographers, editors, designers) get matched automatically, and the fee split runs 80/20 in the makers' favor.",
     extendedDescription:
       "Concept prototype, live since August 2026. Designed the brand and product end to end, built the front end solo, and modeled the pricing structure: a 5% first-project fee, an 80/20 commission split, and a 30% direction fee on team briefs. Currently running a small beta with real commissioners and co-curators.",
     tags: ["Product Design", "Brand Identity", "Marketplace Mechanics", "Talent Management and Coordination"],
-    role: "Founder & Chief Executive",
+    role: "Founder",
     period: "July 2026 - Present",
     location: "Los Angeles, CA / Remote",
     focus: {
@@ -1341,7 +1344,7 @@ export const additionalExperience: ExperienceItem[] = [
       "Led campaign research and a three-part growth strategy for Flexx, FCMB's youth banking product, spanning gamification, campus creator funding, and a phased KPI roadmap.",
   },
   {
-    role: "Founder & Chief Executive",
+    role: "Founder",
     company: "Co Curate",
     period: "July 2026 - Present",
     summary:

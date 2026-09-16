@@ -4,9 +4,8 @@ import { site } from "@/content/site";
 const links = [
   { href: "/#top", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/work", label: "My Roles" },
+  { href: "/work", label: "Experience" },
   { href: "/#skills", label: "Skills" },
-  { href: "/#experience", label: "Experience" },
 ];
 
 export default function Nav() {
