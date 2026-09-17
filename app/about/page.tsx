@@ -113,14 +113,19 @@ export default function AboutPage() {
                     <h2 className="font-display text-lg uppercase tracking-tight text-navy">
                       Top Results
                     </h2>
-                    <div className="mt-3 flex flex-wrap gap-1.5">
+                    <div className="mt-3 flex flex-col gap-2">
                       {topResults.map((result) => (
-                        <span
-                          key={result}
-                          className="rounded-full bg-accent px-2.5 py-1 text-[11px] font-semibold text-accent-ink"
+                        <div
+                          key={result.text}
+                          className="flex items-center justify-between gap-2"
                         >
-                          {result}
-                        </span>
+                          <span className="rounded-full bg-accent px-2.5 py-1 text-[11px] font-semibold text-accent-ink">
+                            {result.text}
+                          </span>
+                          <span className="shrink-0 text-[10px] font-medium uppercase tracking-wide text-navy/60">
+                            {result.source}
+                          </span>
+                        </div>
                       ))}
                     </div>
                   </div>

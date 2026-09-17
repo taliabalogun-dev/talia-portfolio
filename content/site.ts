@@ -41,14 +41,11 @@ export const education: { school: string; detail: string; location: string }[] =
 export const bio = {
   heading: "More About Me",
   paragraphs: [
-    "I'm a creative production coordinator based in Los Angeles, working at the intersection of entertainment, fashion, marketing, and culture.",
-    "My path started between Lagos and the UK. Fine art came first, years of life drawing and portraiture at Cheltenham Ladies' College, but the material I kept reaching for was Lagos: the streets, the salons, the visual language of Africans in diaspora making work far from home. Film could carry what a single image couldn't, and that's where I went.",
-    "Once I got into production and onto a set, I never got off. Golden Effects Pictures first, then a writers' room at Bap Production supporting Netflix-commissioned development, where I got my first real look at how streaming and IP strategy shape a story long before anyone shoots it. That was the shift. I stopped thinking about images and started thinking about how a story gets made, sold, and positioned.",
-    "Animation came last, through working for myself. Freelance illustration commissions taught me I could originate a world and run the business around it at the same time. I brought all of it into UCLA: a B.A. in Film & Television with an Animation concentration and an Entrepreneurship minor, alongside four years of creative marketing for creative products.",
-    "That mix is how I work now. At Kugali Media, the studio behind Disney's Iwájú, I supported pitch strategy and awards-season promotion across the slate. Live Nation brought me on to direct the promotional film and live visuals for Mutha Festival in Brooklyn, and at UCLA Student Affairs I ran multi-platform campaign strategy for an audience of 2M+.",
-    "At FAST@UCLA I directed all creative media output, print, photography, and video, for a student-run fashion brand with real paid partnerships including Nike, Icona Club, and Demonia. At Refine LA I led editorial cover shoots and campaign work for a sustainability-focused fashion organization. Both are a direct homage to Jewel by Lisa. Working with Lisa Folawiyo through Lagos and London Fashion Week was the first space where I learned to adapt film production skills to fashion and brand creative media.",
-    "Alongside client work, I wrote, animated, and produced CTRL 4C, an original animated short set in a Lagos salon, with a festival strategy targeting AFRIFF. I also founded Co Curate, an independent creative studio built around a managed curator roster, starting in entertainment and animation-adjacent marketing.",
-    "Long term, I'm moving from campaign-level creative direction into entertainment marketing strategy and development. Staying close to the work while shaping the positioning and business decisions around it.",
+    "I'm a creative production coordinator based in Los Angeles, working across entertainment, fashion, marketing, and culture.",
+    "My path started between Lagos and the UK - fine art at Cheltenham Ladies' College, then film, chasing the visual language of Africans in diaspora making work far from home. Production pulled me in for good at Golden Effects Pictures and a Bap Production writers' room supporting Netflix development, where I learned how streaming and IP strategy shape a story before it's shot.",
+    "Freelance illustration taught me to originate a world and run the business around it, which I brought into a UCLA degree in Film & Television (Animation concentration) with an Entrepreneurship minor. From there: pitch strategy at Kugali Media (Disney's Iwájú), directing Live Nation's Mutha Festival visuals, and campaign strategy for UCLA Student Affairs' 2M+ audience.",
+    "At FAST@UCLA I directed creative media for Nike, Icona Club, and Demonia partnerships; at Refine LA I led editorial shoots for a sustainability-focused fashion brand - both an homage to learning film-to-fashion production with Lisa Folawiyo at Jewel by Lisa. I also produced CTRL 4C, an animated short targeting AFRIFF, and founded Co Curate, a creative studio built on a managed curator roster.",
+    "Long term, I'm moving from campaign-level creative direction into entertainment marketing strategy - staying close to the work while shaping its positioning.",
   ],
 };
 
@@ -1235,10 +1232,7 @@ export const skills: { category: string; items: string[] }[] = [
     items: [
       "Creator Briefs & Concept Development",
       "Hooks, Angles & Script Writing",
-      "Audience & Cultural Insight",
-      "Cross-Market Brand Voice Adaptation",
       "Brand & Campaign Positioning",
-      "Competitive & Market Research",
       "Marketing & Go-to-Market Strategy",
     ],
   },
@@ -1247,7 +1241,6 @@ export const skills: { category: string; items: string[] }[] = [
     items: [
       "TikTok, Instagram & Multi-Platform Content",
       "Social-First Campaign Ideation",
-      "Visual & Video Direction",
     ],
   },
   {
@@ -1255,32 +1248,27 @@ export const skills: { category: string; items: string[] }[] = [
     items: [
       "On-Set & Live Event Production",
       "Production Scheduling & Logistics",
-      "Vendor, Crew & Talent Coordination",
-      "Budget Tracking & Resource Allocation",
     ],
   },
   {
     category: "Tools",
     items: [
       "Adobe Creative Suite",
-      "Canva",
       "Social Media Publishing & Analytics",
       "Notion & Asana",
-      "Airtable",
       "HubSpot CRM",
-      "Google Workspace & Microsoft Office",
     ],
   },
 ];
 
 /** Curated highlight reel pulled from Results across the portfolio's project pages. */
-export const topResults: string[] = [
-  "3 Emmy Nominations",
-  "#1 on Nigerian Netflix",
-  "2M+ Audience Reached",
-  "500K+ Impressions Across Posts",
-  "Sold-Out Fashion Drop",
-  "AFRIFF Recognition",
+export const topResults: { text: string; source: string }[] = [
+  { text: "3 Emmy Nominations", source: "Kugali Media" },
+  { text: "#1 on Nigerian Netflix", source: "Golden Effects" },
+  { text: "2M+ Audience Reached", source: "UCLA Affairs" },
+  { text: "500K+ Impressions Across Posts", source: "FAST@UCLA" },
+  { text: "Sold-Out Fashion Drop", source: "FAST@UCLA" },
+  { text: "AFRIFF Recognition", source: "CTRL 4C" },
 ];
 
 export type ExperienceItem = {
