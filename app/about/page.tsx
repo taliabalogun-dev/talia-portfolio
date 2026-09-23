@@ -64,7 +64,7 @@ export default function AboutPage() {
                       <EnlargeableImage
                         src={site.aboutImage}
                         alt={site.name}
-                        className="object-cover"
+                        className="object-cover object-[center_20%]"
                         priority
                       />
                     </div>
@@ -74,12 +74,6 @@ export default function AboutPage() {
                       </span>
                       <span className="block text-[11px] text-hero-ink/60">
                         B.A. Film &amp; Television, Animation Concentration
-                      </span>
-                      <span className="mt-1.5 block font-bold">
-                        Cheltenham Ladies&apos;, UK
-                      </span>
-                      <span className="block text-[11px] text-hero-ink/60">
-                        GCSE &amp; A-Level: English, Economics, Fine Art
                       </span>
                     </p>
                   </div>
@@ -111,20 +105,17 @@ export default function AboutPage() {
 
                   <div className="hidden rounded-md bg-sky-darker/40 p-5 sm:block">
                     <h2 className="font-display text-lg uppercase tracking-tight text-navy">
-                      Top Results
+                      Selected Project Results
                     </h2>
-                    <div className="mt-3 flex flex-col gap-2">
+                    <div className="mt-3 flex flex-col gap-3">
                       {topResults.map((result) => (
-                        <div
-                          key={result.text}
-                          className="flex items-center justify-between gap-2"
-                        >
-                          <span className="rounded-full bg-accent px-2.5 py-1 text-[11px] font-semibold text-accent-ink">
-                            {result.text}
+                        <div key={result.metric}>
+                          <span className="inline-block rounded-full bg-accent px-2.5 py-1 text-[11px] font-semibold text-accent-ink">
+                            {result.metric}
                           </span>
-                          <span className="shrink-0 text-[10px] font-medium uppercase tracking-wide text-navy/60">
-                            {result.source}
-                          </span>
+                          <p className="mt-1 text-[11px] text-navy/60">
+                            {result.context}
+                          </p>
                         </div>
                       ))}
                     </div>

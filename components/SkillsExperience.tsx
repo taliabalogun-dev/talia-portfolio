@@ -16,18 +16,6 @@ export default function SkillsExperience() {
                 the résumé, at a glance
               </span>
             </span>
-            <svg
-              className="pointer-events-none absolute -top-10 right-8 hidden w-12 opacity-90 sm:block"
-              viewBox="0 0 40 90"
-              fill="none"
-            >
-              <path
-                d="M20 5 C32 5 32 20 32 26 L32 68 C32 78 24 84 16 84 C8 84 2 78 2 68 L2 30 C2 24 6 20 11 20 C16 20 19 24 19 30 L19 62"
-                stroke="#ffffff"
-                strokeWidth="4.5"
-                strokeLinecap="round"
-              />
-            </svg>
             <div className="grid gap-10 px-8 py-12 sm:px-10 sm:py-14 lg:grid-cols-[1.4fr_1fr]">
               <div id="experience" className="min-w-0 scroll-mt-24">
                 <h3 className="font-display border-b-2 border-dashed border-ink/15 pb-2.5 text-2xl uppercase tracking-wide text-ink">

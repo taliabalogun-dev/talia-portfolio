@@ -21,6 +21,9 @@ export default function AdditionalExperience() {
                   </p>
                   <span className="text-sm text-muted">{item.period}</span>
                 </div>
+                {item.contextTag && (
+                  <p className="text-xs text-muted/70">{item.contextTag}</p>
+                )}
                 <p className="text-sm text-muted">{item.summary}</p>
                 {item.slug && (
                   <Link

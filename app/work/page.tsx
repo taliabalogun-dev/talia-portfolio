@@ -4,11 +4,11 @@ import Nav from "@/components/Nav";
 import AdditionalExperience from "@/components/AdditionalExperience";
 import { projects, type Project } from "@/content/site";
 
-const experienceSlugs = [
+const featuredSlugs = [
   "kugali-iwaju",
   "live-nation-mutha",
-  "ucla-campus-campaigns",
   "fast-ucla-fashion-show",
+  "ucla-campus-campaigns",
 ];
 
 const allQuotes = [
@@ -43,29 +43,16 @@ export default function WorkPage() {
           </Link>
 
           <h1 className="font-display mt-8 text-balance text-6xl uppercase leading-[0.9] tracking-tight text-ink sm:text-8xl">
-            My Work
+            Experience
           </h1>
-          <span className="font-hand mt-4 inline-block max-w-full -rotate-1 whitespace-nowrap rounded-sm bg-accent px-4 py-2.5 text-sm text-hero-ink shadow-lg sm:px-5 sm:py-3 sm:text-lg">
-            8 roles, 16 experiences, 1 creative storytelling throughline.
+          <span className="mt-4 inline-block max-w-full -rotate-1 whitespace-nowrap rounded-sm bg-accent px-4 py-2.5 text-sm font-semibold text-hero-ink shadow-lg sm:px-5 sm:py-3 sm:text-lg">
+            Selected experience across entertainment, marketing, and fashion.
           </span>
 
-          <h2 className="font-display mt-14 text-2xl uppercase tracking-tight text-ink">
-            Experiences
-          </h2>
-          <div className="mt-6 grid grid-cols-2 gap-x-8 gap-y-14 lg:grid-cols-4">
-            {projects
-              .filter((project) => experienceSlugs.includes(project.slug))
-              .map((project) => (
-                <ProjectPolaroid key={project.slug} project={project} />
-              ))}
-          </div>
-
-          <h2 className="font-display mt-16 text-2xl uppercase tracking-tight text-ink">
-            Additional Experiences
-          </h2>
-          <div className="mt-6 grid grid-cols-2 gap-x-8 gap-y-14 lg:grid-cols-4">
-            {projects
-              .filter((project) => !experienceSlugs.includes(project.slug))
+          <div className="mt-14 grid grid-cols-2 gap-x-8 gap-y-14 lg:grid-cols-4">
+            {featuredSlugs
+              .map((slug) => projects.find((project) => project.slug === slug))
+              .filter((project): project is Project => Boolean(project))
               .map((project) => (
                 <ProjectPolaroid key={project.slug} project={project} />
               ))}
@@ -124,9 +111,9 @@ function ProjectPolaroid({ project }: { project: Project }) {
       <p className="mt-0.5 text-xs font-bold uppercase tracking-wide text-[#8a7015]">
         {project.role}
       </p>
-      {project.cardRoleNote && (
+      {project.contextTag && (
         <p className="mt-0.5 text-xs font-medium text-[#8a7015]/80">
-          {project.cardRoleNote}
+          {project.contextTag}
         </p>
       )}
       <span className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-full bg-hero-ink px-4 py-2 text-xs font-bold uppercase tracking-wide text-[#f7ecc4]">

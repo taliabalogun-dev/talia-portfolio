@@ -18,34 +18,21 @@ export default function Projects() {
 
   return (
     <section id="projects" className="relative overflow-hidden bg-teal pt-8 pb-16 sm:py-20">
-      {/* Halftone texture, faded toward the carousel side. */}
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle, rgba(245,218,110,0.22) 1.4px, transparent 1.6px)",
-          backgroundSize: "15px 15px",
-          WebkitMaskImage:
-            "radial-gradient(ellipse 70% 60% at 78% 30%, #000 0%, transparent 72%)",
-          maskImage:
-            "radial-gradient(ellipse 70% 60% at 78% 30%, #000 0%, transparent 72%)",
-        }}
-      />
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between lg:gap-12">
           <div className="max-w-md shrink-0 text-center lg:mt-[calc(2rem+1cm)] lg:self-start lg:text-left">
             <div className="inline-block -rotate-1">
               <h2 className="font-display inline-block whitespace-nowrap border-4 border-hero-ink bg-paper px-8 py-6 text-5xl uppercase leading-[0.95] tracking-tight text-hero-ink shadow-xl sm:text-7xl">
-                My Work
+                Experience
               </h2>
             </div>
-            <p className="font-hand mt-3 -rotate-1 text-2xl text-accent sm:mt-6 lg:text-4xl">
+            <p className="mt-3 -rotate-1 text-xl font-semibold text-accent sm:mt-6 lg:text-2xl">
               {site.heroStatement}
             </p>
             <p className="mx-auto mt-2 hidden max-w-sm text-lg text-ink/85 sm:mt-5 lg:mx-0 lg:block lg:max-w-md lg:text-xl">{site.tagline}</p>
 
             <blockquote className="mt-6 hidden border-l-4 border-accent/60 pl-5 text-left lg:block">
-              <p className="font-hand text-2xl text-ink">
+              <p className="text-lg italic text-ink">
                 &ldquo;She has an incredible eye for detail and a sharp instinct for storytelling,
                 which allowed her to translate complex ideas into something visually compelling and
                 emotionally resonant.&rdquo;

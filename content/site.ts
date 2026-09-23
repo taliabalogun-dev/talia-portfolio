@@ -12,7 +12,7 @@ export const site = {
     twitter: "",
   },
   resumeUrl: "/resume/resume.pdf",
-  aboutImage: "/images/about-graduation-v2.png",
+  aboutImage: "/images/about-headshot-v1.png",
 };
 
 export const about = {
@@ -31,21 +31,14 @@ export const education: { school: string; detail: string; location: string }[] =
     detail: "B.A. Film & Television - Animation concentration, Entrepreneurship minor",
     location: "Los Angeles, CA",
   },
-  {
-    school: "Cheltenham Ladies' College",
-    detail: "Secondary education",
-    location: "Cheltenham, UK",
-  },
 ];
 
 export const bio = {
   heading: "More About Me",
   paragraphs: [
-    "I'm a creative production coordinator based in Los Angeles, working across entertainment, fashion, marketing, and culture.",
-    "My path started between Lagos and the UK - fine art at Cheltenham Ladies' College, then film, chasing the visual language of Africans in diaspora making work far from home. Production pulled me in for good at Golden Effects Pictures and a Bap Production writers' room supporting Netflix development, where I learned how streaming and IP strategy shape a story before it's shot.",
-    "Freelance illustration taught me to originate a world and run the business around it, which I brought into a UCLA degree in Film & Television (Animation concentration) with an Entrepreneurship minor. From there: pitch strategy at Kugali Media (Disney's Iwájú), directing Live Nation's Mutha Festival visuals, and campaign strategy for UCLA Student Affairs' 2M+ audience.",
-    "At FAST@UCLA I directed creative media for Nike, Icona Club, and Demonia partnerships; at Refine LA I led editorial shoots for a sustainability-focused fashion brand - both an homage to learning film-to-fashion production with Lisa Folawiyo at Jewel by Lisa. I also produced CTRL 4C, an animated short targeting AFRIFF, and founded Co Curate, a creative studio built on a managed curator roster.",
-    "Long term, I'm moving from campaign-level creative direction into entertainment marketing strategy - staying close to the work while shaping its positioning.",
+    "I'm a creative production coordinator in Los Angeles working across entertainment, marketing, and fashion. I grew up between Lagos and the UK, trained in fine art, and moved into film, then animation.",
+    "I've supported pitch strategy and awards-season promotion on Disney's Iwájú at Kugali Media, directed the promotional film for Live Nation's Mutha Festival, ran creative media for FAST@UCLA's brand partnerships including Nike, and coordinated multi-platform campaigns for UCLA Student Affairs (2M+ audience). I also wrote and directed CTRL 4C, an original animated short, and founded Co Curate, a creative studio.",
+    "Next, I'm moving into creative production and entertainment marketing, staying close to the work while shaping how it's positioned.",
   ],
 };
 
@@ -122,8 +115,8 @@ export type Project = {
   extendedDescription?: string;
   tags: string[];
   role: string;
-  /** Small parenthetical shown under the role on the /work polaroid card only, e.g. "(Student Leadership)". */
-  cardRoleNote?: string;
+  /** One-line context shown under the title on the /work card and the project subpage. */
+  contextTag?: string;
   period: string;
   location: string;
   /** Short pill list of focus areas or partners, shown right under the role/date line on the subpage. */
@@ -299,6 +292,7 @@ export const projects: Project[] = [
       "Managed creative asset delivery, versions, and approvals across teams and vendors, coordinating production schedules to meet tight event deadlines. Maintained brand and creative consistency across the festival's digital and live touchpoints, tracking feedback and revisions through final delivery. Served as the central point of coordination between creative, production, and promotional teams from planning through same-day execution.",
     tags: ["Campaign Direction", "Brand Partnerships", "Video"],
     role: "Contracted Creative Marketing Director",
+    contextTag: "Contracted by CURATED by Live Nation to direct the promo film and live visuals",
     period: "March 2025 - June 2025",
     location: "NYC / Hybrid",
     featured: true,
@@ -381,7 +375,7 @@ export const projects: Project[] = [
       "Coordinated brand partnerships and vendor logistics with Nike, Icona Club, and Demonia, supporting a sold-out fashion drop through student-led promotion. Organized and ran production meetings - scheduling, agendas, and follow-ups - for FAST's annual fashion show, and reviewed results after each initiative to close gaps for future planning.",
     tags: ["Brand Partnerships", "Event Marketing", "Creative Direction"],
     role: "Director of Creative Media",
-    cardRoleNote: "(Student Leadership)",
+    contextTag: "Student-run fashion organization · Led a 14-person creative team",
     period: "Oct 2024 - June 2026",
     location: "Los Angeles, CA",
     focus: {
@@ -875,6 +869,7 @@ export const projects: Project[] = [
       "Managed the film's production timeline, budget, and festival strategy targeting Sundance, GLAS Animation, Manchester Animation Festival, Carmel International, Film Africa London, and AFRIFF, alongside a multi-stage content rollout - process videos, character reveals, cast spotlights, teasers, and screening promotion - repositioning my platform from freelance illustration to animation. Result: +400 followers, 20K+ views, 2 industry interview invitations, and AFRIFF networking recognition.",
     tags: ["Festival Strategy", "Key Art & Campaign", "Production Direction"],
     role: "Writer, Producer & Director",
+    contextTag: "Original animated short",
     period: "2025 - Present",
     location: "Los Angeles, CA",
     focus: {
@@ -1231,16 +1226,15 @@ export const skills: { category: string; items: string[] }[] = [
     category: "Creative Strategy",
     items: [
       "Creator Briefs & Concept Development",
-      "Hooks, Angles & Script Writing",
       "Brand & Campaign Positioning",
-      "Marketing & Go-to-Market Strategy",
+      "Hooks, Angles & Script Writing",
     ],
   },
   {
     category: "Content & Social",
     items: [
-      "TikTok, Instagram & Multi-Platform Content",
-      "Social-First Campaign Ideation",
+      "Multi-Platform Social Content",
+      "Visual & Video Direction",
     ],
   },
   {
@@ -1248,27 +1242,26 @@ export const skills: { category: string; items: string[] }[] = [
     items: [
       "On-Set & Live Event Production",
       "Production Scheduling & Logistics",
+      "Vendor, Crew & Talent Coordination",
     ],
   },
   {
     category: "Tools",
     items: [
       "Adobe Creative Suite",
-      "Social Media Publishing & Analytics",
       "Notion & Asana",
-      "HubSpot CRM",
     ],
   },
 ];
 
 /** Curated highlight reel pulled from Results across the portfolio's project pages. */
-export const topResults: { text: string; source: string }[] = [
-  { text: "3 Emmy Nominations", source: "Kugali Media" },
-  { text: "#1 on Nigerian Netflix", source: "Golden Effects" },
-  { text: "2M+ Audience Reached", source: "UCLA Affairs" },
-  { text: "500K+ Impressions Across Posts", source: "FAST@UCLA" },
-  { text: "Sold-Out Fashion Drop", source: "FAST@UCLA" },
-  { text: "AFRIFF Recognition", source: "CTRL 4C" },
+export const topResults: { metric: string; context: string }[] = [
+  { metric: "3 Emmy Nominations", context: "Iwájú · Awards-season promotion" },
+  { metric: "#1 on Nigerian Netflix", context: "Swallow · Production Assistant" },
+  { metric: "2M+ Audience Reached", context: "UCLA Student Affairs · Campaign coordination" },
+  { metric: "500K+ Impressions", context: "FAST@UCLA · Nike campaign coordination" },
+  { metric: "Sold-Out Fashion Drop", context: "FAST@UCLA · Creative media" },
+  { metric: "AFRIFF Recognition", context: "CTRL 4C · Writer & director" },
 ];
 
 export type ExperienceItem = {
@@ -1278,6 +1271,8 @@ export type ExperienceItem = {
   summary: string;
   /** Slug of the matching project subpage, when one exists. */
   slug?: string;
+  /** One-line context shown under the role, e.g. naming the org type. */
+  contextTag?: string;
 };
 
 export const experience: ExperienceItem[] = [
@@ -1344,7 +1339,7 @@ export const additionalExperience: ExperienceItem[] = [
     company: "CTRL 4C",
     period: "2025 - Present",
     summary:
-      "Writing, directing, and producing an original animated short end-to-end, including a festival distribution and positioning strategy targeting Sundance and GLAS Animation.",
+      "Writing, directing, and producing an original animated short end-to-end, including a festival distribution and positioning strategy targeting AFRIFF.",
     slug: "ctrl-4c-campaign",
   },
   {
@@ -1353,6 +1348,7 @@ export const additionalExperience: ExperienceItem[] = [
     period: "Sept 2025 - June 2026",
     summary:
       "Coordinated promotional materials and creative production for the organization's festivals, workshops, and short-film fundraising initiatives.",
+    contextTag: "UCLA student organization",
   },
   {
     role: "Writers Room & Story Development Intern",

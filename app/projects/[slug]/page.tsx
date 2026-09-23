@@ -51,6 +51,9 @@ export default async function ProjectPage(
               <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
                 {project.title}
               </h1>
+              {project.contextTag && (
+                <p className="mt-1.5 text-base text-muted">{project.contextTag}</p>
+              )}
               <div className="mt-3 flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
                   <span

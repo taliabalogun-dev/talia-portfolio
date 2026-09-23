@@ -16,22 +16,24 @@ export default function AboutBanner() {
         }}
       >
         <Image
-          src="/images/about-header-v3.png"
+          src="/images/about-header-v4.png"
           alt=""
           fill
           className="object-cover"
+          style={{ objectPosition: "center 20%" }}
           sizes="55vw"
         />
       </div>
 
       <div className="relative z-10 mx-auto flex max-w-5xl items-start gap-6">
-        <div className="relative hidden shrink-0 lg:-mb-8 lg:block">
+        <div className="relative hidden aspect-[320/365] w-80 shrink-0 overflow-hidden lg:-mb-8 lg:block">
           <Image
-            src="/images/about-header-v3.png"
+            src="/images/about-header-v4.png"
             alt=""
-            width={320}
-            height={365}
-            className="h-auto w-80"
+            fill
+            className="object-cover"
+            style={{ objectPosition: "center 20%" }}
+            sizes="320px"
           />
         </div>
         <div className="pl-[42%] lg:pl-0">
