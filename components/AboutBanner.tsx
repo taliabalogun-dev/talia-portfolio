@@ -25,15 +25,14 @@ export default function AboutBanner() {
         />
       </div>
 
-      <div className="relative z-10 mx-auto flex max-w-5xl items-start gap-6">
-        <div className="relative hidden aspect-[320/365] w-80 shrink-0 overflow-hidden lg:-mb-8 lg:block">
+      <div className="relative z-10 mx-auto flex max-w-5xl items-center gap-6">
+        <div className="relative hidden aspect-[747/840] w-[26rem] shrink-0 lg:-mb-8 lg:block">
           <Image
             src="/images/about-header-v4.png"
             alt=""
             fill
-            className="object-cover"
-            style={{ objectPosition: "center 20%" }}
-            sizes="320px"
+            className="object-contain object-left"
+            sizes="416px"
           />
         </div>
         <div className="pl-[42%] lg:pl-0">
