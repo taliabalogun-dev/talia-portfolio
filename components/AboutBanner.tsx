@@ -54,7 +54,7 @@ export default function AboutBanner() {
           </div>
           <Link
             href="/about"
-            className="font-hand -rotate-1 mt-3 inline-block text-2xl text-accent hover:text-ink lg:text-3xl"
+            className="mt-3 inline-block text-lg font-semibold text-accent hover:text-ink lg:text-xl"
           >
             More about me →
           </Link>

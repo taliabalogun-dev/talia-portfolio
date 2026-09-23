@@ -26,7 +26,7 @@ export default function Projects() {
                 Experience
               </h2>
             </div>
-            <p className="mt-3 -rotate-1 text-xl font-semibold text-accent sm:mt-6 lg:text-2xl">
+            <p className="mt-3 -rotate-1 text-base font-semibold text-accent sm:mt-6 lg:text-lg">
               {site.heroStatement}
             </p>
             <p className="mx-auto mt-2 hidden max-w-sm text-lg text-ink/85 sm:mt-5 lg:mx-0 lg:block lg:max-w-md lg:text-xl">{site.tagline}</p>
