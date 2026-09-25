@@ -27,7 +27,8 @@ export default function AboutPage() {
             ← Back to home
           </Link>
 
-          <div className="mt-10 -rotate-[0.4deg]">
+          <div className="flex flex-col">
+          <div className="order-1 mt-10 -rotate-[0.4deg]">
             <div className="relative rounded-md bg-sky-deep shadow-2xl">
               <span className="absolute -top-6 left-8 -rotate-3">
                 <span className="font-hand inline-block rounded-sm bg-accent px-6 py-2.5 text-3xl text-hero-ink shadow-lg">
@@ -77,60 +78,65 @@ export default function AboutPage() {
                       </span>
                     </p>
                   </div>
-
-                  <div className="hidden rounded-md bg-sky-darker/40 p-5 sm:block">
-                    <h2 className="font-display text-lg uppercase tracking-tight text-navy">
-                      Skills
-                    </h2>
-                    <div className="mt-4 flex flex-col gap-4">
-                      {skills.map((group) => (
-                        <div key={group.category}>
-                          <span className="font-hand -rotate-1 inline-block text-base text-navy/80">
-                            {group.category}
-                          </span>
-                          <div className="mt-1.5 flex flex-wrap gap-1.5">
-                            {group.items.map((item) => (
-                              <span
-                                key={item}
-                                className="rounded-full border border-navy/20 bg-sky-deep/70 px-2.5 py-1 text-[11px] font-semibold text-navy"
-                              >
-                                {item}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="hidden rounded-md bg-sky-darker/40 p-5 sm:block">
-                    <h2 className="font-display text-lg uppercase tracking-tight text-navy">
-                      Selected Project Results
-                    </h2>
-                    <div className="mt-3 flex flex-col gap-3">
-                      {topResults.map((result) => (
-                        <div key={result.metric}>
-                          <span className="inline-block rounded-full bg-accent px-2.5 py-1 text-[11px] font-semibold text-accent-ink">
-                            {result.metric}
-                          </span>
-                          <p className="mt-1 text-[11px] text-navy/60">
-                            {result.context}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="mt-14">
+          <div className="order-3 sm:order-2 mt-14">
+            <div className="grid gap-6 sm:grid-cols-2">
+              <div className="rounded-md bg-sky-darker/40 p-5">
+                <h2 className="font-display text-lg uppercase tracking-tight text-navy">
+                  Skills
+                </h2>
+                <div className="mt-4 flex flex-col gap-4">
+                  {skills.map((group) => (
+                    <div key={group.category}>
+                      <span className="font-hand -rotate-1 inline-block text-base text-navy/80">
+                        {group.category}
+                      </span>
+                      <div className="mt-1.5 flex flex-wrap gap-1.5">
+                        {group.items.map((item) => (
+                          <span
+                            key={item}
+                            className="rounded-full border border-navy/20 bg-sky-deep/70 px-2.5 py-1 text-[11px] font-semibold text-navy"
+                          >
+                            {item}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="rounded-md bg-sky-darker/40 p-5">
+                <h2 className="font-display text-lg uppercase tracking-tight text-navy">
+                  Selected Project Results
+                </h2>
+                <div className="mt-3 grid grid-cols-2 gap-3">
+                  {topResults.map((result) => (
+                    <div key={result.metric}>
+                      <span className="inline-block rounded-full bg-accent px-2.5 py-1 text-[11px] font-semibold text-accent-ink">
+                        {result.metric}
+                      </span>
+                      <p className="mt-1 text-[11px] text-navy/60">
+                        {result.context}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="order-2 sm:order-3 mt-14">
             <ProjectCarousel
               projects={carouselProjects}
               startSlug="kugali-iwaju"
               size="small"
             />
+          </div>
           </div>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
