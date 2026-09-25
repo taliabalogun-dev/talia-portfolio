@@ -11,6 +11,14 @@ const featuredSlugs = [
   "ucla-campus-campaigns",
 ];
 
+const otherSlugs = [
+  "refine-la-zine",
+  "co-curate",
+  "ctrl-4c-campaign",
+  "bap-productions",
+  "golden-effects-pictures",
+];
+
 const allQuotes = [
   ...projects.flatMap((p) => p.quotes ?? []),
   ...projects.flatMap((p) => p.slides?.flatMap((s) => (s.quote ? [s.quote] : [])) ?? []),
@@ -68,6 +76,14 @@ export default function WorkPage() {
                 </footer>
               </blockquote>
             ))}
+          </div>
+          <div className="mt-14 grid grid-cols-2 gap-x-8 gap-y-14 lg:grid-cols-4">
+            {otherSlugs
+              .map((slug) => projects.find((project) => project.slug === slug))
+              .filter((project): project is Project => Boolean(project))
+              .map((project) => (
+                <ProjectPolaroid key={project.slug} project={project} />
+              ))}
           </div>
         </div>
       </section>
