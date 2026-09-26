@@ -4,7 +4,7 @@ import { about, site } from "@/content/site";
 
 export default function AboutBanner() {
   return (
-    <section id="about" className="relative border-b border-ink/10 bg-beige px-6 py-8">
+    <section id="about" className="relative border-b border-ink/10 bg-beige px-6 py-8 lg:py-5">
       {/* Mobile-only left-edge fade background. */}
       <div
         className="pointer-events-none absolute inset-y-0 left-0 w-[55%] opacity-40 lg:hidden"
@@ -26,7 +26,7 @@ export default function AboutBanner() {
       </div>
 
       <div className="relative z-10 mx-auto flex max-w-5xl items-center gap-6">
-        <div className="relative hidden aspect-[747/840] w-[26rem] shrink-0 lg:-mb-8 lg:block">
+        <div className="relative hidden aspect-[747/840] w-[26rem] shrink-0 lg:-mb-24 lg:-ml-9 lg:block">
           <Image
             src="/images/about-header-v4.png"
             alt=""

@@ -17,19 +17,19 @@ export default function Projects() {
   const [activeSlug, setActiveSlug] = useState("kugali-iwaju");
 
   return (
-    <section id="projects" className="relative overflow-hidden bg-teal pt-8 pb-16 sm:py-20">
+    <section id="projects" className="relative overflow-hidden bg-teal pt-8 pb-16 sm:py-20 lg:pt-10 lg:pb-20">
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between lg:gap-12">
-          <div className="max-w-md shrink-0 text-center lg:mt-[calc(2rem+1cm)] lg:self-start lg:text-left">
+          <div className="max-w-md shrink-0 text-center lg:mt-2 lg:self-start lg:text-left">
             <div className="inline-block -rotate-1">
               <h2 className="font-display inline-block whitespace-nowrap border-4 border-hero-ink bg-paper px-8 py-6 text-5xl uppercase leading-[0.95] tracking-tight text-hero-ink shadow-xl sm:text-7xl">
                 Experience
               </h2>
             </div>
-            <p className="mt-3 -rotate-1 text-base font-semibold text-accent sm:mt-6 lg:text-lg">
+            <p className="mt-3 -rotate-1 text-xl font-semibold text-accent sm:mt-6 sm:text-2xl lg:text-2xl">
               {site.heroStatement}
             </p>
-            <p className="mx-auto mt-2 hidden max-w-sm text-lg text-ink/85 sm:mt-5 lg:mx-0 lg:block lg:max-w-md lg:text-xl">{site.tagline}</p>
+            <p className="mx-auto mt-2 hidden max-w-sm text-base text-ink/85 sm:mt-4 lg:mx-0 lg:block lg:max-w-md lg:text-lg">{site.tagline}</p>
 
             <blockquote className="mt-6 hidden border-l-4 border-accent/60 pl-5 text-left lg:block">
               <p className="text-lg italic text-ink">

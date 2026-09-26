@@ -1254,6 +1254,208 @@ export const skills: { category: string; items: string[] }[] = [
   },
 ];
 
+/** Context and sub-skills behind each pill in `skills`, shown on /skills. */
+export type SkillDetail = {
+  name: string;
+  blurb: string;
+  subskills: string[];
+  seenIn: { label: string; slug?: string }[];
+};
+
+export const skillDetails: { category: string; context: string; skills: SkillDetail[] }[] = [
+  {
+    category: "Creative Strategy",
+    context:
+      "How a brief becomes an idea worth making. At Kugali, Live Nation and UCLA I sat between what the client needed and what the crew could execute, shaping the angle before anything was shot.",
+    skills: [
+      {
+        name: "Creator Briefs & Concept Development",
+        blurb:
+          "Turning a client ask into a brief a director, animator or creator can actually shoot from.",
+        subskills: [
+          "Brief writing",
+          "Mood boards & references",
+          "Treatment & pitch decks",
+          "Concept pitching",
+          "Client feedback loops",
+        ],
+        seenIn: [
+          { label: "Kugali Media", slug: "kugali-iwaju" },
+          { label: "Co Curate", slug: "co-curate" },
+          { label: "Live Nation", slug: "live-nation-mutha" },
+        ],
+      },
+      {
+        name: "Brand & Campaign Positioning",
+        blurb:
+          "Finding where a title, product or organisation sits, then building the campaign line around it.",
+        subskills: [
+          "Audience research",
+          "Market & competitor scan",
+          "Messaging pillars",
+          "Campaign architecture",
+          "KPI roadmaps",
+        ],
+        seenIn: [
+          { label: "Kugali Media", slug: "kugali-iwaju" },
+          { label: "UCLA Student Affairs", slug: "ucla-campus-campaigns" },
+          { label: "FCMB Group" },
+        ],
+      },
+      {
+        name: "Hooks, Angles & Script Writing",
+        blurb:
+          "Writing the first three seconds and everything after: hooks, captions, voiceover and full scripts.",
+        subskills: [
+          "Short-form hooks & captions",
+          "Voiceover & narration",
+          "Script coverage & notes",
+          "Story development",
+          "Festival positioning",
+        ],
+        seenIn: [
+          { label: "CTRL 4C", slug: "ctrl-4c-campaign" },
+          { label: "BAP Productions", slug: "bap-productions" },
+          { label: "Kugali Media", slug: "kugali-iwaju" },
+        ],
+      },
+    ],
+  },
+  {
+    category: "Content & Social",
+    context:
+      "Making the thing, at volume, for the platform it lives on. Two years running UCLA Student Affairs' channels for a 2M+ audience, plus editorial and promo work for Refine LA and FAST@UCLA.",
+    skills: [
+      {
+        name: "Multi-Platform Social Content",
+        blurb:
+          "Planning, producing and posting across Instagram, TikTok, Facebook and X in one consistent voice.",
+        subskills: [
+          "Content calendars",
+          "Platform-native formats",
+          "Institutional & brand voice",
+          "Caption & copy writing",
+          "Analytics & iteration",
+        ],
+        seenIn: [
+          { label: "UCLA Student Affairs", slug: "ucla-campus-campaigns" },
+          { label: "Refine LA", slug: "refine-la-zine" },
+        ],
+      },
+      {
+        name: "Visual & Video Direction",
+        blurb:
+          "Setting the look, from shot lists and cover shoots to promo films and animation.",
+        subskills: [
+          "Art direction & shot lists",
+          "Editorial & cover shoots",
+          "Promo films & sizzles",
+          "Animation direction",
+          "Edit supervision",
+        ],
+        seenIn: [
+          { label: "Live Nation", slug: "live-nation-mutha" },
+          { label: "FAST@UCLA", slug: "fast-ucla-fashion-show" },
+          { label: "CTRL 4C", slug: "ctrl-4c-campaign" },
+        ],
+      },
+    ],
+  },
+  {
+    category: "Production & Logistics",
+    context:
+      "The unglamorous part that decides whether the shoot happens. Runway shows in Lagos and London, a festival film for Live Nation, and a year of FAST@UCLA's print, photo and video pipeline.",
+    skills: [
+      {
+        name: "On-Set & Live Event Production",
+        blurb:
+          "Running the day: call sheets, run-of-show, live projection content and whatever breaks at 6pm.",
+        subskills: [
+          "Run-of-show & call sheets",
+          "Live projection content",
+          "Runway & show management",
+          "Fashion week PR events",
+          "On-set problem solving",
+        ],
+        seenIn: [
+          { label: "Live Nation", slug: "live-nation-mutha" },
+          { label: "FAST@UCLA", slug: "fast-ucla-fashion-show" },
+          { label: "Jewel by Lisa" },
+        ],
+      },
+      {
+        name: "Production Scheduling & Logistics",
+        blurb:
+          "Building the timeline backwards from the release date and keeping every deliverable on it.",
+        subskills: [
+          "Production timelines",
+          "Pre-production planning",
+          "Budget tracking",
+          "Deliverable tracking",
+          "Releases & approvals",
+        ],
+        seenIn: [
+          { label: "FAST@UCLA", slug: "fast-ucla-fashion-show" },
+          { label: "Golden Effects Pictures", slug: "golden-effects-pictures" },
+          { label: "Co Curate", slug: "co-curate" },
+        ],
+      },
+      {
+        name: "Vendor, Crew & Talent Coordination",
+        blurb:
+          "Sourcing, booking and briefing the people and partners a production depends on.",
+        subskills: [
+          "Crew sourcing & booking",
+          "Brand partner liaison",
+          "Model & talent wrangling",
+          "Vendor quotes & contracts",
+          "Team communication",
+        ],
+        seenIn: [
+          { label: "FAST@UCLA", slug: "fast-ucla-fashion-show" },
+          { label: "Jewel by Lisa" },
+          { label: "Co Curate", slug: "co-curate" },
+        ],
+      },
+    ],
+  },
+  {
+    category: "Tools",
+    context: "The software that holds the work together, from first cut to final status update.",
+    skills: [
+      {
+        name: "Adobe Creative Suite",
+        blurb: "Editing, motion, layout and retouching for print, social and screen.",
+        subskills: [
+          "Video editing",
+          "Motion graphics",
+          "Layout & print",
+          "Photo retouching",
+        ],
+        seenIn: [
+          { label: "FAST@UCLA", slug: "fast-ucla-fashion-show" },
+          { label: "Refine LA", slug: "refine-la-zine" },
+        ],
+      },
+      {
+        name: "Notion & Asana",
+        blurb: "Keeping a production visible to everyone on it.",
+        subskills: [
+          "Project boards & timelines",
+          "Task assignment & tracking",
+          "Content calendars",
+          "Documentation",
+          "Status reporting",
+        ],
+        seenIn: [
+          { label: "UCLA Student Affairs", slug: "ucla-campus-campaigns" },
+          { label: "Co Curate", slug: "co-curate" },
+        ],
+      },
+    ],
+  },
+];
+
 /** Curated highlight reel pulled from Results across the portfolio's project pages. */
 export const topResults: { metric: string; context: string }[] = [
   { metric: "3 Emmy Nominations", context: "Iwájú · Awards-season promotion" },

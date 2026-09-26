@@ -113,9 +113,14 @@ export default function SkillsExperience() {
                 </div>
 
                 <div id="skills" className="scroll-mt-24 rounded-2xl border border-accent/15 bg-teal-darker p-5">
-                  <h4 className="text-xs font-semibold uppercase tracking-widest text-muted">
-                    Skills
-                  </h4>
+                  <div className="flex items-baseline justify-between gap-3">
+                    <h4 className="text-xs font-semibold uppercase tracking-widest text-muted">
+                      Skills
+                    </h4>
+                    <Link href="/skills" className="text-xs font-semibold text-accent transition-colors hover:text-ink">
+                      Full breakdown →
+                    </Link>
+                  </div>
                   <div className="mt-3 flex flex-col gap-4">
                     {skills.map((group) => (
                       <div key={group.category}>
