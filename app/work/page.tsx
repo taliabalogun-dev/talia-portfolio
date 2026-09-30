@@ -53,7 +53,7 @@ export default function WorkPage() {
           <h1 className="font-display mt-8 text-balance text-6xl uppercase leading-[0.9] tracking-tight text-ink sm:text-8xl">
             Experience
           </h1>
-          <span className="mt-4 inline-block max-w-full -rotate-1 whitespace-nowrap rounded-sm bg-accent px-4 py-2.5 text-sm font-semibold text-hero-ink shadow-lg sm:px-5 sm:py-3 sm:text-lg">
+          <span className="mt-4 inline-block max-w-full -rotate-1 rounded-sm bg-accent px-4 py-2.5 text-sm font-semibold text-hero-ink shadow-lg sm:px-5 sm:py-3 sm:text-lg sm:whitespace-nowrap">
             Selected experience across entertainment, marketing, and fashion.
           </span>
 
