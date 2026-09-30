@@ -948,6 +948,7 @@ export const projects: Project[] = [
               "Screened in Animation Extravaganza",
               "A+ on Final Grade",
               "Ranked as One of Top Filmmakers Ever Taught by Area Head",
+              "Honorable Mention at New York Short Animation Festival",
             ],
           },
         ],
