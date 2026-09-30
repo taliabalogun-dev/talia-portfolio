@@ -125,6 +125,11 @@ function Dashboard({
         <p className="mt-1 font-display text-5xl text-accent">
           {data.total.toLocaleString()}
         </p>
+        <p className="mt-1 text-xs text-muted">
+          Counts each browser once. {data.repeatTotal.toLocaleString()} repeat{" "}
+          {data.repeatTotal === 1 ? "view" : "views"} from returning visitors
+          not included above.
+        </p>
       </section>
 
       <section className="mt-8">
@@ -157,7 +162,7 @@ function Dashboard({
           {data.byPath.length === 0 && (
             <p className="text-sm text-muted">No page views recorded yet.</p>
           )}
-          {data.byPath.map(({ path, count }) => (
+          {data.byPath.map(({ path, count, repeat }) => (
             <div
               key={path}
               className="flex items-center justify-between gap-4 border-b border-beige/10 py-2"
@@ -165,8 +170,15 @@ function Dashboard({
               <span className="truncate text-sm">
                 {path === "/" ? "Home" : path}
               </span>
-              <span className="font-semibold text-accent">
-                {count.toLocaleString()}
+              <span className="flex shrink-0 items-baseline gap-2">
+                <span className="font-semibold text-accent">
+                  {count.toLocaleString()}
+                </span>
+                {repeat > 0 && (
+                  <span className="text-xs text-muted">
+                    +{repeat.toLocaleString()} repeat{repeat === 1 ? "" : "s"}
+                  </span>
+                )}
               </span>
             </div>
           ))}
