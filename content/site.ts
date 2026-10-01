@@ -1253,7 +1253,8 @@ export const storyboardReel: FeaturedAnimation[] = [
   },
   {
     title: "Storyboard frame",
-    description: "Early pass: a rushed Lagos stylist tests out a revolutionary hair-styling machine.",
+    description:
+      "Early pass: a sci-fi comedy set in a Lagos salon, where a character time-travels through a hair-tech invention into a frozen '90s sitcom world.",
     date: "Dec 2025",
     category: "CTRL 4C",
     skills: [],
