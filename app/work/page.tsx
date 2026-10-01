@@ -29,6 +29,11 @@ const allQuotes = [
   },
 ];
 
+/** Shown under the second polaroid grid instead of the first. */
+const secondBatchQuoteNames = ["Yuuki Hayashi", "Chuck Sheetz", "Lynn Okimura"];
+const topQuotes = allQuotes.filter((q) => !secondBatchQuoteNames.includes(q.name));
+const bottomQuotes = allQuotes.filter((q) => secondBatchQuoteNames.includes(q.name));
+
 export default function WorkPage() {
   return (
     <>
@@ -67,7 +72,7 @@ export default function WorkPage() {
           </div>
 
           <div className="mt-14 grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
-            {allQuotes.map((quote) => (
+            {topQuotes.map((quote) => (
               <blockquote key={quote.name} className="border-l-4 border-accent/60 pl-4">
                 <p className="text-sm italic text-ink">&ldquo;{quote.text}&rdquo;</p>
                 <footer className="mt-1.5 text-xs text-ink/70">
@@ -84,6 +89,17 @@ export default function WorkPage() {
               .map((project) => (
                 <ProjectPolaroid key={project.slug} project={project} />
               ))}
+          </div>
+          <div className="mt-14 grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
+            {bottomQuotes.map((quote) => (
+              <blockquote key={quote.name} className="border-l-4 border-accent/60 pl-4">
+                <p className="text-sm italic text-ink">&ldquo;{quote.text}&rdquo;</p>
+                <footer className="mt-1.5 text-xs text-ink/70">
+                  — <span className="text-accent">{quote.name}</span>
+                  {quote.role && <span className="text-accent">, {quote.role}</span>}, {quote.org}
+                </footer>
+              </blockquote>
+            ))}
           </div>
         </div>
       </section>
