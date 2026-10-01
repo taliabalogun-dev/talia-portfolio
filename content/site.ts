@@ -103,6 +103,8 @@ export type FeaturedAnimation = {
   poster?: string;
   kind?: "video" | "image";
   href?: string;
+  /** Video only: gates playback behind a client-side password prompt. */
+  password?: string;
 };
 
 export type Project = {
@@ -351,6 +353,17 @@ export const projects: Project[] = [
     ],
     otherFeaturedAnimation: [
       {
+        title: "‘This Is MUTHA’ Festival Promo",
+        description:
+          "The official promotional film for MUTHA Festival, directed and produced for CURATED by Live Nation.",
+        date: "May '25",
+        category: "Motion",
+        skills: ["Director", "Producer"],
+        src: "/videos/livenation-mutha-promo-film.mp4",
+        poster: "/images/campaigns/livenation-mutha-promo-poster.jpg",
+        kind: "video",
+      },
+      {
         title: "Decomposition",
         description:
           "Abstract fashion show promotion video, commissioned by Refine LA - a girl's getting-ready ritual dissolves into a dream that never completes.",
@@ -361,6 +374,39 @@ export const projects: Project[] = [
         poster: "/images/campaigns/refine-decomposition-promo-poster.jpg",
         kind: "video",
         href: "/projects/refine-la-zine",
+      },
+      {
+        title: "Mainland Nostalgia",
+        description:
+          "Animated short imagining Lagos Mainland rebuilt from memory - danfo buses, okadas, and a skyline caught between the city that was and the one being built.",
+        date: "Feb '25",
+        category: "Motion",
+        skills: ["Animator", "Director"],
+        src: "/videos/mainland-nostalgia.mp4",
+        poster: "/images/campaigns/mainland-nostalgia-poster.jpg",
+        kind: "video",
+      },
+      {
+        title: "Lost and Found",
+        description:
+          "A traveler realizes what they left behind only after takeoff - a short about the things you can't go back for.",
+        date: "Dec '25",
+        category: "Motion",
+        skills: ["Animator", "Director"],
+        src: "/videos/lost-and-found.mp4",
+        poster: "/images/campaigns/lost-and-found-poster.jpg",
+        kind: "video",
+      },
+      {
+        title: "Getting Unready",
+        description:
+          "A UCLA FTV 155 short following a girl's unraveling nighttime ritual - the opposite of getting ready.",
+        date: "Mar '25",
+        category: "Motion",
+        skills: ["Animator", "Director"],
+        src: "/videos/getting-unready.mp4",
+        poster: "/images/campaigns/getting-unready-poster.jpg",
+        kind: "video",
       },
     ],
   },
@@ -975,6 +1021,18 @@ export const projects: Project[] = [
     ],
     otherFeaturedAnimation: [
       {
+        title: "CTRL 4C - Full Film",
+        description:
+          "The complete animated short: a sci-fi comedy set in a Lagos salon, following a character who time-travels through a hair-tech invention into a frozen '90s sitcom world.",
+        date: "2025",
+        category: "Motion",
+        skills: ["Writer", "Director", "Producer", "Animator", "Editor"],
+        src: "/videos/ctrl4c-full-film.mp4",
+        poster: "/images/campaigns/ctrl4c-full-film-poster-v2.jpg",
+        kind: "video",
+        password: "screeningroom4c",
+      },
+      {
         title: "Decomposition",
         description:
           "Abstract fashion show promotion video, commissioned by Refine LA - a girl's getting-ready ritual dissolves into a dream that never completes.",
@@ -985,6 +1043,39 @@ export const projects: Project[] = [
         poster: "/images/campaigns/refine-decomposition-promo-poster.jpg",
         kind: "video",
         href: "/projects/refine-la-zine",
+      },
+      {
+        title: "Mainland Nostalgia",
+        description:
+          "Animated short imagining Lagos Mainland rebuilt from memory - danfo buses, okadas, and a skyline caught between the city that was and the one being built.",
+        date: "Feb '25",
+        category: "Motion",
+        skills: ["Animator", "Director"],
+        src: "/videos/mainland-nostalgia.mp4",
+        poster: "/images/campaigns/mainland-nostalgia-poster.jpg",
+        kind: "video",
+      },
+      {
+        title: "Lost and Found",
+        description:
+          "A traveler realizes what they left behind only after takeoff - a short about the things you can't go back for.",
+        date: "Dec '25",
+        category: "Motion",
+        skills: ["Animator", "Director"],
+        src: "/videos/lost-and-found.mp4",
+        poster: "/images/campaigns/lost-and-found-poster.jpg",
+        kind: "video",
+      },
+      {
+        title: "Getting Unready",
+        description:
+          "A UCLA FTV 155 short following a girl's unraveling nighttime ritual - the opposite of getting ready.",
+        date: "Mar '25",
+        category: "Motion",
+        skills: ["Animator", "Director"],
+        src: "/videos/getting-unready.mp4",
+        poster: "/images/campaigns/getting-unready-poster.jpg",
+        kind: "video",
       },
     ],
   },

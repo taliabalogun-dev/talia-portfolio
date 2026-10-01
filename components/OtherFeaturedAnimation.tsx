@@ -1,4 +1,5 @@
 import Link from "next/link";
+import EnlargeableVideo from "@/components/EnlargeableVideo";
 import type { FeaturedAnimation } from "@/content/site";
 
 export default function OtherFeaturedAnimation({
@@ -19,12 +20,10 @@ export default function OtherFeaturedAnimation({
           >
             <div className="relative aspect-video w-full overflow-hidden bg-black">
               {item.kind === "video" ? (
-                <video
+                <EnlargeableVideo
                   src={item.src}
                   poster={item.poster}
-                  controls
-                  playsInline
-                  preload="metadata"
+                  password={item.password}
                   className="h-full w-full object-cover"
                 />
               ) : (
