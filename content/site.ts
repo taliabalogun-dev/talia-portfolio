@@ -355,9 +355,9 @@ export const projects: Project[] = [
       {
         title: "‘This Is MUTHA’ Festival Promo",
         description:
-          "The official promotional film for MUTHA Festival, directed and produced for CURATED by Live Nation.",
+          "The official promo film for CURATED by Live Nation's MUTHA Festival, spotlighting queer artists in Brooklyn, NY - environment design built with After Effects AI tools.",
         date: "May '25",
-        category: "Motion",
+        category: "Promo Piece",
         skills: ["Director", "Producer"],
         src: "/videos/livenation-mutha-promo-film.mp4",
         poster: "/images/campaigns/livenation-mutha-promo-poster.jpg",
@@ -366,9 +366,9 @@ export const projects: Project[] = [
       {
         title: "Decomposition",
         description:
-          "Abstract fashion show promotion video, commissioned by Refine LA - a girl's getting-ready ritual dissolves into a dream that never completes.",
+          "Fashion-show promo commissioned by Refine LA for 'Decomposition & Rebirth' - spotlighting fast fashion's toll on the planet, and how the industry flourishes when nature does too.",
         date: "May '25",
-        category: "Motion",
+        category: "Promo Piece",
         skills: ["Producer", "Partner Comms", "Animator", "Director"],
         src: "/videos/refine-decomposition-promo.mp4",
         poster: "/images/campaigns/refine-decomposition-promo-poster.jpg",
@@ -380,7 +380,7 @@ export const projects: Project[] = [
         description:
           "Animated short imagining Lagos Mainland rebuilt from memory - danfo buses, okadas, and a skyline caught between the city that was and the one being built.",
         date: "Feb '25",
-        category: "Motion",
+        category: "Portfolio Piece",
         skills: ["Animator", "Director"],
         src: "/videos/mainland-nostalgia.mp4",
         poster: "/images/campaigns/mainland-nostalgia-poster.jpg",
@@ -389,9 +389,9 @@ export const projects: Project[] = [
       {
         title: "Lost and Found",
         description:
-          "A traveler realizes what they left behind only after takeoff - a short about the things you can't go back for.",
+          "A commuting student leaves her childhood teddy bear behind at the airport - a short about the truth of letting go, and returning renewed.",
         date: "Dec '25",
-        category: "Motion",
+        category: "Portfolio Piece",
         skills: ["Animator", "Director"],
         src: "/videos/lost-and-found.mp4",
         poster: "/images/campaigns/lost-and-found-poster.jpg",
@@ -1025,7 +1025,7 @@ export const projects: Project[] = [
         description:
           "The complete animated short: a sci-fi comedy set in a Lagos salon, following a character who time-travels through a hair-tech invention into a frozen '90s sitcom world.",
         date: "2025",
-        category: "Motion",
+        category: "IP",
         skills: ["Writer", "Director", "Producer", "Animator", "Editor"],
         src: "/videos/ctrl4c-full-film.mp4",
         poster: "/images/campaigns/ctrl4c-full-film-poster-v2.jpg",
@@ -1035,9 +1035,9 @@ export const projects: Project[] = [
       {
         title: "Decomposition",
         description:
-          "Abstract fashion show promotion video, commissioned by Refine LA - a girl's getting-ready ritual dissolves into a dream that never completes.",
+          "Fashion-show promo commissioned by Refine LA for 'Decomposition & Rebirth' - spotlighting fast fashion's toll on the planet, and how the industry flourishes when nature does too.",
         date: "May '25",
-        category: "Motion",
+        category: "Promo Piece",
         skills: ["Producer", "Partner Comms", "Animator", "Director"],
         src: "/videos/refine-decomposition-promo.mp4",
         poster: "/images/campaigns/refine-decomposition-promo-poster.jpg",
@@ -1049,7 +1049,7 @@ export const projects: Project[] = [
         description:
           "Animated short imagining Lagos Mainland rebuilt from memory - danfo buses, okadas, and a skyline caught between the city that was and the one being built.",
         date: "Feb '25",
-        category: "Motion",
+        category: "Portfolio Piece",
         skills: ["Animator", "Director"],
         src: "/videos/mainland-nostalgia.mp4",
         poster: "/images/campaigns/mainland-nostalgia-poster.jpg",
@@ -1058,9 +1058,9 @@ export const projects: Project[] = [
       {
         title: "Lost and Found",
         description:
-          "A traveler realizes what they left behind only after takeoff - a short about the things you can't go back for.",
+          "A commuting student leaves her childhood teddy bear behind at the airport - a short about the truth of letting go, and returning renewed.",
         date: "Dec '25",
-        category: "Motion",
+        category: "Portfolio Piece",
         skills: ["Animator", "Director"],
         src: "/videos/lost-and-found.mp4",
         poster: "/images/campaigns/lost-and-found-poster.jpg",
@@ -1069,9 +1069,9 @@ export const projects: Project[] = [
       {
         title: "Getting Unready",
         description:
-          "A UCLA FTV 155 short following a girl's unraveling nighttime ritual - the opposite of getting ready.",
+          "An animated short where a girl's 'getting ready' ritual collapses mid-sequence - the party exists only in a dream, and she wakes back into winter stillness.",
         date: "Mar '25",
-        category: "Motion",
+        category: "Portfolio Piece",
         skills: ["Animator", "Director"],
         src: "/videos/getting-unready.mp4",
         poster: "/images/campaigns/getting-unready-poster.jpg",
