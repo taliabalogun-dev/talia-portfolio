@@ -12,11 +12,11 @@ export default function OtherFeaturedAnimation({
       <h2 className="text-xl font-semibold tracking-tight">
         Other Featured Animation
       </h2>
-      <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
+      <div className="-mx-6 mt-6 flex snap-x snap-mandatory gap-6 overflow-x-auto px-6 pb-4">
         {items.map((item) => (
           <div
             key={item.title}
-            className="overflow-hidden rounded-2xl border border-beige/10 bg-white shadow-xl"
+            className="w-[85%] shrink-0 snap-start overflow-hidden rounded-2xl border border-beige/10 bg-white shadow-xl sm:w-[380px]"
           >
             <div className="relative aspect-video w-full overflow-hidden bg-black">
               {item.kind === "video" ? (

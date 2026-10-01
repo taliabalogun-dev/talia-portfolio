@@ -105,6 +105,8 @@ export type FeaturedAnimation = {
   href?: string;
   /** Video only: gates playback behind a client-side password prompt. */
   password?: string;
+  /** Matches a Project.slug - the card is hidden on that project's own subpage so it doesn't feature itself. */
+  projectSlug?: string;
 };
 
 export type Project = {
@@ -143,8 +145,8 @@ export type Project = {
   extraLinks?: { label: string; href: string }[];
   /** Pull-quote(s) shown under the hero description on the subpage. Name and role render in accent color, org in muted. */
   quotes?: { text: string; name: string; role?: string; org: string }[];
-  /** "Other Featured Animation" card grid shown after the view-full-project buttons, styled after the Co Curate explore page. */
-  otherFeaturedAnimation?: FeaturedAnimation[];
+  /** Shows the shared "Other Featured Animation" scroll reel (see `featuredAnimationReel`) after the view-full-project buttons. The project's own entry in that reel, if any, is filtered out. */
+  showFeaturedAnimation?: boolean;
 };
 
 export const projects: Project[] = [
@@ -351,64 +353,7 @@ export const projects: Project[] = [
         sections: [],
       },
     ],
-    otherFeaturedAnimation: [
-      {
-        title: "‘This Is MUTHA’ Festival Promo",
-        description:
-          "The official promo film for CURATED by Live Nation's MUTHA Festival, spotlighting queer artists in Brooklyn, NY - environment design built with After Effects AI tools.",
-        date: "May '25",
-        category: "Promo Piece",
-        skills: ["Director", "Producer"],
-        src: "/videos/livenation-mutha-promo-film.mp4",
-        poster: "/images/campaigns/livenation-mutha-promo-poster.jpg",
-        kind: "video",
-      },
-      {
-        title: "Decomposition",
-        description:
-          "Fashion-show promo commissioned by Refine LA for 'Decomposition & Rebirth' - spotlighting fast fashion's toll on the planet, and how the industry flourishes when nature does too.",
-        date: "May '25",
-        category: "Promo Piece",
-        skills: ["Producer", "Partner Comms", "Animator", "Director"],
-        src: "/videos/refine-decomposition-promo.mp4",
-        poster: "/images/campaigns/refine-decomposition-promo-poster.jpg",
-        kind: "video",
-        href: "/projects/refine-la-zine",
-      },
-      {
-        title: "Mainland Nostalgia",
-        description:
-          "Animated short imagining Lagos Mainland rebuilt from memory - danfo buses, okadas, and a skyline caught between the city that was and the one being built.",
-        date: "Feb '25",
-        category: "Portfolio Piece",
-        skills: ["Animator", "Director"],
-        src: "/videos/mainland-nostalgia.mp4",
-        poster: "/images/campaigns/mainland-nostalgia-poster.jpg",
-        kind: "video",
-      },
-      {
-        title: "Lost and Found",
-        description:
-          "A commuting student leaves her childhood teddy bear behind at the airport - a short about the truth of letting go, and returning renewed.",
-        date: "Dec '25",
-        category: "Portfolio Piece",
-        skills: ["Animator", "Director"],
-        src: "/videos/lost-and-found.mp4",
-        poster: "/images/campaigns/lost-and-found-poster.jpg",
-        kind: "video",
-      },
-      {
-        title: "Getting Unready",
-        description:
-          "A UCLA FTV 155 short following a girl's unraveling nighttime ritual - the opposite of getting ready.",
-        date: "Mar '25",
-        category: "Motion",
-        skills: ["Animator", "Director"],
-        src: "/videos/getting-unready.mp4",
-        poster: "/images/campaigns/getting-unready-poster.jpg",
-        kind: "video",
-      },
-    ],
+    showFeaturedAnimation: true,
   },
   {
     slug: "fast-ucla-fashion-show",
@@ -916,7 +861,7 @@ export const projects: Project[] = [
     tags: ["Festival Strategy", "Key Art & Campaign", "Production Direction"],
     role: "Writer, Producer & Director",
     contextTag: "Original animated short",
-    period: "2025 - Present",
+    period: "2025 - June 2026",
     location: "Los Angeles, CA",
     focus: {
       heading: "Role",
@@ -1019,65 +964,7 @@ export const projects: Project[] = [
         org: "UCLA Film, Television and Digital Media (director, The Simpsons and Recess)",
       },
     ],
-    otherFeaturedAnimation: [
-      {
-        title: "CTRL 4C - Full Film",
-        description:
-          "The complete animated short: a sci-fi comedy set in a Lagos salon, following a character who time-travels through a hair-tech invention into a frozen '90s sitcom world.",
-        date: "2025",
-        category: "IP",
-        skills: ["Writer", "Director", "Producer", "Animator", "Editor"],
-        src: "/videos/ctrl4c-full-film.mp4",
-        poster: "/images/campaigns/ctrl4c-full-film-poster-v2.jpg",
-        kind: "video",
-        password: "screeningroom4c",
-      },
-      {
-        title: "Decomposition",
-        description:
-          "Fashion-show promo commissioned by Refine LA for 'Decomposition & Rebirth' - spotlighting fast fashion's toll on the planet, and how the industry flourishes when nature does too.",
-        date: "May '25",
-        category: "Promo Piece",
-        skills: ["Producer", "Partner Comms", "Animator", "Director"],
-        src: "/videos/refine-decomposition-promo.mp4",
-        poster: "/images/campaigns/refine-decomposition-promo-poster.jpg",
-        kind: "video",
-        href: "/projects/refine-la-zine",
-      },
-      {
-        title: "Mainland Nostalgia",
-        description:
-          "Animated short imagining Lagos Mainland rebuilt from memory - danfo buses, okadas, and a skyline caught between the city that was and the one being built.",
-        date: "Feb '25",
-        category: "Portfolio Piece",
-        skills: ["Animator", "Director"],
-        src: "/videos/mainland-nostalgia.mp4",
-        poster: "/images/campaigns/mainland-nostalgia-poster.jpg",
-        kind: "video",
-      },
-      {
-        title: "Lost and Found",
-        description:
-          "A commuting student leaves her childhood teddy bear behind at the airport - a short about the truth of letting go, and returning renewed.",
-        date: "Dec '25",
-        category: "Portfolio Piece",
-        skills: ["Animator", "Director"],
-        src: "/videos/lost-and-found.mp4",
-        poster: "/images/campaigns/lost-and-found-poster.jpg",
-        kind: "video",
-      },
-      {
-        title: "Getting Unready",
-        description:
-          "An animated short where a girl's 'getting ready' ritual collapses mid-sequence - the party exists only in a dream, and she wakes back into winter stillness.",
-        date: "Mar '25",
-        category: "Portfolio Piece",
-        skills: ["Animator", "Director"],
-        src: "/videos/getting-unready.mp4",
-        poster: "/images/campaigns/getting-unready-poster.jpg",
-        kind: "video",
-      },
-    ],
+    showFeaturedAnimation: true,
   },
   {
     slug: "co-curate",
@@ -1277,6 +1164,79 @@ export const projects: Project[] = [
       },
     ],
     viewFullProject: { href: "https://co-curate-production.up.railway.app" },
+  },
+];
+
+/** Shared "Other Featured Animation" reel shown on project subpages with `showFeaturedAnimation: true`. Each project filters out its own entry (matched by `projectSlug`) so it doesn't feature itself. */
+export const featuredAnimationReel: FeaturedAnimation[] = [
+  {
+    title: "Mainland Nostalgia",
+    description:
+      "Animated short imagining Lagos Mainland rebuilt from memory - danfo buses, okadas, and a skyline caught between the city that was and the one being built.",
+    date: "Feb '25",
+    category: "Portfolio Piece",
+    skills: ["Animator", "Director"],
+    src: "/videos/mainland-nostalgia.mp4",
+    poster: "/images/campaigns/mainland-nostalgia-poster.jpg",
+    kind: "video",
+  },
+  {
+    title: "Lost and Found",
+    description:
+      "A commuting student leaves her childhood teddy bear behind at the airport - a short about the truth of letting go, and returning renewed.",
+    date: "Dec '25",
+    category: "Portfolio Piece",
+    skills: ["Animator", "Director"],
+    src: "/videos/lost-and-found.mp4",
+    poster: "/images/campaigns/lost-and-found-poster.jpg",
+    kind: "video",
+  },
+  {
+    title: "‘This Is MUTHA’ Festival Promo",
+    description:
+      "The official promo film for CURATED by Live Nation's MUTHA Festival, spotlighting queer artists in Brooklyn, NY - environment design built with After Effects AI tools.",
+    date: "May '25",
+    category: "Promo Piece",
+    skills: ["Director", "Producer"],
+    src: "/videos/livenation-mutha-promo-film.mp4",
+    poster: "/images/campaigns/livenation-mutha-promo-poster.jpg",
+    kind: "video",
+    projectSlug: "live-nation-mutha",
+  },
+  {
+    title: "CTRL 4C - Full Film",
+    description:
+      "The complete animated short: a sci-fi comedy set in a Lagos salon, following a character who time-travels through a hair-tech invention into a frozen '90s sitcom world.",
+    date: "Jun '26",
+    category: "IP",
+    skills: ["Writer", "Director", "Producer", "Animator", "Editor"],
+    src: "/videos/ctrl4c-full-film.mp4",
+    poster: "/images/campaigns/ctrl4c-full-film-poster-v2.jpg",
+    kind: "video",
+    password: "screeningroom4c",
+    projectSlug: "ctrl-4c-campaign",
+  },
+  {
+    title: "Decomposition",
+    description:
+      "Fashion-show promo commissioned by Refine LA for 'Decomposition & Rebirth' - spotlighting fast fashion's toll on the planet, and how the industry flourishes when nature does too.",
+    date: "May '25",
+    category: "Promo Piece",
+    skills: ["Producer", "Partner Comms", "Animator", "Director"],
+    src: "/videos/refine-decomposition-promo.mp4",
+    poster: "/images/campaigns/refine-decomposition-promo-poster.jpg",
+    kind: "video",
+  },
+  {
+    title: "Getting Unready",
+    description:
+      "An animated short where a girl's 'getting ready' ritual collapses mid-sequence - the party exists only in a dream, and she wakes back into winter stillness.",
+    date: "Mar '25",
+    category: "Portfolio Piece",
+    skills: ["Animator", "Director"],
+    src: "/videos/getting-unready.mp4",
+    poster: "/images/campaigns/getting-unready-poster.jpg",
+    kind: "video",
   },
 ];
 
@@ -1598,7 +1558,7 @@ export const additionalExperience: ExperienceItem[] = [
   {
     role: "Writer, Producer & Director",
     company: "CTRL 4C",
-    period: "2025 - Present",
+    period: "2025 - June 2026",
     summary:
       "Writing, directing, and producing an original animated short end-to-end, including a festival distribution and positioning strategy targeting AFRIFF.",
     slug: "ctrl-4c-campaign",
