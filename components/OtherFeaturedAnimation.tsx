@@ -4,18 +4,18 @@ import type { FeaturedAnimation } from "@/content/site";
 
 export default function OtherFeaturedAnimation({
   items,
+  heading = "Other Featured Animation",
 }: {
   items: FeaturedAnimation[];
+  heading?: string;
 }) {
   return (
     <div className="mt-16 border-t border-beige/15 pt-10">
-      <h2 className="text-xl font-semibold tracking-tight">
-        Other Featured Animation
-      </h2>
+      <h2 className="text-xl font-semibold tracking-tight">{heading}</h2>
       <div className="-mx-6 mt-6 flex snap-x snap-mandatory gap-6 overflow-x-auto px-6 pb-4">
         {items.map((item) => (
           <div
-            key={item.title}
+            key={item.src}
             className="w-[85%] shrink-0 snap-start overflow-hidden rounded-2xl border border-beige/10 bg-white shadow-xl sm:w-[380px]"
           >
             <div className="relative aspect-video w-full overflow-hidden bg-black">
