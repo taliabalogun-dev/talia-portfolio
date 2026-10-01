@@ -413,6 +413,14 @@ export default async function ProjectPage(
             />
           )}
 
+          {project.secondaryReel && (
+            <OtherFeaturedAnimation
+              items={project.secondaryReel.items}
+              heading={project.secondaryReel.heading}
+              description={project.secondaryReel.description}
+            />
+          )}
+
           <div className="mt-16 border-t border-beige/15 pt-10">
             <h2 className="text-xl font-semibold tracking-tight">
               More Roles

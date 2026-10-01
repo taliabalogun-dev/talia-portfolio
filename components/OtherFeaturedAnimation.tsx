@@ -5,13 +5,18 @@ import type { FeaturedAnimation } from "@/content/site";
 export default function OtherFeaturedAnimation({
   items,
   heading = "Other Featured Animation",
+  description,
 }: {
   items: FeaturedAnimation[];
   heading?: string;
+  description?: string;
 }) {
   return (
     <div className="mt-16 border-t border-beige/15 pt-10">
       <h2 className="text-xl font-semibold tracking-tight">{heading}</h2>
+      {description && (
+        <p className="mt-2 max-w-2xl text-sm opacity-70">{description}</p>
+      )}
       <div className="-mx-6 mt-6 flex snap-x snap-mandatory gap-6 overflow-x-auto px-6 pb-4">
         {items.map((item) => (
           <div
