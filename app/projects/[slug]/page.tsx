@@ -418,6 +418,7 @@ export default async function ProjectPage(
               items={project.secondaryReel.items}
               heading={project.secondaryReel.heading}
               description={project.secondaryReel.description}
+              compact
             />
           )}
 

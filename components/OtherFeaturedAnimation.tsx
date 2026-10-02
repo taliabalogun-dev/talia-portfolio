@@ -6,10 +6,13 @@ export default function OtherFeaturedAnimation({
   items,
   heading = "Other Featured Animation",
   description,
+  compact = false,
 }: {
   items: FeaturedAnimation[];
   heading?: string;
   description?: string;
+  /** Smaller cards - used for dense reels like the Co Curate commissions list. */
+  compact?: boolean;
 }) {
   return (
     <div className="mt-16 border-t border-beige/15 pt-10">
@@ -21,7 +24,9 @@ export default function OtherFeaturedAnimation({
         {items.map((item) => (
           <div
             key={item.src}
-            className="w-[85%] shrink-0 snap-start overflow-hidden rounded-2xl border border-beige/10 bg-white shadow-xl sm:w-[380px]"
+            className={`shrink-0 snap-start overflow-hidden rounded-2xl border border-beige/10 bg-white shadow-xl ${
+              compact ? "w-[62%] sm:w-[240px]" : "w-[85%] sm:w-[380px]"
+            }`}
           >
             <div className="relative aspect-video w-full overflow-hidden bg-black">
               {item.kind === "video" ? (
@@ -39,26 +44,56 @@ export default function OtherFeaturedAnimation({
                   className="h-full w-full object-cover"
                 />
               )}
-              <span className="pointer-events-none absolute left-2 top-2 rounded-full bg-black/60 px-2.5 py-1 text-[11px] font-semibold text-white">
+              <span
+                className={`pointer-events-none absolute left-2 top-2 rounded-full bg-black/60 font-semibold text-white ${
+                  compact ? "px-2 py-0.5 text-[10px]" : "px-2.5 py-1 text-[11px]"
+                }`}
+              >
                 {item.date}
               </span>
-              <span className="pointer-events-none absolute right-2 top-2 rounded-full bg-black/60 px-2.5 py-1 text-[11px] font-semibold text-white">
+              <span
+                className={`pointer-events-none absolute right-2 top-2 rounded-full bg-black/60 font-semibold text-white ${
+                  compact ? "px-2 py-0.5 text-[10px]" : "px-2.5 py-1 text-[11px]"
+                }`}
+              >
                 {item.category}
               </span>
             </div>
-            <div className="p-4">
-              <h3 className="text-lg font-bold text-paper-ink">{item.title}</h3>
-              <p className="mt-1 text-sm text-paper-ink/70">{item.description}</p>
-              <div className="mt-3 flex flex-wrap gap-1.5">
-                {item.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="rounded-full bg-accent/15 px-2.5 py-1 text-xs font-medium text-paper-ink/80"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
+            <div className={compact ? "p-3" : "p-4"}>
+              <h3
+                className={`font-bold text-paper-ink ${compact ? "text-sm" : "text-lg"}`}
+              >
+                {item.title}
+              </h3>
+              <p
+                className={`text-paper-ink/70 ${compact ? "mt-0.5 text-xs" : "mt-1 text-sm"}`}
+              >
+                {item.description}
+              </p>
+              {item.roleLabel ? (
+                <div
+                  className={`mt-3 bg-red-600 text-center font-bold uppercase tracking-wide text-white ${
+                    compact
+                      ? "-mx-3 -mb-3 px-3 py-1.5 text-[10px]"
+                      : "-mx-4 -mb-4 px-4 py-2 text-xs"
+                  }`}
+                >
+                  {item.roleLabel}
+                </div>
+              ) : (
+                item.skills.length > 0 && (
+                  <div className="mt-3 flex flex-wrap gap-1.5">
+                    {item.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="rounded-full bg-accent/15 px-2.5 py-1 text-xs font-medium text-paper-ink/80"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                )
+              )}
               {item.href && (
                 <Link
                   href={item.href}
