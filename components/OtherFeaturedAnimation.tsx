@@ -72,10 +72,8 @@ export default function OtherFeaturedAnimation({
               </p>
               {item.roleLabel ? (
                 <div
-                  className={`mt-3 bg-red-600 text-center font-bold uppercase tracking-wide text-white ${
-                    compact
-                      ? "-mx-3 -mb-3 px-3 py-1.5 text-[10px]"
-                      : "-mx-4 -mb-4 px-4 py-2 text-xs"
+                  className={`font-cocurate mt-3 inline-block rounded-full bg-cocurate-red font-semibold tracking-wide text-white ${
+                    compact ? "px-3 py-1 text-[10px]" : "px-4 py-1.5 text-xs"
                   }`}
                 >
                   {item.roleLabel}
