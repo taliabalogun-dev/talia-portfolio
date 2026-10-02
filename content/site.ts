@@ -1469,7 +1469,7 @@ export const featuredAnimationReel: FeaturedAnimation[] = [
       "The official promo film for CURATED by Live Nation's MUTHA Festival, spotlighting queer artists in Brooklyn, NY - environment design built with After Effects AI tools.",
     date: "May '25",
     category: "Promo Piece",
-    skills: ["Director", "Producer"],
+    skills: ["Director", "Editor", "Partner Comms"],
     src: "/videos/livenation-mutha-promo-film.mp4",
     poster: "/images/campaigns/livenation-mutha-promo-poster.jpg",
     kind: "video",
