@@ -31,7 +31,7 @@ export default function AboutPage() {
           <div className="order-1 mt-10 -rotate-[0.4deg]">
             <div className="relative rounded-md bg-sky-deep shadow-2xl">
               <span className="absolute -top-6 left-8 -rotate-3">
-                <span className="font-hand inline-block rounded-sm bg-accent px-6 py-2.5 text-3xl text-hero-ink shadow-lg">
+                <span className="inline-block rounded-sm bg-accent px-6 py-2.5 text-xl font-bold text-hero-ink shadow-lg sm:text-2xl">
                   the full story
                 </span>
               </span>
@@ -92,7 +92,7 @@ export default function AboutPage() {
                 <div className="mt-4 flex flex-col gap-4">
                   {skills.map((group) => (
                     <div key={group.category}>
-                      <span className="font-hand -rotate-1 inline-block text-base text-navy/80">
+                      <span className="-rotate-1 inline-block text-base font-semibold text-navy/80">
                         {group.category}
                       </span>
                       <div className="mt-1.5 flex flex-wrap gap-1.5">

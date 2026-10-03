@@ -5,14 +5,14 @@ export default function SkillsExperience() {
   return (
     <section className="overflow-x-hidden bg-beige pt-6 pb-16 sm:pt-8 sm:pb-20 lg:pt-6">
       <div className="mx-auto max-w-5xl px-6">
-        <span className="font-hand block text-xl text-brown lg:text-4xl">about -</span>
+        <span className="block text-xl font-semibold text-brown lg:text-2xl">about -</span>
         <p className="mt-1 mb-8 max-w-[60ch] text-sm text-muted lg:text-lg">
           Every industry calls it something different, but the job underneath is the same - turn an idea into something real. That&apos;s the throughline I carry into marketing, film, and fashion.
         </p>
         <div className="-rotate-[0.4deg]">
           <div className="relative rounded-md bg-teal-deep shadow-2xl">
             <span className="absolute -top-6 left-8 -rotate-3">
-              <span className="font-hand inline-block rounded-sm bg-accent px-6 py-2.5 text-3xl text-hero-ink shadow-lg">
+              <span className="inline-block rounded-sm bg-accent px-6 py-2.5 text-xl font-bold text-hero-ink shadow-lg sm:text-2xl">
                 the résumé, at a glance
               </span>
             </span>
@@ -124,7 +124,7 @@ export default function SkillsExperience() {
                   <div className="mt-3 flex flex-col gap-4">
                     {skills.map((group) => (
                       <div key={group.category}>
-                        <span className="font-hand -rotate-1 inline-block text-lg text-brown">
+                        <span className="-rotate-1 inline-block text-base font-semibold text-brown">
                           {group.category}
                         </span>
                         <div className="mt-1.5 flex flex-wrap gap-1.5">

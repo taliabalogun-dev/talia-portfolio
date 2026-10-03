@@ -53,7 +53,7 @@ export default function SkillsPage() {
                 <div key={group.category}>
                   <a
                     href={`#${slugify(group.category)}`}
-                    className="font-hand -rotate-1 inline-block text-xl text-brown transition-colors hover:text-accent"
+                    className="-rotate-1 inline-block text-lg font-semibold text-brown transition-colors hover:text-accent"
                   >
                     {group.category}
                   </a>
@@ -82,7 +82,7 @@ export default function SkillsPage() {
                 className="scroll-mt-28 rounded-2xl border border-accent/15 bg-teal-deep p-5 sm:p-7 lg:p-8"
               >
                 <div className="max-w-3xl">
-                  <h2 className="font-hand -rotate-1 inline-block text-3xl text-brown sm:text-4xl">
+                  <h2 className="-rotate-1 inline-block text-2xl font-bold text-brown sm:text-3xl">
                     {group.category}
                   </h2>
                   <p className="mt-3 text-base text-ink/85 sm:text-lg">{group.context}</p>

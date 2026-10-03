@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Anton, Caveat, Jost, Plus_Jakarta_Sans } from "next/font/google";
+import { Anton, Jost, Plus_Jakarta_Sans } from "next/font/google";
 import Footer from "@/components/Footer";
 import { site } from "@/content/site";
 import "./globals.css";
@@ -12,12 +12,6 @@ const displayFont = Anton({
 
 const sansFont = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
-  subsets: ["latin"],
-});
-
-const handFont = Caveat({
-  variable: "--font-caveat",
-  weight: ["600", "700"],
   subsets: ["latin"],
 });
 
@@ -37,7 +31,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${displayFont.variable} ${sansFont.variable} ${handFont.variable} ${cocurateFont.variable} h-full antialiased`}
+      className={`${displayFont.variable} ${sansFont.variable} ${cocurateFont.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         {children}

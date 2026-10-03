@@ -7,7 +7,7 @@ export default function Education() {
         <div className="-rotate-[0.4deg]">
           <div className="relative rounded-md bg-teal-deep shadow-2xl">
             <span className="absolute -top-6 left-8 -rotate-3">
-              <span className="font-hand inline-block rounded-sm bg-accent px-6 py-2.5 text-3xl text-hero-ink shadow-lg">
+              <span className="inline-block rounded-sm bg-accent px-6 py-2.5 text-xl font-bold text-hero-ink shadow-lg sm:text-2xl">
                 school days
               </span>
             </span>
