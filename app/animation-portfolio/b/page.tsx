@@ -13,10 +13,10 @@ import {
 
 const sections = [
   { id: "narrative", label: "Narrative", items: narrativeAnimationReel },
+  { id: "concept", label: "Concept Art", items: conceptArtReel },
   { id: "experimental", label: "Experimental", items: experimentalAnimationReel },
   { id: "characters", label: "Character Design", items: flattenSlides(characterDesignReel) },
   { id: "storyboards", label: "Storyboards", items: storyboardReel },
-  { id: "concept", label: "Concept Art", items: conceptArtReel },
 ];
 
 function ArtTile({ item }: { item: FeaturedAnimation }) {
