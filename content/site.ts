@@ -10,6 +10,9 @@ export const site = {
     github: "",
     linkedin: "https://linkedin.com/in/talia-balogun-326690228",
     twitter: "",
+    /** The animation channels, shown on the Animation Portfolio page. An empty link shows "coming soon". */
+    animationInstagram: "https://www.instagram.com/animationbytalia/",
+    animationYoutube: "",
   },
   resumeUrl: "/resume/resume.pdf",
   aboutImage: "/images/about-headshot-v1.png",

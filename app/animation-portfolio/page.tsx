@@ -10,6 +10,7 @@ import {
   characterDesignReel,
   conceptArtReel,
   animationAtWork,
+  site,
 } from "@/content/site";
 
 export default function AnimationPortfolioPage() {
@@ -63,6 +64,36 @@ export default function AnimationPortfolioPage() {
                 spans finished shorts, storyboards, character design, and
                 concept art.
               </p>
+              <div className="mt-6 flex flex-wrap items-center gap-3">
+                <a
+                  href={site.social.animationInstagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-ink transition-opacity hover:opacity-85"
+                >
+                  Follow on Instagram
+                </a>
+                {site.social.animationYoutube ? (
+                  <a
+                    href={site.social.animationYoutube}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-ink transition-opacity hover:opacity-85"
+                  >
+                    Follow on YouTube
+                  </a>
+                ) : (
+                  <span
+                    aria-disabled="true"
+                    className="inline-flex cursor-not-allowed items-center gap-2 rounded-full bg-accent/60 px-6 py-3 text-sm font-medium text-accent-ink"
+                  >
+                    Follow on YouTube
+                    <span className="rounded-full bg-accent-ink/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide">
+                      Soon
+                    </span>
+                  </span>
+                )}
+              </div>
             </div>
             <div className="order-first shrink-0 md:order-last">
               <div className="relative h-44 w-44 overflow-hidden rounded-full shadow-2xl ring-4 ring-ink/90 sm:h-56 sm:w-56 md:h-72 md:w-72 lg:h-80 lg:w-80">
