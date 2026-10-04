@@ -1696,6 +1696,103 @@ export const characterDesignReel: FeaturedAnimation[] = [
   },
 ];
 
+/** A role where an animation background did real work: the tasks it fed into, and how. Text-only cards on the Animation Portfolio page. */
+export type AnimationAtWorkCard = {
+  slug: string;
+  org: string;
+  role: string;
+  title: string;
+  tasks: string[];
+  how: string;
+};
+
+export const animationAtWork: AnimationAtWorkCard[] = [
+  {
+    slug: "kugali-iwaju",
+    org: "Kugali Media",
+    role: "Marketing & IP Intern",
+    title: "Pitch shaping",
+    tasks: [
+      "Reviewed storyboards, scripts and comics against production deadlines",
+      "Built pitch materials and research decks for audience and market positioning",
+      "Supported pitch strategy and awards-season promotion on Disney's Iwájú",
+    ],
+    how: "I write and board my own animation, so I read a script or storyboard the way the production team does. That let me see where a pitch needed a clearer visual idea, and flag pipeline gaps early.",
+  },
+  {
+    slug: "live-nation-mutha",
+    org: "Live Nation",
+    role: "Contracted Creative Marketing Director",
+    title: "Directing the film and the visuals",
+    tasks: [
+      "Developed the video concept, narrative and visual language",
+      "Combined animation, photography and motion design in one piece",
+      "Made social-first, projection-ready visuals for live performance",
+    ],
+    how: "I could build the animated environments and motion myself in After Effects, so direction came with a working pipeline: concept, animated world and projection format designed together instead of handed between teams.",
+  },
+  {
+    slug: "refine-la-zine",
+    org: "Refine LA",
+    role: "Marketing Coordinator, project lead on the zine launch",
+    title: "Leading a multi-channel campaign",
+    tasks: [
+      "Led the promo film, community interviews and cover campaign for the zine launch",
+      "Proposed and animated a video on the life cycle of a garment",
+      "Made the Decomposition fashion show promo",
+    ],
+    how: "An animation production is scoped, scheduled and handed off one deliverable at a time. Running the launch the same way, and working backward from the deadline, is how the garment video came in a full week early.",
+  },
+  {
+    slug: "co-curate",
+    org: "Co Curate",
+    role: "Founder and independent contractor",
+    title: "Commission work and the platform",
+    tasks: [
+      "Motion design for an app prototype in After Effects",
+      "Logo animation, illustration and brand identity commissions",
+      "Designed Co Curate's brand and product, and built the front end",
+    ],
+    how: "Animation gave me range across motion, illustration and design, which covers most of what a small client asks for in a brief. That contractor work is the demand Co Curate was built to staff.",
+  },
+  {
+    slug: "fast-ucla-fashion-show",
+    org: "FAST@UCLA",
+    role: "Director of Creative Media",
+    title: "Directing a creative team",
+    tasks: [
+      "Set creative direction and signed off work across a 14-person team",
+      "Kept photographers, designers and writers aligned on approvals",
+      "Produced the Nike x FAST editorial shoot and promo video",
+    ],
+    how: "Making an animated film means steering many contributors toward one cut, so holding a team to shared approvals and timelines already felt familiar.",
+  },
+  {
+    slug: "ctrl-4c-campaign",
+    org: "CTRL 4C",
+    role: "Writer, Producer & Director",
+    title: "Releasing my own film",
+    tasks: [
+      "Managed the production timeline, budget and festival strategy",
+      "Rolled out process videos, character reveals, cast spotlights and teasers",
+      "Grew the account by 400+ followers and 20K+ views",
+    ],
+    how: "Because I made the film, the campaign was built from real production material - process footage, character reveals and key art - instead of generic promo.",
+  },
+  {
+    slug: "bap-productions",
+    org: "BAP Productions",
+    role: "Writers Room & Story Development Intern",
+    title: "Story development",
+    tasks: [
+      "Wrote treatments and helped develop sequel narratives",
+      "Served as Script Supervisor and Writers' Room Lead",
+      "Kept narrative continuity clear across the room's work",
+    ],
+    how: "Boarding teaches you to test a story shot by shot. That habit carried into the writers' room: keeping structure and continuity clear before anything moves on to casting or budget.",
+  },
+];
+
 /** Expands slideshow cards into one entry per slide, for layouts that show every piece on its own. */
 export function flattenSlides(items: FeaturedAnimation[]): FeaturedAnimation[] {
   return items.flatMap((item) =>

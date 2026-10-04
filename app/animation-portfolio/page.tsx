@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Nav from "@/components/Nav";
+import AnimationAtWork from "@/components/AnimationAtWork";
 import OtherFeaturedAnimation from "@/components/OtherFeaturedAnimation";
 import {
   narrativeAnimationReel,
@@ -8,6 +9,7 @@ import {
   storyboardReel,
   characterDesignReel,
   conceptArtReel,
+  animationAtWork,
 } from "@/content/site";
 
 export default function AnimationPortfolioPage() {
@@ -95,6 +97,11 @@ export default function AnimationPortfolioPage() {
           <OtherFeaturedAnimation
             items={storyboardReel}
             heading="Storyboards / Animatics"
+          />
+          <AnimationAtWork
+            items={animationAtWork}
+            heading="Animation at Work"
+            description="Where an animation background shows up in marketing, direction and production roles."
           />
         </div>
       </section>
