@@ -81,8 +81,12 @@ export default function OtherFeaturedAnimation({
                 </span>
               )}
               <span
-                className={`pointer-events-none absolute right-2 top-2 rounded-full bg-black/60 font-semibold text-white ${
-                  compact ? "px-2 py-0.5 text-[10px]" : "px-2.5 py-1 text-[11px]"
+                className={`pointer-events-none absolute right-2.5 top-2.5 rounded-full font-semibold text-white ${
+                  aspect === "poster"
+                    ? "bg-teal px-4 py-2 text-sm shadow-lg ring-1 ring-white/25"
+                    : compact
+                      ? "bg-black/60 px-2 py-0.5 text-[10px]"
+                      : "bg-black/60 px-2.5 py-1 text-[11px]"
                 }`}
               >
                 {item.category}
