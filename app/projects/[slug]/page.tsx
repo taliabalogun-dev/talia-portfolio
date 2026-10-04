@@ -410,6 +410,7 @@ export default async function ProjectPage(
               items={featuredAnimationReel.filter(
                 (item) => item.projectSlug !== project.slug
               )}
+              action={{ label: "View Animation Portfolio", href: "/animation-portfolio" }}
             />
           )}
 

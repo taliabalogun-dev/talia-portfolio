@@ -9,6 +9,7 @@ export default function OtherFeaturedAnimation({
   description,
   compact = false,
   aspect = "video",
+  action,
 }: {
   items: FeaturedAnimation[];
   heading?: string;
@@ -17,10 +18,22 @@ export default function OtherFeaturedAnimation({
   compact?: boolean;
   /** "poster" gives portrait cards for film and TV posters; the default is 16:9 for video. */
   aspect?: "video" | "poster";
+  /** A yellow pill link shown at the right of the heading. */
+  action?: { label: string; href: string };
 }) {
   return (
     <div className="mt-16 border-t border-beige/15 pt-10">
-      <h2 className="text-xl font-semibold tracking-tight">{heading}</h2>
+      <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3">
+        <h2 className="text-xl font-semibold tracking-tight">{heading}</h2>
+        {action && (
+          <Link
+            href={action.href}
+            className="inline-block rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-ink transition-opacity hover:opacity-85"
+          >
+            {action.label}
+          </Link>
+        )}
+      </div>
       {description && (
         <p className="mt-2 max-w-2xl text-sm opacity-70">{description}</p>
       )}

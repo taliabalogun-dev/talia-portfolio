@@ -968,7 +968,6 @@ export const projects: Project[] = [
     ],
     viewFullProject: { href: "https://animationbytalia.univer.se/home-lwdxt/home-lwdxt-xbjny-vjeiz" },
     extraLinks: [
-      { label: "View Animation Portfolio", href: "/animation-portfolio" },
       { label: "Watch Film", href: "https://vimeo.com/1209134453" },
     ],
     quotes: [
