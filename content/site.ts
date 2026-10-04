@@ -109,6 +109,10 @@ export type FeaturedAnimation = {
   projectSlug?: string;
   /** Replaces the skills-pill row with a single bold banner (e.g. "Illustration Contractor"). */
   roleLabel?: string;
+  /** Label for the `href` button. Defaults to "See Full Project →". */
+  hrefLabel?: string;
+  /** Image only: which part of the picture stays visible when it is cropped to the card. Defaults to center. */
+  position?: "top" | "center";
 };
 
 export type Project = {
@@ -149,6 +153,8 @@ export type Project = {
   quotes?: { text: string; name: string; role?: string; org: string }[];
   /** Shows the shared "Other Featured Animation" scroll reel (see `featuredAnimationReel`) after the view-full-project buttons. The project's own entry in that reel, if any, is filtered out. */
   showFeaturedAnimation?: boolean;
+  /** Shows the "Other Featured Productions" poster reel (see `featuredProductionsFor`). The project's own production is left out. */
+  showFeaturedProductions?: boolean;
   /** A second scroll reel (same card style as Other Featured Animation) shown after it, for a project-specific set of cards. */
   secondaryReel?: { heading: string; description?: string; items: FeaturedAnimation[] };
 };
@@ -177,6 +183,7 @@ export const projects: Project[] = [
     },
     featured: true,
     image: "/images/campaigns/kugali-iwaju-poster.jpg",
+    showFeaturedProductions: true,
     imagePosition: "top",
     quotes: [
       {
@@ -779,6 +786,7 @@ export const projects: Project[] = [
     image: "/images/campaigns/bap-logo.png",
     imageFit: "contain",
     cardImage: "/images/campaigns/bap-house-of-gaa-poster.jpg",
+    showFeaturedProductions: true,
     slides: [
       {
         title: "Featured Creative Media",
@@ -836,6 +844,7 @@ export const projects: Project[] = [
     image: "/images/campaigns/golden-effects-logo.png",
     imageFit: "contain",
     cardImage: "/images/campaigns/golden-effects-swallow-poster.jpg",
+    showFeaturedProductions: true,
     slides: [
       {
         title: "Featured Creative Media",
@@ -1511,6 +1520,44 @@ export const featuredAnimationReel: FeaturedAnimation[] = [
     kind: "video",
   },
 ];
+
+/**
+ * "Other Featured Productions": the four productions on the roles list, as
+ * poster cards. The poster is the one /work shows for the role, and the card
+ * links back to that role. `platform` is where it can be watched, shown as a
+ * bubble on the poster. A page never lists its own production.
+ */
+const featuredProductionDefs: { slug: string; title: string; platform: string }[] = [
+  { slug: "bap-productions", title: "House of Ga'a", platform: "Netflix" },
+  { slug: "golden-effects-pictures", title: "Swallow", platform: "Netflix" },
+  { slug: "kugali-iwaju", title: "Iwájú", platform: "Disney+" },
+  { slug: "ctrl-4c-campaign", title: "CTRL 4C", platform: "Vimeo" },
+];
+
+export function featuredProductionsFor(excludeSlug: string): FeaturedAnimation[] {
+  return featuredProductionDefs
+    .filter((d) => d.slug !== excludeSlug)
+    .flatMap((d) => {
+      const project = projects.find((p) => p.slug === d.slug);
+      const poster = project && (project.cardImage ?? project.image);
+      if (!project || !poster) return [];
+      return [
+        {
+          title: d.title,
+          description: `${project.role} - ${project.navLabel}`,
+          date: "",
+          category: d.platform,
+          skills: [],
+          src: poster,
+          kind: "image" as const,
+          position: project.imagePosition,
+          href: `/projects/${d.slug}`,
+          hrefLabel: "View Role →",
+          projectSlug: d.slug,
+        },
+      ];
+    });
+}
 
 /** "Storyboards / Animatics" reel on the Animation Portfolio page. `category` holds the piece's title, `date` its rough timing. */
 export const storyboardReel: FeaturedAnimation[] = [

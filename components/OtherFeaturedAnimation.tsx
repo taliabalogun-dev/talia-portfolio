@@ -7,12 +7,15 @@ export default function OtherFeaturedAnimation({
   heading = "Other Featured Animation",
   description,
   compact = false,
+  aspect = "video",
 }: {
   items: FeaturedAnimation[];
   heading?: string;
   description?: string;
   /** Smaller cards - used for dense reels like the Co Curate commissions list. */
   compact?: boolean;
+  /** "poster" gives portrait cards for film and TV posters; the default is 16:9 for video. */
+  aspect?: "video" | "poster";
 }) {
   return (
     <div className="mt-16 border-t border-beige/15 pt-10">
@@ -28,7 +31,11 @@ export default function OtherFeaturedAnimation({
               compact ? "w-[62%] sm:w-[240px]" : "w-[85%] sm:w-[380px]"
             }`}
           >
-            <div className="relative aspect-video w-full overflow-hidden bg-black">
+            <div
+              className={`relative w-full overflow-hidden bg-black ${
+                aspect === "poster" ? "aspect-[3/4]" : "aspect-video"
+              }`}
+            >
               {item.kind === "video" ? (
                 <EnlargeableVideo
                   src={item.src}
@@ -41,16 +48,20 @@ export default function OtherFeaturedAnimation({
                 <img
                   src={item.src}
                   alt={item.title}
-                  className="h-full w-full object-cover"
+                  className={`h-full w-full object-cover ${
+                    item.position === "top" ? "object-top" : ""
+                  }`}
                 />
               )}
-              <span
-                className={`pointer-events-none absolute left-2 top-2 rounded-full bg-black/60 font-semibold text-white ${
-                  compact ? "px-2 py-0.5 text-[10px]" : "px-2.5 py-1 text-[11px]"
-                }`}
-              >
-                {item.date}
-              </span>
+              {item.date && (
+                <span
+                  className={`pointer-events-none absolute left-2 top-2 rounded-full bg-black/60 font-semibold text-white ${
+                    compact ? "px-2 py-0.5 text-[10px]" : "px-2.5 py-1 text-[11px]"
+                  }`}
+                >
+                  {item.date}
+                </span>
+              )}
               <span
                 className={`pointer-events-none absolute right-2 top-2 rounded-full bg-black/60 font-semibold text-white ${
                   compact ? "px-2 py-0.5 text-[10px]" : "px-2.5 py-1 text-[11px]"
@@ -97,7 +108,7 @@ export default function OtherFeaturedAnimation({
                   href={item.href}
                   className="mt-4 inline-flex w-fit items-center gap-1.5 rounded-full bg-hero-ink px-4 py-2 text-xs font-bold uppercase tracking-wide text-white transition-opacity hover:opacity-85"
                 >
-                  See Full Project →
+                  {item.hrefLabel ?? "See Full Project →"}
                 </Link>
               )}
             </div>

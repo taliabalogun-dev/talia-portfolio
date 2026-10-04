@@ -8,7 +8,7 @@ import EnlargeableImage from "@/components/EnlargeableImage";
 import EnlargeableVideo from "@/components/EnlargeableVideo";
 import OtherFeaturedAnimation from "@/components/OtherFeaturedAnimation";
 import RoleNav from "@/components/RoleNav";
-import { projects, featuredAnimationReel } from "@/content/site";
+import { projects, featuredAnimationReel, featuredProductionsFor } from "@/content/site";
 import { getPillTheme } from "@/content/pillTheme";
 
 export function generateStaticParams() {
@@ -410,6 +410,15 @@ export default async function ProjectPage(
               items={featuredAnimationReel.filter(
                 (item) => item.projectSlug !== project.slug
               )}
+            />
+          )}
+
+          {project.showFeaturedProductions && (
+            <OtherFeaturedAnimation
+              items={featuredProductionsFor(project.slug)}
+              heading="Other Featured Productions"
+              aspect="poster"
+              compact
             />
           )}
 
