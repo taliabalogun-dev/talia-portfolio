@@ -1592,6 +1592,8 @@ const featuredProductionDefs: {
   poster?: string;
   role?: string;
 }[] = [
+  { slug: "kugali-iwaju", title: "Iwájú", platform: "Disney+" },
+  { slug: "golden-effects-pictures", title: "Swallow", platform: "Netflix" },
   { slug: "bap-productions", title: "House of Ga'a", platform: "Netflix" },
   {
     slug: "bap-productions",
@@ -1600,8 +1602,6 @@ const featuredProductionDefs: {
     poster: "/images/campaigns/bap-bling-lagosians-2-poster.jpg",
     role: "Writers Room Intern, Pitch & IP Strategy",
   },
-  { slug: "golden-effects-pictures", title: "Swallow", platform: "Netflix" },
-  { slug: "kugali-iwaju", title: "Iwájú", platform: "Disney+" },
   { slug: "ctrl-4c-campaign", title: "CTRL 4C", platform: "Vimeo" },
 ];
 
