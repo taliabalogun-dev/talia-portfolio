@@ -1584,8 +1584,22 @@ export const experimentalAnimationReel = featuredAnimationReel.filter((f) =>
  * links back to that role. `platform` is where it can be watched, shown as a
  * bubble on the poster. A page never lists its own production.
  */
-const featuredProductionDefs: { slug: string; title: string; platform: string }[] = [
+const featuredProductionDefs: {
+  slug: string;
+  title: string;
+  platform: string;
+  /** Overrides the role page's poster and role line when a role covers more than one production. */
+  poster?: string;
+  role?: string;
+}[] = [
   { slug: "bap-productions", title: "House of Ga'a", platform: "Netflix" },
+  {
+    slug: "bap-productions",
+    title: "The Bling Lagosians 2",
+    platform: "Netflix",
+    poster: "/images/campaigns/bap-bling-lagosians-2-poster.jpg",
+    role: "Writers Room Intern, Pitch & IP Strategy",
+  },
   { slug: "golden-effects-pictures", title: "Swallow", platform: "Netflix" },
   { slug: "kugali-iwaju", title: "Iwájú", platform: "Disney+" },
   { slug: "ctrl-4c-campaign", title: "CTRL 4C", platform: "Vimeo" },
@@ -1596,18 +1610,18 @@ export function featuredProductionsFor(excludeSlug: string): FeaturedAnimation[]
     .filter((d) => d.slug !== excludeSlug)
     .flatMap((d) => {
       const project = projects.find((p) => p.slug === d.slug);
-      const poster = project && (project.cardImage ?? project.image);
+      const poster = d.poster ?? (project && (project.cardImage ?? project.image));
       if (!project || !poster) return [];
       return [
         {
           title: d.title,
-          description: `${project.role} - ${project.navLabel}`,
+          description: `${d.role ?? project.role} - ${project.navLabel}`,
           date: "",
           category: d.platform,
           skills: [],
           src: poster,
           kind: "image" as const,
-          position: project.imagePosition,
+          position: d.poster ? undefined : project.imagePosition,
           href: `/projects/${d.slug}`,
           hrefLabel: "View Role →",
           projectSlug: d.slug,
