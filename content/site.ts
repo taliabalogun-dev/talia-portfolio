@@ -10,6 +10,7 @@ export const site = {
     github: "",
     linkedin: "https://linkedin.com/in/talia-balogun-326690228",
     twitter: "",
+    instagram: "https://www.instagram.com/taliabalogun/",
     /** The animation channels, shown on the Animation Portfolio page. An empty link shows "coming soon". */
     animationInstagram: "https://www.instagram.com/animationbytalia/",
     animationYoutube: "",
@@ -153,7 +154,7 @@ export type Project = {
   /** Shows a "View full project" button at the end of the page. Leave the href unset to render it disabled (no link yet). */
   viewFullProject?: { href?: string };
   /** Extra outbound link buttons shown next to "View full project" (e.g. a portfolio site, a film link). */
-  extraLinks?: { label: string; href: string }[];
+  extraLinks?: { label: string; href: string; newTab?: boolean }[];
   /** Pull-quote(s) shown under the hero description on the subpage. Name and role render in accent color, org in muted. */
   quotes?: { text: string; name: string; role?: string; org: string }[];
   /** Shows the shared "Other Featured Animation" scroll reel (see `featuredAnimationReel`) after the view-full-project buttons. The project's own entry in that reel, if any, is filtered out. */
@@ -1181,6 +1182,10 @@ export const projects: Project[] = [
       },
     ],
     viewFullProject: { href: "https://co-curate-production.up.railway.app" },
+    extraLinks: [
+      { label: "Follow on Instagram", href: site.social.instagram, newTab: true },
+      { label: "Follow on LinkedIn", href: site.social.linkedin, newTab: true },
+    ],
     secondaryReel: {
       heading: "Independent Contractor Commissions",
       description:

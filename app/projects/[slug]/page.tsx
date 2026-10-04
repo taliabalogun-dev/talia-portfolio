@@ -397,6 +397,7 @@ export default async function ProjectPage(
                 <a
                   key={link.href}
                   href={link.href}
+                  {...(link.newTab ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   className="inline-block rounded-full border-2 border-beige px-6 py-3 text-sm font-medium text-beige transition-colors hover:bg-beige hover:text-ink"
                 >
                   {link.label}
