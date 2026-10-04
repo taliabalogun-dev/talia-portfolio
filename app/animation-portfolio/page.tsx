@@ -67,12 +67,12 @@ export default function AnimationPortfolioPage() {
             heading="Experimental Animation"
           />
           <OtherFeaturedAnimation
-            items={storyboardReel}
-            heading="Storyboards / Animatics"
-          />
-          <OtherFeaturedAnimation
             items={characterDesignReel}
             heading="Character Design"
+          />
+          <OtherFeaturedAnimation
+            items={storyboardReel}
+            heading="Storyboards / Animatics"
           />
           <OtherFeaturedAnimation
             items={conceptArtReel}

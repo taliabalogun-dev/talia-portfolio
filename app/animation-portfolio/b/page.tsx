@@ -14,8 +14,8 @@ import {
 const sections = [
   { id: "narrative", label: "Narrative", items: narrativeAnimationReel },
   { id: "experimental", label: "Experimental", items: experimentalAnimationReel },
-  { id: "storyboards", label: "Storyboards", items: storyboardReel },
   { id: "characters", label: "Character Design", items: flattenSlides(characterDesignReel) },
+  { id: "storyboards", label: "Storyboards", items: storyboardReel },
   { id: "concept", label: "Concept Art", items: conceptArtReel },
 ];
 
