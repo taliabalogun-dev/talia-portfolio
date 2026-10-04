@@ -6,6 +6,7 @@ import {
   storyboardReel,
   characterDesignReel,
   conceptArtReel,
+  flattenSlides,
   type FeaturedAnimation,
 } from "@/content/site";
 
@@ -16,7 +17,7 @@ const tag = (items: FeaturedAnimation[], discipline: string): Piece[] =>
 
 const artwork: Piece[] = [
   ...tag(storyboardReel, "Storyboard"),
-  ...tag(characterDesignReel, "Character design"),
+  ...tag(flattenSlides(characterDesignReel), "Character design"),
   ...tag(conceptArtReel, "Concept art"),
 ];
 

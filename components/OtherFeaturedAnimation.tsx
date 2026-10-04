@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CardSlideshow from "@/components/CardSlideshow";
 import EnlargeableVideo from "@/components/EnlargeableVideo";
 import type { FeaturedAnimation } from "@/content/site";
 
@@ -31,6 +32,10 @@ export default function OtherFeaturedAnimation({
               compact ? "w-[62%] sm:w-[240px]" : "w-[85%] sm:w-[380px]"
             }`}
           >
+            {item.slides && item.slides.length > 0 ? (
+              <CardSlideshow item={item} compact={compact} />
+            ) : (
+              <>
             <div
               className={`relative w-full overflow-hidden bg-black ${
                 aspect === "poster" ? "aspect-[3/4]" : "aspect-video"
@@ -112,6 +117,8 @@ export default function OtherFeaturedAnimation({
                 </Link>
               )}
             </div>
+              </>
+            )}
           </div>
         ))}
       </div>

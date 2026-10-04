@@ -113,6 +113,8 @@ export type FeaturedAnimation = {
   hrefLabel?: string;
   /** Image only: which part of the picture stays visible when it is cropped to the card. Defaults to center. */
   position?: "top" | "center";
+  /** Several pieces shown as one slideshow card; each slide carries its own title and description. */
+  slides?: { src: string; title: string; description: string }[];
 };
 
 export type Project = {
@@ -1635,58 +1637,32 @@ export const characterDesignReel: FeaturedAnimation[] = [
     kind: "image",
   },
   {
-    title: "360° turnarounds",
-    description: "Full rotation sheets for the film's two leads.",
+    title: "CTRL 4C",
+    description: "Character design for the film.",
     date: "2025",
     category: "CTRL 4C",
     skills: [],
     src: "/images/animation-portfolio/chardesign-ctrl4c-turnarounds.jpg",
     kind: "image",
+    slides: [
+      { src: "/images/animation-portfolio/chardesign-ctrl4c-turnarounds.jpg", title: "360° turnarounds", description: "Full rotation sheets for the film's two leads." },
+      { src: "/images/animation-portfolio/chardesign-ctrl4c-ensemble.jpg", title: "Full cast lineup", description: "The complete ensemble, side by side." },
+    ],
   },
   {
-    title: "Full cast lineup",
-    description: "The complete ensemble, side by side.",
-    date: "2025",
-    category: "CTRL 4C",
-    skills: [],
-    src: "/images/animation-portfolio/chardesign-ctrl4c-ensemble.jpg",
-    kind: "image",
-  },
-  {
-    title: "Mercenary character study",
-    description: "Potential feature - early character exploration.",
+    title: "She-Giant",
+    description: "Potential feature - character studies.",
     date: "Concept",
     category: "She-Giant",
     skills: [],
     src: "/images/animation-portfolio/chardesign-shegiant-1.jpg",
     kind: "image",
-  },
-  {
-    title: "Armor + creature studies",
-    description: "Potential feature - supporting designs.",
-    date: "Concept",
-    category: "She-Giant",
-    skills: [],
-    src: "/images/animation-portfolio/chardesign-shegiant-2.jpg",
-    kind: "image",
-  },
-  {
-    title: "Turnaround",
-    description: "Potential feature - front and back view.",
-    date: "Concept",
-    category: "She-Giant",
-    skills: [],
-    src: "/images/animation-portfolio/chardesign-shegiant-3.jpg",
-    kind: "image",
-  },
-  {
-    title: "Supporting cast",
-    description: "Potential feature - additional character studies.",
-    date: "Concept",
-    category: "She-Giant",
-    skills: [],
-    src: "/images/animation-portfolio/chardesign-shegiant-4.jpg",
-    kind: "image",
+    slides: [
+      { src: "/images/animation-portfolio/chardesign-shegiant-1.jpg", title: "Mercenary character study", description: "Potential feature - early character exploration." },
+      { src: "/images/animation-portfolio/chardesign-shegiant-2.jpg", title: "Armor + creature studies", description: "Potential feature - supporting designs." },
+      { src: "/images/animation-portfolio/chardesign-shegiant-3.jpg", title: "Turnaround", description: "Potential feature - front and back view." },
+      { src: "/images/animation-portfolio/chardesign-shegiant-4.jpg", title: "Supporting cast", description: "Potential feature - additional character studies." },
+    ],
   },
   {
     title: "Companion app mockup",
@@ -1707,24 +1683,34 @@ export const characterDesignReel: FeaturedAnimation[] = [
     kind: "image",
   },
   {
-    title: "Face construction sheet",
-    description: "Potential short film - building the lead's face from base shapes.",
+    title: "Ilashe",
+    description: "Potential short film - character studies.",
     date: "Concept",
     category: "Ilashe",
     skills: [],
     src: "/images/animation-portfolio/chardesign-ilashe-1.jpg",
     kind: "image",
-  },
-  {
-    title: "Character study",
-    description: "Potential short film - early character exploration.",
-    date: "Concept",
-    category: "Ilashe",
-    skills: [],
-    src: "/images/animation-portfolio/chardesign-ilashe-2.jpg",
-    kind: "image",
+    slides: [
+      { src: "/images/animation-portfolio/chardesign-ilashe-1.jpg", title: "Face construction sheet", description: "Potential short film - building the lead's face from base shapes." },
+      { src: "/images/animation-portfolio/chardesign-ilashe-2.jpg", title: "Character study", description: "Potential short film - early character exploration." },
+    ],
   },
 ];
+
+/** Expands slideshow cards into one entry per slide, for layouts that show every piece on its own. */
+export function flattenSlides(items: FeaturedAnimation[]): FeaturedAnimation[] {
+  return items.flatMap((item) =>
+    item.slides?.length
+      ? item.slides.map((sl) => ({
+          ...item,
+          title: sl.title,
+          description: sl.description,
+          src: sl.src,
+          slides: undefined,
+        }))
+      : [item],
+  );
+}
 
 /** "Concept Art" reel on the Animation Portfolio page. */
 export const conceptArtReel: FeaturedAnimation[] = [

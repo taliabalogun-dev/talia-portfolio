@@ -7,6 +7,7 @@ import {
   storyboardReel,
   characterDesignReel,
   conceptArtReel,
+  flattenSlides,
   type FeaturedAnimation,
 } from "@/content/site";
 
@@ -14,7 +15,7 @@ const sections = [
   { id: "narrative", label: "Narrative", items: narrativeAnimationReel },
   { id: "experimental", label: "Experimental", items: experimentalAnimationReel },
   { id: "storyboards", label: "Storyboards", items: storyboardReel },
-  { id: "characters", label: "Character Design", items: characterDesignReel },
+  { id: "characters", label: "Character Design", items: flattenSlides(characterDesignReel) },
   { id: "concept", label: "Concept Art", items: conceptArtReel },
 ];
 
