@@ -1189,14 +1189,24 @@ export const projects: Project[] = [
       { label: "Follow on LinkedIn", href: site.social.coCurateLinkedin, newTab: true },
     ],
     secondaryReel: {
-      heading: "Independent Contractor Commissions",
+      heading: "Independent Work I Delivered",
       description:
-        "The portfolio of independent contractor work that proved the demand behind Co Curate - delivered directly, one client at a time, before the platform existed to staff it. Shown here as the kind of brief Co Curate is built to run.",
+        "Independent work I designed, animated and delivered myself - motion, illustration, brand identity and film, made directly for clients and for my own projects. This body of contractor work is the demand Co Curate was built to meet, and the kind of brief it is built to run.",
       items: [
+        {
+          title: "CTRL 4C",
+          description: "Animated short I wrote, directed and produced in-house, 4:46.",
+          date: "Jun '26",
+          category: "Motion",
+          skills: ["Writer", "Director", "Producer", "Animator"],
+          roleLabel: "Writer, Producer & Director",
+          src: "/images/commissions/commission-ctrl4c.jpg",
+          kind: "image",
+        },
         {
           title: "Cupe Connect App Prototype",
           description:
-            "Prototype motion design for a proximity-based dating app, pathed from Gephi clustering in After Effects.",
+            "Prototype motion design I built for a proximity-based dating app, pathed from Gephi clustering in After Effects.",
           date: "2025",
           category: "Corporate",
           skills: ["Motion Designer"],
@@ -1206,7 +1216,7 @@ export const projects: Project[] = [
         },
         {
           title: "Converge.ai Button & Asset Design",
-          description: "Button asset design and visualization for the Converge web app.",
+          description: "Button assets and visualizations I designed for the Converge web app.",
           date: "2025",
           category: "Corporate",
           skills: ["Digital Designer", "Graphic Designer"],
@@ -1216,7 +1226,7 @@ export const projects: Project[] = [
         },
         {
           title: "'Maddies' Campaign & Asset Design",
-          description: "Illustrative digital marketing assets.",
+          description: "Illustrated digital marketing assets I made for the Maddiewurld campaign.",
           date: "2025",
           category: "Illustrative",
           skills: ["Illustrator", "Graphic Designer"],
@@ -1226,7 +1236,7 @@ export const projects: Project[] = [
         },
         {
           title: "'Maddies' Logo Animation",
-          description: "Motion asset for the Maddiewurld campaign.",
+          description: "Logo animation I made for the Maddiewurld campaign.",
           date: "2025",
           category: "Motion",
           skills: ["Animator"],
@@ -1235,8 +1245,18 @@ export const projects: Project[] = [
           kind: "image",
         },
         {
+          title: "'What Does LA Mean To You' Zine Promotion",
+          description: "Promotion film I directed and edited for Refine LA's zine.",
+          date: "Feb '25",
+          category: "Campaign",
+          skills: ["Director", "Videographer", "Editor"],
+          roleLabel: "Director & Editor",
+          src: "/images/commissions/commission-la-zine-promo.jpg",
+          kind: "image",
+        },
+        {
           title: "'This Is MUTHA' Festival Promotion",
-          description: "Official promotional film and live projection visuals, Brooklyn.",
+          description: "The promotional film and live projection visuals I directed and animated for MUTHA Festival in Brooklyn.",
           date: "Mar-Jun '25",
           category: "Motion",
           skills: ["Creative Director", "Animator", "Editor"],
@@ -1245,8 +1265,18 @@ export const projects: Project[] = [
           kind: "image",
         },
         {
+          title: "'Decomposition' Fashion Show Promotion",
+          description: "Abstract promotion film I animated and edited for Refine LA's 'Decomposition & Rebirth' show.",
+          date: "Mar '25",
+          category: "Motion",
+          skills: ["Editor", "Animator"],
+          roleLabel: "Animator & Editor",
+          src: "/images/commissions/commission-decomposition.jpg",
+          kind: "image",
+        },
+        {
           title: "Refine LA x Poshmark Flea Market Flyer",
-          description: "Illustrative commission.",
+          description: "Flyer I illustrated for Refine LA's Poshmark flea market.",
           date: "2025",
           category: "Illustrative",
           skills: ["Illustrator", "Graphic Designer"],
@@ -1256,7 +1286,7 @@ export const projects: Project[] = [
         },
         {
           title: "'OMG' Cover Art for Brazyybih",
-          description: "Illustrative commission.",
+          description: "Cover art I illustrated for Brazyybih.",
           date: "2025",
           category: "Cover Art",
           skills: ["Illustrator"],
@@ -1266,7 +1296,7 @@ export const projects: Project[] = [
         },
         {
           title: "Carry Me Cover Art for Cheluchi",
-          description: "Illustrative commission.",
+          description: "Cover art I illustrated for Cheluchi.",
           date: "2025",
           category: "Cover Art",
           skills: ["Illustrator"],
@@ -1276,7 +1306,7 @@ export const projects: Project[] = [
         },
         {
           title: "Refine LA x Poshmark Lost and Found Fashion Show",
-          description: "Illustrative commission.",
+          description: "Illustration I made for Refine LA's Poshmark lost and found fashion show.",
           date: "2025",
           category: "Illustrative",
           skills: ["Illustrator", "Graphic Designer"],
@@ -1286,7 +1316,7 @@ export const projects: Project[] = [
         },
         {
           title: "Beach Event Marketing with Maddiewurld",
-          description: "Illustrative commission.",
+          description: "Event marketing illustration I made for Maddiewurld's beach event.",
           date: "2025",
           category: "Illustrative",
           skills: ["Illustrator", "Graphic Designer"],
@@ -1296,7 +1326,7 @@ export const projects: Project[] = [
         },
         {
           title: "Crickets Cover Art for YTBOUTTHATACTION",
-          description: "Illustrative commission.",
+          description: "Cover art I illustrated for YTBOUTTHATACTION.",
           date: "2025",
           category: "Cover Art",
           skills: ["Illustrator"],
@@ -1306,7 +1336,7 @@ export const projects: Project[] = [
         },
         {
           title: "Cover Art for Siraheem",
-          description: "Illustrative commission.",
+          description: "Cover art I illustrated for Siraheem.",
           date: "2025",
           category: "Cover Art",
           skills: ["Illustrator"],
@@ -1316,7 +1346,7 @@ export const projects: Project[] = [
         },
         {
           title: "'Lmk' Cover Art for Otuche",
-          description: "Illustrative commission.",
+          description: "Cover art I illustrated for Otuche.",
           date: "2025",
           category: "Cover Art",
           skills: ["Illustrator"],
@@ -1326,7 +1356,7 @@ export const projects: Project[] = [
         },
         {
           title: "Sisi Nene Cover Art for KC Freely",
-          description: "Illustrative commission.",
+          description: "Cover art I illustrated for KC Freely.",
           date: "2025",
           category: "Cover Art",
           skills: ["Illustrator"],
@@ -1336,7 +1366,7 @@ export const projects: Project[] = [
         },
         {
           title: "Brand Identity Package for Maddiewurld",
-          description: "Graphic commission.",
+          description: "Brand identity package I designed for Maddiewurld.",
           date: "2025",
           category: "Brand",
           skills: ["Graphic Designer"],
@@ -1346,7 +1376,7 @@ export const projects: Project[] = [
         },
         {
           title: "IJGB App Logo Design",
-          description: "Graphic commission.",
+          description: "App logo I designed for IJGB.",
           date: "2025",
           category: "Corporate",
           skills: ["Graphic Designer"],
@@ -1356,7 +1386,7 @@ export const projects: Project[] = [
         },
         {
           title: "Brand Identity Package for Giant Women Comics",
-          description: "Graphic commission.",
+          description: "Brand identity package I designed for Giant Women Comics.",
           date: "2025",
           category: "Brand",
           skills: ["Graphic Designer", "Illustrator"],
@@ -1366,7 +1396,7 @@ export const projects: Project[] = [
         },
         {
           title: "Atobz Approved Logo for DJ Atobz",
-          description: "Graphic commission.",
+          description: "Logo I designed for DJ Atobz.",
           date: "2025",
           category: "Brand",
           skills: ["Graphic Designer"],
@@ -1376,7 +1406,7 @@ export const projects: Project[] = [
         },
         {
           title: "Christina for USAC President Stickers",
-          description: "Graphic commission.",
+          description: "Stickers I designed for Christina's USAC President campaign.",
           date: "2025",
           category: "Brand",
           skills: ["Graphic Designer", "Illustrator"],
@@ -1386,7 +1416,7 @@ export const projects: Project[] = [
         },
         {
           title: "Good Love Cover Art for Amatiime",
-          description: "Graphic commission.",
+          description: "Cover art I made for Amatiime.",
           date: "2025",
           category: "Cover Art",
           skills: ["Illustrator"],
@@ -1396,7 +1426,7 @@ export const projects: Project[] = [
         },
         {
           title: "SPILT Logo for Kai Honu",
-          description: "Graphic commission.",
+          description: "Logo I designed for Kai Honu's SPILT.",
           date: "2025",
           category: "Brand",
           skills: ["Graphic Designer"],
@@ -1406,7 +1436,7 @@ export const projects: Project[] = [
         },
         {
           title: "T'OKAN Web Homepage",
-          description: "Graphic commission.",
+          description: "Web homepage I designed for T'OKAN.",
           date: "2025",
           category: "Corporate",
           skills: ["Digital Designer"],
@@ -1416,7 +1446,7 @@ export const projects: Project[] = [
         },
         {
           title: "City of Angels Logo for Honey Ferdinand",
-          description: "Graphic commission.",
+          description: "Logo I designed for Honey Ferdinand's City of Angels.",
           date: "2025",
           category: "Brand",
           skills: ["Graphic Designer"],
@@ -1426,7 +1456,7 @@ export const projects: Project[] = [
         },
         {
           title: "'Maddies' Logo Animation, Halloween Rendition",
-          description: "Motion asset for the Maddiewurld campaign.",
+          description: "Halloween version of the Maddiewurld logo animation, made by me.",
           date: "2025",
           category: "Motion",
           skills: ["Animator"],
@@ -1436,7 +1466,7 @@ export const projects: Project[] = [
         },
         {
           title: "Starting Marketing Package for Naomi Okunbo - Reckless Mind",
-          description: "Illustrative commission.",
+          description: "Starting marketing package I illustrated for Naomi Okunbo's Reckless Mind.",
           date: "2025",
           category: "Illustrative",
           skills: ["Illustrator", "Graphic Designer"],
@@ -1446,7 +1476,7 @@ export const projects: Project[] = [
         },
         {
           title: "Mainland Nostalgia",
-          description: "Photo collage and graphic design, animated.",
+          description: "Animated photo collage and graphic design piece I made.",
           date: "Mar '25",
           category: "Motion",
           skills: ["Animator", "Graphic Designer"],
