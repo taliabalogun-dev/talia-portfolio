@@ -10,7 +10,9 @@ export const site = {
     github: "",
     linkedin: "https://linkedin.com/in/talia-balogun-326690228",
     twitter: "",
-    instagram: "https://www.instagram.com/taliabalogun/",
+    /** Co Curate's own accounts, shown on the Co Curate page. */
+    coCurateInstagram: "https://www.instagram.com/co.curate.co/",
+    coCurateLinkedin: "https://www.linkedin.com/company/cocurate-co/",
     /** The animation channels, shown on the Animation Portfolio page. An empty link shows "coming soon". */
     animationInstagram: "https://www.instagram.com/animationbytalia/",
     animationYoutube: "",
@@ -1183,8 +1185,8 @@ export const projects: Project[] = [
     ],
     viewFullProject: { href: "https://co-curate-production.up.railway.app" },
     extraLinks: [
-      { label: "Follow on Instagram", href: site.social.instagram, newTab: true },
-      { label: "Follow on LinkedIn", href: site.social.linkedin, newTab: true },
+      { label: "Follow on Instagram", href: site.social.coCurateInstagram, newTab: true },
+      { label: "Follow on LinkedIn", href: site.social.coCurateLinkedin, newTab: true },
     ],
     secondaryReel: {
       heading: "Independent Contractor Commissions",
