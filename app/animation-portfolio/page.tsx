@@ -19,10 +19,10 @@ export default function AnimationPortfolioPage() {
       <section className="relative overflow-hidden bg-teal py-16 sm:py-20">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 top-0 h-[460px] sm:h-[560px]"
+          className="pointer-events-none absolute inset-x-0 top-0 aspect-[2000/501]"
           style={{
-            maskImage: "linear-gradient(to bottom, black 45%, transparent 100%)",
-            WebkitMaskImage: "linear-gradient(to bottom, black 45%, transparent 100%)",
+            maskImage: "linear-gradient(to bottom, black 25%, transparent 72%)",
+            WebkitMaskImage: "linear-gradient(to bottom, black 25%, transparent 72%)",
           }}
         >
           <Image
