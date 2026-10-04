@@ -135,7 +135,7 @@ export default function AnimationPortfolioC() {
         <section className="border-t border-paper/10 py-14 sm:py-20">
           <div className="mx-auto max-w-6xl px-6">
             <h2 className="font-display text-4xl uppercase tracking-tight sm:text-5xl">
-              More films
+              Experimental animation
             </h2>
             <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
               {otherFilms.map((f) => (

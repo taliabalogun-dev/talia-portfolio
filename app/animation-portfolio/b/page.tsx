@@ -2,7 +2,8 @@ import Link from "next/link";
 import Nav from "@/components/Nav";
 import EnlargeableVideo from "@/components/EnlargeableVideo";
 import {
-  featuredAnimationReel,
+  narrativeAnimationReel,
+  experimentalAnimationReel,
   storyboardReel,
   characterDesignReel,
   conceptArtReel,
@@ -10,7 +11,8 @@ import {
 } from "@/content/site";
 
 const sections = [
-  { id: "films", label: "Films", items: featuredAnimationReel },
+  { id: "narrative", label: "Narrative", items: narrativeAnimationReel },
+  { id: "experimental", label: "Experimental", items: experimentalAnimationReel },
   { id: "storyboards", label: "Storyboards", items: storyboardReel },
   { id: "characters", label: "Character Design", items: characterDesignReel },
   { id: "concept", label: "Concept Art", items: conceptArtReel },
@@ -72,7 +74,7 @@ export default function AnimationPortfolioB() {
               <h2 className="font-display text-4xl uppercase tracking-tight sm:text-5xl">
                 {s.label}
               </h2>
-              {s.id === "films" ? (
+              {s.id === "narrative" || s.id === "experimental" ? (
                 <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                   {s.items.map((f) => (
                     <article key={f.src}>

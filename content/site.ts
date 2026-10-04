@@ -1521,6 +1521,20 @@ export const featuredAnimationReel: FeaturedAnimation[] = [
   },
 ];
 
+/** The Animation Portfolio page splits the films: story-led shorts are Narrative, the rest are Experimental. */
+const experimentalSrcs = new Set([
+  "/videos/mainland-nostalgia.mp4",
+  "/videos/livenation-mutha-promo-film.mp4",
+  "/videos/refine-decomposition-promo.mp4",
+  "/videos/getting-unready.mp4",
+]);
+export const narrativeAnimationReel = featuredAnimationReel.filter(
+  (f) => !experimentalSrcs.has(f.src),
+);
+export const experimentalAnimationReel = featuredAnimationReel.filter((f) =>
+  experimentalSrcs.has(f.src),
+);
+
 /**
  * "Other Featured Productions": the four productions on the roles list, as
  * poster cards. The poster is the one /work shows for the role, and the card

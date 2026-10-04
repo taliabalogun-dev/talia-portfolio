@@ -2,7 +2,8 @@ import Link from "next/link";
 import Nav from "@/components/Nav";
 import OtherFeaturedAnimation from "@/components/OtherFeaturedAnimation";
 import {
-  featuredAnimationReel,
+  narrativeAnimationReel,
+  experimentalAnimationReel,
   storyboardReel,
   characterDesignReel,
   conceptArtReel,
@@ -41,8 +42,12 @@ export default function AnimationPortfolioPage() {
           </p>
 
           <OtherFeaturedAnimation
-            items={featuredAnimationReel}
+            items={narrativeAnimationReel}
             heading="Narrative Animation"
+          />
+          <OtherFeaturedAnimation
+            items={experimentalAnimationReel}
+            heading="Experimental Animation"
           />
           <OtherFeaturedAnimation
             items={storyboardReel}
