@@ -16,6 +16,24 @@ export default function AnimationPortfolioPage() {
       <Nav />
       <section className="relative overflow-hidden bg-teal py-16 sm:py-20">
         <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 top-0 h-[460px] sm:h-[560px]"
+          style={{
+            maskImage: "linear-gradient(to bottom, black 45%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(to bottom, black 45%, transparent 100%)",
+          }}
+        >
+          <Image
+            src="/images/animation-portfolio/banner.jpg"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/35 to-black/5" />
+        </div>
+        <div
           className="pointer-events-none absolute inset-0"
           style={{
             backgroundImage:
