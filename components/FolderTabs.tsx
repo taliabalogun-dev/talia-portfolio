@@ -5,9 +5,10 @@ import { useState, type ReactNode } from "react";
 type Folder = { label: string; content: ReactNode };
 
 /** Two reels filed as folders: the tabs sit side by side, and pressing the other tab swaps which reel is open. */
+/** `tag` is the colour of the badges on the cards inside an open folder: the opposite of the folder, so they stand out. Change the colours here. */
 const colours = [
-  { bg: "#f5da6e", ink: "#1d1a14" }, // site yellow
-  { bg: "#b7b3ee", ink: "#1d1a14" }, // soft lilac
+  { bg: "#f5da6e", ink: "#1d1a14", tag: "#8f82e8", tagInk: "#ffffff" }, // yellow folder, purple tags
+  { bg: "#b7b3ee", ink: "#1d1a14", tag: "#f5da6e", tagInk: "#1d1a14" }, // lilac folder, yellow tags
 ];
 
 export default function FolderTabs({ folders }: { folders: [Folder, Folder] }) {
@@ -40,7 +41,13 @@ export default function FolderTabs({ folders }: { folders: [Folder, Folder] }) {
         })}
       </div>
       <div
-        style={{ background: c.bg }}
+        style={
+          {
+            background: c.bg,
+            "--tag-bg": c.tag,
+            "--tag-ink": c.tagInk,
+          } as React.CSSProperties
+        }
         className="relative z-0 -mt-px rounded-3xl p-5 shadow-2xl"
       >
         {folders.map((f, i) => (

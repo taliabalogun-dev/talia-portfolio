@@ -94,8 +94,8 @@ export default function OtherFeaturedAnimation({
                   aspect === "poster"
                     ? "bg-teal px-4 py-2 text-sm font-semibold text-white shadow-lg ring-1 ring-white/25"
                     : compact
-                      ? "rotate-2 bg-accent px-2.5 py-0.5 text-[11px] font-extrabold text-accent-ink shadow-md ring-2 ring-white/80"
-                      : "rotate-2 bg-accent px-3 py-1 text-sm font-extrabold text-accent-ink shadow-md ring-2 ring-white/80"
+                      ? "rotate-2 bg-[var(--tag-bg,#f5da6e)] px-2.5 py-0.5 text-[11px] font-extrabold text-[var(--tag-ink,#151210)] shadow-md ring-2 ring-white/80"
+                      : "rotate-2 bg-[var(--tag-bg,#f5da6e)] px-3 py-1 text-sm font-extrabold text-[var(--tag-ink,#151210)] shadow-md ring-2 ring-white/80"
                 }`}
               >
                 {item.category}
