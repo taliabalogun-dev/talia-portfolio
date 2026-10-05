@@ -2255,12 +2255,12 @@ export type ExperienceItem = {
 
 export const experience: ExperienceItem[] = [
   {
-    role: "Director of Creative Media",
-    company: "FAST@UCLA",
-    period: "Oct 2024 - June 2026",
+    role: "Marketing & IP Intern",
+    company: "Kugali Media",
+    period: "Sept 2024 - June 2025",
     summary:
-      "Coordinated creative media production - print, photography, video, and media releases - across editorial, digital, and live-event initiatives, serving as a key creative production contact for brand partners including Nike, Icona Club, and Demonia.",
-    slug: "fast-ucla-fashion-show",
+      "Supported pitch strategy and production coordination on Disney's Iwájú, built producer-facing pitch decks for Jollof Wars and Razorman, and reviewed scripts weekly to inform marketing positioning.",
+    slug: "kugali-iwaju",
   },
   {
     role: "Contracted Creative Marketing Director",
@@ -2271,20 +2271,20 @@ export const experience: ExperienceItem[] = [
     slug: "live-nation-mutha",
   },
   {
-    role: "Marketing & IP Intern",
-    company: "Kugali Media",
-    period: "Sept 2024 - June 2025",
-    summary:
-      "Supported pitch strategy and production coordination on Disney's Iwájú, built producer-facing pitch decks for Jollof Wars and Razorman, and reviewed scripts weekly to inform marketing positioning.",
-    slug: "kugali-iwaju",
-  },
-  {
     role: "Marketing & Media Coordinator",
     company: "UCLA Student Affairs",
     period: "June 2023 - Sept 2025",
     summary:
       "Coordinated multi-platform institutional marketing content across Instagram, TikTok, Facebook, and X, translating campus priorities into consistent creative direction for an audience of 2M+.",
     slug: "ucla-campus-campaigns",
+  },
+  {
+    role: "Director of Creative Media",
+    company: "FAST@UCLA",
+    period: "Oct 2024 - June 2026",
+    summary:
+      "Coordinated creative media production - print, photography, video, and media releases - across editorial, digital, and live-event initiatives, serving as a key creative production contact for brand partners including Nike, Icona Club, and Demonia.",
+    slug: "fast-ucla-fashion-show",
   },
 ];
 
