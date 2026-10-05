@@ -1695,10 +1695,13 @@ const experimentalSrcs = new Set([
   "/videos/mainland-nostalgia.mp4",
   "/videos/livenation-mutha-promo-film.mp4",
   "/videos/refine-decomposition-promo.mp4",
-  "/videos/getting-unready.mp4",
 ]);
 /** On the Animation Portfolio page CTRL 4C leads Narrative and Lost and Found follows; project pages keep the shared order. */
-const narrativeOrder = ["/videos/ctrl4c-full-film.mp4", "/videos/lost-and-found.mp4"];
+const narrativeOrder = [
+  "/videos/ctrl4c-full-film.mp4",
+  "/videos/lost-and-found.mp4",
+  "/videos/getting-unready.mp4",
+];
 export const narrativeAnimationReel = featuredAnimationReel
   .filter((f) => !experimentalSrcs.has(f.src))
   .sort((a, b) => narrativeOrder.indexOf(a.src) - narrativeOrder.indexOf(b.src))
