@@ -1828,6 +1828,8 @@ export const storyboardReel: FeaturedAnimation[] = [
     src: "/videos/ctrl4c-animatic.mp4",
     poster: "/images/animation-portfolio/animatic-ctrl4c-poster.jpg",
     kind: "video",
+    href: "/projects/ctrl-4c-campaign",
+    hrefLabel: "View Full Project →",
   },
   {
     title: "Animatic",
