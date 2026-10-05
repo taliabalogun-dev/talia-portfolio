@@ -1582,7 +1582,7 @@ export const projects: Project[] = [
         },
       },
       {
-        title: "Featured Creative Media",
+        title: "Featured Supporting Media",
         subtitle: "Background Art",
         layout: "filmstrip",
         // The first entry is the collage cover used on the Animation Portfolio tile; the page shows the renders themselves.
