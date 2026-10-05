@@ -1839,13 +1839,13 @@ export const inProgressAnimationReel: FeaturedAnimation[] = [
     date: "In progress",
     category: "CTRL 4C",
     skills: [],
-    src: "/videos/ctrl4c-wip-1.mp4",
-    poster: "/images/animation-portfolio/ctrl4c-wip-1-poster.jpg",
+    src: "/videos/ctrl4c-wip-2.mp4",
+    poster: "/images/animation-portfolio/ctrl4c-wip-2-poster.jpg",
     kind: "video",
     slides: [
-      { src: "/videos/ctrl4c-wip-1.mp4", kind: "video", autoplay: true, poster: "/images/animation-portfolio/ctrl4c-wip-1-poster.jpg", title: "Head turn", description: "Clean line animation test." },
       { src: "/videos/ctrl4c-wip-2.mp4", kind: "video", autoplay: true, poster: "/images/animation-portfolio/ctrl4c-wip-2-poster.jpg", title: "Character pose", description: "Rough animation over the layout." },
       { src: "/videos/ctrl4c-wip-3.mp4", kind: "video", autoplay: true, poster: "/images/animation-portfolio/ctrl4c-wip-3-poster.jpg", title: "Overhead shot", description: "Rough animation, overhead camera." },
+      { src: "/videos/ctrl4c-wip-1.mp4", kind: "video", autoplay: true, poster: "/images/animation-portfolio/ctrl4c-wip-1-poster.jpg", title: "Head turn", description: "Clean line animation test." },
     ],
   },
   {

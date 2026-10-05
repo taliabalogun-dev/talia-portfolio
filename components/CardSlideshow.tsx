@@ -19,6 +19,7 @@ export default function CardSlideshow({
   if (slides.length === 0) return null;
   const go = (n: number) => setIndex(((n % slides.length) + slides.length) % slides.length);
   const current = slides[index];
+  const allVideo = slides.every((sl) => sl.kind === "video");
   const bubble = `pointer-events-none absolute top-2 rounded-full bg-black/60 font-semibold text-white ${
     compact ? "px-2 py-0.5 text-[10px]" : "px-2.5 py-1 text-[11px]"
   }`;
@@ -28,8 +29,8 @@ export default function CardSlideshow({
   return (
     <>
       <div
-        className={`relative aspect-[4/3] w-full overflow-hidden ${
-          current.kind === "video" ? "bg-black" : "bg-paper"
+        className={`relative w-full overflow-hidden bg-paper ${
+          allVideo ? "aspect-video" : "aspect-[4/3]"
         }`}
       >
         {current.kind === "video" ? (
@@ -38,7 +39,7 @@ export default function CardSlideshow({
             src={current.src}
             poster={current.poster}
             autoplay={current.autoplay}
-            className="h-full w-full object-contain"
+            className="h-full w-full object-cover"
           />
         ) : (
           <EnlargeableImage
