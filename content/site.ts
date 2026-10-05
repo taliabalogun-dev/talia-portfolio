@@ -122,7 +122,7 @@ export type FeaturedAnimation = {
   /** Image only: which part of the picture stays visible when it is cropped to the card. Defaults to center. */
   position?: "top" | "center" | "bottom";
   /** Several pieces shown as one slideshow card; each slide carries its own title and description. */
-  slides?: { src: string; title: string; description: string; kind?: "image" | "video"; poster?: string; autoplay?: boolean }[];
+  slides?: { src: string; title: string; description: string; kind?: "image" | "video"; poster?: string; autoplay?: boolean; collage?: string[] }[];
 };
 
 export type Project = {
@@ -2098,6 +2098,34 @@ export const conceptArtReel: FeaturedAnimation[] = [
     description:
       "An exploration in collage texture backgrounds and assets in animation.",
     category: "Mainland Nostalgia",
+    slides: [
+      {
+        src: "/videos/mainland-nostalgia.mp4",
+        kind: "video",
+        autoplay: true,
+        poster: "/images/campaigns/mainland-nostalgia-poster.jpg",
+        title: "Motion collage",
+        description: "The film, with the reference photographs and painting behind its collage backgrounds.",
+        collage: [
+          "/images/animation-portfolio/mainland-ref-1.jpg",
+          "/images/animation-portfolio/mainland-ref-2.jpg",
+          "/images/animation-portfolio/mainland-ref-3.jpg",
+          "/images/animation-portfolio/mainland-ref-4.jpg",
+        ],
+      },
+      {
+        src: "/videos/mainland-nostalgia.mp4",
+        kind: "video",
+        autoplay: true,
+        poster: "/images/campaigns/mainland-nostalgia-poster.jpg",
+        title: "Mainland Nostalgia",
+        description: "Animated short imagining Lagos Mainland rebuilt from memory.",
+      },
+      { src: "/images/animation-portfolio/mainland-ref-1.jpg", title: "Reference photograph 1", description: "Market reference for the collage textures." },
+      { src: "/images/animation-portfolio/mainland-ref-2.jpg", title: "Reference photograph 2", description: "Market reference for the collage textures." },
+      { src: "/images/animation-portfolio/mainland-ref-3.jpg", title: "Reference photograph 3", description: "Market reference for the collage textures." },
+      { src: "/images/animation-portfolio/mainland-ref-4.jpg", title: "Background painting", description: "Painted street scene, in progress." },
+    ],
   },
   {
     title: "Upgrade production stills",

@@ -39,7 +39,30 @@ export default function CardSlideshow({
           (uniform ? ratio === "16/9" : allVideo) ? "aspect-video" : "aspect-[4/3]"
         }`}
       >
-        {current.kind === "video" ? (
+        {current.collage ? (
+          // The film leads, full width and playing; the reference photos sit underneath, dimmed so they don't compete with it.
+          <div className="absolute inset-0 flex flex-col bg-black">
+            <video
+              key={current.src}
+              src={current.src}
+              poster={current.poster}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="aspect-video w-full object-cover"
+            />
+            <div className="grid min-h-0 flex-1 grid-cols-4 gap-px bg-black">
+              {current.collage.map((src) => (
+                <div key={src} className="relative overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={src} alt="" className="h-full w-full object-cover" />
+                  <div className="absolute inset-0 bg-black/55" />
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : current.kind === "video" ? (
           <EnlargeableVideo
             key={current.src}
             src={current.src}
