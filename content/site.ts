@@ -1840,6 +1840,19 @@ export const inProgressAnimationReel: FeaturedAnimation[] = [
       { src: "/videos/ctrl4c-wip-3.mp4", kind: "video", autoplay: true, poster: "/images/animation-portfolio/ctrl4c-wip-3-poster.jpg", title: "Overhead shot", description: "Rough animation, overhead camera." },
     ],
   },
+  {
+    title: "In-progress animation",
+    description: "Rough animation tests for the film.",
+    date: "In progress",
+    category: "Lost & Found",
+    skills: [],
+    src: "/videos/lost-and-found-wip-1.mp4",
+    poster: "/images/animation-portfolio/lost-and-found-wip-1-poster.jpg",
+    kind: "video",
+    slides: [
+      { src: "/videos/lost-and-found-wip-1.mp4", kind: "video", autoplay: true, poster: "/images/animation-portfolio/lost-and-found-wip-1-poster.jpg", title: "Expression test", description: "Rough animation, the lead's face reacting as she looks at her phone." },
+    ],
+  },
 ];
 
 /** "Character Design" reel on the Animation Portfolio page. */
