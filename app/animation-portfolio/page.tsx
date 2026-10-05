@@ -131,11 +131,11 @@ export default function AnimationPortfolioPage() {
             folders={[
               {
                 label: "Storyboards / Animatics",
-                content: <OtherFeaturedAnimation items={storyboardReel} embedded />,
+                content: <OtherFeaturedAnimation items={storyboardReel} embedded tileRatio="16/9" />,
               },
               {
                 label: "In-Progress Animation",
-                content: <OtherFeaturedAnimation items={inProgressAnimationReel} embedded />,
+                content: <OtherFeaturedAnimation items={inProgressAnimationReel} embedded tileRatio="16/9" />,
               },
             ]}
           />

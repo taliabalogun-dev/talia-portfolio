@@ -11,11 +11,13 @@ export default function CardSlideshow({
   item,
   compact,
   uniform = false,
+  ratio = "4/3",
 }: {
   item: FeaturedAnimation;
   compact: boolean;
   /** Keep the picture area at 4:3 whatever the slides hold, so tiles in a row match. */
   uniform?: boolean;
+  ratio?: "4/3" | "16/9";
 }) {
   const slides = item.slides ?? [];
   const [index, setIndex] = useState(0);
@@ -33,7 +35,7 @@ export default function CardSlideshow({
     <>
       <div
         className={`relative w-full overflow-hidden bg-paper ${
-          allVideo && !uniform ? "aspect-video" : "aspect-[4/3]"
+          (uniform ? ratio === "16/9" : allVideo) ? "aspect-video" : "aspect-[4/3]"
         }`}
       >
         {current.kind === "video" ? (

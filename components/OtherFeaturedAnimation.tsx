@@ -11,6 +11,7 @@ export default function OtherFeaturedAnimation({
   aspect = "video",
   action,
   embedded = false,
+  tileRatio = "4/3",
 }: {
   items: FeaturedAnimation[];
   heading?: string;
@@ -23,6 +24,8 @@ export default function OtherFeaturedAnimation({
   action?: { label: string; href: string };
   /** Renders just the card strip (no heading or divider), to sit inside a folder panel. */
   embedded?: boolean;
+  /** Embedded only: the picture shape every tile in the row shares. */
+  tileRatio?: "4/3" | "16/9";
 }) {
   return (
     <div className={embedded ? "" : "mt-16 border-t border-beige/15 pt-10"}>
@@ -55,12 +58,12 @@ export default function OtherFeaturedAnimation({
             }`}
           >
             {item.slides && item.slides.length > 0 ? (
-              <CardSlideshow item={item} compact={compact} uniform={embedded} />
+              <CardSlideshow item={item} compact={compact} uniform={embedded} ratio={tileRatio} />
             ) : (
               <>
             <div
               className={`relative w-full overflow-hidden bg-black ${
-                aspect === "poster" ? "aspect-[3/4]" : embedded ? "aspect-[4/3]" : "aspect-video"
+                aspect === "poster" ? "aspect-[3/4]" : embedded && tileRatio === "4/3" ? "aspect-[4/3]" : "aspect-video"
               }`}
             >
               {item.kind === "video" ? (
