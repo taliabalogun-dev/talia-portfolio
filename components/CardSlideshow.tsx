@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import EnlargeableImage from "@/components/EnlargeableImage";
 import EnlargeableVideo from "@/components/EnlargeableVideo";
 import type { FeaturedAnimation } from "@/content/site";
 
@@ -40,12 +41,14 @@ export default function CardSlideshow({
             className="h-full w-full object-contain"
           />
         ) : (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            key={current.src}
+          <EnlargeableImage
             src={current.src}
             alt={current.title}
-            className="h-full w-full object-contain"
+            className="object-contain"
+            sizes="(min-width: 640px) 380px, 85vw"
+            onPrev={slides.length > 1 ? () => go(index - 1) : undefined}
+            onNext={slides.length > 1 ? () => go(index + 1) : undefined}
+            counter={slides.length > 1 ? `${index + 1} / ${slides.length}` : undefined}
           />
         )}
         {item.date && <span className={`${bubble} left-2`}>{item.date}</span>}

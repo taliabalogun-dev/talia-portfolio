@@ -1771,7 +1771,7 @@ export function featuredProductionsFor(excludeSlug: string): FeaturedAnimation[]
 /** "Storyboards / Animatics" reel on the Animation Portfolio page. `category` holds the piece's title, `date` its rough timing. */
 export const storyboardReel: FeaturedAnimation[] = [
   {
-    title: "Animatic",
+    title: "Animatic & Storyboard",
     description: "A silent ad suggesting the dangers of littering in the London Underground.",
     date: "Nov 2025",
     category: "Mind the Gap",
@@ -1779,16 +1779,23 @@ export const storyboardReel: FeaturedAnimation[] = [
     src: "/videos/mind-the-gap-animatic.mp4",
     poster: "/images/animation-portfolio/animatic-mind-the-gap-poster.jpg",
     kind: "video",
+    slides: [
+      { src: "/videos/mind-the-gap-animatic.mp4", kind: "video", poster: "/images/animation-portfolio/animatic-mind-the-gap-poster.jpg", title: "Animatic & Storyboard", description: "The animatic with temp music and sound effects, then the storyboard pages." },
+      { src: "/images/animation-portfolio/mtg-storyboard-1.jpg", title: "Storyboard - page 1", description: "Scene 1: the commuter waits, absorbed in her phone." },
+      { src: "/images/animation-portfolio/mtg-storyboard-2.jpg", title: "Storyboard - page 2", description: "Scene 1 to 2: the doors open and a passenger cuts in." },
+      { src: "/images/animation-portfolio/mtg-storyboard-3.jpg", title: "Storyboard - page 3", description: "Scenes 2 and 3: the missed step and the jerk back to reality." },
+      { src: "/images/animation-portfolio/mtg-storyboard-4.jpg", title: "Storyboard - page 4", description: "Scenes 3 and 4: she realises the danger and falls." },
+      { src: "/images/animation-portfolio/mtg-storyboard-5.jpg", title: "Storyboard - page 5", description: "Scene 4: the dust, the litter, and the game's reminder." },
+    ],
   },
   {
     title: "Animatic",
-    description:
-      "Early pass: a sci-fi comedy set in a Lagos salon, where a character time-travels through a hair-tech invention into a frozen '90s sitcom world.",
-    date: "Dec 2025",
-    category: "CTRL 4C",
+    description: "Depicts the superstitious, mythical fear of bringing jewellery to Ilashe Beach in Nigeria.",
+    date: "Nov 2025",
+    category: "Siren Song",
     skills: [],
-    src: "/videos/ctrl4c-animatic.mp4",
-    poster: "/images/animation-portfolio/animatic-ctrl4c-poster.jpg",
+    src: "/videos/siren-song-animatic.mp4",
+    poster: "/images/animation-portfolio/animatic-siren-song-poster.jpg",
     kind: "video",
   },
   {
@@ -1803,12 +1810,13 @@ export const storyboardReel: FeaturedAnimation[] = [
   },
   {
     title: "Animatic",
-    description: "Depicts the superstitious, mythical fear of bringing jewellery to Ilashe Beach in Nigeria.",
-    date: "Nov 2025",
-    category: "Siren Song",
+    description:
+      "Early pass: a sci-fi comedy set in a Lagos salon, where a character time-travels through a hair-tech invention into a frozen '90s sitcom world.",
+    date: "Dec 2025",
+    category: "CTRL 4C",
     skills: [],
-    src: "/videos/siren-song-animatic.mp4",
-    poster: "/images/animation-portfolio/animatic-siren-song-poster.jpg",
+    src: "/videos/ctrl4c-animatic.mp4",
+    poster: "/images/animation-portfolio/animatic-ctrl4c-poster.jpg",
     kind: "video",
   },
   {
