@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import EnlargeableImage from "@/components/EnlargeableImage";
 import EnlargeableVideo from "@/components/EnlargeableVideo";
 import type { FeaturedAnimation } from "@/content/site";
@@ -85,6 +86,14 @@ export default function CardSlideshow({
               Next →
             </button>
           </div>
+        )}
+        {item.href && (
+          <Link
+            href={item.href}
+            className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-full bg-hero-ink px-4 py-2 text-xs font-bold uppercase tracking-wide text-white transition-opacity hover:opacity-85"
+          >
+            {item.hrefLabel ?? "See Full Project →"}
+          </Link>
         )}
       </div>
     </>

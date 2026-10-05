@@ -1910,6 +1910,8 @@ export const characterDesignReel: FeaturedAnimation[] = [
     skills: [],
     src: "/images/animation-portfolio/chardesign-ctrl4c-contact-sheet.jpg",
     kind: "image",
+    href: "/projects/ctrl-4c-campaign",
+    hrefLabel: "View Full Project →",
     slides: [
       { src: "/images/animation-portfolio/chardesign-ctrl4c-contact-sheet.jpg", title: "CTRL 4C character design", description: "Turnarounds and the full cast, together." },
       { src: "/images/animation-portfolio/chardesign-ctrl4c-turnarounds.jpg", title: "360° turnarounds", description: "Full rotation sheets for the film's two leads." },
@@ -2062,6 +2064,8 @@ export const conceptArtReel: FeaturedAnimation[] = [
     src: "/images/animation-portfolio/conceptart-ctrl4c-bg.jpg",
     kind: "image",
     slides: ctrl4cBackgroundArt,
+    href: "/projects/ctrl-4c-campaign",
+    hrefLabel: "View Full Project →",
   },
   {
     ...featuredAnimationReel.find((f) => f.src === "/videos/mainland-nostalgia.mp4")!,
