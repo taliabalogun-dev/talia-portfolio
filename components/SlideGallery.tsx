@@ -59,7 +59,7 @@ export default function SlideGallery({
           <EnlargeableImage
             src={current.src}
             alt={current.caption ?? ""}
-            className="object-cover"
+            className={current.fit === "contain" ? "object-contain" : "object-cover"}
             sizes="(min-width: 640px) 640px, 100vw"
             onPrev={images.length > 1 ? () => goTo(index - 1) : undefined}
             onNext={images.length > 1 ? () => goTo(index + 1) : undefined}

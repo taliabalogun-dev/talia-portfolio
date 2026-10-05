@@ -143,7 +143,7 @@ export default async function ProjectPage(
             <div className="flex flex-col gap-12">
               {project.slides.map((slide) => (
                 <section
-                  key={slide.title}
+                  key={`${slide.title}-${slide.subtitle ?? ""}`}
                   className="border-t border-beige/15 pt-10 first:border-t-0 first:pt-0"
                 >
                   <h2 className="text-2xl font-semibold tracking-tight">

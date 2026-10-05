@@ -69,6 +69,8 @@ export type SlideImage = {
   autoplay?: boolean;
   /** Defaults to "center". Use "top" to keep the top of the image visible when object-cover crops it. */
   position?: "center" | "top";
+  /** Slideshow layout only: "contain" shows the whole image uncropped instead of filling the frame. */
+  fit?: "cover" | "contain";
   /** Role tags shown only in the enlarged/lightbox view, not inline in the grid. */
   roles?: string[];
   /** Overrides `roles` only in the enlarged/lightbox view (e.g. "cards" layout resting tiles). */
@@ -167,6 +169,22 @@ export type Project = {
   /** A second scroll reel (same card style as Other Featured Animation) shown after it, for a project-specific set of cards. */
   secondaryReel?: { heading: string; description?: string; items: FeaturedAnimation[] };
 };
+
+/** CTRL 4C background art: the original collage first, then each environment. Shared by the Concept Art reel and the CTRL 4C page. */
+const ctrl4cBackgroundArt: { src: string; title: string; description: string }[] = [
+  { src: "/images/animation-portfolio/conceptart-ctrl4c-bg.jpg", title: "Background art", description: "Environments and set dressing built for the salon world." },
+  { src: "/images/animation-portfolio/ctrl4c-bg-01.jpg", title: "Salon wall", description: "Posters and patterned wallpaper behind the salon chairs." },
+  { src: "/images/animation-portfolio/ctrl4c-bg-02.jpg", title: "Street, umbrella side", description: "A Lagos street lined with shopfronts and a patterned parasol." },
+  { src: "/images/animation-portfolio/ctrl4c-bg-03.jpg", title: "Desk props", description: "Application form, photos and a blueprint on the desk." },
+  { src: "/images/animation-portfolio/ctrl4c-bg-04.jpg", title: "Salon shelving", description: "Stacked shelves of products and tools above the salon floor." },
+  { src: "/images/animation-portfolio/ctrl4c-bg-05.jpg", title: "Mainland skyline", description: "A street with the city skyline behind it." },
+  { src: "/images/animation-portfolio/ctrl4c-bg-06.jpg", title: "Café, close", description: "A table set for lunch beside the window." },
+  { src: "/images/animation-portfolio/ctrl4c-bg-07.jpg", title: "Café, wide", description: "The same café from further back, booth and window in view." },
+  { src: "/images/animation-portfolio/ctrl4c-bg-08.jpg", title: "Salon floor", description: "Tiled floor and wall of the salon interior." },
+  { src: "/images/animation-portfolio/ctrl4c-bg-09.jpg", title: "Street through the bars", description: "The skyline seen through teal window bars." },
+  { src: "/images/animation-portfolio/ctrl4c-bg-10.jpg", title: "Café, camera view", description: "The café interior from a low camera angle." },
+  { src: "/images/animation-portfolio/ctrl4c-bg-11.jpg", title: "Salon interior", description: "Salon chairs and counter in the frozen sitcom set." },
+];
 
 export const projects: Project[] = [
   {
@@ -1563,6 +1581,18 @@ export const projects: Project[] = [
           org: "UCLA Film, Television and Digital Media",
         },
       },
+      {
+        title: "Featured Creative Media",
+        subtitle: "Background Art",
+        layout: "slideshow",
+        images: ctrl4cBackgroundArt.map((b) => ({
+          src: b.src,
+          caption: `${b.title} - ${b.description}`,
+          aspect: "video" as const,
+          fit: "contain" as const,
+        })),
+        sections: [],
+      },
     ],
     viewFullProject: { href: "https://animationbytalia.univer.se/home-lwdxt/home-lwdxt-xbjny-vjeiz" },
     extraLinks: [
@@ -1958,6 +1988,7 @@ export const conceptArtReel: FeaturedAnimation[] = [
     skills: [],
     src: "/images/animation-portfolio/conceptart-ctrl4c-bg.jpg",
     kind: "image",
+    slides: ctrl4cBackgroundArt,
   },
   {
     title: "Production stills",
