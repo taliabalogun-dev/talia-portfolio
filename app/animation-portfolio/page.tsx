@@ -121,7 +121,6 @@ export default function AnimationPortfolioPage() {
           <OtherFeaturedAnimation
             items={narrativeAnimationReel}
             heading="Narrative Animation"
-            purpleButtons
           />
           <FolderTabs
             folders={[
@@ -150,7 +149,6 @@ export default function AnimationPortfolioPage() {
           <OtherFeaturedAnimation
             items={experimentalAnimationReel}
             heading="Experimental Animation"
-            purpleButtons
           />
           <AnimationAtWork
             items={animationAtWork}
