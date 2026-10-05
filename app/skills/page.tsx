@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Nav from "@/components/Nav";
+import SkillIcon from "@/components/SkillIcon";
 import { site, skillDetails, skills } from "@/content/site";
 
 export const metadata = {
@@ -82,9 +83,14 @@ export default function SkillsPage() {
                 className="scroll-mt-28 rounded-2xl border border-accent/15 bg-teal-deep p-5 sm:p-7 lg:p-8"
               >
                 <div className="max-w-3xl">
-                  <h2 className="-rotate-1 inline-block text-2xl font-bold text-brown sm:text-3xl">
-                    {group.category}
-                  </h2>
+                  <div className="flex items-center gap-4">
+                    <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border-2 border-accent/70 text-accent">
+                      <SkillIcon name={group.category} className="h-7 w-7" />
+                    </span>
+                    <h2 className="-rotate-1 inline-block text-2xl font-bold text-brown sm:text-3xl">
+                      {group.category}
+                    </h2>
+                  </div>
                   <p className="mt-3 text-base text-ink/85 sm:text-lg">{group.context}</p>
                 </div>
 
@@ -95,7 +101,14 @@ export default function SkillsPage() {
                       id={slugify(skill.name)}
                       className="flex scroll-mt-28 flex-col rounded-xl border border-accent/20 bg-teal-darker p-5"
                     >
-                      <h3 className="text-base font-bold text-ink">{skill.name}</h3>
+                      <div className="flex items-start gap-3">
+                        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-accent/50 text-accent">
+                          <SkillIcon name={skill.name} className="h-5 w-5" />
+                        </span>
+                        <h3 className="pt-1.5 text-base font-bold leading-snug text-ink">
+                          {skill.name}
+                        </h3>
+                      </div>
                       <p className="mt-2 text-sm text-ink/80">{skill.blurb}</p>
                       <ul className="mt-4 flex flex-wrap gap-1.5">
                         {skill.subskills.map((sub) => (
