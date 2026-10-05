@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import type { PillTheme } from "@/content/pillTheme";
+import { useVideoGate } from "@/lib/videoGate";
+import VideoLockButton from "@/components/VideoLockButton";
 
 export default function EnlargeableVideo({
   src,
@@ -12,6 +14,7 @@ export default function EnlargeableVideo({
   results,
   password,
   theme,
+  externalLock = false,
 }: {
   src: string;
   poster?: string;
@@ -24,34 +27,63 @@ export default function EnlargeableVideo({
   /** Gates playback behind a client-side password prompt (not real security - a polite viewing gate). */
   password?: string;
   theme?: PillTheme;
+  /** The parent places its own padlock (e.g. beside a badge), so don't draw one in the corner. */
+  externalLock?: boolean;
 }) {
   const [open, setOpen] = useState(false);
-  const [unlocked, setUnlocked] = useState(!password);
+  const gate = useVideoGate(src, password);
+  const [justUnlocked, setJustUnlocked] = useState(false);
   const [attempt, setAttempt] = useState("");
   const [wrongAttempt, setWrongAttempt] = useState(false);
   const hasExtras = (roles && roles.length > 0) || (results && results.length > 0);
 
   function submitPassword(e: React.FormEvent) {
     e.preventDefault();
-    if (attempt === password) {
-      setUnlocked(true);
+    if (gate.tryUnlock(attempt)) {
+      setJustUnlocked(true);
       setWrongAttempt(false);
     } else {
       setWrongAttempt(true);
     }
   }
 
-  if (password && !unlocked) {
+  const posterBg = {
+    backgroundImage: poster ? `url(${poster})` : undefined,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  } as const;
+
+  // Looks like an ordinary video until play (or the padlock) is pressed.
+  if (gate.locked && !gate.asking) {
     return (
-      <div
-        className={`relative flex items-center justify-center ${className}`}
-        style={{
-          backgroundImage: poster ? `url(${poster})` : undefined,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
+      <div className={`relative flex items-center justify-center bg-black ${className}`} style={posterBg}>
+        <button
+          type="button"
+          onClick={gate.ask}
+          aria-label="Play"
+          className="grid h-16 w-16 place-items-center rounded-full bg-black/55 text-white transition-colors hover:bg-black/75"
+        >
+          <svg viewBox="0 0 24 24" className="ml-1 h-7 w-7" fill="currentColor" aria-hidden="true">
+            <path d="M7 4.5v15l13-7.5z" />
+          </svg>
+        </button>
+        {!externalLock && <VideoLockButton src={src} password={password} className="absolute right-2 top-2" />}
+      </div>
+    );
+  }
+
+  if (gate.locked && gate.asking) {
+    return (
+      <div className={`relative flex items-center justify-center ${className}`} style={posterBg}>
         <div className="absolute inset-0 bg-black/70" />
+        <button
+          type="button"
+          onClick={gate.cancel}
+          aria-label="Close password prompt"
+          className="absolute right-2 top-2 z-10 text-2xl leading-none text-white/70 hover:text-white"
+        >
+          ×
+        </button>
         <form
           onSubmit={submitPassword}
           className="relative flex w-full max-w-[220px] flex-col items-center gap-2 px-4 text-center"
@@ -63,6 +95,7 @@ export default function EnlargeableVideo({
           <input
             type="password"
             value={attempt}
+            autoFocus
             onChange={(e) => {
               setAttempt(e.target.value);
               setWrongAttempt(false);
@@ -92,7 +125,7 @@ export default function EnlargeableVideo({
         poster={poster}
         controls
         playsInline
-        autoPlay={autoplay}
+        autoPlay={autoplay || justUnlocked}
         muted={autoplay}
         loop={autoplay}
         preload={autoplay ? "auto" : "metadata"}

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import CardSlideshow from "@/components/CardSlideshow";
 import EnlargeableVideo from "@/components/EnlargeableVideo";
+import VideoLockButton from "@/components/VideoLockButton";
 import type { FeaturedAnimation } from "@/content/site";
 
 export default function OtherFeaturedAnimation({
@@ -71,6 +72,7 @@ export default function OtherFeaturedAnimation({
                   src={item.src}
                   poster={item.poster}
                   password={item.password}
+                  externalLock
                   className="h-full w-full object-cover"
                 />
               ) : (
@@ -92,8 +94,12 @@ export default function OtherFeaturedAnimation({
                   {item.date}
                 </span>
               )}
+              <div className="absolute right-1.5 top-1.5 z-10 flex items-center gap-2">
+              {item.password && item.kind === "video" && (
+                <VideoLockButton src={item.src} password={item.password} />
+              )}
               <span
-                className={`pointer-events-none absolute right-1.5 top-1.5 rounded-full ${
+                className={`pointer-events-none rounded-full ${
                   aspect === "poster"
                     ? "bg-teal px-4 py-2 text-sm font-semibold text-white shadow-lg ring-1 ring-white/25"
                     : compact
@@ -103,6 +109,7 @@ export default function OtherFeaturedAnimation({
               >
                 {item.category}
               </span>
+              </div>
             </div>
             <div className={compact ? "p-3" : "p-4"}>
               <h3
