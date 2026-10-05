@@ -1510,7 +1510,7 @@ export const projects: Project[] = [
       ],
     },
     featured: false,
-    image: "/images/campaigns/fcmb-flexx-poster.jpg",
+    image: "/images/campaigns/fcmb-hero.jpg",
     slides: [
       {
         title: "Featured Campaign",
