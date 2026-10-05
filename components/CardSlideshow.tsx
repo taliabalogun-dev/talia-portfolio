@@ -53,7 +53,13 @@ export default function CardSlideshow({
           />
         )}
         {item.date && <span className={`${bubble} left-2`}>{item.date}</span>}
-        <span className={`${bubble} right-2`}>{item.category}</span>
+        <span
+          className={`pointer-events-none absolute right-2.5 top-2.5 rotate-2 rounded-full bg-accent font-extrabold text-accent-ink shadow-lg ring-2 ring-white/80 ${
+            compact ? "px-3 py-1 text-xs" : "px-4 py-1.5 text-base"
+          }`}
+        >
+          {item.category}
+        </span>
       </div>
       <div className={compact ? "p-3" : "p-4"}>
         <h3 className={`font-bold text-paper-ink ${compact ? "text-sm" : "text-lg"}`}>
