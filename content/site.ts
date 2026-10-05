@@ -1873,6 +1873,21 @@ export const inProgressAnimationReel: FeaturedAnimation[] = [
 /** "Character Design" reel on the Animation Portfolio page. */
 export const characterDesignReel: FeaturedAnimation[] = [
   {
+    title: "Mr Obi's Entourage character design",
+    description: "Character concepts for Mr Obi's entourage.",
+    date: "Concept",
+    category: "Mr Obi's Entourage",
+    skills: [],
+    src: "/images/animation-portfolio/chardesign-obi-entourage-contact-sheet.jpg",
+    kind: "image",
+    slides: [
+      { src: "/images/animation-portfolio/chardesign-obi-entourage-contact-sheet.jpg", title: "Mr Obi's Entourage character design", description: "Character concepts for Mr Obi's entourage, together." },
+      { src: "/images/animation-portfolio/obi-entourage-1.jpg", title: "Character concept 1", description: "Front and back view." },
+      { src: "/images/animation-portfolio/obi-entourage-2.jpg", title: "Character concept 2", description: "Full design with props." },
+      { src: "/images/animation-portfolio/obi-entourage-3.jpg", title: "Character concept 3", description: "Two poses." },
+    ],
+  },
+  {
     title: "Turnaround + expression sheet",
     description: "Lead character design for the short.",
     date: "2025",
