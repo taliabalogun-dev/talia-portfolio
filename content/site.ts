@@ -873,121 +873,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "ctrl-4c-campaign",
-    navLabel: "CTRL 4C",
-    title: "Writer, Producer & Director - CTRL 4C",
-    description:
-      "Writing, directing, and producing an original animated short - a sci-fi comedy set in a Lagos salon - following a character who accidentally time-travels through a hair-tech invention into a frozen '90s sitcom world.",
-    extendedDescription:
-      "Managed the film's production timeline, budget, and festival strategy targeting Sundance, GLAS Animation, Manchester Animation Festival, Carmel International, Film Africa London, and AFRIFF, alongside a multi-stage content rollout - process videos, character reveals, cast spotlights, teasers, and screening promotion - repositioning my platform from freelance illustration to animation. Result: +400 followers, 20K+ views, 2 industry interview invitations, and AFRIFF networking recognition.",
-    tags: ["Festival Strategy", "Key Art & Campaign", "Production Direction"],
-    role: "Writer, Producer & Director",
-    contextTag: "Original animated short",
-    period: "2025 - June 2026",
-    location: "Los Angeles, CA",
-    focus: {
-      heading: "Role",
-      items: [
-        "Creative Director",
-        "Campaign Strategist",
-        "Social Media Manager",
-        "Designer",
-      ],
-    },
-    featured: false,
-    image: "/images/campaigns/ctrl4c-slide-cover-v2.jpg",
-    slides: [
-      {
-        title: "Featured Campaign",
-        layout: "slideshow",
-        images: [
-          { src: "/images/campaigns/ctrl4c-campaign-title-v2.jpg" },
-          { src: "/images/campaigns/ctrl4c-campaign-overview-v2.jpg" },
-          { src: "/images/campaigns/ctrl4c-campaign-video-content-v2.jpg" },
-          { src: "/images/campaigns/ctrl4c-campaign-cast-talent-v2.jpg" },
-          { src: "/images/campaigns/ctrl4c-campaign-screening-post-v2.jpg" },
-          { src: "/images/campaigns/ctrl4c-campaign-teaser-slideshow-v2.jpg" },
-          { src: "/images/campaigns/ctrl4c-campaign-other-posts-v2.jpg" },
-          { src: "/images/campaigns/ctrl4c-campaign-marketing-strategy-v2.jpg" },
-        ],
-        sections: [
-          {
-            heading: "My Role",
-            style: "pills",
-            items: ["Creative Director", "Campaign Strategist", "Social Media Manager", "Designer"],
-          },
-          {
-            heading: "Audience Growth",
-            style: "pills",
-            items: ["+400 Followers", "20K+ Total Views", "Consistent Audience Growth"],
-          },
-          {
-            heading: "Reach & Recognition",
-            style: "pills",
-            items: [
-              "9.5K+ Impressions",
-              "3.1K+ Accounts Reached",
-              "40%+ Discovery Through Feed Recommendations",
-              "AFRIFF Recognition",
-              "2 Industry Interview Invitations",
-            ],
-          },
-        ],
-      },
-      {
-        title: "Featured Creative Media",
-        subtitle: "The Full Film",
-        images: [
-          {
-            src: "/videos/ctrl4c-full-film.mp4",
-            kind: "video",
-            aspect: "video",
-            poster: "/images/campaigns/ctrl4c-full-film-poster-v2.jpg",
-            caption: "CTRL 4C - Full Film",
-            password: "screeningroom4c",
-          },
-        ],
-        sections: [
-          {
-            heading: "My Role",
-            style: "pills",
-            items: ["Writer", "Director", "Producer", "Animator", "Editor"],
-          },
-          {
-            heading: "Results",
-            style: "pills",
-            items: [
-              "Screened at Undergraduate Showcase",
-              "Screened in Animation Extravaganza",
-              "A+ on Final Grade",
-              "Ranked as One of Top Filmmakers Ever Taught by Area Head",
-              "Honorable Mention at New York Short Animation Festival",
-            ],
-          },
-        ],
-        quote: {
-          text: "She tackled underrepresented cultural perspectives and subject matter in a way that was humorous, accessible, entertaining, and unifying for diverse audiences.",
-          name: "Lynn Okimura",
-          role: "Lecturer in Animation",
-          org: "UCLA Film, Television and Digital Media",
-        },
-      },
-    ],
-    viewFullProject: { href: "https://animationbytalia.univer.se/home-lwdxt/home-lwdxt-xbjny-vjeiz" },
-    extraLinks: [
-      { label: "Watch Film", href: "https://vimeo.com/1209134453" },
-    ],
-    quotes: [
-      {
-        text: "I rate her as one of the top undergraduate students I have ever taught. She is an accomplished artist, filmmaker, and animator.",
-        name: "Chuck Sheetz",
-        role: "Area Head, Animation",
-        org: "UCLA Film, Television and Digital Media (director, The Simpsons and Recess)",
-      },
-    ],
-    showFeaturedAnimation: true,
-  },
-  {
     slug: "co-curate",
     navLabel: "Co Curate",
     title: "Founder - Co Curate",
@@ -1576,6 +1461,121 @@ export const projects: Project[] = [
         sections: [],
       },
     ],
+  },
+  {
+    slug: "ctrl-4c-campaign",
+    navLabel: "CTRL 4C",
+    title: "Writer, Producer & Director - CTRL 4C",
+    description:
+      "Writing, directing, and producing an original animated short - a sci-fi comedy set in a Lagos salon - following a character who accidentally time-travels through a hair-tech invention into a frozen '90s sitcom world.",
+    extendedDescription:
+      "Managed the film's production timeline, budget, and festival strategy targeting Sundance, GLAS Animation, Manchester Animation Festival, Carmel International, Film Africa London, and AFRIFF, alongside a multi-stage content rollout - process videos, character reveals, cast spotlights, teasers, and screening promotion - repositioning my platform from freelance illustration to animation. Result: +400 followers, 20K+ views, 2 industry interview invitations, and AFRIFF networking recognition.",
+    tags: ["Festival Strategy", "Key Art & Campaign", "Production Direction"],
+    role: "Writer, Producer & Director",
+    contextTag: "Original animated short",
+    period: "2025 - June 2026",
+    location: "Los Angeles, CA",
+    focus: {
+      heading: "Role",
+      items: [
+        "Creative Director",
+        "Campaign Strategist",
+        "Social Media Manager",
+        "Designer",
+      ],
+    },
+    featured: false,
+    image: "/images/campaigns/ctrl4c-slide-cover-v2.jpg",
+    slides: [
+      {
+        title: "Featured Campaign",
+        layout: "slideshow",
+        images: [
+          { src: "/images/campaigns/ctrl4c-campaign-title-v2.jpg" },
+          { src: "/images/campaigns/ctrl4c-campaign-overview-v2.jpg" },
+          { src: "/images/campaigns/ctrl4c-campaign-video-content-v2.jpg" },
+          { src: "/images/campaigns/ctrl4c-campaign-cast-talent-v2.jpg" },
+          { src: "/images/campaigns/ctrl4c-campaign-screening-post-v2.jpg" },
+          { src: "/images/campaigns/ctrl4c-campaign-teaser-slideshow-v2.jpg" },
+          { src: "/images/campaigns/ctrl4c-campaign-other-posts-v2.jpg" },
+          { src: "/images/campaigns/ctrl4c-campaign-marketing-strategy-v2.jpg" },
+        ],
+        sections: [
+          {
+            heading: "My Role",
+            style: "pills",
+            items: ["Creative Director", "Campaign Strategist", "Social Media Manager", "Designer"],
+          },
+          {
+            heading: "Audience Growth",
+            style: "pills",
+            items: ["+400 Followers", "20K+ Total Views", "Consistent Audience Growth"],
+          },
+          {
+            heading: "Reach & Recognition",
+            style: "pills",
+            items: [
+              "9.5K+ Impressions",
+              "3.1K+ Accounts Reached",
+              "40%+ Discovery Through Feed Recommendations",
+              "AFRIFF Recognition",
+              "2 Industry Interview Invitations",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Featured Creative Media",
+        subtitle: "The Full Film",
+        images: [
+          {
+            src: "/videos/ctrl4c-full-film.mp4",
+            kind: "video",
+            aspect: "video",
+            poster: "/images/campaigns/ctrl4c-full-film-poster-v2.jpg",
+            caption: "CTRL 4C - Full Film",
+            password: "screeningroom4c",
+          },
+        ],
+        sections: [
+          {
+            heading: "My Role",
+            style: "pills",
+            items: ["Writer", "Director", "Producer", "Animator", "Editor"],
+          },
+          {
+            heading: "Results",
+            style: "pills",
+            items: [
+              "Screened at Undergraduate Showcase",
+              "Screened in Animation Extravaganza",
+              "A+ on Final Grade",
+              "Ranked as One of Top Filmmakers Ever Taught by Area Head",
+              "Honorable Mention at New York Short Animation Festival",
+            ],
+          },
+        ],
+        quote: {
+          text: "She tackled underrepresented cultural perspectives and subject matter in a way that was humorous, accessible, entertaining, and unifying for diverse audiences.",
+          name: "Lynn Okimura",
+          role: "Lecturer in Animation",
+          org: "UCLA Film, Television and Digital Media",
+        },
+      },
+    ],
+    viewFullProject: { href: "https://animationbytalia.univer.se/home-lwdxt/home-lwdxt-xbjny-vjeiz" },
+    extraLinks: [
+      { label: "Watch Film", href: "https://vimeo.com/1209134453" },
+    ],
+    quotes: [
+      {
+        text: "I rate her as one of the top undergraduate students I have ever taught. She is an accomplished artist, filmmaker, and animator.",
+        name: "Chuck Sheetz",
+        role: "Area Head, Animation",
+        org: "UCLA Film, Television and Digital Media (director, The Simpsons and Recess)",
+      },
+    ],
+    showFeaturedAnimation: true,
   },
 ];
 
