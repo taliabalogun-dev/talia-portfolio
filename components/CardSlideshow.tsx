@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import EnlargeableVideo from "@/components/EnlargeableVideo";
 import type { FeaturedAnimation } from "@/content/site";
 
 /** A reel card holding several pieces as one slideshow: the picture, its own title and
@@ -25,14 +26,27 @@ export default function CardSlideshow({
 
   return (
     <>
-      <div className="relative aspect-[4/3] w-full overflow-hidden bg-paper">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          key={current.src}
-          src={current.src}
-          alt={current.title}
-          className="h-full w-full object-contain"
-        />
+      <div
+        className={`relative aspect-[4/3] w-full overflow-hidden ${
+          current.kind === "video" ? "bg-black" : "bg-paper"
+        }`}
+      >
+        {current.kind === "video" ? (
+          <EnlargeableVideo
+            key={current.src}
+            src={current.src}
+            poster={current.poster}
+            className="h-full w-full object-contain"
+          />
+        ) : (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            key={current.src}
+            src={current.src}
+            alt={current.title}
+            className="h-full w-full object-contain"
+          />
+        )}
         {item.date && <span className={`${bubble} left-2`}>{item.date}</span>}
         <span className={`${bubble} right-2`}>{item.category}</span>
       </div>

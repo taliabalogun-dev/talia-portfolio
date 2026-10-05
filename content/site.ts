@@ -122,7 +122,7 @@ export type FeaturedAnimation = {
   /** Image only: which part of the picture stays visible when it is cropped to the card. Defaults to center. */
   position?: "top" | "center" | "bottom";
   /** Several pieces shown as one slideshow card; each slide carries its own title and description. */
-  slides?: { src: string; title: string; description: string }[];
+  slides?: { src: string; title: string; description: string; kind?: "image" | "video"; poster?: string }[];
 };
 
 export type Project = {
@@ -1694,7 +1694,24 @@ const experimentalSrcs = new Set([
 const narrativeOrder = ["/videos/ctrl4c-full-film.mp4", "/videos/lost-and-found.mp4"];
 export const narrativeAnimationReel = featuredAnimationReel
   .filter((f) => !experimentalSrcs.has(f.src))
-  .sort((a, b) => narrativeOrder.indexOf(a.src) - narrativeOrder.indexOf(b.src));
+  .sort((a, b) => narrativeOrder.indexOf(a.src) - narrativeOrder.indexOf(b.src))
+  .map((f) =>
+    f.src === "/videos/lost-and-found.mp4"
+      ? {
+          ...f,
+          slides: [
+            { src: f.src, kind: "video" as const, poster: f.poster, title: f.title, description: f.description },
+            {
+              src: "/videos/lost-and-found-animation-stand.mp4",
+              kind: "video" as const,
+              poster: "/images/animation-portfolio/animation-stand-poster.jpg",
+              title: "Animated on a traditional Disney animation stand",
+              description: "Screen-printed digital frames, shot frame by frame on the stand.",
+            },
+          ],
+        }
+      : f,
+  );
 export const experimentalAnimationReel = featuredAnimationReel.filter((f) =>
   experimentalSrcs.has(f.src),
 );
