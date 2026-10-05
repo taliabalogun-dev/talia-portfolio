@@ -1942,20 +1942,6 @@ export const characterDesignReel: FeaturedAnimation[] = [
     ],
   },
   {
-    title: "Ilashe",
-    description: "Potential short film - character studies.",
-    date: "Concept",
-    category: "Ilashe",
-    skills: [],
-    src: "/images/animation-portfolio/chardesign-ilashe-contact-sheet-v3.jpg",
-    kind: "image",
-    slides: [
-      { src: "/images/animation-portfolio/chardesign-ilashe-contact-sheet-v3.jpg", title: "Ilashe character design", description: "Face construction and character study, together." },
-      { src: "/images/animation-portfolio/chardesign-ilashe-1-v3.jpg", title: "Face construction sheet", description: "Potential short film - building the lead's face from base shapes." },
-      { src: "/images/animation-portfolio/chardesign-ilashe-2-v3.jpg", title: "Character study", description: "Potential short film - early character exploration." },
-    ],
-  },
-  {
     title: "Mr Obi's Entourage character design",
     description: "Character concepts for Mr Obi's entourage.",
     date: "Concept",
@@ -1969,6 +1955,20 @@ export const characterDesignReel: FeaturedAnimation[] = [
       { src: "/images/animation-portfolio/obi-entourage-2.jpg", title: "Character concept 2", description: "Full design with props." },
       { src: "/images/animation-portfolio/obi-entourage-3.jpg", title: "Character concept 3", description: "Two poses." },
       { src: "/images/animation-portfolio/obi-entourage-4.jpg", title: "Character concept 4", description: "Seated and standing." },
+    ],
+  },
+  {
+    title: "Ilashe",
+    description: "Potential short film - character studies.",
+    date: "Concept",
+    category: "Ilashe",
+    skills: [],
+    src: "/images/animation-portfolio/chardesign-ilashe-contact-sheet-v3.jpg",
+    kind: "image",
+    slides: [
+      { src: "/images/animation-portfolio/chardesign-ilashe-contact-sheet-v3.jpg", title: "Ilashe character design", description: "Face construction and character study, together." },
+      { src: "/images/animation-portfolio/chardesign-ilashe-1-v3.jpg", title: "Face construction sheet", description: "Potential short film - building the lead's face from base shapes." },
+      { src: "/images/animation-portfolio/chardesign-ilashe-2-v3.jpg", title: "Character study", description: "Potential short film - early character exploration." },
     ],
   },
 ];
