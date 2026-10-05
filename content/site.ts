@@ -1593,10 +1593,6 @@ export const projects: Project[] = [
         sections: [],
       },
     ],
-    viewFullProject: { href: "https://animationbytalia.univer.se/home-lwdxt/home-lwdxt-xbjny-vjeiz" },
-    extraLinks: [
-      { label: "Watch Film", href: "https://vimeo.com/1209134453" },
-    ],
     quotes: [
       {
         text: "I rate her as one of the top undergraduate students I have ever taught. She is an accomplished artist, filmmaker, and animator.",
