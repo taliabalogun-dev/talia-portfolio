@@ -1584,12 +1584,11 @@ export const projects: Project[] = [
       {
         title: "Featured Creative Media",
         subtitle: "Background Art",
-        layout: "slideshow",
-        images: ctrl4cBackgroundArt.map((b) => ({
+        layout: "filmstrip",
+        // The first entry is the collage cover used on the Animation Portfolio tile; the page shows the renders themselves.
+        images: ctrl4cBackgroundArt.slice(1).map((b) => ({
           src: b.src,
           caption: `${b.title} - ${b.description}`,
-          aspect: "video" as const,
-          fit: "contain" as const,
         })),
         sections: [],
       },
