@@ -116,8 +116,19 @@ export default function AnimationPortfolioC() {
                           i === 0 && !film ? "col-span-2" : ""
                         }`}
                       >
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={p.src} alt={p.title} className="block w-full" loading="lazy" />
+                        {p.kind === "video" ? (
+                          <video
+                            src={p.src}
+                            poster={p.poster}
+                            controls
+                            playsInline
+                            preload="metadata"
+                            className="block w-full"
+                          />
+                        ) : (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img src={p.src} alt={p.title} className="block w-full" loading="lazy" />
+                        )}
                         <figcaption className="px-3 py-2 text-[11px] text-paper/70">
                           <span className="font-bold uppercase tracking-wide text-accent">
                             {p.discipline}

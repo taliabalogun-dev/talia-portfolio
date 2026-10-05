@@ -1773,13 +1773,14 @@ export const storyboardReel: FeaturedAnimation[] = [
     kind: "image",
   },
   {
-    title: "Storyboard frame",
+    title: "Animatic",
     description: "A commuting student loses a sentimental piece of home.",
     date: "Nov 2025",
     category: "Lost & Found",
     skills: [],
-    src: "/images/animation-portfolio/storyboard-lost-and-found.jpg",
-    kind: "image",
+    src: "/videos/lost-and-found-animatic.mp4",
+    poster: "/images/animation-portfolio/animatic-lost-and-found-poster.jpg",
+    kind: "video",
   },
   {
     title: "Storyboard frame",

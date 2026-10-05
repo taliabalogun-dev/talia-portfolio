@@ -22,9 +22,20 @@ const sections = [
 function ArtTile({ item }: { item: FeaturedAnimation }) {
   return (
     <figure className="group relative mb-4 break-inside-avoid overflow-hidden rounded-xl bg-white shadow-md">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={item.src} alt={item.title} className="block w-full" loading="lazy" />
-      <figcaption className="absolute inset-x-0 bottom-0 translate-y-2 bg-gradient-to-t from-black/75 to-transparent p-3 pt-10 text-white opacity-0 transition duration-200 group-hover:translate-y-0 group-hover:opacity-100">
+      {item.kind === "video" ? (
+        <video
+          src={item.src}
+          poster={item.poster}
+          controls
+          playsInline
+          preload="metadata"
+          className="block w-full"
+        />
+      ) : (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img src={item.src} alt={item.title} className="block w-full" loading="lazy" />
+      )}
+      <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-2 bg-gradient-to-t from-black/75 to-transparent p-3 pt-10 text-white opacity-0 transition duration-200 group-hover:translate-y-0 group-hover:opacity-100">
         <p className="text-[11px] font-semibold uppercase tracking-wide text-accent">
           {item.category} · {item.date}
         </p>
