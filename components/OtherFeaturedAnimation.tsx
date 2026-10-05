@@ -67,7 +67,7 @@ export default function OtherFeaturedAnimation({
                   src={item.src}
                   alt={item.title}
                   className={`h-full w-full object-cover ${
-                    item.position === "top" ? "object-top" : ""
+                    item.position === "top" ? "object-top" : item.position === "bottom" ? "object-bottom" : ""
                   }`}
                 />
               )}

@@ -132,7 +132,9 @@ function ProjectPolaroid({ project }: { project: Project }) {
                 ? "object-contain p-6"
                 : project.imagePosition === "top"
                   ? "object-cover object-top"
-                  : "object-cover"
+                  : project.imagePosition === "bottom"
+                    ? "object-cover object-bottom"
+                    : "object-cover"
             }
             sizes="(min-width: 1024px) 23vw, (min-width: 640px) 46vw, 90vw"
           />

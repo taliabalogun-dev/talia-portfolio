@@ -118,7 +118,7 @@ export type FeaturedAnimation = {
   /** Label for the `href` button. Defaults to "See Full Project →". */
   hrefLabel?: string;
   /** Image only: which part of the picture stays visible when it is cropped to the card. Defaults to center. */
-  position?: "top" | "center";
+  position?: "top" | "center" | "bottom";
   /** Several pieces shown as one slideshow card; each slide carries its own title and description. */
   slides?: { src: string; title: string; description: string }[];
 };
@@ -149,7 +149,7 @@ export type Project = {
   /** Defaults to "cover". Use "contain" for circular logo marks so the full circle stays visible in the portrait hero box instead of being cropped. */
   imageFit?: "cover" | "contain";
   /** Defaults to "center". Use "top" to keep the top of the image (e.g. a poster's logo/title) visible when object-cover crops it. */
-  imagePosition?: "center" | "top";
+  imagePosition?: "center" | "top" | "bottom";
   /** Pinterest-style campaign cards shown on the subpage. */
   campaigns?: Campaign[];
   /** Slide-by-slide case study breakdown shown instead of the campaigns grid. */
@@ -1396,6 +1396,7 @@ export const projects: Project[] = [
     },
     featured: false,
     image: "/images/campaigns/fcmb-hero.jpg",
+    imagePosition: "bottom",
     slides: [
       {
         title: "Featured Campaign",

@@ -184,7 +184,7 @@ export default function ProjectCarousel({
                     src={project.image}
                     alt=""
                     fill
-                    className={project.imagePosition === "top" ? "object-cover object-top" : "object-cover"}
+                    className={project.imagePosition === "top" ? "object-cover object-top" : project.imagePosition === "bottom" ? "object-cover object-bottom" : "object-cover"}
                     sizes={cfg.imageSizes}
                   />
                 ) : (

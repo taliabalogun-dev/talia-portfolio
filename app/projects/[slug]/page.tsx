@@ -124,7 +124,9 @@ export default async function ProjectPage(
                       ? "object-contain p-6"
                       : project.imagePosition === "top"
                         ? "object-cover object-top"
-                        : "object-cover"
+                        : project.imagePosition === "bottom"
+                          ? "object-cover object-bottom"
+                          : "object-cover"
                   }
                   sizes="(min-width: 640px) 320px, 100vw"
                   priority
