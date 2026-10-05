@@ -1905,11 +1905,11 @@ export const characterDesignReel: FeaturedAnimation[] = [
     src: "/images/animation-portfolio/chardesign-shegiant-contact-sheet.jpg",
     kind: "image",
     slides: [
-      { src: "/images/animation-portfolio/chardesign-shegiant-contact-sheet.jpg", title: "She-Giant character design", description: "Studies, turnaround and supporting cast, together." },
-      { src: "/images/animation-portfolio/chardesign-shegiant-1.jpg", title: "Mercenary character study", description: "Potential feature - early character exploration." },
-      { src: "/images/animation-portfolio/chardesign-shegiant-2.jpg", title: "Armor + creature studies", description: "Potential feature - supporting designs." },
-      { src: "/images/animation-portfolio/chardesign-shegiant-3.jpg", title: "Turnaround", description: "Potential feature - front and back view." },
-      { src: "/images/animation-portfolio/chardesign-shegiant-4.jpg", title: "Supporting cast", description: "Potential feature - additional character studies." },
+      { src: "/images/animation-portfolio/chardesign-shegiant-contact-sheet.jpg", title: "She-Giant character design", description: "Potential feature - the cast, together." },
+      { src: "/images/animation-portfolio/chardesign-shegiant-1.jpg", title: "Character design 1", description: "Potential feature - character design." },
+      { src: "/images/animation-portfolio/chardesign-shegiant-2.jpg", title: "Character design 2", description: "Potential feature - character design." },
+      { src: "/images/animation-portfolio/chardesign-shegiant-3.jpg", title: "Character design 3", description: "Potential feature - character design." },
+      { src: "/images/animation-portfolio/chardesign-shegiant-4.jpg", title: "Character design 4", description: "Potential feature - character design." },
     ],
   },
   {
