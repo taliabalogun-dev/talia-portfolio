@@ -5,7 +5,14 @@ import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import type { SlideImage } from "@/content/site";
 
-export default function FilmstripGallery({ images }: { images: SlideImage[] }) {
+export default function FilmstripGallery({
+  images,
+  contact = false,
+}: {
+  images: SlideImage[];
+  /** Show the pictures as a contact sheet (a tight grid) instead of a scrolling strip. */
+  contact?: boolean;
+}) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const close = () => setOpenIndex(null);
@@ -29,14 +36,24 @@ export default function FilmstripGallery({ images }: { images: SlideImage[] }) {
 
   return (
     <>
-      <div className="flex w-full gap-0 overflow-x-auto rounded-xl border border-beige/15">
+      <div
+        className={
+          contact
+            ? "grid w-full grid-cols-2 gap-px overflow-hidden rounded-xl border border-beige/15 bg-beige/15 sm:grid-cols-3 lg:grid-cols-4"
+            : "flex w-full gap-0 overflow-x-auto rounded-xl border border-beige/15"
+        }
+      >
         {images.map((img, i) => (
           <button
             key={img.src}
             type="button"
             onClick={() => setOpenIndex(i)}
             aria-label={img.caption ? `Enlarge: ${img.caption}` : "Enlarge image"}
-            className="relative h-64 flex-1 shrink-0 basis-40 cursor-zoom-in sm:h-80 sm:basis-56"
+            className={
+              contact
+                ? "group relative aspect-[4/3] w-full cursor-zoom-in overflow-hidden"
+                : "relative h-64 flex-1 shrink-0 basis-40 cursor-zoom-in sm:h-80 sm:basis-56"
+            }
           >
             {img.kind === "video" ? (
               <video
@@ -54,8 +71,8 @@ export default function FilmstripGallery({ images }: { images: SlideImage[] }) {
                 src={img.src}
                 alt={img.caption ?? ""}
                 fill
-                className="object-cover"
-                sizes="224px"
+                className={contact ? "object-cover transition-transform duration-300 group-hover:scale-105" : "object-cover"}
+                sizes={contact ? "(min-width: 1024px) 280px, (min-width: 640px) 33vw, 50vw" : "224px"}
               />
             )}
           </button>

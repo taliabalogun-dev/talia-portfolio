@@ -174,6 +174,8 @@ export default async function ProjectPage(
                         <SlideGallery images={slide.images!} theme={pillTheme} />
                       ) : slide.layout === "filmstrip" ? (
                         <FilmstripGallery images={slide.images!} />
+                      ) : slide.layout === "contact" ? (
+                        <FilmstripGallery images={slide.images!} contact />
                       ) : slide.layout === "cards" ? (
                         <CampaignCardsGallery images={slide.images!} theme={pillTheme} />
                       ) : (

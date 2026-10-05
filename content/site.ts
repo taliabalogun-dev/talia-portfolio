@@ -94,7 +94,7 @@ export type Slide = {
   images?: SlideImage[];
   sections: SlideSection[];
   /** Defaults to "grid". "slideshow" renders a single-image carousel with Prev/Next. "filmstrip" shows every image at once, edge-to-edge, in a horizontally scrollable strip. "cards" shows small uncropped thumbnails with a caption underneath (desktop only) - wraps to a 2-column grid on mobile, scrolls horizontally on desktop. */
-  layout?: "grid" | "slideshow" | "filmstrip" | "cards";
+  layout?: "grid" | "slideshow" | "filmstrip" | "contact" | "cards";
   /** Pull-quote shown right after this slide's gallery, instead of at the top of the page. */
   quote?: { text: string; name: string; role?: string; org: string };
   /** Renders two (or more) independent swipeable slideshow carousels side by side, two per row, instead of a single gallery. Overrides `images`/`layout` for this slide. */
@@ -1584,7 +1584,7 @@ export const projects: Project[] = [
       {
         title: "Featured Supporting Media",
         subtitle: "Background Art",
-        layout: "filmstrip",
+        layout: "contact",
         // The first entry is the collage cover used on the Animation Portfolio tile; the page shows the renders themselves.
         images: ctrl4cBackgroundArt.slice(1).map((b) => ({
           src: b.src,
