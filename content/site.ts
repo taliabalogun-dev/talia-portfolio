@@ -2290,44 +2290,12 @@ export const experience: ExperienceItem[] = [
 
 export const additionalExperience: ExperienceItem[] = [
   {
-    role: "Marketing Coordinator",
-    company: "Refine LA",
-    period: "Sept 2023 - June 2025",
-    summary:
-      "Coordinated editorial cover shoots and magazine promotion videos as creative production support for a sustainability-focused fashion and circular retail organization.",
-    slug: "refine-la-zine",
-  },
-  {
     role: "Marketing Strategy Intern",
     company: "FCMB Group",
     period: "Apr 2026 - June 2026",
     summary:
       "Led campaign research and a three-part growth strategy for Flexx, FCMB's youth banking product, spanning gamification, campus creator funding, and a phased KPI roadmap.",
     slug: "fcmb-group",
-  },
-  {
-    role: "Founder",
-    company: "Co Curate",
-    period: "July 2026 - Present",
-    summary:
-      "Designed and built a marketplace platform that staffs full production teams to a brief, from brand and product design through pricing structure and front-end build.",
-    slug: "co-curate",
-  },
-  {
-    role: "Writer, Producer & Director",
-    company: "CTRL 4C",
-    period: "2025 - June 2026",
-    summary:
-      "Writing, directing, and producing an original animated short end-to-end, including a festival distribution and positioning strategy targeting AFRIFF.",
-    slug: "ctrl-4c-campaign",
-  },
-  {
-    role: "Marketing Director",
-    company: "Black Film and Theatre Initiative",
-    period: "Sept 2025 - June 2026",
-    summary:
-      "Coordinated promotional materials and creative production for the organization's festivals, workshops, and short-film fundraising initiatives.",
-    contextTag: "UCLA student organization",
   },
   {
     role: "Writers Room & Story Development Intern",
@@ -2344,6 +2312,38 @@ export const additionalExperience: ExperienceItem[] = [
     summary:
       "Provided administrative and production support during pre-production at a Lagos-based production company.",
     slug: "golden-effects-pictures",
+  },
+  {
+    role: "Marketing Coordinator",
+    company: "Refine LA",
+    period: "Sept 2023 - June 2025",
+    summary:
+      "Coordinated editorial cover shoots and magazine promotion videos as creative production support for a sustainability-focused fashion and circular retail organization.",
+    slug: "refine-la-zine",
+  },
+  {
+    role: "Founder",
+    company: "Co Curate",
+    period: "July 2026 - Present",
+    summary:
+      "Designed and built a marketplace platform that staffs full production teams to a brief, from brand and product design through pricing structure and front-end build.",
+    slug: "co-curate",
+  },
+  {
+    role: "Marketing Director",
+    company: "Black Film and Theatre Initiative",
+    period: "Sept 2025 - June 2026",
+    summary:
+      "Coordinated promotional materials and creative production for the organization's festivals, workshops, and short-film fundraising initiatives.",
+    contextTag: "UCLA student organization",
+  },
+  {
+    role: "Writer, Producer & Director",
+    company: "CTRL 4C",
+    period: "2025 - June 2026",
+    summary:
+      "Writing, directing, and producing an original animated short end-to-end, including a festival distribution and positioning strategy targeting AFRIFF.",
+    slug: "ctrl-4c-campaign",
   },
   {
     role: "PR Event Coordinator",
