@@ -1990,6 +1990,21 @@ export const conceptArtReel: FeaturedAnimation[] = [
     slides: ctrl4cBackgroundArt,
   },
   {
+    title: "Rendered assets",
+    description: "Character art and background art for the short.",
+    date: "2025",
+    category: "Mind the Gap",
+    skills: [],
+    src: "/images/animation-portfolio/conceptart-mtg-assets-board.jpg",
+    kind: "image",
+    slides: [
+      { src: "/images/animation-portfolio/conceptart-mtg-assets-board.jpg", title: "Rendered assets", description: "Character art and background art for the short." },
+      { src: "/images/animation-portfolio/conceptart-mtg-bg-1.jpg", title: "Platform and train", description: "Background art - the station platform as the train pulls in." },
+      { src: "/images/animation-portfolio/conceptart-mtg-bg-2.jpg", title: "Brick wall and tunnel mouth", description: "Background art - the platform wall and tunnel opening." },
+      { src: "/images/animation-portfolio/conceptart-mtg-bg-3.jpg", title: "Tunnel and oncoming train", description: "Background art - the train emerging from the tunnel." },
+    ],
+  },
+  {
     title: "Production stills",
     description: "Potential short film - rendered frames.",
     date: "Concept",
