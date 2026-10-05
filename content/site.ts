@@ -1754,23 +1754,25 @@ export function featuredProductionsFor(excludeSlug: string): FeaturedAnimation[]
 /** "Storyboards / Animatics" reel on the Animation Portfolio page. `category` holds the piece's title, `date` its rough timing. */
 export const storyboardReel: FeaturedAnimation[] = [
   {
-    title: "Storyboard frame",
+    title: "Animatic",
     description: "A silent ad suggesting the dangers of littering in the London Underground.",
     date: "Nov 2025",
     category: "Mind the Gap",
     skills: [],
-    src: "/images/animation-portfolio/storyboard-mind-the-gap.jpg",
-    kind: "image",
+    src: "/videos/mind-the-gap-animatic.mp4",
+    poster: "/images/animation-portfolio/animatic-mind-the-gap-poster.jpg",
+    kind: "video",
   },
   {
-    title: "Storyboard frame",
+    title: "Animatic",
     description:
       "Early pass: a sci-fi comedy set in a Lagos salon, where a character time-travels through a hair-tech invention into a frozen '90s sitcom world.",
     date: "Dec 2025",
     category: "CTRL 4C",
     skills: [],
-    src: "/images/animation-portfolio/storyboard-ctrl4c.jpg",
-    kind: "image",
+    src: "/videos/ctrl4c-animatic.mp4",
+    poster: "/images/animation-portfolio/animatic-ctrl4c-poster.jpg",
+    kind: "video",
   },
   {
     title: "Animatic",
