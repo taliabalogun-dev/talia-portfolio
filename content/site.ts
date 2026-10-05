@@ -1660,6 +1660,8 @@ export const featuredAnimationReel: FeaturedAnimation[] = [
     kind: "video",
     password: "screeningroom4c",
     projectSlug: "ctrl-4c-campaign",
+    href: "/projects/ctrl-4c-campaign",
+    hrefLabel: "View Full Project →",
   },
   {
     title: "Decomposition",
