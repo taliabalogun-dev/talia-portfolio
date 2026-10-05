@@ -15,7 +15,7 @@ export default function FolderTabs({ folders }: { folders: [Folder, Folder] }) {
   const c = colours[open];
   return (
     <div className="mt-16">
-      <div role="tablist" className="flex items-end gap-1.5 pl-2 sm:pl-4">
+      <div role="tablist" className="flex items-end gap-1.5 pl-6 sm:pl-8">
         {folders.map((f, i) => {
           const active = i === open;
           return (
@@ -41,9 +41,7 @@ export default function FolderTabs({ folders }: { folders: [Folder, Folder] }) {
       </div>
       <div
         style={{ background: c.bg }}
-        className={`relative z-0 -mt-px rounded-b-3xl p-5 shadow-2xl ${
-          open === 0 ? "rounded-tr-3xl" : "rounded-t-3xl"
-        }`}
+        className="relative z-0 -mt-px rounded-3xl p-5 shadow-2xl"
       >
         {folders.map((f, i) => (
           <div key={f.label} className={i === open ? "" : "hidden"}>
