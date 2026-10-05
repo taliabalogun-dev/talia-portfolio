@@ -149,6 +149,7 @@ export default function AnimationPortfolioPage() {
           <OtherFeaturedAnimation
             items={experimentalAnimationReel}
             heading="Experimental Animation"
+            autoplayVideos
           />
           <AnimationAtWork
             items={animationAtWork}

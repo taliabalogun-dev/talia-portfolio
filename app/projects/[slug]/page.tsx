@@ -414,6 +414,7 @@ export default async function ProjectPage(
                 (item) => item.projectSlug !== project.slug
               )}
               action={{ label: "View Animation Portfolio", href: "/animation-portfolio" }}
+              autoplayVideos
             />
           )}
 

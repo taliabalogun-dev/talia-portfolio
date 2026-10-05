@@ -1,7 +1,7 @@
 "use client";
 
 import Portal from "@/components/Portal";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { PillTheme } from "@/content/pillTheme";
 import { useVideoGate } from "@/lib/videoGate";
 import VideoLockButton from "@/components/VideoLockButton";
@@ -34,6 +34,22 @@ export default function EnlargeableVideo({
   const [open, setOpen] = useState(false);
   const gate = useVideoGate(src, password);
   const [justUnlocked, setJustUnlocked] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Muted looping autoplay: play while the video is on screen, pause when it scrolls away (saves data and battery).
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!autoplay || !v) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) v.play().catch(() => {});
+        else v.pause();
+      },
+      { threshold: 0.3 },
+    );
+    io.observe(v);
+    return () => io.disconnect();
+  }, [autoplay, gate.locked]);
   const [attempt, setAttempt] = useState("");
   const [wrongAttempt, setWrongAttempt] = useState(false);
   const hasExtras = (roles && roles.length > 0) || (results && results.length > 0);
@@ -122,14 +138,15 @@ export default function EnlargeableVideo({
   return (
     <>
       <video
+        ref={videoRef}
         src={src}
         poster={poster}
         controls
         playsInline
-        autoPlay={autoplay || justUnlocked}
+        autoPlay={justUnlocked}
         muted={autoplay}
         loop={autoplay}
-        preload={autoplay ? "auto" : "metadata"}
+        preload="metadata"
         className={className}
       />
       {hasExtras && (

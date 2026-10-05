@@ -160,6 +160,7 @@ export default function AboutPage() {
             <OtherFeaturedAnimation
               items={featuredAnimationReel}
               action={{ label: "View Animation Portfolio", href: "/animation-portfolio" }}
+              autoplayVideos
             />
           </div>
         </main>

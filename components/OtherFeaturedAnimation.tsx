@@ -14,6 +14,7 @@ export default function OtherFeaturedAnimation({
   embedded = false,
   tileRatio = "4/3",
   purpleButtons = false,
+  autoplayVideos = false,
 }: {
   items: FeaturedAnimation[];
   heading?: string;
@@ -30,6 +31,8 @@ export default function OtherFeaturedAnimation({
   tileRatio?: "4/3" | "16/9";
   /** Make the project/role link buttons purple instead of the default dark. */
   purpleButtons?: boolean;
+  /** Videos play automatically, muted and looping, while on screen. Password-protected films stay click-to-play. */
+  autoplayVideos?: boolean;
 }) {
   return (
     <div className={embedded ? "" : "mt-16 border-t border-beige/15 pt-10"}>
@@ -75,6 +78,7 @@ export default function OtherFeaturedAnimation({
                   src={item.src}
                   poster={item.poster}
                   password={item.password}
+                  autoplay={autoplayVideos && !item.password}
                   externalLock
                   className="h-full w-full object-cover"
                 />
