@@ -55,12 +55,12 @@ export default function OtherFeaturedAnimation({
             }`}
           >
             {item.slides && item.slides.length > 0 ? (
-              <CardSlideshow item={item} compact={compact} />
+              <CardSlideshow item={item} compact={compact} uniform={embedded} />
             ) : (
               <>
             <div
               className={`relative w-full overflow-hidden bg-black ${
-                aspect === "poster" ? "aspect-[3/4]" : "aspect-video"
+                aspect === "poster" ? "aspect-[3/4]" : embedded ? "aspect-[4/3]" : "aspect-video"
               }`}
             >
               {item.kind === "video" ? (

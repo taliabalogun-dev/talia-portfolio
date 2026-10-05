@@ -10,9 +10,12 @@ import type { FeaturedAnimation } from "@/content/site";
 export default function CardSlideshow({
   item,
   compact,
+  uniform = false,
 }: {
   item: FeaturedAnimation;
   compact: boolean;
+  /** Keep the picture area at 4:3 whatever the slides hold, so tiles in a row match. */
+  uniform?: boolean;
 }) {
   const slides = item.slides ?? [];
   const [index, setIndex] = useState(0);
@@ -30,7 +33,7 @@ export default function CardSlideshow({
     <>
       <div
         className={`relative w-full overflow-hidden bg-paper ${
-          allVideo ? "aspect-video" : "aspect-[4/3]"
+          allVideo && !uniform ? "aspect-video" : "aspect-[4/3]"
         }`}
       >
         {current.kind === "video" ? (
