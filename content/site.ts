@@ -1885,6 +1885,7 @@ export const characterDesignReel: FeaturedAnimation[] = [
       { src: "/images/animation-portfolio/obi-entourage-1.jpg", title: "Character concept 1", description: "Front and back view." },
       { src: "/images/animation-portfolio/obi-entourage-2.jpg", title: "Character concept 2", description: "Full design with props." },
       { src: "/images/animation-portfolio/obi-entourage-3.jpg", title: "Character concept 3", description: "Two poses." },
+      { src: "/images/animation-portfolio/obi-entourage-4.jpg", title: "Character concept 4", description: "Seated and standing." },
     ],
   },
   {
