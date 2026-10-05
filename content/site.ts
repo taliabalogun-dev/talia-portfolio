@@ -1645,6 +1645,8 @@ export const featuredAnimationReel: FeaturedAnimation[] = [
     poster: "/images/campaigns/livenation-mutha-promo-poster.jpg",
     kind: "video",
     projectSlug: "live-nation-mutha",
+    href: "/projects/live-nation-mutha",
+    hrefLabel: "View Role →",
   },
   {
     title: "CTRL 4C - Full Film",
@@ -1669,6 +1671,9 @@ export const featuredAnimationReel: FeaturedAnimation[] = [
     src: "/videos/refine-decomposition-promo.mp4",
     poster: "/images/campaigns/refine-decomposition-promo-poster.jpg",
     kind: "video",
+    projectSlug: "refine-la-zine",
+    href: "/projects/refine-la-zine",
+    hrefLabel: "View Role →",
   },
   {
     title: "Getting Unready",

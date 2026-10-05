@@ -2,7 +2,8 @@ import Link from "next/link";
 import Nav from "@/components/Nav";
 import EnlargeableImage from "@/components/EnlargeableImage";
 import ProjectCarousel from "@/components/ProjectCarousel";
-import { bio, projects, site, skills, topResults } from "@/content/site";
+import OtherFeaturedAnimation from "@/components/OtherFeaturedAnimation";
+import { bio, featuredAnimationReel, projects, site, skills, topResults } from "@/content/site";
 
 export const metadata = {
   title: `${bio.heading} - ${site.name}`,
@@ -153,6 +154,13 @@ export default function AboutPage() {
             >
               Download résumé
             </a>
+          </div>
+
+          <div className="text-navy">
+            <OtherFeaturedAnimation
+              items={featuredAnimationReel}
+              action={{ label: "View Animation Portfolio", href: "/animation-portfolio" }}
+            />
           </div>
         </main>
       </div>
