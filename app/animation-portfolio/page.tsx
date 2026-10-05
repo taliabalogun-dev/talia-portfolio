@@ -119,10 +119,6 @@ export default function AnimationPortfolioPage() {
             heading="Concept Art"
           />
           <OtherFeaturedAnimation
-            items={experimentalAnimationReel}
-            heading="Experimental Animation"
-          />
-          <OtherFeaturedAnimation
             items={characterDesignReel}
             heading="Character Design"
           />
@@ -138,6 +134,10 @@ export default function AnimationPortfolioPage() {
             items={animationAtWork}
             heading="Animation at Work"
             description="Where an animation background shows up in marketing, direction and production roles."
+          />
+          <OtherFeaturedAnimation
+            items={experimentalAnimationReel}
+            heading="Experimental Animation"
           />
         </div>
       </section>

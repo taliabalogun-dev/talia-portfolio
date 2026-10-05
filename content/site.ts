@@ -2052,6 +2052,12 @@ export const conceptArtReel: FeaturedAnimation[] = [
     slides: ctrl4cBackgroundArt,
   },
   {
+    ...featuredAnimationReel.find((f) => f.src === "/videos/mainland-nostalgia.mp4")!,
+    description:
+      "An exploration in collage texture backgrounds and assets in animation.",
+    category: "Mainland Nostalgia",
+  },
+  {
     title: "Rendered assets",
     description: "Character art and background art for the short.",
     date: "2025",
