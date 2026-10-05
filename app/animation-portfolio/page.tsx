@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import AnimationAtWork from "@/components/AnimationAtWork";
+import FolderTabs from "@/components/FolderTabs";
 import OtherFeaturedAnimation from "@/components/OtherFeaturedAnimation";
 import {
   narrativeAnimationReel,
@@ -114,21 +115,29 @@ export default function AnimationPortfolioPage() {
             items={narrativeAnimationReel}
             heading="Narrative Animation"
           />
-          <OtherFeaturedAnimation
-            items={conceptArtReel}
-            heading="Concept Art"
+          <FolderTabs
+            folders={[
+              {
+                label: "Concept Art",
+                content: <OtherFeaturedAnimation items={conceptArtReel} embedded />,
+              },
+              {
+                label: "Character Design",
+                content: <OtherFeaturedAnimation items={characterDesignReel} embedded />,
+              },
+            ]}
           />
-          <OtherFeaturedAnimation
-            items={characterDesignReel}
-            heading="Character Design"
-          />
-          <OtherFeaturedAnimation
-            items={storyboardReel}
-            heading="Storyboards / Animatics"
-          />
-          <OtherFeaturedAnimation
-            items={inProgressAnimationReel}
-            heading="In-Progress Animation"
+          <FolderTabs
+            folders={[
+              {
+                label: "Storyboards / Animatics",
+                content: <OtherFeaturedAnimation items={storyboardReel} embedded />,
+              },
+              {
+                label: "In-Progress Animation",
+                content: <OtherFeaturedAnimation items={inProgressAnimationReel} embedded />,
+              },
+            ]}
           />
           <AnimationAtWork
             items={animationAtWork}

@@ -10,6 +10,7 @@ export default function OtherFeaturedAnimation({
   compact = false,
   aspect = "video",
   action,
+  embedded = false,
 }: {
   items: FeaturedAnimation[];
   heading?: string;
@@ -20,24 +21,32 @@ export default function OtherFeaturedAnimation({
   aspect?: "video" | "poster";
   /** A yellow pill link shown at the right of the heading. */
   action?: { label: string; href: string };
+  /** Renders just the card strip (no heading or divider), to sit inside a folder panel. */
+  embedded?: boolean;
 }) {
   return (
-    <div className="mt-16 border-t border-beige/15 pt-10">
-      <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3">
-        <h2 className="text-xl font-semibold tracking-tight">{heading}</h2>
-        {action && (
-          <Link
-            href={action.href}
-            className="inline-block rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-ink transition-opacity hover:opacity-85"
-          >
-            {action.label}
-          </Link>
-        )}
-      </div>
-      {description && (
+    <div className={embedded ? "" : "mt-16 border-t border-beige/15 pt-10"}>
+      {!embedded && (
+        <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3">
+          <h2 className="text-xl font-semibold tracking-tight">{heading}</h2>
+          {action && (
+            <Link
+              href={action.href}
+              className="inline-block rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-ink transition-opacity hover:opacity-85"
+            >
+              {action.label}
+            </Link>
+          )}
+        </div>
+      )}
+      {!embedded && description && (
         <p className="mt-2 max-w-2xl text-sm opacity-70">{description}</p>
       )}
-      <div className="-mx-6 mt-6 flex snap-x snap-mandatory gap-6 overflow-x-auto px-6 pb-4">
+      <div
+        className={`flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 ${
+          embedded ? "-mx-5 px-5" : "-mx-6 mt-6 px-6"
+        }`}
+      >
         {items.map((item) => (
           <div
             key={item.src}

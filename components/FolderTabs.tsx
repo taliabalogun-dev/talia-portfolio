@@ -1,0 +1,56 @@
+"use client";
+
+import { useState, type ReactNode } from "react";
+
+type Folder = { label: string; content: ReactNode };
+
+/** Two reels filed as folders: the tabs sit side by side, and pressing the other tab swaps which reel is open. */
+const colours = [
+  { bg: "#f5da6e", ink: "#1d1a14" }, // site yellow
+  { bg: "#b7b3ee", ink: "#1d1a14" }, // soft lilac
+];
+
+export default function FolderTabs({ folders }: { folders: [Folder, Folder] }) {
+  const [open, setOpen] = useState(0);
+  const c = colours[open];
+  return (
+    <div className="mt-16">
+      <div role="tablist" className="flex items-end gap-1.5 pl-2 sm:pl-4">
+        {folders.map((f, i) => {
+          const active = i === open;
+          return (
+            <button
+              key={f.label}
+              type="button"
+              role="tab"
+              aria-selected={active}
+              onClick={() => setOpen(i)}
+              style={{
+                background: colours[i].bg,
+                color: colours[i].ink,
+                transform: active ? "none" : "translateY(5px)",
+              }}
+              className={`relative rounded-t-2xl min-w-0 flex-1 px-3 pt-2.5 text-left font-display text-base uppercase sm:flex-none leading-tight tracking-wide transition-transform sm:px-6 sm:text-2xl ${
+                active ? "z-10 pb-3 shadow-[0_-4px_10px_rgba(0,0,0,0.12)]" : "pb-2 opacity-90 hover:-translate-y-0.5"
+              }`}
+            >
+              {f.label}
+            </button>
+          );
+        })}
+      </div>
+      <div
+        style={{ background: c.bg }}
+        className={`relative z-0 -mt-px rounded-b-3xl p-5 shadow-2xl ${
+          open === 0 ? "rounded-tr-3xl" : "rounded-t-3xl"
+        }`}
+      >
+        {folders.map((f, i) => (
+          <div key={f.label} className={i === open ? "" : "hidden"}>
+            {f.content}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
