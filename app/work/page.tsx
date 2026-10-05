@@ -12,12 +12,12 @@ const featuredSlugs = [
 ];
 
 const otherSlugs = [
-  "refine-la-zine",
-  "co-curate",
-  "ctrl-4c-campaign",
   "bap-productions",
   "golden-effects-pictures",
+  "refine-la-zine",
   "fcmb-group",
+  "co-curate",
+  "ctrl-4c-campaign",
 ];
 
 const allQuotes = [
