@@ -2151,13 +2151,14 @@ export const conceptArtReel: FeaturedAnimation[] = [
     date: "Concept",
     category: "She-Giant",
     skills: [],
-    src: "/images/animation-portfolio/conceptart-shegiant-comic-cover-v2.jpg",
+    src: "/images/animation-portfolio/conceptart-shegiant-comic-cover-v3.jpg",
     kind: "image",
     slides: [
-      { src: "/images/animation-portfolio/conceptart-shegiant-comic-cover-v2.jpg", title: "She-Giant comic treatment", description: "Potential feature - every frame in one sheet." },
-      { src: "/images/animation-portfolio/shegiant-comic-01.jpg", title: "Balcony frame", description: "Comic treatment - the heroine above the crowd." },
+      { src: "/images/animation-portfolio/conceptart-shegiant-comic-cover-v3.jpg", title: "She-Giant comic treatment", description: "Potential feature - every frame in one sheet." },
+      { src: "/images/animation-portfolio/shegiant-comic-balcony-v3.jpg", title: "Balcony frame", description: "Comic treatment - the heroine above the crowd." },
       { src: "/images/animation-portfolio/shegiant-comic-02.jpg", title: "Procession frame", description: "Comic treatment - the walk down the hall." },
       { src: "/images/animation-portfolio/shegiant-comic-03.jpg", title: "Page layout", description: "Comic treatment - panels and thumbnails in progress." },
+      { src: "/images/animation-portfolio/shegiant-comic-panorama-v3.jpg", title: "Panoramic frame", description: "Comic treatment - the heroes climbing through the floating city." },
     ],
   },
   {
