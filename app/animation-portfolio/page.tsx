@@ -22,7 +22,7 @@ export default function AnimationPortfolioPage() {
       <section className="relative overflow-hidden bg-teal py-16 sm:py-20">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 top-0 aspect-[2000/501]"
+          className="pointer-events-none absolute inset-x-0 top-0 h-64 sm:h-72 md:h-auto md:aspect-[2000/501]"
           style={{
             maskImage: "linear-gradient(to bottom, black 25%, transparent 72%)",
             WebkitMaskImage: "linear-gradient(to bottom, black 25%, transparent 72%)",
