@@ -3,6 +3,7 @@ import Link from "next/link";
 import Nav from "@/components/Nav";
 import AnimationAtWork from "@/components/AnimationAtWork";
 import FolderTabs from "@/components/FolderTabs";
+import ProjectCarousel from "@/components/ProjectCarousel";
 import OtherFeaturedAnimation from "@/components/OtherFeaturedAnimation";
 import {
   narrativeAnimationReel,
@@ -12,8 +13,14 @@ import {
   characterDesignReel,
   conceptArtReel,
   animationAtWork,
+  projects,
   site,
 } from "@/content/site";
+
+const carouselSlugs = ["kugali-iwaju", "fast-ucla-fashion-show", "ucla-campus-campaigns"];
+const carouselProjects = carouselSlugs
+  .map((slug) => projects.find((p) => p.slug === slug))
+  .filter((p): p is NonNullable<typeof p> => Boolean(p));
 
 export default function AnimationPortfolioPage() {
   return (
@@ -150,6 +157,35 @@ export default function AnimationPortfolioPage() {
             heading="Animation at Work"
             description="Where an animation background shows up in marketing, direction and production roles."
           />
+
+          <div className="mt-16 border-t border-beige/15 pt-10">
+            <ProjectCarousel
+              projects={carouselProjects}
+              startSlug="kugali-iwaju"
+              size="small"
+            />
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+              <Link
+                href="/work"
+                className="-rotate-2 rounded-full bg-accent px-6 py-3 text-sm font-bold uppercase tracking-wide text-hero-ink transition-opacity hover:opacity-85"
+              >
+                View all roles
+              </Link>
+              <a
+                href={site.resumeUrl}
+                download
+                className="rotate-1 rounded-full border-2 border-ink px-6 py-3 text-sm font-bold uppercase tracking-wide text-ink transition-colors hover:bg-ink hover:text-teal-deep"
+              >
+                Download résumé
+              </a>
+              <Link
+                href="/"
+                className="-rotate-1 rounded-full bg-hero-ink px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-opacity hover:opacity-85"
+              >
+                Go to home
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </>
