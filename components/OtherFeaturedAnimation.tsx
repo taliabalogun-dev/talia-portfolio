@@ -13,6 +13,7 @@ export default function OtherFeaturedAnimation({
   action,
   embedded = false,
   tileRatio = "4/3",
+  purpleButtons = false,
 }: {
   items: FeaturedAnimation[];
   heading?: string;
@@ -27,6 +28,8 @@ export default function OtherFeaturedAnimation({
   embedded?: boolean;
   /** Embedded only: the picture shape every tile in the row shares. */
   tileRatio?: "4/3" | "16/9";
+  /** Make the project/role link buttons purple instead of the default dark. */
+  purpleButtons?: boolean;
 }) {
   return (
     <div className={embedded ? "" : "mt-16 border-t border-beige/15 pt-10"}>
@@ -147,7 +150,9 @@ export default function OtherFeaturedAnimation({
               {item.href && (
                 <Link
                   href={item.href}
-                  className="mt-4 inline-flex w-fit items-center gap-1.5 rounded-full bg-hero-ink px-4 py-2 text-xs font-bold uppercase tracking-wide text-white transition-opacity hover:opacity-85"
+                  className={`mt-4 inline-flex w-fit items-center gap-1.5 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wide text-white transition-opacity hover:opacity-85 ${
+                    purpleButtons ? "bg-[#8f82e8]" : "bg-hero-ink"
+                  }`}
                 >
                   {item.hrefLabel ?? "See Full Project →"}
                 </Link>
