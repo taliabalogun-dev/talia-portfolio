@@ -2053,6 +2053,7 @@ export const conceptArtReel: FeaturedAnimation[] = [
   },
   {
     ...featuredAnimationReel.find((f) => f.src === "/videos/mainland-nostalgia.mp4")!,
+    title: "Motion collage",
     description:
       "An exploration in collage texture backgrounds and assets in animation.",
     category: "Mainland Nostalgia",
