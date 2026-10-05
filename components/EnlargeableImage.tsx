@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import type { PillTheme } from "@/content/pillTheme";
 
@@ -13,6 +13,9 @@ export default function EnlargeableImage({
   roles,
   results,
   theme,
+  onPrev,
+  onNext,
+  counter,
 }: {
   src: string;
   alt?: string;
@@ -24,8 +27,28 @@ export default function EnlargeableImage({
   /** Result pills shown only in the enlarged lightbox, below the image. */
   results?: string[];
   theme?: PillTheme;
+  /** When set, the lightbox gets Prev / Next (buttons, arrow keys, swipe) to move through a slideshow. */
+  onPrev?: () => void;
+  onNext?: () => void;
+  /** Position label such as "3 / 20", shown under the image. */
+  counter?: string;
 }) {
   const [open, setOpen] = useState(false);
+  const touchStartX = useRef<number | null>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+      if (e.key === "ArrowRight") onNext?.();
+      if (e.key === "ArrowLeft") onPrev?.();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open, onPrev, onNext]);
+
+  const arrow =
+    "absolute top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/50 px-3 pb-1.5 pt-0.5 text-4xl leading-none text-white/80 hover:text-white";
 
   return (
     <>
@@ -41,7 +64,43 @@ export default function EnlargeableImage({
         <div
           className="fixed inset-0 z-50 flex flex-col items-center justify-center gap-4 bg-black/90 p-6"
           onClick={() => setOpen(false)}
+          onTouchStart={(e) => {
+            touchStartX.current = e.touches[0].clientX;
+          }}
+          onTouchEnd={(e) => {
+            if (touchStartX.current === null) return;
+            const delta = e.changedTouches[0].clientX - touchStartX.current;
+            touchStartX.current = null;
+            if (delta > 40) onPrev?.();
+            else if (delta < -40) onNext?.();
+          }}
         >
+          {onPrev && (
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                onPrev();
+              }}
+              aria-label="Previous"
+              className={`${arrow} left-2 sm:left-6`}
+            >
+              ‹
+            </button>
+          )}
+          {onNext && (
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                onNext();
+              }}
+              aria-label="Next"
+              className={`${arrow} right-2 sm:right-6`}
+            >
+              ›
+            </button>
+          )}
           <button
             type="button"
             onClick={() => setOpen(false)}
@@ -56,6 +115,7 @@ export default function EnlargeableImage({
           >
             <Image src={src} alt={alt} fill className="object-contain" sizes="90vw" />
           </div>
+          {counter && <p className="text-sm text-white/60">{counter}</p>}
           {roles && roles.length > 0 && (
             <div
               className="flex flex-wrap justify-center gap-2"

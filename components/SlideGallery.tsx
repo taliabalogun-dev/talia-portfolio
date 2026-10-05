@@ -61,6 +61,9 @@ export default function SlideGallery({
             alt={current.caption ?? ""}
             className="object-cover"
             sizes="(min-width: 640px) 640px, 100vw"
+            onPrev={images.length > 1 ? () => goTo(index - 1) : undefined}
+            onNext={images.length > 1 ? () => goTo(index + 1) : undefined}
+            counter={`${index + 1} / ${images.length}`}
           />
         )}
       </div>
