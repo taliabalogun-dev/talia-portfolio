@@ -1875,20 +1875,6 @@ export const characterDesignReel: FeaturedAnimation[] = [
     kind: "image",
   },
   {
-    title: "CTRL 4C",
-    description: "Character design for the film.",
-    date: "2025",
-    category: "CTRL 4C",
-    skills: [],
-    src: "/images/animation-portfolio/chardesign-ctrl4c-contact-sheet.jpg",
-    kind: "image",
-    slides: [
-      { src: "/images/animation-portfolio/chardesign-ctrl4c-contact-sheet.jpg", title: "CTRL 4C character design", description: "Turnarounds and the full cast, together." },
-      { src: "/images/animation-portfolio/chardesign-ctrl4c-turnarounds.jpg", title: "360° turnarounds", description: "Full rotation sheets for the film's two leads." },
-      { src: "/images/animation-portfolio/chardesign-ctrl4c-ensemble.jpg", title: "Full cast lineup", description: "The complete ensemble, side by side." },
-    ],
-  },
-  {
     title: "She-Giant",
     description: "Potential feature - character studies.",
     date: "Concept",
@@ -1902,6 +1888,20 @@ export const characterDesignReel: FeaturedAnimation[] = [
       { src: "/images/animation-portfolio/chardesign-shegiant-2.jpg", title: "Armor + creature studies", description: "Potential feature - supporting designs." },
       { src: "/images/animation-portfolio/chardesign-shegiant-3.jpg", title: "Turnaround", description: "Potential feature - front and back view." },
       { src: "/images/animation-portfolio/chardesign-shegiant-4.jpg", title: "Supporting cast", description: "Potential feature - additional character studies." },
+    ],
+  },
+  {
+    title: "CTRL 4C",
+    description: "Character design for the film.",
+    date: "2025",
+    category: "CTRL 4C",
+    skills: [],
+    src: "/images/animation-portfolio/chardesign-ctrl4c-contact-sheet.jpg",
+    kind: "image",
+    slides: [
+      { src: "/images/animation-portfolio/chardesign-ctrl4c-contact-sheet.jpg", title: "CTRL 4C character design", description: "Turnarounds and the full cast, together." },
+      { src: "/images/animation-portfolio/chardesign-ctrl4c-turnarounds.jpg", title: "360° turnarounds", description: "Full rotation sheets for the film's two leads." },
+      { src: "/images/animation-portfolio/chardesign-ctrl4c-ensemble.jpg", title: "Full cast lineup", description: "The complete ensemble, side by side." },
     ],
   },
   {
