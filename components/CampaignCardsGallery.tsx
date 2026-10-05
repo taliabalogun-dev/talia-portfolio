@@ -1,5 +1,6 @@
 "use client";
 
+import Portal from "@/components/Portal";
 import { useState } from "react";
 import Image from "next/image";
 import type { SlideImage } from "@/content/site";
@@ -81,6 +82,7 @@ export default function CampaignCardsGallery({
       </div>
 
       {current && (
+        <Portal>
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 sm:p-10"
           onClick={() => setOpenIndex(null)}
@@ -143,6 +145,7 @@ export default function CampaignCardsGallery({
             )}
           </div>
         </div>
+        </Portal>
       )}
     </>
   );

@@ -1,5 +1,6 @@
 "use client";
 
+import Portal from "@/components/Portal";
 import { useState } from "react";
 import type { PillTheme } from "@/content/pillTheme";
 import { useVideoGate } from "@/lib/videoGate";
@@ -143,6 +144,7 @@ export default function EnlargeableVideo({
       )}
 
       {open && (
+        <Portal>
         <div
           className="fixed inset-0 z-50 flex flex-col items-center justify-center gap-4 bg-black/90 p-6"
           onClick={() => setOpen(false)}
@@ -205,6 +207,7 @@ export default function EnlargeableVideo({
             </div>
           )}
         </div>
+        </Portal>
       )}
     </>
   );

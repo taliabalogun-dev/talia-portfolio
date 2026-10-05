@@ -1,5 +1,6 @@
 "use client";
 
+import Portal from "@/components/Portal";
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import type { SlideImage } from "@/content/site";
@@ -62,6 +63,7 @@ export default function FilmstripGallery({ images }: { images: SlideImage[] }) {
       </div>
 
       {current && (
+        <Portal>
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 sm:p-10"
           onClick={close}
@@ -131,6 +133,7 @@ export default function FilmstripGallery({ images }: { images: SlideImage[] }) {
             </button>
           )}
         </div>
+        </Portal>
       )}
     </>
   );

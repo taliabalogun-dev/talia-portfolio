@@ -1,5 +1,6 @@
 "use client";
 
+import Portal from "@/components/Portal";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import type { PillTheme } from "@/content/pillTheme";
@@ -61,6 +62,7 @@ export default function EnlargeableImage({
       />
 
       {open && (
+        <Portal>
         <div
           className="fixed inset-0 z-50 flex flex-col items-center justify-center gap-4 bg-black/90 p-6"
           onClick={() => setOpen(false)}
@@ -157,6 +159,7 @@ export default function EnlargeableImage({
             </div>
           )}
         </div>
+        </Portal>
       )}
     </>
   );

@@ -1951,9 +1951,9 @@ export const characterDesignReel: FeaturedAnimation[] = [
     src: "/images/animation-portfolio/chardesign-ilashe-contact-sheet.jpg",
     kind: "image",
     slides: [
-      { src: "/images/animation-portfolio/chardesign-ilashe-contact-sheet.jpg", title: "Ilashe character design", description: "Face construction and character study, together." },
-      { src: "/images/animation-portfolio/chardesign-ilashe-1.jpg", title: "Face construction sheet", description: "Potential short film - building the lead's face from base shapes." },
-      { src: "/images/animation-portfolio/chardesign-ilashe-2.jpg", title: "Character study", description: "Potential short film - early character exploration." },
+      { src: "/images/animation-portfolio/chardesign-ilashe-contact-sheet.jpg", title: "Ilashe character design", description: "Potential short film - character designs, together." },
+      { src: "/images/animation-portfolio/chardesign-ilashe-1.jpg", title: "Character design 1", description: "Potential short film - character design." },
+      { src: "/images/animation-portfolio/chardesign-ilashe-2.jpg", title: "Character design 2", description: "Potential short film - character design." },
     ],
   },
 ];
