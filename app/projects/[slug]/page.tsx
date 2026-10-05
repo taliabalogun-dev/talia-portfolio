@@ -67,7 +67,7 @@ export default async function ProjectPage(
               <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-base text-muted">
                 <span>{project.role}</span>
                 <span>{project.period}</span>
-                <span>{project.location}</span>
+                {project.location && <span>{project.location}</span>}
               </div>
 
               {project.quotes?.map((quote) => (

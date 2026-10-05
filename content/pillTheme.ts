@@ -74,6 +74,7 @@ const projectTheme: Record<string, keyof typeof themes> = {
   "golden-effects-pictures": "orange",
   "ctrl-4c-campaign": "amber",
   "co-curate": "terracotta",
+  "fcmb-group": "purple",
 };
 
 const fallback: PillTheme = themes.gold;

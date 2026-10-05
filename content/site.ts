@@ -136,7 +136,8 @@ export type Project = {
   /** One-line context shown under the title on the /work card and the project subpage. */
   contextTag?: string;
   period: string;
-  location: string;
+  /** Left out when the role has no place worth naming. */
+  location?: string;
   /** Short pill list of focus areas or partners, shown right under the role/date line on the subpage. */
   focus?: { heading: string; items: string[] };
   /** Whether this appears as a large slide in the rotating showcase. Non-featured projects still appear in the nav bar, linking straight to their subpage. */
@@ -1487,6 +1488,62 @@ export const projects: Project[] = [
       ],
     },
   },
+  {
+    slug: "fcmb-group",
+    navLabel: "FCMB Group",
+    title: "Marketing Strategy Intern - FCMB Group",
+    description:
+      "Led initial campaign research into youth acquisition and banking features for Flexx, FCMB's youth banking product, informing the 'Stronger Together' positioning.",
+    extendedDescription:
+      "Contributed to a three-part growth strategy - savings-behavior gamification, campus-based creator funding, and salary lifecycle conversion - and a go-to-market plan across TikTok, campus activations, and creator partnerships. Supported a KPI framework and phased execution roadmap tracking acquisition, engagement, and retention.",
+    tags: ["Campaign Research", "Growth Strategy", "KPI Roadmap"],
+    role: "Marketing Strategy Intern",
+    contextTag: "Campaign research and growth strategy for Flexx, FCMB's youth banking product",
+    period: "Apr 2026 - June 2026",
+    focus: {
+      heading: "Focus",
+      items: [
+        "Youth Acquisition Research",
+        "Growth Strategy",
+        "Go-to-Market Planning",
+        "KPI Framework",
+      ],
+    },
+    featured: false,
+    image: "/images/campaigns/fcmb-flexx-poster.jpg",
+    slides: [
+      {
+        title: "The Strategy",
+        subtitle: "'Stronger Together' positioning for Flexx",
+        sections: [
+          {
+            heading: "My Role",
+            style: "pills",
+            items: ["Campaign Research", "Growth Strategy Contribution", "KPI Framework Support"],
+          },
+          {
+            heading: "Three Growth Engines",
+            style: "pills",
+            items: [
+              "Savings-Behavior Gamification",
+              "Campus-Based Creator Funding",
+              "Salary Lifecycle Conversion",
+            ],
+          },
+          {
+            heading: "Go-to-Market Channels",
+            style: "pills",
+            items: ["TikTok", "Campus Activations", "Creator Partnerships"],
+          },
+          {
+            heading: "Roadmap Tracked On",
+            style: "pills",
+            items: ["Acquisition", "Engagement", "Retention"],
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 /** Shared "Other Featured Animation" reel shown on project subpages with `showFeaturedAnimation: true`. Each project filters out its own entry (matched by `projectSlug`) so it doesn't feature itself. */
@@ -1984,7 +2041,7 @@ export const skillDetails: { category: string; context: string; skills: SkillDet
         seenIn: [
           { label: "Kugali Media", slug: "kugali-iwaju" },
           { label: "UCLA Student Affairs", slug: "ucla-campus-campaigns" },
-          { label: "FCMB Group" },
+          { label: "FCMB Group", slug: "fcmb-group" },
         ],
       },
       {
@@ -2212,6 +2269,7 @@ export const additionalExperience: ExperienceItem[] = [
     period: "Apr 2026 - June 2026",
     summary:
       "Led campaign research and a three-part growth strategy for Flexx, FCMB's youth banking product, spanning gamification, campus creator funding, and a phased KPI roadmap.",
+    slug: "fcmb-group",
   },
   {
     role: "Founder",

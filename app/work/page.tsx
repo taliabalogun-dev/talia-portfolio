@@ -17,6 +17,7 @@ const otherSlugs = [
   "ctrl-4c-campaign",
   "bap-productions",
   "golden-effects-pictures",
+  "fcmb-group",
 ];
 
 const allQuotes = [
