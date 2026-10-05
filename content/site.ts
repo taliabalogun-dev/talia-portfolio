@@ -1956,6 +1956,20 @@ export const characterDesignReel: FeaturedAnimation[] = [
       { src: "/images/animation-portfolio/chardesign-ilashe-2.jpg", title: "Character design 2", description: "Potential short film - character design." },
     ],
   },
+  {
+    title: "Red Riding Hood character design",
+    description: "Character concepts for Red Riding Hood.",
+    date: "Concept",
+    category: "Red Riding Hood",
+    skills: [],
+    src: "/images/animation-portfolio/chardesign-red-riding-hood-contact-sheet.jpg",
+    kind: "image",
+    slides: [
+      { src: "/images/animation-portfolio/chardesign-red-riding-hood-contact-sheet.jpg", title: "Red Riding Hood character design", description: "Character concepts, together." },
+      { src: "/images/animation-portfolio/red-riding-hood-1.jpg", title: "Character concept 1", description: "Character concept for Red Riding Hood." },
+      { src: "/images/animation-portfolio/red-riding-hood-2.jpg", title: "Character concept 2", description: "Character concept for Red Riding Hood." },
+    ],
+  },
 ];
 
 /** A role where an animation background did real work: the tasks it fed into, and how. Text-only cards on the Animation Portfolio page. */
