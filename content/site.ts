@@ -122,7 +122,7 @@ export type FeaturedAnimation = {
   /** Image only: which part of the picture stays visible when it is cropped to the card. Defaults to center. */
   position?: "top" | "center" | "bottom";
   /** Several pieces shown as one slideshow card; each slide carries its own title and description. */
-  slides?: { src: string; title: string; description: string; kind?: "image" | "video"; poster?: string }[];
+  slides?: { src: string; title: string; description: string; kind?: "image" | "video"; poster?: string; autoplay?: boolean }[];
 };
 
 export type Project = {
@@ -1820,6 +1820,25 @@ export const storyboardReel: FeaturedAnimation[] = [
     src: "/videos/mulan-animatic.mp4",
     poster: "/images/animation-portfolio/animatic-mulan-poster.jpg",
     kind: "video",
+  },
+];
+
+/** "In-Progress Animation" reel on the Animation Portfolio page: short rough-animation loops, grouped per film. */
+export const inProgressAnimationReel: FeaturedAnimation[] = [
+  {
+    title: "In-progress animation",
+    description: "Rough animation tests for the film.",
+    date: "In progress",
+    category: "CTRL 4C",
+    skills: [],
+    src: "/videos/ctrl4c-wip-1.mp4",
+    poster: "/images/animation-portfolio/ctrl4c-wip-1-poster.jpg",
+    kind: "video",
+    slides: [
+      { src: "/videos/ctrl4c-wip-1.mp4", kind: "video", autoplay: true, poster: "/images/animation-portfolio/ctrl4c-wip-1-poster.jpg", title: "Head turn", description: "Clean line animation test." },
+      { src: "/videos/ctrl4c-wip-2.mp4", kind: "video", autoplay: true, poster: "/images/animation-portfolio/ctrl4c-wip-2-poster.jpg", title: "Character pose", description: "Rough animation over the layout." },
+      { src: "/videos/ctrl4c-wip-3.mp4", kind: "video", autoplay: true, poster: "/images/animation-portfolio/ctrl4c-wip-3-poster.jpg", title: "Overhead shot", description: "Rough animation, overhead camera." },
+    ],
   },
 ];
 

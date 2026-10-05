@@ -7,6 +7,7 @@ import {
   narrativeAnimationReel,
   experimentalAnimationReel,
   storyboardReel,
+  inProgressAnimationReel,
   characterDesignReel,
   conceptArtReel,
   animationAtWork,
@@ -128,6 +129,10 @@ export default function AnimationPortfolioPage() {
           <OtherFeaturedAnimation
             items={storyboardReel}
             heading="Storyboards / Animatics"
+          />
+          <OtherFeaturedAnimation
+            items={inProgressAnimationReel}
+            heading="In-Progress Animation"
           />
           <AnimationAtWork
             items={animationAtWork}

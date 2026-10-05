@@ -36,6 +36,7 @@ export default function CardSlideshow({
             key={current.src}
             src={current.src}
             poster={current.poster}
+            autoplay={current.autoplay}
             className="h-full w-full object-contain"
           />
         ) : (
