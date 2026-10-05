@@ -81,12 +81,12 @@ export default function OtherFeaturedAnimation({
                 </span>
               )}
               <span
-                className={`pointer-events-none absolute right-2.5 top-2.5 rounded-full ${
+                className={`pointer-events-none absolute right-1.5 top-1.5 rounded-full ${
                   aspect === "poster"
                     ? "bg-teal px-4 py-2 text-sm font-semibold text-white shadow-lg ring-1 ring-white/25"
                     : compact
-                      ? "rotate-2 bg-accent px-3 py-1 text-xs font-extrabold text-accent-ink shadow-lg ring-2 ring-white/80"
-                      : "rotate-2 bg-accent px-4 py-1.5 text-base font-extrabold text-accent-ink shadow-lg ring-2 ring-white/80"
+                      ? "rotate-2 bg-accent px-2.5 py-0.5 text-[11px] font-extrabold text-accent-ink shadow-md ring-2 ring-white/80"
+                      : "rotate-2 bg-accent px-3 py-1 text-sm font-extrabold text-accent-ink shadow-md ring-2 ring-white/80"
                 }`}
               >
                 {item.category}

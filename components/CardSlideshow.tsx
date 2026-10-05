@@ -54,8 +54,8 @@ export default function CardSlideshow({
         )}
         {item.date && <span className={`${bubble} left-2`}>{item.date}</span>}
         <span
-          className={`pointer-events-none absolute right-2.5 top-2.5 rotate-2 rounded-full bg-accent font-extrabold text-accent-ink shadow-lg ring-2 ring-white/80 ${
-            compact ? "px-3 py-1 text-xs" : "px-4 py-1.5 text-base"
+          className={`pointer-events-none absolute right-1.5 top-1.5 rotate-2 rounded-full bg-accent font-extrabold text-accent-ink shadow-md ring-2 ring-white/80 ${
+            compact ? "px-2.5 py-0.5 text-[11px]" : "px-3 py-1 text-sm"
           }`}
         >
           {item.category}
