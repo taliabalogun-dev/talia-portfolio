@@ -18,8 +18,8 @@ import {
   site,
 } from "@/content/site";
 
-// The roles where animation was the work itself: Disney's Iwájú, the animated CTRL 4C short, and the animated promos for MUTHA and Refine LA.
-const carouselSlugs = ["kugali-iwaju", "ctrl-4c-campaign", "live-nation-mutha", "refine-la-zine"];
+// Animation-led roles: Co Curate, the CTRL 4C short, and the MUTHA promo film.
+const carouselSlugs = ["co-curate", "ctrl-4c-campaign", "live-nation-mutha"];
 const carouselProjects = carouselSlugs
   .map((slug) => projects.find((p) => p.slug === slug))
   .filter((p): p is NonNullable<typeof p> => Boolean(p));
@@ -168,7 +168,7 @@ export default function AnimationPortfolioPage() {
           <div className="mt-16 border-t border-beige/15 pt-10">
             <ProjectCarousel
               projects={carouselProjects}
-              startSlug="kugali-iwaju"
+              startSlug="co-curate"
               size="small"
             />
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
