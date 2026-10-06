@@ -13,7 +13,7 @@ export default function AnimationAtWork({
 }) {
   const label = "text-[10px] font-bold uppercase tracking-[0.14em] text-accent";
   return (
-    <div className="mt-16 border-t border-beige/15 pt-10">
+    <div className="mt-8 border-t border-beige/15 pt-6 sm:mt-16 sm:pt-10">
       <h2 className="text-xl font-semibold tracking-tight">{heading}</h2>
       {description && <p className="mt-2 max-w-2xl text-sm opacity-70">{description}</p>}
       <div className="-mx-6 mt-6 flex snap-x snap-mandatory gap-6 overflow-x-auto overscroll-x-contain px-6 pb-4">

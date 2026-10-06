@@ -35,7 +35,7 @@ export default function OtherFeaturedAnimation({
   autoplayVideos?: boolean;
 }) {
   return (
-    <div className={embedded ? "" : "mt-16 border-t border-beige/15 pt-10"}>
+    <div className={embedded ? "" : "mt-8 border-t border-beige/15 pt-6 sm:mt-16 sm:pt-10"}>
       {!embedded && (
         <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3">
           <h2 className="text-xl font-semibold tracking-tight">{heading}</h2>

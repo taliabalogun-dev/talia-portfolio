@@ -73,12 +73,12 @@ export default function AnimationPortfolioPage() {
                 spans finished shorts, storyboards, character design, and
                 concept art.
               </p>
-              <div className="mt-6 flex flex-wrap items-center gap-3">
+              <div className="mt-5 flex flex-nowrap items-center gap-2 sm:mt-6 sm:gap-3">
                 <a
                   href={site.social.animationInstagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-ink transition-opacity hover:opacity-85"
+                  className="inline-block whitespace-nowrap rounded-full bg-accent px-4 py-2.5 text-xs font-medium text-accent-ink transition-opacity hover:opacity-85 sm:px-6 sm:py-3 sm:text-sm"
                 >
                   Follow on Instagram
                 </a>
@@ -87,14 +87,14 @@ export default function AnimationPortfolioPage() {
                     href={site.social.animationYoutube}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-ink transition-opacity hover:opacity-85"
+                    className="inline-block whitespace-nowrap rounded-full bg-accent px-4 py-2.5 text-xs font-medium text-accent-ink transition-opacity hover:opacity-85 sm:px-6 sm:py-3 sm:text-sm"
                   >
                     Follow on YouTube
                   </a>
                 ) : (
                   <span
                     aria-disabled="true"
-                    className="inline-flex cursor-not-allowed items-center gap-2 rounded-full bg-accent/60 px-6 py-3 text-sm font-medium text-accent-ink"
+                    className="inline-flex cursor-not-allowed items-center gap-1.5 whitespace-nowrap rounded-full bg-accent/60 px-3.5 py-2.5 text-xs font-medium text-accent-ink sm:gap-2 sm:px-6 sm:py-3 sm:text-sm"
                   >
                     Follow on YouTube
                     <span className="rounded-full bg-accent-ink/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide">
