@@ -159,12 +159,6 @@ export default function AnimationPortfolioPage() {
             description="Where an animation background shows up in marketing, direction and production roles."
           />
 
-          <OtherFeaturedAnimation
-            items={animationCommissionsReel}
-            heading="Animation Commissions"
-            description="Animation-based work I delivered for clients."
-          />
-
           <div className="mt-16 border-t border-beige/15 pt-10">
             <ProjectCarousel
               projects={carouselProjects}
@@ -193,6 +187,12 @@ export default function AnimationPortfolioPage() {
               </Link>
             </div>
           </div>
+
+          <OtherFeaturedAnimation
+            items={animationCommissionsReel}
+            heading="Animation Commissions"
+            description="Animation-based work I delivered for clients."
+          />
         </div>
       </section>
     </>
