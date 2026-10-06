@@ -39,8 +39,8 @@ export default function FilmstripGallery({
       <div
         className={
           contact
-            ? "grid w-full grid-cols-2 gap-px overflow-hidden rounded-xl border border-beige/15 bg-beige/15 sm:grid-cols-3 lg:grid-cols-4"
-            : "flex w-full gap-0 overflow-x-auto rounded-xl border border-beige/15"
+            ? "grid w-full grid-cols-3 gap-px overflow-hidden rounded-xl border border-beige/15 bg-beige/15 sm:grid-cols-4"
+            : "flex w-full gap-0 overflow-x-auto overscroll-x-contain rounded-xl border border-beige/15"
         }
       >
         {images.map((img, i) => (
@@ -72,7 +72,7 @@ export default function FilmstripGallery({
                 alt={img.caption ?? ""}
                 fill
                 className={contact ? "object-cover transition-transform duration-300 group-hover:scale-105" : "object-cover"}
-                sizes={contact ? "(min-width: 1024px) 280px, (min-width: 640px) 33vw, 50vw" : "224px"}
+                sizes={contact ? "(min-width: 640px) 25vw, 33vw" : "224px"}
               />
             )}
           </button>

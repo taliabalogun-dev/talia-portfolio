@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { usePersistedIndex } from "@/lib/usePersistedIndex";
 import Link from "next/link";
 import EnlargeableImage from "@/components/EnlargeableImage";
 import EnlargeableVideo from "@/components/EnlargeableVideo";
@@ -21,7 +21,7 @@ export default function CardSlideshow({
   ratio?: "4/3" | "16/9";
 }) {
   const slides = item.slides ?? [];
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = usePersistedIndex(slides[0]?.src ?? item.src, slides.length);
   if (slides.length === 0) return null;
   const go = (n: number) => setIndex(((n % slides.length) + slides.length) % slides.length);
   const current = slides[index];

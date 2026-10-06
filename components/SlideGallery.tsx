@@ -1,6 +1,7 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef } from "react";
+import { usePersistedIndex } from "@/lib/usePersistedIndex";
 import EnlargeableImage from "@/components/EnlargeableImage";
 import type { SlideImage } from "@/content/site";
 import type { PillTheme } from "@/content/pillTheme";
@@ -14,7 +15,7 @@ export default function SlideGallery({
   images: SlideImage[];
   theme?: PillTheme;
 }) {
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = usePersistedIndex(images[0]?.src ?? "gallery", images.length);
   const touchStartX = useRef<number | null>(null);
 
   const goTo = (i: number) => {

@@ -53,7 +53,7 @@ export default function OtherFeaturedAnimation({
         <p className="mt-2 max-w-2xl text-sm opacity-70">{description}</p>
       )}
       <div
-        className={`flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 ${
+        className={`flex snap-x snap-mandatory gap-6 overflow-x-auto overscroll-x-contain pb-4 ${
           embedded ? "-mx-5 px-5" : "-mx-6 mt-6 px-6"
         }`}
       >
