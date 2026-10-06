@@ -166,16 +166,16 @@ export default function AboutPage() {
 
           <div className="text-navy">
             <OtherFeaturedAnimation
-              items={featuredAnimationReel}
-              heading="Featured Animation"
-              action={{ label: "View Animation Portfolio", href: "/animation-portfolio" }}
-              autoplayVideos
-            />
-            <OtherFeaturedAnimation
               items={featuredProductionsFor("")}
               heading="Featured Productions"
               aspect="poster"
               compact
+            />
+            <OtherFeaturedAnimation
+              items={featuredAnimationReel}
+              heading="Featured Animation"
+              action={{ label: "View Animation Portfolio", href: "/animation-portfolio" }}
+              autoplayVideos
             />
           </div>
         </main>
