@@ -1,9 +1,10 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "@/content/site";
+import { useSwipe } from "@/lib/useSwipe";
 
 const GRADIENTS = [
   "from-indigo-500/40 to-purple-500/40",
@@ -15,7 +16,6 @@ const GRADIENTS = [
 ];
 
 const AUTO_ADVANCE_MS = 6000;
-const SWIPE_THRESHOLD = 40;
 
 // White paper frame with a dark yellow role line, staged on a teal backdrop.
 const CARD_STYLE = { card: "bg-white border-white", role: "text-[#8a7015]" };
@@ -114,29 +114,16 @@ export default function ProjectCarousel({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [index]);
 
-  const touchStartX = useRef<number | null>(null);
-
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
-  };
-
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartX.current === null) return;
-    const deltaX = e.changedTouches[0].clientX - touchStartX.current;
-    if (deltaX > SWIPE_THRESHOLD) {
-      setIndex((i) => ((i - 1) % n + n) % n);
-    } else if (deltaX < -SWIPE_THRESHOLD) {
-      setIndex((i) => (i + 1) % n);
-    }
-    touchStartX.current = null;
-  };
+  const swipe = useSwipe(
+    () => setIndex((i) => ((i - 1) % n + n) % n),
+    () => setIndex((i) => (i + 1) % n),
+  );
 
   return (
     <div className="relative w-full">
       <div
         className={`relative mx-auto touch-pan-y ${cfg.containerHeight} ${cfg.maxWidth}`}
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
+        {...swipe}
       >
         {projects.map((project, i) => {
           const offset = ((i - index) % n + n) % n;

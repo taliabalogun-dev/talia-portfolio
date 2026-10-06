@@ -1,12 +1,11 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { useSwipe } from "@/lib/useSwipe";
 import { useResetOffscreen } from "@/lib/useResetOffscreen";
 import EnlargeableImage from "@/components/EnlargeableImage";
 import type { SlideImage } from "@/content/site";
 import type { PillTheme } from "@/content/pillTheme";
-
-const SWIPE_THRESHOLD = 40;
 
 export default function SlideGallery({
   images,
@@ -18,7 +17,6 @@ export default function SlideGallery({
   const [index, setIndex] = useState(0);
   const frame = useRef<HTMLDivElement>(null);
   useResetOffscreen(frame, () => setIndex(0));
-  const touchStartX = useRef<number | null>(null);
 
   const goTo = (i: number) => {
     setIndex(((i % images.length) + images.length) % images.length);
@@ -26,24 +24,16 @@ export default function SlideGallery({
 
   const current = images[index];
 
-  function handleTouchStart(e: React.TouchEvent) {
-    touchStartX.current = e.touches[0].clientX;
-  }
-
-  function handleTouchEnd(e: React.TouchEvent) {
-    if (touchStartX.current === null) return;
-    const delta = e.changedTouches[0].clientX - touchStartX.current;
-    touchStartX.current = null;
-    if (delta > SWIPE_THRESHOLD) goTo(index - 1);
-    else if (delta < -SWIPE_THRESHOLD) goTo(index + 1);
-  }
+  const swipe = useSwipe(
+    () => goTo(index - 1),
+    () => goTo(index + 1),
+  );
 
   return (
     <div>
       <div
         ref={frame}
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
+        {...swipe}
         className="relative aspect-video w-full touch-pan-y select-none overflow-hidden rounded-xl border border-beige/15 bg-beige/5"
       >
         {current.kind === "video" ? (
