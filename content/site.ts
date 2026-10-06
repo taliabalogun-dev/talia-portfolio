@@ -122,7 +122,7 @@ export type FeaturedAnimation = {
   /** Image only: which part of the picture stays visible when it is cropped to the card. Defaults to center. */
   position?: "top" | "center" | "bottom";
   /** Several pieces shown as one slideshow card; each slide carries its own title and description. */
-  slides?: { src: string; title: string; description: string; kind?: "image" | "video"; poster?: string; autoplay?: boolean; collage?: string[] }[];
+  slides?: { src: string; title: string; description: string; kind?: "image" | "video"; poster?: string; autoplay?: boolean; collage?: string[]; fit?: "cover" | "contain" }[];
 };
 
 export type Project = {
@@ -1888,8 +1888,8 @@ export const animationCommissionsReel: FeaturedAnimation[] = [
     src: "/images/animation-portfolio/commission-crickets-v1.jpg",
     kind: "image",
     slides: [
-      { src: "/images/animation-portfolio/commission-crickets-v1.jpg", title: "Crickets Cover Art for YTBOUTTHATACTION", description: "Cover art I illustrated and animated for YTBOUTTHATACTION." },
-      { src: "/images/animation-portfolio/commission-swat-v1.jpg", title: "SWAT - Earlier Version", description: "An earlier version of the same cover art, with the original title." },
+      { src: "/images/animation-portfolio/commission-crickets-v1.jpg", title: "Crickets Cover Art for YTBOUTTHATACTION", description: "Cover art I illustrated and animated for YTBOUTTHATACTION.", fit: "cover" },
+      { src: "/images/animation-portfolio/commission-swat-v1.jpg", title: "SWAT - Earlier Version", description: "An earlier version of the same cover art, with the original title.", fit: "cover" },
     ],
   },
   {
@@ -1901,7 +1901,7 @@ export const animationCommissionsReel: FeaturedAnimation[] = [
     src: "/images/animation-portfolio/commission-carry-me-v1.jpg",
     kind: "image",
     slides: [
-      { src: "/images/animation-portfolio/commission-carry-me-v1.jpg", title: "Carry Me Cover Art for Cheluchi", description: "Cover art I illustrated and animated for Cheluchi." },
+      { src: "/images/animation-portfolio/commission-carry-me-v1.jpg", title: "Carry Me Cover Art for Cheluchi", description: "Cover art I illustrated and animated for Cheluchi.", fit: "cover" },
     ],
   },
   {
@@ -1913,7 +1913,7 @@ export const animationCommissionsReel: FeaturedAnimation[] = [
     src: "/images/animation-portfolio/commission-siraheem-v1.jpg",
     kind: "image",
     slides: [
-      { src: "/images/animation-portfolio/commission-siraheem-v1.jpg", title: "Cover Art for Siraheem", description: "Cover art I illustrated and animated for Siraheem." },
+      { src: "/images/animation-portfolio/commission-siraheem-v1.jpg", title: "Cover Art for Siraheem", description: "Cover art I illustrated and animated for Siraheem.", fit: "cover" },
     ],
   },
   {
@@ -1925,7 +1925,7 @@ export const animationCommissionsReel: FeaturedAnimation[] = [
     src: "/images/animation-portfolio/commission-omg-v1.jpg",
     kind: "image",
     slides: [
-      { src: "/images/animation-portfolio/commission-omg-v1.jpg", title: "'OMG' Cover Art for Brazyybih", description: "Cover art I illustrated and animated for Brazyybih." },
+      { src: "/images/animation-portfolio/commission-omg-v1.jpg", title: "'OMG' Cover Art for Brazyybih", description: "Cover art I illustrated and animated for Brazyybih.", fit: "cover" },
     ],
   },
   {
@@ -1937,7 +1937,7 @@ export const animationCommissionsReel: FeaturedAnimation[] = [
     src: "/images/animation-portfolio/commission-spilt-v1.jpg",
     kind: "image",
     slides: [
-      { src: "/images/animation-portfolio/commission-spilt-v1.jpg", title: "SPILT Logo for Kai Honu", description: "Logo I designed and animated for Kai Honu's SPILT." },
+      { src: "/images/animation-portfolio/commission-spilt-v1.jpg", title: "SPILT Logo for Kai Honu", description: "Logo I designed and animated for Kai Honu's SPILT.", fit: "cover" },
     ],
   },
 ];

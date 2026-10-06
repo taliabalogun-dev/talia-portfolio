@@ -78,7 +78,7 @@ export default function CardSlideshow({
           <EnlargeableImage
             src={current.src}
             alt={current.title}
-            className="object-contain"
+            className={current.fit === "cover" ? "object-cover" : "object-contain"}
             sizes="(min-width: 640px) 380px, 85vw"
             onPrev={slides.length > 1 ? () => go(index - 1) : undefined}
             onNext={slides.length > 1 ? () => go(index + 1) : undefined}
