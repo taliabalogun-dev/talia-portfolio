@@ -1586,10 +1586,11 @@ export const projects: Project[] = [
         subtitle: "Background Art",
         layout: "contact",
         // The first entry is the collage cover used on the Animation Portfolio tile; the page shows the renders themselves.
-        images: ctrl4cBackgroundArt.slice(1).map((b) => ({
-          src: b.src,
-          caption: `${b.title} - ${b.description}`,
-        })),
+        // Same order as the collage cover, with the extra renders slipped in near the end.
+        images: [5, 10, 11, 9, 6, 4, 2, 7, 1, 8, 3].map((n) => {
+          const b = ctrl4cBackgroundArt[n];
+          return { src: b.src, caption: `${b.title} - ${b.description}` };
+        }),
         sections: [],
       },
     ],
@@ -1717,9 +1718,15 @@ export const narrativeAnimationReel = featuredAnimationReel
         }
       : f,
   );
-export const experimentalAnimationReel = featuredAnimationReel.filter((f) =>
-  experimentalSrcs.has(f.src),
-);
+/** Experimental Animation page order only (the shared reel on project pages keeps its own order): Decomposition, MUTHA promo, then Mainland Nostalgia. */
+const experimentalOrder = [
+  "/videos/refine-decomposition-promo.mp4",
+  "/videos/livenation-mutha-promo-film.mp4",
+  "/videos/mainland-nostalgia.mp4",
+];
+export const experimentalAnimationReel = featuredAnimationReel
+  .filter((f) => experimentalSrcs.has(f.src))
+  .sort((a, b) => experimentalOrder.indexOf(a.src) - experimentalOrder.indexOf(b.src));
 
 /**
  * "Other Featured Productions": the four productions on the roles list, as
