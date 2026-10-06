@@ -17,7 +17,8 @@ import {
   site,
 } from "@/content/site";
 
-const carouselSlugs = ["kugali-iwaju", "fast-ucla-fashion-show", "ucla-campus-campaigns"];
+// The roles where animation was the work itself: Disney's Iwájú, the animated CTRL 4C short, and the animated promos for MUTHA and Refine LA.
+const carouselSlugs = ["kugali-iwaju", "ctrl-4c-campaign", "live-nation-mutha", "refine-la-zine"];
 const carouselProjects = carouselSlugs
   .map((slug) => projects.find((p) => p.slug === slug))
   .filter((p): p is NonNullable<typeof p> => Boolean(p));
