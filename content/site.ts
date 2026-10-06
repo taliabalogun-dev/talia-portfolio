@@ -1948,10 +1948,10 @@ export const animationCommissionsReel: FeaturedAnimation[] = [
     date: "2025",
     category: "Brand",
     skills: ["Graphic Designer", "Animator"],
-    src: "/images/animation-portfolio/commission-spilt-v1.jpg",
+    src: "/images/animation-portfolio/commission-spilt-v3.jpg",
     kind: "image",
     slides: [
-      { src: "/images/animation-portfolio/commission-spilt-v1.jpg", title: "SPILT Logo for Kai Honu", description: "Logo I designed and animated for Kai Honu's SPILT.", fit: "cover" },
+      { src: "/images/animation-portfolio/commission-spilt-v3.jpg", title: "SPILT Logo for Kai Honu", description: "Logo I designed and animated for Kai Honu's SPILT.", fit: "cover" },
     ],
   },
 ];

@@ -31,7 +31,7 @@ export default function AnimationPortfolioPage() {
       <section className="relative overflow-hidden bg-teal py-16 sm:py-20">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 top-0 h-64 sm:h-72 md:h-auto md:aspect-[2000/501]"
+          className="pointer-events-none absolute inset-x-0 top-0 h-48 sm:h-72 md:h-auto md:aspect-[2000/501]"
           style={{
             maskImage: "linear-gradient(to bottom, black 25%, transparent 72%)",
             WebkitMaskImage: "linear-gradient(to bottom, black 25%, transparent 72%)",
@@ -63,12 +63,17 @@ export default function AnimationPortfolioPage() {
             ← Back to home
           </Link>
 
-          <div className="mt-8 flex flex-col gap-8 md:flex-row md:items-center md:justify-between md:gap-12">
+          <div className="mt-4 flex flex-col gap-4 sm:mt-8 sm:gap-8 md:flex-row md:items-center md:justify-between md:gap-12">
             <div className="min-w-0 md:max-w-xl lg:max-w-2xl">
-              <h1 className="font-display text-balance text-6xl uppercase leading-[0.9] tracking-tight text-ink sm:text-8xl">
+              <h1 className="font-display whitespace-nowrap text-[2.35rem] uppercase leading-[0.95] tracking-tight text-ink min-[420px]:text-5xl sm:text-balance sm:whitespace-normal sm:text-8xl sm:leading-[0.9]">
                 Animation Portfolio
               </h1>
-              <p className="mt-4 text-base text-ink/85 sm:text-lg">
+              <p className="mt-2 text-sm text-ink/85 sm:hidden">
+                2D narrative animation staged in 3D space, with photo collage
+                folded into the frame. Browse the shorts, storyboards,
+                character design and concept art below.
+              </p>
+              <p className="mt-4 hidden text-lg text-ink/85 sm:block">
                 Narrative animation work built on 2D techniques, staged inside
                 environments and props modeled in 3D space. As a photographer, I
                 often fold photo collage into the frame too - the process below
@@ -107,7 +112,7 @@ export default function AnimationPortfolioPage() {
               </div>
             </div>
             <div className="order-first shrink-0 md:order-last">
-              <div className="relative h-44 w-44 overflow-hidden rounded-full shadow-2xl ring-4 ring-ink/90 sm:h-56 sm:w-56 md:h-72 md:w-72 lg:h-80 lg:w-80">
+              <div className="relative h-24 w-24 overflow-hidden rounded-full shadow-2xl ring-4 ring-ink/90 sm:h-56 sm:w-56 md:h-72 md:w-72 lg:h-80 lg:w-80">
                 <Image
                   src="/images/animation-portfolio/portrait.jpg"
                   alt="Illustrated self-portrait of Talia holding a tablet and stylus"
