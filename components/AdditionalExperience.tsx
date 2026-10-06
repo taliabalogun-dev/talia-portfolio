@@ -1,6 +1,12 @@
 import Link from "next/link";
 import { additionalExperience } from "@/content/site";
 
+// Roles without their own subpage lead the list so they are not lost below the ones that link out (the sort keeps each group's order).
+const items = [
+  ...additionalExperience.filter((item) => !item.slug),
+  ...additionalExperience.filter((item) => item.slug),
+];
+
 export default function AdditionalExperience() {
   return (
     <section id="additional-experience" className="bg-beige px-6 py-16">
@@ -10,7 +16,7 @@ export default function AdditionalExperience() {
         </h2>
         <div className="mt-6 rounded-2xl border border-accent/15 bg-teal-darker p-6">
           <div className="flex flex-col divide-y divide-ink/10">
-            {additionalExperience.map((item) => (
+            {items.map((item) => (
               <div
                 key={`${item.company}-${item.role}`}
                 className="flex flex-col gap-0.5 py-4 first:pt-0 last:pb-0"
