@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef } from "react";
-import { usePersistedIndex } from "@/lib/usePersistedIndex";
+import { useRef, useState } from "react";
+import { useResetOffscreen } from "@/lib/useResetOffscreen";
 import EnlargeableImage from "@/components/EnlargeableImage";
 import type { SlideImage } from "@/content/site";
 import type { PillTheme } from "@/content/pillTheme";
@@ -15,7 +15,9 @@ export default function SlideGallery({
   images: SlideImage[];
   theme?: PillTheme;
 }) {
-  const [index, setIndex] = usePersistedIndex(images[0]?.src ?? "gallery", images.length);
+  const [index, setIndex] = useState(0);
+  const frame = useRef<HTMLDivElement>(null);
+  useResetOffscreen(frame, () => setIndex(0));
   const touchStartX = useRef<number | null>(null);
 
   const goTo = (i: number) => {
@@ -39,6 +41,7 @@ export default function SlideGallery({
   return (
     <div>
       <div
+        ref={frame}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
         className="relative aspect-video w-full touch-pan-y select-none overflow-hidden rounded-xl border border-beige/15 bg-beige/5"

@@ -1,6 +1,7 @@
 "use client";
 
-import { usePersistedIndex } from "@/lib/usePersistedIndex";
+import { useRef, useState } from "react";
+import { useResetOffscreen } from "@/lib/useResetOffscreen";
 import Link from "next/link";
 import EnlargeableImage from "@/components/EnlargeableImage";
 import EnlargeableVideo from "@/components/EnlargeableVideo";
@@ -21,7 +22,9 @@ export default function CardSlideshow({
   ratio?: "4/3" | "16/9";
 }) {
   const slides = item.slides ?? [];
-  const [index, setIndex] = usePersistedIndex(slides[0]?.src ?? item.src, slides.length);
+  const [index, setIndex] = useState(0);
+  const frame = useRef<HTMLDivElement>(null);
+  useResetOffscreen(frame, () => setIndex(0));
   if (slides.length === 0) return null;
   const go = (n: number) => setIndex(((n % slides.length) + slides.length) % slides.length);
   const current = slides[index];
@@ -35,6 +38,7 @@ export default function CardSlideshow({
   return (
     <>
       <div
+        ref={frame}
         className={`relative w-full overflow-hidden bg-paper ${
           (uniform ? ratio === "16/9" : allVideo) ? "aspect-video" : "aspect-[4/3]"
         }`}
