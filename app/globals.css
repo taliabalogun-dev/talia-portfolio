@@ -21,7 +21,7 @@
   /* My Work's dedicated backdrop — the one teal surface on the site. */
   --color-teal: #2c6672;
   --color-teal-deep: #16333a;
-  --color-teal-darker: #241708; /* brown-black, same as --color-hero-ink */
+  --color-teal-darker: #141210; /* near-black used for the dark boxes and buttons */
   /* About page's lighter counterpart to the teal palette. */
   --color-sky: #cfe4ea;
   --color-sky-deep: #a9cbd6;
