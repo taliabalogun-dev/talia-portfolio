@@ -1686,6 +1686,20 @@ export const featuredAnimationReel: FeaturedAnimation[] = [
   },
 ];
 
+/**
+ * The "Featured Animation" reel for a role page (or the More About Me page when no slug is given).
+ * A page leaves out its own film; Lost and Found and Getting Unready only appear on the Refine LA and
+ * CTRL 4C pages (and in the Animation Portfolio, which doesn't use this reel).
+ */
+const lostAndFoundSrcs = new Set(["/videos/lost-and-found.mp4", "/videos/getting-unready.mp4"]);
+const keepsAllFilms = new Set(["refine-la-zine", "ctrl-4c-campaign"]);
+export function featuredAnimationFor(slug?: string): FeaturedAnimation[] {
+  return featuredAnimationReel.filter(
+    (f) =>
+      f.projectSlug !== slug && (keepsAllFilms.has(slug ?? "") || !lostAndFoundSrcs.has(f.src)),
+  );
+}
+
 /** The Animation Portfolio page splits the films: story-led shorts are Narrative, the rest are Experimental. */
 const experimentalSrcs = new Set([
   "/videos/mainland-nostalgia.mp4",

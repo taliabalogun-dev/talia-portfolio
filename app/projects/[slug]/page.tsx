@@ -8,7 +8,7 @@ import EnlargeableImage from "@/components/EnlargeableImage";
 import EnlargeableVideo from "@/components/EnlargeableVideo";
 import OtherFeaturedAnimation from "@/components/OtherFeaturedAnimation";
 import RoleNav from "@/components/RoleNav";
-import { projects, featuredAnimationReel, featuredProductionsFor } from "@/content/site";
+import { projects, featuredAnimationFor, featuredProductionsFor } from "@/content/site";
 import { getPillTheme } from "@/content/pillTheme";
 
 export function generateStaticParams() {
@@ -412,9 +412,7 @@ export default async function ProjectPage(
 
           {project.showFeaturedAnimation && (
             <OtherFeaturedAnimation
-              items={featuredAnimationReel.filter(
-                (item) => item.projectSlug !== project.slug
-              )}
+              items={featuredAnimationFor(project.slug)}
               action={{ label: "View Animation Portfolio", href: "/animation-portfolio" }}
               autoplayVideos
             />

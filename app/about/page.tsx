@@ -5,7 +5,7 @@ import ProjectCarousel from "@/components/ProjectCarousel";
 import OtherFeaturedAnimation from "@/components/OtherFeaturedAnimation";
 import {
   bio,
-  featuredAnimationReel,
+  featuredAnimationFor,
   featuredProductionsFor,
   projects,
   site,
@@ -172,7 +172,7 @@ export default function AboutPage() {
               compact
             />
             <OtherFeaturedAnimation
-              items={featuredAnimationReel}
+              items={featuredAnimationFor()}
               heading="Featured Animation"
               action={{ label: "View Animation Portfolio", href: "/animation-portfolio" }}
               autoplayVideos
