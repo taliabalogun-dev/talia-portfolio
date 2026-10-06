@@ -1877,6 +1877,71 @@ export const inProgressAnimationReel: FeaturedAnimation[] = [
   },
 ];
 
+/** Animation-based commissions on the Animation Portfolio page. Titles and clients match the Co Curate listings. */
+export const animationCommissionsReel: FeaturedAnimation[] = [
+  {
+    title: "Crickets Cover Art for YTBOUTTHATACTION",
+    description: "Cover art I illustrated and animated for YTBOUTTHATACTION.",
+    date: "2025",
+    category: "Cover Art",
+    skills: ["Illustrator", "Animator"],
+    src: "/images/animation-portfolio/commission-crickets-v1.jpg",
+    kind: "image",
+    slides: [
+      { src: "/images/animation-portfolio/commission-crickets-v1.jpg", title: "Crickets Cover Art for YTBOUTTHATACTION", description: "Cover art I illustrated and animated for YTBOUTTHATACTION." },
+      { src: "/images/animation-portfolio/commission-swat-v1.jpg", title: "SWAT - Earlier Version", description: "An earlier version of the same cover art, with the original title." },
+    ],
+  },
+  {
+    title: "Carry Me Cover Art for Cheluchi",
+    description: "Cover art I illustrated and animated for Cheluchi.",
+    date: "2025",
+    category: "Cover Art",
+    skills: ["Illustrator", "Animator"],
+    src: "/images/animation-portfolio/commission-carry-me-v1.jpg",
+    kind: "image",
+    slides: [
+      { src: "/images/animation-portfolio/commission-carry-me-v1.jpg", title: "Carry Me Cover Art for Cheluchi", description: "Cover art I illustrated and animated for Cheluchi." },
+    ],
+  },
+  {
+    title: "Cover Art for Siraheem",
+    description: "Cover art I illustrated and animated for Siraheem.",
+    date: "2025",
+    category: "Cover Art",
+    skills: ["Illustrator", "Animator"],
+    src: "/images/animation-portfolio/commission-siraheem-v1.jpg",
+    kind: "image",
+    slides: [
+      { src: "/images/animation-portfolio/commission-siraheem-v1.jpg", title: "Cover Art for Siraheem", description: "Cover art I illustrated and animated for Siraheem." },
+    ],
+  },
+  {
+    title: "'OMG' Cover Art for Brazyybih",
+    description: "Cover art I illustrated and animated for Brazyybih.",
+    date: "2025",
+    category: "Cover Art",
+    skills: ["Illustrator", "Animator"],
+    src: "/images/animation-portfolio/commission-omg-v1.jpg",
+    kind: "image",
+    slides: [
+      { src: "/images/animation-portfolio/commission-omg-v1.jpg", title: "'OMG' Cover Art for Brazyybih", description: "Cover art I illustrated and animated for Brazyybih." },
+    ],
+  },
+  {
+    title: "SPILT Logo for Kai Honu",
+    description: "Logo I designed and animated for Kai Honu's SPILT.",
+    date: "2025",
+    category: "Brand",
+    skills: ["Graphic Designer", "Animator"],
+    src: "/images/animation-portfolio/commission-spilt-v1.jpg",
+    kind: "image",
+    slides: [
+      { src: "/images/animation-portfolio/commission-spilt-v1.jpg", title: "SPILT Logo for Kai Honu", description: "Logo I designed and animated for Kai Honu's SPILT." },
+    ],
+  },
+];
+
 /** "Character Design" reel on the Animation Portfolio page. */
 export const characterDesignReel: FeaturedAnimation[] = [
   {
