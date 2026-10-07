@@ -101,6 +101,15 @@ export default function CardSlideshow({
         <p className={`text-paper-ink/70 ${compact ? "mt-0.5 text-xs" : "mt-1 text-sm"}`}>
           {current.description}
         </p>
+        {item.roleLabel && (
+          <div
+            className={`font-cocurate mt-3 inline-block rounded-full bg-cocurate-red font-semibold tracking-wide text-white ${
+              compact ? "px-3 py-1 text-[10px]" : "px-4 py-1.5 text-xs"
+            }`}
+          >
+            {item.roleLabel}
+          </div>
+        )}
         {slides.length > 1 && (
           <div className="mt-3 flex items-center justify-between">
             <button type="button" onClick={() => go(index - 1)} aria-label="Previous" className={nav}>

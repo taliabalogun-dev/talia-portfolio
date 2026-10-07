@@ -1197,6 +1197,12 @@ export const projects: Project[] = [
           roleLabel: "Illustration Contractor",
           src: "/images/commissions/commission-omg-brazyybih.jpg",
           kind: "image",
+          slides: [
+            { src: "/images/commissions/commission-omg-brazyybih.jpg", title: "'OMG' Cover Art for Brazyybih", description: "Cover art I illustrated for Brazyybih." },
+            { src: "/images/animation-portfolio/omg-process-1-v1.jpg", title: "Process - low-angle colour study", description: "Colour study of the giant looking down on the crossing." },
+            { src: "/images/animation-portfolio/omg-process-2-v1.jpg", title: "Process - colour block-in", description: "Colour block-in of the figure among the city blocks." },
+            { src: "/images/animation-portfolio/omg-process-3-v1.jpg", title: "Process - layouts and sketches", description: "Thumbnail layouts and figure sketches for the cover." },
+          ],
         },
         {
           title: "Carry Me Cover Art for Cheluchi",
@@ -1940,6 +1946,9 @@ export const animationCommissionsReel: FeaturedAnimation[] = [
     kind: "image",
     slides: [
       { src: "/images/animation-portfolio/commission-omg-v1.jpg", title: "'OMG' Cover Art for Brazyybih", description: "Cover art I illustrated and animated for Brazyybih.", fit: "cover" },
+      { src: "/images/animation-portfolio/omg-process-1-v1.jpg", title: "Process - low-angle colour study", description: "Colour study of the giant looking down on the crossing.", fit: "contain" },
+      { src: "/images/animation-portfolio/omg-process-2-v1.jpg", title: "Process - colour block-in", description: "Colour block-in of the figure among the city blocks.", fit: "contain" },
+      { src: "/images/animation-portfolio/omg-process-3-v1.jpg", title: "Process - layouts and sketches", description: "Thumbnail layouts and figure sketches for the cover.", fit: "contain" },
     ],
   },
   {
