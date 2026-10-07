@@ -1159,6 +1159,16 @@ export const projects: Project[] = [
               fit: "contain",
               bg: "#ffffff",
             },
+            {
+              src: "/videos/maddies-logo-ticket-v1.mp4",
+              kind: "video",
+              autoplay: true,
+              poster: "/images/animation-portfolio/maddies-logo-ticket-poster-v1.jpg",
+              title: "'Maddies' Logo Animation, Ticket Call-out",
+              description: "The logo with the \"get your tickets now, link in bio\" call-out, made for the Maddiewurld campaign.",
+              fit: "contain",
+              bg: "#ffffff",
+            },
           ],
         },
         {
