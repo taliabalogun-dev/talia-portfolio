@@ -3,19 +3,21 @@
 import { useEffect, useRef } from "react";
 import { flightPaths } from "@/lib/flightPaths";
 
-const COOLDOWN = 800; // ms between the end of one flight and the next
+const COOLDOWN = 500; // shortest calm between one flight ending and the next taking off (mouse moves)
 // The animation frames include the smoke puffs behind the plane, so the picture is wider than the plane itself.
 const PIC_SCALE = 1.686; // picture width as a multiple of the plane's own width
 const PIC_RATIO = 450 / 580; // picture height / width
 const PLANE_CX = 0.715; // where the middle of the plane sits in the picture, across and down
 const PLANE_CY = 0.375;
-const IDLE = 4000; // ms without any movement before the plane goes up on its own
+const GAP_MIN = 600; // the schedule: after each flight lands, the next goes up a second or so later
+const GAP_MAX = 1600;
 
 /**
  * The avatar flies across the screen along one of the illustrated paths, one path at a time, doing a
- * loop-the-loop on the way and shrinking gradually as it heads away. A flight takes off whenever the
- * mouse moves (or the page is scrolled or touched, on phones), and if nothing has moved for a while it
- * goes up on its own. Most flights cross the middle of the screen. Flights alternate sides and never overlap.
+ * loop-the-loop on the way and shrinking gradually as it heads away. Flights run on a schedule, a short
+ * random gap (about a second or two) after each one lands, and a mouse move (or a scroll or touch, on
+ * phones) can send the next one up sooner. Most flights cross the middle of the screen. Flights alternate
+ * sides and never overlap.
  */
 export default function PlaneFlights({ src }: { src: string }) {
   const plane = useRef<HTMLImageElement>(null);
@@ -28,11 +30,12 @@ export default function PlaneFlights({ src }: { src: string }) {
     let flying = false;
     let raf = 0;
     let lastEnd = -1e9;
-    let lastActivity = performance.now();
+    let nextTimer = 0;
     let flightNo = 0;
     let lastPath = -1;
 
     const fly = () => {
+      window.clearTimeout(nextTimer);
       flying = true;
       const fromRight = flightNo % 2 === 1; // first from the left, then the right, and so on
       flightNo += 1;
@@ -103,7 +106,7 @@ export default function PlaneFlights({ src }: { src: string }) {
         };
       };
 
-      const duration = Math.max(5500, total * 4.2) + 1800; // roughly 240px a second, plus the loop
+      const duration = Math.max(4500, total * 3.3) + 1500; // roughly 300px a second, plus the loop
       const t0 = performance.now();
       let prevAng = 0;
       el.style.opacity = "1";
@@ -132,6 +135,7 @@ export default function PlaneFlights({ src }: { src: string }) {
           el.style.opacity = "0";
           flying = false;
           lastEnd = performance.now();
+          scheduleNext();
         }
       };
       raf = requestAnimationFrame(frame);
@@ -139,30 +143,33 @@ export default function PlaneFlights({ src }: { src: string }) {
 
     const canFly = () => !flying && !document.hidden && performance.now() - lastEnd >= COOLDOWN;
 
-    // Any movement sends the plane up (if it isn't already flying).
-    const onActivity = () => {
-      lastActivity = performance.now();
-      if (canFly()) fly();
-    };
+    // The schedule: a short, slightly random gap after each landing.
+    function scheduleNext() {
+      window.clearTimeout(nextTimer);
+      nextTimer = window.setTimeout(
+        () => {
+          if (canFly()) fly();
+          else if (!flying) scheduleNext(); // tab in the background: look again shortly
+        },
+        GAP_MIN + Math.random() * (GAP_MAX - GAP_MIN),
+      );
+    }
 
-    // Nothing has moved for a while: send one anyway.
-    const idleCheck = () => {
-      if (canFly() && performance.now() - lastActivity >= IDLE) {
-        lastActivity = performance.now();
-        fly();
-      }
+    // Any movement sends the plane up sooner (if it isn't already flying).
+    const onActivity = () => {
+      if (canFly()) fly();
     };
 
     const first = window.setTimeout(() => {
       if (canFly()) fly();
+      else scheduleNext();
     }, 1200);
-    const timer = window.setInterval(idleCheck, 500);
     window.addEventListener("mousemove", onActivity, { passive: true });
     window.addEventListener("scroll", onActivity, { passive: true });
     window.addEventListener("touchstart", onActivity, { passive: true });
     return () => {
       window.clearTimeout(first);
-      window.clearInterval(timer);
+      window.clearTimeout(nextTimer);
       window.removeEventListener("mousemove", onActivity);
       window.removeEventListener("scroll", onActivity);
       window.removeEventListener("touchstart", onActivity);
