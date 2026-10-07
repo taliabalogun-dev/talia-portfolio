@@ -4,6 +4,11 @@ import { useEffect, useRef } from "react";
 import { flightPaths } from "@/lib/flightPaths";
 
 const COOLDOWN = 800; // ms between the end of one flight and the next
+// The animation frames include the smoke puffs behind the plane, so the picture is wider than the plane itself.
+const PIC_SCALE = 1.686; // picture width as a multiple of the plane's own width
+const PIC_RATIO = 450 / 580; // picture height / width
+const PLANE_CX = 0.715; // where the middle of the plane sits in the picture, across and down
+const PLANE_CY = 0.375;
 const IDLE = 4000; // ms without any movement before the plane goes up on its own
 
 /**
@@ -48,7 +53,10 @@ export default function PlaneFlights({ src }: { src: string }) {
       const vh = window.innerHeight;
       const size = vw < 640 ? 110 : 170;
       const height = size * (378 / 360);
-      el.style.width = `${size}px`;
+      const picW = size * PIC_SCALE;
+      const picH = picW * PIC_RATIO;
+      el.style.width = `${picW}px`;
+      el.style.transformOrigin = `${PLANE_CX * 100}% ${PLANE_CY * 100}%`;
 
       // Everything is worked out as if flying to the right; a flight from the right is mirrored at the end.
       const inch = 96;
@@ -117,7 +125,7 @@ export default function PlaneFlights({ src }: { src: string }) {
         const X = fromRight ? vw - pos.x : pos.x;
         const rot = fromRight ? -ang : ang;
         el.style.opacity = String(Math.min(1, (1 - p) * 12));
-        el.style.transform = `translate(${X - size / 2}px, ${pos.y - height / 2}px) rotate(${rot}deg) scale(${fromRight ? -s : s}, ${s})`;
+        el.style.transform = `translate(${X - picW * PLANE_CX}px, ${pos.y - picH * PLANE_CY}px) rotate(${rot}deg) scale(${fromRight ? -s : s}, ${s})`;
         if (p < 1) {
           raf = requestAnimationFrame(frame);
         } else {
