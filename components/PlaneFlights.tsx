@@ -3,14 +3,14 @@
 import { useEffect, useRef } from "react";
 import { flightPaths } from "@/lib/flightPaths";
 
-const MIN_GAP = 5000; // ms of calm between the end of one flight and the start of the next
-const LINGER = 14000; // a second flight on a screen the viewer is just reading, ms after the first
+const COOLDOWN = 800; // ms between the end of one flight and the next
+const IDLE = 4000; // ms without any movement before the plane goes up on its own
 
 /**
  * The avatar flies across the screen along one of the illustrated paths, one path at a time, doing a
- * loop-the-loop on the way and shrinking gradually as it heads away. Each screenful of the page gets
- * one or two flights: one when the viewer arrives (the very first shortly after load) and a second
- * once they start scrolling, or after a while if they stay put. Flights alternate sides and never overlap.
+ * loop-the-loop on the way and shrinking gradually as it heads away. A flight takes off whenever the
+ * mouse moves (or the page is scrolled or touched, on phones), and if nothing has moved for a while it
+ * goes up on its own. Most flights cross the middle of the screen. Flights alternate sides and never overlap.
  */
 export default function PlaneFlights({ src }: { src: string }) {
   const plane = useRef<HTMLImageElement>(null);
@@ -23,21 +23,25 @@ export default function PlaneFlights({ src }: { src: string }) {
     let flying = false;
     let raf = 0;
     let lastEnd = -1e9;
-    let lastStart = -1e9;
+    let lastActivity = performance.now();
     let flightNo = 0;
     let lastPath = -1;
-    const mountedAt = performance.now();
-    const perPage = new Map<number, number>();
-    const pageIndex = () => Math.floor(window.scrollY / Math.max(1, window.innerHeight));
 
-    const fly = (page: number) => {
+    const fly = () => {
       flying = true;
-      perPage.set(page, (perPage.get(page) ?? 0) + 1);
-      lastStart = performance.now();
       const fromRight = flightNo % 2 === 1; // first from the left, then the right, and so on
       flightNo += 1;
-      let pick = Math.floor(Math.random() * flightPaths.length);
-      if (pick === lastPath) pick = (pick + 1) % flightPaths.length;
+      // The two paths that cross the middle of the screen are chosen three times as often as the high and low ones.
+      const weights: number[] = flightPaths.map((path, i) => (i === lastPath ? 0 : path[Math.floor(path.length / 2)][1] > 0.3 && path[Math.floor(path.length / 2)][1] < 0.7 ? 3 : 1));
+      let roll = Math.random() * weights.reduce((a, b) => a + b, 0);
+      let pick = 0;
+      for (let i = 0; i < weights.length; i++) {
+        roll -= weights[i];
+        if (roll <= 0) {
+          pick = i;
+          break;
+        }
+      }
       lastPath = pick;
 
       const vw = window.innerWidth;
@@ -125,27 +129,35 @@ export default function PlaneFlights({ src }: { src: string }) {
       raf = requestAnimationFrame(frame);
     };
 
-    // Decide, every so often, whether this screenful is due a flight.
-    const tick = () => {
-      if (flying || document.hidden) return;
-      const now = performance.now();
-      if (now - lastEnd < MIN_GAP) return;
-      const page = pageIndex();
-      const n = perPage.get(page) ?? 0;
-      if (n >= 2) return;
-      if (n === 0) {
-        if (page === 0 && now - mountedAt < 1200) return; // let the page settle first
-        fly(page);
-      } else if ((page === 0 && window.scrollY >= 24) || now - lastStart >= LINGER) {
-        // The second flight on the opening screen starts as scrolling begins; on any screen, a second
-        // one follows after a while if the viewer stays put.
-        fly(page);
+    const canFly = () => !flying && !document.hidden && performance.now() - lastEnd >= COOLDOWN;
+
+    // Any movement sends the plane up (if it isn't already flying).
+    const onActivity = () => {
+      lastActivity = performance.now();
+      if (canFly()) fly();
+    };
+
+    // Nothing has moved for a while: send one anyway.
+    const idleCheck = () => {
+      if (canFly() && performance.now() - lastActivity >= IDLE) {
+        lastActivity = performance.now();
+        fly();
       }
     };
 
-    const timer = window.setInterval(tick, 600);
+    const first = window.setTimeout(() => {
+      if (canFly()) fly();
+    }, 1200);
+    const timer = window.setInterval(idleCheck, 500);
+    window.addEventListener("mousemove", onActivity, { passive: true });
+    window.addEventListener("scroll", onActivity, { passive: true });
+    window.addEventListener("touchstart", onActivity, { passive: true });
     return () => {
+      window.clearTimeout(first);
       window.clearInterval(timer);
+      window.removeEventListener("mousemove", onActivity);
+      window.removeEventListener("scroll", onActivity);
+      window.removeEventListener("touchstart", onActivity);
       cancelAnimationFrame(raf);
     };
   }, []);
