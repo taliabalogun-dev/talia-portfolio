@@ -16,7 +16,7 @@ export default function FolderTabs({ folders }: { folders: [Folder, Folder] }) {
   const c = colours[open];
   return (
     <div className="mt-10 sm:mt-16">
-      <div role="tablist" className="flex items-end gap-1.5 pl-6 sm:pl-8">
+      <div role="tablist" className="flex items-end gap-1.5 pl-6 pr-6 sm:pl-8 sm:pr-0">
         {folders.map((f, i) => {
           const active = i === open;
           return (
