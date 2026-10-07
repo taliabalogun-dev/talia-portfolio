@@ -115,6 +115,8 @@ export type FeaturedAnimation = {
   password?: string;
   /** Matches a Project.slug - the card is hidden on that project's own subpage so it doesn't feature itself. */
   projectSlug?: string;
+  /** 0-1: a dark wash and play button over the poster until the video starts. */
+  tint?: number;
   /** Replaces the skills-pill row with a single bold banner (e.g. "Illustration Contractor"). */
   roleLabel?: string;
   /** Label for the `href` button. Defaults to "See Full Project →". */
@@ -122,7 +124,7 @@ export type FeaturedAnimation = {
   /** Image only: which part of the picture stays visible when it is cropped to the card. Defaults to center. */
   position?: "top" | "center" | "bottom";
   /** Several pieces shown as one slideshow card; each slide carries its own title and description. */
-  slides?: { src: string; title: string; description: string; kind?: "image" | "video"; poster?: string; autoplay?: boolean; collage?: string[]; fit?: "cover" | "contain"; bg?: string }[];
+  slides?: { src: string; title: string; description: string; kind?: "image" | "video"; poster?: string; autoplay?: boolean; collage?: string[]; fit?: "cover" | "contain"; bg?: string; tint?: number }[];
 };
 
 export type Project = {
@@ -1755,6 +1757,8 @@ const experimentalSrcs = new Set([
   "/videos/refine-decomposition-promo.mp4",
 ]);
 /** On the Animation Portfolio page CTRL 4C leads Narrative and Lost and Found follows; project pages keep the shared order. */
+/** The dark wash over the Narrative Animation posters before they play: the previous look (about 35%) reduced by 40%. */
+const NARRATIVE_TINT = 0.21;
 const narrativeOrder = [
   "/videos/ctrl4c-full-film.mp4",
   "/videos/lost-and-found.mp4",
@@ -1763,18 +1767,20 @@ const narrativeOrder = [
 export const narrativeAnimationReel = featuredAnimationReel
   .filter((f) => !experimentalSrcs.has(f.src))
   .sort((a, b) => narrativeOrder.indexOf(a.src) - narrativeOrder.indexOf(b.src))
+  .map((f) => (f.src === "/videos/ctrl4c-full-film.mp4" ? { ...f, tint: NARRATIVE_TINT } : f))
   .map((f) =>
     f.src === "/videos/lost-and-found.mp4"
       ? {
           ...f,
           slides: [
-            { src: f.src, kind: "video" as const, poster: f.poster, title: f.title, description: f.description },
+            { src: f.src, kind: "video" as const, poster: f.poster, title: f.title, description: f.description, tint: NARRATIVE_TINT },
             {
               src: "/videos/lost-and-found-animation-stand.mp4",
               kind: "video" as const,
               poster: "/images/animation-portfolio/animation-stand-poster.jpg",
               title: "Animated on a traditional Disney animation stand",
               description: "Screen-printed digital frames, shot frame by frame on the stand.",
+              tint: NARRATIVE_TINT,
             },
           ],
         }

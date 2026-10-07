@@ -16,6 +16,7 @@ export default function EnlargeableVideo({
   password,
   theme,
   externalLock = false,
+  tint,
 }: {
   src: string;
   poster?: string;
@@ -30,7 +31,10 @@ export default function EnlargeableVideo({
   theme?: PillTheme;
   /** The parent places its own padlock (e.g. beside a badge), so don't draw one in the corner. */
   externalLock?: boolean;
+  /** 0-1: a dark wash over the poster with a play button, until the video is started. */
+  tint?: number;
 }) {
+  const [started, setStarted] = useState(false);
   const [open, setOpen] = useState(false);
   const gate = useVideoGate(src, password);
   const [justUnlocked, setJustUnlocked] = useState(false);
@@ -74,11 +78,12 @@ export default function EnlargeableVideo({
   if (gate.locked && !gate.asking) {
     return (
       <div className={`relative flex items-center justify-center bg-black ${className}`} style={posterBg}>
+        {tint ? <div className="absolute inset-0 bg-black" style={{ opacity: tint }} /> : null}
         <button
           type="button"
           onClick={gate.ask}
           aria-label="Play"
-          className="grid h-16 w-16 place-items-center rounded-full bg-black/55 text-white transition-colors hover:bg-black/75"
+          className="relative grid h-16 w-16 place-items-center rounded-full bg-black/55 text-white transition-colors hover:bg-black/75"
         >
           <svg viewBox="0 0 24 24" className="ml-1 h-7 w-7" fill="currentColor" aria-hidden="true">
             <path d="M7 4.5v15l13-7.5z" />
@@ -141,7 +146,7 @@ export default function EnlargeableVideo({
         ref={videoRef}
         src={src}
         poster={poster}
-        controls
+        controls={!tint || started || !!autoplay}
         playsInline
         autoPlay={justUnlocked}
         muted={autoplay}
@@ -149,6 +154,24 @@ export default function EnlargeableVideo({
         preload="metadata"
         className={className}
       />
+      {tint && !started && !autoplay ? (
+        <button
+          type="button"
+          aria-label="Play"
+          onClick={() => {
+            setStarted(true);
+            videoRef.current?.play().catch(() => {});
+          }}
+          className="absolute inset-0 z-[5] grid place-items-center"
+          style={{ background: `rgba(0,0,0,${tint})` }}
+        >
+          <span className="grid h-16 w-16 place-items-center rounded-full bg-black/55 text-white transition-colors hover:bg-black/75">
+            <svg viewBox="0 0 24 24" className="ml-1 h-7 w-7" fill="currentColor" aria-hidden="true">
+              <path d="M7 4.5v15l13-7.5z" />
+            </svg>
+          </span>
+        </button>
+      ) : null}
       {hasExtras && (
         <button
           type="button"

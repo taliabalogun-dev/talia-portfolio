@@ -82,6 +82,7 @@ export default function OtherFeaturedAnimation({
                   poster={item.poster}
                   password={item.password}
                   autoplay={autoplayVideos && !item.password}
+                  tint={item.tint}
                   externalLock
                   className="h-full w-full object-cover"
                 />
