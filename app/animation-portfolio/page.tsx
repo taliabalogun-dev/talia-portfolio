@@ -3,6 +3,7 @@ import Link from "next/link";
 import Nav from "@/components/Nav";
 import AnimationAtWork from "@/components/AnimationAtWork";
 import FolderTabs from "@/components/FolderTabs";
+import PlaneFlights from "@/components/PlaneFlights";
 import ProjectCarousel from "@/components/ProjectCarousel";
 import OtherFeaturedAnimation from "@/components/OtherFeaturedAnimation";
 import {
@@ -28,6 +29,7 @@ export default function AnimationPortfolioPage() {
   return (
     <>
       <Nav />
+      <PlaneFlights src="/images/animation-portfolio/avatar-plane.webp" />
       <section className="relative overflow-hidden bg-teal py-16 sm:py-20">
         <div
           aria-hidden="true"
