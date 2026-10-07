@@ -195,8 +195,9 @@ export default function AnimationPortfolioPage() {
 
           <OtherFeaturedAnimation
             items={animationCommissionsReel}
-            heading="Animation Commissions"
-            description="Animation-based work I delivered for clients."
+            heading="Animation Based Commissions"
+            description="Animation based commissions I delivered for clients."
+            folderSize
           />
         </div>
       </section>

@@ -15,6 +15,7 @@ export default function OtherFeaturedAnimation({
   tileRatio = "4/3",
   purpleButtons = false,
   autoplayVideos = false,
+  folderSize = false,
 }: {
   items: FeaturedAnimation[];
   heading?: string;
@@ -33,6 +34,8 @@ export default function OtherFeaturedAnimation({
   purpleButtons?: boolean;
   /** Videos play automatically, muted and looping, while on screen. Password-protected films stay click-to-play. */
   autoplayVideos?: boolean;
+  /** Size the tiles exactly like the ones inside the folder panels (Concept Art etc.), 4:3 pictures included. */
+  folderSize?: boolean;
 }) {
   return (
     <div className={embedded ? "" : "mt-8 border-t border-beige/15 pt-6 sm:mt-16 sm:pt-10"}>
@@ -61,11 +64,11 @@ export default function OtherFeaturedAnimation({
           <div
             key={item.src}
             className={`shrink-0 snap-start overflow-hidden rounded-2xl border border-beige/10 bg-white shadow-xl ${
-              compact ? "w-[62%] sm:w-[240px]" : "w-[85%] sm:w-[380px]"
+              compact ? "w-[62%] sm:w-[240px]" : folderSize ? "w-[75%] sm:w-[380px]" : "w-[85%] sm:w-[380px]"
             }`}
           >
             {item.slides && item.slides.length > 0 ? (
-              <CardSlideshow item={item} compact={compact} uniform={embedded} ratio={tileRatio} />
+              <CardSlideshow item={item} compact={compact} uniform={embedded || folderSize} ratio={tileRatio} />
             ) : (
               <>
             <div
