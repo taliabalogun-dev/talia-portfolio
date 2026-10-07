@@ -14,10 +14,10 @@ const clamp01 = (v: number) => Math.min(1, Math.max(0, v));
 const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 
 // Everything below is in fractions of the screen, taken from the two storyboard frames.
-const C0 = { x: 0.1, y: 0.77, r: 0.1 }; // frame 1: a small circle at the bottom left, plane inside it
+const C0 = { x: 0.1, y: 0.77 }; // frame 1: a small circle at the bottom left, plane inside it (about 17% of the screen's short side, so the full-size plane sits comfortably inside)
 const P0 = { x: 0.085, y: 0.79 }; // the plane in frame 1
 const P1 = { x: 0.6, y: 0.36 }; // the plane in frame 2: the loop-the-loop starts here
-const P3 = { x: 1.1, y: 0.16 }; // and the plane climbs away off the top right
+const P3Y = 0.2; // and the plane settles into level flight to the right, vanishing an inch before the far edge
 const ENTRY_ANGLE = (-28 * Math.PI) / 180; // the way the plane is heading as it flies into the loop
 
 const TOTAL = 6400; // ms
@@ -47,11 +47,12 @@ export default function AnimationIntro({ planeSrc }: { planeSrc: string }) {
     const vw = window.innerWidth;
     const vh = window.innerHeight;
     const vmin = Math.min(vw, vh);
-    const planeW = Math.max(80, Math.min(vmin * 0.16, 190)); // the plane's own width
+    const planeW = vw < 640 ? 110 : 170; // the same size as the plane in the regular flights
     const picW = planeW * PIC_SCALE;
     const picH = picW * PIC_RATIO;
     el.style.width = `${picW}px`;
     el.style.transformOrigin = `${PLANE_CX * 100}% ${PLANE_CY * 100}%`;
+    const r0 = Math.max(86, Math.min(vmin * 0.17, 140));
     const fullR = Math.hypot(vw, vh) * 0.55; // big enough to uncover every corner from the centre
     const loopR = vmin * 0.09;
     const px = (p: { x: number; y: number }) => ({ x: p.x * vw, y: p.y * vh });
@@ -80,7 +81,7 @@ export default function AnimationIntro({ planeSrc }: { planeSrc: string }) {
       pts.push({ x: a1.x + dir.x * f + nrm.x * n, y: a1.y + dir.y * f + nrm.y * n });
     }
     const e0 = pts[pts.length - 1];
-    const e1 = px(P3);
+    const e1 = { x: vw - 96, y: P3Y * vh };
     const lead2 = Math.hypot(e1.x - e0.x, e1.y - e0.y) * 0.4;
     const ctrl2 = { x: e0.x + dir.x * lead2, y: e0.y + dir.y * lead2 };
     for (let i = 1; i <= 90; i++) pts.push(bez(e0, ctrl2, e1, i / 90));
@@ -114,7 +115,8 @@ export default function AnimationIntro({ planeSrc }: { planeSrc: string }) {
       }
       return { x: x / n, y: y / n };
     };
-    const scaleAt = (u: number) => lerp(1, 0.35, u);
+    // Shrinks gradually over the whole flight, the way the regular flights do, and fades at the very end.
+    const scaleAt = (u: number) => 1 - 0.93 * u;
 
     let raf = 0;
     let prevAng = 0;
@@ -127,7 +129,7 @@ export default function AnimationIntro({ planeSrc }: { planeSrc: string }) {
       const f = followed(u);
       const cx = lerp(f.x, vw / 2, u);
       const cy = lerp(f.y, vh / 2, u);
-      const r = lerp(C0.r * vmin, fullR, u);
+      const r = lerp(r0, fullR, u);
       const mask = `radial-gradient(circle at ${cx}px ${cy}px, transparent ${Math.max(0, r - 0.6)}px, ${YELLOW} ${r + 0.6}px)`;
       ov.style.maskImage = mask;
       ov.style.webkitMaskImage = mask;
@@ -142,7 +144,7 @@ export default function AnimationIntro({ planeSrc }: { planeSrc: string }) {
       while (ang - prevAng < -180) ang += 360;
       prevAng = ang;
       const s = scaleAt(u);
-      el.style.opacity = "1";
+      el.style.opacity = String(Math.min(1, (1 - u) * 14));
       el.style.transform = `translate(${p.x - picW * PLANE_CX}px, ${p.y - picH * PLANE_CY}px) rotate(${ang}deg) scale(${s})`;
 
       if (u < 1) {
@@ -175,8 +177,8 @@ export default function AnimationIntro({ planeSrc }: { planeSrc: string }) {
             className="page-intro pointer-events-none fixed inset-0 z-[60]"
             style={{
               background: YELLOW,
-              WebkitMaskImage: `radial-gradient(circle at ${C0.x * 100}% ${C0.y * 100}%, transparent ${C0.r * 100}vmin, ${YELLOW} ${C0.r * 100}vmin)`,
-              maskImage: `radial-gradient(circle at ${C0.x * 100}% ${C0.y * 100}%, transparent ${C0.r * 100}vmin, ${YELLOW} ${C0.r * 100}vmin)`,
+              WebkitMaskImage: `radial-gradient(circle at ${C0.x * 100}% ${C0.y * 100}%, transparent clamp(86px, 17vmin, 140px), ${YELLOW} clamp(86px, 17vmin, 140px))`,
+              maskImage: `radial-gradient(circle at ${C0.x * 100}% ${C0.y * 100}%, transparent clamp(86px, 17vmin, 140px), ${YELLOW} clamp(86px, 17vmin, 140px))`,
             }}
           />
           {/* eslint-disable-next-line @next/next/no-img-element */}

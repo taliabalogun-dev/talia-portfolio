@@ -164,7 +164,7 @@ export default function PlaneFlights({ src, enabled = true }: { src: string; ena
     const first = window.setTimeout(() => {
       if (canFly()) fly();
       else scheduleNext();
-    }, 1200);
+    }, 700);
     window.addEventListener("mousemove", onActivity, { passive: true });
     window.addEventListener("scroll", onActivity, { passive: true });
     window.addEventListener("touchstart", onActivity, { passive: true });
