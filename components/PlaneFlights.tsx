@@ -19,10 +19,11 @@ const GAP_MAX = 1600;
  * phones) can send the next one up sooner. Most flights cross the middle of the screen. Flights alternate
  * sides and never overlap.
  */
-export default function PlaneFlights({ src }: { src: string }) {
+export default function PlaneFlights({ src, enabled = true }: { src: string; enabled?: boolean }) {
   const plane = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
+    if (!enabled) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const el = plane.current;
     if (!el) return;
@@ -175,7 +176,7 @@ export default function PlaneFlights({ src }: { src: string }) {
       window.removeEventListener("touchstart", onActivity);
       cancelAnimationFrame(raf);
     };
-  }, []);
+  }, [enabled]);
 
   return (
     <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-30 overflow-hidden">
