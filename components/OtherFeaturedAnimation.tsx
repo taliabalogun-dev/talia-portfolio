@@ -51,9 +51,12 @@ export default function OtherFeaturedAnimation({
                 href={cocurateLink.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-cocurate inline-block whitespace-nowrap rounded-full bg-cocurate-red px-3.5 py-1.5 text-xs font-semibold tracking-wide text-white shadow-md transition-opacity hover:opacity-85 sm:px-4"
+                className="font-cocurate group inline-flex flex-col items-start leading-none"
               >
-                {cocurateLink.label}
+                <span className="text-[10px] font-medium uppercase tracking-[0.14em] opacity-70">see more on</span>
+                <span className="mt-0.5 text-lg font-bold tracking-wide text-[#e0563a] underline-offset-4 transition-opacity group-hover:underline sm:text-xl">
+                  {cocurateLink.label}
+                </span>
               </a>
             )}
           </div>
