@@ -16,6 +16,7 @@ export default function OtherFeaturedAnimation({
   purpleButtons = false,
   autoplayVideos = false,
   folderSize = false,
+  cocurateLink,
 }: {
   items: FeaturedAnimation[];
   heading?: string;
@@ -36,12 +37,26 @@ export default function OtherFeaturedAnimation({
   autoplayVideos?: boolean;
   /** Size the tiles exactly like the ones inside the folder panels (Concept Art etc.), 4:3 pictures included. */
   folderSize?: boolean;
+  /** A red Co Curate button that sits right beside the heading and opens the given address in a new tab. */
+  cocurateLink?: { label: string; href: string };
 }) {
   return (
     <div className={embedded ? "" : "mt-8 border-t border-beige/15 pt-6 sm:mt-16 sm:pt-10"}>
       {!embedded && (
         <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3">
-          <h2 className="text-xl font-semibold tracking-tight">{heading}</h2>
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-2 sm:gap-x-4">
+            <h2 className={`font-semibold tracking-tight ${cocurateLink ? "text-base sm:text-xl" : "text-xl"}`}>{heading}</h2>
+            {cocurateLink && (
+              <a
+                href={cocurateLink.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-cocurate inline-block whitespace-nowrap rounded-full bg-cocurate-red px-3.5 py-1.5 text-xs font-semibold tracking-wide text-white shadow-md transition-opacity hover:opacity-85 sm:px-4"
+              >
+                {cocurateLink.label}
+              </a>
+            )}
+          </div>
           {action && (
             <Link
               href={action.href}

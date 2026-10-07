@@ -198,6 +198,7 @@ export default function AnimationPortfolioPage() {
           <OtherFeaturedAnimation
             items={animationCommissionsReel}
             heading="Animation Based Commissions"
+            cocurateLink={{ label: "Co Curate", href: "https://co-curate-production.up.railway.app/team" }}
             description="Animation based commissions I delivered for clients."
             folderSize
           />
