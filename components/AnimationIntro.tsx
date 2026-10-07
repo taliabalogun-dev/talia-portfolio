@@ -12,20 +12,15 @@ const PLANE_CY = 0.375;
 
 const clamp01 = (v: number) => Math.min(1, Math.max(0, v));
 const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
-const easeInOut = (t: number) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
-const easeIn = (t: number) => t * t * t;
 
 // Everything below is in fractions of the screen, taken from the two storyboard frames.
 const C0 = { x: 0.1, y: 0.77, r: 0.1 }; // frame 1: a small circle at the bottom left, plane inside it
 const P0 = { x: 0.085, y: 0.79 }; // the plane in frame 1
 const P1 = { x: 0.6, y: 0.36 }; // the plane in frame 2: the loop-the-loop starts here
-const P2 = { x: 0.68, y: 0.32 }; // where the loop comes out
 const P3 = { x: 1.1, y: 0.16 }; // and the plane climbs away off the top right
+const ENTRY_ANGLE = (-28 * Math.PI) / 180; // the way the plane is heading as it flies into the loop
 
 const TOTAL = 6400; // ms
-const HOLD = 350; // a beat on the small circle before anything moves
-const T_A = 0.4; // end of the zoom-and-fly phase
-const T_B = 0.62; // end of the loop phase
 
 /**
  * The opening of the Animation Portfolio: a circle of the page opens up on a pale yellow screen, growing
@@ -61,66 +56,90 @@ export default function AnimationIntro({ planeSrc }: { planeSrc: string }) {
     const loopR = vmin * 0.09;
     const px = (p: { x: number; y: number }) => ({ x: p.x * vw, y: p.y * vh });
 
-    // Where the plane is at progress u (0 to 1), before the loop is added.
-    const base = (u: number) => {
-      if (u <= T_A) {
-        const t = easeInOut(u / T_A);
-        const a = px(P0);
-        const b = px(P1);
-        // a gentle arc: out along the bottom, then up
-        const c = { x: lerp(a.x, b.x, 0.7), y: lerp(a.y, b.y, 0.15) };
-        const x = (1 - t) * (1 - t) * a.x + 2 * (1 - t) * t * c.x + t * t * b.x;
-        const y = (1 - t) * (1 - t) * a.y + 2 * (1 - t) * t * c.y + t * t * b.y;
-        return { x, y };
-      }
-      if (u <= T_B) {
-        const t = (u - T_A) / (T_B - T_A);
-        const a = px(P1);
-        const b = px(P2);
-        return { x: lerp(a.x, b.x, t), y: lerp(a.y, b.y, t) };
-      }
-      const t = easeIn((u - T_B) / (1 - T_B));
-      const a = px(P2);
-      const b = px(P3);
-      return { x: lerp(a.x, b.x, t), y: lerp(a.y, b.y, t) };
-    };
+    // One continuous flight path, flown at a steady speed: a curve in from the bottom left that meets the
+    // loop head-on, the loop itself (which hands the plane back along the same heading), and a curve
+    // climbing away. Sharing headings at every join means there is no stop, kink or change of speed.
+    const pts: { x: number; y: number }[] = [];
+    const bez = (a: { x: number; y: number }, c: { x: number; y: number }, b: { x: number; y: number }, t: number) => ({
+      x: (1 - t) * (1 - t) * a.x + 2 * (1 - t) * t * c.x + t * t * b.x,
+      y: (1 - t) * (1 - t) * a.y + 2 * (1 - t) * t * c.y + t * t * b.y,
+    });
+    const dir = { x: Math.cos(ENTRY_ANGLE), y: Math.sin(ENTRY_ANGLE) };
+    const nrm = { x: dir.y, y: -dir.x }; // the loop climbs towards this side (up, on screen)
+    const a0 = px(P0);
+    const a1 = px(P1);
+    const lead = Math.hypot(a1.x - a0.x, a1.y - a0.y) * 0.42;
+    const ctrl = { x: a1.x - dir.x * lead, y: a1.y - dir.y * lead };
+    for (let i = 0; i <= 90; i++) pts.push(bez(a0, ctrl, a1, i / 90));
+    // The loop: forward travel plus a circle, so it starts and ends level and carries on in the same direction.
+    const adv = loopR * 0.45;
+    for (let i = 1; i <= 120; i++) {
+      const th = (2 * Math.PI * i) / 120;
+      const f = adv * th + loopR * Math.sin(th);
+      const n = loopR * (1 - Math.cos(th));
+      pts.push({ x: a1.x + dir.x * f + nrm.x * n, y: a1.y + dir.y * f + nrm.y * n });
+    }
+    const e0 = pts[pts.length - 1];
+    const e1 = px(P3);
+    const lead2 = Math.hypot(e1.x - e0.x, e1.y - e0.y) * 0.4;
+    const ctrl2 = { x: e0.x + dir.x * lead2, y: e0.y + dir.y * lead2 };
+    for (let i = 1; i <= 90; i++) pts.push(bez(e0, ctrl2, e1, i / 90));
+
+    const cum = [0];
+    for (let i = 1; i < pts.length; i++) {
+      cum.push(cum[i - 1] + Math.hypot(pts[i].x - pts[i - 1].x, pts[i].y - pts[i - 1].y));
+    }
+    const total = cum[cum.length - 1];
     const pos = (u: number) => {
-      const b = base(u);
-      if (u > T_A && u < T_B) {
-        const th = (2 * Math.PI * (u - T_A)) / (T_B - T_A);
-        return { x: b.x + loopR * Math.sin(th), y: b.y - loopR * (1 - Math.cos(th)) };
+      const d = clamp01(u) * total;
+      let lo = 0;
+      let hi = cum.length - 1;
+      while (hi - lo > 1) {
+        const mid = (lo + hi) >> 1;
+        if (cum[mid] < d) lo = mid;
+        else hi = mid;
       }
-      return b;
+      const k = (d - cum[lo]) / (cum[hi] - cum[lo] || 1);
+      return { x: lerp(pts[lo].x, pts[hi].x, k), y: lerp(pts[lo].y, pts[hi].y, k) };
     };
-    const scaleAt = (u: number) => lerp(1, u > T_B ? 0.35 : 0.8, u > T_B ? (u - T_B) / (1 - T_B) : u / T_B);
+    // The plane's path with the loop smoothed out, for the circle to follow.
+    const followed = (u: number) => {
+      let x = 0;
+      let y = 0;
+      const n = 9;
+      for (let i = 0; i < n; i++) {
+        const q = pos(clamp01(u - 0.12 + (0.24 * i) / (n - 1)));
+        x += q.x;
+        y += q.y;
+      }
+      return { x: x / n, y: y / n };
+    };
+    const scaleAt = (u: number) => lerp(1, 0.35, u);
 
     let raf = 0;
     let prevAng = 0;
     const t0 = performance.now();
     const frame = (now: number) => {
-      const elapsed = Math.max(0, now - t0 - HOLD);
-      const u = clamp01(elapsed / (TOTAL - HOLD));
+      const u = clamp01((now - t0) / TOTAL);
 
-      // The circle grows at a steady rate all the way, and follows the plane's flight path (without its
-      // loop) while drifting to the middle of the screen, so it has uncovered every corner by the end.
-      const followed = base(u);
-      const cx = lerp(followed.x, vw / 2, u);
-      const cy = lerp(followed.y, vh / 2, u);
+      // The circle grows at a steady rate and follows the plane's flight (without its loop) while drifting
+      // to the middle of the screen, so it has uncovered every corner by the end.
+      const f = followed(u);
+      const cx = lerp(f.x, vw / 2, u);
+      const cy = lerp(f.y, vh / 2, u);
       const r = lerp(C0.r * vmin, fullR, u);
       const mask = `radial-gradient(circle at ${cx}px ${cy}px, transparent ${Math.max(0, r - 0.6)}px, ${YELLOW} ${r + 0.6}px)`;
       ov.style.maskImage = mask;
       ov.style.webkitMaskImage = mask;
 
-      // The plane: nose along the way it is travelling, a full turn through the loop.
+      // The plane: nose along the way it is travelling, which turns a full circle through the loop.
       const p = pos(u);
-      const e = 0.006;
-      const a = pos(Math.max(0, u - e));
-      const c = pos(Math.min(1, u + e));
-      let ang = (Math.atan2(c.y - a.y, c.x - a.x) * 180) / Math.PI;
+      const e = 0.004;
+      const q0 = pos(Math.max(0, u - e));
+      const q1 = pos(Math.min(1, u + e));
+      let ang = (Math.atan2(q1.y - q0.y, q1.x - q0.x) * 180) / Math.PI;
       while (ang - prevAng > 180) ang -= 360;
       while (ang - prevAng < -180) ang += 360;
-      const inLoop = u > T_A - 0.01 && u < T_B + 0.01;
-      if (!inLoop) ang = Math.max(-45, Math.min(45, ang));
       prevAng = ang;
       const s = scaleAt(u);
       el.style.opacity = "1";
@@ -133,7 +152,6 @@ export default function AnimationIntro({ planeSrc }: { planeSrc: string }) {
         setDone(true);
       }
     };
-    // Frame 1 straight away, then the movement after a beat.
     frame(t0);
     raf = requestAnimationFrame(frame);
     return () => {
