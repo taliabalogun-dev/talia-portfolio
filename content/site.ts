@@ -122,7 +122,7 @@ export type FeaturedAnimation = {
   /** Image only: which part of the picture stays visible when it is cropped to the card. Defaults to center. */
   position?: "top" | "center" | "bottom";
   /** Several pieces shown as one slideshow card; each slide carries its own title and description. */
-  slides?: { src: string; title: string; description: string; kind?: "image" | "video"; poster?: string; autoplay?: boolean; collage?: string[]; fit?: "cover" | "contain" }[];
+  slides?: { src: string; title: string; description: string; kind?: "image" | "video"; poster?: string; autoplay?: boolean; collage?: string[]; fit?: "cover" | "contain"; bg?: string }[];
 };
 
 export type Project = {
@@ -1145,8 +1145,21 @@ export const projects: Project[] = [
           category: "Motion",
           skills: ["Animator"],
           roleLabel: "Motion Design Contractor",
-          src: "/images/commissions/commission-maddies-logo-anim.jpg",
-          kind: "image",
+          src: "/videos/maddies-logo-animation-v1.mp4",
+          poster: "/images/animation-portfolio/maddies-logo-poster-v1.jpg",
+          kind: "video",
+          slides: [
+            {
+              src: "/videos/maddies-logo-animation-v1.mp4",
+              kind: "video",
+              autoplay: true,
+              poster: "/images/animation-portfolio/maddies-logo-poster-v1.jpg",
+              title: "'Maddies' Logo Animation",
+              description: "Logo animation I made for the Maddiewurld campaign.",
+              fit: "contain",
+              bg: "#ffffff",
+            },
+          ],
         },
         {
           title: "'What Does LA Mean To You' Zine Promotion",

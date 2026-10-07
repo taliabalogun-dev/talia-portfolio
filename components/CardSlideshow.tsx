@@ -39,6 +39,7 @@ export default function CardSlideshow({
     <>
       <div
         ref={frame}
+        style={current.bg ? { background: current.bg } : undefined}
         className={`relative w-full overflow-hidden bg-paper ${
           (uniform ? ratio === "16/9" : allVideo) ? "aspect-video" : "aspect-[4/3]"
         }`}
@@ -72,7 +73,7 @@ export default function CardSlideshow({
             src={current.src}
             poster={current.poster}
             autoplay={current.autoplay}
-            className="h-full w-full object-cover"
+            className={`h-full w-full ${current.fit === "contain" ? "object-contain" : "object-cover"}`}
           />
         ) : (
           <EnlargeableImage
