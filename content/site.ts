@@ -1135,8 +1135,14 @@ export const projects: Project[] = [
           category: "Illustrative",
           skills: ["Illustrator", "Graphic Designer"],
           roleLabel: "Illustration Contractor",
-          src: "/images/commissions/commission-maddies-campaign.jpg",
+          src: "/images/animation-portfolio/maddies-poster-v1.jpg",
           kind: "image",
+          slides: [
+            { src: "/images/animation-portfolio/maddies-poster-v1.jpg", title: "'Maddies' Campaign Poster", description: "Main event poster for the Maddiewurld campaign." },
+            { src: "/images/animation-portfolio/maddies-music-v1.jpg", title: "'Maddies' Music Line-up", description: "The DJ line-up announcement for the campaign." },
+            { src: "/images/animation-portfolio/maddies-tickets-v1.jpg", title: "'Maddies' Ticketing Information", description: "Ticket tiers and prices for the campaign." },
+            { src: "/images/animation-portfolio/maddies-faqs-v1.jpg", title: "'Maddies' FAQs", description: "Who is providing the food, games, tooth gems and cocktails." },
+          ],
         },
         {
           title: "'Maddies' Logo Animation",
@@ -1972,6 +1978,21 @@ export const animationCommissionsReel: FeaturedAnimation[] = [
       { src: "/images/animation-portfolio/omg-process-1-v1.jpg", title: "Process - low-angle colour study", description: "Colour study of the giant looking down on the crossing.", fit: "contain" },
       { src: "/images/animation-portfolio/omg-process-2-v1.jpg", title: "Process - colour block-in", description: "Colour block-in of the figure among the city blocks.", fit: "contain" },
       { src: "/images/animation-portfolio/omg-process-3-v1.jpg", title: "Process - layouts and sketches", description: "Thumbnail layouts and figure sketches for the cover.", fit: "contain" },
+    ],
+  },
+  {
+    title: "'Maddies' Campaign & Asset Design",
+    description: "Illustrated digital marketing assets I made for the Maddiewurld campaign.",
+    date: "2025",
+    category: "Campaign",
+    skills: ["Illustrator", "Graphic Designer"],
+    src: "/images/animation-portfolio/maddies-poster-v1.jpg",
+    kind: "image",
+    slides: [
+      { src: "/images/animation-portfolio/maddies-poster-v1.jpg", title: "'Maddies' Campaign Poster", description: "Main event poster for the Maddiewurld campaign.", fit: "cover" },
+      { src: "/images/animation-portfolio/maddies-music-v1.jpg", title: "'Maddies' Music Line-up", description: "The DJ line-up announcement for the campaign.", fit: "cover" },
+      { src: "/images/animation-portfolio/maddies-tickets-v1.jpg", title: "'Maddies' Ticketing Information", description: "Ticket tiers and prices for the campaign.", fit: "cover" },
+      { src: "/images/animation-portfolio/maddies-faqs-v1.jpg", title: "'Maddies' FAQs", description: "Who is providing the food, games, tooth gems and cocktails.", fit: "cover" },
     ],
   },
   {
