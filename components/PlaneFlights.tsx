@@ -35,10 +35,17 @@ export default function PlaneFlights({ src }: { src: string }) {
       const vh = window.innerHeight;
       const size = vw < 640 ? 110 : 170;
       const height = size * (378 / 360);
+      // Flights alternate: the first comes in from the left, the second from the right (the plane is mirrored).
+      const fromRight = started % 2 === 0;
       el.style.width = `${size}px`;
-      // Map the 0-1 path onto the screen; start and finish just outside the edges.
+      // Enters from just off one edge at full size, then shrinks as it heads away and has vanished
+      // about an inch (96px) before the far edge.
+      const inch = 96;
+      const startX = fromRight ? vw + size : -size;
+      const endX = fromRight ? inch : vw - inch;
+      const shrinkOver = Math.max(240, vw * 0.4);
       const pts = flightPaths[pick].map(([x, y]) => ({
-        x: -size + x * (vw + 2 * size),
+        x: startX + x * (endX - startX),
         y: y * (vh - height) + height / 2,
       }));
       const cum = [0];
@@ -61,11 +68,12 @@ export default function PlaneFlights({ src }: { src: string }) {
         const y = pts[i - 1].y + (pts[i].y - pts[i - 1].y) * k;
         const ahead = pts[Math.min(pts.length - 1, i + 2)];
         const behind = pts[Math.max(0, i - 3)];
-        const angle = Math.max(
-          -20,
-          Math.min(20, (Math.atan2(ahead.y - behind.y, ahead.x - behind.x) * 180) / Math.PI),
-        );
-        el.style.transform = `translate(${x - size / 2}px, ${y - height / 2}px) rotate(${angle}deg)`;
+        // Tilt with the curve as if flying to the right; the mirrored flight tilts the other way.
+        const slope = (Math.atan2(ahead.y - behind.y, Math.abs(ahead.x - behind.x)) * 180) / Math.PI;
+        const angle = Math.max(-20, Math.min(20, fromRight ? -slope : slope));
+        const remaining = Math.abs(endX - x);
+        const scale = Math.max(0, Math.min(1, remaining / shrinkOver));
+        el.style.transform = `translate(${x - size / 2}px, ${y - height / 2}px) rotate(${angle}deg) scale(${fromRight ? -scale : scale}, ${scale})`;
         if (p < 1) {
           raf = requestAnimationFrame(frame);
         } else {
