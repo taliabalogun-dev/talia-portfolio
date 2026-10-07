@@ -17,21 +17,20 @@ const easeIn = (t: number) => t * t * t;
 
 // Everything below is in fractions of the screen, taken from the two storyboard frames.
 const C0 = { x: 0.1, y: 0.77, r: 0.1 }; // frame 1: a small circle at the bottom left, plane inside it
-const C1 = { x: 0.42, y: 0.52, r: 0.43 }; // frame 2: the circle has grown and moved to the middle
 const P0 = { x: 0.085, y: 0.79 }; // the plane in frame 1
 const P1 = { x: 0.6, y: 0.36 }; // the plane in frame 2: the loop-the-loop starts here
 const P2 = { x: 0.68, y: 0.32 }; // where the loop comes out
 const P3 = { x: 1.1, y: 0.16 }; // and the plane climbs away off the top right
 
-const TOTAL = 5200; // ms
+const TOTAL = 6400; // ms
 const HOLD = 350; // a beat on the small circle before anything moves
 const T_A = 0.4; // end of the zoom-and-fly phase
 const T_B = 0.62; // end of the loop phase
 
 /**
  * The opening of the Animation Portfolio: a circle of the page opens up on a pale yellow screen, growing
- * and moving as the avatar flies up and across it, does a loop-the-loop, and the circle then opens out
- * to reveal the whole page. Once it has finished the regular plane flights begin.
+ * at a steady rate and following the avatar as it flies up and across, does a loop-the-loop, and keeps
+ * widening until the whole page is showing. Once it has finished the regular plane flights begin.
  */
 export default function AnimationIntro({ planeSrc }: { planeSrc: string }) {
   const overlay = useRef<HTMLDivElement>(null);
@@ -102,27 +101,12 @@ export default function AnimationIntro({ planeSrc }: { planeSrc: string }) {
       const elapsed = Math.max(0, now - t0 - HOLD);
       const u = clamp01(elapsed / (TOTAL - HOLD));
 
-      // The circle: small at the bottom left, then bigger and mid-screen, then opening out over everything.
-      let cx: number;
-      let cy: number;
-      let r: number;
-      if (u <= T_A) {
-        const t = easeInOut(u / T_A);
-        cx = lerp(C0.x, C1.x, t) * vw;
-        cy = lerp(C0.y, C1.y, t) * vh;
-        r = lerp(C0.r, C1.r, t) * vmin;
-      } else if (u <= T_B) {
-        const t = (u - T_A) / (T_B - T_A);
-        cx = lerp(C1.x, 0.5, t * 0.4) * vw;
-        cy = lerp(C1.y, 0.5, t * 0.4) * vh;
-        r = lerp(C1.r, 0.52, t) * vmin;
-      } else {
-        const t = easeIn((u - T_B) / (1 - T_B));
-        const from = { x: lerp(C1.x, 0.5, 0.4), y: lerp(C1.y, 0.5, 0.4), r: 0.52 * vmin };
-        cx = lerp(from.x, 0.5, t) * vw;
-        cy = lerp(from.y, 0.5, t) * vh;
-        r = lerp(from.r, fullR, t);
-      }
+      // The circle grows at a steady rate all the way, and follows the plane's flight path (without its
+      // loop) while drifting to the middle of the screen, so it has uncovered every corner by the end.
+      const followed = base(u);
+      const cx = lerp(followed.x, vw / 2, u);
+      const cy = lerp(followed.y, vh / 2, u);
+      const r = lerp(C0.r * vmin, fullR, u);
       const mask = `radial-gradient(circle at ${cx}px ${cy}px, transparent ${Math.max(0, r - 0.6)}px, ${YELLOW} ${r + 0.6}px)`;
       ov.style.maskImage = mask;
       ov.style.webkitMaskImage = mask;
