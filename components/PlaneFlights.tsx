@@ -3,10 +3,14 @@
 import { useEffect, useRef } from "react";
 import { flightPaths } from "@/lib/flightPaths";
 
+const MIN_GAP = 5000; // ms of calm between the end of one flight and the start of the next
+const LINGER = 14000; // a second flight on a screen the viewer is just reading, ms after the first
+
 /**
- * The avatar flies across the screen along one of the illustrated paths. It flies twice per visit,
- * one path at a time: once shortly after the page loads, and once as soon as the viewer starts
- * scrolling down. It sits above the page without catching clicks.
+ * The avatar flies across the screen along one of the illustrated paths, one path at a time, doing a
+ * loop-the-loop on the way and shrinking gradually as it heads away. Each screenful of the page gets
+ * one or two flights: one when the viewer arrives (the very first shortly after load) and a second
+ * once they start scrolling, or after a while if they stay put. Flights alternate sides and never overlap.
  */
 export default function PlaneFlights({ src }: { src: string }) {
   const plane = useRef<HTMLImageElement>(null);
@@ -18,15 +22,20 @@ export default function PlaneFlights({ src }: { src: string }) {
 
     let flying = false;
     let raf = 0;
-    let loadTimer = 0;
-    let started = 0; // flights begun so far: 0, 1 or 2
-    let wantSecond = false;
+    let lastEnd = -1e9;
+    let lastStart = -1e9;
+    let flightNo = 0;
     let lastPath = -1;
+    const mountedAt = performance.now();
+    const perPage = new Map<number, number>();
+    const pageIndex = () => Math.floor(window.scrollY / Math.max(1, window.innerHeight));
 
-    const fly = () => {
-      if (flying || started >= 2 || document.hidden) return;
+    const fly = (page: number) => {
       flying = true;
-      started += 1;
+      perPage.set(page, (perPage.get(page) ?? 0) + 1);
+      lastStart = performance.now();
+      const fromRight = flightNo % 2 === 1; // first from the left, then the right, and so on
+      flightNo += 1;
       let pick = Math.floor(Math.random() * flightPaths.length);
       if (pick === lastPath) pick = (pick + 1) % flightPaths.length;
       lastPath = pick;
@@ -35,15 +44,12 @@ export default function PlaneFlights({ src }: { src: string }) {
       const vh = window.innerHeight;
       const size = vw < 640 ? 110 : 170;
       const height = size * (378 / 360);
-      // Flights alternate: the first comes in from the left, the second from the right (the plane is mirrored).
-      const fromRight = started % 2 === 0;
       el.style.width = `${size}px`;
-      // Enters from just off one edge at full size, then shrinks as it heads away and has vanished
-      // about an inch (96px) before the far edge.
+
+      // Everything is worked out as if flying to the right; a flight from the right is mirrored at the end.
       const inch = 96;
-      const startX = fromRight ? vw + size : -size;
-      const endX = fromRight ? inch : vw - inch;
-      const shrinkOver = Math.max(240, vw * 0.4);
+      const startX = -size;
+      const endX = vw - inch;
       const pts = flightPaths[pick].map(([x, y]) => ({
         x: startX + x * (endX - startX),
         y: y * (vh - height) + height / 2,
@@ -53,64 +59,94 @@ export default function PlaneFlights({ src }: { src: string }) {
         cum.push(cum[i - 1] + Math.hypot(pts[i].x - pts[i - 1].x, pts[i].y - pts[i - 1].y));
       }
       const total = cum[cum.length - 1];
-      const duration = Math.max(5000, total * 4.2); // about 240px a second
+      const base = (p: number) => {
+        const d = Math.min(1, Math.max(0, p)) * total;
+        let i = 1;
+        while (i < cum.length - 1 && cum[i] < d) i++;
+        const k = (d - cum[i - 1]) / (cum[i] - cum[i - 1] || 1);
+        return {
+          x: pts[i - 1].x + (pts[i].x - pts[i - 1].x) * k,
+          y: pts[i - 1].y + (pts[i].y - pts[i - 1].y) * k,
+        };
+      };
+      // Shrinks steadily over the whole flight, to a speck by the time it vanishes.
+      const scaleAt = (p: number) => 1 - 0.95 * p;
+
+      // One loop-the-loop somewhere in the middle of the flight.
+      const loopAt = 0.3 + Math.random() * 0.25;
+      const radius = size * 0.5 * scaleAt(loopAt);
+      const advance = 2 * Math.PI * radius * 0.5; // forward travel while looping
+      const loopSpan = advance / Math.max(1, endX - startX);
+      const baseY = base(loopAt).y;
+      const up = baseY - 2 * radius - size * 0.5 > 8; // loop upwards if there is room, otherwise downwards
+      const at = (p: number) => {
+        const b = base(p);
+        if (p <= loopAt || p >= loopAt + loopSpan) {
+          return b;
+        }
+        const th = (2 * Math.PI * (p - loopAt)) / loopSpan;
+        return {
+          x: b.x + radius * Math.sin(th),
+          y: b.y + (up ? -1 : 1) * radius * (1 - Math.cos(th)),
+        };
+      };
+
+      const duration = Math.max(5500, total * 4.2) + 1800; // roughly 240px a second, plus the loop
       const t0 = performance.now();
+      let prevAng = 0;
       el.style.opacity = "1";
 
       const frame = (now: number) => {
         const p = Math.min(1, (now - t0) / duration);
-        const d = p * total;
-        let i = 1;
-        while (i < cum.length - 1 && cum[i] < d) i++;
-        const seg = cum[i] - cum[i - 1] || 1;
-        const k = (d - cum[i - 1]) / seg;
-        const x = pts[i - 1].x + (pts[i].x - pts[i - 1].x) * k;
-        const y = pts[i - 1].y + (pts[i].y - pts[i - 1].y) * k;
-        const ahead = pts[Math.min(pts.length - 1, i + 2)];
-        const behind = pts[Math.max(0, i - 3)];
-        // Tilt with the curve as if flying to the right; the mirrored flight tilts the other way.
-        const slope = (Math.atan2(ahead.y - behind.y, Math.abs(ahead.x - behind.x)) * 180) / Math.PI;
-        const angle = Math.max(-20, Math.min(20, fromRight ? -slope : slope));
-        const remaining = Math.abs(endX - x);
-        const scale = Math.max(0, Math.min(1, remaining / shrinkOver));
-        el.style.transform = `translate(${x - size / 2}px, ${y - height / 2}px) rotate(${angle}deg) scale(${fromRight ? -scale : scale}, ${scale})`;
+        const pos = at(p);
+        // Nose along the direction of travel; through the loop it turns a full circle.
+        const e = 0.004;
+        const a = at(Math.max(0, p - e));
+        const c = at(Math.min(1, p + e));
+        let ang = (Math.atan2(c.y - a.y, c.x - a.x) * 180) / Math.PI;
+        while (ang - prevAng > 180) ang -= 360;
+        while (ang - prevAng < -180) ang += 360;
+        const inLoop = p > loopAt - 0.01 && p < loopAt + loopSpan + 0.01;
+        if (!inLoop) ang = Math.max(-20, Math.min(20, ang));
+        prevAng = ang;
+        const s = scaleAt(p);
+        const X = fromRight ? vw - pos.x : pos.x;
+        const rot = fromRight ? -ang : ang;
+        el.style.opacity = String(Math.min(1, (1 - p) * 12));
+        el.style.transform = `translate(${X - size / 2}px, ${pos.y - height / 2}px) rotate(${rot}deg) scale(${fromRight ? -s : s}, ${s})`;
         if (p < 1) {
           raf = requestAnimationFrame(frame);
         } else {
           el.style.opacity = "0";
           flying = false;
-          if (wantSecond && started < 2) {
-            wantSecond = false;
-            fly();
-          }
+          lastEnd = performance.now();
         }
       };
       raf = requestAnimationFrame(frame);
     };
 
-    const onScroll = () => {
-      if (window.scrollY < 24 || started >= 2 || wantSecond) return;
-      // The second flight starts as scrolling begins, but never overlaps the first.
-      if (flying || started === 0) wantSecond = true;
-      else fly();
-    };
-
-    // If the tab was in the background at load, take off when it comes to the front.
-    const onVisible = () => {
-      if (!document.hidden && started === 0) {
-        window.clearTimeout(loadTimer);
-        loadTimer = window.setTimeout(fly, 600);
+    // Decide, every so often, whether this screenful is due a flight.
+    const tick = () => {
+      if (flying || document.hidden) return;
+      const now = performance.now();
+      if (now - lastEnd < MIN_GAP) return;
+      const page = pageIndex();
+      const n = perPage.get(page) ?? 0;
+      if (n >= 2) return;
+      if (n === 0) {
+        if (page === 0 && now - mountedAt < 1200) return; // let the page settle first
+        fly(page);
+      } else if ((page === 0 && window.scrollY >= 24) || now - lastStart >= LINGER) {
+        // The second flight on the opening screen starts as scrolling begins; on any screen, a second
+        // one follows after a while if the viewer stays put.
+        fly(page);
       }
     };
 
-    loadTimer = window.setTimeout(fly, 1200);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    document.addEventListener("visibilitychange", onVisible);
+    const timer = window.setInterval(tick, 600);
     return () => {
-      window.clearTimeout(loadTimer);
-      document.removeEventListener("visibilitychange", onVisible);
+      window.clearInterval(timer);
       cancelAnimationFrame(raf);
-      window.removeEventListener("scroll", onScroll);
     };
   }, []);
 
