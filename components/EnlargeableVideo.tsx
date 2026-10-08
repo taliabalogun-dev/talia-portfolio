@@ -35,6 +35,11 @@ export default function EnlargeableVideo({
   tint?: number;
 }) {
   const [started, setStarted] = useState(false);
+  const [playing, setPlaying] = useState(false);
+  const [revealed, setRevealed] = useState(false); // the tinted pause button, shown by tapping the picture while it plays
+  const [progress, setProgress] = useState(0);
+  const hideTimer = useRef(0);
+  useEffect(() => () => window.clearTimeout(hideTimer.current), []);
   const [open, setOpen] = useState(false);
   const gate = useVideoGate(src, password);
   const [justUnlocked, setJustUnlocked] = useState(false);
@@ -146,31 +151,66 @@ export default function EnlargeableVideo({
         ref={videoRef}
         src={src}
         poster={poster}
-        controls={!tint || started || !!autoplay}
+        controls={!tint || !!autoplay}
         playsInline
+        onPlay={() => setPlaying(true)}
+        onPause={() => setPlaying(false)}
+        onEnded={() => setPlaying(false)}
+        onTimeUpdate={(e) => setProgress(e.currentTarget.duration ? e.currentTarget.currentTime / e.currentTarget.duration : 0)}
         autoPlay={justUnlocked}
         muted={autoplay}
         loop={autoplay}
         preload="metadata"
         className={className}
       />
-      {tint && !started && !autoplay ? (
-        <button
-          type="button"
-          aria-label="Play"
+      {tint && !autoplay ? (
+        // Tinted videos have their own controls: a wash with a play button before the start and whenever it is
+        // paused; while it plays the picture is clear, and a tap brings the wash and a pause button back.
+        <div
+          className="absolute inset-0 z-[5] cursor-pointer"
           onClick={() => {
-            setStarted(true);
-            videoRef.current?.play().catch(() => {});
+            const v = videoRef.current;
+            if (!v) return;
+            window.clearTimeout(hideTimer.current);
+            if (!playing) {
+              setStarted(true);
+              setRevealed(false);
+              v.play().catch(() => {});
+            } else if (!revealed) {
+              setRevealed(true);
+              hideTimer.current = window.setTimeout(() => setRevealed(false), 3500);
+            } else {
+              v.pause();
+              setRevealed(false);
+            }
           }}
-          className="absolute inset-0 z-[5] grid place-items-center"
-          style={{ background: `rgba(0,0,0,${tint})` }}
         >
-          <span className="grid h-16 w-16 place-items-center rounded-full bg-black/55 text-white transition-colors hover:bg-black/75">
-            <svg viewBox="0 0 24 24" className="ml-1 h-7 w-7" fill="currentColor" aria-hidden="true">
-              <path d="M7 4.5v15l13-7.5z" />
-            </svg>
-          </span>
-        </button>
+          {(!playing || revealed) && (
+            <button
+              type="button"
+              aria-label={playing ? "Pause" : "Play"}
+              className="absolute inset-0 grid place-items-center"
+              style={{ background: `rgba(0,0,0,${tint})` }}
+            >
+              <span className="grid h-16 w-16 place-items-center rounded-full bg-black/55 text-white transition-colors hover:bg-black/75">
+                {playing ? (
+                  <svg viewBox="0 0 24 24" className="h-7 w-7" fill="currentColor" aria-hidden="true">
+                    <path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z" />
+                  </svg>
+                ) : (
+                  <svg viewBox="0 0 24 24" className="ml-1 h-7 w-7" fill="currentColor" aria-hidden="true">
+                    <path d="M7 4.5v15l13-7.5z" />
+                  </svg>
+                )}
+              </span>
+            </button>
+          )}
+          {started && (!playing || revealed) && (
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1 bg-white/25">
+              <div className="h-full bg-white/80" style={{ width: `${progress * 100}%` }} />
+            </div>
+          )}
+        </div>
       ) : null}
       {hasExtras && (
         <button

@@ -39,3 +39,33 @@ body {
   color: var(--foreground);
   font-family: var(--font-jakarta), Arial, Helvetica, sans-serif;
 }
+
+/* ---------- button presses (see components/ClickFx.tsx) ---------- */
+@keyframes fx-down {
+  to {
+    scale: 0.93;
+    filter: brightness(0.93);
+  }
+}
+@keyframes fx-up {
+  0% {
+    scale: 0.93;
+    filter: brightness(0.93);
+  }
+  55% {
+    scale: 1.06;
+  }
+  80% {
+    scale: 0.985;
+  }
+  100% {
+    scale: 1;
+    filter: none;
+  }
+}
+.fx-down {
+  animation: fx-down 0.09s ease-out forwards;
+}
+.fx-up {
+  animation: fx-up 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+}
