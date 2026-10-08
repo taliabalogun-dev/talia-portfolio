@@ -20,7 +20,9 @@ const P1 = { x: 0.6, y: 0.36 }; // the plane in frame 2: the loop-the-loop start
 const P3Y = 0.2; // and the plane settles into level flight to the right, vanishing an inch before the far edge
 const ENTRY_ANGLE = (-28 * Math.PI) / 180; // the way the plane is heading as it flies into the loop
 
-const TOTAL = 6400; // ms
+const TOTAL = 3200; // ms
+const FAST_RATE = 14; // how many times faster the intro plays once it is double-tapped
+const RAMP_MS = 220; // ...reached smoothly over this long, so it speeds up rather than jumping
 
 /**
  * The opening of the Animation Portfolio: a circle of the page opens up on a pale yellow screen, growing
@@ -120,9 +122,15 @@ export default function AnimationIntro({ planeSrc }: { planeSrc: string }) {
 
     let raf = 0;
     let prevAng = 0;
-    const t0 = performance.now();
+    let u = 0;
+    let last = performance.now();
+    let skippedAt = -1; // when a double tap asked to end the intro
     const frame = (now: number) => {
-      const u = clamp01((now - t0) / TOTAL);
+      const dt = Math.min(64, Math.max(0, now - last));
+      last = now;
+      let rate = 1;
+      if (skippedAt >= 0) rate = lerp(1, FAST_RATE, clamp01((now - skippedAt) / RAMP_MS));
+      u = clamp01(u + (dt / TOTAL) * rate);
 
       // The circle grows at a steady rate and follows the plane's flight (without its loop) while drifting
       // to the middle of the screen, so it has uncovered every corner by the end.
@@ -154,9 +162,19 @@ export default function AnimationIntro({ planeSrc }: { planeSrc: string }) {
         setDone(true);
       }
     };
-    frame(t0);
+    frame(last);
     raf = requestAnimationFrame(frame);
+
+    // A double tap (or double click) plays the rest of the intro at speed, so it ends at once but smoothly.
+    let lastTap = -1e9;
+    const onTap = () => {
+      const now = performance.now();
+      if (now - lastTap < 400 && skippedAt < 0) skippedAt = now;
+      lastTap = now;
+    };
+    window.addEventListener("pointerdown", onTap, { passive: true });
     return () => {
+      window.removeEventListener("pointerdown", onTap);
       cancelAnimationFrame(raf);
       root.style.overflow = prevOverflow;
     };
