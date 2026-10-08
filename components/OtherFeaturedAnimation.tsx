@@ -47,17 +47,18 @@ export default function OtherFeaturedAnimation({
           <div className="flex flex-wrap items-center gap-x-3 gap-y-2 sm:gap-x-4">
             <h2 className={`font-semibold tracking-tight ${cocurateLink ? "text-base sm:text-xl" : "text-xl"}`}>{heading}</h2>
             {cocurateLink && (
-              <a
-                href={cocurateLink.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-cocurate group inline-flex flex-col items-start leading-none"
-              >
+              <div className="font-cocurate flex flex-col items-start leading-none">
                 <span className="text-[10px] font-medium uppercase tracking-[0.14em] opacity-70">see more on</span>
-                <span className="mt-0.5 text-lg font-bold tracking-wide text-[#e0563a] underline-offset-4 transition-opacity group-hover:underline sm:text-xl">
+                <span className="mt-0.5 text-lg font-bold tracking-wide text-white sm:text-xl">Co Curate</span>
+                <a
+                  href={cocurateLink.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 inline-block whitespace-nowrap rounded-full bg-cocurate-red px-4 py-1.5 text-xs font-semibold tracking-wide text-white shadow-md transition-opacity hover:opacity-85"
+                >
                   {cocurateLink.label}
-                </span>
-              </a>
+                </a>
+              </div>
             )}
           </div>
           {action && (
