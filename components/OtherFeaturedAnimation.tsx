@@ -47,7 +47,7 @@ export default function OtherFeaturedAnimation({
           <div className="flex flex-wrap items-center gap-x-3 gap-y-2 sm:gap-x-4">
             <h2 className={`font-semibold tracking-tight ${cocurateLink ? "text-base sm:text-xl" : "text-xl"}`}>{heading}</h2>
             {cocurateLink && (
-              <div className="font-cocurate flex flex-col items-start leading-none">
+              <div className="font-cocurate flex w-full flex-col items-center text-center leading-none sm:w-auto">
                 <span className="text-[10px] font-medium uppercase tracking-[0.14em] opacity-70">see more on</span>
                 <span className="mt-0.5 text-lg font-bold tracking-wide text-white sm:text-xl">Co Curate</span>
                 <a
