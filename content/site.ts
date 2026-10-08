@@ -2112,6 +2112,43 @@ export const animationCommissionsReel: FeaturedAnimation[] = [
       { src: "/images/animation-portfolio/commission-spilt-v3.jpg", title: "SPILT Logo for Kai Honu", description: "Logo I designed and animated for Kai Honu's SPILT.", fit: "cover" },
     ],
   },
+  {
+    title: "Christina for USAC President Stickers",
+    description: "Stickers I designed for Christina's USAC President campaign.",
+    date: "2025",
+    category: "Brand",
+    skills: ["Graphic Designer", "Illustrator"],
+    src: "/images/animation-portfolio/commission-christina-v1.jpg",
+    kind: "image",
+    slides: [
+      { src: "/images/animation-portfolio/commission-christina-v1.jpg", title: "Christina for USAC President Stickers", description: "Stickers I designed for Christina's USAC President campaign.", fit: "cover" },
+      { src: "/images/animation-portfolio/commission-christina-2-v1.jpg", title: "Christina for USAC President Stickers, second design", description: "A second sticker design from the campaign.", fit: "cover" },
+    ],
+  },
+  {
+    title: "Good Love Cover Art for Amatiime",
+    description: "Cover art I made for Amatiime.",
+    date: "2025",
+    category: "Cover Art",
+    skills: ["Illustrator"],
+    src: "/images/animation-portfolio/commission-goodlove-v1.jpg",
+    kind: "image",
+    slides: [
+      { src: "/images/animation-portfolio/commission-goodlove-v1.jpg", title: "Good Love Cover Art for Amatiime", description: "Cover art I made for Amatiime.", fit: "cover" },
+    ],
+  },
+  {
+    title: "Refine LA x Poshmark Flea Market Flyer",
+    description: "Flyer I illustrated for Refine LA's Poshmark flea market.",
+    date: "2025",
+    category: "Illustrative",
+    skills: ["Illustrator", "Graphic Designer"],
+    src: "/images/animation-portfolio/commission-poshmark-v1.jpg",
+    kind: "image",
+    slides: [
+      { src: "/images/animation-portfolio/commission-poshmark-v1.jpg", title: "Refine LA x Poshmark Flea Market Flyer", description: "Flyer I illustrated for Refine LA's Poshmark flea market.", fit: "cover" },
+    ],
+  },
 ];
 
 /** "Character Design" reel on the Animation Portfolio page. */
