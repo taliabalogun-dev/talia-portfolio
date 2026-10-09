@@ -1,7 +1,8 @@
 "use client";
 
 import Portal from "@/components/Portal";
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { useSwipe } from "@/lib/useSwipe";
 import Image from "next/image";
 import type { SlideImage } from "@/content/site";
 import type { PillTheme } from "@/content/pillTheme";
@@ -21,6 +22,25 @@ export default function CampaignCardsGallery({
     ? { background: theme.resultBg, color: theme.resultText }
     : undefined;
   const current = openIndex !== null ? images[openIndex] : null;
+  const goTo = useCallback(
+    (i: number) => setOpenIndex(((i % images.length) + images.length) % images.length),
+    [images.length],
+  );
+  const swipe = useSwipe(
+    () => openIndex !== null && goTo(openIndex - 1),
+    () => openIndex !== null && goTo(openIndex + 1),
+  );
+
+  useEffect(() => {
+    if (openIndex === null) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpenIndex(null);
+      if (e.key === "ArrowRight") goTo(openIndex + 1);
+      if (e.key === "ArrowLeft") goTo(openIndex - 1);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [openIndex, goTo]);
 
   return (
     <>
@@ -86,7 +106,34 @@ export default function CampaignCardsGallery({
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 sm:p-10"
           onClick={() => setOpenIndex(null)}
+          {...swipe}
         >
+          {images.length > 1 && (
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                goTo(openIndex! - 1);
+              }}
+              aria-label="Previous"
+              className="absolute left-2 z-10 text-4xl text-white/70 hover:text-white sm:left-6"
+            >
+              ‹
+            </button>
+          )}
+          {images.length > 1 && (
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                goTo(openIndex! + 1);
+              }}
+              aria-label="Next"
+              className="absolute right-2 z-10 text-4xl text-white/70 hover:text-white sm:right-6"
+            >
+              ›
+            </button>
+          )}
           <button
             type="button"
             onClick={() => setOpenIndex(null)}

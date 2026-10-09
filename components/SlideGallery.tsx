@@ -1,9 +1,10 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { useSwipe } from "@/lib/useSwipe";
+import { onVideoControls, useSwipe } from "@/lib/useSwipe";
 import { useResetOffscreen } from "@/lib/useResetOffscreen";
 import EnlargeableImage from "@/components/EnlargeableImage";
+import EnlargeableVideo from "@/components/EnlargeableVideo";
 import type { SlideImage } from "@/content/site";
 import type { PillTheme } from "@/content/pillTheme";
 
@@ -15,6 +16,7 @@ export default function SlideGallery({
   theme?: PillTheme;
 }) {
   const [index, setIndex] = useState(0);
+  const [viewing, setViewing] = useState(false); // the enlarged view is up, and follows the slides
   const frame = useRef<HTMLDivElement>(null);
   useResetOffscreen(frame, () => setIndex(0));
 
@@ -27,6 +29,7 @@ export default function SlideGallery({
   const swipe = useSwipe(
     () => goTo(index - 1),
     () => goTo(index + 1),
+    onVideoControls,
   );
 
   return (
@@ -37,16 +40,18 @@ export default function SlideGallery({
         className="relative aspect-video w-full touch-pan-y select-none overflow-hidden rounded-xl border border-beige/15 bg-beige/5"
       >
         {current.kind === "video" ? (
-          <video
+          <EnlargeableVideo
             key={current.src}
             src={current.src}
             poster={current.poster}
-            controls
-            playsInline
-            autoPlay={current.autoplay}
-            muted={current.autoplay}
-            loop
-            preload={current.autoplay ? "auto" : "metadata"}
+            autoplay={current.autoplay}
+            password={current.password}
+            theme={theme}
+            onPrev={images.length > 1 ? () => goTo(index - 1) : undefined}
+            onNext={images.length > 1 ? () => goTo(index + 1) : undefined}
+            counter={`${index + 1} / ${images.length}`}
+            initiallyOpen={viewing}
+            onOpenChange={setViewing}
             className="h-full w-full object-contain"
           />
         ) : (
@@ -58,6 +63,8 @@ export default function SlideGallery({
             onPrev={images.length > 1 ? () => goTo(index - 1) : undefined}
             onNext={images.length > 1 ? () => goTo(index + 1) : undefined}
             counter={`${index + 1} / ${images.length}`}
+            initiallyOpen={viewing}
+            onOpenChange={setViewing}
           />
         )}
       </div>

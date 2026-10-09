@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import { useResetOffscreen } from "@/lib/useResetOffscreen";
 import Link from "next/link";
+import Image from "next/image";
 import EnlargeableImage from "@/components/EnlargeableImage";
 import EnlargeableVideo from "@/components/EnlargeableVideo";
 import type { FeaturedAnimation } from "@/content/site";
@@ -23,11 +24,15 @@ export default function CardSlideshow({
 }) {
   const slides = item.slides ?? [];
   const [index, setIndex] = useState(0);
+  const [viewing, setViewing] = useState(false); // the enlarged view is up, and follows the slides
   const frame = useRef<HTMLDivElement>(null);
   useResetOffscreen(frame, () => setIndex(0));
   if (slides.length === 0) return null;
+  const viewer = { initiallyOpen: viewing, onOpenChange: setViewing };
   const go = (n: number) => setIndex(((n % slides.length) + slides.length) % slides.length);
   const current = slides[index];
+  // The cover of a slideshow that opens on a contact sheet / board: tapping it opens the next slide rather than enlarging.
+  const isCover = index === 0 && slides.length > 1 && current.kind !== "video" && !current.collage && current.src === item.src;
   const allVideo = slides.every((sl) => sl.kind === "video");
   const bubble = `pointer-events-none absolute top-2 rounded-full bg-black/60 font-semibold text-white ${
     compact ? "px-2 py-0.5 text-[10px]" : "px-2.5 py-1 text-[11px]"
@@ -47,16 +52,19 @@ export default function CardSlideshow({
         {current.collage ? (
           // The film leads, full width and playing; the reference photos sit underneath, dimmed so they don't compete with it.
           <div className="absolute inset-0 flex flex-col bg-black">
-            <video
-              key={current.src}
-              src={current.src}
-              poster={current.poster}
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="aspect-video w-full object-cover"
-            />
+            <div className="relative aspect-video w-full shrink-0">
+              <EnlargeableVideo
+                key={current.src}
+                src={current.src}
+                poster={current.poster}
+                autoplay
+                onPrev={slides.length > 1 ? () => go(index - 1) : undefined}
+                onNext={slides.length > 1 ? () => go(index + 1) : undefined}
+                counter={slides.length > 1 ? `${index + 1} / ${slides.length}` : undefined}
+                className="h-full w-full object-cover"
+                {...viewer}
+              />
+            </div>
             <div className="grid min-h-0 flex-1 grid-cols-4 gap-px bg-black">
               {current.collage.map((src) => (
                 <div key={src} className="relative overflow-hidden">
@@ -67,6 +75,36 @@ export default function CardSlideshow({
               ))}
             </div>
           </div>
+        ) : isCover && viewing ? (
+          <EnlargeableImage
+            src={current.src}
+            alt={current.title}
+            className="object-contain"
+            sizes="(min-width: 640px) 380px, 85vw"
+            onPrev={() => go(index - 1)}
+            onNext={() => go(index + 1)}
+            counter={`${index + 1} / ${slides.length}`}
+            {...viewer}
+          />
+        ) : isCover ? (
+          <>
+            <Image
+              src={current.src}
+              alt={current.title}
+              fill
+              className={current.fit === "cover" ? "object-cover" : "object-contain"}
+              sizes="(min-width: 640px) 380px, 85vw"
+            />
+            <button
+              type="button"
+              onClick={() => go(index + 1)}
+              aria-label={`Next: ${slides[1].title}`}
+              className="absolute inset-0 cursor-pointer"
+            />
+            <span className="pointer-events-none absolute bottom-2 right-2 rounded-full bg-black/60 px-2.5 py-1 text-[11px] font-semibold text-white">
+              {index + 1} / {slides.length}
+            </span>
+          </>
         ) : current.kind === "video" ? (
           <EnlargeableVideo
             key={current.src}
@@ -74,6 +112,10 @@ export default function CardSlideshow({
             poster={current.poster}
             autoplay={current.autoplay ?? !current.tint}
             tint={current.tint}
+            onPrev={slides.length > 1 ? () => go(index - 1) : undefined}
+            onNext={slides.length > 1 ? () => go(index + 1) : undefined}
+            counter={slides.length > 1 ? `${index + 1} / ${slides.length}` : undefined}
+            {...viewer}
             className={`h-full w-full ${current.fit === "contain" ? "object-contain" : "object-cover"}`}
           />
         ) : (
@@ -85,6 +127,7 @@ export default function CardSlideshow({
             onPrev={slides.length > 1 ? () => go(index - 1) : undefined}
             onNext={slides.length > 1 ? () => go(index + 1) : undefined}
             counter={slides.length > 1 ? `${index + 1} / ${slides.length}` : undefined}
+            {...viewer}
           />
         )}
         {item.date && <span className={`${bubble} left-2`}>{item.date}</span>}

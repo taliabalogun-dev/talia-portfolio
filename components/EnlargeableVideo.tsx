@@ -1,9 +1,10 @@
 "use client";
 
 import Portal from "@/components/Portal";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import type { PillTheme } from "@/content/pillTheme";
 import { useVideoGate } from "@/lib/videoGate";
+import { onVideoControls, useSwipe } from "@/lib/useSwipe";
 import VideoLockButton from "@/components/VideoLockButton";
 
 export default function EnlargeableVideo({
@@ -17,6 +18,11 @@ export default function EnlargeableVideo({
   theme,
   externalLock = false,
   tint,
+  onPrev,
+  onNext,
+  counter,
+  initiallyOpen = false,
+  onOpenChange,
 }: {
   src: string;
   poster?: string;
@@ -33,6 +39,14 @@ export default function EnlargeableVideo({
   externalLock?: boolean;
   /** 0-1: a dark wash over the poster with a play button, until the video is started. */
   tint?: number;
+  /** When set, the enlarged view gets Prev / Next (buttons, arrow keys, swipe, sideways scroll) to move through a slideshow. */
+  onPrev?: () => void;
+  onNext?: () => void;
+  /** Position label such as "3 / 20", shown under the video when enlarged. */
+  counter?: string;
+  /** For a slideshow: the enlarged view stays up as the slide changes, so the parent remembers it and passes it to the next one. */
+  initiallyOpen?: boolean;
+  onOpenChange?: (open: boolean) => void;
 }) {
   const [started, setStarted] = useState(false);
   const [playing, setPlaying] = useState(false);
@@ -44,10 +58,35 @@ export default function EnlargeableVideo({
   const heldByViewer = useRef(false); // paused on purpose, so scrolling back into view does not restart it
   const lastTap = useRef({ t: 0, x: 0, y: 0 });
   const [pausedByViewer, setPausedByViewer] = useState(false);
-  const [open, setOpen] = useState(false);
+  const [open, setOpenState] = useState(initiallyOpen);
+  const setOpen = useCallback(
+    (v: boolean) => {
+      setOpenState(v);
+      onOpenChange?.(v);
+    },
+    [onOpenChange],
+  );
   const gate = useVideoGate(src, password);
   const [justUnlocked, setJustUnlocked] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const swipe = useSwipe(() => onPrev?.(), () => onNext?.(), onVideoControls);
+
+  // Enlarged: the picture underneath rests, and Escape / arrow keys work like the image viewer.
+  useEffect(() => {
+    if (!open) return;
+    const v = videoRef.current;
+    v?.pause();
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+      if (e.key === "ArrowRight") onNext?.();
+      if (e.key === "ArrowLeft") onPrev?.();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      if (autoplay && !heldByViewer.current) v?.play().catch(() => {});
+    };
+  }, [open, onPrev, onNext, autoplay, setOpen]);
 
   // Muted looping autoplay: play while the video is on screen, pause when it scrolls away (saves data and battery).
   useEffect(() => {
@@ -65,7 +104,8 @@ export default function EnlargeableVideo({
   }, [autoplay, gate.locked]);
   const [attempt, setAttempt] = useState("");
   const [wrongAttempt, setWrongAttempt] = useState(false);
-  const hasExtras = (roles && roles.length > 0) || (results && results.length > 0);
+  const arrow =
+    "absolute top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/50 px-3 pb-1.5 pt-0.5 text-4xl leading-none text-white/80 hover:text-white";
 
   function submitPassword(e: React.FormEvent) {
     e.preventDefault();
@@ -247,23 +287,53 @@ export default function EnlargeableVideo({
           )}
         </div>
       ) : null}
-      {hasExtras && (
-        <button
-          type="button"
-          onClick={() => setOpen(true)}
-          aria-label="View role and result details"
-          className="absolute right-2 top-2 z-10 rounded-full bg-black/60 px-3 py-1 text-xs font-semibold text-white hover:bg-black/80"
-        >
-          Expand ⤢
-        </button>
-      )}
+      <button
+        type="button"
+        onClick={() => setOpen(true)}
+        aria-label="Enlarge video"
+        // Native controls run along the bottom, so the button sits just above them; the looping and tinted ones have none.
+        className={`absolute left-2 z-10 grid h-8 w-8 place-items-center rounded-full bg-black/60 text-white transition-colors hover:bg-black/80 ${
+          tint || autoplay ? "bottom-2" : "bottom-12"
+        }`}
+      >
+        <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7" />
+        </svg>
+      </button>
 
       {open && (
         <Portal>
         <div
           className="fixed inset-0 z-50 flex flex-col items-center justify-center gap-4 bg-black/90 p-6"
           onClick={() => setOpen(false)}
+          {...swipe}
         >
+          {onPrev && (
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                onPrev();
+              }}
+              aria-label="Previous"
+              className={`${arrow} left-2 sm:left-6`}
+            >
+              ‹
+            </button>
+          )}
+          {onNext && (
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                onNext();
+              }}
+              aria-label="Next"
+              className={`${arrow} right-2 sm:right-6`}
+            >
+              ›
+            </button>
+          )}
           <button
             type="button"
             onClick={() => setOpen(false)}
@@ -278,10 +348,12 @@ export default function EnlargeableVideo({
             controls
             loop
             autoPlay
+            muted={autoplay}
             playsInline
             className="max-h-[75vh] w-auto max-w-full"
             onClick={(e) => e.stopPropagation()}
           />
+          {counter && <p className="text-sm text-white/60">{counter}</p>}
           {roles && roles.length > 0 && (
             <div
               className="flex flex-wrap justify-center gap-2"

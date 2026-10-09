@@ -3,6 +3,7 @@
 import Portal from "@/components/Portal";
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
+import { onVideoControls, useSwipe } from "@/lib/useSwipe";
 import type { SlideImage } from "@/content/site";
 
 export default function FilmstripGallery({
@@ -33,6 +34,11 @@ export default function FilmstripGallery({
   }, [openIndex, goTo]);
 
   const current = openIndex !== null ? images[openIndex] : null;
+  const swipe = useSwipe(
+    () => openIndex !== null && goTo(openIndex - 1),
+    () => openIndex !== null && goTo(openIndex + 1),
+    onVideoControls,
+  );
 
   return (
     <>
@@ -84,6 +90,7 @@ export default function FilmstripGallery({
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 sm:p-10"
           onClick={close}
+          {...swipe}
         >
           <button
             type="button"

@@ -2,7 +2,7 @@
 
 import Portal from "@/components/Portal";
 import { useSwipe } from "@/lib/useSwipe";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import type { PillTheme } from "@/content/pillTheme";
 
@@ -18,6 +18,8 @@ export default function EnlargeableImage({
   onPrev,
   onNext,
   counter,
+  initiallyOpen = false,
+  onOpenChange,
 }: {
   src: string;
   alt?: string;
@@ -34,8 +36,18 @@ export default function EnlargeableImage({
   onNext?: () => void;
   /** Position label such as "3 / 20", shown under the image. */
   counter?: string;
+  /** For a slideshow: the enlarged view stays up as the slide changes, so the parent remembers it and passes it to the next one. */
+  initiallyOpen?: boolean;
+  onOpenChange?: (open: boolean) => void;
 }) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpenState] = useState(initiallyOpen);
+  const setOpen = useCallback(
+    (v: boolean) => {
+      setOpenState(v);
+      onOpenChange?.(v);
+    },
+    [onOpenChange],
+  );
   const swipe = useSwipe(() => onPrev?.(), () => onNext?.());
 
   useEffect(() => {
@@ -47,7 +59,7 @@ export default function EnlargeableImage({
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [open, onPrev, onNext]);
+  }, [open, onPrev, onNext, setOpen]);
 
   const arrow =
     "absolute top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/50 px-3 pb-1.5 pt-0.5 text-4xl leading-none text-white/80 hover:text-white";
