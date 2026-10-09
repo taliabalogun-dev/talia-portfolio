@@ -45,7 +45,7 @@ export default function SlideGallery({
             playsInline
             autoPlay={current.autoplay}
             muted={current.autoplay}
-            loop={current.autoplay}
+            loop
             preload={current.autoplay ? "auto" : "metadata"}
             className="h-full w-full object-contain"
           />

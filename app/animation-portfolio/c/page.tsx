@@ -121,6 +121,7 @@ export default function AnimationPortfolioC() {
                             src={p.src}
                             poster={p.poster}
                             controls
+                            loop
                             playsInline
                             preload="metadata"
                             className="block w-full"

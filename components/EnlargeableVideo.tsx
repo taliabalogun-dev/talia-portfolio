@@ -163,7 +163,7 @@ export default function EnlargeableVideo({
         onTimeUpdate={(e) => setProgress(e.currentTarget.duration ? e.currentTarget.currentTime / e.currentTarget.duration : 0)}
         autoPlay={justUnlocked}
         muted={autoplay}
-        loop={autoplay}
+        loop
         preload="metadata"
         className={className}
       />
@@ -276,6 +276,7 @@ export default function EnlargeableVideo({
             src={src}
             poster={poster}
             controls
+            loop
             autoPlay
             playsInline
             className="max-h-[75vh] w-auto max-w-full"

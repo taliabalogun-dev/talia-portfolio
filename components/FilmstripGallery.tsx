@@ -117,6 +117,7 @@ export default function FilmstripGallery({
                 src={current.src}
                 poster={current.poster}
                 controls
+                loop
                 autoPlay
                 playsInline
                 className="max-h-[85vh] max-w-full"

@@ -27,6 +27,7 @@ function ArtTile({ item }: { item: FeaturedAnimation }) {
           src={item.src}
           poster={item.poster}
           controls
+          loop
           playsInline
           preload="metadata"
           className="block w-full"
