@@ -29,7 +29,7 @@ export default function AnimationPortfolioPage() {
   return (
     <>
       <Nav />
-      <AnimationIntro planeSrc="/images/animation-portfolio/avatar-plane-smoke-v1.webp" />
+      <AnimationIntro planeSrc="/images/animation-portfolio/avatar-plane-smoke-v2.webp" />
       <section className="relative overflow-hidden bg-teal py-16 sm:py-20">
         <div
           aria-hidden="true"
