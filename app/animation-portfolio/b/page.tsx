@@ -91,7 +91,7 @@ export default function AnimationPortfolioB() {
                 <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                   {s.items.map((f) => (
                     <article key={f.src}>
-                      <div className="aspect-video overflow-hidden rounded-xl bg-black shadow-lg">
+                      <div className="relative aspect-video overflow-hidden rounded-xl bg-black shadow-lg">
                         <EnlargeableVideo
                           src={f.src}
                           poster={f.poster}

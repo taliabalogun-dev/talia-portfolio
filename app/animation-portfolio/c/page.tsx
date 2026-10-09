@@ -99,7 +99,7 @@ export default function AnimationPortfolioC() {
 
                 <div className="space-y-4">
                   {film && (
-                    <div className="aspect-video overflow-hidden rounded-xl bg-black shadow-2xl">
+                    <div className="relative aspect-video overflow-hidden rounded-xl bg-black shadow-2xl">
                       <EnlargeableVideo
                         src={film.src}
                         poster={film.poster}
@@ -153,7 +153,7 @@ export default function AnimationPortfolioC() {
             <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
               {otherFilms.map((f) => (
                 <article key={f.src}>
-                  <div className="aspect-video overflow-hidden rounded-xl bg-black shadow-xl">
+                  <div className="relative aspect-video overflow-hidden rounded-xl bg-black shadow-xl">
                     <EnlargeableVideo
                       src={f.src}
                       poster={f.poster}
