@@ -118,7 +118,11 @@ export default function AnimationIntro({ planeSrc }: { planeSrc: string }) {
       return { x: x / n, y: y / n };
     };
     // Shrinks gradually over the whole flight, the way the regular flights do, and fades at the very end.
-    const scaleAt = (u: number) => 1 - 0.93 * u;
+    // It opens three times that size and eases down to it by the middle of the intro.
+    const scaleAt = (u: number) => {
+      const t = clamp01(u / 0.5);
+      return (1 - 0.93 * u) * (1 + 2 * (1 - t * t * (3 - 2 * t)));
+    };
 
     let raf = 0;
     let prevAng = 0;
