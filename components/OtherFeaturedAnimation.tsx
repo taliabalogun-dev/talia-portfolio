@@ -44,10 +44,11 @@ export default function OtherFeaturedAnimation({
     <div className={embedded ? "" : "mt-8 border-t border-beige/15 pt-6 sm:mt-16 sm:pt-10"}>
       {!embedded && (
         <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3">
-          <div className="flex flex-wrap items-center gap-x-3 gap-y-2 sm:gap-x-4">
-            <h2 className={`font-semibold tracking-tight ${cocurateLink ? "text-base sm:text-xl" : "text-xl"}`}>{heading}</h2>
+          {/* With the Co Curate callout the heading and the callout share one row on every screen, phones included. */}
+          <div className={`flex items-center gap-x-3 sm:gap-x-4 ${cocurateLink ? "w-full flex-nowrap justify-between" : "flex-wrap gap-y-2"}`}>
+            <h2 className={`font-semibold tracking-tight ${cocurateLink ? "min-w-0 text-base sm:text-xl" : "text-xl"}`}>{heading}</h2>
             {cocurateLink && (
-              <div className="font-cocurate flex w-full flex-col items-center text-center leading-none sm:w-auto">
+              <div className="font-cocurate flex shrink-0 flex-col items-center text-center leading-none">
                 <span className="text-[10px] font-medium uppercase tracking-[0.14em] opacity-70">see more on</span>
                 <span className="mt-0.5 text-lg font-bold tracking-wide text-white sm:text-xl">Co Curate</span>
                 <a

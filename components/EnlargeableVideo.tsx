@@ -40,6 +40,10 @@ export default function EnlargeableVideo({
   const [progress, setProgress] = useState(0);
   const hideTimer = useRef(0);
   useEffect(() => () => window.clearTimeout(hideTimer.current), []);
+  // A looping picture, like a gif: no controls. A double tap (or double click) pauses it and plays it again.
+  const heldByViewer = useRef(false); // paused on purpose, so scrolling back into view does not restart it
+  const lastTap = useRef({ t: 0, x: 0, y: 0 });
+  const [pausedByViewer, setPausedByViewer] = useState(false);
   const [open, setOpen] = useState(false);
   const gate = useVideoGate(src, password);
   const [justUnlocked, setJustUnlocked] = useState(false);
@@ -51,7 +55,7 @@ export default function EnlargeableVideo({
     if (!autoplay || !v) return;
     const io = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) v.play().catch(() => {});
+        if (entry.isIntersecting) { if (!heldByViewer.current) v.play().catch(() => {}); }
         else v.pause();
       },
       { threshold: 0.3 },
@@ -151,7 +155,7 @@ export default function EnlargeableVideo({
         ref={videoRef}
         src={src}
         poster={poster}
-        controls={!tint || !!autoplay}
+        controls={!tint && !autoplay}
         playsInline
         onPlay={() => setPlaying(true)}
         onPause={() => setPlaying(false)}
@@ -163,6 +167,37 @@ export default function EnlargeableVideo({
         preload="metadata"
         className={className}
       />
+      {autoplay ? (
+        <div
+          className="absolute inset-0 z-[5] select-none"
+          style={{ touchAction: "manipulation" }}
+          onPointerUp={(e) => {
+            const now = e.timeStamp;
+            const last = lastTap.current;
+            const close = Math.hypot(e.clientX - last.x, e.clientY - last.y) < 40;
+            if (now - last.t < 320 && close) {
+              lastTap.current = { t: 0, x: 0, y: 0 };
+              const v = videoRef.current;
+              if (!v) return;
+              if (v.paused) { heldByViewer.current = false; setPausedByViewer(false); v.play().catch(() => {}); }
+              else { heldByViewer.current = true; setPausedByViewer(true); v.pause(); }
+            } else {
+              lastTap.current = { t: now, x: e.clientX, y: e.clientY };
+            }
+          }}
+          aria-label="Double tap to pause or play"
+        >
+          {pausedByViewer && (
+            <span className="pointer-events-none absolute inset-0 grid place-items-center">
+              <span className="grid h-14 w-14 place-items-center rounded-full bg-black/55 text-white">
+                <svg viewBox="0 0 24 24" className="ml-1 h-6 w-6" fill="currentColor" aria-hidden="true">
+                  <path d="M7 4.5v15l13-7.5z" />
+                </svg>
+              </span>
+            </span>
+          )}
+        </div>
+      ) : null}
       {tint && !autoplay ? (
         // Tinted videos have their own controls: a wash with a play button before the start and whenever it is
         // paused; while it plays the picture is clear, and a tap brings the wash and a pause button back.

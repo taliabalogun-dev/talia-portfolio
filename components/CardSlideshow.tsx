@@ -72,7 +72,7 @@ export default function CardSlideshow({
             key={current.src}
             src={current.src}
             poster={current.poster}
-            autoplay={current.autoplay}
+            autoplay={current.autoplay ?? !current.tint}
             tint={current.tint}
             className={`h-full w-full ${current.fit === "contain" ? "object-contain" : "object-cover"}`}
           />
