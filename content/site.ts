@@ -2491,6 +2491,7 @@ export const skills: { category: string; items: string[] }[] = [
     items: [
       "Adobe Creative Suite",
       "Notion & Asana",
+      "Microsoft Office",
     ],
   },
 ];
@@ -2691,6 +2692,19 @@ export const skillDetails: { category: string; context: string; skills: SkillDet
         seenIn: [
           { label: "UCLA Student Affairs", slug: "ucla-campus-campaigns" },
           { label: "Co Curate", slug: "co-curate" },
+        ],
+      },
+      {
+        name: "Microsoft Office",
+        blurb: "Documents, spreadsheets and decks that keep budgets, schedules and pitches readable.",
+        subskills: [
+          "Word documents & briefs",
+          "Excel budgets & trackers",
+          "PowerPoint decks",
+          "Outlook & Teams coordination",
+        ],
+        seenIn: [
+          { label: "UCLA Student Affairs", slug: "ucla-campus-campaigns" },
         ],
       },
     ],

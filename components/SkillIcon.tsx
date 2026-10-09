@@ -87,6 +87,14 @@ const paths: Record<string, ReactNode> = {
       <path d="M9.5 13.5C7 13.5 5.5 15 5.5 17c0 .9-.7 1.6-1.5 2 2.5 1.2 6.5 1 7.5-2.5" />
     </>
   ),
+  "Microsoft Office": (
+    <>
+      <rect x="3.5" y="3.5" width="7" height="7" rx="1" />
+      <rect x="13.5" y="3.5" width="7" height="7" rx="1" />
+      <rect x="3.5" y="13.5" width="7" height="7" rx="1" />
+      <rect x="13.5" y="13.5" width="7" height="7" rx="1" />
+    </>
+  ),
   "Notion & Asana": (
     <>
       <rect x="4" y="3.5" width="16" height="17" rx="2" />
