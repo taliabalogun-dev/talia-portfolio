@@ -1853,7 +1853,7 @@ export const storyboardReel: FeaturedAnimation[] = [
     poster: "/images/animation-portfolio/animatic-mind-the-gap-poster.jpg",
     kind: "video",
     slides: [
-      { src: "/videos/mind-the-gap-animatic-v2.mp4", kind: "video", poster: "/images/animation-portfolio/animatic-mind-the-gap-poster.jpg", title: "Animatic & Storyboard", description: "The animatic with temp music and sound effects, then the storyboard pages." },
+      { src: "/videos/mind-the-gap-animatic-v2.mp4", kind: "video", tint: NARRATIVE_TINT, poster: "/images/animation-portfolio/animatic-mind-the-gap-poster.jpg", title: "Animatic & Storyboard", description: "The animatic with temp music and sound effects, then the storyboard pages." },
       { src: "/images/animation-portfolio/mtg-storyboard-1.jpg", title: "Storyboard - page 1", description: "Scene 1: the commuter waits, absorbed in her phone." },
       { src: "/images/animation-portfolio/mtg-storyboard-2.jpg", title: "Storyboard - page 2", description: "Scene 1 to 2: the doors open and a passenger cuts in." },
       { src: "/images/animation-portfolio/mtg-storyboard-3.jpg", title: "Storyboard - page 3", description: "Scenes 2 and 3: the missed step and the jerk back to reality." },
