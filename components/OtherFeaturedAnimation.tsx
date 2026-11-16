@@ -33,7 +33,7 @@ export default function OtherFeaturedAnimation({
   tileRatio?: "4/3" | "16/9";
   /** Make the project/role link buttons purple instead of the default dark. */
   purpleButtons?: boolean;
-  /** Videos play automatically, muted and looping, while on screen. Password-protected films stay click-to-play. */
+  /** Videos play automatically, muted and looping, while on screen. Password-protected and tinted films stay click-to-play. */
   autoplayVideos?: boolean;
   /** Size the tiles exactly like the ones inside the folder panels (Concept Art etc.), 4:3 pictures included. */
   folderSize?: boolean;
@@ -101,7 +101,7 @@ export default function OtherFeaturedAnimation({
                   src={item.src}
                   poster={item.poster}
                   password={item.password}
-                  autoplay={autoplayVideos && !item.password}
+                  autoplay={autoplayVideos && !item.password && !item.tint}
                   tint={item.tint}
                   externalLock
                   className="h-full w-full object-cover"

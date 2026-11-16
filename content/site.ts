@@ -1615,7 +1615,6 @@ export const projects: Project[] = [
             aspect: "video",
             poster: "/images/campaigns/ctrl4c-full-film-poster-v2.jpg",
             caption: "CTRL 4C - Full Film",
-            password: "screeningroom4c",
           },
         ],
         sections: [
@@ -1719,7 +1718,7 @@ export const featuredAnimationReel: FeaturedAnimation[] = [
     src: "/videos/ctrl4c-full-film.mp4",
     poster: "/images/campaigns/ctrl4c-full-film-poster-v2.jpg",
     kind: "video",
-    password: "screeningroom4c",
+    tint: 0.21, // plays on a tap, with its sound, like the other narrative films
     projectSlug: "ctrl-4c-campaign",
     href: "/projects/ctrl-4c-campaign",
     hrefLabel: "View Full Project →",
