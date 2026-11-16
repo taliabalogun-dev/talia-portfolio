@@ -197,51 +197,17 @@ export const projects: Project[] = [
     slug: "kugali-nani-campaign",
     navLabel: "Kugali (Current)",
     title: "Campaign Marketing & PR Associate (Contract) - Kugali",
+    contextTag: "Details under NDA",
     description:
-      "Content marketing, PR and creator strategy for Kugali, the pan-African entertainment company behind NANI, leading the creator and social side of the NANI Vol. 3 Kickstarter.",
-    extendedDescription:
-      "Kugali creates African-inspired IP across animation, graphic novels, film and TV. I joined on contract to drive content marketing and production across their slate, with a focus on the NANI Vol. 3 Kickstarter campaign. I run the creator and social side of the campaign, lead PR for its final stretch, and act as one of the faces of Kugali's social channels, drawing on my own animation audience.",
-    tags: ["Creator Marketing", "PR", "Social Content", "Campaign Strategy"],
+      "This is a current contract role, and the work is covered by an NDA, so the details are not shown here. Happy to talk it through on a call.",
+    tags: [],
     role: "Campaign Marketing & PR Associate (Contract)",
     period: "October 2026 - Present",
     location: "London (remote)",
-    focus: {
-      heading: "Focus",
-      items: [
-        "Creator Outreach",
-        "Campaign Content",
-        "TikTok",
-        "YouTube",
-        "Instagram",
-        "PR",
-        "Audience Research",
-        "Content Planning",
-        "Video Editing",
-      ],
-    },
     featured: false,
     current: true,
     hiddenFromNav: true,
-    // Hero image, content gallery and campaign results are still to come (TikTok stills, campaign assets, results once the Kickstarter closes).
-    slides: [
-      {
-        title: "What I Did",
-        sections: [
-          {
-            heading: "My Role",
-            style: "list",
-            items: [
-              "Creator marketing: researched YouTube and TikTok audience demographics to build a creator shortlist, then ran outreach, briefing and follow-through, and sourced replacement creators when partnerships fell through.",
-              "Content: house content creator for Kugali's channels. I scripted, filmed and edited TikToks, including a makeup tutorial tie-in and on-the-ground coverage from MCM London Comic Con.",
-              "Planning: built content plans and posting grids for the campaign and Kugali's leadership.",
-              "PR: leading PR for the final stretch of the Kickstarter.",
-              "Platform research: assessed new short-form distribution opportunities for Kugali's catalogue and recommended a low-cost pilot.",
-              "Pitch and production: supported pitch development and script readings for unannounced animated projects, alongside production coordination.",
-            ],
-          },
-        ],
-      },
-    ],
+    // Under NDA: the role, company, dates and location only. Add the work itself (overview, what was done, images, results) once it can be shown.
   },
   {
     slug: "kugali-iwaju",
