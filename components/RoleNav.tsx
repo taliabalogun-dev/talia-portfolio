@@ -10,7 +10,7 @@ export default function RoleNav({
 }) {
   return (
     <div className="flex flex-wrap gap-1.5 rounded-3xl bg-[#faf3d9] p-3 sm:gap-2 sm:p-5">
-      {projects.map((p) => {
+      {projects.filter((p) => !p.hiddenFromNav).map((p) => {
         const isActive = p.slug === activeSlug;
         const tileClasses = `font-display rounded-full px-3 py-1.5 text-xs uppercase tracking-tight transition-colors sm:px-4 sm:py-2 sm:text-sm ${
           isActive

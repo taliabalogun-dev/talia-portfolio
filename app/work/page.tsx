@@ -12,6 +12,7 @@ const featuredSlugs = [
 ];
 
 const otherSlugs = [
+  "kugali-nani-campaign",
   "bap-productions",
   "golden-effects-pictures",
   "refine-la-zine",
@@ -138,6 +139,11 @@ function ProjectPolaroid({ project }: { project: Project }) {
             }
             sizes="(min-width: 1024px) 23vw, (min-width: 640px) 46vw, 90vw"
           />
+        )}
+        {project.current && (
+          <span className="pointer-events-none absolute right-1.5 top-1.5 rotate-3 rounded-full bg-[#f5da6e] px-3 py-1 text-xs font-extrabold uppercase tracking-wide text-[#151210] shadow-md ring-2 ring-white/80">
+            Current
+          </span>
         )}
       </div>
       <h3 className="font-display mt-3 text-xl uppercase leading-tight tracking-tight text-black">
