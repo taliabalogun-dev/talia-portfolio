@@ -207,6 +207,7 @@ export const projects: Project[] = [
     featured: false,
     current: true,
     hiddenFromNav: true,
+    extraLinks: [{ label: "Supervisor Admin Portal", href: "/admin/supervisor" }],
     // Under NDA: the role, company, dates and location only. Add the work itself (overview, what was done, images, results) once it can be shown.
   },
   {
