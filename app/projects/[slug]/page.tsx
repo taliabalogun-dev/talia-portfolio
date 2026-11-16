@@ -7,6 +7,8 @@ import CampaignCardsGallery from "@/components/CampaignCardsGallery";
 import EnlargeableImage from "@/components/EnlargeableImage";
 import EnlargeableVideo from "@/components/EnlargeableVideo";
 import OtherFeaturedAnimation from "@/components/OtherFeaturedAnimation";
+import PlaneFlights from "@/components/PlaneFlights";
+import { PLANE_SRC } from "@/lib/flightPaths";
 import RoleNav from "@/components/RoleNav";
 import { projects, featuredAnimationFor, featuredProductionsFor } from "@/content/site";
 import { getPillTheme } from "@/content/pillTheme";
@@ -411,11 +413,14 @@ export default async function ProjectPage(
           )}
 
           {project.showFeaturedAnimation && (
+            <>
+            <PlaneFlights src={PLANE_SRC} />
             <OtherFeaturedAnimation
               items={featuredAnimationFor(project.slug)}
               action={{ label: "View Animation Portfolio", href: "/animation-portfolio" }}
               autoplayVideos
             />
+            </>
           )}
 
           {project.showFeaturedProductions && (

@@ -1,3 +1,6 @@
+/** The little avatar in her plane: the intro on the Animation Portfolio, and the flights across every page that links to it. */
+export const PLANE_SRC = "/images/animation-portfolio/avatar-plane-smoke-v2.webp";
+
 /**
  * The four flight paths drawn for the avatar plane, traced from the illustrated path image.
  * Each is a left-to-right curve in 0-1 coordinates (x across the screen, y down it).

@@ -4,6 +4,7 @@ import Nav from "@/components/Nav";
 import AnimationAtWork from "@/components/AnimationAtWork";
 import FolderTabs from "@/components/FolderTabs";
 import AnimationIntro from "@/components/AnimationIntro";
+import { PLANE_SRC } from "@/lib/flightPaths";
 import ProjectCarousel from "@/components/ProjectCarousel";
 import OtherFeaturedAnimation from "@/components/OtherFeaturedAnimation";
 import {
@@ -29,7 +30,7 @@ export default function AnimationPortfolioPage() {
   return (
     <>
       <Nav />
-      <AnimationIntro planeSrc="/images/animation-portfolio/avatar-plane-smoke-v2.webp" />
+      <AnimationIntro planeSrc={PLANE_SRC} />
       <section className="relative overflow-hidden bg-teal py-16 sm:py-20">
         <div
           aria-hidden="true"

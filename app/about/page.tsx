@@ -3,6 +3,8 @@ import Nav from "@/components/Nav";
 import EnlargeableImage from "@/components/EnlargeableImage";
 import ProjectCarousel from "@/components/ProjectCarousel";
 import OtherFeaturedAnimation from "@/components/OtherFeaturedAnimation";
+import PlaneFlights from "@/components/PlaneFlights";
+import { PLANE_SRC } from "@/lib/flightPaths";
 import {
   bio,
   featuredAnimationFor,
@@ -171,6 +173,7 @@ export default function AboutPage() {
               aspect="poster"
               compact
             />
+            <PlaneFlights src={PLANE_SRC} />
             <OtherFeaturedAnimation
               items={featuredAnimationFor()}
               heading="Featured Animation"
