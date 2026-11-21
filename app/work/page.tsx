@@ -75,7 +75,7 @@ export default function WorkPage() {
 
           <div className="mt-14 grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
             {topQuotes.map((quote) => (
-              <blockquote key={quote.name} className="border-l-4 border-accent/60 pl-4">
+              <blockquote key={`${quote.name}-${quote.text}`} className="border-l-4 border-accent/60 pl-4">
                 <p className="text-sm italic text-ink">&ldquo;{quote.text}&rdquo;</p>
                 <footer className="mt-1.5 text-xs text-ink/70">
                   — <span className="text-accent">{quote.name}</span>
@@ -94,7 +94,7 @@ export default function WorkPage() {
           </div>
           <div className="mt-14 grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
             {bottomQuotes.map((quote) => (
-              <blockquote key={quote.name} className="border-l-4 border-accent/60 pl-4">
+              <blockquote key={`${quote.name}-${quote.text}`} className="border-l-4 border-accent/60 pl-4">
                 <p className="text-sm italic text-ink">&ldquo;{quote.text}&rdquo;</p>
                 <footer className="mt-1.5 text-xs text-ink/70">
                   — <span className="text-accent">{quote.name}</span>

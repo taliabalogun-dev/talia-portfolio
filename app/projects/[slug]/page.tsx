@@ -74,7 +74,7 @@ export default async function ProjectPage(
 
               {project.quotes?.map((quote) => (
                 <blockquote
-                  key={quote.name}
+                  key={`${quote.name}-${quote.text}`}
                   className="mt-6 border-l-4 border-accent/60 pl-5"
                 >
                   <p className="text-lg italic text-ink">&ldquo;{quote.text}&rdquo;</p>
