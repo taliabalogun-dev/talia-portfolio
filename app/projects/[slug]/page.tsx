@@ -11,7 +11,7 @@ import PlaneFlights from "@/components/PlaneFlights";
 import { PLANE_SRC } from "@/lib/flightPaths";
 import RoleNav from "@/components/RoleNav";
 import { projects, featuredAnimationFor, featuredProductionsFor } from "@/content/site";
-import { getPillTheme } from "@/content/pillTheme";
+import { getPillTheme, getPillTone } from "@/content/pillTheme";
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
@@ -282,18 +282,16 @@ export default async function ProjectPage(
                                     "Deliverables",
                                     "Other FAST Brand Partners",
                                   ];
-                                  const isResult = !roleHeadings.includes(section.heading);
+                                  const tone = getPillTone(section.tone);
+                                  const isResult = !tone && !roleHeadings.includes(section.heading);
+                                  const theme = tone ?? pillTheme;
                                   return (
                                     <span
                                       key={item}
                                       className="rounded-full px-3 py-1 text-sm"
                                       style={{
-                                        background: isResult
-                                          ? pillTheme.resultBg
-                                          : pillTheme.roleBg,
-                                        color: isResult
-                                          ? pillTheme.resultText
-                                          : pillTheme.roleText,
+                                        background: isResult ? theme.resultBg : theme.roleBg,
+                                        color: isResult ? theme.resultText : theme.roleText,
                                       }}
                                     >
                                       {item}

@@ -83,3 +83,8 @@ export function getPillTheme(slug: string): PillTheme {
   const name = projectTheme[slug];
   return name ? themes[name] : fallback;
 }
+
+/** Looks up a named pastel theme, for sections that carry their own colour (e.g. role pillars). */
+export function getPillTone(name: string | undefined): PillTheme | undefined {
+  return name && name in themes ? themes[name as keyof typeof themes] : undefined;
+}

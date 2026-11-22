@@ -86,6 +86,8 @@ export type SlideSection = {
   items: string[];
   /** "pills" for short badge-style items (roles, results); "list" for full-sentence items. */
   style: "pills" | "list";
+  /** Pills only: a named pastel theme (red, purple, blue, orange, gold...) so each section can have its own colour. */
+  tone?: string;
 };
 
 export type Slide = {
@@ -197,19 +199,122 @@ export const projects: Project[] = [
     slug: "kugali-nani-campaign",
     navLabel: "Kugali (Current)",
     title: "Campaign Marketing & PR Associate (Contract) - Kugali",
-    contextTag: "Details under NDA",
+    contextTag: "Creator and social lead on the NANI Vol. 3 Kickstarter",
     description:
-      "This is a current contract role, and the work is covered by an NDA, so the details are not shown here. Happy to talk it through on a call.",
-    tags: [],
+      "Media planning, content strategy and PR for Kugali, the pan-African entertainment company behind NANI, leading the creator and social side of the NANI Vol. 3 Kickstarter.",
+    extendedDescription:
+      "Kugali creates African-inspired IP across animation, comics, film and TV. I rejoined on contract to drive content marketing and production across their slate, starting with the NANI Vol. 3 Kickstarter. I run the creator and social side of the campaign, lead PR for its final stretch, and act as one of the faces of Kugali's social channels, drawing on my own animation audience. Behind the scenes I support pitch development for unannounced feature and series projects.",
+    tags: ["Creator Marketing", "PR", "Content Strategy", "Paid Social", "Pitch Development"],
     role: "Campaign Marketing & PR Associate (Contract)",
     period: "October 2026 - Present",
     location: "London (remote)",
+    focus: {
+      heading: "Focus",
+      items: [
+        "Creator Outreach",
+        "Media Planning",
+        "Content Strategy",
+        "Paid Social",
+        "PR",
+        "Audience Research",
+        "TikTok",
+        "YouTube",
+        "Instagram",
+        "Video Editing",
+        "Pitch Development",
+      ],
+    },
     featured: false,
     current: true,
-    hiddenFromNav: true,
     image: "/images/campaigns/kugali-nani-cover.jpg",
-    extraLinks: [{ label: "Supervisor Admin Portal", href: "/admin/supervisor" }],
-    // Under NDA: the role, company, dates and location only. Add the work itself (overview, what was done, images, results) once it can be shown.
+    slides: [
+      {
+        title: "Featured Campaign",
+        subtitle: "NANI Vol. 3 Kickstarter - Creator & Social Lead - October 2026 - Present",
+        sections: [
+          {
+            heading: "PR Emails",
+            style: "pills",
+            tone: "orange",
+            items: [
+              "Final-Stretch Kickstarter PR",
+              "Press & Partner Correspondence",
+            ],
+          },
+          {
+            heading: "Creator Outreach & Follow-Through",
+            style: "pills",
+            tone: "orange",
+            items: [
+              "Audience Research",
+              "Creator Shortlist",
+              "Outreach & Briefing",
+              "6-Post Paid Partnership",
+              "Replacement Creators",
+            ],
+          },
+          {
+            heading: "Founder Profile Growth Strategy",
+            style: "pills",
+            tone: "orange",
+            items: [
+              "Content Plans",
+              "Posting Grids",
+              "Approval Flow",
+            ],
+          },
+          {
+            heading: "House Content Creation",
+            style: "pills",
+            tone: "orange",
+            items: [
+              "Scripted, Filmed & Edited TikToks",
+              "Makeup Tutorial Tie-In",
+              "MCM London Comic Con",
+              "GTA 6 Release Day Post",
+            ],
+          },
+          {
+            heading: "Also",
+            style: "pills",
+            tone: "orange",
+            items: [
+              "Short-Form Platform Research",
+              "Pitch Decks & Script Readings",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Pitch Development",
+        subtitle: "Details under NDA",
+        layout: "cards",
+        images: [
+          {
+            src: "/images/campaigns/kugali-pitch-project-a.png",
+            title: "Project A",
+            caption: "Details under NDA",
+            roles: ["Pitch Strategist", "Deck Designer"],
+          },
+          {
+            src: "/images/campaigns/kugali-pitch-project-b.png",
+            title: "Project B",
+            caption: "Details under NDA",
+            roles: ["Pitch Strategist", "Admin Support"],
+            enlargedRoles: ["Pitch Strategist", "Administrative Support"],
+          },
+        ],
+        sections: [],
+      },
+    ],
+    extraLinks: [
+      {
+        label: "Back NANI Vol. 3",
+        href: "https://www.kickstarter.com/projects/kugalimedia/from-the-director-of-disneys-iwaju-nani-volume-3",
+        newTab: true,
+      },
+      { label: "Supervisor Admin Portal", href: "/admin/supervisor" },
+    ],
   },
   {
     slug: "kugali-iwaju",
