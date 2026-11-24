@@ -67,6 +67,7 @@ const themes = {
 const projectTheme: Record<string, keyof typeof themes> = {
   "live-nation-mutha": "purple",
   "kugali-iwaju": "red",
+  "kugali-nani-campaign": "orange",
   "refine-la-zine": "pink",
   "fast-ucla-fashion-show": "blue",
   "ucla-campus-campaigns": "gold",

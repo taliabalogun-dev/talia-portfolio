@@ -184,7 +184,8 @@ export default async function ProjectPage(
                       <div
                         className={
                           slide.images!.length > 1 ||
-                          slide.images![0]?.aspect !== "video"
+                          (slide.images![0]?.aspect !== "video" &&
+                            slide.images![0]?.aspect !== "tall")
                             ? "grid grid-cols-2 items-start gap-3 sm:grid-cols-3"
                             : "grid grid-cols-1"
                         }
@@ -192,12 +193,13 @@ export default async function ProjectPage(
                         {(() => {
                           const isFullWidth =
                             slide.images!.length === 1 &&
-                            slide.images![0]?.aspect === "video";
+                            (slide.images![0]?.aspect === "video" ||
+                              slide.images![0]?.aspect === "tall");
                           return slide.images!.map((img) => (
                           <div key={img.src} className="flex flex-col">
                             <figure className="relative overflow-hidden rounded-xl border border-beige/15">
                               <div
-                                className={`relative w-full ${img.aspect === "video" ? "aspect-video" : "aspect-[9/16]"}`}
+                                className={`relative w-full ${img.aspect === "video" ? "aspect-video" : img.aspect === "tall" ? "aspect-[3/4]" : "aspect-[9/16]"}`}
                               >
                                 {img.kind === "video" ? (
                                   <EnlargeableVideo

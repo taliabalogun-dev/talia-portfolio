@@ -59,8 +59,8 @@ export type SlideImage = {
   caption?: string;
   /** Bold title shown above the caption. Only used by "cards" layout slides. */
   title?: string;
-  /** Defaults to "portrait" (phone-screenshot shaped). Use "video" for landscape stills. */
-  aspect?: "portrait" | "video";
+  /** Defaults to "portrait" (phone-screenshot shaped). Use "video" for landscape stills, "tall" for a single 3:4 page shown full width. */
+  aspect?: "portrait" | "video" | "tall";
   /** Defaults to "image". Set to "video" to render an HTML5 <video> - src should point at an mp4. */
   kind?: "image" | "video";
   /** Poster frame for video items. */
@@ -199,11 +199,11 @@ export const projects: Project[] = [
     slug: "kugali-nani-campaign",
     navLabel: "Kugali (Current)",
     title: "Campaign Marketing & PR Associate (Contract) - Kugali",
-    contextTag: "Creator and social lead on the NANI Vol. 3 Kickstarter",
+    contextTag: "Content and PR for the NANI Vol. 3 Kickstarter, which closed funded",
     description:
-      "Media planning, content strategy and PR for Kugali, the pan-African entertainment company behind NANI, leading the creator and social side of the NANI Vol. 3 Kickstarter.",
+      "Ran the content and PR push for the final stretch of NANI Vol. 3, a creator-owned African fantasy trilogy's Kickstarter, which closed funded: 189 backers, $10,901 raised against a $9,830 goal.",
     extendedDescription:
-      "Kugali creates African-inspired IP across animation, comics, film and TV. I rejoined on contract to drive content marketing and production across their slate, starting with the NANI Vol. 3 Kickstarter. I run the creator and social side of the campaign, lead PR for its final stretch, and act as one of the faces of Kugali's social channels, drawing on my own animation audience. Behind the scenes I support pitch development for unannounced feature and series projects.",
+      "NANI is a three-volume African fantasy written by Olufikayo \"Ziki\" Adeola, who directed Iwájú for Disney Animation, with lead artist Jasonas Lamy. Volume 3 is the last book and it was crowdfunded rather than studio-funded. I rejoined Kugali on contract for the closing stretch of the campaign and ran the content, the PR outreach and the creator side, and acted as one of the faces of Kugali's social channels, drawing on my own animation audience. Behind the scenes I support pitch development for unannounced feature and series projects.",
     tags: ["Creator Marketing", "PR", "Content Strategy", "Paid Social", "Pitch Development"],
     role: "Campaign Marketing & PR Associate (Contract)",
     period: "October 2026 - Present",
@@ -286,6 +286,200 @@ export const projects: Project[] = [
         ],
       },
       {
+        title: "NANI Vol. 3: Content System",
+        subtitle: "Final nine days of the Kickstarter - twelve slots, two a day at fixed times",
+        images: [
+          {
+            src: "/images/campaigns/kugali-nani-content-grid.png",
+            caption: "The twelve-post content grid and the logic behind it",
+            aspect: "tall",
+            position: "top",
+          },
+        ],
+        sections: [
+          {
+            heading: "The result",
+            style: "list",
+            items: [
+              "The campaign closed funded: 189 backers put up $10,901 against a $9,830 goal.",
+            ],
+          },
+          {
+            heading: "What I built",
+            style: "list",
+            items: [
+              "A content system rather than a set of posts. Twelve slots, each doing a different job: a comparison hook for discovery, a credential post for credibility, folklore and worldbuilding for the people already in, process for the comics audience, and a closing ladder on the last day. No slot repeated the job of the one before it.",
+              "Everything was made from the book itself: interior pages, pencils, key art, character work and the author on camera, cut into reels, carousels and motion graphics. Nothing was stock and nothing was AI-generated.",
+            ],
+          },
+          {
+            heading: "Sourcing",
+            style: "list",
+            items: [
+              "Several posts leaned on real history and real folklore, so every claim had to be traceable before it went out. Five Fallen clans each traced back to a named folklore. A quote carousel set a line of fiction beside three real historical quotes, each with its publication and date. I killed more than one good-looking post because the claim underneath it could not be stood up.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "NANI Vol. 3: Reels",
+        subtitle: "Reels carried the voice: the creator to camera, cut from the book",
+        images: [
+          {
+            src: "/videos/kugali-nani-clan-roster.mp4",
+            kind: "video",
+            poster: "/images/campaigns/kugali-nani-reel-clan-roster.jpg",
+            title: "The Clan Roster",
+            caption: "Five Fallen clans, each traced to a real folklore",
+          },
+          {
+            src: "/images/campaigns/kugali-nani-reel-the-credential.jpg",
+            title: "The Credential",
+            caption: "A Disney director who still crowdfunds his own book",
+          },
+          {
+            src: "/videos/kugali-nani-seven-years.mp4",
+            kind: "video",
+            poster: "/images/campaigns/kugali-nani-reel-seven-years.jpg",
+            title: "Seven Years",
+            caption: "Why he went back to finish the trilogy",
+          },
+          {
+            src: "/images/campaigns/kugali-nani-reel-if-you-like-avatar.jpg",
+            title: "If You Like Avatar",
+            caption: "The comparison hook, for people who have never heard of it",
+          },
+          {
+            src: "/videos/kugali-nani-rough-to-finished.mp4",
+            kind: "video",
+            poster: "/images/campaigns/kugali-nani-reel-rough-to-finished.jpg",
+            title: "Rough to Finished",
+            caption: "Three pages, pencils through to colour",
+          },
+          {
+            src: "/images/campaigns/kugali-nani-reel-where-nani-came-from.jpg",
+            title: "Where Nani Came From",
+            caption: "The isekai idea with an African identity",
+          },
+          {
+            src: "/videos/kugali-nani-milestone-motion.mp4",
+            kind: "video",
+            poster: "/images/campaigns/kugali-nani-reel-milestone.jpg",
+            title: "Milestone",
+            caption: "Funded, and exactly where the book stands",
+          },
+          {
+            src: "/videos/kugali-nani-tribalism.mp4",
+            kind: "video",
+            poster: "/images/campaigns/kugali-nani-reel-tribalism.jpg",
+            title: "Tribalism",
+          },
+        ],
+        sections: [],
+      },
+      {
+        title: "NANI Vol. 3: Carousels",
+        subtitle: "Carousels carried the research, where text can be read slowly",
+        images: [
+          {
+            src: "/images/campaigns/kugali-nani-carousel-dambe.png",
+            title: "Dambe",
+            caption: "A real Hausa combat sport, documented properly. Photography by Wole Hammond.",
+          },
+          {
+            src: "/images/campaigns/kugali-nani-carousel-laye-and-the-tea.png",
+            title: "Laye and the Tea",
+            caption: "The kindest scene in the book, and what it costs her",
+          },
+          {
+            src: "/images/campaigns/kugali-nani-carousel-yi-rawa.png",
+            title: "Yi Rawa",
+            caption: "The magic system, named in Hausa",
+          },
+        ],
+        sections: [],
+      },
+      {
+        title: "Press, Creators and Founder Accounts",
+        subtitle: "The work around the content",
+        sections: [
+          {
+            heading: "Press outreach",
+            style: "list",
+            items: [
+              "Built the press list from scratch and ran the programme for the final two weeks: seventeen outlets, each with a named editor, a verified address and its own angle. Eight more researched and deliberately dropped, with the reason written down, because a bad send costs you the outlet for the whole campaign. Several contacts in the brief I was handed were wrong or out of date, so everything was checked against the masthead.",
+              "Each pitch was written for the individual, not the list. The rule for the assistant running the rest of the sends: no two emails open with the same sentence. Delivered as a working tracker, a press pack, cleared artwork and a start-here sheet, so a second person could run sends and follow-ups without me.",
+            ],
+          },
+          {
+            heading: "Creator outreach",
+            style: "list",
+            items: [
+              "Researched TikTok and YouTube creators whose audience actually overlapped with an African fantasy comic rather than just being large, then briefed them and followed through. The work is mostly judgement about fit: a creator with the wrong audience performs on paper and converts nothing.",
+            ],
+          },
+          {
+            heading: "Founder and studio accounts",
+            style: "list",
+            items: [
+              "Wrote across the founder account, the company page and my own, each pitched differently because the accounts are not interchangeable. The handover went out as a document anyone on the team could pick up: the voice, the guardrails, what is cleared and what is not, how the platform treats links, and seven drafted posts ready to go. I also appeared as one of the faces of the studio's channels.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Campaign and Founder Content",
+        subtitle: "NANI Vol. 3 Kickstarter - Final nine days, 17 to 25 November 2026",
+        layout: "slideshow",
+        images: [
+          { src: "/images/campaigns/kugali-founder-content-01.jpg", aspect: "video", fit: "contain" },
+          { src: "/images/campaigns/kugali-founder-content-02.jpg", aspect: "video", fit: "contain" },
+          { src: "/images/campaigns/kugali-founder-content-03.jpg", aspect: "video", fit: "contain" },
+          { src: "/images/campaigns/kugali-founder-content-04.jpg", aspect: "video", fit: "contain" },
+          { src: "/images/campaigns/kugali-founder-content-05.jpg", aspect: "video", fit: "contain" },
+          { src: "/images/campaigns/kugali-founder-content-06.jpg", aspect: "video", fit: "contain" },
+          { src: "/images/campaigns/kugali-founder-content-07.jpg", aspect: "video", fit: "contain" },
+          { src: "/images/campaigns/kugali-founder-content-08.jpg", aspect: "video", fit: "contain" },
+          { src: "/images/campaigns/kugali-founder-content-09.jpg", aspect: "video", fit: "contain" },
+          { src: "/images/campaigns/kugali-founder-content-10.jpg", aspect: "video", fit: "contain" },
+          { src: "/images/campaigns/kugali-founder-content-11.jpg", aspect: "video", fit: "contain" },
+          { src: "/images/campaigns/kugali-founder-content-12.jpg", aspect: "video", fit: "contain" },
+        ],
+        sections: [],
+      },
+      {
+        title: "Press Outreach",
+        subtitle: "NANI Vol. 3 Kickstarter - List built, pitched and handed over, November 2026",
+        layout: "slideshow",
+        images: [
+          { src: "/images/campaigns/kugali-press-outreach-01.jpg", aspect: "video", fit: "contain" },
+          { src: "/images/campaigns/kugali-press-outreach-02.jpg", aspect: "video", fit: "contain" },
+          { src: "/images/campaigns/kugali-press-outreach-03.jpg", aspect: "video", fit: "contain" },
+          { src: "/images/campaigns/kugali-press-outreach-04.jpg", aspect: "video", fit: "contain" },
+          { src: "/images/campaigns/kugali-press-outreach-05.jpg", aspect: "video", fit: "contain" },
+          { src: "/images/campaigns/kugali-press-outreach-06.jpg", aspect: "video", fit: "contain" },
+          { src: "/images/campaigns/kugali-press-outreach-07.jpg", aspect: "video", fit: "contain" },
+          { src: "/images/campaigns/kugali-press-outreach-08.jpg", aspect: "video", fit: "contain" },
+        ],
+        sections: [],
+      },
+      {
+        title: "Creator Outreach",
+        subtitle: "NANI Vol. 3 Kickstarter - Media plan and outreach",
+        layout: "slideshow",
+        images: [
+          { src: "/images/campaigns/kugali-creator-outreach-v2-01.jpg", aspect: "video", fit: "contain" },
+          { src: "/images/campaigns/kugali-creator-outreach-v2-02.jpg", aspect: "video", fit: "contain" },
+          { src: "/images/campaigns/kugali-creator-outreach-v2-03.jpg", aspect: "video", fit: "contain" },
+          { src: "/images/campaigns/kugali-creator-outreach-v2-04.jpg", aspect: "video", fit: "contain" },
+          { src: "/images/campaigns/kugali-creator-outreach-v2-05.jpg", aspect: "video", fit: "contain" },
+          { src: "/images/campaigns/kugali-creator-outreach-v2-06.jpg", aspect: "video", fit: "contain" },
+          { src: "/images/campaigns/kugali-creator-outreach-v2-07.jpg", aspect: "video", fit: "contain" },
+          { src: "/images/campaigns/kugali-creator-outreach-v2-08.jpg", aspect: "video", fit: "contain" },
+        ],
+        sections: [],
+      },
+      {
         title: "Pitch Development",
         subtitle: "Details under NDA",
         layout: "cards",
@@ -304,7 +498,15 @@ export const projects: Project[] = [
             enlargedRoles: ["Pitch Strategist", "Administrative Support"],
           },
         ],
-        sections: [],
+        sections: [
+          {
+            heading: "Also",
+            style: "list",
+            items: [
+              "Development and packaging support on feature and series projects that are not announced yet: pitch materials and script reads. On an earlier Kugali project I assisted on the initial pitch and campaign strategy.",
+            ],
+          },
+        ],
       },
     ],
     extraLinks: [
